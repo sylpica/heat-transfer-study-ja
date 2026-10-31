@@ -35,6 +35,13 @@ try {
     const item=document.querySelector('.reader-toc .toc-item.selected'),background=luminance(getComputedStyle(item).backgroundColor);
     return [...item.querySelectorAll('.toc-number, span:nth-child(2), i')].map(element=>{const foreground=luminance(getComputedStyle(element).color);return (Math.max(foreground,background)+.05)/(Math.min(foreground,background)+.05);});
   });
+  // B-12 replaced the window.confirm shown when a new set replaces a
+  // suspended one with an in-app dialog; confirm it like a learner would.
+  const confirmQuizReplacement=async()=>{
+    await page.waitForFunction(()=>document.querySelector('.question-card')||document.querySelector('.quiz-start-modal [data-action="confirm-quiz-start"]'));
+    const replace=page.locator('.quiz-start-modal [data-action="confirm-quiz-start"]');
+    if(await replace.count())await replace.click();
+  };
   await page.goto(base);
   await page.locator('.app-shell').waitFor();
   if(!liveBase){
@@ -570,9 +577,10 @@ try {
   // Glossary and its inline dialog must work without another network request.
   await nav('glossary');
   await page.locator('#term-fourier-law').waitFor({state:'visible'});
-  // Earlier E2E steps can leave a suspended set; replacing it must be confirmed.
-  page.once('dialog',dialog=>dialog.accept());
+  // Earlier E2E steps can leave a suspended set; replacing it is confirmed
+  // in the app's own start dialog (B-12 removed the native confirm).
   await page.locator('#term-thermal-conductivity [data-start-question="supp-flat-thickness"]').click();
+  await confirmQuizReplacement();
   await page.locator('.question-card').waitFor({state:'visible'});
   await page.locator('.question-card h2 [data-term-id="thermal-conductivity"]').click();
   await page.locator('#term-overlay [role="dialog"]').waitFor({state:'visible'});
@@ -692,8 +700,6 @@ try {
   const pending=await page.evaluate(async()=>
     (await (await fetch('./data/questions.json')).json()).filter(q=>q.reportHistory?.some(r=>['internal_independent_check','authored_with_internal_check','internal_audit_followup'].includes(r.type))));
   assert.equal(pending.length,444);
-  const replaceSuspended=dialog=>dialog.accept();
-  page.on('dialog',replaceSuspended);
   for(const q of pending){
     await nav('quiz');
     if(await page.locator('[data-action="exit-quiz"]').count()){
@@ -701,6 +707,7 @@ try {
       await page.locator('[data-action="discard-quiz"]').click();
     }
     await page.locator(`.bank-item[data-start-question="${q.id}"]`).click();
+    await confirmQuizReplacement();
     await page.locator('.question-card').waitFor({state:'visible'});
     assert.equal(await page.locator('.answer-options input').count(),4,q.id);
     const term=page.locator('.question-card h2 [data-term-id]').first();
@@ -725,7 +732,6 @@ try {
     const latest=await page.evaluate(()=>JSON.parse(localStorage.getItem('heat-study-ja:v1')).attempts.at(-1));
     assert.equal(latest.questionId,q.id);assert.equal(latest.questionRevision,q.revision);
   }
-  page.off('dialog',replaceSuspended);
   await nav('reader');
   await page.locator('.reader-toc [data-section="10.1"]').evaluate(element=>{
     for(let n=element.parentElement;n;n=n.parentElement)if(n.tagName==='DETAILS')n.open=true;

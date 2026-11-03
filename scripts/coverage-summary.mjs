@@ -3,6 +3,7 @@ import {join,dirname,resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {GUIDE_SECTIONS} from '../guide.mjs';
 import {learningCoverage} from '../learning-coverage.mjs';
+import {questionFieldGroup,FIELD_GROUP_ORDER} from '../chapter-curriculum.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const read=async path=>JSON.parse(await readFile(join(root,path),'utf8'));
@@ -31,7 +32,8 @@ else{
   console.log('書籍出典問題が存在する節:',report.sectionsWithBookCitedQuestions,'/',report.textbookSections);
   console.log('独立作成の章別補助講座:',report.originalChapterGuides,'/',report.chapterCount,'章 / 章別独自演習あり:',report.chaptersWithOriginalPractice,'/',report.chapterCount,'章');
   console.log('アプリ独自ガイド:',report.guideEntries,'項目 / 用語:',report.glossaryTerms,'項目');
-  console.log('学習分野別問題数:',JSON.stringify(report.practiceByField));
+  console.log('アプリの分野（章の主題）別問題数:',JSON.stringify(Object.fromEntries(FIELD_GROUP_ORDER.map(group=>[group,questions.filter(q=>questionFieldGroup(q,GUIDE_SECTIONS)===group).length]))));
+  console.log('作成時の細分類ラベル別問題数:',JSON.stringify(report.practiceByField));
   console.log('章別の書籍出典問題:',JSON.stringify(report.chapters));
   console.log('注意: PDFの掲載、下書きの存在、問題数は全文翻訳・専門家校閲・全機能完成を示さない。');
 }

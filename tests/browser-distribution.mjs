@@ -463,7 +463,7 @@ try {
   assert.match(await page.locator('.answer-source').innerText(),/式（1\.1）/);
   await page.locator('[data-action="next-question"]').click();
   await page.locator('[data-action="again-quiz"]').click();
-  await page.locator('#quiz-start-form select[name="field"]').selectOption('熱伝導');
+  await page.locator('#quiz-start-form select[name="field"]').selectOption('定常熱伝導・熱抵抗');
   await page.locator('#quiz-start-form button[type="submit"]').click();
   await page.keyboard.press('1');
   assert.equal(await page.locator('.answer-choice input:checked').count(),1);

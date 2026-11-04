@@ -32,3 +32,7 @@ scripts/dynamic-cavity-benchmarks.mjsが再現手順。局所の製造速度場�
 ## 状態
 
 CFD_BENCHMARKS_20261104.jsonはローカル開発ツリーでの計測（入力ガード追加前）として保存。最新の保存SHAの検査は専用CIの実行ログへ追跡し、過去結果へ置き換えない。現実装はUIへ公開しない。Claude Codeによる独立再監査に、参照値の元資料照合・圧力境界・時間/格子誤差と保存則の再計算を引き継ぐ。
+
+独自に作成した初期の比較図：![開発用キャビティの数値対照。左は参照4点と計算値、右は16/32格子の平均Nu。2段階のみで一般CFDの承認ではない。](CFD_COMPARISON_20261104.png)
+
+再生成は `python3 scripts/plot-dynamic-cfd-benchmarks.py`。これは開発時の図生成だけに使い、Webアプリ利用者へPython等を要求しない。

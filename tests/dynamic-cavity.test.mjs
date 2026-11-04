@@ -19,3 +19,6 @@ test('invalid pressure fields, normal wall flow, unknown discretization and unve
  const args={nx:4,ny:4,dx:.25,dy:.25,dt:.01},u=new Float64Array(20),v=new Float64Array(20);assert.throws(()=>projectFaces(u,v,{...args,pressure:[0]}),/圧力場/);u[0]=1;assert.throws(()=>projectFaces(u,v,args),/法線/);
  assert.throws(()=>createCavity({...base,scalarScheme:'unknown'}));assert.throws(()=>createCavity({...base,gravityBeta:1000,beta:.001,leftTemperature:300.5,rightTemperature:299.5}),/Ra/);assert.throws(()=>createCavity({...base,rho:1e308,cp:1e308}));
 });
+test('without buoyancy or lid forcing the coupled 2D energy operator recovers conduction Nu=1 and the linear profile',()=>{
+ const n=8,m=createCavity({...base,leftTemperature:300.5,rightTemperature:299.5});while(m.time<100)m.step(Math.min(m.safeDt,100-m.time),false);const s=m.snapshot();assert.ok(Math.abs(s.nusselt-1)<1e-7);assert.ok(s.u.every(v=>v===0)&&s.v.every(v=>v===0));for(let j=0;j<n;j++)for(let i=0;i<n;i++)assert.ok(Math.abs(s.temperature[j*n+i]-(300.5-(i+.5)/n))<1e-7);assert.ok(Math.abs(s.energyError)<1e-9);
+});

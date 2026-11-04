@@ -78,13 +78,18 @@
     {
       "id": "Q9",
       "requirement": "初心者向け可視化と本格CFD",
-      "status": "planned",
-      "evidence": []
+      "status": "partial_development_only_2D_projection",
+      "evidence": [
+        "../../dynamic/dev/cavity.mjs",
+        "CFD_DEVELOPMENT.md",
+        "CFD_BENCHMARKS_20261104.json"
+      ],
+      "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
     {
       "id": "Q10",
       "requirement": "沸騰は模式アニメーションを基本とする",
-      "status": "implemented_schematic_browser_passed_CI_pending",
+      "status": "implemented_schematic_browser_checked",
       "evidence": [
         "../../dynamic/boiling.mjs",
         "../../tests/dynamic-browser.mjs",
@@ -268,7 +273,7 @@
     {
       "id": "Q30",
       "requirement": "恒久的な実験記録保存は不要",
-      "status": "implemented_pending_final_browser_CI",
+      "status": "implemented_for_this_development_branch",
       "evidence": [
         "STATUS.md",
         "../../dynamic/lab.mjs"
@@ -349,13 +354,13 @@
     {
       "id": "Q39",
       "requirement": "検証可能な2D層流CFDを基本に乱流へ拡張",
-      "status": "partial_development_only_reduced_channel",
+      "status": "partial_development_only_2D_projection",
       "evidence": [
-        "../../dynamic/dev/channel.mjs",
-        "../../tests/dynamic-channel.test.mjs",
-        "STATUS.md"
+        "../../dynamic/dev/cavity.mjs",
+        "CFD_DEVELOPMENT.md",
+        "CFD_BENCHMARKS_20261104.json"
       ],
-      "remainingOrScope": "開発用の発達流路のみ。一般2D圧力速度連成/乱流は未実装・非公開。"
+      "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
     {
       "id": "Q40",
@@ -412,8 +417,13 @@
     {
       "id": "Q46",
       "requirement": "壁面上昇流・容器内循環・発熱体周囲の自然対流",
-      "status": "planned",
-      "evidence": []
+      "status": "partial_development_only_2D_projection",
+      "evidence": [
+        "../../dynamic/dev/cavity.mjs",
+        "CFD_DEVELOPMENT.md",
+        "CFD_BENCHMARKS_20261104.json"
+      ],
+      "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
     {
       "id": "Q47",
@@ -546,7 +556,7 @@
     {
       "id": "Q62",
       "requirement": "Codexが独立ブランチ・PRで開発し、Muse完了後に統合",
-      "status": "implemented_pending_final_browser_CI",
+      "status": "implemented_for_this_development_branch",
       "evidence": [
         "STATUS.md",
         "../../dynamic/lab.mjs"
@@ -555,8 +565,13 @@
     {
       "id": "Q63",
       "requirement": "2D層流CFDと、検証済みの限定的乱流モデル",
-      "status": "planned",
-      "evidence": []
+      "status": "partial_development_only_2D_projection",
+      "evidence": [
+        "../../dynamic/dev/cavity.mjs",
+        "CFD_DEVELOPMENT.md",
+        "CFD_BENCHMARKS_20261104.json"
+      ],
+      "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
     {
       "id": "Q64",
@@ -576,7 +591,7 @@
         "STATUS.md",
         "ARCHITECTURE.md"
       ],
-      "remainingOrScope": "伝導/フィン/k(T)等の独立解・保存則・収束を確認。一般CFDの標準基準問題は未完了。"
+      "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
     {
       "id": "Q66",
@@ -608,7 +623,7 @@
     {
       "id": "Q69",
       "requirement": "沸騰の模式アニメーションを初期開発に含める",
-      "status": "implemented_schematic_browser_passed_CI_pending",
+      "status": "implemented_schematic_browser_checked",
       "evidence": [
         "../../dynamic/boiling.mjs",
         "../../tests/dynamic-browser.mjs",

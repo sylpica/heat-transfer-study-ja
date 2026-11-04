@@ -15,9 +15,9 @@ self.onmessage=async({data})=>{
   const maximum=data.dt??model.safeDt;if(!(maximum>0))throw Error('時間刻みは正です。');
   if(Number.isFinite(model.safeDt)&&maximum>model.safeDt*(1+1e-12))throw Error('指定の時間刻みが安定性上限を超えます。');
   let n=0;
-  while(model.time<end-1e-12){
+  while(model.time<end){
    if(token!==generation)return;
-   const now=model.time,dt=Math.min(maximum,end-now);model.step(dt,false);n++;
+   const now=model.time,dt=Math.min(maximum,end-now);model.step(dt,false);if(!(model.time>now))throw Error('時間刻みが浮動小数点で区別できません。');n++;
    if(n>100000)throw Error('一回の計算量が上限を超えました。1コマの時間を短くするか、セル数を減らしてください。');
    if(n%100===0){self.postMessage({id,type:'progress',fraction:(model.time-start)/data.duration});await new Promise(resolve=>setTimeout(resolve,0));}
   }

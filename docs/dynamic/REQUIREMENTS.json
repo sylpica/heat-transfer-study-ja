@@ -211,7 +211,8 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "EXPERIMENT_CONTROLLER.md"
       ]
     },
     {
@@ -254,7 +255,8 @@
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
-        "FIELD_INSPECTION.md"
+        "FIELD_INSPECTION.md",
+        "EXPERIMENT_CONTROLLER.md"
       ]
     },
     {
@@ -300,7 +302,8 @@
       "status": "implemented_for_this_development_branch",
       "evidence": [
         "STATUS.md",
-        "../../dynamic/lab.mjs"
+        "../../dynamic/lab.mjs",
+        "EXPERIMENT_CONTROLLER.md"
       ]
     },
     {
@@ -415,7 +418,8 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "TEMPERATURE_DEPENDENT_CP.md",
-        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json",
+        "EXPERIMENT_CONTROLLER.md"
       ]
     },
     {
@@ -529,7 +533,8 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "EXPERIMENT_CONTROLLER.md"
       ]
     },
     {
@@ -578,7 +583,8 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "EXPERIMENT_CONTROLLER.md"
       ]
     },
     {
@@ -651,7 +657,8 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "EXPERIMENT_CONTROLLER.md"
       ]
     },
     {

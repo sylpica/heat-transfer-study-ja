@@ -1,3 +1,4 @@
+import {Actor} from './actor.mjs';
 import {startBoilingPanel} from './boiling.mjs';
 import {drawFin} from './fin-view.mjs';
 import {linkTermTextNodes} from '../term-links.mjs';
@@ -6,12 +7,8 @@ import {rectangle,circle,transformPolygon} from './geometry.mjs';
 const $=id=>document.getElementById(id),number=id=>{const input=$(id);if(!input.value.trim())throw Error(`${input.labels?.[0]?.textContent||id}を入力してください。`);const n=Number(input.value);if(!Number.isFinite(n))throw Error('有限の数値を入力してください。');return n;},fmt=(v,n=3)=>Number.isFinite(v)?v.toFixed(n):'—';
 const boiling=startBoilingPanel($('boiling-panel'));
 const actors=[];
-class Actor{
- constructor(){this.worker=new Worker(new URL('./worker.mjs',import.meta.url),{type:'module'});this.pending=new Map();this.id=0;actors.push(this);this.worker.onmessage=({data})=>{const p=this.pending.get(data.id);if(!p)return;if(data.type==='progress'){$('progress').value=data.fraction;return;}this.pending.delete(data.id);data.type==='error'?p.reject(Error(data.message)):p.resolve(data);};this.worker.onerror=event=>{for(const p of this.pending.values())p.reject(Error('計算Workerを読み込めませんでした。再読み込みしてください。'));this.pending.clear();event.preventDefault();};}
- request(type,values={}){return new Promise((resolve,reject)=>{const id=++this.id;this.pending.set(id,{resolve,reject});this.worker.postMessage({id,type,...values});});}
- cancel(){this.worker.postMessage({id:++this.id,type:'cancel'});for(const p of this.pending.values())p.reject(Error('cancelled'));this.pending.clear();}
-}
-const actorA=new Actor();let actorB=null;const comparisonActor=()=>actorB||(actorB=new Actor());let selection='heating',configA,configB=null,stateA,stateB,meshA,meshB,fluxA,fluxB,history=[],historyIndex=0,busy=false,modelReady=false,playing=false,version=0,probe={x:.5,y:.5},drawPoints=[],initialScale=[20,60],graphIndex=0;
+function newActor(){const actor=new Actor({progress:fraction=>{$('progress').value=fraction;}});actors.push(actor);return actor;}
+const actorA=newActor();let actorB=null;const comparisonActor=()=>actorB||(actorB=newActor());let selection='heating',configA,configB=null,stateA,stateB,meshA,meshB,fluxA,fluxB,history=[],historyIndex=0,busy=false,modelReady=false,playing=false,version=0,probe={x:.5,y:.5},drawPoints=[],initialScale=[20,60],graphIndex=0;
 const media=matchMedia('(prefers-color-scheme:dark)');
 function theme(){document.body.dataset.theme=$('theme').value;render();}media.addEventListener('change',theme);$('theme').onchange=theme;
 function error(e){$('error').hidden=false;$('error').textContent=e.message;playing=false;$('status').textContent='計算停止。表示中は最後の有効な状態です。';}

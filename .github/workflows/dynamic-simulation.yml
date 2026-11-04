@@ -17,6 +17,7 @@ jobs:
           node-version: '22'
       - run: npm test
       - run: node scripts/dynamic-benchmarks.mjs
+      - run: node scripts/dynamic-radiation-benchmarks.mjs
       - run: npm run build:public
   browser:
     runs-on: ubuntu-24.04
@@ -34,6 +35,10 @@ jobs:
       - run: npx playwright install --with-deps ${{ matrix.engine }}
       - run: npm run build:public
       - run: node tests/dynamic-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - run: node tests/dynamic-radiation-browser.mjs
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''

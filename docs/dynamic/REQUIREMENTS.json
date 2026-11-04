@@ -53,7 +53,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "公開候補は伝導/単一フィン/黒い周囲への放射。強制/自然対流の一般2D CFDは未完了。"
     },
@@ -102,7 +104,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -131,7 +135,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -167,7 +173,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -221,7 +229,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -230,7 +240,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -303,7 +315,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -495,7 +509,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -541,7 +557,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -589,7 +607,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -599,7 +619,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -645,7 +667,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIATION_NETWORK.md",
+        "RADIATION_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
     },

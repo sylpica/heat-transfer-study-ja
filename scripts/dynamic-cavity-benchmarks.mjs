@@ -7,7 +7,7 @@ for(const n of [16,32]){
  const s=advance(m,30),samples=[.2813,.5,.6172,.8516].map(y=>{const index=y*n-.5,j=Math.floor(index),a=index-j,u=(1-a)*s.u[j*(n+1)+n/2]+a*s.u[(j+1)*(n+1)+n/2];return {y,u};});
  out.lid.push({n,time:s.time,samples,divergence:s.divergence,energyError:s.energyError,pressureResidual:s.pressureResidual,pressureRhsNorm:s.pressureRhsNorm,steps:s.steps});
 }
-for(const n of [16,32]){
+for(const n of full?[16,32,48]:[16,32]){
  const m=createCavity({nx:n,ny:n,width:1,height:1,rho:1,cp:1,nu:.71,alpha:1,initial:300,leftTemperature:300.5,rightTemperature:299.5,gravityBeta:710,beta:.001,referenceTemperature:300,scalarScheme:'central'});
  const s=advance(m,1);out.natural.push({n,time:s.time,rayleigh:1000,prandtl:.71,nusselt:s.nusselt,divergence:s.divergence,energyError:s.energyError,pressureResidual:s.pressureResidual,pressureRhsNorm:s.pressureRhsNorm,steps:s.steps});
 }

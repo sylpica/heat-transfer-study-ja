@@ -17,10 +17,10 @@ self.onmessage=async({data})=>{
   while(model.time<end-1e-12){
    if(token!==generation)return;
    const now=model.time,dt=Math.min(maximum,end-now);model.step(dt,false);n++;
-   if(n>100000)throw Error('一回の計算量が上限を超えました。表示間隔か格子を小さくしてください。');
+   if(n>100000)throw Error('一回の計算量が上限を超えました。1コマの時間を短くするか、セル数を減らしてください。');
    if(n%100===0){self.postMessage({id,type:'progress',fraction:(model.time-start)/data.duration});await new Promise(resolve=>setTimeout(resolve,0));}
   }
   const snapshot=model.snapshot();if(snapshot.relativeEnergyError>1e-8)throw Error('エネルギー収支の誤差が監視上限を超えたため停止しました。');
-  inflight=null;self.postMessage({id,type:'result',snapshot,flux:model.flux()});
+  const flux=model.flux();inflight=null;self.postMessage({id,type:'result',snapshot,flux});
  }catch(error){rollback();generation++;self.postMessage({id,type:'error',message:error.message});}
 };

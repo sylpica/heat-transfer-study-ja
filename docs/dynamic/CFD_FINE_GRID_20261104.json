@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-04",
+  "stage": "development_only_not_public",
+  "finestSourceCommit": "c4db4faa2604b098debd7a5fd2087130ac01c6de",
+  "coarseSourceScope": "16/32 values from prior development benchmark; density=1 has identical arithmetic through the density-normalization change. Mixed historical runs, not a same-SHA full-grid approval. Reproduce with --full.",
+  "conditions": {
+    "rayleigh": 1000,
+    "prandtl": 0.71,
+    "scalarScheme": "central",
+    "width": 1,
+    "height": 1,
+    "rho": 1,
+    "cp": 1,
+    "nu": 0.71,
+    "alpha": 1,
+    "initial": 300,
+    "leftTemperature": 300.5,
+    "rightTemperature": 299.5,
+    "gravityBeta": 710,
+    "beta": 0.001,
+    "referenceTemperature": 300
+  },
+  "grid": [
+    {
+      "n": 16,
+      "time": 1,
+      "nusselt": 1.1263186929272706
+    },
+    {
+      "n": 32,
+      "time": 1,
+      "nusselt": 1.1199427644323805
+    },
+    {
+      "n": 48,
+      "time": 1,
+      "nusselt": 1.118748501478649
+    }
+  ],
+  "finestRawMeasurements": [
+    {
+      "n": 48,
+      "time": 0.4999999999999083,
+      "nusselt": 1.1187481967500617,
+      "divergence": 3.729017095110976e-11,
+      "pressureResidual": 1.3252177812270168e-05,
+      "energyError": -1.814351138465142e-14,
+      "maxU": 3.651397113232097,
+      "maxV": 3.7048412927628247,
+      "steps": 11520,
+      "elapsedMs": 414814.893682
+    },
+    {
+      "n": 48,
+      "time": 1,
+      "nusselt": 1.118748501478649,
+      "divergence": 1.531130777721046e-11,
+      "pressureResidual": 1.053600168723241e-06,
+      "energyError": 7.095311992253409e-13,
+      "maxU": 3.6513899858885837,
+      "maxV": 3.704834256622588,
+      "steps": 23040,
+      "elapsedMs": 458369.009671
+    }
+  ],
+  "nonuniformRichardson": {
+    "observedOrder": 1.9809900237932898,
+    "extrapolatedNusselt": 1.1177797014717092,
+    "fineDifferenceFromExtrapolation": 0.000968800006939663,
+    "assumptions": "single leading C*h^p term fitted to three points; not proof of asymptotic range or whole-field accuracy"
+  },
+  "referenceScope": "Public OpenLB transcription quotes 1.117; often quoted 1.118 has not been checked against the primary table. This fit must not choose or certify the reference."
+}

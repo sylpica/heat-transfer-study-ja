@@ -83,3 +83,16 @@ test('moving a heat-source region does not repaint the material or change its he
  const m=createThermal(config({materials:[{k:1,rho:1,cp:1},{k:2,rho:2,cp:2}],regions:[{points:rectangle(.5,0,.5,1),material:1},{points:rectangle(.6,0,.2,1),source:4}]}));
  assert.deepEqual(m.mesh.material, [0,0,0,0,0,1,1,1,1,1]);const dt=.0001,s=m.step(dt);near(s.temperature[6],300+dt,1e-10);near(s.temperature[7],300+dt,1e-10);near(s.temperature[5],300,1e-10);near(s.energyError,0,1e-9);
 });
+
+test('displayed cell flux includes both the wall and internal faces with consistent Cartesian signs',()=>{
+ for(const [side,nx,ny,index,key,expected] of [['left',10,1,0,'x',200],['right',10,1,9,'x',-200],['bottom',1,10,0,'y',200],['top',1,10,9,'y',-200]]){
+  const m=createThermal(config({nx,ny,boundaries:{[side]:{type:'temperature',temperature:320}}}));near(m.flux()[key][index],expected,1e-10);
+ }
+});
+
+ test('staircase outlines reject area-dependent flux, convection and radiation until surface-normal validation',()=>{
+ for(const bc of [{type:'flux',flux:1},{type:'convection',h:2,temperature:320},{type:'radiation',emissivity:.8,temperature:320}]){
+  for(const placement of [{edge:bc},{boundaries:{left:bc}}])assert.throws(()=>createThermal(config({nx:20,ny:20,outline:circle(.5,.5,.5),...placement})),/表面積・法線/);
+ }
+ const m=createThermal(config({nx:20,ny:20,outline:circle(.5,.5,.3)}));near(advance(m,.001).max,300);
+});

@@ -11,6 +11,6 @@ export function finFaces(temperature,{width,height,depth},yaw,pitch){
  return faces.sort((a,b)=>a.depth-b.depth);
 }
 export function drawFin(canvas,temperature,dimensions,{yaw=.5,pitch=.4,zoom=1,range=[20,60]}={}){
- const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,scale=Math.min(W,H)*.8/Math.max(dimensions.width,dimensions.height,dimensions.depth)*zoom;
- ctx.clearRect(0,0,W,H);for(const face of finFaces(temperature,dimensions,yaw,pitch)){const t=face.temperature-273.15,position=Math.max(0,Math.min(1,(t-range[0])/(range[1]-range[0])));ctx.fillStyle=`hsl(${240*(1-position)} 80% 45%)`;ctx.strokeStyle='#30434a';ctx.lineWidth=.5;ctx.beginPath();face.points.forEach(([x,y],i)=>i?ctx.lineTo(W/2+x*scale,H/2-y*scale):ctx.moveTo(W/2+x*scale,H/2-y*scale));ctx.closePath();ctx.fill();ctx.stroke();}
+ const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,faces=finFaces(temperature,dimensions,yaw,pitch),points=faces.flatMap(f=>f.points),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),scale=.75*Math.min(W/(Math.max(...xs)-Math.min(...xs)),H/(Math.max(...ys)-Math.min(...ys)))*zoom;
+ ctx.clearRect(0,0,W,H);for(const face of faces){const t=face.temperature-273.15,position=Math.max(0,Math.min(1,(t-range[0])/(range[1]-range[0])));ctx.fillStyle=`hsl(${240*(1-position)} 80% 45%)`;ctx.strokeStyle='#30434a';ctx.lineWidth=.5;ctx.beginPath();face.points.forEach(([x,y],i)=>i?ctx.lineTo(W/2+x*scale,H/2-y*scale):ctx.moveTo(W/2+x*scale,H/2-y*scale));ctx.closePath();ctx.fill();ctx.stroke();}
 }

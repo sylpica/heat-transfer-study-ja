@@ -21,3 +21,7 @@ test('temperature-dependent conduction coupled to convection and radiation match
   const q=m.flux().x;assert.ok(Math.abs(q[Math.floor(q.length/2)]-expectedFlux)<.03);assert.ok(Math.abs(m.snapshot().energyError)<1e-8);
  }
 });
+
+test('property endpoint reconstruction accepts only floating-point roundoff, never meaningful extrapolation',()=>{
+ const p=positiveTable([[293.15,2],[333.15,4]]);assert.equal(p.at(333.15+4*Number.EPSILON*333.15),4);assert.equal(p.at(293.15-4*Number.EPSILON*293.15),2);for(const T of [333.15+1e-7,293.15-1e-7])assert.throws(()=>p.at(T),/外挿/);
+});

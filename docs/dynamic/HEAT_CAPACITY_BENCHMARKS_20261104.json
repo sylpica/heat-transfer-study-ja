@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-04",
+  "scope": "Mathematical cp(T)=2+0.01(T-300) J/(kg K), not a real material dataset. Constant density, no phase change.",
+  "uniform": [
+    {
+      "initialK": 300,
+      "sourceWPerM3": 10,
+      "time": 2,
+      "internalStepFactor": 1,
+      "exactK": 309.7617696340303,
+      "maxErrorK": 2.2737367544323206e-13,
+      "energyErrorJ": -4.298783551348606e-13,
+      "netInputJ": 19.999999999999964
+    },
+    {
+      "initialK": 300,
+      "sourceWPerM3": 10,
+      "time": 2,
+      "internalStepFactor": 0.25,
+      "exactK": 309.7617696340303,
+      "maxErrorK": 9.094947017729282e-13,
+      "energyErrorJ": -1.5099033134902129e-12,
+      "netInputJ": 19.999999999999616
+    },
+    {
+      "initialK": 340,
+      "sourceWPerM3": -5,
+      "time": 2,
+      "internalStepFactor": 1,
+      "exactK": 335.79652245103193,
+      "maxErrorK": 5.684341886080802e-14,
+      "energyErrorJ": 1.3855583347321954e-13,
+      "netInputJ": -9.999999999999982
+    },
+    {
+      "initialK": 340,
+      "sourceWPerM3": -5,
+      "time": 2,
+      "internalStepFactor": 0.25,
+      "exactK": 335.79652245103193,
+      "maxErrorK": 1.8189894035458565e-12,
+      "energyErrorJ": -4.455102953215828e-12,
+      "netInputJ": -9.999999999999808
+    }
+  ],
+  "insulatedEquilibrium": {
+    "time": 12,
+    "exactK": 320.9072203437452,
+    "temperatureK": [
+      320.9072203437454,
+      320.9072203437449
+    ],
+    "maxErrorK": 3.410605131648481e-13,
+    "energyErrorJ": -1.7053025658242404e-13,
+    "arithmeticMeanInitialK": 320
+  },
+  "passed": true
+}

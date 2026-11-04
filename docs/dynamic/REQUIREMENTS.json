@@ -74,7 +74,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "TEMPERATURE_DEPENDENT_CP.md",
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -125,7 +127,9 @@
       "evidence": [
         "../../dynamic/properties.mjs",
         "../../tests/dynamic-properties.test.mjs",
-        "STATUS.md"
+        "STATUS.md",
+        "TEMPERATURE_DEPENDENT_CP.md",
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "金属3種の20℃参考値、手動定数とk(T)の範囲内補間。樹脂/断熱材/流体とρ/cpの温度依存は未実装。"
     },
@@ -137,7 +141,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "TEMPERATURE_DEPENDENT_CP.md",
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -175,7 +181,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "TEMPERATURE_DEPENDENT_CP.md",
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -401,7 +409,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "TEMPERATURE_DEPENDENT_CP.md",
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -491,7 +501,9 @@
       "evidence": [
         "../../dynamic/properties.mjs",
         "../../tests/dynamic-properties.test.mjs",
-        "STATUS.md"
+        "STATUS.md",
+        "TEMPERATURE_DEPENDENT_CP.md",
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -609,7 +621,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "TEMPERATURE_DEPENDENT_CP.md",
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },

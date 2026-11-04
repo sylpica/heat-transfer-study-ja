@@ -18,6 +18,7 @@ jobs:
       - run: npm test
       - run: node scripts/dynamic-benchmarks.mjs
       - run: node scripts/dynamic-radiation-benchmarks.mjs
+      - run: node scripts/dynamic-heat-capacity-benchmarks.mjs
       - run: npm run build:public
   browser:
     runs-on: ubuntu-24.04

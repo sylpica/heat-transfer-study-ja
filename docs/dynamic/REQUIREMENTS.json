@@ -54,7 +54,8 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md"
-      ]
+      ],
+      "remainingOrScope": "公開候補は伝導/単一フィン/黒い周囲への放射。強制/自然対流の一般2D CFDは未完了。"
     },
     {
       "id": "Q7",
@@ -113,9 +114,11 @@
       "requirement": "物性プリセット、手動入力、温度依存物性",
       "status": "partial",
       "evidence": [
-        "STATUS.md",
-        "ARCHITECTURE.md"
-      ]
+        "../../dynamic/properties.mjs",
+        "../../tests/dynamic-properties.test.mjs",
+        "STATUS.md"
+      ],
+      "remainingOrScope": "金属3種の20℃参考値、手動定数とk(T)の範囲内補間。樹脂/断熱材/流体とρ/cpの温度依存は未実装。"
     },
     {
       "id": "Q14",
@@ -259,7 +262,8 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md"
-      ]
+      ],
+      "remainingOrScope": "既存教材/ガイド/用語へのリンク。節/問題の条件の自動受け渡しは未完了。"
     },
     {
       "id": "Q30",
@@ -350,7 +354,8 @@
         "../../dynamic/dev/channel.mjs",
         "../../tests/dynamic-channel.test.mjs",
         "STATUS.md"
-      ]
+      ],
+      "remainingOrScope": "開発用の発達流路のみ。一般2D圧力速度連成/乱流は未実装・非公開。"
     },
     {
       "id": "Q40",
@@ -368,7 +373,8 @@
       "evidence": [
         "../../dynamic/fin-view.mjs",
         "STATUS.md"
-      ]
+      ],
+      "remainingOrScope": "単一矩形フィンの1D解を3D形状へ配置。ヒートシンク全体や3D解析は未完了。"
     },
     {
       "id": "Q42",
@@ -459,8 +465,9 @@
       "requirement": "物性プリセット・手動設定・温度依存物性",
       "status": "partial",
       "evidence": [
-        "STATUS.md",
-        "ARCHITECTURE.md"
+        "../../dynamic/properties.mjs",
+        "../../tests/dynamic-properties.test.mjs",
+        "STATUS.md"
       ]
     },
     {
@@ -515,7 +522,8 @@
       "id": "Q59",
       "requirement": "対応PC向けの高性能GPU解析",
       "status": "planned",
-      "evidence": []
+      "evidence": [],
+      "remainingOrScope": "GPU経路は未実装。現実装はCPU。"
     },
     {
       "id": "Q60",
@@ -557,7 +565,8 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md"
-      ]
+      ],
+      "remainingOrScope": "閉輪郭と交差/分断/範囲外等を検査。境界適合メッシュと複雑形状の一般保証は未完了。"
     },
     {
       "id": "Q65",
@@ -566,7 +575,8 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md"
-      ]
+      ],
+      "remainingOrScope": "伝導/フィン/k(T)等の独立解・保存則・収束を確認。一般CFDの標準基準問題は未完了。"
     },
     {
       "id": "Q66",
@@ -621,7 +631,8 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md"
-      ]
+      ],
+      "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
     },
     {
       "id": "Q72",
@@ -630,7 +641,8 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md"
-      ]
+      ],
+      "remainingOrScope": "PR18へ段階保存し、全要求は継続中。"
     }
   ]
 }

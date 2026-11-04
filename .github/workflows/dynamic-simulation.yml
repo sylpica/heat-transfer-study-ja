@@ -78,6 +78,8 @@ jobs:
           node scripts/dynamic-manufactured-benchmarks.mjs --full --multigrid | tee dynamic-manufactured-multigrid-results.json
       - name: Separate pressure sensitivity without changing its reference amplitude
         run: node scripts/dynamic-pressure-sensitivity.mjs | tee dynamic-pressure-sensitivity-results.json
+      - name: Reproduce the one-step pressure component diagnostic
+        run: node scripts/dynamic-pressure-components.mjs | tee dynamic-pressure-components-results.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -88,4 +90,5 @@ jobs:
             dynamic-cfd-multigrid-results.json
             dynamic-manufactured-multigrid-results.json
             dynamic-pressure-sensitivity-results.json
+            dynamic-pressure-components-results.json
           retention-days: 30

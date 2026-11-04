@@ -36,3 +36,15 @@ test('manufactured-law identity and declared PDE parameters prevent wrong-law re
  assert.throws(()=>createCavity({...cfg,nu:.5},manufacturedCavity()),/一致/);assert.throws(()=>createCavity({...cfg,width:1.5},manufacturedCavity()),/一致/);assert.throws(()=>manufacturedCavity({velocityAmplitude:NaN}));
  const custom={velocity:()=>[0,0],temperature:()=>300,pressure:()=>0,bodyForce:()=>[0,0],heatSource:()=>1},one=createCavity(cfg,custom),two=createCavity(cfg,{...custom,heatSource:()=>2}),seed=one.snapshot();one.step(one.safeDt);assert.throws(()=>two.restore(one.snapshot()),/一致/);one.restore(seed);assert.deepEqual(one.snapshot(),seed);
 });
+test('continuous momentum components reconstruct the PDE and retain independent amplitude scaling',()=>{
+ for(const point of [[.13,.37,.019],[.66,.28,.01],[.45,.79,.023]]){
+  const rho=2,nu=.3,a=manufacturedCavity({rho,nu}).components(...point),b=manufacturedCavity({rho,nu,velocityAmplitude:.1}).components(...point);
+  for(let k=0;k<2;k++){
+   assert.ok(Math.abs(a.bodyForce[k]-(a.velocityTimeDerivative[k]+a.advection[k]+a.pressureGradient[k]/rho-nu*a.laplacianVelocity[k]))<1e-12);
+   assert.ok(Math.abs(b.advection[k]-.01*a.advection[k])<1e-13);
+   assert.ok(Math.abs(b.laplacianVelocity[k]-.1*a.laplacianVelocity[k])<1e-13);
+   assert.equal(b.pressureGradient[k],a.pressureGradient[k]);
+  }
+  assert.deepEqual(manufacturedCavity({rho,nu}).fields(...point),Object.fromEntries(Object.entries(a).filter(([key])=>!['advection','laplacianVelocity','pressureGradient','velocityTimeDerivative'].includes(key))));
+ }
+});

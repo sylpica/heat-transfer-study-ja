@@ -38,7 +38,7 @@ program = """
 import {readFileSync} from 'node:fs';
 import {manufacturedCavity} from './dynamic/dev/manufactured-cavity.mjs';
 const requests=JSON.parse(readFileSync(0,'utf8'));
-console.log(JSON.stringify(requests.map(r=>manufacturedCavity(r.parameters).fields(...r.point))));
+console.log(JSON.stringify(requests.map(r=>manufacturedCavity(r.parameters).components(...r.point))));
 """
 actual = json.loads(subprocess.check_output(
     ['node', '--input-type=module', '-e', program], input=json.dumps(requests),
@@ -47,8 +47,8 @@ max_difference = 0.0
 for request, row in zip(requests, actual):
     substitutions = dict(zip([x, y, t], request['point']))
     substitutions.update({symbol: request['parameters'][str(symbol)] for symbol in [rho, cp, nu, alpha, velocityAmplitude]})
-    expressions = [u, v, p, T, *force, heat]
-    values = [*row['velocity'], row['pressure'], row['temperature'], *row['bodyForce'], row['heatSource']]
+    expressions = [u, v, p, T, *force, heat, u*s.diff(u,x)+v*s.diff(u,y), u*s.diff(v,x)+v*s.diff(v,y), s.diff(u,x,2)+s.diff(u,y,2), s.diff(v,x,2)+s.diff(v,y,2), s.diff(p,x), s.diff(p,y), s.diff(u,t), s.diff(v,t)]
+    values = [*row['velocity'], row['pressure'], row['temperature'], *row['bodyForce'], row['heatSource'], *row['advection'], *row['laplacianVelocity'], *row['pressureGradient'], *row['velocityTimeDerivative']]
     for expression, value in zip(expressions, values):
         expected = float(expression.subs(substitutions))
         difference = abs(value-expected)

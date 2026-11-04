@@ -45,11 +45,17 @@ jobs:
           BROWSER_EXECUTABLE: ''
   cfd-development-benchmarks:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Reproduce restricted cavity benchmarks (does not publish the model)
-        run: node scripts/dynamic-cavity-benchmarks.mjs
+        run: node scripts/dynamic-cavity-benchmarks.mjs --full | tee dynamic-cfd-results.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dynamic-cfd-${{ github.sha }}-${{ github.run_id }}
+          path: dynamic-cfd-results.json
+          retention-days: 30

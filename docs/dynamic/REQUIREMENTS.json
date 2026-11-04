@@ -183,7 +183,8 @@
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
         "TEMPERATURE_DEPENDENT_CP.md",
-        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json",
+        "FIELD_INSPECTION.md"
       ]
     },
     {
@@ -228,7 +229,8 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "FIELD_INSPECTION.md"
       ]
     },
     {
@@ -239,7 +241,8 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "FIELD_INSPECTION.md"
       ]
     },
     {
@@ -250,7 +253,8 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "FIELD_INSPECTION.md"
       ]
     },
     {
@@ -473,7 +477,8 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "FIELD_INSPECTION.md"
       ]
     },
     {
@@ -482,7 +487,8 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "FIELD_INSPECTION.md"
       ]
     },
     {
@@ -532,7 +538,8 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "FIELD_INSPECTION.md"
       ]
     },
     {

@@ -2,21 +2,22 @@
 const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),maxAbs=a=>Math.max(...a.map(Math.abs));
 export function projectFaces(us,vs,{nx,ny,dx,dy,rho=1,dt,tolerance=1e-10,maxIterations=2000,pressure}){
  if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<2||ny<2||![dx,dy,rho,dt].every(x=>Number.isFinite(x)&&x>0)||us.length!==(nx+1)*ny||vs.length!==nx*(ny+1)||[...us,...vs].some(x=>!Number.isFinite(x)))throw Error('投影法の格子・速度・刻みが不正です。');
- const N=nx*ny,U=(i,j)=>j*(nx+1)+i,V=(i,j)=>j*nx+i,diagonal=new Float64Array(N),rhs=new Float64Array(N),p=pressure?Float64Array.from(pressure):new Float64Array(N);
+ const N=nx*ny,U=(i,j)=>j*(nx+1)+i,V=(i,j)=>j*nx+i,diagonal=new Float64Array(N),rhs=new Float64Array(N),p=pressure?Float64Array.from(pressure,x=>x/rho):new Float64Array(N);
  for(let j=0;j<ny;j++)if(Math.abs(us[U(0,j)])>1e-12||Math.abs(us[U(nx,j)])>1e-12)throw Error('閉境界の法線速度がゼロではありません。');for(let i=0;i<nx;i++)if(Math.abs(vs[V(i,0)])>1e-12||Math.abs(vs[V(i,ny)])>1e-12)throw Error('閉境界の法線速度がゼロではありません。');
- if(pressure&&(pressure.length!==N||pressure.some(x=>!Number.isFinite(x))))throw Error('圧力場のセル数/値が不正です。');if(!Number.isFinite(tolerance)||tolerance<=0||!Number.isInteger(maxIterations)||maxIterations<1)throw Error('圧力反復の許容値/上限が不正です。');
+ if(pressure&&(pressure.length!==N||pressure.some(x=>!Number.isFinite(x))||p.some(x=>!Number.isFinite(x))))throw Error('圧力場のセル数/値が不正です。');if(!Number.isFinite(tolerance)||tolerance<=0||!Number.isInteger(maxIterations)||maxIterations<1)throw Error('圧力反復の許容値/上限が不正です。');
  function apply(x){const y=new Float64Array(N);for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const n=j*nx+i;if(i)y[n]+=(x[n]-x[n-1])/dx**2;if(i+1<nx)y[n]+=(x[n]-x[n+1])/dx**2;if(j)y[n]+=(x[n]-x[n-nx])/dy**2;if(j+1<ny)y[n]+=(x[n]-x[n+nx])/dy**2;}return y;}
  function zeroMean(x){const mean=x.reduce((a,b)=>a+b,0)/N;for(let i=0;i<N;i++)x[i]-=mean;return x;}
- for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const n=j*nx+i;rhs[n]=-rho/dt*((us[U(i+1,j)]-us[U(i,j)])/dx+(vs[V(i,j+1)]-vs[V(i,j)])/dy);diagonal[n]=(Number(i>0)+Number(i+1<nx))/dx**2+(Number(j>0)+Number(j+1<ny))/dy**2;}
+ for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const n=j*nx+i;rhs[n]=-1/dt*((us[U(i+1,j)]-us[U(i,j)])/dx+(vs[V(i,j+1)]-vs[V(i,j)])/dy);diagonal[n]=(Number(i>0)+Number(i+1<nx))/dx**2+(Number(j>0)+Number(j+1<ny))/dy**2;}
  if(rhs.some(x=>!Number.isFinite(x))||diagonal.some(x=>!Number.isFinite(x)||x<=0))throw Error('圧力方程式が浮動小数点の範囲を超えています。');zeroMean(rhs);zeroMean(p);let Ap=apply(p),r=Float64Array.from(rhs,(b,i)=>b-Ap[i]),z=zeroMean(Float64Array.from(r,(x,i)=>x/diagonal[i])),direction=new Float64Array(z),rz=dot(r,z),iterations=0;
  const threshold=Math.max(1e-12,tolerance*Math.sqrt(dot(rhs,rhs)));
  while(Math.sqrt(dot(r,r))>threshold){
   if(iterations++>=maxIterations)throw Error('圧力Poisson反復が収束しませんでした。');const Ad=apply(direction),denom=dot(direction,Ad);if(!(denom>0))throw Error('圧力反復の行列が不正です。');const a=rz/denom;
   for(let i=0;i<N;i++){p[i]+=a*direction[i];r[i]-=a*Ad[i];}zeroMean(r);z=zeroMean(Float64Array.from(r,(x,i)=>x/diagonal[i]));const next=dot(r,z),beta=next/rz;for(let i=0;i<N;i++)direction[i]=z[i]+beta*direction[i];rz=next;
  }
- const u=new Float64Array(us),v=new Float64Array(vs);for(let j=0;j<ny;j++)for(let i=1;i<nx;i++)u[U(i,j)]-=dt/rho*(p[j*nx+i]-p[j*nx+i-1])/dx;for(let j=1;j<ny;j++)for(let i=0;i<nx;i++)v[V(i,j)]-=dt/rho*(p[j*nx+i]-p[(j-1)*nx+i])/dy;
+ const u=new Float64Array(us),v=new Float64Array(vs);for(let j=0;j<ny;j++)for(let i=1;i<nx;i++)u[U(i,j)]-=dt*(p[j*nx+i]-p[j*nx+i-1])/dx;for(let j=1;j<ny;j++)for(let i=0;i<nx;i++)v[V(i,j)]-=dt*(p[j*nx+i]-p[(j-1)*nx+i])/dy;
  let divergence=0;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++)divergence=Math.max(divergence,Math.abs((u[U(i+1,j)]-u[U(i,j)])/dx+(v[V(i,j+1)]-v[V(i,j)])/dy));
- return {u,v,pressure:Array.from(zeroMean(p)),iterations,residual:Math.sqrt(dot(r,r)),rhsNorm:Math.sqrt(dot(rhs,rhs)),divergence};
+ const physicalGaugePressure=Array.from(zeroMean(p),x=>x*rho);if(physicalGaugePressure.some(x=>!Number.isFinite(x)))throw Error('圧力の値が数値範囲を超えました。');
+ return {u,v,pressure:physicalGaugePressure,iterations,residual:Math.sqrt(dot(r,r)),rhsNorm:Math.sqrt(dot(rhs,rhs)),divergence};
 }
 export function createCavity(c){
  c=structuredClone(c);
@@ -32,7 +33,7 @@ export function createCavity(c){
  const Ra=hot!==null&&cold!==null?Math.abs(gb*(hot-cold)*H**3/(nu*alpha)):0;if(!Number.isFinite(Ra)||Ra>1000*(1+1e-12))throw Error('開発用自然対流はRa≤1000の検証に限定しています。');
  let u=new Float64Array((nx+1)*ny),v=new Float64Array(nx*(ny+1)),T=new Float64Array(nx*ny).fill(c.initial),pressure=Array(nx*ny).fill(0),time=0,steps=0,netInput=0,projection=null;
  const U=(i,j)=>j*(nx+1)+i,V=(i,j)=>j*nx+i,k=rho*cp*alpha,cellCapacity=rho*cp*dx*dy,initialEnergy=cellCapacity*T.reduce((s,t)=>s+t-273.15,0);
- if(!Number.isFinite(k)||!Number.isFinite(cellCapacity)||cellCapacity<=0||!Number.isFinite(initialEnergy))throw Error('物性/セル熱容量が数値範囲を超えています。');
+ if(!Number.isFinite(k)||k<=0||!Number.isFinite(cellCapacity)||cellCapacity<=0||!Number.isFinite(initialEnergy))throw Error('物性/セル熱容量が数値範囲を超えています。');
  function timestep(){const speed=Math.max(Math.abs(lid),maxAbs(u),maxAbs(v),1e-9),body=gb?Math.sqrt(Math.abs(gb)*Math.max(Math.abs((hot??Tref)-Tref),Math.abs((cold??Tref)-Tref))*H):0;return Math.min(.2/(Math.max(nu,alpha)*(1/dx**2+1/dy**2)),.4/(Math.max(speed,body)*(1/dx+1/dy)));}
  function snapshot(){const energy=cellCapacity*T.reduce((s,t)=>s+t-273.15,0),meanHot=hot===null?0:T.reduce((s,t,n)=>s+(n%nx===0?2*k*(hot-t)/dx:0),0)/ny;
   return {time,steps,temperature:Array.from(T),u:Array.from(u),v:Array.from(v),pressure:[...pressure],energy,netInput,energyError:energy-initialEnergy-netInput,divergence:projection?.divergence??0,pressureIterations:projection?.iterations??0,pressureResidual:projection?.residual??0,pressureRhsNorm:projection?.rhsNorm??0,scalarScheme:c.scalarScheme||'upwind',nusselt:hot!==null&&cold!==null&&hot!==cold?meanHot*H/(k*(hot-cold)):null,safeDt:timestep()};}

@@ -22,3 +22,8 @@ test('invalid pressure fields, normal wall flow, unknown discretization and unve
 test('without buoyancy or lid forcing the coupled 2D energy operator recovers conduction Nu=1 and the linear profile',()=>{
  const n=8,m=createCavity({...base,leftTemperature:300.5,rightTemperature:299.5});while(m.time<100)m.step(Math.min(m.safeDt,100-m.time),false);const s=m.snapshot();assert.ok(Math.abs(s.nusselt-1)<1e-7);assert.ok(s.u.every(v=>v===0)&&s.v.every(v=>v===0));for(let j=0;j<n;j++)for(let i=0;i<n;i++)assert.ok(Math.abs(s.temperature[j*n+i]-(300.5-(i+.5)/n))<1e-7);assert.ok(Math.abs(s.energyError)<1e-9);
 });
+
+test('projection velocity is density-invariant while physical gauge pressure scales with density',()=>{
+ const nx=8,ny=8,u=new Float64Array(72),v=new Float64Array(72);for(let j=0;j<ny;j++)for(let i=1;i<nx;i++)u[j*9+i]=Math.sin(Math.PI*i/nx)*Math.sin(Math.PI*(j+.5)/ny);
+ const input={nx,ny,dx:.125,dy:.125,dt:.01},normal=projectFaces(u,v,{...input,rho:1});for(const rho of [1e-18,1e-10,1000]){const next=projectFaces(u,v,{...input,rho});assert.ok(next.divergence<1e-8);next.u.forEach((x,i)=>assert.ok(Math.abs(x-normal.u[i])<1e-12));next.v.forEach((x,i)=>assert.ok(Math.abs(x-normal.v[i])<1e-12));next.pressure.forEach((x,i)=>assert.ok(Math.abs(x/rho-normal.pressure[i])<1e-10));}
+});

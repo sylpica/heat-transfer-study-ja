@@ -13,18 +13,27 @@ export function scalarRates({temperature,u,nx,ny,dx,dy,depth,rho,cp,k}){
  return Float64Array.from(P,v=>v/C);
 }
 export function createDevelopedChannel(c){
+ c=structuredClone(c);
+ if(c.outline||c.regions?.length||c.boundaries)throw Error('この発達流モデルの境界は平行平板のno-slip・断熱と温度の周期条件に固定されています。');
  const {nx,ny}=c;if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<4||ny<8||nx>128||ny>128)throw Error('流路格子は横4〜128、縦8〜128です。');
  for(const key of ['width','height','depth','rho','cp','k','nu'])finite(c[key],key,true);const G=finite(c.acceleration,'圧力勾配に相当する加速度'),L=c.width,H=c.height,dx=L/nx,dy=H/ny,z=c.depth,rho=c.rho,cp=c.cp,alpha=c.k/(rho*cp),N=nx*ny,V=dx*dy*z;
  const steadyRe=Math.abs(G)*H**3/(6*c.nu**2);if(!Number.isFinite(steadyRe)||steadyRe>1000)throw Error('この発達層流モデルの保守的なRe_Dh上限1000を超えます。');
- const u=Float64Array.from(c.initialVelocity??Array(ny).fill(0));if(u.length!==ny||u.some(v=>!Number.isFinite(v)))throw Error('初期速度分布が不正です。');
- const T=Float64Array.from(Array.isArray(c.initial)?c.initial:Array(N).fill(c.initial));if(T.length!==N||T.some(v=>!Number.isFinite(v)||v<=0))throw Error('温度は正の絶対温度[K]です。');
- const uBound=Math.max(...u.map(Math.abs),1.1*Math.abs(G)*H*H/(8*c.nu));if(2*H*uBound/c.nu>1600)throw Error('初期速度がこの層流モデルの範囲を超えます。');
- const safeDt=.8/Math.max(3*c.nu/dy**2,2*alpha/dx**2+2*alpha/dy**2+uBound/dx);
- let time=0,steps=0,momentumInput=0,lastDt=0;const mass=nx*rho*V,initialMomentum=mass*u.reduce((s,v)=>s+v,0),initialEnergy=rho*cp*V*T.reduce((s,v)=>s+v-273.15,0);
+ for(const [v,name]of[[dx,'横セル幅'],[dy,'縦セル幅'],[V,'セル体積'],[alpha,'熱拡散率'],[rho*cp*V,'セル熱容量']])finite(v,name,true);
+ const initialU=c.initialVelocity??Array(ny).fill(0);if(!Array.isArray(initialU)||initialU.length!==ny||initialU.some(v=>typeof v!=='number'||!Number.isFinite(v)))throw Error('初期速度分布が不正です。');const u=Float64Array.from(initialU);
+ const initialT=Array.isArray(c.initial)?c.initial:Array(N).fill(c.initial);if(initialT.length!==N||initialT.some(v=>typeof v!=='number'||!Number.isFinite(v)||v<=0))throw Error('温度は正の絶対温度[K]です。');const T=Float64Array.from(initialT);
+ // u = steady + exp(Lt)(initial-steady). The sum, rather than the maximum
+ // of initial/steady speeds, bounds startup overshoot of a nonzero profile.
+ const uBound=finite(Math.max(...u.map(Math.abs))+1.1*Math.abs(G)*H*H/(8*c.nu),'移流速度の上界');if(2*H*uBound/c.nu>1800)throw Error('初期速度と駆動を合わせた速度がこの層流モデルの範囲を超えます。');
+ const safeDt=finite(.8/Math.max(3*c.nu/dy**2,2*alpha/dx**2+2*alpha/dy**2+uBound/dx),'安定時間刻み',true);
+ const mass=finite(nx*rho*V,'1セル列の質量',true),thermalCapacity=finite(rho*cp*V,'セル熱容量',true),energy=values=>finite(thermalCapacity*values.reduce((s,v)=>s+v-273.15,0),'顕熱'),momentum=values=>finite(mass*values.reduce((s,v)=>s+v,0),'運動量');
+ let time=0,steps=0,momentumInput=0,lastDt=0;const initialMomentum=momentum(u),initialEnergy=energy(T);
  function acceleration(){return Float64Array.from(u,(v,j)=>G+c.nu*((j>0?u[j-1]-v:-2*v)+(j+1<ny?u[j+1]-v:-2*v))/dy**2);}
- function snapshot(){const energy=rho*cp*V*T.reduce((s,v)=>s+v-273.15,0),momentum=mass*u.reduce((s,v)=>s+v,0),error=energy-initialEnergy;return {time,steps,lastDt,safeDt,temperature:Array.from(T),velocity:Array.from(u),energy,netInput:0,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy)),momentum,momentumInput,momentumError:momentum-initialMomentum-momentumInput,steadyMomentumResidual:Math.max(...acceleration().map(Math.abs)),massDivergence:0,steadyReynoldsDh:steadyRe,min:Math.min(...T),max:Math.max(...T),cellPeclet:uBound*dx/alpha,pressureGradient:-rho*G};}
+ function snapshot(){const E=energy(T),M=momentum(u),error=E-initialEnergy;return {time,steps,lastDt,safeDt,temperature:Array.from(T),velocity:Array.from(u),energy:E,netInput:0,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy)),momentum:M,momentumInput,momentumError:M-initialMomentum-momentumInput,steadyMomentumResidual:Math.max(...acceleration().map(Math.abs)),massDivergence:0,steadyReynoldsDh:steadyRe,min:Math.min(...T),max:Math.max(...T),velocityBound:uBound,maxVelocity:Math.max(...u.map(Math.abs)),cellPeclet:Math.max(...u.map(Math.abs))*dx/alpha,cellPecletBound:uBound*dx/alpha,advectionCfl:Math.max(...u.map(Math.abs))*lastDt/dx,pressureGradient:-rho*G};}
  function step(dt,returnState=true){finite(dt,'時間刻み',true);if(dt>safeDt*(1+1e-12))throw Error('流路の拡散/CFL安定条件を超えます。');const a=acceleration(),rate=scalarRates({temperature:T,u,nx,ny,dx,dy,depth:z,rho,cp,k:c.k}),un=Float64Array.from(u,(v,i)=>v+dt*a[i]),tn=Float64Array.from(T,(v,i)=>v+dt*rate[i]);
   if(un.some(v=>!Number.isFinite(v))||tn.some(v=>!Number.isFinite(v)||v<=0))throw Error('非有限値または不正な絶対温度のため停止しました。');
-  const wallForce=-2*rho*c.nu*(u[0]+u[ny-1])/dy*L*z,drive=rho*G*L*H*z;momentumInput+=(wallForce+drive)*dt;u.set(un);T.set(tn);time+=dt;steps++;lastDt=dt;return returnState?snapshot():undefined;}
- return {step,snapshot,safeDt,get time(){return time;},mesh:{nx,ny,width:L,height:H,depth:z,dx,dy,mask:Array(N).fill(1),count:N,area:L*H,geometricArea:L*H,material:Array(N).fill(0),repaired:[]}};
+  const wallForce=-2*rho*c.nu*(u[0]+u[ny-1])/dy*L*z,drive=rho*G*L*H*z,nextMomentumInput=finite(momentumInput+(wallForce+drive)*dt,'累積力積'),nextTime=finite(time+dt,'物理時間');if(nextTime<=time)throw Error('時間刻みが浮動小数点で区別できません。');energy(tn);momentum(un);
+  momentumInput=nextMomentumInput;u.set(un);T.set(tn);time=nextTime;steps++;lastDt=dt;return returnState?snapshot():undefined;}
+ function restore(s){if(!s||!Array.isArray(s.temperature)||!Array.isArray(s.velocity)||s.temperature.length!==N||s.velocity.length!==ny||!Number.isSafeInteger(s.steps)||s.steps<0)throw Error('流路の再生状態が不正です。');s.temperature.forEach(v=>finite(v,'再生温度',true));s.velocity.forEach(v=>{finite(v,'再生速度');if(Math.abs(v)>uBound*(1+1e-12))throw Error('再生速度が安定性の上界を超えています。');});finite(s.time,'再生時間');if(s.time<0)throw Error('再生時間は0以上です。');finite(s.momentumInput,'再生力積');finite(s.lastDt??0,'再生刻み');energy(s.temperature);momentum(s.velocity);T.set(s.temperature);u.set(s.velocity);time=s.time;steps=s.steps;momentumInput=s.momentumInput;lastDt=s.lastDt??0;return snapshot();}
+ finite(-rho*G,'圧力勾配');finite(L*H,'流路面積',true);
+ return {step,snapshot,restore,safeDt,config:c,get time(){return time;},mesh:{nx,ny,width:L,height:H,depth:z,dx,dy,mask:Array(N).fill(1),count:N,area:L*H,geometricArea:L*H,material:Array(N).fill(0),repaired:[]}};
 }

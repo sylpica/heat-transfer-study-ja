@@ -20,3 +20,19 @@ test('advection-diffusion Fourier symbol independently matches the implemented c
 test('invalid or out-of-scope flow is rejected instead of silently switching to a different model',()=>{
  assert.throws(()=>createDevelopedChannel({...c(),acceleration:1e9}),/上限/);assert.throws(()=>createDevelopedChannel({...c(),nu:0}));const m=createDevelopedChannel(c()),before=m.snapshot();assert.throws(()=>m.step(m.safeDt*2));assert.deepEqual(m.snapshot(),before);
 });
+test('channel evolution and restore are atomic, validate derived scales, and do not retain mutable input references',()=>{
+ for(const bad of [{width:1e308,height:1e308},{rho:1e300,cp:1e300},{initial:'300'},{initialVelocity:Array(16).fill('0')},{outline:[[0,0],[1,0],[0,1]]},{boundaries:{left:{type:'temperature',temperature:400}}}])assert.throws(()=>createDevelopedChannel({...c(),...bad}));
+ const original=c(),m=createDevelopedChannel(original),fresh=createDevelopedChannel(c());original.nu=1e20;original.initialVelocity=Array(16).fill(999);m.step(.001);fresh.step(.001);assert.deepEqual(m.snapshot(),fresh.snapshot());const a=m.snapshot();m.step(.001);const b=m.snapshot();m.restore(a);m.step(.001);assert.deepEqual(m.snapshot(),b);
+ for(const bad of [{temperature:Array(256).fill(0)},{velocity:Array(16).fill(1e30)},{momentumInput:Infinity},{time:-1},{steps:.5}]){const before=m.snapshot();assert.throws(()=>m.restore({...before,...bad}));assert.deepEqual(m.snapshot(),before);}
+});
+test('startup time refinements have first-order error against an independent exact semi-discrete eigenfunction expansion',()=>{
+ const n=16,t=.2,exact=Array.from({length:n},(_,j)=>{let sum=0;for(let k=1;k<=n;k++){const mode=Array.from({length:n},(_,i)=>Math.sin(k*Math.PI*(i+.5)/n)),forcing=mode.reduce((a,b)=>a+b,0)/mode.reduce((a,b)=>a+b*b,0),lambda=4*n*n*Math.sin(k*Math.PI/(2*n))**2;sum+=forcing/lambda*(1-Math.exp(-lambda*t))*mode[j];}return sum;});
+ const errors=[1,.5,.25].map(f=>{const m=createDevelopedChannel(c(n));while(m.time<t-1e-12)m.step(Math.min(m.safeDt*f,t-m.time),false);return Math.sqrt(m.snapshot().velocity.reduce((sum,v,j)=>sum+(v-exact[j])**2,0)/n);});for(let i=0;i<2;i++)assert.ok(errors[i]/errors[i+1]>1.95&&errors[i]/errors[i+1]<2.05);
+});
+test('periodic thermal diffusion converges to the continuum Fourier decay with grid refinement',()=>{
+ const errors=[];for(const nx of[16,32,64]){const ny=8,initial=Array.from({length:nx*ny},(_,n)=>300+5*Math.cos(2*Math.PI*(n%nx+.5)/nx)),m=createDevelopedChannel({...c(ny),nx,acceleration:0,initial}),t=.02;while(m.time<t-1e-12)m.step(Math.min(m.safeDt*.01,t-m.time),false);const s=m.snapshot();errors.push(Math.sqrt(s.temperature.reduce((sum,v,n)=>sum+(v-300-5*Math.exp(-.2*(2*Math.PI)**2*t)*Math.cos(2*Math.PI*(n%nx+.5)/nx))**2,0)/(nx*ny)));near(s.energyError,0,1e-9);}
+ assert.ok(errors[0]/errors[1]>3.5&&errors[1]/errors[2]>3.5);
+});
+test('CFL speed bound covers acceleration of a nonzero initial profile rather than just its initial maximum',()=>{
+ const initialVelocity=Array(16).fill(1),m=createDevelopedChannel({...c(),initialVelocity}),s=run(m,.01);assert.ok(Math.max(...s.velocity)>1,'the initial maximum is not an upper bound once the drive accelerates a flat profile');assert.ok(s.velocityBound>=s.maxVelocity);assert.ok(s.velocityBound>=1.125);assert.ok(s.advectionCfl<1);assert.ok(s.cellPecletBound>=s.cellPeclet);near(s.momentumError,0,1e-10);
+});

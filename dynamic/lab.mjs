@@ -3,7 +3,7 @@ import {renderCrossSections} from './field-plots.mjs';
 import {Actor} from './actor.mjs';
 import {startBoilingPanel} from './boiling.mjs';
 import {drawFin} from './fin-view.mjs';
-import {linkTermTextNodes} from '../term-links.mjs';
+import {attachTermPanel} from './term-panel.mjs';
 import {MATERIALS,preset} from './presets.mjs';
 import {rectangle,circle,transformPolygon} from './geometry.mjs';
 const $=id=>document.getElementById(id),number=id=>{const input=$(id);if(!input.value.trim())throw Error(`${input.labels?.[0]?.textContent||id}を入力してください。`);const n=Number(input.value);if(!Number.isFinite(n))throw Error('有限の数値を入力してください。');return n;},fmt=(v,n=3)=>Number.isFinite(v)?v.toFixed(n):'—';
@@ -89,11 +89,7 @@ function loadPreset(id){boiling.stop();$('boiling-panel').hidden=true;$('thermal
 if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('status').textContent='オフラインの準備に失敗しました。接続中の計算は利用できます。';});
 loadPreset('heating');
 
-let terms=[],termOrigin=null;
-function openTerm(id){const term=terms.find(t=>t.id===id);if(!term)return;$('term-title').textContent=term.ja;const body=$('term-body');body.replaceChildren();for(const text of [term.brief||term.meaning,term.beginner,term.detail,term.formula?'式：'+term.formula:'',term.unit?'単位：'+term.unit:''])if(text){const p=document.createElement('p');p.textContent=text;body.append(p);}for(const name of term.related||[]){const found=terms.find(t=>t.ja===name||t.en===name);if(found){const b=document.createElement('button');b.textContent=name;b.dataset.termId=found.id;body.append(b);}}if(!$('term-dialog').open)$('term-dialog').showModal();$('term-close').focus();}
-$('term-close').onclick=()=>$('term-dialog').close();$('term-dialog').onclose=()=>termOrigin?.focus();
-document.addEventListener('click',e=>{const button=e.target.closest('[data-term-id]');if(button){if(!$('term-dialog').open)termOrigin=button;openTerm(button.dataset.termId);}});
-fetch('../data/glossary.json').then(r=>{if(!r.ok)throw Error('glossary');return r.json();}).then(data=>{terms=Array.isArray(data)?data:data.terms||[];linkTermTextNodes($('manual'),terms,{limit:2});}).catch(()=>{const p=document.createElement('p');p.textContent='用語データを読み込めませんでした。用語集へのリンクから確認できます。';$('manual').append(p);});
+attachTermPanel({root:$('manual'),dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});
 
 for(const id of ['yaw','pitch','zoom'])$(id).oninput=render;
 

@@ -1,3 +1,4 @@
+import {attachTermPanel} from './term-panel.mjs';
 import {Actor} from './actor.mjs';
 const $=id=>document.getElementById(id),fmt=(v,d=3)=>Number.isFinite(v)?v.toFixed(d):'—';
 const number=input=>{if(!input.value.trim())throw Error('空欄の数値を入力してください。');const v=Number(input.value);if(!Number.isFinite(v))throw Error('有限の数値を入力してください。');return v;};
@@ -42,3 +43,5 @@ $('resize').onclick=()=>{try{const n=number($('count'));if(!Number.isInteger(n)|
 $('mode').onchange=()=>{document.body.dataset.mode=$('mode').value;};$('mode').onchange();$('theme').onchange=()=>{document.body.dataset.theme=$('theme').value;render();};matchMedia('(prefers-color-scheme:dark)').addEventListener('change',render);$('manual-toggle').onclick=()=>{const open=$('manual').hidden;$('manual').hidden=!open;$('manual-toggle').setAttribute('aria-expanded',String(open));};
 $('graph').onclick=e=>{const r=$('graph').getBoundingClientRect(),border=parseFloat(getComputedStyle($('graph')).borderLeftWidth)||0,W=$('graph').width/(devicePixelRatio||1),x=(e.clientX-r.left-border)/(r.width-2*border)*W,f=Math.max(0,Math.min(1,(x-55)/(W-80))),target=history[0].a.time+f*(history.at(-1).a.time-history[0].a.time),next=history.reduce((best,h,i)=>Math.abs(h.a.time-target)<Math.abs(history[best].a.time-target)?i:best,0);rewind(next);};$('graph').onkeydown=e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();rewind(Math.max(0,Math.min(history.length-1,index+(e.key==='ArrowRight'?1:-1))));}};
 window.addEventListener('resize',render);if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('status').textContent='オフラインの準備に失敗しました。接続中は計算できます。';});loadPreset('enclosure');
+
+attachTermPanel({root:$('manual'),dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});

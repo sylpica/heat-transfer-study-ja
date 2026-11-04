@@ -5,3 +5,5 @@ dialog{max-width:640px;width:calc(100% - 32px);max-height:80vh;overflow:auto;bor
 textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;padding:6px;resize:vertical}
 
 #section-graph{height:200px}.field-table{overflow:auto;max-width:100%}.field-table table{border-collapse:collapse;font-variant-numeric:tabular-nums}.field-table th,.field-table td{border:1px solid var(--line);padding:6px;white-space:nowrap;text-align:right}
+
+.inline-term{cursor:pointer}.inline-term:focus-visible{outline:3px solid var(--accent);outline-offset:-2px}

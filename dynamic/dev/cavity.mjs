@@ -1,4 +1,5 @@
 import {createNeumannMultigrid} from './poisson-multigrid.mjs';
+import {createMacMomentumStencil} from './mac-momentum.mjs';
 // Development-only staggered finite-volume projection solver. Not distributed.
 const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),maxAbs=a=>Math.max(...a.map(Math.abs));
 export function projectFaces(us,vs,{nx,ny,dx,dy,rho=1,dt,tolerance=1e-10,maxIterations=2000,pressure,preconditioner}){
@@ -32,6 +33,8 @@ export function createCavity(c,verification=null){
  for(const key of ['width','height','rho','cp','nu','alpha','initial'])if(!Number.isFinite(c[key])||c[key]<=0)throw Error(`${key}は正の有限値です。`);
  if(c.pressurePreconditioner&&!['jacobi','multigrid'].includes(c.pressurePreconditioner))throw Error('圧力前処理の指定が不正です。');
  if(c.outline||c.regions?.length)throw Error('この開発用CFDは障害物のない矩形だけです。自由形状は未対応です。');if(c.scalarScheme&&!['central','upwind'].includes(c.scalarScheme))throw Error('温度の移流法が不正です。');
+ if(c.momentumScheme!==undefined&&!['conservative2','polynomial4'].includes(c.momentumScheme))throw Error('運動量差分が不正です。');
+ const highOrder=c.momentumScheme==='polynomial4';if(highOrder&&(nx<8||ny<8))throw Error('高次運動量差分は8格子以上です。');
  const L=c.width,H=c.height,depth=c.depth??1,dx=L/nx,dy=H/ny,rho=c.rho,cp=c.cp,nu=c.nu,alpha=c.alpha,lid=c.lidVelocity??0,gb=c.gravityBeta??0,Tref=c.referenceTemperature??c.initial;
  if(!Number.isFinite(depth)||depth<=0)throw Error('評価する奥行きは正の有限値です。横壁のモデルではありません。');
  if(![lid,gb,Tref].every(Number.isFinite)||Tref<=0)throw Error('壁速度・浮力・基準温度が不正です。');
@@ -52,27 +55,28 @@ export function createCavity(c,verification=null){
  }
  const initialEnergy=cellCapacity*T.reduce((s,t)=>s+t-273.15,0);
  if(!Number.isFinite(k)||k<=0||!Number.isFinite(cellCapacity)||cellCapacity<=0||!Number.isFinite(initialEnergy))throw Error('物性/セル熱容量が数値範囲を超えています。');
- const signature=JSON.stringify([nx,ny,L,H,depth,rho,cp,nu,alpha,lid,gb,Tref,hot,cold,c.beta??null,c.scalarScheme||'upwind',c.pressurePreconditioner||'jacobi',c.pressureTolerance??1e-10,c.maxPressureIterations??2000,initialEnergy,verification?.id??null]);
+ const signature=JSON.stringify([nx,ny,L,H,depth,rho,cp,nu,alpha,lid,gb,Tref,hot,cold,c.beta??null,c.scalarScheme||'upwind',c.pressurePreconditioner||'jacobi',c.pressureTolerance??1e-10,c.maxPressureIterations??2000,initialEnergy,verification?.id??null,...(highOrder?['polynomial4']:[])]);
  const pressurePreconditioner=c.pressurePreconditioner==='multigrid'?createNeumannMultigrid({nx,ny,dx,dy}):null;
  function divergence(uu=u,vv=v){let value=0;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++)value=Math.max(value,Math.abs((uu[U(i+1,j)]-uu[U(i,j)])/dx+(vv[V(i,j+1)]-vv[V(i,j)])/dy));return value;}
+ const momentum=highOrder?createMacMomentumStencil({nx,ny,dx,dy}):null;
  function continuityScale(uu=u,vv=v){return Math.max(1,Math.abs(lid)/Math.min(L,H),maxAbs(uu)/Math.min(L,H),maxAbs(vv)/Math.min(L,H));}
  function checkContinuity(uu,vv,d=divergence(uu,vv)){if(!Number.isFinite(d)||d>1e-8*continuityScale(uu,vv))throw Error('連続の式の誤差が許容範囲を超えたため、更新前の状態で停止しました。圧力許容値を厳しくしてください。');}
- function timestep(uu=u,vv=v){const speed=Math.max(Math.abs(lid),maxAbs(uu),maxAbs(vv),1e-9),body=gb?Math.sqrt(Math.abs(gb)*Math.max(Math.abs((hot??Tref)-Tref),Math.abs((cold??Tref)-Tref))*H):0;return Math.min(.2/(Math.max(nu,alpha)*(1/dx**2+1/dy**2)),.4/(Math.max(speed,body)*(1/dx+1/dy)));}
+ function timestep(uu=u,vv=v){const speed=Math.max(Math.abs(lid),maxAbs(uu),maxAbs(vv),1e-9),body=gb?Math.sqrt(Math.abs(gb)*Math.max(Math.abs((hot??Tref)-Tref),Math.abs((cold??Tref)-Tref))*H):0;return Math.min((highOrder ? .12 : .2)/(Math.max(nu,alpha)*(1/dx**2+1/dy**2)),(highOrder ? .25 : .4)/(Math.max(speed,body)*(1/dx+1/dy)));}
  function snapshot(){const energy=cellCapacity*T.reduce((s,t)=>s+t-273.15,0),meanHot=hot===null?0:T.reduce((s,t,n)=>s+(n%nx===0?2*k*(hot-t)/dx:0),0)/ny;
-  const error=energy-initialEnergy-netInput,d=divergence();return {modelType:'rectangular-cavity-v1',signature,time,steps,lastDt,lastPower,temperature:Array.from(T),u:Array.from(u),v:Array.from(v),pressure:[...pressure],energy,energyReference:'273.15 K',netInput,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy),Math.abs(netInput)),divergence:d,normalizedDivergence:d/continuityScale(),pressurePreconditioner:c.pressurePreconditioner||'jacobi',totalPressureIterations,pressureIterations:projection?.iterations??0,pressureResidual:projection?.residual??0,pressureRhsNorm:projection?.rhsNorm??0,scalarScheme:c.scalarScheme||'upwind',nusselt:hot!==null&&cold!==null&&hot!==cold?meanHot*H/(k*(hot-cold)):null,safeDt:timestep(),min:Math.min(...T),max:Math.max(...T)};}
- function step(dt,returnState=true){if(!Number.isFinite(dt)||dt<=0||dt>timestep()*(1+1e-12))throw Error('拡散/CFLの時間刻みを超えています。');const us=new Float64Array(u),vs=new Float64Array(v);
+  const error=energy-initialEnergy-netInput,d=divergence();return {modelType:'rectangular-cavity-v1',signature,time,steps,lastDt,lastPower,temperature:Array.from(T),u:Array.from(u),v:Array.from(v),pressure:[...pressure],energy,energyReference:'273.15 K',netInput,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy),Math.abs(netInput)),divergence:d,normalizedDivergence:d/continuityScale(),pressurePreconditioner:c.pressurePreconditioner||'jacobi',totalPressureIterations,pressureIterations:projection?.iterations??0,pressureResidual:projection?.residual??0,pressureRhsNorm:projection?.rhsNorm??0,scalarScheme:c.scalarScheme||'upwind',momentumScheme:c.momentumScheme||'conservative2',nusselt:hot!==null&&cold!==null&&hot!==cold?meanHot*H/(k*(hot-cold)):null,safeDt:timestep(),min:Math.min(...T),max:Math.max(...T)};}
+ function step(dt,returnState=true){if(!Number.isFinite(dt)||dt<=0||dt>timestep()*(1+1e-12))throw Error('拡散/CFLの時間刻みを超えています。');const us=new Float64Array(u),vs=new Float64Array(v),operators=momentum?.evaluate(u,v,lid);
   const getU=(i,j)=>j<0?-u[U(i,0)]:j>=ny?2*lid-u[U(i,ny-1)]:u[U(i,j)];
   const getV=(i,j)=>i<0?-v[V(0,j)]:i>=nx?-v[V(nx-1,j)]:v[V(i,j)];
   for(let j=0;j<ny;j++)for(let i=1;i<nx;i++){
    const n=U(i,j),a=u[n],east=u[U(i+1,j)],west=u[U(i-1,j)],north=getU(i,j+1),south=getU(i,j-1),vn=(v[V(i-1,j+1)]+v[V(i,j+1)])/2,vsouth=(v[V(i-1,j)]+v[V(i,j)])/2;
    const adv=(((a+east)/2)**2-((a+west)/2)**2)/dx+((a+north)/2*vn-(a+south)/2*vsouth)/dy;
-   us[n]=a+dt*(nu*((east-2*a+west)/dx**2+(north-2*a+south)/dy**2)-adv);
+   us[n]=a+dt*(nu*(operators?operators.laplacianU[n]:((east-2*a+west)/dx**2+(north-2*a+south)/dy**2))-(operators?operators.advectionU[n]:adv));
    if(verification){const force=verification.bodyForce(i*dx,(j+.5)*dy,time);if(!Array.isArray(force)||force.length!==2||force.some(x=>!Number.isFinite(x)))throw Error('製造解の体積力が不正です。');us[n]+=dt*force[0];}
   }
   for(let j=1;j<ny;j++)for(let i=0;i<nx;i++){
    const n=V(i,j),a=v[n],east=getV(i+1,j),west=getV(i-1,j),north=v[V(i,j+1)],south=v[V(i,j-1)],ue=(u[U(i+1,j-1)]+u[U(i+1,j)])/2,uw=(u[U(i,j-1)]+u[U(i,j)])/2;
    const adv=((a+east)/2*ue-(a+west)/2*uw)/dx+(((a+north)/2)**2-((a+south)/2)**2)/dy;
-   vs[n]=a+dt*(nu*((east-2*a+west)/dx**2+(north-2*a+south)/dy**2)-adv+gb*((T[(j-1)*nx+i]+T[j*nx+i])/2-Tref));
+   vs[n]=a+dt*(nu*(operators?operators.laplacianV[n]:((east-2*a+west)/dx**2+(north-2*a+south)/dy**2))-(operators?operators.advectionV[n]:adv)+gb*((T[(j-1)*nx+i]+T[j*nx+i])/2-Tref));
    if(verification){const force=verification.bodyForce((i+.5)*dx,j*dy,time);if(!Array.isArray(force)||force.length!==2||force.some(x=>!Number.isFinite(x)))throw Error('製造解の体積力が不正です。');vs[n]+=dt*force[1];}
   }
   const projected=projectFaces(us,vs,{nx,ny,dx,dy,rho,dt,pressure,tolerance:c.pressureTolerance??1e-10,maxIterations:c.maxPressureIterations??2000,preconditioner:pressurePreconditioner});

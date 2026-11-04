@@ -1,0 +1,137 @@
+{
+  "generatedAtUTC": "2026-11-04T23:02:11.439Z",
+  "sourceCommit": "2737f0691b9b7a930a564b45c16576d8749e4a20",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/manufactured-cavity.mjs": "e19855f1139668e86288210aecb562c0eba3da5c9b56d96da8b390b38a780fe0",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-cavity-time-benchmarks.mjs": "761bccd114f0f865149fcbab89ced2440683c83662f44b8b64cf169c4daf57c5"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "stage": "fixed_grid_temporal_code_verification_only",
+  "releaseApproved": false,
+  "method": "Four fixed-grid runs with dt, dt/2, dt/4, dt/8 to the same physical time. Full-field successive differences, not the spatially contaminated continuum error, estimate first-order temporal self-convergence. Pressure is the latest projection gauge at each run; no claim of higher pressure accuracy.",
+  "n": 32,
+  "end": 0.025,
+  "momentumScheme": "polynomial4",
+  "samples": [
+    {
+      "steps": 427,
+      "dt": 5.85480093676815e-05,
+      "time": 0.02500000000000021,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 1.067548664612757e-14,
+      "totalPressureIterations": 2997,
+      "elapsedMs": 4491.513774
+    },
+    {
+      "steps": 854,
+      "dt": 2.927400468384075e-05,
+      "time": 0.02499999999999971,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 2.1352929731266718e-14,
+      "totalPressureIterations": 5979,
+      "elapsedMs": 12473.5802
+    },
+    {
+      "steps": 1708,
+      "dt": 1.4637002341920375e-05,
+      "time": 0.024999999999999276,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": -1.4145753833841839e-14,
+      "totalPressureIterations": 10299,
+      "elapsedMs": 20930.174258000003
+    },
+    {
+      "steps": 3416,
+      "dt": 7.318501170960187e-06,
+      "time": 0.02500000000000128,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 3.847973664229549e-14,
+      "totalPressureIterations": 20565,
+      "elapsedMs": 38237.870469
+    }
+  ],
+  "differences": [
+    {
+      "u": {
+        "rms": 2.632665667485335e-07,
+        "max": 6.054824344126075e-07
+      },
+      "v": {
+        "rms": 2.6326656677600027e-07,
+        "max": 6.054824348566967e-07
+      },
+      "pressure": {
+        "rms": 2.2587420164771472e-06,
+        "max": 6.58318317187101e-06
+      },
+      "temperature": {
+        "rms": 2.226357762308942e-06,
+        "max": 4.768123233134247e-06
+      }
+    },
+    {
+      "u": {
+        "rms": 1.315600170456575e-07,
+        "max": 3.0257349248330456e-07
+      },
+      "v": {
+        "rms": 1.315600170174144e-07,
+        "max": 3.0257349248330456e-07
+      },
+      "pressure": {
+        "rms": 1.1294693834160083e-06,
+        "max": 3.291926878770668e-06
+      },
+      "temperature": {
+        "rms": 1.1128936797785813e-06,
+        "max": 2.383359628765902e-06
+      }
+    },
+    {
+      "u": {
+        "rms": 6.576170784765301e-08,
+        "max": 1.5124485219786266e-07
+      },
+      "v": {
+        "rms": 6.576170788701675e-08,
+        "max": 1.5124485219786266e-07
+      },
+      "pressure": {
+        "rms": 5.64759134949752e-07,
+        "max": 1.6460468615919766e-06
+      },
+      "temperature": {
+        "rms": 5.563756041904205e-07,
+        "max": 1.1915047366528597e-06
+      }
+    }
+  ],
+  "observedOrders": {
+    "u": [
+      1.000803219318352,
+      1.0004014284474887
+    ],
+    "v": [
+      1.000803219778585,
+      1.0004014272742026
+    ],
+    "pressure": [
+      0.9998743378405613,
+      0.9999375576159408
+    ],
+    "temperature": [
+      1.000369672238114,
+      1.0001847040202707
+    ]
+  },
+  "passed": true,
+  "elapsedMs": 76457.64856399999
+}

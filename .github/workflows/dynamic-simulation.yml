@@ -60,6 +60,26 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+  high-order-manufactured-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify the experimental stencil on smooth whole-field manufactured data only
+        run: node scripts/dynamic-manufactured-benchmarks.mjs --full --multigrid --high-order | tee dynamic-high-order-manufactured.json
+      - name: Verify first-order time refinement with the experimental stencil
+        run: node scripts/dynamic-cavity-time-benchmarks.mjs --full --high-order | tee dynamic-high-order-time.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dynamic-high-order-${{ github.sha }}-${{ github.run_id }}
+          path: |
+            dynamic-high-order-manufactured.json
+            dynamic-high-order-time.json
+          retention-days: 30
   cfd-development-benchmarks:
     runs-on: ubuntu-latest
     timeout-minutes: 30

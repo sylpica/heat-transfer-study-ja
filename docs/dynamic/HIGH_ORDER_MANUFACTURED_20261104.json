@@ -1,0 +1,134 @@
+{
+  "generatedAtUTC": "2026-11-04T22:58:52.333Z",
+  "sourceCommit": "2737f0691b9b7a930a564b45c16576d8749e4a20",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/manufactured-cavity.mjs": "e19855f1139668e86288210aecb562c0eba3da5c9b56d96da8b390b38a780fe0",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-manufactured-benchmarks.mjs": "4c51e01d17a43fba3e47c1f6c0a78c4ee1c1ae701a38e29305770bfbb5c26f70"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "stage": "development_code_verification_only",
+  "pressurePreconditioner": "multigrid",
+  "momentumScheme": "polynomial4",
+  "releaseApproved": false,
+  "reference": "Independent manufactured continuous fields and PDE source terms; no original reference figure or prose reproduced.",
+  "norm": "RMS of all stored u/v face or pressure/temperature cell samples; full-field maximum errors also reported. Pressure gauge is mean zero.",
+  "samples": [
+    {
+      "n": 16,
+      "time": 0.025,
+      "errors": {
+        "u": {
+          "rms": 0.00024163785262195948,
+          "max": 0.0005707117709463638
+        },
+        "v": {
+          "rms": 0.00024163785262196604,
+          "max": 0.0005707117709459197
+        },
+        "pressure": {
+          "rms": 0.0037428322747061664,
+          "max": 0.010470301543854699
+        },
+        "temperature": {
+          "rms": 0.0009379423602215685,
+          "max": 0.0023912590096415443
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.07675165049686153,
+      "divergence": 7.993605777301127e-15,
+      "energyErrorJ": 2.48686965118039e-14,
+      "totalPressureIterations": 751,
+      "steps": 107,
+      "elapsedMs": 270.302813
+    },
+    {
+      "n": 32,
+      "time": 0.025,
+      "errors": {
+        "u": {
+          "rms": 1.542204337006004e-05,
+          "max": 3.644066278818414e-05
+        },
+        "v": {
+          "rms": 1.542204337007535e-05,
+          "max": 3.644066278818414e-05
+        },
+        "pressure": {
+          "rms": 0.00023198985642566272,
+          "max": 0.0007042534844693971
+        },
+        "temperature": {
+          "rms": 0.00023483570862868643,
+          "max": 0.0006090634628321823
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.004757254152030468,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 6.036544440040422e-14,
+      "totalPressureIterations": 2572,
+      "steps": 427,
+      "elapsedMs": 2643.969599
+    },
+    {
+      "n": 64,
+      "time": 0.025,
+      "errors": {
+        "u": {
+          "rms": 8.786533757589936e-07,
+          "max": 2.0729508416472697e-06
+        },
+        "v": {
+          "rms": 8.786533757701712e-07,
+          "max": 2.072950842091359e-06
+        },
+        "pressure": {
+          "rms": 2.7925715412429314e-05,
+          "max": 7.553393011763831e-05
+        },
+        "temperature": {
+          "rms": 5.874089230078451e-05,
+          "max": 0.00015277001239155652
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141653,
+      "pressureRelativeRMS": 0.0005726531652765185,
+      "divergence": 3.019806626980426e-14,
+      "energyErrorJ": 1.7962356625158483e-14,
+      "totalPressureIterations": 8546,
+      "steps": 1707,
+      "elapsedMs": 41650.91913
+    }
+  ],
+  "observedOrders": {
+    "u": [
+      3.9697806354753333,
+      4.133555978222982
+    ],
+    "v": [
+      3.9697806354739407,
+      4.133555978206061
+    ],
+    "pressure": [
+      4.01199676792387,
+      3.054395580176038
+    ],
+    "temperature": [
+      1.9978474685698895,
+      1.999214712197548
+    ]
+  },
+  "pressureAccuracyNote": "Pressure residual/divergence do not measure continuum pressure error. Relative pressure errors here are deliberately retained; the three-grid convergence gate is not engineering approval.",
+  "passed": true,
+  "elapsedMs": 44574.104953,
+  "timingScope": "cloud CPU; not a real-device or GPU performance claim"
+}

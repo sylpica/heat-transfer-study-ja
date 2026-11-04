@@ -299,3 +299,7 @@ Museの本文データを変更せずdynamic-navigation.mjsに既知の節と起
 ### 遅延SVGの実寸を確保する（2026-11-04）
 
 9f80b12のWebKit CI失敗をローカルで再現し、trusted pointerdownは教材リンク、pointerupはその上方で読み込み終えたSVGへ着地していた。別タブの試験を削除/強制click/再試行で隠さず、lesson-diagrams.mjsに実SVGの幅/高さを登録して既存rendererのfigureSizeAttributesで領域を先に確保する。全76件を実ファイルへ照合し、クリック中に画像を読み込ませる回帰を追加。図版の内容/翻訳/問題データは変更しない。
+
+## 2026-11-04 高次CFDを既定へ置換しない
+
+圧力の離散演算子診断に続き、開発用CFDへpolynomial4を追加。滑らかな製造解の圧力誤差は改善したが、移動壁32格子の既存速度ゲートを超えた。閾値は保持し、方式は実験用選択肢/公開ビルド外とする。既定conservative2と公開済み静的20モデルは保持。新規CIジョブは製造解/時間収束の範囲だけを検証する。詳細/失敗/残検査はdocs/dynamic/HIGH_ORDER_MOMENTUM.md。

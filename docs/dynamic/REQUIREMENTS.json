@@ -498,7 +498,10 @@
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
         "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
         "PRESSURE_SENSITIVITY.md",
-        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json"
+        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
+        "HIGH_ORDER_MOMENTUM.md",
+        "HIGH_ORDER_MANUFACTURED_20261104.json",
+        "HIGH_ORDER_TEMPORAL_20261104.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -541,7 +544,10 @@
         "RADIAL_UI_CHECKPOINT_20261104.json",
         "../../tests/dynamic-radial-browser.mjs",
         "PRESSURE_SENSITIVITY.md",
-        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json"
+        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
+        "HIGH_ORDER_MOMENTUM.md",
+        "HIGH_ORDER_MANUFACTURED_20261104.json",
+        "HIGH_ORDER_TEMPORAL_20261104.json"
       ]
     },
     {
@@ -755,7 +761,10 @@
         "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
         "MANUFACTURED_SYMBOLIC_CHECK_20261104.json",
         "PRESSURE_SENSITIVITY.md",
-        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json"
+        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
+        "HIGH_ORDER_MOMENTUM.md",
+        "HIGH_ORDER_MANUFACTURED_20261104.json",
+        "HIGH_ORDER_TEMPORAL_20261104.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -801,7 +810,10 @@
         "RADIAL_UI_CHECKPOINT_20261104.json",
         "../../tests/dynamic-radial-browser.mjs",
         "PRESSURE_SENSITIVITY.md",
-        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json"
+        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
+        "HIGH_ORDER_MOMENTUM.md",
+        "HIGH_ORDER_MANUFACTURED_20261104.json",
+        "HIGH_ORDER_TEMPORAL_20261104.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -888,7 +900,10 @@
         "../../dynamic-navigation.mjs",
         "../../tests/dynamic-navigation-browser.mjs",
         "PRESSURE_SENSITIVITY.md",
-        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json"
+        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
+        "HIGH_ORDER_MOMENTUM.md",
+        "HIGH_ORDER_MANUFACTURED_20261104.json",
+        "HIGH_ORDER_TEMPORAL_20261104.json"
       ],
       "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
     },

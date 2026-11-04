@@ -55,7 +55,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "公開候補は伝導/単一フィン/黒い周囲への放射。強制/自然対流の一般2D CFDは未完了。"
     },
@@ -86,7 +88,9 @@
       "evidence": [
         "../../dynamic/dev/cavity.mjs",
         "CFD_DEVELOPMENT.md",
-        "CFD_BENCHMARKS_20261104.json"
+        "CFD_BENCHMARKS_20261104.json",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -143,7 +147,9 @@
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
         "TEMPERATURE_DEPENDENT_CP.md",
-        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -184,7 +190,9 @@
         "RADIATION_BENCHMARKS_20261104.json",
         "TEMPERATURE_DEPENDENT_CP.md",
         "HEAT_CAPACITY_BENCHMARKS_20261104.json",
-        "FIELD_INSPECTION.md"
+        "FIELD_INSPECTION.md",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -231,7 +239,9 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md",
-        "FIELD_INSPECTION.md"
+        "FIELD_INSPECTION.md",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -243,7 +253,9 @@
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
-        "FIELD_INSPECTION.md"
+        "FIELD_INSPECTION.md",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -256,7 +268,9 @@
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
         "FIELD_INSPECTION.md",
-        "EXPERIMENT_CONTROLLER.md"
+        "EXPERIMENT_CONTROLLER.md",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -312,7 +326,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -332,7 +348,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -387,7 +405,9 @@
       "evidence": [
         "../../dynamic/dev/cavity.mjs",
         "CFD_DEVELOPMENT.md",
-        "CFD_BENCHMARKS_20261104.json"
+        "CFD_BENCHMARKS_20261104.json",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -443,8 +463,11 @@
     {
       "id": "Q45",
       "requirement": "平板・円柱・管・フィン間の強制対流",
-      "status": "planned",
-      "evidence": []
+      "status": "partial_limited_developed_parallel_plate_transport",
+      "evidence": [
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+      ]
     },
     {
       "id": "Q46",
@@ -534,7 +557,9 @@
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
-        "EXPERIMENT_CONTROLLER.md"
+        "EXPERIMENT_CONTROLLER.md",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -636,7 +661,9 @@
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
         "TEMPERATURE_DEPENDENT_CP.md",
-        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -648,7 +675,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -658,7 +687,9 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md",
-        "EXPERIMENT_CONTROLLER.md"
+        "EXPERIMENT_CONTROLLER.md",
+        "DEVELOPED_CHANNEL.md",
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
       ]
     },
     {

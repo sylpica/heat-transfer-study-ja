@@ -2,7 +2,7 @@
 
 2026-11-04開始。ユーザーの指令書をREQUEST_20261104.md、Q1〜Q72の進捗をREQUIREMENTS.jsonへ保全した。最新main73b31c0fから専用ブランチを作成。PR1は2026-10-31にb138a7aでマージ済み、所有者はsylpica。未統合PRは取得時点で0。既存20モードのSIM_META/各数値モジュールを保持する。主教材/翻訳/問題/図/用語データは編集しない。
 
-基準Node1086件中1081成功・5スキップ。mainの公開配信CI41253463774成功。claude/new-session-u5gn6bの0a04d55は監査3とapp.js/guide/問題等を変更する未統合作業であり、変更/統合していない。翻訳作業の正確な現行ブランチはリモートから特定できていない。Codexはdynamic/とdocs/dynamic/を主に使用し、入口index.html、公開allowlistとService Workerの追記のみ共用する。
+基準Node1086件中1081成功・5スキップ。mainの公開配信CI41253463774成功。claude/new-session-u5gn6bの0a04d55は監査3とapp.js/guide/問題等を変更する未統合作業であり、変更/統合していない。翻訳作業の正確な現行ブランチはリモートから特定できていない。Codexはdynamic/とdocs/dynamic/を主に使用し、app.jsの動的入口リンク、公開allowlistとService Workerの追記を主な共用箇所とする。
 
 先行§8.5の未保存作業はdc6d8d9をcodex/archive-condensation-20261104にpush。新mainには別IDの同範囲原稿があり、重複するため新ブランチに取り込まない。旧PR1のブランチへpushしない。
 
@@ -23,3 +23,7 @@
 フィン：軸方向FVM+側面対流とcosh解析解、基部流量と側面損失。放射：K、相反/総和、等温ゼロ、孤立二面収支。CFD：投影等を選定後、Poiseuilleとlid-driven cavity、自然対流は条件一致したde Vahl Davis型の文献値を取得して比較。文献値は推測しない。乱流は代表検証に限定。GPUは同じ条件のCPU解と比較。これら未実施項目はテスト成功と呼ばない。
 
 格子と時間の収束は少なくとも3段階の解析誤差を比較し、保存誤差は浮動小数点の丸めと規模に応じて評価。形状誤差/物性近似と離散化誤差を区別。実機Safari/Android/支援技術は未実施で、Chromium/WebKitは代替試験として記録する。
+
+## 共通化後の構成と限定流路
+
+Experiment→Actor→Workerで時間/比較/履歴と非同期輸送、個々の物理計算を分離。thermal（k(T)/cp(T)を含む）、radiation-network、developed-channelの3モデル種別を選ぶ。発達流路は1D運動量＋周期2D温度で、一般CFDとは別。field-frameの物理縦横比、field-analysis/plotsの抽出と断面、trace-plot、term-panelを再利用する。入力パネル/可視化は単独ページとし既存20モード/翻訳データを変えない。dev/cavity.mjsは公開allowlist外、dev/channel.mjsは移動後のテスト互換re-exportのみ。各モデルの適用条件・独立検算は専用文書を参照。

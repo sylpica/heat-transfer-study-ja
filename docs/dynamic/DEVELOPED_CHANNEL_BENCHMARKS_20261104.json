@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-04",
+  "scope": "Independent ideal parallel-plate startup and periodic thermal diffusion, not general 2D CFD, inlet/outlet or a wall heat-transfer correlation.",
+  "startup": [
+    {
+      "ny": 8,
+      "time": 0.2,
+      "errorRMSVelocity": 0.0019086233034099835,
+      "momentumError": -1.3877787807814457e-17,
+      "thermalEnergyError": 0,
+      "maxAdvectionCfl": 0.007107268204534514
+    },
+    {
+      "ny": 16,
+      "time": 0.1999999999999996,
+      "errorRMSVelocity": 0.0004768448977717296,
+      "momentumError": -5.551115123125783e-17,
+      "thermalEnergyError": 0,
+      "maxAdvectionCfl": 0.0017827194276338184
+    },
+    {
+      "ny": 32,
+      "time": 0.2,
+      "errorRMSVelocity": 0.00011919240254570838,
+      "momentumError": 2.7755575615628914e-17,
+      "thermalEnergyError": 0,
+      "maxAdvectionCfl": 0.0004460440598169855
+    }
+  ],
+  "thermalDiffusion": [
+    {
+      "nx": 16,
+      "ny": 8,
+      "time": 0.01999999999999998,
+      "errorRMSKelvin": 0.006024928398053991,
+      "thermalEnergyError": -3.552713678800501e-15
+    },
+    {
+      "nx": 32,
+      "ny": 8,
+      "time": 0.02,
+      "errorRMSKelvin": 0.001495718204401937,
+      "thermalEnergyError": -3.552713678800501e-15
+    },
+    {
+      "nx": 64,
+      "ny": 8,
+      "time": 0.02,
+      "errorRMSKelvin": 0.0003737893455008025,
+      "thermalEnergyError": -1.4210854715202004e-14
+    }
+  ],
+  "startupObservedOrders": [
+    2.0009404068675622,
+    2.0002278007107916
+  ],
+  "steady": {
+    "ny": 32,
+    "time": 1.9999999999999065,
+    "maxError": 0.00012207029570558085,
+    "meanVelocity": 0.08349609353201626,
+    "exactMean": 0.08333333333333333,
+    "momentumError": -3.3306690738754696e-16
+  },
+  "thermalObservedOrders": [
+    2.010105701176549,
+    2.0005410427010895
+  ],
+  "airDefaultHandCalculation": {
+    "source": "AHTTv600 Appendix A Table A.6, 300 K/101325 Pa, book p755/PDF p769; selected numerical facts, not a reproduced table",
+    "rho": 1.177,
+    "cp": 1006,
+    "k": 0.0264,
+    "nu": 0.00001575,
+    "muDerived": 0.00001853775,
+    "alphaDerived": 0.00002229612976347522,
+    "pressureDropPa": 0.02,
+    "lengthM": 0.04,
+    "heightM": 0.01,
+    "meanSteadyVelocity": 0.22476657990676685,
+    "maxSteadyVelocity": 0.3371498698601503,
+    "steadyReynoldsDh": 285.4178792466881
+  },
+  "passed": true
+}

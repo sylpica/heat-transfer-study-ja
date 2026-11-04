@@ -1,0 +1,153 @@
+{
+  "recordedAtUTC": "2026-11-04T17:27:35.196574+00:00",
+  "sourceCommit": "a5227cbd70c89d9f54f7ca8e86a9310b9f060b22",
+  "sourceFilesSHA256": {
+    "app.js": "b48c39fe595a32abbcd39afe0b4ac5a91aec8983dea2ef3e928defd2fc7a7995",
+    "dynamic-navigation.mjs": "bf8162b8152182aa8cb5dc6264889c5a88a3ed57ce5abf72b8b628b18fecc2b4",
+    "sw.js": "43477a29cbd8fd4241ad6b9751b10d05bfa09ff68b05a4fd7d0968048f2528bd",
+    "dynamic/lab.mjs": "e99c28618e9b43d567293ec1c89df170b4a56314212e4a405905af89a61e4256",
+    "dynamic/index.html": "6d576fa4ee3c13f5d414f521706543ac44c2c099e8ca7cf0d8121d12965c13cb",
+    "scripts/build-public-site.mjs": "eaec8c2f1e88659ed3877a80f039474de747a84dfb64acb750b3464a4197d475",
+    "tests/app.test.mjs": "6d7d9a3f609e626c9ff73a83ab56ab5b0627bccb40429cc207f915f433796c50",
+    "tests/dynamic-navigation.test.mjs": "52fcb7dbbe6a6a3df6291f503a4106fc52052a3a9dc008458c3793a24032f595",
+    "tests/dynamic-navigation-browser.mjs": "7868ff3bbcc1be125449ed4de70e450fb497c3e17de53c60df13fa0e34c9ce07"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)"
+  },
+  "node": {
+    "total": 1171,
+    "passed": 1166,
+    "skipped": 5,
+    "failed": 0,
+    "log": "work/navigation-all.log (execution workspace, not durable)"
+  },
+  "publicBuild": true,
+  "chromiumDynamicNavigation": {
+    "engine": "chromium",
+    "pagesBasePath": true,
+    "readerDeepLinks": true,
+    "lessonToExperiment": true,
+    "answeredQuestionToFinConditions": true,
+    "quizHistoryUnchanged": true,
+    "unknownCaseFallback": true,
+    "firstVisitQueryOffline": true,
+    "offlineMethod": "browser_offline",
+    "pageErrors": 0,
+    "passed": true
+  },
+  "chromiumThermal": {
+    "engine": "chromium",
+    "learningTutorial": true,
+    "predictionReflection": true,
+    "worker": true,
+    "presets": 4,
+    "termPanel": true,
+    "cancelRollsBack": true,
+    "fin3DMapping": true,
+    "boilingSchematic": true,
+    "rewind": true,
+    "comparison": true,
+    "unstableStepRejected": true,
+    "temperatureDependentHeatCapacity": true,
+    "contoursAndGrid": true,
+    "physicalCrossSections": true,
+    "circleAndFreeDraw": true,
+    "offline": true,
+    "offlineMethod": "browser_offline",
+    "viewports": [
+      390,
+      412,
+      1280
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "pageErrors": 0,
+    "passed": true
+  },
+  "chromiumRadiation": {
+    "engine": "chromium",
+    "model": "closed_diffuse_gray_radiation",
+    "independentTwoSurfaceWatts": true,
+    "threeSurface": true,
+    "fourSurface": true,
+    "comparison": true,
+    "rewind": true,
+    "invalidViewFactorsRejected": true,
+    "invalidStepAtomic": true,
+    "workerLoadFailureHandled": true,
+    "termPanelAndRelatedTerms": true,
+    "offline": true,
+    "offlineMethod": "browser_offline",
+    "viewports": [
+      390,
+      412,
+      1280
+    ],
+    "pageErrors": 0,
+    "passed": true
+  },
+  "chromiumChannel": {
+    "engine": "chromium",
+    "scope": "1D developed momentum + periodic 2D temperature, not general CFD",
+    "poiseuilleIndependentFormula": true,
+    "heatAndMomentumConserved": true,
+    "thermalTransportDirection": true,
+    "comparison": true,
+    "rewind": true,
+    "zeroDrive": true,
+    "invalidReAndStepRejected": true,
+    "keyboardTerms": true,
+    "mobileDefaultMesh": [
+      32,
+      12
+    ],
+    "offline": true,
+    "offlineMethod": "browser_offline",
+    "pageErrors": 0,
+    "passed": true
+  },
+  "rootDistribution": {
+    "passed": true,
+    "command": "npm run test:browser:public",
+    "lessonsDisplayed": 76,
+    "internallyCheckedProblemsExercised": 444,
+    "publicFilesSHA256": {
+      "app.js": "b48c39fe595a32abbcd39afe0b4ac5a91aec8983dea2ef3e928defd2fc7a7995",
+      "dynamic-navigation.mjs": "8ccf44b66d288b7e88a62e01a06e1408c31442b78f97886e039047c64990c54b",
+      "sw.js": "82e6ebec472c3c9d39614bfe28175d1c9f965885810b61ab74cec6925645fd6a"
+    },
+    "scopeNote": "Distribution built before the additional Object.hasOwn guard on section map lookups. Main app, worker fallback and all legitimate navigation behavior match the committed implementation. Node checks include that guard. The final public build and navigation browser are rerun below after recording these exact distribution hashes."
+  },
+  "notVerified": [
+    "Real iPhone/Android/assistive technologies",
+    "New implementation at live public URL",
+    "This navigation change in WebKit CI until its own run completes"
+  ],
+  "mainPublished": false,
+  "finalPublicBuild": {
+    "passed": true,
+    "publicFilesSHA256": {
+      "app.js": "b48c39fe595a32abbcd39afe0b4ac5a91aec8983dea2ef3e928defd2fc7a7995",
+      "dynamic-navigation.mjs": "bf8162b8152182aa8cb5dc6264889c5a88a3ed57ce5abf72b8b628b18fecc2b4",
+      "sw.js": "d17337a8119ac073a9c3953a30372d270f48ff82dc5385b29d85810e35b4f3f0"
+    }
+  },
+  "finalChromiumNavigation": {
+    "engine": "chromium",
+    "pagesBasePath": true,
+    "readerDeepLinks": true,
+    "lessonToExperiment": true,
+    "answeredQuestionToFinConditions": true,
+    "quizHistoryUnchanged": true,
+    "unknownCaseFallback": true,
+    "firstVisitQueryOffline": true,
+    "offlineMethod": "browser_offline",
+    "pageErrors": 0,
+    "passed": true
+  },
+  "finalRecordedAtUTC": "2026-11-04T21:24:48.349309+00:00"
+}

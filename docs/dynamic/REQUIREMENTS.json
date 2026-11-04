@@ -90,7 +90,10 @@
         "CFD_DEVELOPMENT.md",
         "CFD_BENCHMARKS_20261104.json",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -149,7 +152,10 @@
         "TEMPERATURE_DEPENDENT_CP.md",
         "HEAT_CAPACITY_BENCHMARKS_20261104.json",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ]
     },
     {
@@ -167,7 +173,10 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ]
     },
     {
@@ -192,7 +201,10 @@
         "HEAT_CAPACITY_BENCHMARKS_20261104.json",
         "FIELD_INSPECTION.md",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ]
     },
     {
@@ -210,7 +222,10 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ]
     },
     {
@@ -407,7 +422,10 @@
         "CFD_DEVELOPMENT.md",
         "CFD_BENCHMARKS_20261104.json",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -637,7 +655,10 @@
       "evidence": [
         "../../dynamic/dev/cavity.mjs",
         "CFD_DEVELOPMENT.md",
-        "CFD_BENCHMARKS_20261104.json"
+        "CFD_BENCHMARKS_20261104.json",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -663,7 +684,10 @@
         "TEMPERATURE_DEPENDENT_CP.md",
         "HEAT_CAPACITY_BENCHMARKS_20261104.json",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -728,7 +752,10 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "MANUFACTURED_VERIFICATION.md",
+        "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
       ],
       "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
     },

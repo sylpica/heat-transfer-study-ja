@@ -58,9 +58,13 @@ jobs:
           node-version: '22'
       - name: Reproduce restricted cavity benchmarks (does not publish the model)
         run: node scripts/dynamic-cavity-benchmarks.mjs --full | tee dynamic-cfd-results.json
+      - name: Verify full manufactured velocity, pressure and temperature fields
+        run: node scripts/dynamic-manufactured-benchmarks.mjs --full | tee dynamic-manufactured-results.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: dynamic-cfd-${{ github.sha }}-${{ github.run_id }}
-          path: dynamic-cfd-results.json
+          path: |
+            dynamic-cfd-results.json
+            dynamic-manufactured-results.json
           retention-days: 30

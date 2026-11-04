@@ -1,0 +1,127 @@
+{
+  "generatedAtUTC": "2026-11-04T15:41:25.797Z",
+  "sourceCommit": "07d39fffd4097561f30ee7568c0e5419817c7dcc",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "21190663e99f35936c3f675530b6d233ff5cbf64b2c31570d8dd5ce43c199f42",
+    "dynamic/dev/manufactured-cavity.mjs": "0428e9e4ff6cf72d93b7beb6949fdce6ee78403c00eb6d72dfa42778f589f81d",
+    "scripts/dynamic-manufactured-benchmarks.mjs": "ed33672805b010a59fe594917e406cd19e4c79b8328236ae35fc38963f22b11c"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "stage": "development_code_verification_only",
+  "releaseApproved": false,
+  "reference": "Independent manufactured continuous fields and PDE source terms; no original reference figure or prose reproduced.",
+  "norm": "RMS of all stored u/v face or pressure/temperature cell samples; full-field maximum errors also reported. Pressure gauge is mean zero.",
+  "samples": [
+    {
+      "n": 16,
+      "time": 0.024999999999999974,
+      "errors": {
+        "u": {
+          "rms": 0.012285202623660136,
+          "max": 0.02897315346726881
+        },
+        "v": {
+          "rms": 0.01228520262366014,
+          "max": 0.02897315346726881
+        },
+        "pressure": {
+          "rms": 0.05302980028356196,
+          "max": 0.19087374336783802
+        },
+        "temperature": {
+          "rms": 0.0006199217816968268,
+          "max": 0.0014835062735301108
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 1.087445121382535,
+      "divergence": 6.039613253960852e-14,
+      "energyErrorJ": 1.7621424068178794e-14,
+      "steps": 64,
+      "elapsedMs": 162.91312499999998
+    },
+    {
+      "n": 32,
+      "time": 0.025,
+      "errors": {
+        "u": {
+          "rms": 0.003102710596783309,
+          "max": 0.0073001878271492515
+        },
+        "v": {
+          "rms": 0.003102710596783317,
+          "max": 0.007300187827148807
+        },
+        "pressure": {
+          "rms": 0.013328534928764933,
+          "max": 0.04927961006514299
+        },
+        "temperature": {
+          "rms": 0.00015330380973583774,
+          "max": 0.0003758287983828268
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.27331896793801363,
+      "divergence": 2.1316282072803006e-14,
+      "energyErrorJ": 6.39212444639766e-14,
+      "steps": 256,
+      "elapsedMs": 3808.53669
+    },
+    {
+      "n": 64,
+      "time": 0.024999999999999623,
+      "errors": {
+        "u": {
+          "rms": 0.0007807069647171244,
+          "max": 0.0018311545729021717
+        },
+        "v": {
+          "rms": 0.0007807069647171341,
+          "max": 0.0018311545729021717
+        },
+        "pressure": {
+          "rms": 0.003338682809430459,
+          "max": 0.012417480917354742
+        },
+        "temperature": {
+          "rms": 3.82337456852154e-05,
+          "max": 9.427180339116603e-05
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141654,
+      "pressureRelativeRMS": 0.06846403934288073,
+      "divergence": 2.842170943040401e-14,
+      "energyErrorJ": 2.4843056638143264e-14,
+      "steps": 1024,
+      "elapsedMs": 99495.239436
+    }
+  ],
+  "observedOrders": {
+    "u": [
+      1.9853206108556176,
+      1.990676091562635
+    ],
+    "v": [
+      1.985320610855614,
+      1.9906760915626207
+    ],
+    "pressure": [
+      1.9922851068841212,
+      1.9971672660364688
+    ],
+    "temperature": [
+      2.015692646002728,
+      2.0034750994775803
+    ]
+  },
+  "pressureAccuracyNote": "Pressure residual/divergence do not measure continuum pressure error. Relative pressure errors here are deliberately retained; the three-grid convergence gate is not engineering approval.",
+  "passed": true,
+  "elapsedMs": 103480.67457,
+  "timingScope": "cloud CPU; not a real-device or GPU performance claim"
+}

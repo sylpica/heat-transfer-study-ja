@@ -2,10 +2,10 @@ name: Dynamic simulation verification
 on:
   push:
     branches: [codex/dynamic-heat-simulation]
-    paths: ['dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
   pull_request:
     branches: [main]
-    paths: ['dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
 permissions:
   contents: read
 jobs:
@@ -53,6 +53,10 @@ jobs:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
       - run: node tests/dynamic-navigation-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - run: node tests/dynamic-radial-browser.mjs
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''

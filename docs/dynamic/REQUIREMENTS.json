@@ -60,7 +60,10 @@
         "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
         "RADIAL_CONDUCTION.md",
         "RADIAL_BENCHMARKS_20261104.json",
-        "../../dynamic/radial.mjs"
+        "../../dynamic/radial.mjs",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ],
       "remainingOrScope": "公開候補は伝導/単一フィン/黒い周囲への放射。強制/自然対流の一般2D CFDは未完了。"
     },
@@ -84,7 +87,10 @@
         "HEAT_CAPACITY_BENCHMARKS_20261104.json",
         "RADIAL_CONDUCTION.md",
         "RADIAL_BENCHMARKS_20261104.json",
-        "../../dynamic/radial.mjs"
+        "../../dynamic/radial.mjs",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ]
     },
     {
@@ -180,7 +186,10 @@
         "ARCHITECTURE.md",
         "RADIAL_CONDUCTION.md",
         "RADIAL_BENCHMARKS_20261104.json",
-        "../../dynamic/radial.mjs"
+        "../../dynamic/radial.mjs",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ]
     },
     {
@@ -261,7 +270,10 @@
         "ARCHITECTURE.md",
         "EXPERIMENT_CONTROLLER.md",
         "CFD_STATE_AND_TIME.md",
-        "CFD_TEMPORAL_BENCHMARKS_20261104.json"
+        "CFD_TEMPORAL_BENCHMARKS_20261104.json",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ]
     },
     {
@@ -296,7 +308,10 @@
         "RADIATION_BENCHMARKS_20261104.json",
         "FIELD_INSPECTION.md",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ]
     },
     {
@@ -356,7 +371,10 @@
         "ARCHITECTURE.md",
         "NAVIGATION_HANDOFF.md",
         "../../dynamic-navigation.mjs",
-        "../../tests/dynamic-navigation-browser.mjs"
+        "../../tests/dynamic-navigation-browser.mjs",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ],
       "remainingOrScope": "既存教材/ガイド/用語へのリンク。節/問題の条件の自動受け渡しは未完了。"
     },
@@ -378,7 +396,10 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ]
     },
     {
@@ -509,7 +530,10 @@
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
         "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
         "CFD_STATE_AND_TIME.md",
-        "CFD_TEMPORAL_BENCHMARKS_20261104.json"
+        "CFD_TEMPORAL_BENCHMARKS_20261104.json",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ]
     },
     {
@@ -762,7 +786,10 @@
         "../../tests/dynamic-navigation-browser.mjs",
         "RADIAL_CONDUCTION.md",
         "RADIAL_BENCHMARKS_20261104.json",
-        "../../dynamic/radial.mjs"
+        "../../dynamic/radial.mjs",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -796,7 +823,10 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "RADIAL_UI.md",
+        "RADIAL_UI_CHECKPOINT_20261104.json",
+        "../../tests/dynamic-radial-browser.mjs"
       ]
     },
     {

@@ -22,7 +22,7 @@ import {validateDeepLessons,deepLessonForSection} from './original-deep-lessons.
 import {renderTransientFields,renderTransientSteps,transientGraph,transientFieldNames} from './transient-ui.mjs';
 import {matchTerms,renderTermLinks,renderTermSheet,renderTermExample,renderTermLearningLinks,linkTermTextNodes} from './term-links.mjs';
 import {renderSimulationDiagram} from './sim-diagrams.mjs';
-import {lessonDiagramPath} from './lesson-diagrams.mjs';
+import {lessonDiagramPath,lessonDiagramSize} from './lesson-diagrams.mjs';
 const CORE_DATA_FILES = ['./data/book.json', './data/questions.json', './data/glossary.json', './data/content-manifest.json', './data/original-notes.json', './data/original-deep-lessons.json'];
 const LEGACY_STORAGE_KEY = 'heat-study-ja:v1';
 const PROFILES_KEY = 'heat-study-ja:profiles:v1';
@@ -1170,7 +1170,7 @@ function figureSizeAttributes(figure) {
 function renderLessonDiagram(sectionId) {
   const src=lessonDiagramPath(sectionId);
   if(!src)return '';
-  return `<figure class="lesson-diagram"><img src="${escapeHTML(src)}" alt="第${escapeHTML(sectionId)}節のアプリ作成の独自図解" loading="lazy"/><figcaption><a class="figure-zoom text-link" href="${escapeHTML(src)}" target="_blank" rel="noopener noreferrer">図を別のタブで拡大する ↗</a><span>アプリ作成の独自図解です。原本の図版の転載・トレースではありません。図の適用条件と数値は図の中に明記しています。</span></figcaption></figure>`;
+  return `<figure class="lesson-diagram"><img src="${escapeHTML(src)}" alt="第${escapeHTML(sectionId)}節のアプリ作成の独自図解" ${figureSizeAttributes(lessonDiagramSize(sectionId)||{})} loading="lazy"/><figcaption><a class="figure-zoom text-link" href="${escapeHTML(src)}" target="_blank" rel="noopener noreferrer">図を別のタブで拡大する ↗</a><span>アプリ作成の独自図解です。原本の図版の転載・トレースではありません。図の適用条件と数値は図の中に明記しています。</span></figcaption></figure>`;
 }
 function renderSimulationSteps(mode,result) {
   const v=result.values,n=value=>Number(value).toLocaleString('ja-JP',{maximumSignificantDigits:7});

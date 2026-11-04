@@ -1,3 +1,4 @@
+import {attachNavigationContext} from './navigation-context.mjs';
 import {attachTermPanel} from './term-panel.mjs';
 import {Experiment} from './experiment.mjs';
 const $=id=>document.getElementById(id),fmt=(v,d=3)=>Number.isFinite(v)?v.toFixed(d):'—';
@@ -42,3 +43,5 @@ $('graph').onclick=e=>{const r=$('graph').getBoundingClientRect(),border=parseFl
 window.addEventListener('resize',render);if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('status').textContent='オフラインの準備に失敗しました。接続中は計算できます。';});loadPreset('enclosure');
 
 attachTermPanel({root:$('manual'),dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});
+
+attachNavigationContext(document.querySelector('main'),'network');

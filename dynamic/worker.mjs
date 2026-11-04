@@ -1,3 +1,4 @@
+import {createRadial} from './radial.mjs';
 import {createDevelopedChannel} from './developed-channel.mjs';
 import {createRadiationNetwork} from './radiation-network.mjs';
 import {createThermal} from './thermal.mjs';
@@ -7,7 +8,7 @@ self.onmessage=async({data})=>{
  const {id,type}=data;
  try{
   if(type==='cancel'){rollback();generation++;self.postMessage({id,type:'cancelled'});return;}
-  if(type==='init'){rollback();generation++;if(data.kind&&!['thermal','radiation-network','developed-channel'].includes(data.kind))throw Error('未対応のモデルです。');model=data.kind==='radiation-network'?createRadiationNetwork(data.config):data.kind==='developed-channel'?createDevelopedChannel(data.config):createThermal(data.config);self.postMessage({id,type:'ready',snapshot:model.snapshot(),mesh:model.mesh});return;}
+  if(type==='init'){rollback();generation++;if(data.kind&&!['thermal','radiation-network','developed-channel','radial'].includes(data.kind))throw Error('未対応のモデルです。');const next=data.kind==='radial'?createRadial(data.config):data.kind==='radiation-network'?createRadiationNetwork(data.config):data.kind==='developed-channel'?createDevelopedChannel(data.config):createThermal(data.config),payload={snapshot:next.snapshot(),mesh:next.mesh,flux:next.initialFlux?.()};model=next;self.postMessage({id,type:'ready',...payload});return;}
   if(!model)throw Error('実験を選んで初期化してください。');
   if(type==='restore'){rollback();generation++;self.postMessage({id,type:'result',snapshot:model.restore(data.snapshot),flux:model.flux?.()});return;}
   if(type!=='advance')throw Error('未対応の計算要求です。');

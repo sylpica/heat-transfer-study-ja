@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-import { LESSON_DIAGRAMS, LESSON_DIAGRAM_PATHS, lessonDiagramPath } from '../lesson-diagrams.mjs';
+import { LESSON_DIAGRAMS, LESSON_DIAGRAM_PATHS, lessonDiagramPath, lessonDiagramSize } from '../lesson-diagrams.mjs';
 
 const root = new URL('../', import.meta.url);
 const read = rel => readFileSync(new URL(rel, root), 'utf8');
@@ -37,4 +37,9 @@ test('reader UI, public build allowlist and service worker all reference the dia
   const sw = read('sw.js');
   assert.ok(sw.includes("'./lesson-diagrams.mjs'"));
   for (const path of LESSON_DIAGRAM_PATHS) assert.ok(sw.includes(`'./${path}'`), `service worker must precache ${path}`);
+});
+
+test('lazy lesson images reserve the exact intrinsic SVG proportions before decoding',()=>{
+ for(const [id,file] of Object.entries(LESSON_DIAGRAMS)){const svg=read(`assets/lesson-diagrams/${file}`),tag=svg.match(/<svg\b[^>]*>/)[0],width=Number(tag.match(/\bwidth="(\d+)"/)[1]),height=Number(tag.match(/\bheight="(\d+)"/)[1]);assert.deepEqual(lessonDiagramSize(id),{width,height},id);}
+ assert.equal(lessonDiagramSize('__proto__'),null);assert.equal(lessonDiagramSize('99.1'),null);assert.match(read('app.js'),/figureSizeAttributes\(lessonDiagramSize\(sectionId\)\|\|\{\}\)/);
 });

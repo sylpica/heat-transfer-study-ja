@@ -60,6 +60,7 @@ export function createThermal(config){
   pos(dt,'時間刻み');if(dt>safeDt*(1+1e-12))throw Error(`時間刻みが安定性の上限${safeDt.toPrecision(4)} sを超えています。`);
   const {P,external}=power(),next=new Float64Array(T);
   for(let n=0;n<N;n++)if(mask[n]){next[n]+=dt*P[n]/C[n];if(!Number.isFinite(next[n])||next[n]<=0)throw Error('温度が非有限値または0 K以下となるため、更新前に計算を停止しました。時間刻みと熱源を見直してください。');}
+  num(next.reduce((sum,t,n)=>sum+C[n]*(t-273.15),0),'更新後のエネルギー');num(netInput+external*dt,'累積の熱流入');num(time+dt,'物理時間');
   T.set(next);time+=dt;netInput+=external*dt;steps++;lastDt=dt;lastPower=external;return returnState?snapshot():undefined;
  }
  function snapshot(){const energy=T.reduce((s,t,n)=>s+C[n]*(t-273.15),0),values=T.filter((_,n)=>mask[n]),error=energy-initialEnergy-netInput;return {temperature:Array.from(T),time,energy,netInput,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy),Math.abs(netInput)),min:Math.min(...values),max:Math.max(...values),steps,lastDt,lastPower,safeDt:Number.isFinite(safeDt)?safeDt:null};}

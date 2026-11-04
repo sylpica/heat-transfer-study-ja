@@ -1,0 +1,533 @@
+{
+  "run": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/41868021403",
+  "job": 126707219749,
+  "extraction": "JSON objects extracted without numerical changes from completed GitHub Actions job log; artifact download unavailable in this environment. Each available source SHA-256 verified against the identified Git commit.",
+  "results": [
+    {
+      "date": "2026-11-04",
+      "sourceCommit": "a49ceb6257fda6b31b68b95e6aa607a7e5d1e70e",
+      "stage": "development_only_not_public",
+      "pressurePreconditioner": "jacobi",
+      "sourceNotes": "CFD_DEVELOPMENT.md; equations independently implemented; numerical reference values are public transcriptions, not an expert approval.",
+      "lid": [
+        {
+          "n": 16,
+          "time": 29.99999999999883,
+          "samples": [
+            {
+              "y": 0.2813,
+              "u": -0.1465757468750856
+            },
+            {
+              "y": 0.5,
+              "u": -0.18972172226658704
+            },
+            {
+              "y": 0.6172,
+              "u": -0.13092149270926415
+            },
+            {
+              "y": 0.8516,
+              "u": 0.22531228909718293
+            }
+          ],
+          "divergence": 2.7882696151948494e-11,
+          "energyError": -1.7408297026122455e-13,
+          "pressureResidual": 1.1992205855151957e-08,
+          "pressureRhsNorm": 152.43426998343918,
+          "totalPressureIterations": 92412,
+          "steps": 2400
+        },
+        {
+          "n": 32,
+          "time": 30,
+          "samples": [
+            {
+              "y": 0.2813,
+              "u": -0.1545790002844859
+            },
+            {
+              "y": 0.5,
+              "u": -0.20394476175866955
+            },
+            {
+              "y": 0.6172,
+              "u": -0.13721944864229285
+            },
+            {
+              "y": 0.8516,
+              "u": 0.23343932188275068
+            }
+          ],
+          "divergence": 8.343492563511745e-11,
+          "energyError": 1.4210854715202004e-14,
+          "pressureResidual": 8.487911845524399e-08,
+          "pressureRhsNorm": 1036.2856947805165,
+          "totalPressureIterations": 331954,
+          "steps": 4800
+        }
+      ],
+      "natural": [
+        {
+          "n": 16,
+          "time": 0.9999999999999599,
+          "rayleigh": 1000,
+          "prandtl": 0.71,
+          "nusselt": 1.1263186929272706,
+          "divergence": 2.835527368461044e-10,
+          "energyError": -7.092104681304825e-14,
+          "pressureResidual": 2.2913508879949076e-06,
+          "pressureRhsNorm": 25711.12045039669,
+          "totalPressureIterations": 48767,
+          "steps": 2560
+        },
+        {
+          "n": 32,
+          "time": 1,
+          "rayleigh": 1000,
+          "prandtl": 0.71,
+          "nusselt": 1.1199427644339721,
+          "divergence": 3.3627345352726934e-10,
+          "energyError": 8.201217482900437e-13,
+          "pressureResidual": 7.327227450541839e-06,
+          "pressureRhsNorm": 74159.565166494,
+          "totalPressureIterations": 370665,
+          "steps": 10240
+        },
+        {
+          "n": 48,
+          "time": 1,
+          "rayleigh": 1000,
+          "prandtl": 0.71,
+          "nusselt": 1.118748501478649,
+          "divergence": 1.531130777721046e-11,
+          "energyError": 7.095311992253409e-13,
+          "pressureResidual": 1.053600168723241e-06,
+          "pressureRhsNorm": 136549.0632146394,
+          "totalPressureIterations": 1186694,
+          "steps": 23040
+        }
+      ],
+      "halfTimeStep": {
+        "n": 32,
+        "time": 30,
+        "centerU": -0.2039447617003824
+      },
+      "naturalThreeGrid": {
+        "observedOrder": 1.9809900211533282,
+        "extrapolatedNusselt": 1.11777970146854,
+        "monotone": true,
+        "decreasingDifference": true,
+        "scope": "Nonuniform-grid leading-error fit of one wall-average quantity, not a whole-field accuracy or asymptotic-range proof."
+      },
+      "acceptance": {
+        "lidMaxNormalizedVelocityError": 0.002040999715514108,
+        "lidBudget": 0.005,
+        "naturalReference": 1.117,
+        "naturalBudget": 0.006,
+        "naturalError": 0.0029427644339721226,
+        "massBudget": 1e-08,
+        "thermalEnergyBudget": 1e-08,
+        "gridImproves": true
+      },
+      "passed": true,
+      "elapsedMs": 731510.74102,
+      "timingScope": "cloud CPU, possible concurrent verification workloads; not a phone or GPU performance claim"
+    },
+    {
+      "generatedAtUTC": "2026-11-04T16:43:38.041Z",
+      "sourceCommit": "a49ceb6257fda6b31b68b95e6aa607a7e5d1e70e",
+      "sourceTreeDirty": false,
+      "sourceFilesSHA256": {
+        "dynamic/dev/cavity.mjs": "abbdc29e85fa2e0cc129bb45948784884e121953b78771e046925ebe6b5f3aea",
+        "dynamic/dev/manufactured-cavity.mjs": "0428e9e4ff6cf72d93b7beb6949fdce6ee78403c00eb6d72dfa42778f589f81d",
+        "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+        "scripts/dynamic-manufactured-benchmarks.mjs": "db342f8ac8e68c178911be68324ba062b74dc6461280ad58e0b60c382d37b4d8"
+      },
+      "environment": {
+        "node": "v22.23.4",
+        "platform": "linux",
+        "arch": "x64"
+      },
+      "stage": "development_code_verification_only",
+      "pressurePreconditioner": "jacobi",
+      "releaseApproved": false,
+      "reference": "Independent manufactured continuous fields and PDE source terms; no original reference figure or prose reproduced.",
+      "norm": "RMS of all stored u/v face or pressure/temperature cell samples; full-field maximum errors also reported. Pressure gauge is mean zero.",
+      "samples": [
+        {
+          "n": 16,
+          "time": 0.024999999999999974,
+          "errors": {
+            "u": {
+              "rms": 0.012285202623660136,
+              "max": 0.02897315346726881
+            },
+            "v": {
+              "rms": 0.01228520262366014,
+              "max": 0.02897315346726881
+            },
+            "pressure": {
+              "rms": 0.05302980028356196,
+              "max": 0.19087374336783802
+            },
+            "temperature": {
+              "rms": 0.0006199217816968268,
+              "max": 0.0014835062735301108
+            }
+          },
+          "pressureReferenceRMS": 0.04876549560141662,
+          "pressureRelativeRMS": 1.087445121382535,
+          "divergence": 6.039613253960852e-14,
+          "energyErrorJ": 1.7621424068178794e-14,
+          "totalPressureIterations": 2299,
+          "steps": 64,
+          "elapsedMs": 218.03348999999997
+        },
+        {
+          "n": 32,
+          "time": 0.025,
+          "errors": {
+            "u": {
+              "rms": 0.003102710596783309,
+              "max": 0.0073001878271492515
+            },
+            "v": {
+              "rms": 0.003102710596783317,
+              "max": 0.007300187827148807
+            },
+            "pressure": {
+              "rms": 0.013328534928764933,
+              "max": 0.04927961006514299
+            },
+            "temperature": {
+              "rms": 0.00015330380973583774,
+              "max": 0.0003758287983828268
+            }
+          },
+          "pressureReferenceRMS": 0.04876549560141662,
+          "pressureRelativeRMS": 0.27331896793801363,
+          "divergence": 2.1316282072803006e-14,
+          "energyErrorJ": 6.39212444639766e-14,
+          "totalPressureIterations": 18715,
+          "steps": 256,
+          "elapsedMs": 3501.732115
+        },
+        {
+          "n": 64,
+          "time": 0.024999999999999623,
+          "errors": {
+            "u": {
+              "rms": 0.0007807069647171244,
+              "max": 0.0018311545729021717
+            },
+            "v": {
+              "rms": 0.0007807069647171341,
+              "max": 0.0018311545729021717
+            },
+            "pressure": {
+              "rms": 0.003338682809430459,
+              "max": 0.012417480917354742
+            },
+            "temperature": {
+              "rms": 3.82337456852154e-05,
+              "max": 9.427180339116603e-05
+            }
+          },
+          "pressureReferenceRMS": 0.04876549560141654,
+          "pressureRelativeRMS": 0.06846403934288073,
+          "divergence": 2.842170943040401e-14,
+          "energyErrorJ": 2.4843056638143264e-14,
+          "totalPressureIterations": 143138,
+          "steps": 1024,
+          "elapsedMs": 100162.47636799999
+        }
+      ],
+      "observedOrders": {
+        "u": [
+          1.9853206108556176,
+          1.990676091562635
+        ],
+        "v": [
+          1.985320610855614,
+          1.9906760915626207
+        ],
+        "pressure": [
+          1.9922851068841212,
+          1.9971672660364688
+        ],
+        "temperature": [
+          2.015692646002728,
+          2.0034750994775803
+        ]
+      },
+      "pressureAccuracyNote": "Pressure residual/divergence do not measure continuum pressure error. Relative pressure errors here are deliberately retained; the three-grid convergence gate is not engineering approval.",
+      "passed": true,
+      "elapsedMs": 104011.33245,
+      "timingScope": "cloud CPU; not a real-device or GPU performance claim"
+    },
+    {
+      "date": "2026-11-04",
+      "sourceCommit": "a49ceb6257fda6b31b68b95e6aa607a7e5d1e70e",
+      "stage": "development_only_not_public",
+      "pressurePreconditioner": "multigrid",
+      "sourceNotes": "CFD_DEVELOPMENT.md; equations independently implemented; numerical reference values are public transcriptions, not an expert approval.",
+      "lid": [
+        {
+          "n": 16,
+          "time": 29.99999999999883,
+          "samples": [
+            {
+              "y": 0.2813,
+              "u": -0.14657574687321037
+            },
+            {
+              "y": 0.5,
+              "u": -0.189721722266181
+            },
+            {
+              "y": 0.6172,
+              "u": -0.13092149271001013
+            },
+            {
+              "y": 0.8516,
+              "u": 0.22531228909579476
+            }
+          ],
+          "divergence": 3.729017095110976e-12,
+          "energyError": 3.979039320256561e-13,
+          "pressureResidual": 1.3834929756844395e-09,
+          "pressureRhsNorm": 152.43426998369418,
+          "totalPressureIterations": 8467,
+          "steps": 2400
+        },
+        {
+          "n": 32,
+          "time": 30,
+          "samples": [
+            {
+              "y": 0.2813,
+              "u": -0.15457900028371352
+            },
+            {
+              "y": 0.5,
+              "u": -0.20394476175992335
+            },
+            {
+              "y": 0.6172,
+              "u": -0.13721944864355012
+            },
+            {
+              "y": 0.8516,
+              "u": 0.23343932188207292
+            }
+          ],
+          "divergence": 3.643974011424689e-11,
+          "energyError": 9.805489753489383e-13,
+          "pressureResidual": 7.598075807153954e-08,
+          "pressureRhsNorm": 1036.2856947789694,
+          "totalPressureIterations": 13822,
+          "steps": 4800
+        }
+      ],
+      "natural": [
+        {
+          "n": 16,
+          "time": 0.9999999999999599,
+          "rayleigh": 1000,
+          "prandtl": 0.71,
+          "nusselt": 1.1263186929080575,
+          "divergence": 3.205435916697752e-12,
+          "energyError": -8.633094239485279e-14,
+          "pressureResidual": 5.1488050499920077e-08,
+          "pressureRhsNorm": 25711.120450385257,
+          "totalPressureIterations": 7333,
+          "steps": 2560
+        },
+        {
+          "n": 32,
+          "time": 1,
+          "rayleigh": 1000,
+          "prandtl": 0.71,
+          "nusselt": 1.1199427644285151,
+          "divergence": 2.165490009531368e-12,
+          "energyError": 1.1423084700366505e-13,
+          "pressureResidual": 1.506357592604283e-07,
+          "pressureRhsNorm": 74159.56516665706,
+          "totalPressureIterations": 26838,
+          "steps": 10240
+        },
+        {
+          "n": 48,
+          "time": 1,
+          "rayleigh": 1000,
+          "prandtl": 0.71,
+          "nusselt": 1.1187485014608,
+          "divergence": 2.6274982189988805e-11,
+          "energyError": 1.3102654763634734e-12,
+          "pressureResidual": 1.1352674474867524e-05,
+          "pressureRhsNorm": 136549.06321463812,
+          "totalPressureIterations": 56755,
+          "steps": 23040
+        }
+      ],
+      "halfTimeStep": {
+        "n": 32,
+        "time": 30,
+        "centerU": -0.20394476170070278
+      },
+      "naturalThreeGrid": {
+        "observedOrder": 1.980990000242362,
+        "extrapolatedNusselt": 1.117779701425761,
+        "monotone": true,
+        "decreasingDifference": true,
+        "scope": "Nonuniform-grid leading-error fit of one wall-average quantity, not a whole-field accuracy or asymptotic-range proof."
+      },
+      "acceptance": {
+        "lidMaxNormalizedVelocityError": 0.00204099971628649,
+        "lidBudget": 0.005,
+        "naturalReference": 1.117,
+        "naturalBudget": 0.006,
+        "naturalError": 0.0029427644285151544,
+        "massBudget": 1e-08,
+        "thermalEnergyBudget": 1e-08,
+        "gridImproves": true
+      },
+      "passed": true,
+      "elapsedMs": 176630.708755,
+      "timingScope": "cloud CPU, possible concurrent verification workloads; not a phone or GPU performance claim"
+    },
+    {
+      "generatedAtUTC": "2026-11-04T16:48:18.806Z",
+      "sourceCommit": "a49ceb6257fda6b31b68b95e6aa607a7e5d1e70e",
+      "sourceTreeDirty": false,
+      "sourceFilesSHA256": {
+        "dynamic/dev/cavity.mjs": "abbdc29e85fa2e0cc129bb45948784884e121953b78771e046925ebe6b5f3aea",
+        "dynamic/dev/manufactured-cavity.mjs": "0428e9e4ff6cf72d93b7beb6949fdce6ee78403c00eb6d72dfa42778f589f81d",
+        "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+        "scripts/dynamic-manufactured-benchmarks.mjs": "db342f8ac8e68c178911be68324ba062b74dc6461280ad58e0b60c382d37b4d8"
+      },
+      "environment": {
+        "node": "v22.23.4",
+        "platform": "linux",
+        "arch": "x64"
+      },
+      "stage": "development_code_verification_only",
+      "pressurePreconditioner": "multigrid",
+      "releaseApproved": false,
+      "reference": "Independent manufactured continuous fields and PDE source terms; no original reference figure or prose reproduced.",
+      "norm": "RMS of all stored u/v face or pressure/temperature cell samples; full-field maximum errors also reported. Pressure gauge is mean zero.",
+      "samples": [
+        {
+          "n": 16,
+          "time": 0.024999999999999974,
+          "errors": {
+            "u": {
+              "rms": 0.012285202623660122,
+              "max": 0.028973153467269253
+            },
+            "v": {
+              "rms": 0.012285202623660155,
+              "max": 0.028973153467269253
+            },
+            "pressure": {
+              "rms": 0.05302980028356064,
+              "max": 0.19087374336786378
+            },
+            "temperature": {
+              "rms": 0.0006199217816973345,
+              "max": 0.0014835062735301108
+            }
+          },
+          "pressureReferenceRMS": 0.04876549560141662,
+          "pressureRelativeRMS": 1.0874451213825078,
+          "divergence": 7.638334409421077e-14,
+          "energyErrorJ": 2.5099903709288607e-14,
+          "totalPressureIterations": 506,
+          "steps": 64,
+          "elapsedMs": 196.261964
+        },
+        {
+          "n": 32,
+          "time": 0.025,
+          "errors": {
+            "u": {
+              "rms": 0.003102710596783293,
+              "max": 0.007300187827149696
+            },
+            "v": {
+              "rms": 0.0031027105967832815,
+              "max": 0.007300187827148807
+            },
+            "pressure": {
+              "rms": 0.013328534928759166,
+              "max": 0.04927961006512069
+            },
+            "temperature": {
+              "rms": 0.00015330380973555734,
+              "max": 0.0003758287983828268
+            }
+          },
+          "pressureReferenceRMS": 0.04876549560141662,
+          "pressureRelativeRMS": 0.2733189679378954,
+          "divergence": 1.4210854715202004e-14,
+          "energyErrorJ": 6.395010592580818e-14,
+          "totalPressureIterations": 1813,
+          "steps": 256,
+          "elapsedMs": 1544.510196
+        },
+        {
+          "n": 64,
+          "time": 0.024999999999999623,
+          "errors": {
+            "u": {
+              "rms": 0.0007807069647170979,
+              "max": 0.0018311545729021717
+            },
+            "v": {
+              "rms": 0.0007807069647171094,
+              "max": 0.0018311545729021717
+            },
+            "pressure": {
+              "rms": 0.00333868280942979,
+              "max": 0.012417480917331442
+            },
+            "temperature": {
+              "rms": 3.8233745683917525e-05,
+              "max": 9.427180339116603e-05
+            }
+          },
+          "pressureReferenceRMS": 0.04876549560141654,
+          "pressureRelativeRMS": 0.068464039342867,
+          "divergence": 3.552713678800501e-14,
+          "energyErrorJ": 3.197568798350464e-14,
+          "totalPressureIterations": 7071,
+          "steps": 1024,
+          "elapsedMs": 22267.767656
+        }
+      ],
+      "observedOrders": {
+        "u": [
+          1.9853206108556232,
+          1.9906760915626767
+        ],
+        "v": [
+          1.9853206108556325,
+          1.99067609156265
+        ],
+        "pressure": [
+          1.9922851068847094,
+          1.9971672660361337
+        ],
+        "temperature": [
+          2.015692646006548,
+          2.003475099523915
+        ]
+      },
+      "pressureAccuracyNote": "Pressure residual/divergence do not measure continuum pressure error. Relative pressure errors here are deliberately retained; the three-grid convergence gate is not engineering approval.",
+      "passed": true,
+      "elapsedMs": 24020.851251,
+      "timingScope": "cloud CPU; not a real-device or GPU performance claim"
+    }
+  ]
+}

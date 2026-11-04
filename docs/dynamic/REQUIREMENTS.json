@@ -247,7 +247,9 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md",
-        "EXPERIMENT_CONTROLLER.md"
+        "EXPERIMENT_CONTROLLER.md",
+        "CFD_STATE_AND_TIME.md",
+        "CFD_TEMPORAL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -481,7 +483,9 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "CFD_STATE_AND_TIME.md",
+        "CFD_TEMPORAL_BENCHMARKS_20261104.json"
       ]
     },
     {
@@ -723,7 +727,9 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "CFD_STATE_AND_TIME.md",
+        "CFD_TEMPORAL_BENCHMARKS_20261104.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },

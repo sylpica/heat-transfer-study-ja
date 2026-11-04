@@ -22,6 +22,7 @@ jobs:
       - run: node scripts/dynamic-heat-capacity-benchmarks.mjs
       - run: node scripts/dynamic-channel-benchmarks.mjs
       - run: node scripts/dynamic-multigrid-benchmarks.mjs
+      - run: node scripts/dynamic-cavity-time-benchmarks.mjs
       - run: npm run build:public
   browser:
     runs-on: ubuntu-24.04

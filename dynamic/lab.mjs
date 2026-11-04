@@ -11,7 +11,7 @@ class Actor{
  request(type,values={}){return new Promise((resolve,reject)=>{const id=++this.id;this.pending.set(id,{resolve,reject});this.worker.postMessage({id,type,...values});});}
  cancel(){this.worker.postMessage({id:++this.id,type:'cancel'});for(const p of this.pending.values())p.reject(Error('cancelled'));this.pending.clear();}
 }
-const actorA=new Actor(),actorB=new Actor();let selection='heating',configA,configB=null,stateA,stateB,meshA,meshB,fluxA,fluxB,history=[],historyIndex=0,busy=false,playing=false,version=0,probe={x:.5,y:.5},drawPoints=[],initialScale=[20,60],graphIndex=0;
+const actorA=new Actor();let actorB=null;const comparisonActor=()=>actorB||(actorB=new Actor());let selection='heating',configA,configB=null,stateA,stateB,meshA,meshB,fluxA,fluxB,history=[],historyIndex=0,busy=false,playing=false,version=0,probe={x:.5,y:.5},drawPoints=[],initialScale=[20,60],graphIndex=0;
 const media=matchMedia('(prefers-color-scheme:dark)');
 function theme(){document.body.dataset.theme=$('theme').value;render();}media.addEventListener('change',theme);$('theme').onchange=theme;
 function error(e){$('error').hidden=false;$('error').textContent=e.message;playing=false;$('status').textContent='計算停止。表示中は最後の有効な状態です。';}
@@ -32,24 +32,24 @@ function readConfig(){
  if(selection==='fin')c.distributedConvection={h:number('h'),areaPerVolume:2*(c.height+c.depth)/(c.height*c.depth),temperature:293.15};
  c.regions=[];
  if($('composite').checked){c.materials.push({...MATERIALS[+$('material2').value]});c.regions.push({points:rectangle(c.width/2,0,c.width/2,c.height),material:1});}
- if($('local-source').checked){const x=number('source-x'),y=number('source-y');if(x<.1||x>.9||y<.1||y>.9)throw Error('熱源中心は各寸法の0.1〜0.9倍です。');c.regions.push({points:rectangle((x-.1)*c.width,(y-.1)*c.height,.2*c.width,.2*c.height),material:0,source:number('source-value')});}
+ if($('local-source').checked){const x=number('source-x'),y=number('source-y');if(x<.1||x>.9||y<.1||y>.9)throw Error('熱源中心は各寸法の0.1〜0.9倍です。');c.regions.push({points:rectangle((x-.1)*c.width,(y-.1)*c.height,.2*c.width,.2*c.height),source:number('source-value')});}
  if(selection==='fin'&&(c.regions.length||c.contactResistance>0))throw Error('現在の1Dフィン検証は単一材料です。複合材料には2D板を選んでください。');return c;
 }
 function pause(){playing=false;version++;actors.forEach(a=>a.cancel());busy=false;$('progress').value=0;$('status').textContent='一時停止';}
 async function initialize(){pause();clearError();const token=version;busy=true;
- try{const next=readConfig();const responses=await Promise.all([actorA.request('init',{config:next}),...(configB?[actorB.request('init',{config:configB})]:[])]);if(token!==version)return;
+ try{const next=readConfig();const responses=await Promise.all([actorA.request('init',{config:next}),...(configB?[comparisonActor().request('init',{config:configB})]:[])]);if(token!==version)return;
   configA=next;stateA=responses[0].snapshot;meshA=responses[0].mesh;stateB=responses[1]?.snapshot;meshB=responses[1]?.mesh;fluxA=fluxB=null;history=[];historyIndex=0;initialScale=[Math.min(stateA.min,stateB?.min??Infinity)-273.15,Math.max(stateA.max,stateB?.max??-Infinity,next.boundaries.left.temperature??0)-273.15];if(initialScale[1]-initialScale[0]<1)initialScale[1]=initialScale[0]+1;record();
   $('status').textContent='準備完了。再生すると数値計算が進みます。';$('model-label').textContent=selection==='fin'?'1D非定常フィン・一定h・CPU':'2D熱伝導・一定物性・CPU';render();
  }catch(e){if(token===version)error(e);}finally{if(token===version)busy=false;}
 }
 function record(){history=history.slice(0,historyIndex+1);history.push({a:stateA,b:stateB});const limit=Math.min(500,Math.max(2,Math.floor(2e6/(meshA.mask.length+(meshB?.mask.length||0)))));if(history.length>limit)history.shift();historyIndex=history.length-1;graphIndex=historyIndex;}
 async function frame(){if(busy||!stateA)return;const token=version;busy=true;clearError();
- try{const duration=number('interval')*number('speed'),dt=$('dt').value.trim()?number('dt'):undefined;if(duration<=0||duration>1000)throw Error('1コマの時間と倍率を見直してください。');const result=await Promise.all([actorA.request('advance',{duration,dt}),...(configB?[actorB.request('advance',{duration,dt})]:[])]);if(token!==version)return;
+ try{const duration=number('interval')*number('speed'),dt=$('dt').value.trim()?number('dt'):undefined;if(duration<=0||duration>1000)throw Error('1コマの時間と倍率を見直してください。');const result=await Promise.all([actorA.request('advance',{duration,dt}),...(configB?[comparisonActor().request('advance',{duration,dt})]:[])]);if(token!==version)return;
   stateA=result[0].snapshot;fluxA=result[0].flux;stateB=result[1]?.snapshot;fluxB=result[1]?.flux;record();render();$('status').textContent='計算済みの状態を表示中。巻き戻しは保存状態の再生です。';
  }catch(e){if(token===version)error(e);}finally{if(token===version){busy=false;$('progress').value=0;if(playing)setTimeout(frame,100);}}
 }
 async function rewind(index){pause();if(!history[index])return;const token=version;busy=true;
- try{const result=await Promise.all([actorA.request('restore',{snapshot:history[index].a}),...(configB?[actorB.request('restore',{snapshot:history[index].b})]:[])]);if(token!==version)return;stateA=result[0].snapshot;stateB=result[1]?.snapshot;fluxA=result[0].flux;fluxB=result[1]?.flux;historyIndex=index;render();}catch(e){if(token===version)error(e);}finally{if(token===version)busy=false;}
+ try{const result=await Promise.all([actorA.request('restore',{snapshot:history[index].a}),...(configB?[comparisonActor().request('restore',{snapshot:history[index].b})]:[])]);if(token!==version)return;stateA=result[0].snapshot;stateB=result[1]?.snapshot;fluxA=result[0].flux;fluxB=result[1]?.flux;historyIndex=index;render();}catch(e){if(token===version)error(e);}finally{if(token===version)busy=false;}
 }
 function sample(state,mesh){if(!state||!mesh)return null;const i=Math.min(mesh.nx-1,Math.floor(probe.x*mesh.nx)),j=Math.min(mesh.ny-1,Math.floor(probe.y*mesh.ny)),n=j*mesh.nx+i;return mesh.mask[n]?state.temperature[n]-273.15:null;}
 function bounds(){let lo,hi;if($('scale').value==='manual'){lo=number('scale-min');hi=number('scale-max');if(!(hi>lo))throw Error('色の上限は下限より大きくしてください。');}else if($('scale').value==='fixed')[lo,hi]=initialScale;else{lo=Math.min(stateA.min,stateB?.min??Infinity)-273.15;hi=Math.max(stateA.max,stateB?.max??-Infinity)-273.15;if(hi-lo<1)hi=lo+1;}return [lo,hi];}

@@ -18,8 +18,8 @@ export function createThermal(config){
  c.materials.forEach(m=>{pos(m.k,'熱伝導率');pos(m.rho,'密度');pos(m.cp,'比熱');});
  const mesh=rasterize({...c,width:w,height:h}),mask=mesh.mask,N=nx*ny,material=new Uint16Array(N),source=new Float64Array(N),T=new Float64Array(N),C=new Float64Array(N),k=new Float64Array(N);
  for(const region of c.regions||[]){
-  const p=polygon(region.points).points;if(!Number.isInteger(region.material)||!c.materials[region.material])throw Error('材料領域の物性がありません。');
-  let hit=0;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const n=j*nx+i;if(mask[n]&&contains(p,(i+.5)*dx,(j+.5)*dy)){material[n]=region.material;if(region.source!==undefined)source[n]=num(region.source,'体積発熱');hit++;}}
+  const p=polygon(region.points).points;if(region.material!==undefined&&(!Number.isInteger(region.material)||!c.materials[region.material]))throw Error('材料領域の物性がありません。');if(region.material===undefined&&region.source===undefined)throw Error('領域に材料または熱源を指定してください。');
+  let hit=0;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const n=j*nx+i;if(mask[n]&&contains(p,(i+.5)*dx,(j+.5)*dy)){if(region.material!==undefined)material[n]=region.material;if(region.source!==undefined)source[n]=num(region.source,'体積発熱');hit++;}}
   if(!hit)throw Error('材料/発熱領域を格子が解像していません。');
  }
  const initial=c.initial; if(!Array.isArray(initial))pos(initial,'初期絶対温度[K]');else if(initial.length!==N)throw Error('初期温度場のセル数が一致しません。');

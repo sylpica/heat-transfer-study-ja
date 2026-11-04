@@ -78,3 +78,8 @@ test('a nonrectangular heated perimeter transfers boundary energy into active ce
  const m=createThermal(config({nx:20,ny:20,outline:circle(.5,.5,.3),edge:{type:'temperature',temperature:320}})),s=advance(m,.01);
  assert.ok(s.max>300);assert.ok(s.netInput>0);near(s.energyError,0,1e-9);
 });
+
+test('moving a heat-source region does not repaint the material or change its heat capacity',()=>{
+ const m=createThermal(config({materials:[{k:1,rho:1,cp:1},{k:2,rho:2,cp:2}],regions:[{points:rectangle(.5,0,.5,1),material:1},{points:rectangle(.6,0,.2,1),source:4}]}));
+ assert.deepEqual(m.mesh.material, [0,0,0,0,0,1,1,1,1,1]);const dt=.0001,s=m.step(dt);near(s.temperature[6],300+dt,1e-10);near(s.temperature[7],300+dt,1e-10);near(s.temperature[5],300,1e-10);near(s.energyError,0,1e-9);
+});

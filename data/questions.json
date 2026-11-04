@@ -38291,5 +38291,509 @@
       "下流端12.0 Kへ掛ける。"
     ],
     "beginnerPitfall": "Cとxの単位を省略したまま温度分布を平均しない。"
+  },
+  {
+    "id": "supp-condensation-geometry-effective-latent-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "numerical",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "層流凝縮の顕熱補正h_fg′=h_fg[1+(0.683−0.228/Pr_l)Ja_l]を採用する。Pr_l=2.00、Ja_l=0.0200、h_fg=2.00×10⁶ J/kgのときh_fg′はいくらか。Pr_l≥0.6を満たし、有効数字3桁とする。",
+    "choices": [
+      "2.02×10⁶ J/kg",
+      "2.00×10⁶ J/kg",
+      "1.98×10⁶ J/kg",
+      "3.14×10⁶ J/kg"
+    ],
+    "answer": 0,
+    "difficulty": "標準・数値計算",
+    "explanation": "0.683−0.228/2=0.569、倍率は1+0.569×0.0200=1.01138。h_fg′=2022760 J/kg≈2.02×10⁶ J/kg。これは物性の潜熱そのものを改訂する操作ではない。",
+    "distractors": [
+      "正解。補正倍率1.01138を潜熱に掛けた。",
+      "顕熱補正を適用せず元の潜熱を用いた。",
+      "補正項を足す代わりに引いた。",
+      "Ja_lを掛けず補正項0.569を足した。"
+    ],
+    "hints": [
+      "Pr_lの範囲を確認する。",
+      "0.683−0.228/Pr_lを計算する。"
+    ],
+    "solutionSteps": [
+      "Pr_lの範囲を確認する。",
+      "0.683−0.228/Pr_lを計算する。",
+      "Ja_lを掛けて1へ足す。",
+      "h_fgに掛けて3桁へ丸める。"
+    ],
+    "beginnerPitfall": "膜沸騰の補正式へ係数を置き換えない。"
+  },
+  {
+    "id": "supp-condensation-geometry-corrected-mass-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "numerical",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "顕熱込みの近似モデルでQ̇≈ṁh_fg′を一貫して用いる。Q̇=2200 W、h_fg′=2.20×10⁶ J/kg、元の潜熱h_fg=2.00×10⁶ J/kgのとき、このモデルの凝縮流量はいくらか。有効数字3桁とする。",
+    "choices": [
+      "4.84×10⁹ kg/s",
+      "1.00×10⁻³ kg/s",
+      "1.10×10⁻³ kg/s",
+      "1.00 kg/s"
+    ],
+    "answer": 1,
+    "difficulty": "標準・数値計算",
+    "explanation": "ṁ=2200/(2.20×10⁶)=0.00100 kg/s。元の潜熱で割る値0.00110 kg/sとは区別する。入口/出口状態を指定した厳密収支では実際のエンタルピー差を使う。",
+    "distractors": [
+      "Q̇とh_fg′を掛け、割り算を取り違えた。",
+      "正解。Q̇を採用した有効量h_fg′で割った。",
+      "同じ熱量を元の潜熱だけで割り、顕熱補正と不整合になった。",
+      "J/kgをkJ/kgへ直してからWをkWへ直さなかった。"
+    ],
+    "hints": [
+      "採用モデルのQ̇=ṁh_fg′を読む。",
+      "流量について解く。"
+    ],
+    "solutionSteps": [
+      "採用モデルのQ̇=ṁh_fg′を読む。",
+      "流量について解く。",
+      "W=J/sで単位を確認する。",
+      "同じ顕熱をさらに加算しない。"
+    ],
+    "beginnerPitfall": "有効量をhの計算だけに使い、流量で別の近似へ黙って変えない。"
+  },
+  {
+    "id": "supp-condensation-geometry-inclination-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "numerical",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "薄い層流膜の同一モデルが使える斜面で、鉛直から60°傾ける。斜面に沿う長さ、物性、温度差を固定し、g_t=g cos60°、h̄∝g_t^(1/4)とする。鉛直時に対するh̄の倍率はいくらか。有効数字3桁とする。",
+    "choices": [
+      "0.965 倍",
+      "1.19 倍",
+      "0.841 倍",
+      "0.500 倍"
+    ],
+    "answer": 2,
+    "difficulty": "標準・数値計算",
+    "explanation": "h̄(60°)/h̄(0)=(0.5)^(1/4)=0.840896。角度は鉛直から、長さは斜面に沿う値。水平端でこの式を無条件に使う問題ではない。",
+    "distractors": [
+      "鉛直からの角度を水平からと誤りsin60°を使った。",
+      "必要な倍率の逆数を取った。",
+      "正解。cos60°=0.5の四乗根を取った。",
+      "重力成分の倍率をそのままhの倍率とした。"
+    ],
+    "hints": [
+      "角度の基準が鉛直か確認する。",
+      "接線成分の倍率はcos60°。"
+    ],
+    "solutionSteps": [
+      "角度の基準が鉛直か確認する。",
+      "接線成分の倍率はcos60°。",
+      "係数hは重力成分の1/4乗。",
+      "倍率の向きと丸めを確認する。"
+    ],
+    "beginnerPitfall": "斜面長を固定した比較で、鉛直投影長まで別に変えない。"
+  },
+  {
+    "id": "supp-condensation-geometry-cylinder-coefficient-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "numerical",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "静穏蒸気の外側水平円筒でh̄_D=0.728[S]^(1/4)を使い、S=ρ_l(ρ_l−ρ_v)g h_fg′k_l³/(μ_lDΔT)である。SI単位でSの四乗根は1.50×10⁴ W/(m²·K)と計算済みとする。平均h̄_Dはいくらか。有効数字3桁とする。",
+    "choices": [
+      "1.24×10⁴ W/(m²·K)",
+      "1.41×10⁴ W/(m²·K)",
+      "1.50×10⁴ W/(m²·K)",
+      "1.09×10⁴ W/(m²·K)"
+    ],
+    "answer": 3,
+    "difficulty": "標準・数値計算",
+    "explanation": "h̄_D=0.728×15000=10920 W/(m²·K)≈1.09×10⁴ W/(m²·K)。平方根や直径/半径の問題を重ねず、形状係数の選択を確認する。",
+    "distractors": [
+      "球の係数0.828を流用した。",
+      "垂直板の係数0.943を流用した。",
+      "形状の係数を掛けなかった。",
+      "正解。指定した水平円筒係数0.728を掛けた。"
+    ],
+    "hints": [
+      "対象は外側の水平円筒。",
+      "与えた四乗根の量と単位を確認する。"
+    ],
+    "solutionSteps": [
+      "対象は外側の水平円筒。",
+      "与えた四乗根の量と単位を確認する。",
+      "指定係数0.728を掛ける。",
+      "3桁へ丸める。"
+    ],
+    "beginnerPitfall": "外側の重力凝縮と強制対流凝縮の係数を混ぜない。"
+  },
+  {
+    "id": "supp-condensation-geometry-sphere-ratio-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "numerical",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "同じ直径D、液体物性、蒸気条件、温度差の球と水平円筒に、平均h=C[S]^(1/4)が適用できるとする。Sは同じ値で、C_sphere=0.828、C_cyl=0.728。h_sphere/h_cylはいくらか。面積や全熱量ではなくhを比べ、有効数字3桁とする。",
+    "choices": [
+      "1.14 倍",
+      "0.879 倍",
+      "1.00 倍",
+      "1.03 倍"
+    ],
+    "answer": 0,
+    "difficulty": "標準・数値計算",
+    "explanation": "h_sphere/h_cyl=0.828/0.728≈1.13736≈1.14。熱移動率の比には円筒軸長と各形状の面積も必要となる。",
+    "distractors": [
+      "正解。共通の四乗根を消し0.828/0.728を計算した。",
+      "係数比の分子と分母を逆にした。",
+      "形状係数が同一と扱った。",
+      "既に四乗根の外にある係数比にも四乗根を取った。"
+    ],
+    "hints": [
+      "同じSの因子を約分する。",
+      "形状係数の比だけが残る。"
+    ],
+    "solutionSteps": [
+      "同じSの因子を約分する。",
+      "形状係数の比だけが残る。",
+      "四乗根を再度取らない。",
+      "比較対象がhであることを確認する。"
+    ],
+    "beginnerPitfall": "係数と括弧の内外を取り違えない。"
+  },
+  {
+    "id": "supp-condensation-geometry-reynolds-definitions-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "numerical",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "板下端の単位幅凝縮流量Γ=0.0200 kg/(m·s)、液体粘度μ_l=2.50×10⁻⁴ Pa·sとする。二つの定義Re_c=Γ/μ_l、Re_f=4Γ/μ_lで得られる組はどれか。",
+    "choices": [
+      "Re_c=0.0800、Re_f=0.320",
+      "Re_c=80.0、Re_f=320",
+      "Re_c=320、Re_f=80.0",
+      "Re_c=80.0、Re_f=80.0"
+    ],
+    "answer": 1,
+    "difficulty": "標準・数値計算",
+    "explanation": "Re_c=0.0200/0.000250=80.0、Re_f=320。遷移の目安を比較する場合は出典がどちらの定義かを確認し、この値だけで実機の状態を保証しない。",
+    "distractors": [
+      "粘度0.250 mPa·sの数値を0.250 Pa·sとして扱った。",
+      "正解。両者の定義からRe_f=4Re_cとなる。",
+      "二つの定義を逆にした。",
+      "4倍の違いを無視した。"
+    ],
+    "hints": [
+      "Γは全流量でなく単位幅流量。",
+      "粘度をkg/(m·s)で表す。"
+    ],
+    "solutionSteps": [
+      "Γは全流量でなく単位幅流量。",
+      "粘度をkg/(m·s)で表す。",
+      "Re_cを割り算で求める。",
+      "Re_fはその4倍。"
+    ],
+    "beginnerPitfall": "円管の流量から作るReと同じ手順だと決めつけない。"
+  },
+  {
+    "id": "supp-condensation-geometry-bundle-mean-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "conceptual",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "同径・同面積の水平管が鉛直にn段並び、滑らかな流下を仮定した管群平均h̄_n=h̄_1/n^aを使う。a=1/6、n=64で、各管の面積と温度差が単管時と同じなら、管群全体Q̇_n/Q̇_1はいくらか。最下段の局所値は問わない。",
+    "choices": [
+      "64.0 倍",
+      "22.6 倍",
+      "32.0 倍",
+      "0.500 倍"
+    ],
+    "answer": 2,
+    "difficulty": "概念・形状と適用条件",
+    "explanation": "64^(1/6)=2なのでh̄_n/h̄_1=1/2。面積は64倍でQ̇_n/Q̇_1=64/2=32。飛散や偏流等がある実機へ一律に使える保証ではない。",
+    "distractors": [
+      "全体面積の倍率だけを使った。",
+      "指定a=1/6の代わりにa=1/4を使った。",
+      "正解。平均hは半分でも全体面積は64倍になる。",
+      "平均hの倍率だけを全体Q̇の倍率とした。"
+    ],
+    "hints": [
+      "相関が管群平均を与えることを確認する。",
+      "64^(1/6)=2。"
+    ],
+    "solutionSteps": [
+      "相関が管群平均を与えることを確認する。",
+      "64^(1/6)=2。",
+      "平均係数は半分。",
+      "全管の面積64倍を掛ける。"
+    ],
+    "beginnerPitfall": "熱伝達係数の低下を、全体熱量の低下と同じとしない。"
+  },
+  {
+    "id": "supp-condensation-geometry-curved-film-history-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "applied",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "曲面上を上流から流下する層流凝縮膜を、平板の局所式で近似したい。主教材の有効重力による一般化と整合する方針はどれか。",
+    "choices": [
+      "その位置の接線重力だけで、平板の重力を置き換える",
+      "その位置の膜厚だけで、全域の重力をゼロに置く",
+      "円筒半径を必ずRとし、どの形状でも同じ積分を使う",
+      "接線重力と流路幅の上流積分から、有効重力を定める"
+    ],
+    "answer": 3,
+    "difficulty": "概念・形状と適用条件",
+    "explanation": "局所膜厚は局所で凝縮した分だけでなく上流からの排液にも依存する。g_effの定義はその履歴を積分に含める。一定幅かつ一定g_tの場合だけg_eff=g_tへ簡約できる。",
+    "distractors": [
+      "局所成分だけでは曲面の上流からの流入を一般に再現できない。",
+      "重力駆動の薄膜モデルを重力ゼロへ置き換える根拠がない。",
+      "Rは鉛直軸周りの幾何量で、二次元水平円筒では一定幅として相殺する。",
+      "正解。上流からの流入と幅の変化を含めた膜厚評価が必要となる。"
+    ],
+    "hints": [
+      "上流から流入するΓがあることを確認する。",
+      "接線方向成分g_tと流路幅の幾何を決める。"
+    ],
+    "solutionSteps": [
+      "上流から流入するΓがあることを確認する。",
+      "接線方向成分g_tと流路幅の幾何を決める。",
+      "有効重力の積分の条件を確認する。",
+      "離脱や逆流がある場合は適用を見直す。"
+    ],
+    "beginnerPitfall": "局所のg_tと履歴を含むg_effを常に同じとしない。"
+  },
+  {
+    "id": "supp-condensation-geometry-horizontal-limit-v1",
+    "revision": "v1",
+    "field": "対流",
+    "prerequisites": [
+      "膜状凝縮",
+      "熱収支",
+      "液膜の定義"
+    ],
+    "questionGroup": "original_independent_applied_v1",
+    "questionKind": "applied",
+    "source": {
+      "type": "supplement",
+      "reference": "膜状凝縮の一般法則と独自の仮想条件から作問。原本の文章・図・例題を転載しない。",
+      "chapterId": "ch8",
+      "focusSectionId": "8.5",
+      "guideId": "chapter8-buoyancy"
+    },
+    "createdStatus": "独立作問原稿",
+    "reviewStatus": "2026-10-30：内部の別式検算・単位・条件・全選択肢確認／原本網羅照合・包括的品質監査・外部専門家校閲前",
+    "expertReviewed": false,
+    "reportHistory": [
+      {
+        "date": "2026-10-30",
+        "type": "authored_with_internal_check",
+        "details": "docs/CONDENSATION_GEOMETRY_20261030.md。選択した式・条件・定義を画像で確認し、独立例・積分・次元・全候補を内部検算。外部専門家校閲ではない。"
+      }
+    ],
+    "prompt": "傾斜板の薄い重力流膜モデルh̄∝(g cosθ)^(1/4)で、θは鉛直からの角度である。θ→90°で式がゼロに近づくとき、実際の水平な凝縮面について適切な判断はどれか。",
+    "choices": [
+      "排液や膜保持の仮定を見直し、適合する水平面モデルを選ぶ",
+      "式の値がゼロなので、水平面では凝縮熱も必ずゼロと断定する",
+      "cosθを1へ固定し、鉛直板と同じ凝縮係数を常に使う",
+      "板を球とみなし、形状係数だけ0.828に変更して計算する"
+    ],
+    "answer": 0,
+    "difficulty": "概念・形状と適用条件",
+    "explanation": "水平に近づくと重力に沿う排液の仮定が失われ得る。端への流れ、保持膜、滴の離脱等を含む別の適合モデルが必要であり、実際の凝縮をゼロと結論しない。",
+    "distractors": [
+      "正解。薄い膜が斜面に沿って流れる仮定の限界を検討する。",
+      "モデルの限界での値を実面の全機構の熱量と同一視できない。",
+      "接線成分が消える条件で鉛直排液の仮定をそのまま維持できない。",
+      "板と球では形状も流れも違い、係数だけの置換は根拠がない。"
+    ],
+    "hints": [
+      "角度が鉛直からであることを確認する。",
+      "cosθが小さくなると接線方向排液が弱まる。"
+    ],
+    "solutionSteps": [
+      "角度が鉛直からであることを確認する。",
+      "cosθが小さくなると接線方向排液が弱まる。",
+      "薄い重力膜の前提を見直す。",
+      "実面の条件を満たす別モデルを探す。"
+    ],
+    "beginnerPitfall": "相関の外挿値だけで現象の不存在を断定しない。"
   }
 ]

@@ -22,7 +22,7 @@ test('boundary-value and internal-generation lessons are complete independent te
 
 test('new section 4.1/4.2 questions have section metadata, rationale, and no answer-length giveaway',async()=>{
  const [book,notes,deep,questions,evidence]=await Promise.all(['data/book.json','data/original-notes.json','data/original-deep-lessons.json','data/questions.json','data/readiness-evidence.json'].map(read));
- assert.equal(questions.length,741);
+ assert.equal(questions.length,750);
  const items=questions.filter(q=>q.id.startsWith('supp-batch3-'));
  assert.equal(items.length,14);
  for(const q of items){

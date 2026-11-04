@@ -33,7 +33,7 @@ test('§9.3 six exercises explain all choices, vary cognitive skill and avoid le
   'data/book.json','data/original-notes.json','data/original-deep-lessons.json',
   'data/questions.json','data/readiness-evidence.json'
  ].map(read));
- assert.equal(all.length,741);
+ assert.equal(all.length,750);
  const qs=all.filter(q=>ids.includes(q.id));
  assert.equal(qs.length,6);
  assert.equal(new Set(all.map(q=>q.id)).size,all.length);

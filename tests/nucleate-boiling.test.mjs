@@ -35,7 +35,7 @@ test('new nucleate-boiling questions are section-linked, independently explained
   'data/book.json','data/original-notes.json','data/original-deep-lessons.json',
   'data/questions.json','data/readiness-evidence.json','data/glossary.json'
  ].map(read));
- assert.equal(questions.length,741);
+ assert.equal(questions.length,750);
  const added=questions.filter(q=>ids.includes(q.id));
  assert.equal(added.length,6);
  assert.equal(new Set(questions.map(q=>q.id)).size,questions.length);

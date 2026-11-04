@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-29T22:35:40.576813+00:00",
-  "basis": "9cb61fbに§8.4の形状別自然対流・修正Ra・平均の説明と9問を追加した作業ツリーの実データ。旧PC回収数とは別。",
+  "checkedAt": "2026-10-30T07:54:29.895204+09:00",
+  "basis": "23bc8adに§8.5の導出・顕熱補正・形状別凝縮と9問を追加した作業ツリーの実データ。旧PC回収数とは別。",
   "scope": "独立執筆原稿と節別問題の暫定最低条件。科学的・法的完成認定ではない。",
   "totals": {
     "sectionCount": 76,
     "shortConceptNoteDrafts": 76,
     "detailedLessonDrafts": 76,
-    "questionsInBank": 741,
+    "questionsInBank": 750,
     "draftAuthoringMinimumMet": 76,
     "remainingQuestionDraftMinimum": 0,
     "sectionsNeedingDetailedLesson": 0,
@@ -17,16 +17,16 @@
   "glossaryOnThisBranch": 158,
   "evidence": {
     "node": {
-      "total": 359,
-      "passed": 354,
+      "total": 365,
+      "passed": 360,
       "skipped": 5,
       "failed": 0
     },
     "publicBuild": "passed",
     "currentBatchBrowser": {
-      "previousSourceCI": "9cb61fb: CI40964423180 check and WebKit-online passed (76 lectures/404 exercise questions); not transferred to current source",
-      "currentChromiumProbe": "passed: section8.4 and all9 additional questions; correct scoring and revision v1 saved, mobile390px no overflow, pageerror0",
-      "currentWebKit": "not yet executed: 76 lectures/413 exercise questions",
+      "previousSourceCI": "1293b20: check passed, WebKit-online failed at stale expected block count14 vs6; fix23bc8ad has run40968662018 in progress",
+      "currentChromiumProbe": "not yet executed: section8.5 and9 additional questions",
+      "currentWebKit": "not yet executed: 76lectures/422exercise questions",
       "publicDeployment": "not performed; previously directly checked published bank72 is historical verification"
     },
     "expertReview": "not_completed",
@@ -1319,7 +1319,7 @@
       "shortConceptNoteDraft": true,
       "detailedLessonDraft": true,
       "legacyDraftRecorded": false,
-      "questionDraftCount": 8,
+      "questionDraftCount": 17,
       "questionKinds": 3,
       "missingQuestionDrafts": 0,
       "missingKinds": 0,
@@ -1329,15 +1329,16 @@
       "reviewedQuestionCount": 0,
       "verifiedRights": false,
       "finalAcceptance": false,
-      "learningObjective": "膜状凝縮の熱・流動機構を説明し、垂直板のNusselt型平均伝熱係数を仮定の範囲内で計算する。",
-      "detailedBlockCount": 6,
-      "equationCount": 3,
-      "workedExampleSteps": 6,
+      "learningObjective": "膜状凝縮の熱・流動機構を説明し、垂直板のNusselt型平均伝熱係数を仮定の範囲内で計算する。 液膜の速度・質量保存から膜厚と局所/平均hを導き、顕熱補正、液膜Reの定義、傾斜板・円筒・球・管群の形状と適用条件を区別して試算する。",
+      "detailedBlockCount": 15,
+      "equationCount": 11,
+      "workedExampleSteps": 12,
       "questionReview": "comprehensive_scientific_review_pending",
       "sourceCollation": "section_start_mapping_tracked_full_scope_unverified",
       "independentFigures": "parallel_line_assets_unintegrated_or_pending",
       "publicScreenCurrentBatch": "c5d35fc: built-artifact Chromium and WebKit-online passed; latest live deployment not performed",
-      "expertApproval": false
+      "expertApproval": false,
+      "currentRevisionScreenCheck": "not yet executed: current shape/subcooling supplement"
     },
     {
       "chapterId": "ch9",

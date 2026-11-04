@@ -57,7 +57,10 @@
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "RADIAL_CONDUCTION.md",
+        "RADIAL_BENCHMARKS_20261104.json",
+        "../../dynamic/radial.mjs"
       ],
       "remainingOrScope": "公開候補は伝導/単一フィン/黒い周囲への放射。強制/自然対流の一般2D CFDは未完了。"
     },
@@ -78,7 +81,10 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "TEMPERATURE_DEPENDENT_CP.md",
-        "HEAT_CAPACITY_BENCHMARKS_20261104.json"
+        "HEAT_CAPACITY_BENCHMARKS_20261104.json",
+        "RADIAL_CONDUCTION.md",
+        "RADIAL_BENCHMARKS_20261104.json",
+        "../../dynamic/radial.mjs"
       ]
     },
     {
@@ -159,7 +165,10 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "RADIAL_CONDUCTION.md",
+        "RADIAL_BENCHMARKS_20261104.json",
+        "../../dynamic/radial.mjs"
       ]
     },
     {
@@ -168,7 +177,10 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIAL_CONDUCTION.md",
+        "RADIAL_BENCHMARKS_20261104.json",
+        "../../dynamic/radial.mjs"
       ]
     },
     {
@@ -747,7 +759,10 @@
         "CFD_TEMPORAL_BENCHMARKS_20261104.json",
         "NAVIGATION_HANDOFF.md",
         "../../dynamic-navigation.mjs",
-        "../../tests/dynamic-navigation-browser.mjs"
+        "../../tests/dynamic-navigation-browser.mjs",
+        "RADIAL_CONDUCTION.md",
+        "RADIAL_BENCHMARKS_20261104.json",
+        "../../dynamic/radial.mjs"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },

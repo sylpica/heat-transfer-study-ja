@@ -298,7 +298,8 @@
         "ARCHITECTURE.md",
         "FIELD_INSPECTION.md",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "CFD_FIELD_INSPECTION.md"
       ]
     },
     {
@@ -613,7 +614,8 @@
       "evidence": [
         "STATUS.md",
         "ARCHITECTURE.md",
-        "FIELD_INSPECTION.md"
+        "FIELD_INSPECTION.md",
+        "CFD_FIELD_INSPECTION.md"
       ]
     },
     {
@@ -813,7 +815,8 @@
         "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
         "HIGH_ORDER_MOMENTUM.md",
         "HIGH_ORDER_MANUFACTURED_20261104.json",
-        "HIGH_ORDER_TEMPORAL_20261104.json"
+        "HIGH_ORDER_TEMPORAL_20261104.json",
+        "CFD_FIELD_INSPECTION.md"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },

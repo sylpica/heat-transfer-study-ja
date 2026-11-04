@@ -1,0 +1,59 @@
+{
+  "generatedAtUTC": "2026-11-04T23:06:09.243Z",
+  "sourceCommit": "13b0d1e32909a4037e587826250cab5f52dde336",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209"
+  },
+  "config": {
+    "nx": 64,
+    "ny": 64,
+    "pressurePreconditioner": "multigrid",
+    "momentumScheme": "polynomial4",
+    "width": 1,
+    "height": 1,
+    "rho": 1,
+    "cp": 1,
+    "nu": 0.01,
+    "alpha": 0.01,
+    "initial": 300,
+    "lidVelocity": 1
+  },
+  "stage": "supplementary_resolution_diagnostic_not_a_replacement_for_the_failed_32_grid_gate",
+  "releaseApproved": false,
+  "time": 30,
+  "steps": 20480,
+  "elapsedMs": 312870.672562,
+  "samples": [
+    {
+      "y": 0.2813,
+      "u": -0.15738403129172573,
+      "reference": -0.15662,
+      "absoluteError": 0.0007640312917257253
+    },
+    {
+      "y": 0.5,
+      "u": -0.20874788767011332,
+      "reference": -0.20581,
+      "absoluteError": 0.002937887670113326
+    },
+    {
+      "y": 0.6172,
+      "u": -0.13874388485441216,
+      "reference": -0.13641,
+      "absoluteError": 0.0023338848544121604
+    },
+    {
+      "y": 0.8516,
+      "u": 0.23631829323761347,
+      "reference": 0.23151,
+      "absoluteError": 0.004808293237613476
+    }
+  ],
+  "divergence": 4.1247005810873816e-12,
+  "energyError": -7.283063041541027e-13,
+  "maxVelocityError": 0.004808293237613476,
+  "referenceBudget": 0.005
+}

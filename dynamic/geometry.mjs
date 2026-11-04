@@ -33,3 +33,9 @@ export function rasterize({nx,ny,width,height,outline}){
 }
 export function rectangle(x,y,w,h){return [[x,y],[x+w,y],[x+w,y+h],[x,y+h]];}
 export function circle(x,y,r,n=64){return Array.from({length:n},(_,i)=>[x+r*Math.cos(2*Math.PI*i/n),y+r*Math.sin(2*Math.PI*i/n)]);}
+
+export function transformPolygon(points,{angle=0,scale=1,offsetX=0,offsetY=0,center=[0,0]}={}){
+ if(![angle,scale,offsetX,offsetY,...center].every(finite)||scale<=0)throw Error('回転・倍率・移動量が不正です。');
+ const a=Math.cos(angle),b=Math.sin(angle),[cx,cy]=center;
+ return polygon(points).points.map(([x,y])=>[cx+scale*(a*(x-cx)-b*(y-cy))+offsetX,cy+scale*(b*(x-cx)+a*(y-cy))+offsetY]);
+}

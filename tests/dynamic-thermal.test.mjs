@@ -2,7 +2,7 @@ import {rotatePoint,finFaces} from '../dynamic/fin-view.mjs';
 import {execFileSync} from 'node:child_process';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createThermal,SIGMA} from '../dynamic/thermal.mjs';
-import {polygon,rasterize,rectangle,circle} from '../dynamic/geometry.mjs';
+import {polygon,rasterize,rectangle,circle,transformPolygon} from '../dynamic/geometry.mjs';
 const config=(extra={})=>({nx:10,ny:1,width:1,height:1,depth:1,materials:[{k:1,rho:1,cp:1}],initial:300,...extra});
 function advance(m,t,dt=m.safeDt){while(m.snapshot().time<t-1e-12)m.step(Math.min(dt,t-m.snapshot().time));return m.snapshot();}
 const near=(a,b,tol=1e-9)=>assert.ok(Math.abs(a-b)<=tol,`${a} != ${b}`);
@@ -67,4 +67,14 @@ test('fin geometry rotation preserves physical distances and maps each solved ax
  const p=[.05,.003,.002],r=rotatePoint(p,.7,.4);near(r.reduce((s,v)=>s+v*v,0),p.reduce((s,v)=>s+v*v,0),1e-15);
  const faces=finFaces([330,320,310],{width:.05,height:.005,depth:.005},.7,.4);assert.equal(faces.length,14);assert.deepEqual(new Set(faces.map(f=>f.temperature)),new Set([330,320,310]));
  for(let i=1;i<faces.length;i++)assert.ok(faces[i].depth>=faces[i-1].depth);assert.throws(()=>finFaces([0],{width:1,height:1,depth:1},0,0));
+});
+
+test('shape editing preserves rotation area and applies an explicit area factor for scale without silently clipping',()=>{
+ const original=rectangle(.2,.2,.3,.2),center=[.35,.3],turned=transformPolygon(original,{angle:Math.PI/2,center}),scaled=transformPolygon(original,{scale:2,center});
+ near(polygon(turned).area,polygon(original).area,1e-12);near(polygon(scaled).area,4*polygon(original).area,1e-12);
+ const moved=transformPolygon(original,{offsetX:2});assert.throws(()=>rasterize({nx:20,ny:20,width:1,height:1,outline:moved}),/領域の外/);assert.throws(()=>transformPolygon(original,{scale:0}));
+});
+test('a nonrectangular heated perimeter transfers boundary energy into active cells rather than leaving the object disconnected',()=>{
+ const m=createThermal(config({nx:20,ny:20,outline:circle(.5,.5,.3),edge:{type:'temperature',temperature:320}})),s=advance(m,.01);
+ assert.ok(s.max>300);assert.ok(s.netInput>0);near(s.energyError,0,1e-9);
 });

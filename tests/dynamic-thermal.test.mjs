@@ -1,3 +1,4 @@
+import {rotatePoint,finFaces} from '../dynamic/fin-view.mjs';
 import {execFileSync} from 'node:child_process';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createThermal,SIGMA} from '../dynamic/thermal.mjs';
@@ -60,4 +61,10 @@ test('two-dimensional eigenmode benchmark records independently measured second-
  const result=JSON.parse(execFileSync(process.execPath,['scripts/dynamic-benchmarks.mjs'],{cwd:new URL('..',import.meta.url),encoding:'utf8'}));
  assert.ok(result.spaceObservedOrders.every(v=>v>1.8&&v<2.2));assert.ok(result.timeObservedOrders.every(v=>v>.95&&v<1.1));
  assert.ok(result.space.every(row=>Math.abs(row.energyErrorJ)<1e-10));
+});
+
+test('fin geometry rotation preserves physical distances and maps each solved axial cell to its own temperature',()=>{
+ const p=[.05,.003,.002],r=rotatePoint(p,.7,.4);near(r.reduce((s,v)=>s+v*v,0),p.reduce((s,v)=>s+v*v,0),1e-15);
+ const faces=finFaces([330,320,310],{width:.05,height:.005,depth:.005},.7,.4);assert.equal(faces.length,14);assert.deepEqual(new Set(faces.map(f=>f.temperature)),new Set([330,320,310]));
+ for(let i=1;i<faces.length;i++)assert.ok(faces[i].depth>=faces[i-1].depth);assert.throws(()=>finFaces([0],{width:1,height:1,depth:1},0,0));
 });

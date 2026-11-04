@@ -34,8 +34,8 @@
       "requirement": "2D・3Dの適切な使い分け",
       "status": "partial",
       "evidence": [
-        "STATUS.md",
-        "ARCHITECTURE.md"
+        "../../dynamic/fin-view.mjs",
+        "STATUS.md"
       ]
     },
     {
@@ -83,8 +83,12 @@
     {
       "id": "Q10",
       "requirement": "沸騰は模式アニメーションを基本とする",
-      "status": "planned",
-      "evidence": []
+      "status": "implemented_schematic_browser_passed_CI_pending",
+      "evidence": [
+        "../../dynamic/boiling.mjs",
+        "../../tests/dynamic-browser.mjs",
+        "STATUS.md"
+      ]
     },
     {
       "id": "Q11",
@@ -341,8 +345,12 @@
     {
       "id": "Q39",
       "requirement": "検証可能な2D層流CFDを基本に乱流へ拡張",
-      "status": "planned",
-      "evidence": []
+      "status": "partial_development_only_reduced_channel",
+      "evidence": [
+        "../../dynamic/dev/channel.mjs",
+        "../../tests/dynamic-channel.test.mjs",
+        "STATUS.md"
+      ]
     },
     {
       "id": "Q40",
@@ -356,8 +364,11 @@
     {
       "id": "Q41",
       "requirement": "回転・拡大できる3D形状表示",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "../../dynamic/fin-view.mjs",
+        "STATUS.md"
+      ]
     },
     {
       "id": "Q42",
@@ -587,8 +598,12 @@
     {
       "id": "Q69",
       "requirement": "沸騰の模式アニメーションを初期開発に含める",
-      "status": "planned",
-      "evidence": []
+      "status": "implemented_schematic_browser_passed_CI_pending",
+      "evidence": [
+        "../../dynamic/boiling.mjs",
+        "../../tests/dynamic-browser.mjs",
+        "STATUS.md"
+      ]
     },
     {
       "id": "Q70",

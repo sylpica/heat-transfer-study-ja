@@ -1,0 +1,132 @@
+{
+  "generatedAtUTC": "2026-11-04T16:19:22.173Z",
+  "sourceCommit": "e1e93d1f0fe2e34b7c771ae863e65f747cfa3fdc",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "abbdc29e85fa2e0cc129bb45948784884e121953b78771e046925ebe6b5f3aea",
+    "dynamic/dev/manufactured-cavity.mjs": "0428e9e4ff6cf72d93b7beb6949fdce6ee78403c00eb6d72dfa42778f589f81d",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-manufactured-benchmarks.mjs": "db342f8ac8e68c178911be68324ba062b74dc6461280ad58e0b60c382d37b4d8"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "stage": "development_code_verification_only",
+  "pressurePreconditioner": "multigrid",
+  "releaseApproved": false,
+  "reference": "Independent manufactured continuous fields and PDE source terms; no original reference figure or prose reproduced.",
+  "norm": "RMS of all stored u/v face or pressure/temperature cell samples; full-field maximum errors also reported. Pressure gauge is mean zero.",
+  "samples": [
+    {
+      "n": 16,
+      "time": 0.024999999999999974,
+      "errors": {
+        "u": {
+          "rms": 0.012285202623660122,
+          "max": 0.028973153467269253
+        },
+        "v": {
+          "rms": 0.012285202623660155,
+          "max": 0.028973153467269253
+        },
+        "pressure": {
+          "rms": 0.05302980028356064,
+          "max": 0.19087374336786378
+        },
+        "temperature": {
+          "rms": 0.0006199217816973345,
+          "max": 0.0014835062735301108
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 1.0874451213825078,
+      "divergence": 7.638334409421077e-14,
+      "energyErrorJ": 2.5099903709288607e-14,
+      "totalPressureIterations": 506,
+      "steps": 64,
+      "elapsedMs": 170.09894300000002
+    },
+    {
+      "n": 32,
+      "time": 0.025,
+      "errors": {
+        "u": {
+          "rms": 0.003102710596783293,
+          "max": 0.007300187827149696
+        },
+        "v": {
+          "rms": 0.0031027105967832815,
+          "max": 0.007300187827148807
+        },
+        "pressure": {
+          "rms": 0.013328534928759166,
+          "max": 0.04927961006512069
+        },
+        "temperature": {
+          "rms": 0.00015330380973555734,
+          "max": 0.0003758287983828268
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.2733189679378954,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 6.395010592580818e-14,
+      "totalPressureIterations": 1813,
+      "steps": 256,
+      "elapsedMs": 1429.7977620000001
+    },
+    {
+      "n": 64,
+      "time": 0.024999999999999623,
+      "errors": {
+        "u": {
+          "rms": 0.0007807069647170979,
+          "max": 0.0018311545729021717
+        },
+        "v": {
+          "rms": 0.0007807069647171094,
+          "max": 0.0018311545729021717
+        },
+        "pressure": {
+          "rms": 0.00333868280942979,
+          "max": 0.012417480917331442
+        },
+        "temperature": {
+          "rms": 3.8233745683917525e-05,
+          "max": 9.427180339116603e-05
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141654,
+      "pressureRelativeRMS": 0.068464039342867,
+      "divergence": 3.552713678800501e-14,
+      "energyErrorJ": 3.197568798350464e-14,
+      "totalPressureIterations": 7071,
+      "steps": 1024,
+      "elapsedMs": 20978.533977
+    }
+  ],
+  "observedOrders": {
+    "u": [
+      1.9853206108556232,
+      1.9906760915626767
+    ],
+    "v": [
+      1.9853206108556325,
+      1.99067609156265
+    ],
+    "pressure": [
+      1.9922851068847094,
+      1.9971672660361337
+    ],
+    "temperature": [
+      2.015692646006548,
+      2.003475099523915
+    ]
+  },
+  "pressureAccuracyNote": "Pressure residual/divergence do not measure continuum pressure error. Relative pressure errors here are deliberately retained; the three-grid convergence gate is not engineering approval.",
+  "passed": true,
+  "elapsedMs": 22589.232337,
+  "timingScope": "cloud CPU; not a real-device or GPU performance claim"
+}

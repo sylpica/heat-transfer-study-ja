@@ -2,6 +2,7 @@ name: Dynamic simulation verification
 on:
   push:
     branches: [codex/dynamic-heat-simulation]
+    paths: ['dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
   pull_request:
     branches: [main]
     paths: ['dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
@@ -20,6 +21,7 @@ jobs:
       - run: node scripts/dynamic-radiation-benchmarks.mjs
       - run: node scripts/dynamic-heat-capacity-benchmarks.mjs
       - run: node scripts/dynamic-channel-benchmarks.mjs
+      - run: node scripts/dynamic-multigrid-benchmarks.mjs
       - run: npm run build:public
   browser:
     runs-on: ubuntu-24.04
@@ -60,6 +62,10 @@ jobs:
         run: node scripts/dynamic-cavity-benchmarks.mjs --full | tee dynamic-cfd-results.json
       - name: Verify full manufactured velocity, pressure and temperature fields
         run: node scripts/dynamic-manufactured-benchmarks.mjs --full | tee dynamic-manufactured-results.json
+      - name: Reproduce the same cavity and whole-field equations with multigrid
+        run: |
+          node scripts/dynamic-cavity-benchmarks.mjs --full --multigrid | tee dynamic-cfd-multigrid-results.json
+          node scripts/dynamic-manufactured-benchmarks.mjs --full --multigrid | tee dynamic-manufactured-multigrid-results.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -67,4 +73,6 @@ jobs:
           path: |
             dynamic-cfd-results.json
             dynamic-manufactured-results.json
+            dynamic-cfd-multigrid-results.json
+            dynamic-manufactured-multigrid-results.json
           retention-days: 30

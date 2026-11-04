@@ -273,7 +273,13 @@
     }
   },
   "scope": "Final radial/navigation tests include quantized probe and delayed-image layout fix. Existing three Chromium dynamic regressions precede the unrelated reader-image dimension change; all three WebKit regressions include it.",
-  "rootChromiumRegression": "running at checkpoint; 76 lessons displayed, 444 checked-problem loop pending completion",
+  "rootChromiumRegression": {
+    "passed": true,
+    "command": "npm run test:browser:public",
+    "lessonsDisplayed": 76,
+    "checkedProblemsExercised": 444,
+    "scope": "Same exact public source/build hashes recorded in this checkpoint. Completed after the original checkpoint was saved."
+  },
   "earlierFailure": {
     "ci": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/41917404491",
     "source": "9f80b12",
@@ -286,5 +292,16 @@
     "New version at live public URL",
     "External expert/engineering approval"
   ],
-  "mainPublished": false
+  "mainPublished": false,
+  "cleanCIRun": {
+    "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/41924185234",
+    "sourceCommit": "26202e49706405228b7f97b23b4f805acbf1abca",
+    "jobs": {
+      "numerical-and-regression": "success",
+      "browser-chromium": "success",
+      "browser-webkit": "success",
+      "cfd-development-benchmarks": "success"
+    },
+    "scope": "This saved UI source. Does not certify subsequent pressure-sensitivity changes or live publication."
+  }
 }

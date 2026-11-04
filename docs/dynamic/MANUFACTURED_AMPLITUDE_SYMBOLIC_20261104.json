@@ -1,0 +1,13 @@
+{
+  "generatedAtUTC": "2026-11-04T22:30:46.819483+00:00",
+  "sympy": "1.14.0",
+  "scope": "Independent symbolic consistency of the manufactured source; not physical model or expert approval.",
+  "samples": 27,
+  "maxAbsoluteDifference": 2.842170943040401e-14,
+  "divergenceAndWallsSymbolicallyVerified": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/manufactured-cavity.mjs": "8c53b07106e651073d3061b1fead09fce82246fe5651ac4aed8ffc0ca04cdd90",
+    "scripts/check-manufactured-sources.py": "4eb5472350d75b2d3d2a7755a11534de20e4a1e66faf06236be8c7bd5da9c299"
+  },
+  "passed": true
+}

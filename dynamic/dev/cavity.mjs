@@ -27,7 +27,7 @@ export function projectFaces(us,vs,{nx,ny,dx,dy,rho=1,dt,tolerance=1e-10,maxIter
 export function createCavity(c,verification=null){
  c=structuredClone(c);
  if(verification&&['velocity','temperature','pressure','bodyForce','heatSource'].some(key=>typeof verification[key]!=='function'))throw Error('製造解検証には全ての場・外力・発熱関数が必要です。');
- if(verification)verification={...verification};
+ if(verification){if(verification.id!==undefined&&(typeof verification.id!=='string'||!verification.id||verification.id.length>512))throw Error('製造解の識別子が不正です。');if(verification.parameters&&['rho','cp','nu','alpha','width','height','leftTemperature','rightTemperature'].some(key=>verification.parameters[key]!==undefined&&verification.parameters[key]!==c[key]))throw Error('製造解の物性/領域/境界が計算条件と一致しません。');verification={...verification,id:verification.id??('anonymous:'+(globalThis.crypto?.randomUUID?.()??`${Date.now()}-${Math.random()}`))};}
  const {nx,ny}=c;if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<4||ny<4||nx>96||ny>96)throw Error('キャビティ格子は4〜96です。');
  for(const key of ['width','height','rho','cp','nu','alpha','initial'])if(!Number.isFinite(c[key])||c[key]<=0)throw Error(`${key}は正の有限値です。`);
  if(c.pressurePreconditioner&&!['jacobi','multigrid'].includes(c.pressurePreconditioner))throw Error('圧力前処理の指定が不正です。');
@@ -52,7 +52,7 @@ export function createCavity(c,verification=null){
  }
  const initialEnergy=cellCapacity*T.reduce((s,t)=>s+t-273.15,0);
  if(!Number.isFinite(k)||k<=0||!Number.isFinite(cellCapacity)||cellCapacity<=0||!Number.isFinite(initialEnergy))throw Error('物性/セル熱容量が数値範囲を超えています。');
- const signature=JSON.stringify([nx,ny,L,H,depth,rho,cp,nu,alpha,lid,gb,Tref,hot,cold,c.beta??null,c.scalarScheme||'upwind',c.pressurePreconditioner||'jacobi',c.pressureTolerance??1e-10,c.maxPressureIterations??2000,initialEnergy,!!verification]);
+ const signature=JSON.stringify([nx,ny,L,H,depth,rho,cp,nu,alpha,lid,gb,Tref,hot,cold,c.beta??null,c.scalarScheme||'upwind',c.pressurePreconditioner||'jacobi',c.pressureTolerance??1e-10,c.maxPressureIterations??2000,initialEnergy,verification?.id??null]);
  const pressurePreconditioner=c.pressurePreconditioner==='multigrid'?createNeumannMultigrid({nx,ny,dx,dy}):null;
  function divergence(uu=u,vv=v){let value=0;for(let j=0;j<ny;j++)for(let i=0;i<nx;i++)value=Math.max(value,Math.abs((uu[U(i+1,j)]-uu[U(i,j)])/dx+(vv[V(i,j+1)]-vv[V(i,j)])/dy));return value;}
  function continuityScale(uu=u,vv=v){return Math.max(1,Math.abs(lid)/Math.min(L,H),maxAbs(uu)/Math.min(L,H),maxAbs(vv)/Math.min(L,H));}

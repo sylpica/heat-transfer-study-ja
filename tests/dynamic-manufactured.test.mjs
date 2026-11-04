@@ -25,3 +25,14 @@ test('invalid manufactured source or temperature fails before any model state is
  const exact=manufacturedCavity();assert.throws(()=>createCavity(config(8),{...exact,temperature:()=>0}));assert.throws(()=>createCavity({...config(8),lidVelocity:1},exact));assert.throws(()=>createCavity(config(8),{bodyForce:()=>[0,0]}));
  for(const bad of [{bodyForce:()=>[NaN,0]},{heatSource:()=>Infinity}]){const m=createCavity(config(8),{...exact,...bad}),before=m.snapshot();assert.throws(()=>m.step(m.safeDt));assert.deepEqual(m.snapshot(),before);}
 });
+test('zero-velocity manufactured pressure recovers the independently derived staggered gradient factor',()=>{
+ const n=16,exact=manufacturedCavity({velocityAmplitude:0}),m=createCavity({...config(n),pressureTolerance:1e-12},exact),s=m.step(m.safeDt/2),factor=(Math.PI/n)/Math.sin(Math.PI/n);assert.ok(Math.max(...s.u.map(Math.abs),...s.v.map(Math.abs))<1e-13);
+ // Explicit body-force RHS was sampled at old time 0. Continuous face
+ // gradients differ from central differences of cell cosines by this sinc.
+ for(let j=0;j<n;j++)for(let i=0;i<n;i++)assert.ok(Math.abs(s.pressure[j*n+i]-factor*exact.pressure((i+.5)/n,(j+.5)/n,0))<3e-11);
+});
+test('manufactured-law identity and declared PDE parameters prevent wrong-law replay',()=>{
+ const cfg=config(8),a=createCavity(cfg,manufacturedCavity()),b=createCavity(cfg,manufacturedCavity({velocityAmplitude:.1})),before=b.snapshot();assert.throws(()=>b.restore(a.snapshot()),/一致/);assert.deepEqual(b.snapshot(),before);const same=createCavity(cfg,manufacturedCavity({velocityAmplitude:.1}));same.restore(b.snapshot());assert.deepEqual(same.snapshot(),before);
+ assert.throws(()=>createCavity({...cfg,nu:.5},manufacturedCavity()),/一致/);assert.throws(()=>createCavity({...cfg,width:1.5},manufacturedCavity()),/一致/);assert.throws(()=>manufacturedCavity({velocityAmplitude:NaN}));
+ const custom={velocity:()=>[0,0],temperature:()=>300,pressure:()=>0,bodyForce:()=>[0,0],heatSource:()=>1},one=createCavity(cfg,custom),two=createCavity(cfg,{...custom,heatSource:()=>2}),seed=one.snapshot();one.step(one.safeDt);assert.throws(()=>two.restore(one.snapshot()),/一致/);one.restore(seed);assert.deepEqual(one.snapshot(),seed);
+});

@@ -8,7 +8,8 @@ import sympy as s
 
 root = Path(__file__).resolve().parents[1]
 x, y, t, rho, cp, nu, alpha = s.symbols('x y t rho cp nu alpha', positive=True)
-psi = s.sin(s.pi*x)**2*s.sin(s.pi*y)**2*s.exp(-t)
+velocityAmplitude = s.symbols('velocityAmplitude', real=True)
+psi = velocityAmplitude*s.sin(s.pi*x)**2*s.sin(s.pi*y)**2*s.exp(-t)
 u, v = s.diff(psi, y), -s.diff(psi, x)
 p = s.Rational(1, 10)*s.cos(2*s.pi*x)*s.cos(2*s.pi*y)*s.exp(-t)
 T = 300+s.sin(s.pi*x)*s.cos(s.pi*y)*s.exp(-t)
@@ -31,7 +32,8 @@ for parameters in [dict(rho=1, cp=1, nu=1, alpha=.2),
                    dict(rho=2, cp=7, nu=.1, alpha=.3),
                    dict(rho=.3, cp=2, nu=.5, alpha=.1)]:
     for point in [[.13, .37, .019], [.66, .28, .01], [.45, .79, .023]]:
-        requests.append(dict(parameters=parameters, point=point))
+        for amplitude in [0, .1, 1]:
+            requests.append(dict(parameters={**parameters, 'velocityAmplitude': amplitude}, point=point))
 program = """
 import {readFileSync} from 'node:fs';
 import {manufacturedCavity} from './dynamic/dev/manufactured-cavity.mjs';
@@ -44,7 +46,7 @@ actual = json.loads(subprocess.check_output(
 max_difference = 0.0
 for request, row in zip(requests, actual):
     substitutions = dict(zip([x, y, t], request['point']))
-    substitutions.update({symbol: request['parameters'][str(symbol)] for symbol in [rho, cp, nu, alpha]})
+    substitutions.update({symbol: request['parameters'][str(symbol)] for symbol in [rho, cp, nu, alpha, velocityAmplitude]})
     expressions = [u, v, p, T, *force, heat]
     values = [*row['velocity'], row['pressure'], row['temperature'], *row['bodyForce'], row['heatSource']]
     for expression, value in zip(expressions, values):

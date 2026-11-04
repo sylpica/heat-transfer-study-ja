@@ -1,7 +1,7 @@
 const CACHE_NAME='heat-study-ja-v12';
 const PDF_CACHE_NAME='heat-study-ja-pdf-v1';
 const PDF_URL='./book/AHTTv600.pdf';
-const APP_SHELL=['./dynamic/developed-channel.mjs','./dynamic/channel.html','./dynamic/channel-ui.mjs','./dynamic/trace-plot.mjs','./dynamic/field-frame.mjs','./dynamic/field-analysis.mjs','./dynamic/field-plots.mjs','./dynamic/term-panel.mjs','./dynamic/experiment.mjs','./dynamic/actor.mjs','./dynamic/radiation-network.mjs','./dynamic/radiation.html','./dynamic/radiation-ui.mjs','./dynamic/radiation.css','./dynamic/properties.mjs','./dynamic/boiling.mjs','./dynamic/fin-view.mjs','./dynamic/index.html','./dynamic/lab.css','./dynamic/learning-path.mjs','./dynamic/learning-ui.mjs','./dynamic/lab.mjs','./dynamic/geometry.mjs','./dynamic/thermal.mjs','./dynamic/worker.mjs','./dynamic/presets.mjs','./','./index.html','./styles.css','./app.js','./study-core.mjs','./guide.mjs','./chapter-curriculum.mjs','./original-notes.mjs','./original-deep-lessons.mjs','./term-links.mjs','./transient-ui.mjs','./sim-diagrams.mjs','./lesson-diagrams.mjs','./fin-efficiency.mjs','./heat-exchanger.mjs','./transient-slab.mjs','./radiation-enclosure.mjs','./cylindrical-insulation.mjs','./semi-infinite-solid.mjs','./forced-convection-flat-plate.mjs','./turbulent-pipe-convection.mjs','./cylinder-crossflow.mjs','./natural-convection-vertical.mjs','./laminar-pipe-convection.mjs','./laminar-film-condensation.mjs','./binary-gas-diffusion.mjs','./pool-boiling-nucleate.mjs','./pool-boiling-chf.mjs','./manifest.json',
+const APP_SHELL=['./dynamic/developed-channel.mjs','./dynamic/channel.html','./dynamic/channel-ui.mjs','./dynamic/trace-plot.mjs','./dynamic/field-frame.mjs','./dynamic/field-analysis.mjs','./dynamic/field-plots.mjs','./dynamic/term-panel.mjs','./dynamic/experiment.mjs','./dynamic/actor.mjs','./dynamic/radiation-network.mjs','./dynamic/radiation.html','./dynamic/radiation-ui.mjs','./dynamic/radiation.css','./dynamic/properties.mjs','./dynamic/boiling.mjs','./dynamic/fin-view.mjs','./dynamic/index.html','./dynamic/lab.css','./dynamic/learning-path.mjs','./dynamic/learning-ui.mjs','./dynamic/lab.mjs','./dynamic/geometry.mjs','./dynamic/thermal.mjs','./dynamic/worker.mjs','./dynamic/presets.mjs','./','./index.html','./styles.css','./app.js','./dynamic-navigation.mjs','./study-core.mjs','./guide.mjs','./chapter-curriculum.mjs','./original-notes.mjs','./original-deep-lessons.mjs','./term-links.mjs','./transient-ui.mjs','./sim-diagrams.mjs','./lesson-diagrams.mjs','./fin-efficiency.mjs','./heat-exchanger.mjs','./transient-slab.mjs','./radiation-enclosure.mjs','./cylindrical-insulation.mjs','./semi-infinite-solid.mjs','./forced-convection-flat-plate.mjs','./turbulent-pipe-convection.mjs','./cylinder-crossflow.mjs','./natural-convection-vertical.mjs','./laminar-pipe-convection.mjs','./laminar-film-condensation.mjs','./binary-gas-diffusion.mjs','./pool-boiling-nucleate.mjs','./pool-boiling-chf.mjs','./manifest.json',
   './data/book.json','./data/questions.json','./data/glossary.json','./data/content-manifest.json','./data/original-notes.json','./data/original-deep-lessons.json',
   './assets/lesson-diagrams/section-1-1-heat-rate-flux-integrals.svg',
   './assets/lesson-diagrams/section-1-2-energy-balance-vs-heat-equation.svg',
@@ -110,6 +110,12 @@ async function cachedPdfRange(response,rangeHeader){
   const slice=blob.slice(start,end+1,'application/pdf');
   return new Response(slice,{status:206,headers:{'Content-Type':'application/pdf','Accept-Ranges':'bytes','Content-Range':`bytes ${start}-${end}/${length}`,'Content-Length':String(slice.size)}});
 }
+async function dynamicNavigationShell(cache,request){
+  if(request.mode!=='navigate')return null;
+  const scope=new URL('./',self.location.href),url=new URL(request.url),pages=['dynamic/index.html','dynamic/radiation.html','dynamic/channel.html'];
+  if(url.pathname===new URL('dynamic/',scope).pathname)return cache.match(new URL('dynamic/index.html',scope).href);
+  const page=pages.find(p=>url.pathname===new URL(p,scope).pathname);return page?cache.match(new URL(page,scope).href):null;
+}
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;
   event.respondWith((async()=>{
@@ -121,6 +127,7 @@ self.addEventListener('fetch',event=>{
     if(!isPdf&&self.navigator.onLine===false){
       const saved=await cache.match(event.request);
       if(saved)return saved;
+      const dynamicShell=await dynamicNavigationShell(cache,event.request);if(dynamicShell)return dynamicShell;
       if(event.request.mode==='navigate'){
         const shell=await cache.match('./index.html');
         if(shell)return shell;
@@ -132,6 +139,7 @@ self.addEventListener('fetch',event=>{
       return response;
     }catch {
       const cached=isPdf?await pdfCache.match(PDF_URL):await cache.match(event.request);if(cached)return range?cachedPdfRange(cached,range):cached;
+      if(!isPdf){const dynamicShell=await dynamicNavigationShell(cache,event.request);if(dynamicShell)return dynamicShell;}
       if(!isPdf&&event.request.mode==='navigate'){const shell=await cache.match('./index.html');if(shell)return shell;}
       return new Response('このファイルはオフライン保存されていません。ネット接続中に開いてください。',{status:503,headers:{'content-type':'text/plain; charset=utf-8'}});
     }

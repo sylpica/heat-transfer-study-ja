@@ -329,7 +329,10 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "NAVIGATION_HANDOFF.md",
+        "../../dynamic-navigation.mjs",
+        "../../tests/dynamic-navigation-browser.mjs"
       ]
     },
     {
@@ -338,7 +341,10 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "NAVIGATION_HANDOFF.md",
+        "../../dynamic-navigation.mjs",
+        "../../tests/dynamic-navigation-browser.mjs"
       ],
       "remainingOrScope": "既存教材/ガイド/用語へのリンク。節/問題の条件の自動受け渡しは未完了。"
     },
@@ -738,7 +744,10 @@
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
         "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
         "CFD_STATE_AND_TIME.md",
-        "CFD_TEMPORAL_BENCHMARKS_20261104.json"
+        "CFD_TEMPORAL_BENCHMARKS_20261104.json",
+        "NAVIGATION_HANDOFF.md",
+        "../../dynamic-navigation.mjs",
+        "../../tests/dynamic-navigation-browser.mjs"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -817,7 +826,10 @@
         "RADIATION_BENCHMARKS_20261104.json",
         "MANUFACTURED_VERIFICATION.md",
         "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
-        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json"
+        "MANUFACTURED_SYMBOLIC_CHECK_20261104.json",
+        "NAVIGATION_HANDOFF.md",
+        "../../dynamic-navigation.mjs",
+        "../../tests/dynamic-navigation-browser.mjs"
       ],
       "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
     },

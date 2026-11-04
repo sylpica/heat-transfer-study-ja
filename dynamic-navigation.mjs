@@ -1,0 +1,13 @@
+// Stable, allowlisted links. No translation or question data is modified.
+const sections=Object.freeze({'2.1':['heating','熱伝導の温度分布'],'2.2':['heating','平板の過渡加熱'],'4.5':['fin','断熱先端フィン'],'5.3':['heating','平板の非定常熱伝導'],'5.8':['heating','2D熱伝導'],'7.2':['channel','発達した流路の速度と熱の移動'],'10.1':['network','灰色面の動的放射'],'10.3':['network','閉じた面の放射熱交換']});
+export function readerSectionFromHash(hash,sectionIds){const match=/^#reader\/(\d{1,2}\.\d{1,2})$/.exec(hash);return match&&sectionIds.includes(match[1])?match[1]:'';}
+export function dynamicLinkForSection(id){const entry=Object.hasOwn(sections,id)?sections[id]:null;if(!entry)return null;const [preset,label]=entry,page=preset==='channel'?'channel.html':preset==='network'?'radiation.html':'index.html';return {href:`./dynamic/${page}?preset=${preset}&section=${id}`,label:`動的実験：${label}`,sectionId:id};}
+export function fingerprintCheck(value){let h=2166136261;for(const ch of value){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return (h>>>0).toString(16);}
+export function dynamicLinkForQuestion(question,fingerprint){if(question?.id!=='supp-deep-fin-base-heat-v1'||question.revision!=='v1'||typeof fingerprint!=='string'||fingerprintCheck(fingerprint)!=='2ded6059')return null;return {href:'./dynamic/index.html?case=fin-base-v1',label:'この条件のフィンを動的実験で観察する',sectionId:'4.5'};}
+export function thermalLaunchFromSearch(search){
+ const p=new URLSearchParams(search);if(![...p.keys()].length)return null;
+ if([...p.keys()].some(k=>!['preset','section','case'].includes(k)||p.getAll(k).length!==1))throw Error('受け取った実験条件の形式に対応していません。標準実験を準備しました。');
+ if(p.has('case')){if(p.get('case')!=='fin-base-v1'||p.has('preset')||p.has('section'))throw Error('この問題の実験条件には対応していません。標準実験を準備しました。');return {preset:'fin',sectionId:'4.5',caseId:'fin-base-v1',fields:{width:.1,height:.01,depth:.01,k:200,rho:2700,cp:896,initial:20,'boundary-temperature':80,h:25},description:'断熱先端フィンの問題条件：L=0.10 m、断面0.01×0.01 m（Ac=1.0×10⁻⁴ m²、周長P=0.040 m）、k=200 W/(m·K)、h=25 W/(m²·K)、温度差60 K。設問は定常です。動的な観察では周囲20℃・基部80℃・初期20℃とし、設問にないρ=2700 kg/m³・cp=896 J/(kg·K)を仮定しています。時間軸はこの補足条件によるもので、設問の答えではありません。'};}
+ const preset=p.get('preset'),sectionId=p.get('section');if(!['heating','cooling','fin','radiation'].includes(preset)||sectionId&&sections[sectionId]?.[0]!==preset)throw Error('受け取った教材・実験の組み合わせには対応していません。標準実験を準備しました。');
+ return {preset,sectionId:sectionId||'',description:'教材に関連する代表実験を開きました。数値はアプリの初期設定で、教材内の例題の条件を複製したものではありません。'};
+}

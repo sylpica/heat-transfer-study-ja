@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-04",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "architecture": "x64"
+  },
+  "reference": "Independent separation-of-variables solution for an insulated constant-property rectangle; no benchmark values inferred from CFD literature.",
+  "temperatureUnits": "K",
+  "space": [
+    {
+      "nx": 10,
+      "ny": 5,
+      "dt": 0.00020000000000000006,
+      "errorRMSKelvin": 0.0034719057511588057,
+      "semiDiscreteErrorRMSKelvin": 0.0007162680447530231,
+      "energyErrorJ": 0,
+      "steps": 50,
+      "elapsedMs": 2.2425349999999966
+    },
+    {
+      "nx": 20,
+      "ny": 10,
+      "dt": 0.000050000000000000016,
+      "errorRMSKelvin": 0.0008674481298854429,
+      "semiDiscreteErrorRMSKelvin": 0.00018413336968097667,
+      "energyErrorJ": -1.7763568394002505e-15,
+      "steps": 200,
+      "elapsedMs": 5.987625000000001
+    },
+    {
+      "nx": 40,
+      "ny": 20,
+      "dt": 0.000012500000000000004,
+      "errorRMSKelvin": 0.0002168238236628652,
+      "semiDiscreteErrorRMSKelvin": 0.00004635272184652511,
+      "energyErrorJ": 7.105427357601002e-15,
+      "steps": 800,
+      "elapsedMs": 18.227802000000004
+    }
+  ],
+  "time": [
+    {
+      "nx": 20,
+      "ny": 10,
+      "dt": 0.00040000000000000013,
+      "errorRMSKelvin": 0.00043541095540509055,
+      "semiDiscreteErrorRMSKelvin": 0.0014869924549715105,
+      "energyErrorJ": -7.105427357601002e-15,
+      "steps": 25,
+      "elapsedMs": 0.11761700000000275
+    },
+    {
+      "nx": 20,
+      "ny": 10,
+      "dt": 0.00020000000000000006,
+      "errorRMSKelvin": 0.00031208277200871795,
+      "semiDiscreteErrorRMSKelvin": 0.0007394987275577019,
+      "energyErrorJ": 0,
+      "steps": 50,
+      "elapsedMs": 0.2416030000000049
+    },
+    {
+      "nx": 20,
+      "ny": 10,
+      "dt": 0.00010000000000000003,
+      "errorRMSKelvin": 0.0006828221015288346,
+      "semiDiscreteErrorRMSKelvin": 0.0003687593980375849,
+      "energyErrorJ": 7.105427357601002e-15,
+      "steps": 100,
+      "elapsedMs": 0.9167449999999988
+    }
+  ],
+  "spaceObservedOrders": [
+    2.0008783870313676,
+    2.0002542100827028
+  ],
+  "timeObservedOrders": [
+    1.0077777571269115,
+    1.0038678471939262
+  ],
+  "acceptance": {
+    "timePassed": true,
+    "spatialOrder": "approximately2; all reported order estimates must be >1.8",
+    "spatialPassed": true,
+    "note": "Time errors against the continuum combine spatial and temporal error; isolated first-order temporal convergence is separately checked against the exact semi-discrete eigenvalue in tests/dynamic-thermal.test.mjs. Timings are this cloud CPU only; not device or GPU measurements."
+  }
+}

@@ -1055,7 +1055,7 @@ const SIM_META = {
 };
 const SIM_ICONS = {transient:'◷',conduction:'▥',convection:'↝',radiation:'☼',resistance:'▤',fin:'⊥',exchanger:'⇄',slab:'▭',enclosure:'◎',cylinder:'○',halfspace:'◒',flatplate:'⇉',pipe:'⇒',crossflow:'⊕',natural:'↑',laminarpipe:'→',condensation:'≋',diffusion:'⇌',nucleate:'∴',chf:'△'};
 function renderSimTabs(mode) {
-  return `<div class="sim-tabs" role="tablist" aria-label="熱移動の種類">${Object.entries(SIM_META).map(([key,item])=>`<button type="button" role="tab" id="sim-tab-${key}" aria-controls="sim-panel" aria-selected="${mode===key}" tabindex="${mode===key?0:-1}" class="sim-tab ${mode===key?'selected':''}" data-sim-mode="${key}"><span aria-hidden="true">${SIM_ICONS[key]||'●'}</span>${item.title}</button>`).join('')}</div>`;
+  return `<p><a class="text-link" href="./dynamic/index.html">動的実験室：温度分布を再生・比較する →</a></p><div class="sim-tabs" role="tablist" aria-label="熱移動の種類">${Object.entries(SIM_META).map(([key,item])=>`<button type="button" role="tab" id="sim-tab-${key}" aria-controls="sim-panel" aria-selected="${mode===key}" tabindex="${mode===key?0:-1}" class="sim-tab ${mode===key?'selected':''}" data-sim-mode="${key}"><span aria-hidden="true">${SIM_ICONS[key]||'●'}</span>${item.title}</button>`).join('')}</div>`;
 }
 // WAI-ARIA tabs pattern: arrow keys move between simulator tabs (with
 // automatic activation, matching the click behaviour), Home/End jump.

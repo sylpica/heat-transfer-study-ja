@@ -5,50 +5,74 @@
     {
       "id": "Q1",
       "requirement": "直感的な物理理解を最優先",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q2",
       "requirement": "初心者・専門家モードの両立",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q3",
       "requirement": "温度、流体、物体の動的表現",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q4",
       "requirement": "2D・3Dの適切な使い分け",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q5",
       "requirement": "簡単操作と詳細設定の両立",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q6",
       "requirement": "非定常熱伝導、フィン、強制対流、自然対流、放射",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q7",
       "requirement": "主要な熱移動分野を中心に発展",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q8",
       "requirement": "温度・材料・2D形状を含む熱伝導実験",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q9",
@@ -65,170 +89,254 @@
     {
       "id": "Q11",
       "requirement": "独立モデルから連成モデルへ",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q12",
       "requirement": "形状プリセット、組み合わせ、自由描画",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q13",
       "requirement": "物性プリセット、手動入力、温度依存物性",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q14",
       "requirement": "現象に応じた数値解法の選択",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q15",
       "requirement": "1D・2D中心、3D数値解析は必要時",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q16",
       "requirement": "アニメーションより計算精度を優先",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q17",
       "requirement": "実計算・近似・模式表現の区別",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q18",
       "requirement": "専門モードで保存則・数値誤差などを表示",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q19",
       "requirement": "数値解析の学習より物理現象の学習を優先",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q20",
       "requirement": "検証済みモデルのみ工学的な定量利用に対応",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q21",
       "requirement": "再生・停止・コマ送り・巻き戻し",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q22",
       "requirement": "数値入力・スライダー・直接操作",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q23",
       "requirement": "温度・熱流・流速・圧力・勾配・エネルギー・無次元数",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q24",
       "requirement": "グラフ、数値確認、測定点",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q25",
       "requirement": "グラフ比較と同期再生",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q26",
       "requirement": "図を中心に詳細説明を必要時に開く",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q27",
       "requirement": "自由実験・チュートリアル・予想実験",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q28",
       "requirement": "既存計算型と新規動的型の自然な統合",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q29",
       "requirement": "教材・問題・条件引き継ぎ",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q30",
       "requirement": "恒久的な実験記録保存は不要",
-      "status": "planned",
-      "evidence": []
+      "status": "implemented_pending_final_browser_CI",
+      "evidence": [
+        "STATUS.md",
+        "../../dynamic/lab.mjs"
+      ]
     },
     {
       "id": "Q31",
       "requirement": "PCは高精度解析、スマホは軽量モデル",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q32",
       "requirement": "技術選定は性能・互換性・精度で判断",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q33",
       "requirement": "代表実験と詳細モデルの両方へアクセス",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q34",
       "requirement": "共通基盤、代表モデル、拡張、総合検証",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q35",
       "requirement": "初心者から大学教育水準を確実に満たし、検証可能な範囲で専門用途へ発展",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q36",
       "requirement": "モデルの依存関係から実装順序を最適化",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q37",
       "requirement": "プリセット・図形組み合わせ・自由描画",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q38",
       "requirement": "熱源・冷却源の数値入力、ドラッグ、領域指定",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q39",
@@ -239,8 +347,11 @@
     {
       "id": "Q40",
       "requirement": "PCは再生中変更、スマホは再計算を基本",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q41",
@@ -251,20 +362,29 @@
     {
       "id": "Q42",
       "requirement": "数値精度の監視と不安定時の停止",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q43",
       "requirement": "スマホは簡易、PCは高度な解析",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q44",
       "requirement": "複数の代表実験から開始",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q45",
@@ -281,56 +401,83 @@
     {
       "id": "Q47",
       "requirement": "温度固定・熱流束・対流・放射境界",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q48",
       "requirement": "異種材料・断熱層・接触熱抵抗",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q49",
       "requirement": "科学的な解析表示と自然な動きの両立",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q50",
       "requirement": "自動・固定・手動の温度色スケール",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q51",
       "requirement": "物理時間と再生倍率の区別、時間操作",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q52",
       "requirement": "物性プリセット・手動設定・温度依存物性",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q53",
       "requirement": "自由実験・チュートリアル・予想実験",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q54",
       "requirement": "共通数値計算エンジンを先に構築",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q55",
       "requirement": "初期開発から自由形状・メッシュ生成",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q56",
@@ -341,8 +488,11 @@
     {
       "id": "Q57",
       "requirement": "通常は自動、専門モードでは格子・時間刻み・収束設定",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q58",
@@ -359,20 +509,29 @@
     {
       "id": "Q60",
       "requirement": "同時比較は最大2条件",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q61",
       "requirement": "端末と操作モードに応じた画面構成",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q62",
       "requirement": "Codexが独立ブランチ・PRで開発し、Muse完了後に統合",
-      "status": "planned",
-      "evidence": []
+      "status": "implemented_pending_final_browser_CI",
+      "evidence": [
+        "STATUS.md",
+        "../../dynamic/lab.mjs"
+      ]
     },
     {
       "id": "Q63",
@@ -383,32 +542,47 @@
     {
       "id": "Q64",
       "requirement": "自由形状の自動修復と解析可能性判定",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q65",
       "requirement": "解析解・ベンチマーク・保存則・格子収束による検証",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q66",
       "requirement": "GPU非対応PCでもCPUで主要機能を利用可能",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q67",
       "requirement": "PC・スマホの快適性と高度計算時の進捗・中断",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q68",
       "requirement": "計算結果と模式アニメーションの明確な区別",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q69",
@@ -419,20 +593,29 @@
     {
       "id": "Q70",
       "requirement": "体験・自由実験・専門解析の3段階",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q71",
       "requirement": "未検証の高度なモデルを一般公開しない",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     },
     {
       "id": "Q72",
       "requirement": "段階的にPRへ保存し、完成まで自律的に開発を継続",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "STATUS.md",
+        "ARCHITECTURE.md"
+      ]
     }
   ]
 }

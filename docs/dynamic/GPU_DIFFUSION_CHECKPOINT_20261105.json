@@ -149,16 +149,25 @@
     "workerSHA256UnchangedFrom7912646": true,
     "publicContentCacheNameUnchanged": "heat-study-ja-app-fcf92666638c0ebb",
     "developmentDirectoryAbsent": true,
-    "priorPublicBrowserScripts": 26,
     "priorPublicBrowserCheckpoint": "LUMPED_RADIAL_CHECKPOINT_20261105.json",
-    "publicBrowserMatrixRepeatedInThisBatch": false
+    "publicBrowserMatrixRepeatedInThisBatch": false,
+    "priorDynamicBrowserScripts": 26,
+    "priorPublicDistributionBrowserScripts": 24,
+    "priorCavityDevelopmentBrowserScripts": 2,
+    "classificationCorrection": "Earlier priorPublicBrowserScripts=26 included two isolated cavity-development scripts. Results and total are unchanged; distinguish 24 distribution and 2 cavity scripts."
   },
   "priorCleanCI": {
     "sourceCommit": "791264614516bfcf09d3244865f69eb797bc1383",
     "databaseId": 41989608825,
     "allFiveJobsSucceeded": true
   },
-  "currentCI": "pending commit and push; new isolated GPU test added to browser matrix",
+  "currentCI": {
+    "sourceCommit": "d87083b519e3fd783ca707bc97bb06c90fc54037",
+    "databaseId": 42014069205,
+    "allFiveJobsSucceeded": true,
+    "confirmedAtUTC": "2026-11-05T11:10:57.938804+00:00",
+    "scope": "Both browser jobs include the isolated new GPU script; Chromium is software shader execution, WebKit is device-unavailable CPU alternative."
+  },
   "notVerified": [
     "physical GPU/drivers/performance/long-duration stability",
     "GPU UI/Worker integration/publication",

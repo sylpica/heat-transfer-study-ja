@@ -1,0 +1,207 @@
+{
+  "generatedAtUTC": "2026-11-05T16:33:59.972Z",
+  "node": "v24.19.0",
+  "sourceCommit": "15568b94ebd4e68d8b32c6176dcaca858c939e3f",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "dynamic/dev/cavity-fields.mjs": "b64279038b1621f10962065976fc0d14884d3dc5624e3f62e7a089c9ee79e98c",
+    "dynamic/dev/cess-profile.mjs": "88d991039ff911c62a81b355cb093538379dae6dd4ffe4155b2cc1a45fa05b12",
+    "scripts/dynamic-provided-cfd-check.mjs": "5a34f3361c2e244ed503767868c67b5321f5ba8dd1f12f499a7cf690661a5394"
+  },
+  "ownerPack": {
+    "filename": "benchmarks-cfd.md",
+    "sha256": "22029fe4045039c60b4459b4120a66efe408dd96135a454ab2d80c4cb6cd1c6d",
+    "bytes": 13556,
+    "instructionsTreatedAsReferenceMaterial": true,
+    "rawPackRedistributed": false
+  },
+  "stage": "development_only_not_public",
+  "pressurePreconditioner": "multigrid",
+  "momentumScheme": "conservative2",
+  "lid": [
+    {
+      "n": 16,
+      "time": 30,
+      "steps": 2401,
+      "u": {
+        "rms": 0.009447141784861333,
+        "maximumAbsoluteDifference": 0.01882548006867857,
+        "worstCoordinate": 0.9688,
+        "computedAtWorst": 0.7698845199313215,
+        "referenceAtWorst": 0.78871,
+        "pointCount": 17
+      },
+      "v": {
+        "rms": 0.008626341633749058,
+        "maximumAbsoluteDifference": 0.013903622914401254,
+        "worstCoordinate": 0.9063,
+        "computedAtWorst": -0.18304362291440127,
+        "referenceAtWorst": -0.16914,
+        "pointCount": 17
+      },
+      "existingFourPointU": {
+        "rms": 0.010347161857721282,
+        "maximumAbsoluteDifference": 0.016088277733810386,
+        "worstCoordinate": 0.5,
+        "computedAtWorst": -0.1897217222661896,
+        "referenceAtWorst": -0.20581,
+        "pointCount": 4
+      },
+      "existingFourPointBudget": 0.005,
+      "existingFourPointGatePassed": false,
+      "divergence": 1.1102230246251565e-15,
+      "energyError": 3.979039320256561e-13,
+      "pressureResidual": 3.691884571077933e-9
+    },
+    {
+      "n": 32,
+      "time": 30,
+      "steps": 4800,
+      "u": {
+        "rms": 0.0013008261803794075,
+        "maximumAbsoluteDifference": 0.00204099971628649,
+        "worstCoordinate": 0.2813,
+        "computedAtWorst": -0.15457900028371352,
+        "referenceAtWorst": -0.15662,
+        "pointCount": 17
+      },
+      "v": {
+        "rms": 0.0035841599848309025,
+        "maximumAbsoluteDifference": 0.008421001182705362,
+        "worstCoordinate": 0.8594,
+        "computedAtWorst": -0.23287100118270537,
+        "referenceAtWorst": -0.22445,
+        "pointCount": 17
+      },
+      "existingFourPointU": {
+        "rms": 0.0017336582394835134,
+        "maximumAbsoluteDifference": 0.00204099971628649,
+        "worstCoordinate": 0.2813,
+        "computedAtWorst": -0.15457900028371352,
+        "referenceAtWorst": -0.15662,
+        "pointCount": 4
+      },
+      "existingFourPointBudget": 0.005,
+      "existingFourPointGatePassed": true,
+      "divergence": 3.643974011424689e-11,
+      "energyError": 9.805489753489383e-13,
+      "pressureResidual": 7.598075807153954e-8
+    }
+  ],
+  "natural": [
+    {
+      "n": 16,
+      "time": 1,
+      "steps": 2561,
+      "Ra": 1000,
+      "Pr": 0.71,
+      "velocityNormalization": "alpha/L = 1 in this nondimensional configuration",
+      "nusselt": 1.1263186929080575,
+      "providedMeanReference": 1.118,
+      "providedMeanDifference": 0.008318692908057423,
+      "previousMeanReference": 1.117,
+      "previousMeanBudget": 0.006,
+      "previousMeanGatePassed": false,
+      "localNusseltMaximum": 1.541527873971063,
+      "providedLocalMaximumReference": 1.505,
+      "localMaximumDifference": 0.03652787397106305,
+      "uMaximum": {
+        "value": 3.6387426523735527,
+        "position": 0.84375
+      },
+      "uMaximumValueDifference": -0.010257347626447366,
+      "uMaximumLocationDifference": 0.030750000000000055,
+      "vMaximum": {
+        "value": 3.7193443329299516,
+        "position": 0.15625
+      },
+      "vMaximumValueDifference": 0.022344332929951527,
+      "vMaximumLocationDifference": -0.02174999999999999,
+      "centerlineMaximumMethod": "Exact maximum of the piecewise-linear MAC centerline reconstruction at native staggered nodes and wall endpoints; not a continuous-PDE sub-grid extremum",
+      "lastTimeUnitVelocityChange": null,
+      "divergence": 7.105427357601002e-15,
+      "energyError": -8.633094239477989e-14,
+      "pressureResidual": 0.0000011953329735597226
+    },
+    {
+      "n": 32,
+      "time": 1,
+      "steps": 10240,
+      "Ra": 1000,
+      "Pr": 0.71,
+      "velocityNormalization": "alpha/L = 1 in this nondimensional configuration",
+      "nusselt": 1.1199427644285151,
+      "providedMeanReference": 1.118,
+      "providedMeanDifference": 0.0019427644285150425,
+      "previousMeanReference": 1.117,
+      "previousMeanBudget": 0.006,
+      "previousMeanGatePassed": true,
+      "localNusseltMaximum": 1.5151935444228002,
+      "providedLocalMaximumReference": 1.505,
+      "localMaximumDifference": 0.010193544422800294,
+      "uMaximum": {
+        "value": 3.6468476777189176,
+        "position": 0.828125
+      },
+      "uMaximumValueDifference": -0.0021523222810824194,
+      "uMaximumLocationDifference": 0.015125000000000055,
+      "vMaximum": {
+        "value": 3.7075124701007867,
+        "position": 0.171875
+      },
+      "vMaximumValueDifference": 0.010512470100786597,
+      "vMaximumLocationDifference": -0.0061249999999999916,
+      "centerlineMaximumMethod": "Exact maximum of the piecewise-linear MAC centerline reconstruction at native staggered nodes and wall endpoints; not a continuous-PDE sub-grid extremum",
+      "lastTimeUnitVelocityChange": null,
+      "divergence": 2.165490009531368e-12,
+      "energyError": 1.1423084700366505e-13,
+      "pressureResidual": 1.506357592604283e-7
+    }
+  ],
+  "releaseApproved": false,
+  "dns": {
+    "sourceSHA256": "f54c86e30a869798f140aa004c1e167cd13a6280e988d2794d72ca2be8b5fc82",
+    "records": 65,
+    "normalization": "raw column y is y/h, column y+ is Re_tau*y/h; only U is already U+; y/h is not y+",
+    "rawCenterUPlus": 18.301,
+    "packCenterUPlus": 18.3,
+    "centerRoundingDifference": 0.0009999999999976694,
+    "representativePointCount": 12,
+    "nearestRecordMaximumYPlusDifference": 0.003999999999990678,
+    "nearestRecordMaximumUPlusDifference": 0.004100000000001103,
+    "transcribedPointRoundingConsistent": true,
+    "bulkUPlusByTrapezoid": 15.678730983594555,
+    "bulkUPlusPrinted": 15.68,
+    "ReHalfHeightFromUnroundedIntegral": 2792.6955627978623,
+    "ReFullHeightFromUnroundedIntegral": 5585.391125595725,
+    "skinFrictionFromUnroundedIntegral": 0.00813594827016736,
+    "cessCenterUPlus": 18.16051796087756,
+    "cessBulkUPlus": 15.350362115439147,
+    "cessAgainstRoundedRepresentativePoints": {
+      "rms": 0.4573570922452726,
+      "maximumAbsoluteDifference": 0.8403228079895957,
+      "worstCoordinate": 21.03,
+      "computedAtWorst": 11.679677192010404,
+      "referenceAtWorst": 12.52,
+      "pointCount": 12
+    },
+    "physicalModelDiscrepancyNotApproval": true,
+    "rawDNSRedistributed": false
+  },
+  "numericalInvariantsPassed": true,
+  "fullTableAccuracyGateEstablished": false,
+  "expandedComparisonApproval": false,
+  "completed": true,
+  "elapsedSeconds": 44.053546708999995,
+  "timingScope": "Cloud CPU with possible concurrent work, not device performance",
+  "exclusions": [
+    "Ghia Re400/1000 exceed the currently admitted Re100 lid model. The uncertain Re1000 y=.9531 point is neither used nor silently corrected.",
+    "de Vahl Ra1e4/1e5/1e6 exceed the currently admitted Ra1000 model.",
+    "Pipe friction correlations describe circular pipes, not the plane channel; not applied to Cess or cavity.",
+    "No direct de Vahl primary-paper recheck is claimed; supplied pack cites independent reproductions.",
+    "Only final physical times 30 (lid) and 1 (natural) are compared here. Transient convergence beyond the archived prior checks is not freshly established."
+  ]
+}

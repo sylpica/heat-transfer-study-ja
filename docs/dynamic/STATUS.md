@@ -412,3 +412,9 @@ GRAETZ_CONTINUOUS_REFERENCE_20261106.md/.json。速度重み付きcosine一般�
 ### 2026-11-06 cut-cell非直交流束の局所診断
 
 CUT_CELL_FLUX_DIAGNOSTIC.md / CUT_CELL_FLUX_CHECKPOINT_20261106.json。同じ回転形状で単純2点法の最大面差.166655 Wを残し、実温度差からのLS補正で約8e-14 Wへ線形整合。共通面は実際の等大逆符号寄与を集計。7単体と両ブラウザーの隔離kernel試験が成功、全Node1306中1301成功・5skip・失敗0、公開ビルド/Worker/cache/dev除外も確認。時間PDE/行列性質/正値性/CFL/一般2次精度は未保証のまま、一般公開や全Phase4完成としない。
+
+### 2026-11-06 サブエージェント運用撤回・単独引継ぎ
+
+所有者の新指示で委譲を停止。実行中2担当を中断、起動待ち担当へも停止指示し、新規依頼/再開を行わない。rootが残ったcut-cell-fluxの数値配列API抽出を引き取り、誤って一般場の流束和を誤差と呼ばないようsummaryを分離。既存affine7件＋新しい配列API/線形性/保存/不適合3件の計10試験が逐次実行で成功。これは全体定常/時間PDEを実装した状態ではない。Re400研究の新規ファイル/実行はなく、元のCFDモデル/ガードは保持。Phase3/4の開発と回帰を以後単独で続ける。
+
+単独引継ぎの数値配列APIを完結。SINGLE_THREAD_CHECKPOINT_20261106.json。関連10件、Chromium→WebKit、全Node(test-concurrency=1)を順番に実行して1309中1304成功・5skip・失敗0。公開ビルド/Worker hash/dev除外も確認。一般場の外向き流束和を厳密誤差とは呼ばず、PDE未接続を維持。次の小規模全体定常方程式もrootだけで実装する。

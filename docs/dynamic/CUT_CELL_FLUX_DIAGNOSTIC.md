@@ -33,3 +33,9 @@ LSの重みは距離逆二乗。unit displacementと温度差/距離で行列を
 ## 未保証事項
 
 線形patch通過は、全体の温度方程式、行列の対称性/正定値性、単調性/正温度、CFL/時間安定性、一般の2次精度を証明しない。全てscopeフラグで未検証とする。一般境界/物性/凹形状/曲線も対象外。次に全体演算子と境界を組み、独立製造解・収支・スペクトル/単調性を確認してから時間PDEへの接続を判断する。一般公開/専門家/実機/全Phase4完成は未達。
+
+## 単独運用で引き取った数値配列API
+
+所有者の運用変更で担当を中断後、rootが途中の共通化を引き取った。evaluateCutCellFlux({geometry,k,depth,temperature,wallTemperature})は数値配列から勾配/流束を計算し、アフィン厳密値を渡さない。inactiveセルはnull、壁片はgeometry.wallFragments順。一般場には厳密参照がないためexact/error項は返さず、セルの外向き流束和を「誤差」とも呼ばない。定常/時間PDEはまだ解かない。
+
+既存affine7件に加え、配列からの独立Fourier流束、演算子の線形性/共通面保存、配列形/有限値/入力不変の3件をrootで追加し、計10件成功。Chromium→WebKitも順番に実行し、従来アフィン診断の互換性を確認。全Nodeはtest-concurrency=1で逐次実行し、1309中1304成功・5skip・失敗0。これは以前の並行運用の件数ではない。ソース/結果はSINGLE_THREAD_CHECKPOINT_20261106.jsonに保存する。

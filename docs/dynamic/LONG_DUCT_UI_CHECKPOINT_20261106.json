@@ -1,0 +1,97 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T22:39:36.762380+00:00",
+  "baseSourceCommit": "727ef8e943b4026365df0d066b46682ff6bb09b4",
+  "sourceTreeDirty": true,
+  "operationPolicy": "Root only; local commands, browser engines and Node files sequential; no subagents resumed or spawned.",
+  "sourceFilesSHA256": {
+    "dynamic/dev/long-duct.html": "5325ae61905505ea9ea9b0bff8fe3fd43647dd7c693604ca9d7f53275773f6a4",
+    "dynamic/dev/long-duct-ui.mjs": "0a2a14ee68db61385b11e8ebb9042e2cefdb1369e1163d8c997e1ba305f93259",
+    "dynamic/dev/long-duct-view.mjs": "89c713fdea0743b5f38e67e17b0964424d631243519424aa57e2ce9a6861aa65",
+    "dynamic/dev/long-duct-worker.mjs": "bc4db1bbf65f7ac4a1857e32abbea63a7eafd5379dada17f52be0d147b1287a5",
+    "tests/dynamic-long-duct-ui-browser.mjs": "7bd058379a5d8f4fff9d772fe1bdc88ecca631b1193031205f185df32eb36f93",
+    "tests/dynamic-long-duct-view.test.mjs": "61d65209722ab8f52916125b30e2d202734a19cf881c3784801265b6985ee5c6"
+  },
+  "relatedNode": {
+    "tests": 10,
+    "pass": 10,
+    "fail": 0
+  },
+  "fullNode": {
+    "tests": 1325,
+    "pass": 1320,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerMatchesIndependentScalarODE": true,
+      "geometryDerivedViewFactors": true,
+      "realPairSignArrows": true,
+      "abEmissivityComparison": true,
+      "commonPhysicalAndTemperatureScale": true,
+      "rewindActualState": true,
+      "invalidStepAtomic": true,
+      "equalTemperatureNoFakeFlow": true,
+      "threePresets": true,
+      "cancelRollbackAndRetry": true,
+      "keyboardWallSelection": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerMatchesIndependentScalarODE": true,
+      "geometryDerivedViewFactors": true,
+      "realPairSignArrows": true,
+      "abEmissivityComparison": true,
+      "commonPhysicalAndTemperatureScale": true,
+      "rewindActualState": true,
+      "invalidStepAtomic": true,
+      "equalTemperatureNoFakeFlow": true,
+      "threePresets": true,
+      "cancelRollbackAndRetry": true,
+      "keyboardWallSelection": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    }
+  },
+  "visualReviewByRoot": {
+    "file": "screenshots/long-duct-mobile-20261106.png",
+    "engine": "webkit",
+    "width": 390,
+    "theme": "dark",
+    "finalImageActuallyViewed": true,
+    "fixesAfterInitialInspection": [
+      "Suppress only roundoff-size arrows; retain all underlying numeric heat values",
+      "Show tiny nonzero exchange numerically in scientific notation",
+      "14px diagram labels and horizontally scrollable readable table"
+    ]
+  },
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "developmentModulesExcluded": true,
+  "priorCommitCI": {
+    "source": "727ef8e943b4026365df0d066b46682ff6bb09b4",
+    "run": 42121572934,
+    "numerical": "success",
+    "highOrderMMS": "success",
+    "chromium": "in_progress when checked",
+    "webkit": "in_progress when checked",
+    "CFD": "in_progress when checked",
+    "notThisUICI": true
+  },
+  "offlineVerified": false,
+  "realDevice": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

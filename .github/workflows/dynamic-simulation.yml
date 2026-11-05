@@ -134,6 +134,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Exercise development-only geometry-derived radiation with the actual worker and wall diagram
+        run: node tests/dynamic-long-duct-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Fetch the exact previous worker/cache source without changing the checkout
         run: git fetch --no-tags --depth=1 origin 13b0d1e32909a4037e587826250cab5f52dde336
       - name: Verify cache migration and offline calculation after the worker refactor

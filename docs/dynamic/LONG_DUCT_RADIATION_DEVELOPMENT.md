@@ -40,3 +40,7 @@
 全Nodeは同時実行数1で1322中1317成功・5skip・失敗0。公開ビルド成功、公開Worker/cacheは保持、devはdist外。`LONG_DUCT_RADIATION_CHECKPOINT_20261106.json`参照。
 
 先行5faaa22のCI42118295655でChromiumの既存フィン学習試験が失敗（用語パネルの「フィン有効度」を開いた直後の題名が「フィン効率」）。WebKit/数値/高次MMSは成功、CFDジョブは確認時実行中。今回のローカル成功をCI全体成功へ転用せず、次に別途切り分ける。専用UI/一般形状/有限長/実機/専門家/公開承認/全Phase完了も未達。
+
+## 後続の専用画面
+
+カーネル保存時にはなかった専用画面を追加し、両エンジンの実Worker/独立ODE/A-B/実巻戻し/取消と図を検査した。LONG_DUCT_UI_DEVELOPMENT.md / LONG_DUCT_UI_CHECKPOINT_20261106.json参照。先行カーネルのチェックポイントは当時の記録として保持する。

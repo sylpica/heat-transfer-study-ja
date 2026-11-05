@@ -1,0 +1,146 @@
+{
+  "generatedAtUTC": "2026-11-04T22:58:53.685Z",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-cavity-benchmarks.mjs": "6b5568389582f1965b40c0697a6d21322ac89fb20aca4b894f1d0ae0a439dc4f"
+  },
+  "releaseApproved": false,
+  "date": "2026-11-04",
+  "sourceCommit": "2737f0691b9b7a930a564b45c16576d8749e4a20",
+  "stage": "development_only_not_public",
+  "pressurePreconditioner": "multigrid",
+  "momentumScheme": "polynomial4",
+  "sourceNotes": "CFD_DEVELOPMENT.md; equations independently implemented; numerical reference values are public transcriptions, not an expert approval.",
+  "lid": [
+    {
+      "n": 16,
+      "time": 30,
+      "samples": [
+        {
+          "y": 0.2813,
+          "u": -0.14982247388482545
+        },
+        {
+          "y": 0.5,
+          "u": -0.20153467458999685
+        },
+        {
+          "y": 0.6172,
+          "u": -0.13703109195670987
+        },
+        {
+          "y": 0.8516,
+          "u": 0.23590112729969392
+        }
+      ],
+      "divergence": 3.2875924205200135e-12,
+      "energyError": 3.836930773104541e-13,
+      "pressureResidual": 1.918346084320713e-09,
+      "pressureRhsNorm": 225.7156535133864,
+      "totalPressureIterations": 12404,
+      "steps": 3840
+    },
+    {
+      "n": 32,
+      "time": 30,
+      "samples": [
+        {
+          "y": 0.2813,
+          "u": -0.15617443922967153
+        },
+        {
+          "y": 0.5,
+          "u": -0.20737515465265388
+        },
+        {
+          "y": 0.6172,
+          "u": -0.1382559547207743
+        },
+        {
+          "y": 0.8516,
+          "u": 0.2372303033025561
+        }
+      ],
+      "divergence": 3.183231456205249e-12,
+      "energyError": 1.1475265182525618e-12,
+      "pressureResidual": 3.6767684545721844e-09,
+      "pressureRhsNorm": 1578.970796235916,
+      "totalPressureIterations": 20060,
+      "steps": 7680
+    }
+  ],
+  "natural": [
+    {
+      "n": 16,
+      "time": 1,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1185807779901324,
+      "divergence": 2.027267242965536e-12,
+      "energyError": -1.0118128557223229e-13,
+      "pressureResidual": 7.262478417983473e-08,
+      "pressureRhsNorm": 25858.587715673515,
+      "totalPressureIterations": 11711,
+      "steps": 4267
+    },
+    {
+      "n": 32,
+      "time": 1,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1179921495987628,
+      "divergence": 1.0617062784490372e-12,
+      "energyError": 3.5920155738720815e-14,
+      "pressureResidual": 1.73759125909315e-07,
+      "pressureRhsNorm": 74282.66610917622,
+      "totalPressureIterations": 43005,
+      "steps": 17067
+    },
+    {
+      "n": 48,
+      "time": 0.9999999999993443,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1178800305258392,
+      "divergence": 1.0828671292983927e-11,
+      "energyError": 8.716138921726051e-13,
+      "pressureResidual": 8.67672567009085e-06,
+      "pressureRhsNorm": 136643.83426395175,
+      "totalPressureIterations": 90361,
+      "steps": 38400
+    }
+  ],
+  "halfTimeStep": {
+    "n": 32,
+    "time": 30,
+    "centerU": -0.20737515461891468
+  },
+  "naturalThreeGrid": {
+    "observedOrder": 1.9530011947786718,
+    "extrapolatedNusselt": 1.1177871805299817,
+    "monotone": true,
+    "decreasingDifference": true,
+    "scope": "Nonuniform-grid leading-error fit of one wall-average quantity, not a whole-field accuracy or asymptotic-range proof."
+  },
+  "acceptance": {
+    "lidMaxNormalizedVelocityError": 0.005720303302556101,
+    "lidBudget": 0.005,
+    "naturalReference": 1.117,
+    "naturalBudget": 0.006,
+    "naturalError": 0.0009921495987628148,
+    "massBudget": 1e-08,
+    "thermalEnergyBudget": 1e-08,
+    "gridImproves": true
+  },
+  "passed": false,
+  "elapsedMs": 519253.59548799996,
+  "timingScope": "cloud CPU, possible concurrent verification workloads; not a phone or GPU performance claim"
+}

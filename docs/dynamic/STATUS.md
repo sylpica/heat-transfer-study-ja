@@ -402,3 +402,7 @@ HEATED_CHANNEL_DEVELOPMENT.md。定常Poiseuilleを与えたGraetz型受動温�
 ### 2026-11-06 凸cut-cellの幾何基盤
 
 CUT_CELL_GEOMETRY.md / CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json。単一凸多角形の正面積/重心/共通開口/壁片法線をclipから計算し、Gauss/共有面/解析値/スリバーを検査。rootのsubnormal再現とGauss overflowのNaN比較すり抜けを修正。関連10試験、明示allowlistによるChromium/WebKitカーネル2本成功。熱PDE/安定化/UI/一般形状は未接続。公開ビルド/Worker hash/dev除外を確認。全Nodeは別途Graetzの新規検証を完結してから再実行し、先行1287件を今回へ転用しない。
+
+### 2026-11-06 一様入口の連続Graetz参照と最新回帰
+
+GRAETZ_CONTINUOUS_REFERENCE_20261106.md/.json。速度重み付きcosine一般化固有解で連続定常の熱入口を別計算し、4格子のセル平均/壁/バルク/局所比へ照合。元の全場次数>.8仮説は不支持のまま保存し、解析的バルク半セル誤差と1次、全場/壁/Nuの単調改善を別検査。既存の絶対/相対予算は維持。最細128×64の温度RMS.00553742 K、壁RMS.01275 K、出口Nu相対差.04435%。rootがコード/データ/判定根拠を確認。cut-cell10件とGraetz2件を含む全Node1299中1294成功・5skip・失敗0。新しいcut-cell流束はアフィン整合の診断だけを別途開発中で、この件数へ加算しない。未検証公開/全Phase完成を行わない。

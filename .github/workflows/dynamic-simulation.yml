@@ -2,10 +2,10 @@ name: Dynamic simulation verification
 on:
   push:
     branches: [codex/dynamic-heat-simulation]
-    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
   pull_request:
     branches: [main]
-    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
 permissions:
   contents: read
 jobs:

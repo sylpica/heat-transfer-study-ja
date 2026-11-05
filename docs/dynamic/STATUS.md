@@ -422,3 +422,7 @@ CUT_CELL_FLUX_DIAGNOSTIC.md / CUT_CELL_FLUX_CHECKPOINT_20261106.json。同じ回
 ### 2026-11-06 単独・逐次実行のcut-cell全体定常診断
 
 CUT_CELL_STEADY_DEVELOPMENT.md / CUT_CELL_STEADY_REFERENCE_20261106.json / CUT_CELL_STEADY_CHECKPOINT_20261106.json。最大256セル・全壁Dirichlet・一定kの未知温度を全体行列で解いた。独立Fraction積分の二次セル/壁平均、SciPy汎用solveへ照合し、48×48背景/223正面積セルの補正RMS .000137061 K、全熱源 .144 Wと全境界差約−3.14e−15 W。初回の巨大有限kを無効としたfixture誤認は、実overflowを再現する入力へ訂正し、有効な巨大kも試験。新規6件、Chromium→WebKit、全Node同時実行数1で1315中1310成功・5skip・失敗0、公開ビルド/Worker hash/dev除外が成功。補正行列の正の非対角成分から最大原理の反例も実証したため、補正方式の時間発展接続は保留。一般精度/単調性/小セル時間安定性/公開/全Phase完了を主張せず、次の自由形状過渡には別の単調性を確認した離散化と独立参照が必要。rootのみで進め、他担当の再開/委譲なし。
+
+### 2026-11-06 長い凸ダクトの幾何形態係数と動的放射
+
+LONG_DUCT_RADIATION_DEVELOPMENT.md / REFERENCE_20261106.json / CHECKPOINT_20261106.json。3〜12壁の無限長凸多角形に限り交差弦法からFを計算し、既存灰色射度/熱容量へ結合。独立角度核の積分/80桁弦式と最大約2.44e−15の差、対称三角形の独立1変数ODEへHeunの時間誤差が約2次。dt.125 s/t8 sの温度差.000392862 K。提供T5-01/.04へ対応し、例題10.9は原本PDF589/590の実画像と節点再計算で印刷の算術差を確認、印刷値46.53と式評価46.62819046 W/mを別管理。原画像/抽出本文はコミットしない。新規7件、Chromium→WebKit各1 kernel、全Node同時実行数1で1322中1317成功・5skip・失敗0、公開ビルド/dev除外成功。専用UI/有限長/任意3D/公開承認は未達。先行5faaa22のCIはChromiumフィン学習の用語題名で失敗し、数値/WebKit/高次MMS成功・CFD確認時実行中。次に既存失敗を切り分け、今回のローカル成功をCI全成功へ転用しない。環境再起動後も未保存ファイルを確認して単独で継続。

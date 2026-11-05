@@ -90,7 +90,10 @@
         "HEAT_SINK_DEVELOPMENT.md",
         "HEAT_SINK_CHECKPOINT_20261106.json",
         "HEATED_CHANNEL_DEVELOPMENT.md",
-        "HEATED_CHANNEL_CHECKPOINT_20261106.json"
+        "HEATED_CHANNEL_CHECKPOINT_20261106.json",
+        "LONG_DUCT_RADIATION_DEVELOPMENT.md",
+        "LONG_DUCT_RADIATION_REFERENCE_20261106.json",
+        "LONG_DUCT_RADIATION_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "公開候補は伝導/径方向/単一フィン/放射ネットワーク/同一面の対流＋放射/発達流路/条件付き集中近似。一般2D強制・自然対流CFD/乱流は開発専用で公開範囲外。"
     },
@@ -164,7 +167,10 @@
         "HEAT_SINK_DEVELOPMENT.md",
         "HEAT_SINK_CHECKPOINT_20261106.json",
         "HEATED_CHANNEL_DEVELOPMENT.md",
-        "HEATED_CHANNEL_CHECKPOINT_20261106.json"
+        "HEATED_CHANNEL_CHECKPOINT_20261106.json",
+        "LONG_DUCT_RADIATION_DEVELOPMENT.md",
+        "LONG_DUCT_RADIATION_REFERENCE_20261106.json",
+        "LONG_DUCT_RADIATION_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "同一表面の対流＋放射、および開発専用の有限容量基部＋同一1Dフィンの保存的熱連成を検算。一般固体流体/自由形状/3Dの連成は未完了。"
     },
@@ -216,7 +222,10 @@
         "RANS_SSPRK2_BENCHMARKS_20261105.json",
         "CUT_CELL_STEADY_DEVELOPMENT.md",
         "CUT_CELL_STEADY_REFERENCE_20261106.json",
-        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json",
+        "LONG_DUCT_RADIATION_DEVELOPMENT.md",
+        "LONG_DUCT_RADIATION_REFERENCE_20261106.json",
+        "LONG_DUCT_RADIATION_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -687,7 +696,10 @@
         "CFD_KINETIC_CHECKPOINT_20261105.json",
         "CUT_CELL_STEADY_DEVELOPMENT.md",
         "CUT_CELL_STEADY_REFERENCE_20261106.json",
-        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json",
+        "LONG_DUCT_RADIATION_DEVELOPMENT.md",
+        "LONG_DUCT_RADIATION_REFERENCE_20261106.json",
+        "LONG_DUCT_RADIATION_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -749,7 +761,10 @@
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
         "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
         "HEATED_CHANNEL_DEVELOPMENT.md",
-        "HEATED_CHANNEL_CHECKPOINT_20261106.json"
+        "HEATED_CHANNEL_CHECKPOINT_20261106.json",
+        "LONG_DUCT_RADIATION_DEVELOPMENT.md",
+        "LONG_DUCT_RADIATION_REFERENCE_20261106.json",
+        "LONG_DUCT_RADIATION_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "板/径方向の固定温度/熱流束/対流/放射/同一面対流＋放射と、開発専用の流路両壁q入力を検算。自由輪郭の面積/法線を要する一般境界/連成は保護して未公開。"
     },
@@ -1088,7 +1103,10 @@
         "CUT_CELL_FLUX_CHECKPOINT_20261106.json",
         "CUT_CELL_STEADY_DEVELOPMENT.md",
         "CUT_CELL_STEADY_REFERENCE_20261106.json",
-        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json",
+        "LONG_DUCT_RADIATION_DEVELOPMENT.md",
+        "LONG_DUCT_RADIATION_REFERENCE_20261106.json",
+        "LONG_DUCT_RADIATION_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。"
     },

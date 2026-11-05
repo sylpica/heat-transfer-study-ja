@@ -8,7 +8,10 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "RADIAL_LEARNING.md",
+        "RADIAL_LEARNING_REFERENCE_20261105.json",
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -301,7 +304,10 @@
         "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
         "CFD_FIELD_INSPECTION.md",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "RADIAL_LEARNING.md",
+        "RADIAL_LEARNING_REFERENCE_20261105.json",
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -453,7 +459,10 @@
         "ARCHITECTURE.md",
         "LEARNING_PATHS.md",
         "../../dynamic/learning-path.mjs",
-        "../../tests/dynamic-learning.test.mjs"
+        "../../tests/dynamic-learning.test.mjs",
+        "RADIAL_LEARNING.md",
+        "RADIAL_LEARNING_REFERENCE_20261105.json",
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -670,7 +679,10 @@
         "ARCHITECTURE.md",
         "LEARNING_PATHS.md",
         "../../dynamic/learning-path.mjs",
-        "../../tests/dynamic-learning.test.mjs"
+        "../../tests/dynamic-learning.test.mjs",
+        "RADIAL_LEARNING.md",
+        "RADIAL_LEARNING_REFERENCE_20261105.json",
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -834,7 +846,10 @@
         "HIGH_ORDER_TEMPORAL_20261104.json",
         "CFD_FIELD_INSPECTION.md",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "RADIAL_LEARNING.md",
+        "RADIAL_LEARNING_REFERENCE_20261105.json",
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -904,7 +919,10 @@
         "ARCHITECTURE.md",
         "LEARNING_PATHS.md",
         "../../dynamic/learning-path.mjs",
-        "../../tests/dynamic-learning.test.mjs"
+        "../../tests/dynamic-learning.test.mjs",
+        "RADIAL_LEARNING.md",
+        "RADIAL_LEARNING_REFERENCE_20261105.json",
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
       ]
     },
     {

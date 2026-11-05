@@ -1,0 +1,22 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>入口・出口と壁面加熱の開発検証</title><link rel="stylesheet" href="cavity.css"></head><body><main>
+<h1>入口・出口と壁面加熱の開発検証</h1><p class="notice">開発用・公開承認前。定常の発達Poiseuille流を与え、その流れによる温度の時間変化を計算します。一般2D流体解析・速度入口の発達計算ではありません。</p>
+<p>左の入口から入った流体が上下の壁から熱を受け、右の出口へ熱を運びます。壁からの熱だけでなく、入口・出口のエンタルピーと流体内の蓄熱を比較できます。図と説明はアプリ作成です。</p>
+<form id="settings"><fieldset><legend>条件A：平行平板間の発達流、長さ50 mm・全高さ10 mm</legend>
+<label>断面平均速度 [m/s]<input id="speed" type="number" value="0.5" min="0.12" max="0.75" step="any" required></label>
+<label>各壁から流体への熱流束 [W/m²]<input id="wall-flux" type="number" value="50" min="-100" max="100" step="any" required></label>
+<label>入口・初期温度 [K]<input id="inlet" type="number" value="300" min="280" max="330" step="any" required></label>
+<label>格子<select id="grid"><option value="32">32×16</option><option selected value="64">64×32</option><option value="128">128×64</option></select></label>
+<button id="apply" type="submit">初期状態から計算</button><button id="compare" type="button">現在の条件をBへ固定</button><button id="uncompare" type="button" disabled>比較を解除</button></fieldset></form>
+<p>速度は右向きの定常放物線分布で、両壁では0。指定熱流束は上下で同じ値、正は流体へ加熱、負は冷却です。入口・初期温度は一様。出口では対流だけで熱が出ていきます。条件変更はA/B両方を時刻0へ戻します。</p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="0.01" min="0.00001" max="1" step="any"></label><label>時間刻み上限 [s]（空欄は自動）<input id="dt" type="number" min="0" step="any"></label><div class="buttons"><button id="run">再生</button><button id="pause">一時停止・計算取消</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div><p>物理時刻 <output id="clock">0.00000 s</output>。実時間と同速ではありません。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p><progress id="progress" max="1" value="0" aria-label="計算の進捗"></progress></section>
+<section aria-label="実温度と指定平均流"><p id="legend"></p><div class="fields"><figure><canvas id="field-a" width="800" height="300" tabindex="0" aria-label="条件Aのセル温度と平均速度。クリックまたは矢印キーで測定点を移動"></canvas><figcaption id="caption-a"></figcaption></figure><figure id="panel-b" hidden><canvas id="field-b" width="800" height="300" tabindex="0" aria-label="条件Bのセル温度と平均速度。クリックまたは矢印キーで測定点を移動"></canvas><figcaption id="caption-b"></figcaption></figure></div><pre id="readout"></pre>
+<p>流体温度は所属セル平均、速度は行平均、バルク温度は流量で重み付けした断面近似です。上下壁温は指定熱流束と半セル伝導から再構成します。矢印は与えた発達平均速度と指定壁熱の向きで、瞬間渦ではありません。</p></section>
+<section aria-label="計算履歴"><label>保存コマ<input id="history" type="range" min="0" max="0" value="0"></label><canvas id="graph" width="800" height="200" role="img" aria-label="実際の出口バルク温度の履歴"></canvas><p>出口バルク温度：Aは実線、Bは破線。選択した保存コマの全温度場へ戻せます。</p></section>
+<details id="diagnostics"><summary>流量・入口/出口・壁熱・蓄熱・無次元数</summary><pre id="diagnostic-values"></pre><p>エンタルピーの基準は273.15 K。入口は流入、出口は流出を正とし、壁からの流入と合わせた正味入力が流体の蓄熱になります。粘性の機械仕事を温度へ戻さないため、その温度換算の目安も別に表示します。熱収支の一致だけで、この省略が妥当だとは判断しません。</p></details>
+<details id="theory"><summary>式・仮定・数値誤差・適用範囲</summary>
+<p>速度はu(y)=6Ub(y/H)(1−y/H)、圧力勾配はdp/dx=−12ρνUb/H²。温度だけを ∂T/∂t+u∂T/∂x=α∂²T/∂y²、α=k/(ρcp)で解きます。軸方向の熱伝導を省略するGraetz型のモデルです。Re_Dh≤1000、Pe_Dh≥100、L/H≥5を開発範囲とし、Dh=2Hです。これらの数値範囲だけで一般流路の精度を保証するものではありません。</p>
+<p>一定参照物性：ρ=1.177 kg/m³、cp=1006 J/(kg K)、ν=1.575×10⁻⁵ m²/s、k=0.0264 W/(m K)、奥行方向は一様で側壁を設けず、10 mm幅あたりの熱量を集計します。300 K付近の空気の参考値（原書付録A.6、印刷755/PDF769）を固定します。入力温度による物性変化、浮力、非定常運動量、速度入口発達、乱流、一般形状、3D、圧縮性、粘性加熱は解きません。圧力勾配は与えた駆動で、圧力場をPoissonで解いたものではありません。</p>
+<p>面の移流/横断拡散を保存的に計算し、風上移流・陽Eulerを使用。入口の半セルと、行平均u×行平均Tによるバルク近似には離散化誤差があります。壁温の初期再構成も格子数に依存します。一様初期温度へ非ゼロ熱流束を瞬時に与えると、この半セル近似の初期Nuは4×縦セル数となります。物理的な有限の初期最大値ではありません。刻みや格子を変えるときは同じ物理条件・時刻で比較してください。</p>
+<p>表示するNuは、その時刻/位置の指定q''と再構成した壁・バルク温度差の比です。q''=0または温度差0では未定義。入口発達や過渡の値を定常相関とは呼びません。独立検算の十分発達・両壁一定熱流束の<b>平行平板</b>ではNu_Dh=140/17≈8.2353となります。円管の4.364とは形状と水力直径が異なります。</p>
+<p>履歴はメモリー内だけで再読み込みにより消えます。既存アプリの回答・メモ・設定を変更/送信しません。開発画面のオフライン、実機、支援技術、外部専門家、公開URLは未確認です。</p></details>
+</main><script type="module" src="heated-channel-ui.mjs"></script></body></html>

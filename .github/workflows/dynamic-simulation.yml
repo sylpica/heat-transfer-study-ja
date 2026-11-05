@@ -84,6 +84,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Keep focus on the next term after a delayed modal close event
+        run: node tests/dynamic-term-panel-focus-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Check shared-surface convection and radiation without mixing signed components
         run: node tests/dynamic-surface-exchange-browser.mjs
         env:

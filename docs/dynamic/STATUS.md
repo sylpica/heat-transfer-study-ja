@@ -426,3 +426,7 @@ CUT_CELL_STEADY_DEVELOPMENT.md / CUT_CELL_STEADY_REFERENCE_20261106.json / CUT_C
 ### 2026-11-06 長い凸ダクトの幾何形態係数と動的放射
 
 LONG_DUCT_RADIATION_DEVELOPMENT.md / REFERENCE_20261106.json / CHECKPOINT_20261106.json。3〜12壁の無限長凸多角形に限り交差弦法からFを計算し、既存灰色射度/熱容量へ結合。独立角度核の積分/80桁弦式と最大約2.44e−15の差、対称三角形の独立1変数ODEへHeunの時間誤差が約2次。dt.125 s/t8 sの温度差.000392862 K。提供T5-01/.04へ対応し、例題10.9は原本PDF589/590の実画像と節点再計算で印刷の算術差を確認、印刷値46.53と式評価46.62819046 W/mを別管理。原画像/抽出本文はコミットしない。新規7件、Chromium→WebKit各1 kernel、全Node同時実行数1で1322中1317成功・5skip・失敗0、公開ビルド/dev除外成功。専用UI/有限長/任意3D/公開承認は未達。先行5faaa22のCIはChromiumフィン学習の用語題名で失敗し、数値/WebKit/高次MMS成功・CFD確認時実行中。次に既存失敗を切り分け、今回のローカル成功をCI全成功へ転用しない。環境再起動後も未保存ファイルを確認して単独で継続。
+
+### 2026-11-06 遅延closeタスクによる用語フォーカスの回帰修正
+
+TERM_PANEL_FOCUS_REPAIR_20261106.md / CHECKPOINT_20261106.json。先行5faaa22のCI Chromiumでフィン用語の題名が前項に戻る失敗を確認。新しい隔離ブラウザー試験で修正前のfocus first≠secondを実再現し、旧closeイベントが次操作のフォーカスを奪う原因を修正。元のフィン学習の即時題名/フォーカス等の検査は変更せず、待機延長もしていない。新規focus/既存フィン/放射/キャッシュ更新を各Chromium→WebKit、計8本が順次成功。全Node1322中1317成功・5skip・失敗0、公開ビルド/dev除外成功。UI更新でcacheは4a24eb30c8fdd98cへ変わり、Worker hashは保持。今回のローカル成功をCI141/Node22へ転用せず、push後に別確認。実機/全機能/全Phase完了は未主張。所有者の単独方針どおり、委譲や同時実行なし。

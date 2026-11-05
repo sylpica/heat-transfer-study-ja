@@ -418,3 +418,7 @@ CUT_CELL_FLUX_DIAGNOSTIC.md / CUT_CELL_FLUX_CHECKPOINT_20261106.json。同じ回
 所有者の新指示で委譲を停止。実行中2担当を中断、起動待ち担当へも停止指示し、新規依頼/再開を行わない。rootが残ったcut-cell-fluxの数値配列API抽出を引き取り、誤って一般場の流束和を誤差と呼ばないようsummaryを分離。既存affine7件＋新しい配列API/線形性/保存/不適合3件の計10試験が逐次実行で成功。これは全体定常/時間PDEを実装した状態ではない。Re400研究の新規ファイル/実行はなく、元のCFDモデル/ガードは保持。Phase3/4の開発と回帰を以後単独で続ける。
 
 単独引継ぎの数値配列APIを完結。SINGLE_THREAD_CHECKPOINT_20261106.json。関連10件、Chromium→WebKit、全Node(test-concurrency=1)を順番に実行して1309中1304成功・5skip・失敗0。公開ビルド/Worker hash/dev除外も確認。一般場の外向き流束和を厳密誤差とは呼ばず、PDE未接続を維持。次の小規模全体定常方程式もrootだけで実装する。
+
+### 2026-11-06 単独・逐次実行のcut-cell全体定常診断
+
+CUT_CELL_STEADY_DEVELOPMENT.md / CUT_CELL_STEADY_REFERENCE_20261106.json / CUT_CELL_STEADY_CHECKPOINT_20261106.json。最大256セル・全壁Dirichlet・一定kの未知温度を全体行列で解いた。独立Fraction積分の二次セル/壁平均、SciPy汎用solveへ照合し、48×48背景/223正面積セルの補正RMS .000137061 K、全熱源 .144 Wと全境界差約−3.14e−15 W。初回の巨大有限kを無効としたfixture誤認は、実overflowを再現する入力へ訂正し、有効な巨大kも試験。新規6件、Chromium→WebKit、全Node同時実行数1で1315中1310成功・5skip・失敗0、公開ビルド/Worker hash/dev除外が成功。補正行列の正の非対角成分から最大原理の反例も実証したため、補正方式の時間発展接続は保留。一般精度/単調性/小セル時間安定性/公開/全Phase完了を主張せず、次の自由形状過渡には別の単調性を確認した離散化と独立参照が必要。rootのみで進め、他担当の再開/委譲なし。

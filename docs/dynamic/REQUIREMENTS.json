@@ -213,7 +213,10 @@
         "RADIAL_CONDUCTION.md",
         "RADIAL_BENCHMARKS_20261104.json",
         "../../dynamic/radial.mjs",
-        "RANS_SSPRK2_BENCHMARKS_20261105.json"
+        "RANS_SSPRK2_BENCHMARKS_20261105.json",
+        "CUT_CELL_STEADY_DEVELOPMENT.md",
+        "CUT_CELL_STEADY_REFERENCE_20261106.json",
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -292,7 +295,10 @@
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
         "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
         "CFD_KINETIC_DIAGNOSTICS.md",
-        "CFD_KINETIC_CHECKPOINT_20261105.json"
+        "CFD_KINETIC_CHECKPOINT_20261105.json",
+        "CUT_CELL_STEADY_DEVELOPMENT.md",
+        "CUT_CELL_STEADY_REFERENCE_20261106.json",
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -678,7 +684,10 @@
         "GPU_DIFFUSION_DEVELOPMENT.md",
         "GPU_DIFFUSION_CHECKPOINT_20261105.json",
         "CFD_KINETIC_DIAGNOSTICS.md",
-        "CFD_KINETIC_CHECKPOINT_20261105.json"
+        "CFD_KINETIC_CHECKPOINT_20261105.json",
+        "CUT_CELL_STEADY_DEVELOPMENT.md",
+        "CUT_CELL_STEADY_REFERENCE_20261106.json",
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -849,7 +858,10 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "CUT_CELL_STEADY_DEVELOPMENT.md",
+        "CUT_CELL_STEADY_REFERENCE_20261106.json",
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -863,9 +875,12 @@
         "CUT_CELL_GEOMETRY.md",
         "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json",
         "CUT_CELL_FLUX_DIAGNOSTIC.md",
-        "CUT_CELL_FLUX_CHECKPOINT_20261106.json"
+        "CUT_CELL_FLUX_CHECKPOINT_20261106.json",
+        "CUT_CELL_STEADY_DEVELOPMENT.md",
+        "CUT_CELL_STEADY_REFERENCE_20261106.json",
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "既存の自由輪郭/階段格子に加え、開発専用の単一凸多角形cut-cell面積/重心/開口/壁法線を検査。熱PDE/小セル安定化/凹や穴/曲線/一般CFD/公開は未完了。"
+      "remainingOrScope": "既存の自由輪郭/階段格子に加え、開発専用の単一凸多角形cut-cell幾何と全壁Dirichletの小規模定常PDEを検査。非直交補正の最大原理違反を記録し時間接続は保留。過渡/小セル安定化/凹や穴/曲線/一般CFD/公開は未完了。"
     },
     {
       "id": "Q56",
@@ -989,7 +1004,10 @@
         "CUT_CELL_GEOMETRY.md",
         "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json",
         "CUT_CELL_FLUX_DIAGNOSTIC.md",
-        "CUT_CELL_FLUX_CHECKPOINT_20261106.json"
+        "CUT_CELL_FLUX_CHECKPOINT_20261106.json",
+        "CUT_CELL_STEADY_DEVELOPMENT.md",
+        "CUT_CELL_STEADY_REFERENCE_20261106.json",
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "閉輪郭/交差/分断等の検査を維持。新規凸cut-cellは閉終点/向きのみ同形状で処理し、正スリバーを削除せず未解像は拒否。一般幾何の修復/凹/穴/熱解析適格は未完了。"
     },
@@ -1067,7 +1085,10 @@
         "CUT_CELL_GEOMETRY.md",
         "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json",
         "CUT_CELL_FLUX_DIAGNOSTIC.md",
-        "CUT_CELL_FLUX_CHECKPOINT_20261106.json"
+        "CUT_CELL_FLUX_CHECKPOINT_20261106.json",
+        "CUT_CELL_STEADY_DEVELOPMENT.md",
+        "CUT_CELL_STEADY_REFERENCE_20261106.json",
+        "CUT_CELL_STEADY_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。"
     },

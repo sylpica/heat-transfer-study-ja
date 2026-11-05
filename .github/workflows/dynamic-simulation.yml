@@ -129,6 +129,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify isolated conforming triangle meshes and exact geometry predicates
+        run: node tests/dynamic-triangle-mesh-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify development-only convex long-duct view factors and nonlinear thermal response
         run: node tests/dynamic-long-duct-browser.mjs
         env:

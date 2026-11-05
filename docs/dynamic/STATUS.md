@@ -434,3 +434,7 @@ TERM_PANEL_FOCUS_REPAIR_20261106.md / CHECKPOINT_20261106.json。先行5faaa22�
 ### 2026-11-06 長い凸ダクト放射の専用開発画面
 
 LONG_DUCT_UI_DEVELOPMENT.md / LONG_DUCT_UI_CHECKPOINT_20261106.json。三角形/矩形/六角形の形状からFを計算するモデルを専用Worker/実SVG/温度・射度・熱収支・F・履歴/A-B/取消/復元へ接続。新規図3件＋既存物理7件の関連10件、両ブラウザーの実Worker/独立ODE/3形状/放射率比較/共通倍率/実巻戻し/等温0矢印/無効刻み/取消後再実行/キー選択/明暗/390・1280pxが成功。rootが最終モバイル画像を実確認。初期画像で冷壁間の丸め熱が矢印になったため、表示分解能128 EPS×最大交換熱以下は矢印だけ省略し、生の微小値を指数表記で保持して再検証。全Node同時実行数1で1325中1320成功・5skip・失敗0、公開ビルド/Worker hash/cache/dev除外成功。727ef8eの先行CIは確認時、数値/高次MMS成功・両ブラウザー/CFD実行中で、このUIのCIに転用しない。公開/有限長/自由頂点/一般3D/連成/実機/オフライン/全Phaseは未完了。単独・逐次実行を維持。
+
+### 2026-11-06 別離散化を検査する凸三角形メッシュ
+
+TRIANGLE_MESH_DEVELOPMENT.md / REFERENCE_20261106.json / CHECKPOINT_20261106.json。cut-cell補正の最大原理違反を保持したまま、別のP1 FEM用に適合fan分割と局所Delaunay辺交換を実装。自作filter＋BigInt二進有理数の幾何述語をFraction64点集合へ照合。回転矩形n1/2/4/8＋正3/5/8角の全要素向き/内部辺条件をFraction/解析面積/SciPy hullで独立検査。最大解析面積差約1.11e−16 m²。新規Node6件、両ブラウザーの隔離12メッシュが成功。全Node同時実行数1で1331中1326成功・5skip・失敗0、公開ビルド/Worker hash/cache/dev除外も成功。これは幾何だけでstiffness/温度PDE/単調性/時間安定性は未承認。次に係数/容量/保存を検査する。root単独・逐次、委譲なし。

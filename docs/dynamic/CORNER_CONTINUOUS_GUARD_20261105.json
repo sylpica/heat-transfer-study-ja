@@ -1,0 +1,209 @@
+{
+  "generatedAtUTC": "2026-11-05T11:27:31.032Z",
+  "sourceCommit": "b6e9fb21a73316d77d9380e6fbcca54705fb22e4",
+  "sourceTreeDirty": false,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "dynamic/dev/manufactured-cavity.mjs": "e19855f1139668e86288210aecb562c0eba3da5c9b56d96da8b390b38a780fe0",
+    "scripts/lib/wall-closure-shadow.mjs": "54117b79a1923183fdba193327b49403c4c5b5fff9ed42ba0ab9e91f957f7c07",
+    "scripts/dynamic-wall-manufactured-study.mjs": "5a3ab2be303575182967809df50944ae623b76123a9b173020503dc52e76cbf4"
+  },
+  "generatedSourcesSHA256": {
+    "wall-local-study": {
+      "momentum": "a48114177a316e2be1812b4b85d422df98cad6bf0247444a68b37f8d2f88d0d1",
+      "cavity": "1c81abbb24a3aa1a41101305badb08dd7d8c9862c7cbd2a5c235f67e534b6c69"
+    },
+    "wall-advection-study": {
+      "momentum": "44c7c582539228f01be042df2d2a6f5dd0359d60c45949d44c59b9056a6b5736",
+      "cavity": "a33eaf81effae569fa1e9a93e667268ece9bae6a85db25fce42996afe78ee7b5"
+    },
+    "wall-diffusion-study": {
+      "momentum": "0ce1c918a43ba479359edb6458c51e36a0687e621b0e6ddc68dc78f03315b50e",
+      "cavity": "7bf7f47b94b7385122eb37c82afc44e44af47ea0f782f3daa6d998470295cdc4"
+    },
+    "corner-diffusion-study": {
+      "momentum": "bbc6063b2d933d2a16eb5182e05a6fbf9dba1d7eeee51210a9b10fe3ee9dd6f7",
+      "cavity": "a1804fec89f92308318db19b855ba37952de522b961e58d8b0389e8cba157337"
+    }
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "scope": "Controlled zero-lid identity of original polynomial4 and an inactive corner guard. Not validation of active discontinuous corner accuracy.",
+  "reference": "manufacturedCavity v2; independent symbolic derivative record MANUFACTURED_SYMBOLIC_CHECK_20261104.json",
+  "norm": "RMS of all stored u/v faces and pressure/temperature cells; mean-zero pressure gauge.",
+  "smoke": false,
+  "full": false,
+  "cornerOnly": true,
+  "cornerScope": "Zero-lid manufactured case must retain exactly the polynomial4 fields. This tests the inactive guard, not the accuracy of active discontinuous corners.",
+  "samples": [
+    {
+      "n": 16,
+      "scheme": "polynomial4",
+      "fieldSHA256": "56678ee1990177ee4228c012ea8cf7f7cc2483d624ce26c5604dde3f41178ee1",
+      "time": 0.024999999999999942,
+      "dtS": 0.0001953125,
+      "steps": 128,
+      "errors": {
+        "u": {
+          "rms": 0.00024186095283873502,
+          "max": 0.0005712219805240615
+        },
+        "v": {
+          "rms": 0.00024186095283874445,
+          "max": 0.0005712219805240615
+        },
+        "pressure": {
+          "rms": 0.003744186615304698,
+          "max": 0.010471775619519154
+        },
+        "temperature": {
+          "rms": 0.0009353090188325717,
+          "max": 0.002384541964829623
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.07677942301474182,
+      "divergence": 7.105427357601002e-15,
+      "energyErrorJ": 3.197457083175051e-14,
+      "meetsOriginalSmoothPressureTarget": null,
+      "elapsedMs": 528.655456
+    },
+    {
+      "n": 16,
+      "scheme": "corner-diffusion-study",
+      "fieldSHA256": "56678ee1990177ee4228c012ea8cf7f7cc2483d624ce26c5604dde3f41178ee1",
+      "time": 0.024999999999999942,
+      "dtS": 0.0001953125,
+      "steps": 128,
+      "errors": {
+        "u": {
+          "rms": 0.00024186095283873502,
+          "max": 0.0005712219805240615
+        },
+        "v": {
+          "rms": 0.00024186095283874445,
+          "max": 0.0005712219805240615
+        },
+        "pressure": {
+          "rms": 0.003744186615304698,
+          "max": 0.010471775619519154
+        },
+        "temperature": {
+          "rms": 0.0009353090188325717,
+          "max": 0.002384541964829623
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.07677942301474182,
+      "divergence": 7.105427357601002e-15,
+      "energyErrorJ": 3.197457083175051e-14,
+      "meetsOriginalSmoothPressureTarget": null,
+      "elapsedMs": 484.23263699999995
+    },
+    {
+      "n": 32,
+      "scheme": "polynomial4",
+      "fieldSHA256": "09bb505819085c745426a8628db7ba7eaefdeeb4dcb8cd7bfccdc66453b2bdbe",
+      "time": 0.025000000000000223,
+      "dtS": 4.8828125e-05,
+      "steps": 512,
+      "errors": {
+        "u": {
+          "rms": 1.5508569923119018e-05,
+          "max": 3.66385411791903e-05
+        },
+        "v": {
+          "rms": 1.5508569923080227e-05,
+          "max": 3.663854117830212e-05
+        },
+        "pressure": {
+          "rms": 0.00023228384976099197,
+          "max": 0.0007040482490032057
+        },
+        "temperature": {
+          "rms": 0.00023421217168255668,
+          "max": 0.0006074869564258734
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141661,
+      "pressureRelativeRMS": 0.004763282868271398,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 5.3732974626273697e-14,
+      "meetsOriginalSmoothPressureTarget": true,
+      "elapsedMs": 7651.155558
+    },
+    {
+      "n": 32,
+      "scheme": "corner-diffusion-study",
+      "fieldSHA256": "09bb505819085c745426a8628db7ba7eaefdeeb4dcb8cd7bfccdc66453b2bdbe",
+      "time": 0.025000000000000223,
+      "dtS": 4.8828125e-05,
+      "steps": 512,
+      "errors": {
+        "u": {
+          "rms": 1.5508569923119018e-05,
+          "max": 3.66385411791903e-05
+        },
+        "v": {
+          "rms": 1.5508569923080227e-05,
+          "max": 3.663854117830212e-05
+        },
+        "pressure": {
+          "rms": 0.00023228384976099197,
+          "max": 0.0007040482490032057
+        },
+        "temperature": {
+          "rms": 0.00023421217168255668,
+          "max": 0.0006074869564258734
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141661,
+      "pressureRelativeRMS": 0.004763282868271398,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 5.3732974626273697e-14,
+      "meetsOriginalSmoothPressureTarget": true,
+      "elapsedMs": 6605.4986069999995
+    }
+  ],
+  "releaseApproved": false,
+  "observedOrders": {
+    "polynomial4": {
+      "u": [
+        3.9630403089291053
+      ],
+      "v": [
+        3.96304030893277
+      ],
+      "pressure": [
+        4.010691587578711
+      ],
+      "temperature": [
+        1.9976270463383017
+      ]
+    },
+    "corner-diffusion-study": {
+      "u": [
+        3.9630403089291053
+      ],
+      "v": [
+        3.96304030893277
+      ],
+      "pressure": [
+        4.010691587578711
+      ],
+      "temperature": [
+        1.9976270463383017
+      ]
+    }
+  },
+  "numericalGatesPassed": true,
+  "existingControlPreserved": true,
+  "continuousBoundaryIdentity": true,
+  "passed": true,
+  "elapsedMs": 15295.783789000001
+}

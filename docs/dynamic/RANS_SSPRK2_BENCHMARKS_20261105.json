@@ -1,0 +1,129 @@
+{
+  "generatedAtUTC": "2026-11-05T13:02:10.990Z",
+  "node": "v24.19.0",
+  "modelSHA256": "d0943b58622019e6fd3b5b5f9b15e8ba78837586c0939eeb75df5923a0ad23f9",
+  "referenceSHA256": "e35f962649a098075c87aca05ecbf5d000fb3a769cb23eabd6b4f7d6db707ec7",
+  "referenceGeneratorSHA256": "7f7a5eeece5945ffa430566a93d78df5ad3c0900a23fbbc4b8464ec423a1df37",
+  "scope": "Fixed 32x16 grid, MKM395, Prt=1, t=0.2 s. Independent Fourier-symbol matrix exponential isolates time error. SSPRK2 does not upgrade first-order upwind spatial accuracy or physical turbulence closure validity.",
+  "criteria": {
+    "ssprk2Order": [
+      1.9,
+      2.15
+    ],
+    "coarseSSPRK2RmsK": 0.002,
+    "minimumCoarseErrorReduction": 20
+  },
+  "schemes": [
+    {
+      "timeIntegrator": "euler",
+      "runs": [
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.008607151651692305,
+          "safeDt": 0.01721430330338461,
+          "steps": 24,
+          "rmsK": 0.02443315742235552,
+          "maxK": 0.037934868215870665,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 5.980092333633559e-11,
+          "minK": 298.8592013487231,
+          "maxKAbsolute": 301.1407986512769,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.08080815980446183
+        },
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.004303575825846152,
+          "safeDt": 0.01721430330338461,
+          "steps": 47,
+          "rmsK": 0.01209936031498961,
+          "maxK": 0.018814057814040552,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 7.963672354934662e-11,
+          "minK": 298.86975043106725,
+          "maxKAbsolute": 301.13024956893275,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.08080815980446625
+        },
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.002151787912923076,
+          "safeDt": 0.01721430330338461,
+          "steps": 93,
+          "rmsK": 0.006041612461166303,
+          "maxK": 0.009400421890859434,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 1.079000435133332e-10,
+          "minK": 298.87496802446066,
+          "maxKAbsolute": 301.12503197553934,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.08080815980444972
+        }
+      ],
+      "orders": [
+        1.0139095355255936,
+        1.001925224635424
+      ]
+    },
+    {
+      "timeIntegrator": "ssprk2",
+      "runs": [
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.008607151651692305,
+          "safeDt": 0.01721430330338461,
+          "steps": 24,
+          "rmsK": 0.00048499881975713706,
+          "maxK": 0.0007736876800663595,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 5.980092333633559e-11,
+          "minK": 298.88022641400346,
+          "maxKAbsolute": 301.11977358599654,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.08080815980446183
+        },
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.004303575825846152,
+          "safeDt": 0.01721430330338461,
+          "steps": 47,
+          "rmsK": 0.00012116797672505729,
+          "maxK": 0.00019298148941970794,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 7.963672354934662e-11,
+          "minK": 298.88020449162804,
+          "maxKAbsolute": 301.11979550837196,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.08080815980446625
+        },
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.002151787912923076,
+          "safeDt": 0.01721430330338461,
+          "steps": 93,
+          "rmsK": 0.00003046309853022177,
+          "maxK": 0.00004849968274811545,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 1.079000435133332e-10,
+          "minK": 298.88019781540237,
+          "maxKAbsolute": 301.11980218459763,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.08080815980444972
+        }
+      ],
+      "orders": [
+        2.0009727747004566,
+        1.9918738648123924
+      ]
+    }
+  ],
+  "coarseErrorReduction": 50.37776676361896,
+  "passed": true,
+  "releaseApproved": false
+}

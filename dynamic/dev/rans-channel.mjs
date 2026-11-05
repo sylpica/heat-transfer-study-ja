@@ -5,8 +5,9 @@ const LAW='cess-steady-passive-temperature-v1';
 const finite=(v,name,positive=false)=>{if(typeof v!=='number'||!Number.isFinite(v)||(positive&&v<=0))throw Error(`${name}が数値範囲外です。`);return v;};
 function sum(values){let s=0,e=0;for(const x of values){const y=x-e,t=s+y;e=(t-s)-y;s=t;}return s;}
 export function createRansChannel(input){
- const c=structuredClone(input),allowed=new Set(['caseId','halfGap','nu','rho','cp','k','depth','width','nx','ny','direction','turbulentPrandtl','initial']);
+ const c=structuredClone(input),allowed=new Set(['caseId','halfGap','nu','rho','cp','k','depth','width','nx','ny','direction','turbulentPrandtl','initial','timeIntegrator']);
  if(!c||Object.keys(c).some(key=>!allowed.has(key)))throw Error('開発用平均流の境界は周期x・断熱yに固定され、追加物理を暗黙に無視しません。');
+ const timeIntegrator=c.timeIntegrator??'euler';if(!['euler','ssprk2'].includes(timeIntegrator))throw Error('時間積分はeulerまたはssprk2です。');
  const {nx,ny}=c;if(!Number.isSafeInteger(nx)||nx<4||nx>128||!Number.isSafeInteger(ny)||ny<8||ny>128||ny%2)throw Error('格子は横4〜128、縦は偶数8〜128です。');
  for(const name of ['width','depth','cp','k'])finite(c[name],name,true);
  finite(c.turbulentPrandtl,'仮定した乱流Pr数',true);if(c.turbulentPrandtl<.5||c.turbulentPrandtl>2)throw Error('乱流Pr数の開発用入力域は0.5〜2です。検証済み物性値ではありません。');
@@ -29,20 +30,30 @@ export function createRansChannel(input){
  }
  function snapshot(){
   const error=excessEnergy(T)-initialExcess;
-  return {law:LAW,signature,time,steps,lastDt,safeDt,temperature:Array.from(T),velocity:Array.from(velocity),rowEffectiveThermalDiffusivity:Array.from(rowAlpha),faceEffectiveThermalDiffusivity:Array.from(faceAlpha),min:Math.min(...T),max:Math.max(...T),meanTemperature:initialMean+excessEnergy(T)/totalCapacity,energy:sensibleEnergy(T),initialEnergy,energyError:error,netInput:0,energyRoundoffBudgetJ:energyBudget(steps),advectionCfl:maxSpeed*lastDt/dx,omittedMeanHeatingRateKPerS:omittedHeatingRate,omittedMeanHeatingEstimateK:finite(omittedHeatingRate*time,'省略した仕事の累積温度換算'),meanFlow:{...meta},turbulentPrandtl:c.turbulentPrandtl,meanFlowSteady:true,fluctuationsResolved:false,viscousHeatingIncluded:false,releaseApproved:false};
+  return {law:LAW,signature,time,steps,lastDt,safeDt,timeIntegrator,stagesPerStep:timeIntegrator==='ssprk2'?2:1,temperature:Array.from(T),velocity:Array.from(velocity),rowEffectiveThermalDiffusivity:Array.from(rowAlpha),faceEffectiveThermalDiffusivity:Array.from(faceAlpha),min:Math.min(...T),max:Math.max(...T),meanTemperature:initialMean+excessEnergy(T)/totalCapacity,energy:sensibleEnergy(T),initialEnergy,energyError:error,netInput:0,energyRoundoffBudgetJ:energyBudget(steps),advectionCfl:maxSpeed*lastDt/dx,omittedMeanHeatingRateKPerS:omittedHeatingRate,omittedMeanHeatingEstimateK:finite(omittedHeatingRate*time,'省略した仕事の累積温度換算'),meanFlow:{...meta},turbulentPrandtl:c.turbulentPrandtl,meanFlowSteady:true,fluctuationsResolved:false,viscousHeatingIncluded:false,releaseApproved:false};
  }
- function step(dt,returnState=true){
-  finite(dt,'時間刻み',true);if(dt>safeDt*(1+1e-12))throw Error('移流/渦拡散の陽解法安定条件を超えます。');
-  const nextTime=finite(time+dt,'物理時間');if(nextTime<=time||!Number.isSafeInteger(steps+1))throw Error('時間/ステップ数をこれ以上解像できません。');finite(omittedHeatingRate*nextTime,'省略仕事の累積温度換算');
+ function temperatureRate(values){
   // Every face contributes equal and opposite temperature-volume rates.
   // Subtracting a fixed enthalpy datum makes a uniform field exactly stationary.
   const rate=new Float64Array(N);
   for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){
-   const n=j*nx+i,m=j*nx+(i+1)%nx,u=velocity[j],flux=rowAlpha[j]*(T[m]-T[n])/dx**2-u*((u>=0?T[n]:T[m])-initialMean)/dx;
+   const n=j*nx+i,m=j*nx+(i+1)%nx,u=velocity[j],flux=rowAlpha[j]*(values[m]-values[n])/dx**2-u*((u>=0?values[n]:values[m])-initialMean)/dx;
    rate[n]+=flux;rate[m]-=flux;
-   if(j+1<ny){const next=n+nx,q=faceAlpha[j+1]*(T[next]-T[n])/dy**2;rate[n]+=q;rate[next]-=q;}
+   if(j+1<ny){const next=n+nx,q=faceAlpha[j+1]*(values[next]-values[n])/dy**2;rate[n]+=q;rate[next]-=q;}
   }
-  const next=Float64Array.from(T,(v,i)=>v+dt*rate[i]);validateField(next,steps+1);
+  return rate;
+ }
+ function step(dt,returnState=true){
+  finite(dt,'時間刻み',true);if(dt>safeDt*(1+1e-12))throw Error('移流/渦拡散の陽解法安定条件を超えます。');
+  const nextTime=finite(time+dt,'物理時間');if(nextTime<=time||!Number.isSafeInteger(steps+1))throw Error('時間/ステップ数をこれ以上解像できません。');finite(omittedHeatingRate*nextTime,'省略仕事の累積温度換算');
+  const first=temperatureRate(T),predictor=Float64Array.from(T,(v,i)=>v+dt*first[i]);validateField(predictor,steps+1);
+  let next=predictor;
+  if(timeIntegrator==='ssprk2'){
+   const second=temperatureRate(predictor);
+   // Algebraic SSP convex combination of two admissible Euler steps. The
+   // increment form avoids adding two large absolute-temperature baselines.
+   next=Float64Array.from(T,(v,i)=>v+.5*dt*(first[i]+second[i]));validateField(next,steps+1);
+  }
   T.set(next);time=nextTime;steps++;lastDt=dt;return returnState?snapshot():undefined;
  }
  function restore(s){

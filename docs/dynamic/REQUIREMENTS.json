@@ -177,7 +177,7 @@
         "TEMPERATURE_DEPENDENT_CP.md",
         "HEAT_CAPACITY_BENCHMARKS_20261104.json"
       ],
-      "remainingOrScope": "金属3種の20℃参考値、手動定数とk(T)の範囲内補間。樹脂/断熱材/流体とρ/cpの温度依存は未実装。"
+      "remainingOrScope": "金属3種の20℃参考値、手動定数と範囲内k(T)/cp(T)を実装。cp(T)は積分エンタルピーで更新。密度は一定。樹脂/断熱材/流体の一般プリセットとρ(T)は未実装。"
     },
     {
       "id": "Q14",
@@ -201,7 +201,8 @@
         "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
         "RADIAL_CONDUCTION.md",
         "RADIAL_BENCHMARKS_20261104.json",
-        "../../dynamic/radial.mjs"
+        "../../dynamic/radial.mjs",
+        "RANS_SSPRK2_BENCHMARKS_20261105.json"
       ]
     },
     {
@@ -847,7 +848,8 @@
         "CESS_DNS_COMPARISON_20261105.json",
         "RANS_PASSIVE_TEMPERATURE.md",
         "RANS_TEMPERATURE_BENCHMARKS_20261105.json",
-        "RANS_UI_CHECKPOINT_20261105.json"
+        "RANS_UI_CHECKPOINT_20261105.json",
+        "RANS_SSPRK2_BENCHMARKS_20261105.json"
       ],
       "remainingOrScope": "3実Reτの定常Cess平均流と受動平均温度を開発専用で数値検算。DNS速度の局所差最大6.71%を保持。非定常運動量/瞬間渦/熱閉包の物理承認/一般乱流/公開は未完了。"
     },
@@ -925,7 +927,7 @@
     {
       "id": "Q63",
       "requirement": "2D層流CFDと、検証済みの限定的乱流モデル",
-      "status": "partial_development_only_2D_projection",
+      "status": "partial_development_only_2D_projection_and_steady_RANS",
       "evidence": [
         "../../dynamic/dev/cavity.mjs",
         "CFD_DEVELOPMENT.md",
@@ -942,7 +944,8 @@
         "CAVITY_UI_CHECKPOINT_20261105.json",
         "CESS_MEAN_FLOW.md",
         "RANS_PASSIVE_TEMPERATURE.md",
-        "RANS_UI_CHECKPOINT_20261105.json"
+        "RANS_UI_CHECKPOINT_20261105.json",
+        "RANS_SSPRK2_BENCHMARKS_20261105.json"
       ],
       "remainingOrScope": "矩形層流投影法と3実Reτの定常RANS平均流/受動平均温度を開発専用で限定検証。乱流の温度閉包は仮定、DNS速度のモデル誤差を記録。一般CFD/自由形状/乱流の正式承認/公開は未完了。"
     },
@@ -1021,9 +1024,10 @@
         "GPU_DIFFUSION_DEVELOPMENT.md",
         "GPU_DIFFUSION_CHECKPOINT_20261105.json",
         "CFD_KINETIC_DIAGNOSTICS.md",
-        "CFD_KINETIC_CHECKPOINT_20261105.json"
+        "CFD_KINETIC_CHECKPOINT_20261105.json",
+        "RANS_SSPRK2_BENCHMARKS_20261105.json"
       ],
-      "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
+      "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。"
     },
     {
       "id": "Q66",
@@ -1151,7 +1155,7 @@
         "GPU_DIFFUSION_DEVELOPMENT.md",
         "GPU_DIFFUSION_CHECKPOINT_20261105.json"
       ],
-      "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
+      "remainingOrScope": "公開候補の発達層流は限定条件で検証して公開allowlistへ登録。一般CFD/定常RANSと受動温度/GPU/製造解はdist外。未検証のk(T)フィンや自由輪郭の表面境界は拒否。一般承認やmain公開は未完了。"
     },
     {
       "id": "Q72",

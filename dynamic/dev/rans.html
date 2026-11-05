@@ -6,6 +6,7 @@
 <label>平均流の向き<select id="direction"><option value="1">右向き</option><option value="-1">左向き</option></select></label>
 <label>仮定する乱流Pr数<input id="prt" type="number" value="1" min="0.5" max="2" step="0.05" required></label>
 <label>格子<select id="grid"><option value="32">32×16</option><option value="64" selected>64×32</option><option value="128">128×64</option></select></label>
+<label>時間積分<select id="integrator"><option value="euler">Euler（時間1次）</option><option value="ssprk2">SSPRK2（2段・時間2次）</option></select></label>
 <button id="apply" type="submit">初期状態から計算</button><button id="compare" type="button">現在の条件をBへ固定</button><button id="uncompare" type="button" disabled>比較を解除</button>
 </fieldset></form>
 <p>初期温度は300+cos(2πx/L)[1+0.25cos(2πy/H)] Kのセル平均。x方向は周期、yの両壁は断熱・平均速度は滑りなし。条件変更は両方を時刻0へ戻します。Bを固定してからAの向きや摩擦Re数を変えると、同じ物理時刻で比較できます。</p>
@@ -19,9 +20,9 @@
 <details id="diagnostics"><summary>平均流・渦拡散・熱収支と省略した仕事</summary><pre id="diagnostic-values"></pre><p id="heating-warning" role="status" hidden>省略した平均機械仕事の累積温度換算が0.01 Kを超えました。初期の約1 Kの変動に対しても無視できるか再検討してください。この目安は局所温度誤差の上界や安全基準ではありません。</p>
 <p>粘性/乱流の機械仕事を温度源へ戻さない受動スカラー近似です。省略仕事の温度換算aUb/cp [K/s]と、その値×時刻を表示します。温度の平均が保存されることは、この省略が物理的に妥当という証拠ではありません。Prtは一定値の仮定で、熱伝達相関の検証済み定数ではありません。</p></details>
 <details id="theory"><summary>式・独立検算・適用限界</summary>
-<p>定常Cess渦粘性からU(y)を積分し、∂T̄/∂t+U∂T̄/∂x=∇·[(k/(ρcp)+νt/Prt)∇T̄]を有限体積・風上移流・陽Eulerで進めます。非定常運動量、瞬間渦/温度変動、浮力、壁冷却、入口出口、一般形状、3D、圧縮性は扱いません。圧力勾配は与えた駆動で、圧力場をPoissonで解いていません。</p>
+<p>定常Cess渦粘性からU(y)を積分し、∂T̄/∂t+U∂T̄/∂x=∇·[(k/(ρcp)+νt/Prt)∇T̄]を有限体積・風上移流と、選んだEulerまたはSSPRK2で進めます。SSPRK2は同じ安定上限で2段評価します。時間精度を上げても風上の空間1次や乱流閉包のモデル誤差は残ります。非定常運動量、瞬間渦/温度変動、浮力、壁冷却、入口出口、一般形状、3D、圧縮性は扱いません。圧力勾配は与えた駆動で、圧力場をPoissonで解いていません。</p>
 <p>ρ=1.177 kg/m³、cp=1006 J/(kg K)、ν=1.575×10⁻⁵ m²/s、k=0.0264 W/(m K)は300 K付近の空気の固定参照値（原書付録A.6、書籍755/PDF769）。温度変化による物性変化は無視。半高さδ=0.1 m、奥行き0.01 m。Prt=1をReynolds類推の簡略仮定として初期値にします。</p>
 <p>大学公開DNSと平均速度を比較した相対RMS差は実Reτ178/392/587で2.551%/0.900%/0.988%、最大局所相対差は6.708%/4.557%/4.781%。温度DNSとは未照合です。定数のフィットは行っていません。出典：<a href="https://turbulence.oden.utexas.edu/MKM_1999.html" rel="noreferrer">Moser・Kim・Mansour (1999) 公開データ案内</a>。この画面からデータを自動取得しません。</p>
-<p>独立した連続Galerkin/行列指数の数値参照に対し、Prt=1・t=0.2 s・128×64・刻み0.1 safeDtの温度RMS差は0.00879〜0.03360 K、最大差0.01405〜0.05277 K。格子を粗くすると風上の数値拡散が増えます。これは同じモデル式の数値検算であり、乱流熱輸送の物理的承認ではありません。詳細は開発記録RANS_PASSIVE_TEMPERATURE.md。</p>
+<p>独立した連続Galerkin/行列指数の数値参照に対し、Prt=1・t=0.2 s・128×64・刻み0.1 safeDtの温度RMS差は0.00879〜0.03360 K、最大差0.01405〜0.05277 K。格子を粗くすると風上の数値拡散が増えます。これは同じモデル式の数値検算（Euler、時間積分の初期設定）であり、乱流熱輸送の物理的承認ではありません。詳細は開発記録RANS_PASSIVE_TEMPERATURE.md。</p>
 <p>図と全履歴はメモリー内のみで再読み込みにより消えます。既存アプリの回答・メモ・設定を変更/送信しません。この開発ページのオフライン・実機・支援技術・専門家レビュー・公開URLでの動作は未検証です。</p></details>
 </main><script type="module" src="rans-ui.mjs"></script></body></html>

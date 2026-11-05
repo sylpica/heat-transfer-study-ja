@@ -1,0 +1,27 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>乱流平均流と温度輸送の開発検証</title><link rel="stylesheet" href="cavity.css"></head><body><main>
+<h1>乱流平均流と温度輸送の開発検証</h1><p class="notice">開発用・公開承認前。この画面と計算コードは公開ビルドに含めません。</p>
+<p>十分に発達した平行平板間の<b>定常平均流</b>が、温度の濃淡を運び、広げる様子を計算します。矢印は平均速度です。瞬間的な乱流渦を表示するモデルではありません。図と説明はアプリ作成です。</p>
+<form id="settings"><fieldset><legend>条件A：周期流路、長さ1 m・全高さ0.2 m</legend>
+<label>摩擦Re数の比較条件<select id="case"><option value="MKM180">名目180（実178.12）</option><option value="MKM395">名目395（実392.24）</option><option value="MKM590">名目590（実587.19）</option></select></label>
+<label>平均流の向き<select id="direction"><option value="1">右向き</option><option value="-1">左向き</option></select></label>
+<label>仮定する乱流Pr数<input id="prt" type="number" value="1" min="0.5" max="2" step="0.05" required></label>
+<label>格子<select id="grid"><option value="32">32×16</option><option value="64" selected>64×32</option><option value="128">128×64</option></select></label>
+<button id="apply" type="submit">初期状態から計算</button><button id="compare" type="button">現在の条件をBへ固定</button><button id="uncompare" type="button" disabled>比較を解除</button>
+</fieldset></form>
+<p>初期温度は300+cos(2πx/L)[1+0.25cos(2πy/H)] Kのセル平均。x方向は周期、yの両壁は断熱・平均速度は滑りなし。条件変更は両方を時刻0へ戻します。Bを固定してからAの向きや摩擦Re数を変えると、同じ物理時刻で比較できます。</p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="0.05" min="0.00001" max="10" step="0.01"></label><label>時間刻み上限 [s]（空欄は安定上限の0.1倍）<input id="dt" type="number" min="0" step="any"></label>
+<div class="buttons"><button id="run">再生</button><button id="pause">一時停止・計算取消</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div>
+<p>物理時刻 <output id="clock">0.0000 s</output>。実時間と同速で再生する保証はありません。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p><progress id="progress" max="1" value="0" aria-label="計算の進捗"></progress></section>
+<section aria-label="計算した平均温度と平均速度"><p id="legend">色はA/B共通の298.75〜301.25 K。矢印は定常の行平均速度です。</p>
+<div class="fields"><figure><canvas id="field-a" width="800" height="240" tabindex="0" aria-label="Aの平均温度。クリックまたは矢印キーで測定点を移動"></canvas><figcaption id="caption-a"></figcaption></figure><figure id="panel-b" hidden><canvas id="field-b" width="800" height="240" tabindex="0" aria-label="Bの平均温度。クリックまたは矢印キーで測定点を移動"></canvas><figcaption id="caption-b"></figcaption></figure></div>
+<pre id="readout"></pre><p>測定値は所属セルの平均温度・行平均速度。温度はK、速度はm/s。流れの図はx方向にだけ流れる十分発達したモデルを表します。周期端を越えた温度は反対端から入ります。</p></section>
+<section aria-label="計算履歴"><label>保存コマ<input id="history" type="range" min="0" max="0" value="0"></label><canvas id="graph" width="800" height="200" role="img" aria-label="計算した温度の空間RMS変動の履歴、単位mK"></canvas><p>平均温度からのRMS温度差の履歴（mK、1 mK=0.001 K）。Aは実線、Bは破線。温度の平均値と、温度の濃淡が混ざることを区別します。</p></section>
+<details id="diagnostics"><summary>平均流・渦拡散・熱収支と省略した仕事</summary><pre id="diagnostic-values"></pre><p id="heating-warning" role="status" hidden>省略した平均機械仕事の累積温度換算が0.01 Kを超えました。初期の約1 Kの変動に対しても無視できるか再検討してください。この目安は局所温度誤差の上界や安全基準ではありません。</p>
+<p>粘性/乱流の機械仕事を温度源へ戻さない受動スカラー近似です。省略仕事の温度換算aUb/cp [K/s]と、その値×時刻を表示します。温度の平均が保存されることは、この省略が物理的に妥当という証拠ではありません。Prtは一定値の仮定で、熱伝達相関の検証済み定数ではありません。</p></details>
+<details id="theory"><summary>式・独立検算・適用限界</summary>
+<p>定常Cess渦粘性からU(y)を積分し、∂T̄/∂t+U∂T̄/∂x=∇·[(k/(ρcp)+νt/Prt)∇T̄]を有限体積・風上移流・陽Eulerで進めます。非定常運動量、瞬間渦/温度変動、浮力、壁冷却、入口出口、一般形状、3D、圧縮性は扱いません。圧力勾配は与えた駆動で、圧力場をPoissonで解いていません。</p>
+<p>ρ=1.177 kg/m³、cp=1006 J/(kg K)、ν=1.575×10⁻⁵ m²/s、k=0.0264 W/(m K)は300 K付近の空気の固定参照値（原書付録A.6、書籍755/PDF769）。温度変化による物性変化は無視。半高さδ=0.1 m、奥行き0.01 m。Prt=1をReynolds類推の簡略仮定として初期値にします。</p>
+<p>大学公開DNSと平均速度を比較した相対RMS差は実Reτ178/392/587で2.551%/0.900%/0.988%、最大局所相対差は6.708%/4.557%/4.781%。温度DNSとは未照合です。定数のフィットは行っていません。出典：<a href="https://turbulence.oden.utexas.edu/MKM_1999.html" rel="noreferrer">Moser・Kim・Mansour (1999) 公開データ案内</a>。この画面からデータを自動取得しません。</p>
+<p>独立した連続Galerkin/行列指数の数値参照に対し、Prt=1・t=0.2 s・128×64・刻み0.1 safeDtの温度RMS差は0.00879〜0.03360 K、最大差0.01405〜0.05277 K。格子を粗くすると風上の数値拡散が増えます。これは同じモデル式の数値検算であり、乱流熱輸送の物理的承認ではありません。詳細は開発記録RANS_PASSIVE_TEMPERATURE.md。</p>
+<p>図と全履歴はメモリー内のみで再読み込みにより消えます。既存アプリの回答・メモ・設定を変更/送信しません。この開発ページのオフライン・実機・支援技術・専門家レビュー・公開URLでの動作は未検証です。</p></details>
+</main><script type="module" src="rans-ui.mjs"></script></body></html>

@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {installWorkerRuntime} from '../dynamic/worker-runtime.mjs';import {createRansChannel} from '../dynamic/dev/rans-channel.mjs';
+const config={caseId:'MKM180',nx:8,ny:8,width:1,halfGap:.1,depth:.01,rho:1.177,cp:1006,k:.0264,nu:1.575e-5,turbulentPrandtl:1,initial:Array.from({length:64},(_,i)=>300+Math.sin(i))};
+function harness(){const messages=[],scope={postMessage:m=>messages.push(structuredClone(m))};installWorkerRuntime(data=>{if(data.kind!=='rans-channel')throw Error('unknown development model');return createRansChannel(data.config);},scope);return {scope,messages,send:async(id,type,values={})=>{await scope.onmessage({data:{id,type,...values}});return messages.findLast(m=>m.id===id&&m.type!=='progress');}};}
+test('the passive RANS runtime preserves the existing model after invalid init, advance and cross-condition restore',async()=>{
+ const h=harness(),initial=(await h.send(1,'init',{kind:'rans-channel',config})).snapshot;assert.equal((await h.send(2,'init',{kind:'cavity',config})).type,'error');assert.equal((await h.send(3,'advance',{duration:.01,dt:100})).type,'error');
+ const s=(await h.send(4,'advance',{duration:.01})).snapshot,control=createRansChannel(config);control.step(.01);assert.deepEqual(s,control.snapshot());const other=createRansChannel({...config,turbulentPrandtl:2}).snapshot();assert.equal((await h.send(5,'restore',{snapshot:other})).type,'error');assert.deepEqual((await h.send(6,'restore',{snapshot:initial})).snapshot,initial);
+});
+test('cancellation during real passive-temperature progress rolls back the clock, field and omitted-work diagnostic before retry',async()=>{
+ const h=harness(),initial=(await h.send(1,'init',{kind:'rans-channel',config})).snapshot,post=h.scope.postMessage;h.scope.postMessage=m=>{post(m);if(m.type==='progress')h.scope.onmessage({data:{id:3,type:'cancel'}});};
+ assert.equal(await h.send(2,'advance',{duration:1,dt:.0001}),undefined);assert.equal(h.messages.find(m=>m.id===3).type,'cancelled');h.scope.postMessage=post;const s=(await h.send(4,'advance',{duration:.01})).snapshot,control=createRansChannel(config);control.restore(initial);control.step(.01);assert.deepEqual(s,control.snapshot());
+});

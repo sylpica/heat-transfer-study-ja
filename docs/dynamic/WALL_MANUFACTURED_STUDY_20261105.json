@@ -1,0 +1,426 @@
+{
+  "generatedAtUTC": "2026-11-05T11:16:17.828Z",
+  "sourceCommit": "5a4a7594dcf7d01f9ae980945648069a9a742882",
+  "sourceTreeDirty": false,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "dynamic/dev/manufactured-cavity.mjs": "e19855f1139668e86288210aecb562c0eba3da5c9b56d96da8b390b38a780fe0",
+    "scripts/lib/wall-closure-shadow.mjs": "304ee3462791be0dd1069f233b70377e36ee5683c305d868b64249108f5e29bf",
+    "scripts/dynamic-wall-manufactured-study.mjs": "78169672a121898d1b599d1109053c1b113f3749884a6be7fe67f8abc123233e"
+  },
+  "generatedSourcesSHA256": {
+    "wall-local-study": {
+      "momentum": "a48114177a316e2be1812b4b85d422df98cad6bf0247444a68b37f8d2f88d0d1",
+      "cavity": "1c81abbb24a3aa1a41101305badb08dd7d8c9862c7cbd2a5c235f67e534b6c69"
+    },
+    "wall-advection-study": {
+      "momentum": "44c7c582539228f01be042df2d2a6f5dd0359d60c45949d44c59b9056a6b5736",
+      "cavity": "a33eaf81effae569fa1e9a93e667268ece9bae6a85db25fce42996afe78ee7b5"
+    },
+    "wall-diffusion-study": {
+      "momentum": "0ce1c918a43ba479359edb6458c51e36a0687e621b0e6ddc68dc78f03315b50e",
+      "cavity": "7bf7f47b94b7385122eb37c82afc44e44af47ea0f782f3daa6d998470295cdc4"
+    }
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "scope": "Same continuous manufactured velocity/pressure/temperature and PDE sources as existing verification. Fixed common dt across all five operators at each mesh. Not Ghia data, not independent expert approval or a release gate for new schemes.",
+  "reference": "manufacturedCavity v2; independent symbolic derivative record MANUFACTURED_SYMBOLIC_CHECK_20261104.json",
+  "norm": "RMS of all stored u/v faces and pressure/temperature cells; mean-zero pressure gauge.",
+  "smoke": false,
+  "full": false,
+  "samples": [
+    {
+      "n": 16,
+      "scheme": "conservative2",
+      "time": 0.024999999999999942,
+      "dtS": 0.0001953125,
+      "steps": 128,
+      "errors": {
+        "u": {
+          "rms": 0.012255608081372894,
+          "max": 0.02890570334991205
+        },
+        "v": {
+          "rms": 0.012255608081372884,
+          "max": 0.028905703349911605
+        },
+        "pressure": {
+          "rms": 0.05295310482847733,
+          "max": 0.19055075376767072
+        },
+        "temperature": {
+          "rms": 0.0006130770959215415,
+          "max": 0.001459051994515903
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 1.0858723811870594,
+      "divergence": 7.105427357601002e-15,
+      "energyErrorJ": 4.263270509188843e-14,
+      "meetsOriginalSmoothPressureTarget": null,
+      "elapsedMs": 286.620796
+    },
+    {
+      "n": 16,
+      "scheme": "polynomial4",
+      "time": 0.024999999999999942,
+      "dtS": 0.0001953125,
+      "steps": 128,
+      "errors": {
+        "u": {
+          "rms": 0.00024186095283873502,
+          "max": 0.0005712219805240615
+        },
+        "v": {
+          "rms": 0.00024186095283874445,
+          "max": 0.0005712219805240615
+        },
+        "pressure": {
+          "rms": 0.003744186615304698,
+          "max": 0.010471775619519154
+        },
+        "temperature": {
+          "rms": 0.0009353090188325717,
+          "max": 0.002384541964829623
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.07677942301474182,
+      "divergence": 7.105427357601002e-15,
+      "energyErrorJ": 3.197457083175051e-14,
+      "meetsOriginalSmoothPressureTarget": null,
+      "elapsedMs": 292.90530900000005
+    },
+    {
+      "n": 16,
+      "scheme": "wall-local-study",
+      "time": 0.024999999999999942,
+      "dtS": 0.0001953125,
+      "steps": 128,
+      "errors": {
+        "u": {
+          "rms": 0.003896944175175264,
+          "max": 0.010411479664025336
+        },
+        "v": {
+          "rms": 0.003896944175175273,
+          "max": 0.010411479664025336
+        },
+        "pressure": {
+          "rms": 0.035349085930910885,
+          "max": 0.09719828473183671
+        },
+        "temperature": {
+          "rms": 0.0008775331544102294,
+          "max": 0.0022492807899539002
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.724879046033606,
+      "divergence": 7.105427357601002e-15,
+      "energyErrorJ": 2.486895373876932e-14,
+      "meetsOriginalSmoothPressureTarget": null,
+      "elapsedMs": 314.671381
+    },
+    {
+      "n": 16,
+      "scheme": "wall-advection-study",
+      "time": 0.024999999999999942,
+      "dtS": 0.0001953125,
+      "steps": 128,
+      "errors": {
+        "u": {
+          "rms": 0.0003861385014241961,
+          "max": 0.0008934459292393448
+        },
+        "v": {
+          "rms": 0.00038613850142418235,
+          "max": 0.0008934459292393448
+        },
+        "pressure": {
+          "rms": 0.016249963115800778,
+          "max": 0.03654634037509215
+        },
+        "temperature": {
+          "rms": 0.0009352135251825233,
+          "max": 0.002383727623566756
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.3332266578118961,
+      "divergence": 7.105427357601002e-15,
+      "energyErrorJ": 2.131640675605284e-14,
+      "meetsOriginalSmoothPressureTarget": null,
+      "elapsedMs": 302.69869300000005
+    },
+    {
+      "n": 16,
+      "scheme": "wall-diffusion-study",
+      "time": 0.024999999999999942,
+      "dtS": 0.0001953125,
+      "steps": 128,
+      "errors": {
+        "u": {
+          "rms": 0.003884377076724954,
+          "max": 0.010417504704906655
+        },
+        "v": {
+          "rms": 0.0038843770767249585,
+          "max": 0.010417504704906655
+        },
+        "pressure": {
+          "rms": 0.029540392183394493,
+          "max": 0.07053282926277843
+        },
+        "temperature": {
+          "rms": 0.0008776238056836464,
+          "max": 0.0022501862083572632
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141662,
+      "pressureRelativeRMS": 0.6057642154371206,
+      "divergence": 7.105427357601002e-15,
+      "energyErrorJ": 2.1316175007838474e-14,
+      "meetsOriginalSmoothPressureTarget": null,
+      "elapsedMs": 323.01370999999995
+    },
+    {
+      "n": 32,
+      "scheme": "conservative2",
+      "time": 0.025000000000000223,
+      "dtS": 4.8828125e-05,
+      "steps": 512,
+      "errors": {
+        "u": {
+          "rms": 0.003101181203543541,
+          "max": 0.007296717218690851
+        },
+        "v": {
+          "rms": 0.003101181203543531,
+          "max": 0.007296717218689963
+        },
+        "pressure": {
+          "rms": 0.01332158291736175,
+          "max": 0.049250944073383
+        },
+        "temperature": {
+          "rms": 0.00015128110562465753,
+          "max": 0.00036854021550425387
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141661,
+      "pressureRelativeRMS": 0.27317640788981884,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 4.612678088203618e-14,
+      "meetsOriginalSmoothPressureTarget": false,
+      "elapsedMs": 3154.351175
+    },
+    {
+      "n": 32,
+      "scheme": "polynomial4",
+      "time": 0.025000000000000223,
+      "dtS": 4.8828125e-05,
+      "steps": 512,
+      "errors": {
+        "u": {
+          "rms": 1.5508569923119018e-05,
+          "max": 3.66385411791903e-05
+        },
+        "v": {
+          "rms": 1.5508569923080227e-05,
+          "max": 3.663854117830212e-05
+        },
+        "pressure": {
+          "rms": 0.00023228384976099197,
+          "max": 0.0007040482490032057
+        },
+        "temperature": {
+          "rms": 0.00023421217168255668,
+          "max": 0.0006074869564258734
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141661,
+      "pressureRelativeRMS": 0.004763282868271398,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 5.3732974626273697e-14,
+      "meetsOriginalSmoothPressureTarget": true,
+      "elapsedMs": 3526.0964759999997
+    },
+    {
+      "n": 32,
+      "scheme": "wall-local-study",
+      "time": 0.025000000000000223,
+      "dtS": 4.8828125e-05,
+      "steps": 512,
+      "errors": {
+        "u": {
+          "rms": 0.0001842503811824062,
+          "max": 0.0005654019675842559
+        },
+        "v": {
+          "rms": 0.00018425038118241103,
+          "max": 0.0005654019675842559
+        },
+        "pressure": {
+          "rms": 0.0036433809257279143,
+          "max": 0.014629491420789436
+        },
+        "temperature": {
+          "rms": 0.00023225692569008938,
+          "max": 0.0006040318846203263
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141661,
+      "pressureRelativeRMS": 0.07471227105958247,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": -2.1279296209754558e-14,
+      "meetsOriginalSmoothPressureTarget": false,
+      "elapsedMs": 3833.4984060000006
+    },
+    {
+      "n": 32,
+      "scheme": "wall-advection-study",
+      "time": 0.025000000000000223,
+      "dtS": 4.8828125e-05,
+      "steps": 512,
+      "errors": {
+        "u": {
+          "rms": 3.4116203945997775e-05,
+          "max": 9.651206342509155e-05
+        },
+        "v": {
+          "rms": 3.411620394598426e-05,
+          "max": 9.651206342509155e-05
+        },
+        "pressure": {
+          "rms": 0.0012143891902516287,
+          "max": 0.002869171478173567
+        },
+        "temperature": {
+          "rms": 0.00023420692068540626,
+          "max": 0.0006072755879245051
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141661,
+      "pressureRelativeRMS": 0.024902631979328255,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 2.505243784639696e-14,
+      "meetsOriginalSmoothPressureTarget": false,
+      "elapsedMs": 3936.000174999999
+    },
+    {
+      "n": 32,
+      "scheme": "wall-diffusion-study",
+      "time": 0.025000000000000223,
+      "dtS": 4.8828125e-05,
+      "steps": 512,
+      "errors": {
+        "u": {
+          "rms": 0.0001819201220965164,
+          "max": 0.0005383468427602178
+        },
+        "v": {
+          "rms": 0.00018192012209652014,
+          "max": 0.0005383468427604399
+        },
+        "pressure": {
+          "rms": 0.003498186246151323,
+          "max": 0.01230780726725619
+        },
+        "temperature": {
+          "rms": 0.00023226256747881593,
+          "max": 0.0006042573618287861
+        }
+      },
+      "pressureReferenceRMS": 0.04876549560141661,
+      "pressureRelativeRMS": 0.0717348650517909,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 5.693613102145633e-14,
+      "meetsOriginalSmoothPressureTarget": false,
+      "elapsedMs": 3884.3896090000017
+    }
+  ],
+  "releaseApproved": false,
+  "observedOrders": {
+    "conservative2": {
+      "u": [
+        1.9825523366690971
+      ],
+      "v": [
+        1.9825523366691005
+      ],
+      "pressure": [
+        1.9909497583318836
+      ],
+      "temperature": [
+        2.0188366954519155
+      ]
+    },
+    "polynomial4": {
+      "u": [
+        3.9630403089291053
+      ],
+      "v": [
+        3.96304030893277
+      ],
+      "pressure": [
+        4.010691587578711
+      ],
+      "temperature": [
+        1.9976270463383017
+      ]
+    },
+    "wall-local-study": {
+      "u": [
+        4.402603755517073
+      ],
+      "v": [
+        4.402603755517038
+      ],
+      "pressure": [
+        3.2783231638962524
+      ],
+      "temperature": [
+        1.9177320163488603
+      ]
+    },
+    "wall-advection-study": {
+      "u": [
+        3.500589376518478
+      ],
+      "v": [
+        3.500589376518998
+      ],
+      "pressure": [
+        3.742133684464014
+      ],
+      "temperature": [
+        1.9975120871560041
+      ]
+    },
+    "wall-diffusion-study": {
+      "u": [
+        4.416306224753877
+      ],
+      "v": [
+        4.416306224753849
+      ],
+      "pressure": [
+        3.0780099730797126
+      ],
+      "temperature": [
+        1.9178459981978149
+      ]
+    }
+  },
+  "numericalGatesPassed": true,
+  "existingControlPreserved": true,
+  "passed": true,
+  "elapsedMs": 19880.892925
+}

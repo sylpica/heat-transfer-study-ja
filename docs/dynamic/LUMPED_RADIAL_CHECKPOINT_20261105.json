@@ -1,0 +1,819 @@
+{
+  "generatedAtUTC": "2026-11-05T07:46:36.153552+00:00",
+  "baseSourceCommit": "b44c76bf6afff68d58bed56a6f924198dd1621e1",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    ".github/workflows/dynamic-simulation.yml": "a2dcdf379d99dcdc586ce0eeabd64e3c24ff8b487f7b60d70bd07b4729fbbbca",
+    "dynamic/lumped-radial.mjs": "4896543a21a67e2a6a41feea335a1203d179252a2facef556a735ff5eefce4e5",
+    "dynamic/radial-ui.mjs": "4cabbd3d26b6be633973c7d4ba9e67993cbfa74ec51a59621354f15872425f6b",
+    "dynamic/radial-view.mjs": "c58127a606f776846b209bbc9692b494d5c40f8458ca8fc5de85d7f44f01d8a3",
+    "dynamic/radial.html": "1f080156094550c2534c57bd21e41009b89ccbff4504a3c0ed85a26793bf7520",
+    "dynamic/radial.mjs": "f9b0b48b43dd1bacd89ea7305ab9d15d61ea7bd4f3c93452c035efc477257ea5",
+    "dynamic/worker.mjs": "25c1474b539b9d7b2e943fe8e22e40c4a22c768d87f1d5905762d0cef27098e8",
+    "scripts/build-public-site.mjs": "b60142c5af1bb053c3d0b2f88eb76c7dfa9480745446accb2b806d9d408d038f",
+    "sw.js": "f970c372a436602353d3730131da795f8cae1719d177b05b6810700ef13ea638",
+    "tests/dynamic-public-worker-bundle.test.mjs": "0021d09756dcd665e77c225dbd4aec234a286f2b84ad780872f5e9e6b8a2d3fd",
+    "scripts/dynamic-lumped-benchmarks.mjs": "84be519a92c8ebd446ff224ae2e2ebf3a0ab4ddece4464c49fa13503949f6735",
+    "tests/dynamic-lumped-browser.mjs": "e42fc2c0ca9001a4cf813511e88b02701bec0b862f5d52dbbf4f47a8bf27b0f0"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "playwright": "1.56.1",
+    "chromium": "/usr/bin/chromium",
+    "webkit": "26.0 build 2215; user-local runtime libraries",
+    "webkitHostProbeSkippedLocally": true,
+    "realDevice": false
+  },
+  "node": {
+    "tests": 1230,
+    "pass": 1225,
+    "fail": 0,
+    "skipped": 5
+  },
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "cacheName": "heat-study-ja-app-fcf92666638c0ebb",
+  "browserScriptsPassed": 26,
+  "browserResults": {
+    "chromium": [
+      {
+        "script": "dynamic-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 23.213792324066162,
+        "result": {
+          "engine": "chromium",
+          "learningTutorial": true,
+          "predictionReflection": true,
+          "predictionDisabledAtRequestStart": true,
+          "worker": true,
+          "presets": 4,
+          "termPanel": true,
+          "cancelRollsBack": true,
+          "fin3DMapping": true,
+          "boilingSchematic": true,
+          "rewind": true,
+          "comparison": true,
+          "unstableStepRejected": true,
+          "temperatureDependentHeatCapacity": true,
+          "contoursAndGrid": true,
+          "physicalCrossSections": true,
+          "circleAndFreeDraw": true,
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radiation-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 10.853705644607544,
+        "result": {
+          "engine": "chromium",
+          "model": "closed_diffuse_gray_radiation",
+          "independentTwoSurfaceWatts": true,
+          "threeSurface": true,
+          "fourSurface": true,
+          "comparison": true,
+          "rewind": true,
+          "invalidViewFactorsRejected": true,
+          "invalidStepAtomic": true,
+          "workerLoadFailureHandled": true,
+          "termPanelAndRelatedTerms": true,
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radiation-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 7.921627044677734,
+        "result": {
+          "engine": "chromium",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentScalarODE": true,
+          "actualTransientNotEquilibrium": true,
+          "weightedEnergyPreserved": true,
+          "realRewind": true,
+          "invalidatedOnConditionChange": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "termPanelPreservesState": true,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "responsiveGraph": true,
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-channel-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 15.245912075042725,
+        "result": {
+          "engine": "chromium",
+          "scope": "1D developed momentum + periodic 2D temperature, not general CFD",
+          "poiseuilleIndependentFormula": true,
+          "heatAndMomentumConserved": true,
+          "thermalTransportDirection": true,
+          "comparison": true,
+          "rewind": true,
+          "zeroDrive": true,
+          "invalidReAndStepRejected": true,
+          "keyboardTerms": true,
+          "mobileDefaultMesh": [
+            32,
+            12
+          ],
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-channel-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 11.052842378616333,
+        "result": {
+          "engine": "chromium",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentContinuousHarmonic": true,
+          "thermalDirectionReversal": true,
+          "phaseNotParticlePath": true,
+          "sensibleMeanPreserved": true,
+          "twentyCalculatedFrames": true,
+          "realRewind": true,
+          "invalidatedOnConditionChange": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "termPanelPreservesState": true,
+          "mobileMesh": [
+            32,
+            12
+          ],
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-navigation-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 17.928393125534058,
+        "result": {
+          "engine": "chromium",
+          "pagesBasePath": true,
+          "readerDeepLinks": true,
+          "lazyDiagramDecodeDuringClick": true,
+          "lessonToExperiment": true,
+          "allFourModelSourceContexts": true,
+          "answeredQuestionToFinConditions": true,
+          "quizHistoryUnchanged": true,
+          "unknownCaseFallback": true,
+          "firstVisitQueryOffline": true,
+          "offlineMethod": "browser_offline",
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radial-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 9.136324167251587,
+        "result": {
+          "engine": "chromium",
+          "radialOneDimensional": true,
+          "independentSphereVolumeMean": true,
+          "independentShellTemperatures": true,
+          "cylinderLengthInvariant": true,
+          "sourceBalance": true,
+          "radiationSign": true,
+          "initialBoundaryFlux": true,
+          "sharedPhysicalRadiusScale": true,
+          "profilePhysicalRadius": true,
+          "rewindExact": true,
+          "invalidConditionsAndDtRejected": true,
+          "invalidColorBoundsDoNotAdvance": true,
+          "workerCancelRollback": true,
+          "keyboardTerms": true,
+          "probeDrag": true,
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "mobileCells": 32,
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radial-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 7.325215816497803,
+        "result": {
+          "engine": "chromium",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentContinuousVolumeMeans": true,
+          "realRewind": true,
+          "invalidatedOnConditionChange": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "termPanelPreservesState": true,
+          "mobileCells": 32,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-fin-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 12.71851110458374,
+        "result": {
+          "engine": "chromium",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentTransientFinReference": true,
+          "powerEfficiencyEffectivenessDistinct": true,
+          "nearSteadyStorageChecked": true,
+          "twentyCalculatedFrames": true,
+          "physicalCommonShapeScale": true,
+          "prescribedBaseFaceTemperature": true,
+          "rotationPreservesPhysicalState": true,
+          "realRewind": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "correctTermIdentitiesAndFocus": true,
+          "mobileCells": [
+            32,
+            16
+          ],
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offlineFirstQuery": true,
+          "offlineMethod": "browser_offline",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-surface-exchange-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 6.787549257278442,
+        "result": {
+          "engine": "chromium",
+          "sharedSurfaceTemperature": true,
+          "separateReservoirInputs": true,
+          "opposingConvectiveAndRadiativeFlows": true,
+          "independentAbsoluteSurfaceRoot": true,
+          "componentsAndConservationVisible": true,
+          "plateAndSphere": true,
+          "comparison": true,
+          "trueRewind": true,
+          "invalidInputPreservesPhysicalState": true,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offlineBothPagesAndWorkers": true,
+          "offlineMethod": "browser_offline",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-lumped-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 5.418947458267212,
+        "result": {
+          "engine": "chromium",
+          "explicitReducedModel": true,
+          "BiGate": true,
+          "unsupportedBoundaryRejected": true,
+          "uniformAssumptionAndExactTimeSteppingDisclosed": true,
+          "noInventedInteriorFlux": true,
+          "independentNewtonCoolingValue": true,
+          "oneDegreeOfFreedom": true,
+          "compareFullAndReducedWithSameConditions": true,
+          "trueRewind": true,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offline": true,
+          "offlineMethod": "browser_offline",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-cavity-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 7.825483560562134,
+        "result": {
+          "engine": "chromium",
+          "developmentOnly": true,
+          "actualWorkerMatchesKernel": true,
+          "calculatedBuoyancyReversal": true,
+          "comparison": true,
+          "rewind": true,
+          "cancelRollback": true,
+          "invalidDtRejected": true,
+          "pressureAndSpeedUnits": true,
+          "instantaneousStreamlines": true,
+          "zeroDifferenceNusseltUndefined": true,
+          "keyboardProbe": true,
+          "mobileDark": true,
+          "localStorageUnchanged": true,
+          "offlineVerified": false,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-cache-update-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 7.233031272888184,
+        "result": {
+          "engine": "chromium",
+          "oldSourceCommit": "13b0d1e32909a4037e587826250cab5f52dde336",
+          "oldCacheName": "heat-study-ja-app-691950c91625a189",
+          "pdfCacheName": "heat-study-ja-pdf-d318176a9cac997d",
+          "newCacheName": "heat-study-ja-app-fcf92666638c0ebb",
+          "newWorkerRuntimeCachedByteForByte": true,
+          "selfContainedWorkerCachedByteForByte": true,
+          "pdfCacheRetained": true,
+          "localStorageRetained": true,
+          "offlineWorkerAfterUpdate": true,
+          "offlineMethod": "browser_offline",
+          "realDevice": false,
+          "passed": true
+        }
+      }
+    ],
+    "webkit": [
+      {
+        "script": "dynamic-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 40.05558800697327,
+        "result": {
+          "engine": "webkit",
+          "learningTutorial": true,
+          "predictionReflection": true,
+          "predictionDisabledAtRequestStart": true,
+          "worker": true,
+          "presets": 4,
+          "termPanel": true,
+          "cancelRollsBack": true,
+          "fin3DMapping": true,
+          "boilingSchematic": true,
+          "rewind": true,
+          "comparison": true,
+          "unstableStepRejected": true,
+          "temperatureDependentHeatCapacity": true,
+          "contoursAndGrid": true,
+          "physicalCrossSections": true,
+          "circleAndFreeDraw": true,
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radiation-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 12.07969069480896,
+        "result": {
+          "engine": "webkit",
+          "model": "closed_diffuse_gray_radiation",
+          "independentTwoSurfaceWatts": true,
+          "threeSurface": true,
+          "fourSurface": true,
+          "comparison": true,
+          "rewind": true,
+          "invalidViewFactorsRejected": true,
+          "invalidStepAtomic": true,
+          "workerLoadFailureHandled": true,
+          "termPanelAndRelatedTerms": true,
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radiation-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 10.33026671409607,
+        "result": {
+          "engine": "webkit",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentScalarODE": true,
+          "actualTransientNotEquilibrium": true,
+          "weightedEnergyPreserved": true,
+          "realRewind": true,
+          "invalidatedOnConditionChange": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "termPanelPreservesState": true,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "responsiveGraph": true,
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-channel-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 19.246784687042236,
+        "result": {
+          "engine": "webkit",
+          "scope": "1D developed momentum + periodic 2D temperature, not general CFD",
+          "poiseuilleIndependentFormula": true,
+          "heatAndMomentumConserved": true,
+          "thermalTransportDirection": true,
+          "comparison": true,
+          "rewind": true,
+          "zeroDrive": true,
+          "invalidReAndStepRejected": true,
+          "keyboardTerms": true,
+          "mobileDefaultMesh": [
+            32,
+            12
+          ],
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-channel-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 11.70129108428955,
+        "result": {
+          "engine": "webkit",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentContinuousHarmonic": true,
+          "thermalDirectionReversal": true,
+          "phaseNotParticlePath": true,
+          "sensibleMeanPreserved": true,
+          "twentyCalculatedFrames": true,
+          "realRewind": true,
+          "invalidatedOnConditionChange": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "termPanelPreservesState": true,
+          "mobileMesh": [
+            32,
+            12
+          ],
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-navigation-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 19.709609270095825,
+        "result": {
+          "engine": "webkit",
+          "pagesBasePath": true,
+          "readerDeepLinks": true,
+          "lazyDiagramDecodeDuringClick": true,
+          "lessonToExperiment": true,
+          "allFourModelSourceContexts": true,
+          "answeredQuestionToFinConditions": true,
+          "quizHistoryUnchanged": true,
+          "unknownCaseFallback": true,
+          "firstVisitQueryOffline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radial-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 12.07937502861023,
+        "result": {
+          "engine": "webkit",
+          "radialOneDimensional": true,
+          "independentSphereVolumeMean": true,
+          "independentShellTemperatures": true,
+          "cylinderLengthInvariant": true,
+          "sourceBalance": true,
+          "radiationSign": true,
+          "initialBoundaryFlux": true,
+          "sharedPhysicalRadiusScale": true,
+          "profilePhysicalRadius": true,
+          "rewindExact": true,
+          "invalidConditionsAndDtRejected": true,
+          "invalidColorBoundsDoNotAdvance": true,
+          "workerCancelRollback": true,
+          "keyboardTerms": true,
+          "probeDrag": true,
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "mobileCells": 32,
+          "pageErrors": 0,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-radial-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 11.495050191879272,
+        "result": {
+          "engine": "webkit",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentContinuousVolumeMeans": true,
+          "realRewind": true,
+          "invalidatedOnConditionChange": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "termPanelPreservesState": true,
+          "mobileCells": 32,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-fin-learning-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 12.148557662963867,
+        "result": {
+          "engine": "webkit",
+          "tutorial": true,
+          "lockedPrediction": true,
+          "independentTransientFinReference": true,
+          "powerEfficiencyEffectivenessDistinct": true,
+          "nearSteadyStorageChecked": true,
+          "twentyCalculatedFrames": true,
+          "physicalCommonShapeScale": true,
+          "prescribedBaseFaceTemperature": true,
+          "rotationPreservesPhysicalState": true,
+          "realRewind": true,
+          "predictionBeforeAdvance": true,
+          "predictionDisabledAtRequestStart": true,
+          "correctTermIdentitiesAndFocus": true,
+          "mobileCells": [
+            32,
+            16
+          ],
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offlineFirstQuery": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-surface-exchange-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 4.4574315547943115,
+        "result": {
+          "engine": "webkit",
+          "sharedSurfaceTemperature": true,
+          "separateReservoirInputs": true,
+          "opposingConvectiveAndRadiativeFlows": true,
+          "independentAbsoluteSurfaceRoot": true,
+          "componentsAndConservationVisible": true,
+          "plateAndSphere": true,
+          "comparison": true,
+          "trueRewind": true,
+          "invalidInputPreservesPhysicalState": true,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offlineBothPagesAndWorkers": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-lumped-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 3.587432622909546,
+        "result": {
+          "engine": "webkit",
+          "explicitReducedModel": true,
+          "BiGate": true,
+          "unsupportedBoundaryRejected": true,
+          "uniformAssumptionAndExactTimeSteppingDisclosed": true,
+          "noInventedInteriorFlux": true,
+          "independentNewtonCoolingValue": true,
+          "oneDegreeOfFreedom": true,
+          "compareFullAndReducedWithSameConditions": true,
+          "trueRewind": true,
+          "viewports": [
+            390,
+            412,
+            1280
+          ],
+          "themes": [
+            "light",
+            "dark"
+          ],
+          "offline": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "localStorageUnchanged": true,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-cavity-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 5.320833921432495,
+        "result": {
+          "engine": "webkit",
+          "developmentOnly": true,
+          "actualWorkerMatchesKernel": true,
+          "calculatedBuoyancyReversal": true,
+          "comparison": true,
+          "rewind": true,
+          "cancelRollback": true,
+          "invalidDtRejected": true,
+          "pressureAndSpeedUnits": true,
+          "instantaneousStreamlines": true,
+          "zeroDifferenceNusseltUndefined": true,
+          "keyboardProbe": true,
+          "mobileDark": true,
+          "localStorageUnchanged": true,
+          "offlineVerified": false,
+          "passed": true
+        }
+      },
+      {
+        "script": "dynamic-cache-update-browser",
+        "exitCode": 0,
+        "elapsedSeconds": 1.9468441009521484,
+        "result": {
+          "engine": "webkit",
+          "oldSourceCommit": "13b0d1e32909a4037e587826250cab5f52dde336",
+          "oldCacheName": "heat-study-ja-app-691950c91625a189",
+          "pdfCacheName": "heat-study-ja-pdf-d318176a9cac997d",
+          "newCacheName": "heat-study-ja-app-fcf92666638c0ebb",
+          "newWorkerRuntimeCachedByteForByte": true,
+          "selfContainedWorkerCachedByteForByte": true,
+          "pdfCacheRetained": true,
+          "localStorageRetained": true,
+          "offlineWorkerAfterUpdate": true,
+          "offlineMethod": "server_unavailable_SW_fallback",
+          "realDevice": false,
+          "passed": true
+        }
+      }
+    ]
+  },
+  "independentReference": "LUMPED_RADIAL_REFERENCE_20261105.json",
+  "modelComparisonBenchmarks": "LUMPED_RADIAL_BENCHMARKS_20261105.json",
+  "strictReadiness": {
+    "exitCode": 1,
+    "approvedSections": 0,
+    "totalSections": 76,
+    "scope": "Existing textbook/external review acceptance is unmet; no standards or evidence changed."
+  },
+  "priorCleanCI": {
+    "sourceCommit": "5a3e0edac4ef960c7678f75c72c4c1ce4f1f68fe",
+    "databaseId": 41987263960,
+    "allFiveJobsSucceeded": true
+  },
+  "currentCI": "pending commit and push",
+  "scope": "All 26 dynamic scripts against the fixed completed public build. Current batch does not rerun every main-app operation; earlier full distribution checks remain tied to earlier commits. Five unchanged Node skips depend on missing old-PC materials.",
+  "notVerified": [
+    "all 72 requirements/general CFD/turbulence/GPU",
+    "real iPhone/Android and assistive technology",
+    "external expert approval",
+    "dynamic branch publication to main/public URL"
+  ],
+  "mainPublished": false
+}

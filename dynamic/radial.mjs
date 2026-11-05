@@ -2,7 +2,7 @@ import {validateSurfaceExchange,surfaceExchange} from './surface-exchange.mjs';
 // Radial-symmetry conduction. No fluid or angular solution.
 const SIGMA=5.670374419e-8,finite=(v,name)=>{if(typeof v!=='number'||!Number.isFinite(v))throw Error(`${name}は有限値です。`);return v;},positive=(v,name)=>{finite(v,name);if(v<=0)throw Error(`${name}は正の値です。`);return v;};
 export function createRadial(config){
- const c=structuredClone(config),{n,geometry}=c;if(!['cylinder','sphere'].includes(geometry)||!Number.isSafeInteger(n)||n<4||n>512)throw Error('半径方向は円筒/球の4〜512セルです。');
+ const c=structuredClone(config),{n,geometry}=c;if(c.approximation)throw Error('分布モデルは集中近似を解きません。対応するモデルを選んでください。');if(!['cylinder','sphere'].includes(geometry)||!Number.isSafeInteger(n)||n<4||n>512)throw Error('半径方向は円筒/球の4〜512セルです。');
  for(const name of ['radius','k','rho','cp'])positive(c[name],name);if(geometry==='cylinder')positive(c.length,'円筒の長さ');
  if(c.materials||c.regions||c.outline||c.kTable||c.cpTable)throw Error('開発中の半径方向モデルは単一材料・一定物性だけです。');
  const R=c.radius,dr=R/n,dim=geometry==='sphere'?3:2,factor=geometry==='sphere'?4*Math.PI:2*Math.PI*c.length,source=finite(c.source??0,'体積発熱'),bc=structuredClone(c.boundary??{type:'insulated'});

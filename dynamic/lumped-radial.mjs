@@ -12,6 +12,7 @@ export function createLumpedRadial(config){
  const R=c.radius,area=geometry==='sphere'?4*Math.PI*R*R:2*Math.PI*R*c.length,volume=geometry==='sphere'?4*Math.PI*R**3/3:Math.PI*R*R*c.length,
   Lc=volume/area,Bi=c.boundary.h*Lc/c.k,capacity=c.rho*c.cp*volume,conductance=c.boundary.h*area,rate=conductance/capacity;
  if(![area,volume,Lc,capacity].every(v=>Number.isFinite(v)&&v>0)||![Bi,conductance,rate].every(Number.isFinite))throw Error('集中近似の寸法/熱容量が数値範囲外です。');
+ if(c.boundary.h>0&&!(conductance>0&&rate>0))throw Error('集中近似の熱流/応答率が浮動小数点で解像できません。');
  if(Bi>.1+8*Number.EPSILON)throw Error(`集中熱容量近似の適用基準Bi=h(V/A)/k≤0.1を超えています（Bi=${Bi.toPrecision(5)}）。半径方向の分布モデルを選んでください。`);
  const ambient=c.boundary.temperature,initialEnergy=capacity*(c.initial-273.15),signature=JSON.stringify([geometry,R,c.length??null,c.k,c.rho,c.cp,c.initial,c.boundary]);finite(initialEnergy,'初期顕熱');
  if(!Number.isFinite(conductance*(ambient-c.initial)))throw Error('集中近似の初期熱移動率が数値範囲外です。');

@@ -25,6 +25,7 @@ jobs:
       - run: node scripts/dynamic-multigrid-benchmarks.mjs
       - run: node scripts/dynamic-cavity-time-benchmarks.mjs
       - run: node scripts/dynamic-radial-benchmarks.mjs
+      - run: node scripts/dynamic-lumped-benchmarks.mjs
       - run: node scripts/dynamic-surface-exchange-benchmarks.mjs
       - run: node scripts/dynamic-learning-samples-benchmarks.mjs
       - run: npm run build:public
@@ -85,6 +86,11 @@ jobs:
           BROWSER_EXECUTABLE: ''
       - name: Check shared-surface convection and radiation without mixing signed components
         run: node tests/dynamic-surface-exchange-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check the explicit small-Bi alternative against the full radial model
+        run: node tests/dynamic-lumped-browser.mjs
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''

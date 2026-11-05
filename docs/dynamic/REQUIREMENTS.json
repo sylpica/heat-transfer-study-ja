@@ -88,7 +88,7 @@
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
         "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ],
-      "remainingOrScope": "公開候補は伝導/単一フィン/黒い周囲への放射。強制/自然対流の一般2D CFDは未完了。"
+      "remainingOrScope": "公開候補は伝導/径方向/単一フィン/放射ネットワーク/同一面の対流＋放射/発達流路/条件付き集中近似。一般2D強制・自然対流CFD/乱流は開発専用で公開範囲外。"
     },
     {
       "id": "Q7",
@@ -245,7 +245,11 @@
         "SURFACE_EXCHANGE.md",
         "SURFACE_EXCHANGE_REFERENCE_20261105.json",
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
-        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {
@@ -297,7 +301,11 @@
         "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
         "MANUFACTURED_SYMBOLIC_CHECK_20261104.json",
         "PRESSURE_SENSITIVITY.md",
-        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json"
+        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {
@@ -351,7 +359,11 @@
         "SURFACE_EXCHANGE.md",
         "SURFACE_EXCHANGE_REFERENCE_20261105.json",
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
-        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {
@@ -468,7 +480,11 @@
         "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
         "RADIAL_UI.md",
         "RADIAL_UI_CHECKPOINT_20261104.json",
-        "../../tests/dynamic-radial-browser.mjs"
+        "../../tests/dynamic-radial-browser.mjs",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {
@@ -495,7 +511,11 @@
         "RADIATION_NETWORK.md",
         "RADIATION_BENCHMARKS_20261104.json",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {
@@ -822,14 +842,24 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {
       "id": "Q58",
       "requirement": "妥当な代替近似モデルへの切り替え",
-      "status": "planned",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
+      ],
+      "remainingOrScope": "明示的に選ぶ、一定h対流・一定物性・一様初期・発熱なし・Bi_Lc≤0.1の球/端面断熱円筒のみ。一般CFD/GPU/乱流の妥当な代替経路は未完了。"
     },
     {
       "id": "Q59",
@@ -958,7 +988,11 @@
         "SURFACE_EXCHANGE.md",
         "SURFACE_EXCHANGE_REFERENCE_20261105.json",
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
-        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -977,7 +1011,11 @@
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
         "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
-        "PUBLIC_WORKER_DISTRIBUTION.md"
+        "PUBLIC_WORKER_DISTRIBUTION.md",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {
@@ -1012,7 +1050,11 @@
         "SURFACE_EXCHANGE.md",
         "SURFACE_EXCHANGE_REFERENCE_20261105.json",
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
-        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL.md",
+        "LUMPED_RADIAL_REFERENCE_20261105.json",
+        "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
       ]
     },
     {

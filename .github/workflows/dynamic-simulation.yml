@@ -58,6 +58,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Check developed-channel learning against an independent thermal-harmonic reference
+        run: node tests/dynamic-channel-learning-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - run: node tests/dynamic-navigation-browser.mjs
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}

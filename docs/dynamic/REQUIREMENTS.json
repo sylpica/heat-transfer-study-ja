@@ -841,8 +841,14 @@
     {
       "id": "Q56",
       "requirement": "乱流CFDを初期開発の対象に含める",
-      "status": "planned",
-      "evidence": []
+      "status": "partial_development_only_steady_RANS_passive_temperature",
+      "evidence": [
+        "CESS_MEAN_FLOW.md",
+        "CESS_DNS_COMPARISON_20261105.json",
+        "RANS_PASSIVE_TEMPERATURE.md",
+        "RANS_TEMPERATURE_BENCHMARKS_20261105.json"
+      ],
+      "remainingOrScope": "3実Reτの定常Cess平均流と受動平均温度を開発専用で数値検算。DNS速度の局所差最大6.71%を保持。非定常運動量/瞬間渦/熱閉包の物理承認/一般乱流/公開は未完了。"
     },
     {
       "id": "Q57",
@@ -932,9 +938,11 @@
         "HIGH_ORDER_MANUFACTURED_20261104.json",
         "HIGH_ORDER_TEMPORAL_20261104.json",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "CESS_MEAN_FLOW.md",
+        "RANS_PASSIVE_TEMPERATURE.md"
       ],
-      "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
+      "remainingOrScope": "矩形層流投影法と3実Reτの定常RANS平均流/受動平均温度を開発専用で限定検証。乱流の温度閉包は仮定、DNS速度のモデル誤差を記録。一般CFD/自由形状/乱流の正式承認/公開は未完了。"
     },
     {
       "id": "Q64",

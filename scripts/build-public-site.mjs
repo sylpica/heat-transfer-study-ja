@@ -1,4 +1,4 @@
-import {readFile,copyFile,mkdir,rm,stat,writeFile} from 'node:fs/promises';
+import {readFile,copyFile,mkdir,rm,stat,writeFile,readdir} from 'node:fs/promises';
 import {resolve,dirname,join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
@@ -19,11 +19,20 @@ const pdf=await readFile(join(root,'book/AHTTv600.pdf'));
 const pdfHash=createHash('sha256').update(pdf).digest('hex');
 if(pdf.length!==32472182||pdfHash!=='d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a')throw new Error('原本PDFのサイズまたはSHA-256が引き継ぎ記録と一致しません。');
 if(!Array.isArray(book.chapters)||!Array.isArray(questions))throw new Error('公開用データの形式を確認してください。');
-// The checked-out repository contains preexisting book-derived paragraphs and figures.
-// A public URL does not grant permission to redistribute them, so the site omits them.
+// book.json itself never carries extracted paragraphs or standalone book figures.
+// The Japanese translation ships as separate per-section files under data/sections/
+// (owner decision of 2026-11-04, recorded in LICENSE-BOOK.md); original figures are omitted.
 for(const chapter of book.chapters)for(const section of chapter.sections){
-  if(section.translationStatus==='translated')section.translationStatus='private_only';
+  section.translationStatus='translated';
   delete section.blocks;delete section.blocksEn;delete section.figures;delete section.sourceReview;
+}
+// Collect the bundled translation files so the reader can load them via the content manifest.
+const sectionFileNames=(await readdir(join(root,'data','sections'))).filter(name=>name.endsWith('.json')).sort();
+if(sectionFileNames.length!==76)throw new Error('日本語訳の節ファイルが76件そろっていません: '+sectionFileNames.length);
+const sectionPaths=sectionFileNames.map(name=>'data/sections/'+name);
+for(const name of sectionFileNames){
+  const parsed=JSON.parse(await readFile(join(root,'data','sections',name),'utf8'));
+  if(!parsed||parsed.language!=='ja'||!Array.isArray(parsed.blocks)||!parsed.blocks.length)throw new Error('日本語訳ファイルの形式を確認してください: '+name);
 }
 for(const question of questions)if(question.figure?.kind==='book')delete question.figure.src;
 // Validate the actual allowlisted data after source sanitization, before writing any public files.
@@ -41,14 +50,16 @@ for(const path of new Set(files)){
 await mkdir(join(output,'data'),{recursive:true});
 await mkdir(join(output,'book'),{recursive:true});
 await writeFile(join(output,'book/AHTTv600.pdf'),pdf);
-for(const [name,value] of Object.entries({'book.json':book,'questions.json':questions,'content-manifest.json':{files:[]},'original-notes.json':originalNotes,'original-deep-lessons.json':deepLessons})){
+for(const [name,value] of Object.entries({'book.json':book,'questions.json':questions,'content-manifest.json':{files:sectionPaths.map(path=>'./'+path)},'original-notes.json':originalNotes,'original-deep-lessons.json':deepLessons})){
   await writeFile(join(output,'data',name),JSON.stringify(value,null,2)+'\n');
 }
+await mkdir(join(output,'data','sections'),{recursive:true});
+for(const name of sectionFileNames)await copyFile(join(root,'data','sections',name),join(output,'data','sections',name));
 // Every new public content revision must produce a new service-worker script.
 // Otherwise an existing installation may keep old offline lessons and questions.
 const publicAssets=[...new Set([...files,
   'data/book.json','data/questions.json','data/content-manifest.json',
-  'data/original-notes.json','data/original-deep-lessons.json'])];
+  'data/original-notes.json','data/original-deep-lessons.json',...sectionPaths])];
 const cacheAssets=await Promise.all(publicAssets.map(async path=>({
   path,content:await readFile(join(output,path))
 })));
@@ -91,4 +102,4 @@ for(const entry of appShell){
   try{await stat(join(output,entry));}catch{throw new Error('APP_SHELLの記載ファイルが配信物にありません: '+entry);}
 }
 await writeFile(marker,'公開対象だけを列挙して作成した配信物です。\n');
-console.log('公開配信物：許諾済みの原本PDF、アプリ・独自ガイド・問題・用語・書籍の目次情報。翻訳・原図・抽出本文は含めていません。');
+console.log('公開配信物：許諾済みの原本PDF、アプリ・独自ガイド・問題・用語・書籍の目次情報、および書籍の日本語訳（全76節、専門家校閲未実施）。原図は含めていません。');

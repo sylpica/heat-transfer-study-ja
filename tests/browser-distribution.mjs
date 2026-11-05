@@ -1,4 +1,5 @@
-// Checks the exact public Pages artifact, where book text and original figures are absent.
+// Checks the exact public Pages artifact: the bundled Japanese translation
+// is present (owner decision 2026-11-04) and original figures are absent.
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {existsSync} from 'node:fs';
@@ -53,7 +54,7 @@ try {
     assert.match(workerSource,/const PDF_CACHE_NAME='heat-study-ja-pdf-[0-9a-f]{16}';/,
       'PDF cache name must derive from the shipped PDF hash: unchanged PDFs keep the learner-saved cache across app revisions, replaced PDFs get a fresh cache');
   }
-  assert.match(await page.locator('.app-footer').innerText(),/76節に独自日本語ノート・発展教材・図解を収録/);
+  assert.match(await page.locator('.app-footer').innerText(),/原書の日本語訳を全76節に収録/);
   await nav('reader');
   await page.locator('.reader-toc .toc-item.selected').waitFor({state:'attached'});
   assert.ok((await readerContrast()).every(value=>value>=4.5),'目次の選択行の文字コントラスト');
@@ -75,14 +76,14 @@ try {
 
   assert.match(await page.locator('#reader-article').innerText(),/原本の翻訳・節本文ではありません/);
   assert.ok((await page.locator('.brand').getAttribute('aria-label')).includes('熱移動を学ぶ'));
-  assert.ok((await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('aria-label')).includes('原本PDFを開く'));
+  assert.ok((await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('aria-label')).includes('原本PDFを開く'));
   for(const action of ['reader-font-down','reader-font-up']){
     const button=page.locator(`[data-action="${action}"]`);
     assert.ok((await button.getAttribute('aria-label')).includes(await button.innerText()));
   }
-  assert.equal(await page.locator('.reader-toc .toc-item:not(.not-ready)').count(),0);
-  assert.match(await page.locator('.not-translated').innerText(),/公開していません/);
-  assert.match(await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=17$/);
+  assert.equal(await page.locator('.reader-toc .toc-item:not(.not-ready)').count(),76);
+  assert.match(await page.locator('#reader-article').innerText(),/専門家校閲待ち/);
+  assert.match(await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('href'),/AHTTv600\.pdf#page=17$/);
   assert.equal(await page.locator('.reader-toc .toc-item.selected').getAttribute('data-section'),'1.1');
   await page.locator('[data-action="toggle-read"]').click();
   await page.waitForFunction(()=>JSON.parse(localStorage.getItem('heat-study-ja:v1'))?.readSections?.['1.1']===true);
@@ -96,19 +97,20 @@ try {
   assert.equal(readingRecord.bookmark.bookPage,3);
   assert.equal(readingRecord.note.sectionId,'1.1');
   await page.locator('.reader-pager [data-section="1.2"]').click();
-  assert.match(await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=20$/);
+  assert.match(await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('href'),/AHTTv600\.pdf#page=20$/);
   await page.locator('.reader-toc [data-section="1.3"]').click();
-  assert.match(await page.locator('.not-translated').innerText(),/旧PC.*下書き.*未移行/s);
-  assert.match(await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=25$/);
+  assert.ok(await page.locator('#reader-article .book-content').count()===1);
+  assert.match(await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('href'),/AHTTv600\.pdf#page=25$/);
   await page.waitForFunction(()=>document.querySelector('#pdf-cache-status')?.textContent.includes('未保存'));
   await nav('home');
   assert.match(await page.locator('.hero-side').innerText(),/1 \/ 76 節を読了/);
   await nav('plan');
-  assert.match(await page.locator('.suggested-steps li').first().innerText(),/1\.2.*英語原本PDF/s);
-  for(const path of ['data/sections/1-1-en.json','data/sections/1-1-ja.json','data/figures/fig1-1-021.png']){
+  assert.match(await page.locator('.suggested-steps li').first().innerText(),/1\.2.*日本語訳または英語原本/s);
+  for(const path of ['data/sections/1-1-en.json','data/figures/fig1-1-021.png']){
     const status=await page.evaluate(async path=>(await fetch(path)).status,path);
     assert.equal(status,404,path);
   }
+  assert.equal(await page.evaluate(async path=>(await fetch(path)).status,'data/sections/1-1-ja.json'),200,'bundled Japanese translation must ship');
   await nav('guide');
   await page.locator('.guide-section').first().waitFor();
   assert.equal(await page.locator('.guide-section').count(),GUIDE_SECTIONS.length);
@@ -513,7 +515,7 @@ try {
       await nav(route);
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth)<=width+2,`${route}@${width}`);
       if(route==='reader'){
-        const status=page.locator('.reader-toc .toc-item i').filter({hasText:'翻訳下書き・未移行'}).first();
+        const status=page.locator('.reader-toc .toc-item i').filter({hasText:'訳文あり'}).first();
         assert.ok(await status.evaluate(element=>element.getBoundingClientRect().height<=20&&element.scrollWidth<=element.clientWidth+1&&parseFloat(getComputedStyle(element).fontSize)>=10),`目次の進捗表示@${width}`);
         assert.ok(await page.locator('.reader-toc .toc-item').first().evaluate(element=>element.getBoundingClientRect().height>=44),`目次のタップ領域@${width}`);
       }

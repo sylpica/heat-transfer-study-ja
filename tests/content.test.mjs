@@ -106,7 +106,9 @@ test('public questions are self-contained and book references remain in the cite
     assert.ok(section.questions.count>=publicIds.length,`問題数: ${section.id}`);
     assert.ok(section.questions.sourceCheckedCount>=publicIds.length,`出典照合数: ${section.id}`);
   }
-  assert.deepEqual((await read('data/content-manifest.json')).files,[]);
+  const bundledFiles=(await read('data/content-manifest.json')).files;
+  assert.equal(bundledFiles.length,76);
+  assert.ok(bundledFiles.every(path=>/^\.\/data\/sections\/\d+-\d+-ja\.json$/.test(path)));
 });
 test('numeric public answer keys agree with independent simulator calculations and stated rounding',async()=>{
   const qs=await read('data/questions.json'),byId=id=>qs.find(q=>q.id===id);

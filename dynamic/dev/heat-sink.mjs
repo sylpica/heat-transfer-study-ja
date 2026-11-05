@@ -27,7 +27,7 @@ export function createHeatSink(input){
  const budget=(base,fins,input,atStep)=>finite(128*Number.EPSILON*(Cb*Math.abs(base)+N*Cf*sum(Array.from(fins,Math.abs))+Math.abs(input))*(1+Math.sqrt(atStep)),'収支丸め誤差予算',true);
  function powers(base,fins){
   const baseConvectionOutwardW=Gb*(base-c.ambient),finSideConvectionOutwardPerFinW=Gs*sum(Array.from(fins,v=>v-c.ambient)),baseToFinPerFinW=N?G0*(base-fins[0]):0,finTotalConvectionOutwardW=N*finSideConvectionOutwardPerFinW,baseToAllFinsW=N*baseToFinPerFinW,netExternalPowerW=c.power-baseConvectionOutwardW-finTotalConvectionOutwardW;
-  const out={sourcePowerW:c.power,baseConvectionOutwardW,finSideConvectionOutwardPerFinW,finTotalConvectionOutwardW,baseToFinPerFinW,baseToAllFinsW,netExternalPowerW,baseStoragePowerW:c.power-baseConvectionOutwardW-baseToAllFinsW,finStoragePowerPerFinW:baseToFinPerFinW-finSideConvectionOutwardPerFinW};for(const [key,value]of Object.entries(out))finite(value,key);return out;
+  const out={sourcePowerW:c.power,baseConvectionOutwardW,finSideConvectionOutwardPerFinW,finTotalConvectionOutwardW,baseToFinPerFinW,baseToAllFinsW,netExternalPowerW,baseStoragePowerW:c.power-baseConvectionOutwardW-baseToAllFinsW,finStoragePowerPerFinW:baseToFinPerFinW-finSideConvectionOutwardPerFinW};for(const [key,value]of Object.entries(out)){finite(value,key);if(value===0)out[key]=0;}return out;
  }
  function validate(base,fins,input,correction,atStep){
   finite(base,'受理基部温度[K]',true);if(base>limit)throw Error('基部温度が監視上限を超えました。');for(const v of fins){finite(v,'受理フィン温度[K]',true);if(v>limit)throw Error('フィン温度が監視上限を超えました。');}

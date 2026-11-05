@@ -33,6 +33,9 @@ test('failed timesteps, temperature bounds and inconsistent restores never chang
  for(const power of [-1e10,1e10]){const f=createHeatSink({...base,power}),before=f.snapshot();assert.throws(()=>f.step(f.safeDt));assert.deepEqual(f.snapshot(),before);}
 });
 test('invalid material, geometry, unsupported physics and unresolved numeric scales are rejected',()=>{
- for(const patch of [{baseWidth:0},{baseDepth:Infinity},{finCount:65},{finCount:1.5},{finCells:3},{finCells:257},{h:-1},{h:1e8},{contactResistance:-1},{k:0},{cp:-1},{rho:Infinity},{ambient:0},{initialBase:0},{initialFin:NaN},{initialFin:[300]},{baseWidth:.005},{baseWidth:.006},{source:1},{radiation:true},{outline:[]},{baseThickness:1e-300},{maxTemperature:300}])assert.throws(()=>createHeatSink({...base,...patch}));
+ // Positive input can still underflow the derived volume (MIN_VALUE) or
+ // overflow a derived rate (1e-320). 1e-300 does neither and was an invalid
+ // rejection fixture; no arbitrary minimum thickness is imposed to pass it.
+ for(const patch of [{baseWidth:0},{baseDepth:Infinity},{finCount:65},{finCount:1.5},{finCells:3},{finCells:257},{h:-1},{h:1e8},{contactResistance:-1},{k:0},{cp:-1},{rho:Infinity},{ambient:0},{initialBase:0},{initialFin:NaN},{initialFin:[300]},{baseWidth:.005},{baseWidth:.006},{source:1},{radiation:true},{outline:[]},{baseThickness:Number.MIN_VALUE},{baseThickness:1e-320},{maxTemperature:300}])assert.throws(()=>createHeatSink({...base,...patch}));
  const c=structuredClone(base),m=createHeatSink(c);c.power=500;const copy=m.config;copy.baseWidth=500;assert.equal(m.config.power,8);assert.equal(m.config.baseWidth,.06);
 });

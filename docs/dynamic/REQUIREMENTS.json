@@ -86,7 +86,9 @@
         "SURFACE_EXCHANGE.md",
         "SURFACE_EXCHANGE_REFERENCE_20261105.json",
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
-        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
+        "HEAT_SINK_DEVELOPMENT.md",
+        "HEAT_SINK_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "公開候補は伝導/径方向/単一フィン/放射ネットワーク/同一面の対流＋放射/発達流路/条件付き集中近似。一般2D強制・自然対流CFD/乱流は開発専用で公開範囲外。"
     },
@@ -154,8 +156,11 @@
         "SURFACE_EXCHANGE.md",
         "SURFACE_EXCHANGE_REFERENCE_20261105.json",
         "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
-        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
-      ]
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json",
+        "HEAT_SINK_DEVELOPMENT.md",
+        "HEAT_SINK_CHECKPOINT_20261106.json"
+      ],
+      "remainingOrScope": "同一表面の対流＋放射、および開発専用の有限容量基部＋同一1Dフィンの保存的熱連成を検算。一般固体流体/自由形状/3Dの連成は未完了。"
     },
     {
       "id": "Q12",
@@ -630,9 +635,11 @@
         "FIN_LEARNING.md",
         "FIN_LEARNING_REFERENCE_20261105.json",
         "FIN_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json",
+        "HEAT_SINK_DEVELOPMENT.md",
+        "HEAT_SINK_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "単一矩形フィンの1D解を3D形状へ配置。ヒートシンク全体や3D解析は未完了。"
+      "remainingOrScope": "単一フィンと、有限容量基部＋複数同一1Dフィンの計算温度を回転/拡大できる3D形状へ配置。後者は開発専用。基部内/フィン間の3D温度解析・流体相互作用は未完了。"
     },
     {
       "id": "Q42",
@@ -729,7 +736,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "HEAT_SINK_DEVELOPMENT.md",
+        "HEAT_SINK_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -1025,7 +1034,9 @@
         "GPU_DIFFUSION_CHECKPOINT_20261105.json",
         "CFD_KINETIC_DIAGNOSTICS.md",
         "CFD_KINETIC_CHECKPOINT_20261105.json",
-        "RANS_SSPRK2_BENCHMARKS_20261105.json"
+        "RANS_SSPRK2_BENCHMARKS_20261105.json",
+        "HEAT_SINK_DEVELOPMENT.md",
+        "HEAT_SINK_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。"
     },

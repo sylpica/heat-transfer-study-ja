@@ -129,7 +129,7 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
-      - name: Verify isolated conforming triangle meshes and exact geometry predicates
+      - name: Verify isolated convex meshes, geometry predicates and P1 diffusion coefficients
         run: node tests/dynamic-triangle-mesh-browser.mjs
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}

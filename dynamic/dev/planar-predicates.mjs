@@ -22,3 +22,13 @@ export function inCircle2D(a,b,c,d){
  const [u,v,w]=[a,b,c].map(p=>exactDifference(p,d)),exact=add(sub(mul(lift(u),cross(v,w)),mul(lift(v),cross(u,w))),mul(lift(w),cross(u,v)));
  return {sign:sign(exact),exactFallback:true};
 }
+
+// Exact cotangent sum at the vertices opposite edge (a,b). For two incident
+// triangles the first is CCW (a,b,c), the second is on the other side (d).
+// Zero is returned only for an exactly zero polynomial, never by clipping.
+export function edgeCotangentDyadic(a,b,c,d=null){
+ point(a);point(b);point(c);const u=exactDifference(a,c),v=exactDifference(b,c),areaC=cross(u,v),dotC=add(mul(u[0],v[0]),mul(u[1],v[1]));if(sign(areaC)<=0)throw Error('最初の三角形は反時計回りの正面積です。');
+ if(d===null)return {numerator:dotC,denominator:areaC};
+ point(d);const w=exactDifference(a,d),z=exactDifference(b,d),areaD=cross(w,z),dotD=add(mul(w[0],z[0]),mul(w[1],z[1]));if(sign(areaD)>=0)throw Error('隣接三角形は共通辺の反対側です。');
+ const opposite=neg(areaD);return {numerator:add(mul(dotC,opposite),mul(dotD,areaC)),denominator:mul(areaC,opposite)};
+}

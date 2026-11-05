@@ -438,3 +438,7 @@ LONG_DUCT_UI_DEVELOPMENT.md / LONG_DUCT_UI_CHECKPOINT_20261106.json。三角形/
 ### 2026-11-06 別離散化を検査する凸三角形メッシュ
 
 TRIANGLE_MESH_DEVELOPMENT.md / REFERENCE_20261106.json / CHECKPOINT_20261106.json。cut-cell補正の最大原理違反を保持したまま、別のP1 FEM用に適合fan分割と局所Delaunay辺交換を実装。自作filter＋BigInt二進有理数の幾何述語をFraction64点集合へ照合。回転矩形n1/2/4/8＋正3/5/8角の全要素向き/内部辺条件をFraction/解析面積/SciPy hullで独立検査。最大解析面積差約1.11e−16 m²。新規Node6件、両ブラウザーの隔離12メッシュが成功。全Node同時実行数1で1331中1326成功・5skip・失敗0、公開ビルド/Worker hash/cache/dev除外も成功。これは幾何だけでstiffness/温度PDE/単調性/時間安定性は未承認。次に係数/容量/保存を検査する。root単独・逐次、委譲なし。
+
+### 2026-11-06 P1拡散係数・正容量と独立要素積分
+
+TRIANGLE_STIFFNESS_DEVELOPMENT.md / REFERENCE_20261106.json / CHECKPOINT_20261106.json。二進有理数の余接和とnearest-even商から係数を構築し、未知節点へ接続する非負G/正容量/固定温度境界への接続を検査。境界同士の負Gと正確な同一円0を別計数して保持。Pythonの物理座標の要素勾配積分と6ケースを照合し、係数差最大約4.33e−15 W/K、全未知固有値は当該6行列で正。これを一般の浮動行列/時間安定性へ転用しない。新規Node6件と両browserの実係数kernelが成功、全Node同時実行数1で1337中1332成功・5skip・失敗0。公開ビルド/Worker/cache/dev除外成功。まだ温度PDE/時間/境界収支/復元/UIは未接続。root単独・逐次、委譲なし。

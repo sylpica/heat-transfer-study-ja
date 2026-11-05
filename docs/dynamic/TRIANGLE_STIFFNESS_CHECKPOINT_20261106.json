@@ -1,0 +1,72 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T23:05:00.940139+00:00",
+  "baseSourceCommit": "45840cbbf9c8d944c1f093a36737ff29bfcdef01",
+  "sourceTreeDirty": true,
+  "operationPolicy": "Root only, no agents; local commands, engines and Node files sequential.",
+  "sourceFilesSHA256": {
+    "dynamic/dev/dyadic-quotient.mjs": "abbde893a556fb60ddb315d85347f779a8c9f6265ca1301db9e0a04e8962dba8",
+    "dynamic/dev/planar-predicates.mjs": "5e406a0a87fe851a1f7f17aedeffb6e8e9279ebb65ae021318f1c25c7268b155",
+    "dynamic/dev/triangle-stiffness.mjs": "4b7d368a94c287512c9424caa2cdfa178de330cdc4d618eacfd6b71c8224391b",
+    "scripts/dynamic-triangle-stiffness-reference.py": "f26eed5046a1ad0dd3ba382431d78b9d4ba05aa3da214ffb4cb9ae7c50653230",
+    "tests/dynamic-dyadic-quotient.test.mjs": "a7af3adead9db9cef56c9086dd18cf96305791510a69f3b231fc27ee63497794",
+    "tests/dynamic-triangle-stiffness.test.mjs": "6b59032b1d6fa62c0a00792a543fccaaddb52983942425426d917b5ce0ea0cca",
+    "tests/dynamic-triangle-mesh-browser.mjs": "ee08cb2ae94220ce484f4b2ca8536033384d824e6584c30b077483f8d83229e5",
+    "docs/dynamic/TRIANGLE_STIFFNESS_REFERENCE_20261106.json": "7b043ead1612618baa8cbc02e8eed48fec6dd51c283d3ddebe2b280e849bbab8"
+  },
+  "newRelatedNodeTests": 6,
+  "node": {
+    "tests": 1337,
+    "pass": 1332,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "p1Operator": {
+        "affineQuadraticFormWK": 26.100000000000016,
+        "zeroWeightEdges": 40,
+        "unknownGraphConnectedToDirichlet": true,
+        "temperaturePDEImplemented": false
+      },
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "p1Operator": {
+        "affineQuadraticFormWK": 26.100000000000016,
+        "zeroWeightEdges": 40,
+        "unknownGraphConnectedToDirichlet": true,
+        "temperaturePDEImplemented": false
+      },
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "developmentModulesExcluded": true,
+  "temperaturePDEImplemented": false,
+  "temporalStabilityVerified": false,
+  "generalNumericPositiveDefinitenessVerified": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

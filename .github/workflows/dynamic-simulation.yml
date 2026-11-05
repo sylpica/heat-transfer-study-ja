@@ -94,6 +94,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify the isolated software GPU diffusion shader or unavailable-device CPU alternative
+        run: node tests/dynamic-gpu-diffusion-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise the development-only cavity UI in an isolated allowlisted server
         run: node tests/dynamic-cavity-browser.mjs
         env:

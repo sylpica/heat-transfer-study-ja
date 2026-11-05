@@ -1,0 +1,171 @@
+{
+  "generatedAtUTC": "2026-11-05T10:50:42.359864+00:00",
+  "baseSourceCommit": "791264614516bfcf09d3244865f69eb797bc1383",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/adiabatic-diffusion.mjs": "2421ce1f35047144fbb0e5eca5caefeaf64502c59d8f1f8b52fc82d423eca5dd",
+    "tests/dynamic-gpu-diffusion-browser.mjs": "b60646d0c3bb8ca5a26bb7cfdd3beb72b076434d92aff2204dd3b6c635137320",
+    "tests/dynamic-gpu-diffusion.test.mjs": "d3ee7de3f333d3362cbeeb4ab7ed80b54171f5a551e36354d8cead75259abe8b",
+    ".github/workflows/dynamic-simulation.yml": "7507a9baae223ac34f0c83ff6fac8026ae76f4117b9ba1056cf30af79a6aa13c"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "playwright": "1.56.1",
+    "chromium": "/usr/bin/chromium; SwiftShader flags for isolated GPU test only",
+    "webkit": "26.0 build 2215; user-local runtime libraries",
+    "webkitHostProbeSkippedLocally": true,
+    "realDevice": false
+  },
+  "node": {
+    "tests": 1233,
+    "pass": 1228,
+    "fail": 0,
+    "skipped": 5
+  },
+  "newIsolatedBrowserScripts": {
+    "chromiumSoftwareShader": {
+      "engine": "chromium",
+      "generatedAtUTC": "2026-11-05T10:47:38.143Z",
+      "scope": "Development-only insulated constant-property rectangle. Software WebGPU validates the shader, not real-GPU performance. WebKit without a device tests the identical CPU alternative only.",
+      "realDevice": false,
+      "physicalGPUVerified": false,
+      "space": [
+        {
+          "nx": 16,
+          "ny": 8,
+          "timeS": 0.2,
+          "steps": 52,
+          "dtS": 0.00390625,
+          "continuousCellAverageRMSErrorK": 0.0004405317145624611,
+          "cpuDifferenceRMSErrorK": 6.78044762506093e-08,
+          "cpuDifferenceMaxK": 2.48866399488179e-07,
+          "energyErrorJ": 0,
+          "energyToleranceScaleJ": 0.968245804309845,
+          "energyErrorFractionOfScale": 0,
+          "inputRoundingMaxK": 2.9698185244342312e-08,
+          "gpuElapsedMs": 15.299999997019768,
+          "cpuElapsedMs": 14.100000008940697
+        },
+        {
+          "nx": 32,
+          "ny": 16,
+          "timeS": 0.2,
+          "steps": 205,
+          "dtS": 0.0009765625,
+          "continuousCellAverageRMSErrorK": 0.00011099173264461725,
+          "cpuDifferenceRMSErrorK": 6.00023175062283e-08,
+          "cpuDifferenceMaxK": 3.219191739844973e-07,
+          "energyErrorJ": 0,
+          "energyToleranceScaleJ": 0.9919915199279785,
+          "energyErrorFractionOfScale": 0,
+          "inputRoundingMaxK": 2.951924216176849e-08,
+          "gpuElapsedMs": 34.599999994039536,
+          "cpuElapsedMs": 57.20000000298023
+        },
+        {
+          "nx": 64,
+          "ny": 32,
+          "timeS": 0.2,
+          "steps": 820,
+          "dtS": 0.000244140625,
+          "continuousCellAverageRMSErrorK": 2.9438697206631683e-05,
+          "cpuDifferenceRMSErrorK": 1.6727259760823389e-06,
+          "cpuDifferenceMaxK": 3.0919084110792028e-06,
+          "energyErrorJ": 0,
+          "energyToleranceScaleJ": 0.9979934692382812,
+          "energyErrorFractionOfScale": 0,
+          "inputRoundingMaxK": 2.9769296361337183e-08,
+          "gpuElapsedMs": 203.3999999910593,
+          "cpuElapsedMs": 289.30000001192093
+        }
+      ],
+      "time": [
+        {
+          "dtS": 0.015625,
+          "semiDiscreteRMSErrorK": 0.00016983255424098153
+        },
+        {
+          "dtS": 0.0078125,
+          "semiDiscreteRMSErrorK": 8.496467249896897e-05
+        },
+        {
+          "dtS": 0.00390625,
+          "semiDiscreteRMSErrorK": 4.2708065196639894e-05
+        },
+        {
+          "dtS": 0.001953125,
+          "semiDiscreteRMSErrorK": 2.1345105480094995e-05
+        }
+      ],
+      "backend": "webgpu",
+      "adapter": {
+        "vendor": "google",
+        "architecture": "swiftshader",
+        "isFallbackAdapter": true
+      },
+      "combinedGridAndTimeOrders": [
+        1.9887936650743725,
+        1.91466648742321
+      ],
+      "fixedGridTimeOrders": [
+        0.9991780152562414,
+        0.9923545660248226,
+        1.0006032491502084
+      ],
+      "asymmetric": {
+        "nx": 17,
+        "ny": 11,
+        "energyErrorJ": -4.4200469784558134e-10,
+        "energyErrorFractionOfScale": 6.245483272127329e-10,
+        "cpuRMSErrorK": 2.9529234945532143e-08
+      },
+      "failedEnergyGatePreservesState": true,
+      "cancelPreservesStateAndRetry": true,
+      "nonMultipleWorkgroupUniform": true,
+      "precisionBudgetSelectsCPU": true,
+      "positiveAbsoluteTemperaturePreserved": true,
+      "gpuShaderTests": "executed",
+      "passed": true
+    },
+    "webkitUnavailableDeviceCPU": {
+      "engine": "webkit",
+      "generatedAtUTC": "2026-11-05T10:46:32.805Z",
+      "scope": "Development-only insulated constant-property rectangle. Software WebGPU validates the shader, not real-GPU performance. WebKit without a device tests the identical CPU alternative only.",
+      "realDevice": false,
+      "physicalGPUVerified": false,
+      "space": [],
+      "time": [],
+      "backend": "cpu",
+      "adapter": null,
+      "gpuShaderTests": "not run: WebGPU device unavailable",
+      "cpuFallbackReason": "WebGPU is unavailable; the identical insulated diffusion equations use CPU",
+      "cpuContinuousRMSErrorK": 0.00047163866154419353,
+      "passed": true
+    }
+  },
+  "gpuScope": "Constant-property insulated rectangular diffusion only; software GPU arithmetic and CPU comparison. Not registered in public worker or public allowlist. Physical GPU, performance, long runs and engineering approval remain unverified.",
+  "buildPublic": true,
+  "publicDistributionChecks": {
+    "workerSHA256UnchangedFrom7912646": true,
+    "publicContentCacheNameUnchanged": "heat-study-ja-app-fcf92666638c0ebb",
+    "developmentDirectoryAbsent": true,
+    "priorPublicBrowserScripts": 26,
+    "priorPublicBrowserCheckpoint": "LUMPED_RADIAL_CHECKPOINT_20261105.json",
+    "publicBrowserMatrixRepeatedInThisBatch": false
+  },
+  "priorCleanCI": {
+    "sourceCommit": "791264614516bfcf09d3244865f69eb797bc1383",
+    "databaseId": 41989608825,
+    "allFiveJobsSucceeded": true
+  },
+  "currentCI": "pending commit and push; new isolated GPU test added to browser matrix",
+  "notVerified": [
+    "physical GPU/drivers/performance/long-duration stability",
+    "GPU UI/Worker integration/publication",
+    "general CFD/turbulence and all 72 requirements",
+    "real mobile devices/assistive technology",
+    "external expert approval",
+    "main/public URL release"
+  ],
+  "mainPublished": false
+}

@@ -498,7 +498,9 @@
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
         "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
-        "PUBLIC_WORKER_DISTRIBUTION.md"
+        "PUBLIC_WORKER_DISTRIBUTION.md",
+        "GPU_DIFFUSION_DEVELOPMENT.md",
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -652,7 +654,9 @@
         "HIGH_ORDER_MANUFACTURED_20261104.json",
         "HIGH_ORDER_TEMPORAL_20261104.json",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "GPU_DIFFUSION_DEVELOPMENT.md",
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -864,9 +868,12 @@
     {
       "id": "Q59",
       "requirement": "対応PC向けの高性能GPU解析",
-      "status": "planned",
-      "evidence": [],
-      "remainingOrScope": "GPU経路は未実装。現実装はCPU。"
+      "status": "partial",
+      "evidence": [
+        "GPU_DIFFUSION_DEVELOPMENT.md",
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
+      ],
+      "remainingOrScope": "開発専用の断熱一定物性2D拡散WGSLをSwiftShaderで検証。CPUとの同条件比較/取消/保存則を確認。物理GPUの高速化・精度/長時間安定性/一般モデル/公開UIは未完了。"
     },
     {
       "id": "Q60",
@@ -992,7 +999,9 @@
         "LUMPED_RADIAL.md",
         "LUMPED_RADIAL_REFERENCE_20261105.json",
         "LUMPED_RADIAL_CHECKPOINT_20261105.json",
-        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json",
+        "GPU_DIFFUSION_DEVELOPMENT.md",
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -1015,7 +1024,9 @@
         "LUMPED_RADIAL.md",
         "LUMPED_RADIAL_REFERENCE_20261105.json",
         "LUMPED_RADIAL_CHECKPOINT_20261105.json",
-        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json",
+        "GPU_DIFFUSION_DEVELOPMENT.md",
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -1037,7 +1048,9 @@
         "../../tests/dynamic-radial-browser.mjs",
         "CFD_DEVELOPMENT_UI.md",
         "CAVITY_UI_CHECKPOINT_20261105.json",
-        "PUBLIC_WORKER_DISTRIBUTION.md"
+        "PUBLIC_WORKER_DISTRIBUTION.md",
+        "GPU_DIFFUSION_DEVELOPMENT.md",
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -1112,7 +1125,9 @@
         "HIGH_ORDER_TEMPORAL_20261104.json",
         "CFD_DEVELOPMENT_UI.md",
         "CAVITY_UI_CHECKPOINT_20261105.json",
-        "PUBLIC_WORKER_DISTRIBUTION.md"
+        "PUBLIC_WORKER_DISTRIBUTION.md",
+        "GPU_DIFFUSION_DEVELOPMENT.md",
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
       ],
       "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
     },

@@ -1,0 +1,191 @@
+{
+  "generatedAtUTC": "2026-11-05T16:30:27.040Z",
+  "node": "v24.19.0",
+  "primarySource": {
+    "title": "A Heat Transfer Textbook, Sixth Edition",
+    "version": "6.00",
+    "pdfSHA256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a",
+    "pdfBytes": 32472182,
+    "reviewedPdfPage": 220,
+    "reviewedPrintedPage": 206,
+    "pageImagesRedistributed": false
+  },
+  "sourceCommit": "d1e3b00c2a587349b2a85d4cc498540473dd87b6",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "scripts/dynamic-provided-textbook-check.mjs": "06c76335afee7d6dc0b34d461256d9164447f24a28b1923c283c301f6fba6e4b",
+    "dynamic/thermal.mjs": "91f5a1d88b1d934b6f5735fa0a8ee1d3b46240b6a000565d3e3120171c896a6b",
+    "dynamic/radial.mjs": "f9b0b48b43dd1bacd89ea7305ab9d15d61ea7bd4f3c93452c035efc477257ea5"
+  },
+  "ownerPack": {
+    "filename": "benchmarks-textbook.md",
+    "sha256": "3688be6cb043ed9b90b52c19adcc293c34704a42542d6554bd5cd746885c4fcb",
+    "bytes": 41468,
+    "explicitInputHashChecked": true,
+    "rawPackRedistributed": false,
+    "instructionsTreatedAsReferenceMaterial": true
+  },
+  "sourceDefinitionCheck": {
+    "id": "T1-01",
+    "printedPage": 206,
+    "pdfPage": 220,
+    "scope": "Original page image inspected. Listed magnitudes are inside braces, before 4/pi; second term is subtracted. They are not absolute center Theta.",
+    "firstMagnitudeAtFo1": 0.0848049724711138,
+    "printedFirstMagnitude": 0.085,
+    "fullCenterThetaAtFo1": 0.10797704444410905,
+    "directUseOfPrintedMagnitudeAsCenterRejected": true
+  },
+  "cases": [
+    {
+      "id": "T1-01",
+      "model": "full symmetric slab, fixed surface temperature",
+      "definition": "Theta=(T-Tsurface)/(Tinitial-Tsurface), Fo=alpha*t/Lhalf². Numerical cells compared with integrated full series, not center point or unscaled bracket term.",
+      "rows": [
+        {
+          "nx": 16,
+          "rmsK": 0.00237372701797164,
+          "maxK": 0.0033407917176191404,
+          "centerAdjacentCellTheta": 0.10711753200405383,
+          "exactCenterAdjacentCellTheta": 0.10728457158993479,
+          "energyErrorJ": 0,
+          "steps": 241
+        },
+        {
+          "nx": 32,
+          "rmsK": 0.0005902993642470509,
+          "maxK": 0.0008338036392956383,
+          "centerAdjacentCellTheta": 0.10776198556882263,
+          "exactCenterAdjacentCellTheta": 0.10780367575078742,
+          "energyErrorJ": 7.815970093361102e-14,
+          "steps": 960
+        },
+        {
+          "nx": 64,
+          "rmsK": 0.0001473793728909036,
+          "maxK": 0.00020836309153082766,
+          "centerAdjacentCellTheta": 0.10792326844773754,
+          "exactCenterAdjacentCellTheta": 0.10793368660231409,
+          "energyErrorJ": -4.192202140984591e-13,
+          "steps": 3841
+        }
+      ],
+      "observedCoupledOrders": [
+        2.007635339394975,
+        2.0019121679819665
+      ],
+      "passed": true
+    },
+    {
+      "id": "T1-03",
+      "model": "sphere, Robin Bi_R=1",
+      "definition": "All eigenmodes use lambda=(j+1/2)pi. Volume-averaged shells compared with full series. The supplied 0.1080 is a rounded one-term center value, not a shell value.",
+      "roundedOneTermCenterFromPack": 0.108,
+      "oneTermCenterTheta": 0.10797704454039894,
+      "fullSeriesCenterTheta": 0.10797704444410905,
+      "rows": [
+        {
+          "n": 16,
+          "rmsK": 0.0012337331811901465,
+          "maxK": 0.0018785494901862876,
+          "firstShellTheta": 0.10777908142916033,
+          "exactFirstShellTheta": 0.10787300890366965,
+          "energyErrorJ": -6.110667527536862e-13,
+          "steps": 960
+        },
+        {
+          "n": 32,
+          "rmsK": 0.00030783152799333775,
+          "maxK": 0.0004691268514989133,
+          "firstShellTheta": 0.10792757250094383,
+          "exactFirstShellTheta": 0.10795102884351877,
+          "energyErrorJ": -8.952838470577262e-13,
+          "steps": 3841
+        },
+        {
+          "n": 64,
+          "rmsK": 0.00007692031181767238,
+          "maxK": 0.00011724373143806588,
+          "firstShellTheta": 0.10796467793754516,
+          "exactFirstShellTheta": 0.10797054012411707,
+          "energyErrorJ": -3.836930773104541e-13,
+          "steps": 15360
+        }
+      ],
+      "observedCoupledOrders": [
+        2.002817512694735,
+        2.0007044833716763
+      ],
+      "passed": true
+    },
+    {
+      "id": "T2-01",
+      "model": "constant rectangular 1D fin, insulated tip, mL=1",
+      "definition": "Finite-cell mean compared with integrated cosh; sufficiently late time also checks base/side power. Constant hypothetical properties, transverse Bi=h*Ac/(P*k).",
+      "targetTime": 800,
+      "transverseBi": 0.000625,
+      "exactBasePowerW": 1.5231883119115297,
+      "exactEfficiency": 0.7615941559557649,
+      "roundedEfficiencyFromPack": 0.7616,
+      "rows": [
+        {
+          "nx": 16,
+          "rmsK": 0.0044911498874684016,
+          "maxK": 0.006296736106435219,
+          "basePowerW": 1.5223085116427681,
+          "sidePowerW": 1.5223085111700414,
+          "steadyStoragePowerW": 4.727267466364538e-10,
+          "efficiency": 0.7611542555850207,
+          "relativePowerDifference": -0.0005776047088913439,
+          "energyErrorJ": -4.831690603168681e-12,
+          "steps": 6330
+        },
+        {
+          "nx": 32,
+          "rmsK": 0.0011235083327204378,
+          "maxK": 0.0016008059976684308,
+          "basePowerW": 1.5229682394892732,
+          "sidePowerW": 1.5229682390045511,
+          "steadyStoragePowerW": 4.847220402837138e-10,
+          "efficiency": 0.7614841195022756,
+          "relativePowerDifference": -0.00014448174612258224,
+          "energyErrorJ": -2.0122570276726037e-10,
+          "steps": 25293
+        },
+        {
+          "nx": 64,
+          "rmsK": 0.00028092261998075203,
+          "maxK": 0.00040354604351477974,
+          "basePowerW": 1.5231332864015712,
+          "sidePowerW": 1.5231332859086137,
+          "steadyStoragePowerW": 4.929574526357783e-10,
+          "efficiency": 0.7615666429543069,
+          "relativePowerDifference": -0.00003612554172427451,
+          "energyErrorJ": -1.4156000816001324e-9,
+          "steps": 101145
+        }
+      ],
+      "observedSteadyRefinementOrders": [
+        1.9990740467823895,
+        1.9997661240608025
+      ],
+      "passed": true
+    }
+  ],
+  "criteria": {
+    "finestRmsK": 0.001,
+    "orderRange": [
+      1.8,
+      2.2
+    ],
+    "finPowerRelative": 0.001,
+    "finStorageW": 0.000001
+  },
+  "limitations": [
+    "Three compatible cases; not all 44 references or all model families.",
+    "Time step refines with grid: transient observed orders are coupled, not isolated spatial order.",
+    "Printed inconsistencies in Examples 6.6/6.9/7.6/7.7 and chart readings are preserved in the source pack and not used as exact oracles here.",
+    "No new physical, real-device, expert or public-release approval."
+  ],
+  "releaseApproved": false,
+  "passed": true
+}

@@ -10,7 +10,7 @@ import {createThermal} from '../dynamic/thermal.mjs';
 import {preset} from '../dynamic/presets.mjs';
 
 const root=fileURLToPath(new URL('..',import.meta.url));
-const allowed=['worker','worker-runtime','thermal','radial','radiation-network','developed-channel','geometry','properties'].map(name=>'dynamic/'+name+'.mjs');
+const allowed=['surface-exchange','worker','worker-runtime','thermal','radial','radiation-network','developed-channel','geometry','properties'].map(name=>'dynamic/'+name+'.mjs');
 test('self-contained public worker preserves model snapshots and rejects unregistered CFD',async()=>{
  const output=await mkdtemp(join(tmpdir(),'heat-worker-'));let worker;
  try{

@@ -1,3 +1,4 @@
+import {validateSurfaceExchange,surfaceExchange} from './surface-exchange.mjs';
 import {positiveTable,heatCapacityTable} from './properties.mjs';
 import {rasterize,contains,polygon} from './geometry.mjs';
 export const SIGMA=5.670374419e-8;
@@ -5,10 +6,11 @@ const pos=(v,name,zero=false)=>{if(typeof v!=='number'||!Number.isFinite(v)||(ze
 const num=(v,name)=>{if(typeof v!=='number'||!Number.isFinite(v))throw Error(`${name}が有限値ではありません。`);return v;};
 const sides=['left','right','bottom','top'];
 function boundary(b={type:'insulated'}){
- if(!['insulated','temperature','flux','convection','radiation'].includes(b.type))throw Error('未対応の境界条件です。');
+ if(!['insulated','temperature','flux','convection','radiation','convection-radiation'].includes(b.type))throw Error('未対応の境界条件です。');
  if(['temperature','convection','radiation'].includes(b.type))pos(b.temperature,'境界の絶対温度[K]');
  if(b.type==='convection')pos(b.h,'熱伝達率',true);
  if(b.type==='radiation'){if(!Number.isFinite(b.temperature**4))throw Error('放射境界温度が計算範囲を超えています。');num(b.emissivity,'放射率');if(b.emissivity<0||b.emissivity>1)throw Error('放射率は0〜1です。');}
+ if(b.type==='convection-radiation')validateSurfaceExchange(b);
  if(b.type==='flux')num(b.flux,'内向き熱流束');return {...b};
 }
 export function createThermal(config){
@@ -31,11 +33,12 @@ export function createThermal(config){
   for(const [di,dj,side,A,dist] of [[-1,0,'left',dy*z,dx],[1,0,'right',dy*z,dx],[0,-1,'bottom',dx*z,dy],[0,1,'top',dx*z,dy]]){
    const x=i+di,y=j+dj,m=y*nx+x,out=x<0||x>=nx||y<0||y>=ny;
    if(out||!mask[m]){const bc=out?boundaries[side]:edge,conductance=pos(2*k[n]*A/dist,'境界熱コンダクタンス');faces.push({n,bc,A,dist,side,conductance});
-    sumG[n]+=bc.type==='temperature'||bc.type==='radiation'?conductance:bc.type==='convection'&&bc.h>0?A/(dist/(2*k[n])+1/bc.h):0;
+    sumG[n]+=bc.type==='temperature'||bc.type==='radiation'||bc.type==='convection-radiation'&&(bc.h>0||bc.emissivity>0)?conductance:bc.type==='convection'&&bc.h>0?A/(dist/(2*k[n])+1/bc.h):0;
    }else if(m>n){const R=material[n]===material[m]?0:contacts,G=pos(A/(dist/(2*k[n])+dist/(2*k[m])+R),'内部熱コンダクタンス');pairs.push({n,m,G,A,dist,di,dj});sumG[n]+=G;sumG[m]+=G;}
   }
  }
- if(c.outline&&faces.some(f=>['flux','convection','radiation'].includes(f.bc.type)))throw Error('自由輪郭の表面積・法線は検証待ちです。階段近似の表面積は細分化だけでは正しくならないため、温度固定または断熱を選んでください。');
+ if(c.outline&&faces.some(f=>['flux','convection','radiation','convection-radiation'].includes(f.bc.type)))throw Error('自由輪郭の表面積・法線は検証待ちです。階段近似の表面積は細分化だけでは正しくならないため、温度固定または断熱を選んでください。');
+ if((variableK||variableCp)&&faces.some(f=>f.bc.type==='convection-radiation'))throw Error('温度依存物性と対流・放射の同時境界は検証待ちです。一定物性を選んでください。');
  const loss=c.distributedConvection;
  if(loss){pos(loss.h,'側面のh',true);pos(loss.areaPerVolume,'側面積/体積',true);pos(loss.temperature,'流体絶対温度');for(let n=0;n<N;n++)if(mask[n])sumG[n]+=loss.h*loss.areaPerVolume*V;}
  const safeDt=Math.min(...Array.from(C,(v,n)=>mask[n]&&sumG[n]>0?.8*v/sumG[n]:Infinity));
@@ -47,6 +50,7 @@ export function createThermal(config){
  function boundaryHeat({n,bc,A,dist,conductance:boundG}){const conductance=variableK?2*k[n]*A/dist:boundG;let q=0;
    if(bc.type==='temperature')q=conductance*(bc.temperature-T[n]);
    else if(bc.type==='flux')q=bc.flux*A;
+   else if(bc.type==='convection-radiation')q=surfaceExchange(T[n],conductance,A,bc).inwardWatts;
    else if(bc.type==='convection'&&bc.h>0)q=A*(bc.temperature-T[n])/(dist/(2*k[n])+1/bc.h);
    else if(bc.type==='radiation'&&bc.emissivity>0){
     let a=Math.min(T[n],bc.temperature),b=Math.max(T[n],bc.temperature);

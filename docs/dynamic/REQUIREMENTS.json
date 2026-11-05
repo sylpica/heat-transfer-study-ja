@@ -19,7 +19,11 @@
         "CHANNEL_LEARNING.md",
         "CHANNEL_LEARNING_REFERENCE_20261105.json",
         "CHANNEL_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ]
     },
     {
@@ -46,7 +50,11 @@
       "status": "partial",
       "evidence": [
         "../../dynamic/fin-view.mjs",
-        "STATUS.md"
+        "STATUS.md",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ]
     },
     {
@@ -288,7 +296,11 @@
         "CFD_TEMPORAL_BENCHMARKS_20261104.json",
         "RADIAL_UI.md",
         "RADIAL_UI_CHECKPOINT_20261104.json",
-        "../../tests/dynamic-radial-browser.mjs"
+        "../../tests/dynamic-radial-browser.mjs",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ]
     },
     {
@@ -336,7 +348,11 @@
         "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
         "RADIAL_UI.md",
         "RADIAL_UI_CHECKPOINT_20261104.json",
-        "../../tests/dynamic-radial-browser.mjs"
+        "../../tests/dynamic-radial-browser.mjs",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ]
     },
     {
@@ -351,7 +367,11 @@
         "FIELD_INSPECTION.md",
         "EXPERIMENT_CONTROLLER.md",
         "DEVELOPED_CHANNEL.md",
-        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json"
+        "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ]
     },
     {
@@ -372,7 +392,11 @@
         "ARCHITECTURE.md",
         "LEARNING_PATHS.md",
         "../../dynamic/learning-path.mjs",
-        "../../tests/dynamic-learning.test.mjs"
+        "../../tests/dynamic-learning.test.mjs",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ]
     },
     {
@@ -437,7 +461,8 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "PUBLIC_WORKER_DISTRIBUTION.md"
       ]
     },
     {
@@ -554,7 +579,11 @@
       "status": "partial",
       "evidence": [
         "../../dynamic/fin-view.mjs",
-        "STATUS.md"
+        "STATUS.md",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ],
       "remainingOrScope": "単一矩形フィンの1D解を3D形状へ配置。ヒートシンク全体や3D解析は未完了。"
     },
@@ -718,7 +747,11 @@
         "CHANNEL_LEARNING.md",
         "CHANNEL_LEARNING_REFERENCE_20261105.json",
         "CHANNEL_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ]
     },
     {
@@ -893,7 +926,11 @@
         "CHANNEL_LEARNING.md",
         "CHANNEL_LEARNING_REFERENCE_20261105.json",
         "CHANNEL_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json",
+        "FIN_LEARNING.md",
+        "FIN_LEARNING_REFERENCE_20261105.json",
+        "FIN_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -911,7 +948,8 @@
         "MULTIGRID_PRESSURE.md",
         "MULTIGRID_BENCHMARKS_20261104.json",
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
-        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json"
+        "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
+        "PUBLIC_WORKER_DISTRIBUTION.md"
       ]
     },
     {
@@ -932,7 +970,8 @@
         "RADIAL_UI_CHECKPOINT_20261104.json",
         "../../tests/dynamic-radial-browser.mjs",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "PUBLIC_WORKER_DISTRIBUTION.md"
       ]
     },
     {
@@ -998,7 +1037,8 @@
         "HIGH_ORDER_MANUFACTURED_20261104.json",
         "HIGH_ORDER_TEMPORAL_20261104.json",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "PUBLIC_WORKER_DISTRIBUTION.md"
       ],
       "remainingOrScope": "発達流路の開発用ソースは公開allowlistから除外。未検証連成のk(T)付きフィンをUIで拒否。"
     },

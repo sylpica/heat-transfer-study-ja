@@ -11,6 +11,12 @@ export function finObservation(config,snapshot){
  const basePower=2*k*A/dx*(base-snapshot.temperature[0]),sidePower=h*P*dx*snapshot.temperature.reduce((sum,t)=>sum+t-ambient,0),idealPower=h*P*L*delta,bareBasePower=h*A*delta;
  return {lengthM:L,basePowerW:basePower,sidePowerW:sidePower,efficiency:sidePower/idealPower,effectiveness:sidePower/bareBasePower,bareBasePowerW:bareBasePower,nearTipCellC:snapshot.temperature.at(-1)-273.15,nearTipPositionM:L-dx/2,netStoragePowerW:snapshot.lastPower};
 }
+export function steadyFinPrediction(config){
+ const A=config.height*config.depth,P=2*(config.height+config.depth),L=config.width,k=config.materials[0].k,h=config.distributedConvection.h,delta=config.boundaries.left.temperature-config.distributedConvection.temperature;
+ if(![A,P,L,k,h,delta].every(x=>Number.isFinite(x)&&x>0))throw Error('解析フィン条件が不正です。');
+ const m=Math.sqrt(h*P/(k*A)),power=k*A*m*delta*Math.tanh(m*L);
+ return {mPerM:m,mL:m*L,powerW:power,efficiency:power/(h*P*L*delta),effectiveness:power/(h*A*delta),crossSectionBi:h*A/(k*P)};
+}
 export class FinJourney{
  constructor(path='tutorial'){if(!['tutorial','prediction'].includes(path))throw Error('学習の進め方が不正です。');this.path=path;this.invalidate('');}
  invalidate(reason){this.prepared=false;this.prediction=null;this.result=null;this.located=false;this.rewound=false;this.reason=reason;}

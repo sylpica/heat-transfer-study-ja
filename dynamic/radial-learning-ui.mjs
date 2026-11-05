@@ -21,5 +21,5 @@ export function attachRadialJourney({root,prepare,advance,rewind,locate,context,
  run.onclick=()=>act(async token=>{if(!journey?.canRun)return;const remaining=1-context().snapshots[0].time;if(remaining>0&&!await advance(remaining))throw Error('計算が完了しませんでした。画面のエラーを確認してください。');if(token===generation)journey?.observe(context().snapshots);},()=>{if(journey?.result)result.focus();});
  back.onclick=()=>act(async token=>{if(await rewind()&&token===generation)journey?.rewind(context().snapshots);},()=>{if(journey?.complete)status.focus();});
  render();
- return {event(type){if(!journey||preparing)return;if(type==='ready')journey.invalidate('条件が再設定されました。「専用条件を準備」からやり直してください。');else if(type==='advanced')journey.observe(context().snapshots);else if(type==='rewound')journey.rewind(context().snapshots);render();},probeMoved(fraction){journey?.locate(fraction);render();}};
+ return {event(type){if(!journey||preparing)return;if(type==='calculating'&&journey.prepared&&journey.path==='prediction'&&!journey.prediction)journey.invalidate('予想の確定前に計算を開始しました。もう一度、条件を準備してください。');else if(type==='ready')journey.invalidate('条件が再設定されました。「専用条件を準備」からやり直してください。');else if(type==='advanced')journey.observe(context().snapshots);else if(type==='rewound')journey.rewind(context().snapshots);render();},probeMoved(fraction){journey?.locate(fraction);render();}};
 }

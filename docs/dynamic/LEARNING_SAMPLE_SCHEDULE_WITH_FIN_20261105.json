@@ -1,0 +1,1800 @@
+{
+  "generatedAtUTC": "2026-11-05T07:03:29.378Z",
+  "sourceCommit": "2e8f80c3ae4e151bd3e0e71482db3bc152a7cbb1",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "scripts/dynamic-learning-samples-benchmarks.mjs": "85c2a7e46021cd3a333798dc94e57b8f859c19798d786857ec19a83fd1760e84",
+    "dynamic/fin-learning.mjs": "eb430892d518434d0eb040249d2b91e79b0200f44611ad72a18bfdfdf342bf18",
+    "docs/dynamic/FIN_LEARNING_REFERENCE_20261105.json": "565b9166312027d36873e38397db477688d510107103d6a9339b9cc9ae8695f6",
+    "dynamic/thermal.mjs": "37138a24b0d77c8f173b0cd7176695f8f0e15142c4884f06a07a4b17f75227ab",
+    "dynamic/geometry.mjs": "8ff5b1038150553db51f5dbb16ae333f6ffbaea1985a8c86aef268fa4d16ce36",
+    "dynamic/properties.mjs": "47873b1a9a06832c8fbc93ac976849a343760faf253125cfe4e72e6c4553d90b",
+    "dynamic/presets.mjs": "b2b2e606d57426cec6c11caf958a32361c595055b061cad59850aa30212cd28b",
+    "dynamic/radial.mjs": "e118c7fe7a671646814e3659d2f4216259c15d8df8c5005d4bee00877cf6e901",
+    "dynamic/radial-learning.mjs": "809b1fdba5d1e9561bfd293981f2ca5744a4528f7718ceb01c2944b50a107b5e",
+    "dynamic/radiation-network.mjs": "fac3b84fa5532ae22b086609ff4d0c9abaa74327108a0c52e92c616de024f8ce",
+    "dynamic/radiation-learning.mjs": "45c4b2a84731cb8577eb28e8a25ca31077ab39293af191c11fbb379d25027125",
+    "dynamic/developed-channel.mjs": "357326dfb119cba71a13c6e5528e8d6a61346060414d2eef19029947b0ba788e",
+    "dynamic/channel-learning.mjs": "785300f9f2a0de2d16d83fe85a8b3394ebd2b9eed444cc39101fd7a0ef1710d7",
+    "docs/dynamic/CHANNEL_LEARNING_REFERENCE_20261105.json": "3f11216b31646d77b0c6738e872786cf3da37fbcc6a42717eaa88cb1f65e8ddb",
+    "docs/dynamic/RADIAL_LEARNING_REFERENCE_20261105.json": "26ce6c8a2320317e5243d1993c49e1288bc380e54f9073e78976c1a3566d8220",
+    "docs/dynamic/RADIATION_LEARNING_REFERENCE_20261105.json": "d0f46e6abc97b87a69a83d23af63e76c26fe92c66d2592aa724c71c5cddd0093"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "scope": "Kernel comparison of fixed target schedules. Browser Worker/controller binding is tested separately. Recording endpoints can change truncated Euler timesteps; this is not a claim of improved integration accuracy.",
+  "expertApproved": false,
+  "heating": [
+    {
+      "n": 24,
+      "recordSpacingS": 0.25,
+      "frames": [
+        {
+          "time": 0,
+          "leftC": 20
+        },
+        {
+          "time": 0.25,
+          "leftC": 20.00004569794072
+        },
+        {
+          "time": 0.5,
+          "leftC": 20.04133016719834
+        },
+        {
+          "time": 0.75,
+          "leftC": 20.29920352116295
+        },
+        {
+          "time": 1,
+          "leftC": 20.824908807392944
+        },
+        {
+          "time": 1.25,
+          "leftC": 21.540499268326812
+        },
+        {
+          "time": 1.5,
+          "leftC": 22.359738097161255
+        },
+        {
+          "time": 1.75,
+          "leftC": 23.221662124231614
+        },
+        {
+          "time": 2,
+          "leftC": 24.088613797304674
+        },
+        {
+          "time": 2.25,
+          "leftC": 24.93880748948436
+        },
+        {
+          "time": 2.5,
+          "leftC": 25.76035609433211
+        },
+        {
+          "time": 2.75,
+          "leftC": 26.547346392612667
+        },
+        {
+          "time": 3,
+          "leftC": 27.297411407061816
+        },
+        {
+          "time": 3.25,
+          "leftC": 28.010256910411954
+        },
+        {
+          "time": 3.5,
+          "leftC": 28.686771048616208
+        },
+        {
+          "time": 3.75,
+          "leftC": 29.32848644271826
+        },
+        {
+          "time": 4,
+          "leftC": 29.937255564509314
+        },
+        {
+          "time": 4.25,
+          "leftC": 30.515055846774146
+        },
+        {
+          "time": 4.5,
+          "leftC": 31.063874194031996
+        },
+        {
+          "time": 4.75,
+          "leftC": 31.585640325588543
+        },
+        {
+          "time": 5,
+          "leftC": 32.082190217948835
+        }
+      ],
+      "singleAdvanceLeftC": 32.08314946056345,
+      "sampledLeftC": 32.082190217948835,
+      "independentModalEulerC": 32.0821902179488,
+      "continuousCellAverageC": 32.125399784749575,
+      "sampledModalErrorK": 3.552713678800501e-14,
+      "sampledContinuumErrorK": -0.04320956680074062,
+      "energyErrorJ": -1.6484591469634324e-12
+    },
+    {
+      "n": 32,
+      "recordSpacingS": 0.25,
+      "frames": [
+        {
+          "time": 0,
+          "leftC": 20
+        },
+        {
+          "time": 0.25,
+          "leftC": 20.000160365832244
+        },
+        {
+          "time": 0.5,
+          "leftC": 20.052900930131216
+        },
+        {
+          "time": 0.75,
+          "leftC": 20.353015947974825
+        },
+        {
+          "time": 1,
+          "leftC": 20.936645483269444
+        },
+        {
+          "time": 1.25,
+          "leftC": 21.70868824112904
+        },
+        {
+          "time": 1.5,
+          "leftC": 22.576334333772365
+        },
+        {
+          "time": 1.75,
+          "leftC": 23.477627017026293
+        },
+        {
+          "time": 2,
+          "leftC": 24.375852836171703
+        },
+        {
+          "time": 2.25,
+          "leftC": 25.25061216921273
+        },
+        {
+          "time": 2.5,
+          "leftC": 26.091333610159268
+        },
+        {
+          "time": 2.75,
+          "leftC": 26.89321069544502
+        },
+        {
+          "time": 3,
+          "leftC": 27.654765213925486
+        },
+        {
+          "time": 3.25,
+          "leftC": 28.37640351023788
+        },
+        {
+          "time": 3.5,
+          "leftC": 29.05956260131478
+        },
+        {
+          "time": 3.75,
+          "leftC": 29.706205137625147
+        },
+        {
+          "time": 4,
+          "leftC": 30.31852156777262
+        },
+        {
+          "time": 4.25,
+          "leftC": 30.89875620404007
+        },
+        {
+          "time": 4.5,
+          "leftC": 31.44910783460665
+        },
+        {
+          "time": 4.75,
+          "leftC": 31.97167535655433
+        },
+        {
+          "time": 5,
+          "leftC": 32.46843059181293
+        }
+      ],
+      "singleAdvanceLeftC": 32.468505907118754,
+      "sampledLeftC": 32.46843059181293,
+      "independentModalEulerC": 32.468430591813174,
+      "continuousCellAverageC": 32.49226521408747,
+      "sampledModalErrorK": -2.4158453015843406e-13,
+      "sampledContinuumErrorK": -0.023834622274534922,
+      "energyErrorJ": 9.72022462519817e-12
+    }
+  ],
+  "radial": [
+    {
+      "n": 32,
+      "geometry": "sphere",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 65.94046730073472
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 60.66131623442493
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 56.849159842598624
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 53.79388927959434
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 51.22161079119138
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 48.99213097607844
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 47.02226594910633
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 45.257859288911334
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 43.66131503973594
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 42.205271475262464
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 40.869079528012435
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 39.63670097707484
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 38.49538358940822
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 37.43478831483185
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 36.44639288132964
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 35.52307151271532
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 34.65879089224961
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 33.84838523980392
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 33.08738670719271
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 32.37189539140252
+        }
+      ],
+      "singleAdvanceMeanC": 32.37168046031593,
+      "sampledContinuumMeanErrorK": -0.00734726773220018,
+      "shellRMSErrorK": 0.006509956584422557,
+      "energyErrorJ": 2.2737367544323206e-11
+    },
+    {
+      "n": 32,
+      "geometry": "cylinder",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 70.31230628513913
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 66.46989161603199
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 63.60872110697244
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 61.25486480560005
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 59.22544389916749
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 57.42681867274666
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 55.803412934250105
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 54.31903745386222
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 52.948567219463825
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 51.673717429593125
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 50.48069188815623
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 49.358779499013906
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 48.29946980888701
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 47.29587068650869
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 46.34231078640653
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 45.43405971141317
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 44.567125739366816
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 43.73810617783187
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 42.94407435388257
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 42.1824927003554
+        }
+      ],
+      "singleAdvanceMeanC": 42.182356207483,
+      "sampledContinuumMeanErrorK": -0.00017328211220046796,
+      "shellRMSErrorK": 0.008791947597386593,
+      "energyErrorJ": -5.093170329928398e-11
+    },
+    {
+      "n": 64,
+      "geometry": "sphere",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 65.9101742589292
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 60.64695672805192
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 56.841481361441595
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 53.78996443843164
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 51.220094101977
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 48.992281271689876
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 47.023627903008446
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 45.26013189401874
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 43.66428852243206
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 42.20879370426218
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 40.87303668352098
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 39.64100572979794
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 38.499967505345865
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 37.43959676966301
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 36.451381536431995
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 35.528203805238604
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 34.66403621008698
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 33.85371757560557
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 33.09278365720803
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 32.37733740786058
+        }
+      ],
+      "singleAdvanceMeanC": 32.37732663021194,
+      "sampledContinuumMeanErrorK": -0.0019052512741382088,
+      "shellRMSErrorK": 0.001678921273503902,
+      "energyErrorJ": 1.8189894035458565e-12
+    },
+    {
+      "n": 64,
+      "geometry": "cylinder",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 70.28328652034634
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 66.45213866344147
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 63.595930836694095
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 61.24500460437844
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 59.217562375792
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 57.42038213560255
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 55.79808745591862
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 54.31459816326384
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 52.94485445841252
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 51.670613235255814
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 50.478106368583894
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 49.35664245631057
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 48.29772533584128
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 47.29447353694371
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 46.34122384791198
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 45.43325218749271
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 44.566571803120326
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 43.73778394941007
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 42.943965107815416
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 42.182580241629694
+        }
+      ],
+      "singleAdvanceMeanC": 42.182578411807015,
+      "sampledContinuumMeanErrorK": -0.00008574083790335862,
+      "shellRMSErrorK": 0.0021965101556839367,
+      "energyErrorJ": 7.275957614183426e-12
+    }
+  ],
+  "radiation": {
+    "recordSpacingS": 1,
+    "internalStepLimitS": 0.05,
+    "frames": [
+      {
+        "time": 0,
+        "temperatureC": [
+          200,
+          20
+        ]
+      },
+      {
+        "time": 1,
+        "temperatureC": [
+          193.89315730203862,
+          23.05342134898069
+        ]
+      },
+      {
+        "time": 2,
+        "temperatureC": [
+          188.18775117283377,
+          25.90612441358303
+        ]
+      },
+      {
+        "time": 3,
+        "temperatureC": [
+          182.84692781119566,
+          28.576536094402172
+        ]
+      },
+      {
+        "time": 4,
+        "temperatureC": [
+          177.83846525647056,
+          31.08076737176458
+        ]
+      },
+      {
+        "time": 5,
+        "temperatureC": [
+          173.13403351567553,
+          33.43298324216215
+        ]
+      },
+      {
+        "time": 6,
+        "temperatureC": [
+          168.70859583216742,
+          35.64570208391615
+        ]
+      },
+      {
+        "time": 7,
+        "temperatureC": [
+          164.5399201732693,
+          37.730039913365374
+        ]
+      },
+      {
+        "time": 8,
+        "temperatureC": [
+          160.60817760097672,
+          39.69591119951167
+        ]
+      },
+      {
+        "time": 9,
+        "temperatureC": [
+          156.89560972921186,
+          41.55219513539413
+        ]
+      },
+      {
+        "time": 10,
+        "temperatureC": [
+          153.38625156259002,
+          43.30687421870488
+        ]
+      },
+      {
+        "time": 11,
+        "temperatureC": [
+          150.06569906636906,
+          44.96715046681544
+        ]
+      },
+      {
+        "time": 12,
+        "temperatureC": [
+          146.9209131207985,
+          46.53954343960072
+        ]
+      },
+      {
+        "time": 13,
+        "temperatureC": [
+          143.94005326647215,
+          48.02997336676384
+        ]
+      },
+      {
+        "time": 14,
+        "temperatureC": [
+          141.11233599361054,
+          49.443832003194814
+        ]
+      },
+      {
+        "time": 15,
+        "temperatureC": [
+          138.42791337046378,
+          50.78604331476822
+        ]
+      },
+      {
+        "time": 16,
+        "temperatureC": [
+          135.87776861913432,
+          52.06111569043276
+        ]
+      },
+      {
+        "time": 17,
+        "temperatureC": [
+          133.45362588605502,
+          53.27318705697235
+        ]
+      },
+      {
+        "time": 18,
+        "temperatureC": [
+          131.14787195988663,
+          54.42606402005663
+        ]
+      },
+      {
+        "time": 19,
+        "temperatureC": [
+          128.9534880921534,
+          55.5232559539233
+        ]
+      },
+      {
+        "time": 20,
+        "temperatureC": [
+          126.86399039845622,
+          56.56800480077192
+        ]
+      }
+    ],
+    "temperatureErrorsK": [
+      0.00004588187306353575,
+      -0.000022940936560189584
+    ],
+    "energyErrorJ": 1.4551915228366852e-11
+  },
+  "channel": [
+    {
+      "nx": 32,
+      "ny": 12,
+      "acceleration": 0.42480883602378927,
+      "recordSpacingS": 0.00625,
+      "frames": [
+        {
+          "time": 0,
+          "phaseRad": 0
+        },
+        {
+          "time": 0.00625,
+          "phaseRad": 0.0008756665497393623,
+          "equivalentDisplacementM": 0.000005574666395649782,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.0125,
+          "phaseRad": 0.0043352695309464276,
+          "equivalentDisplacementM": 0.00002759918301943226,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.018750000000000003,
+          "phaseRad": 0.010354781980124626,
+          "equivalentDisplacementM": 0.00006592058947102873,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.025,
+          "phaseRad": 0.018899955559972703,
+          "equivalentDisplacementM": 0.00012032085406347226,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.03125,
+          "phaseRad": 0.029930433833758485,
+          "equivalentDisplacementM": 0.00019054305974110282,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.037500000000000006,
+          "phaseRad": 0.04340227037739997,
+          "equivalentDisplacementM": 0.0002763074348789659,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.043750000000000004,
+          "phaseRad": 0.059269533839238386,
+          "equivalentDisplacementM": 0.00037732157141068604,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.05,
+          "phaseRad": 0.07748537130278077,
+          "equivalentDisplacementM": 0.0004932871944059382,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.05625,
+          "phaseRad": 0.09800273691789174,
+          "equivalentDisplacementM": 0.0006239048006806821,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.0625,
+          "phaseRad": 0.12077490461438467,
+          "equivalentDisplacementM": 0.0007688769228332592,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.06875,
+          "phaseRad": 0.14575583553458163,
+          "equivalentDisplacementM": 0.0009279104683927198,
+          "meanTemperatureK": 300.0708981540363
+        },
+        {
+          "time": 0.07500000000000001,
+          "phaseRad": 0.1729004438377424,
+          "equivalentDisplacementM": 0.0011007184119823734,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.08125,
+          "phaseRad": 0.20216478895991918,
+          "equivalentDisplacementM": 0.0012870210192840387,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.08750000000000001,
+          "phaseRad": 0.2335062131203518,
+          "equivalentDisplacementM": 0.0014865467224309432,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.09375,
+          "phaseRad": 0.2668834371127602,
+          "equivalentDisplacementM": 0.0016990327298340312,
+          "meanTemperatureK": 300.0708981540363
+        },
+        {
+          "time": 0.1,
+          "phaseRad": 0.30225662372990025,
+          "equivalentDisplacementM": 0.0019242254299552278,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.10625000000000001,
+          "phaseRad": 0.33958741571862583,
+          "equivalentDisplacementM": 0.002161880632936868,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.1125,
+          "phaseRad": 0.37883895348545044,
+          "equivalentDisplacementM": 0.002411763683318802,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.11875000000000001,
+          "phaseRad": 0.4199758765946311,
+          "equivalentDisplacementM": 0.002673649469575495,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.125,
+          "phaseRad": 0.46296431225265877,
+          "equivalentDisplacementM": 0.002947322350806015,
+          "meanTemperatureK": 300.0708981540362
+        }
+      ],
+      "referenceEquivalentDisplacementM": 0.002976012910011518,
+      "displacementErrorM": -0.000028690559205503136,
+      "velocityRMSErrorMPerS": 0.0011936705360218736,
+      "firstThermalHarmonicRMSErrorK": 0.005360863337343981,
+      "energyErrorJ": -3.552713678800501e-15
+    },
+    {
+      "nx": 32,
+      "ny": 12,
+      "acceleration": -0.42480883602378927,
+      "recordSpacingS": 0.00625,
+      "frames": [
+        {
+          "time": 0,
+          "phaseRad": 0
+        },
+        {
+          "time": 0.00625,
+          "phaseRad": -0.0008756665497393623,
+          "equivalentDisplacementM": -0.000005574666395649782,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.0125,
+          "phaseRad": -0.0043352695309464276,
+          "equivalentDisplacementM": -0.00002759918301943226,
+          "meanTemperatureK": 300.0708981540363
+        },
+        {
+          "time": 0.018750000000000003,
+          "phaseRad": -0.010354781980124626,
+          "equivalentDisplacementM": -0.00006592058947102873,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.025,
+          "phaseRad": -0.018899955559972703,
+          "equivalentDisplacementM": -0.00012032085406347226,
+          "meanTemperatureK": 300.0708981540363
+        },
+        {
+          "time": 0.03125,
+          "phaseRad": -0.029930433833758485,
+          "equivalentDisplacementM": -0.00019054305974110282,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.037500000000000006,
+          "phaseRad": -0.043402270377400194,
+          "equivalentDisplacementM": -0.0002763074348789673,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.043750000000000004,
+          "phaseRad": -0.059269533839238386,
+          "equivalentDisplacementM": -0.00037732157141068604,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.05,
+          "phaseRad": -0.07748537130278099,
+          "equivalentDisplacementM": -0.0004932871944059396,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.05625,
+          "phaseRad": -0.09800273691789174,
+          "equivalentDisplacementM": -0.0006239048006806821,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.0625,
+          "phaseRad": -0.12077490461438467,
+          "equivalentDisplacementM": -0.0007688769228332592,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.06875,
+          "phaseRad": -0.14575583553458138,
+          "equivalentDisplacementM": -0.0009279104683927183,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.07500000000000001,
+          "phaseRad": -0.1729004438377424,
+          "equivalentDisplacementM": -0.0011007184119823734,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.08125,
+          "phaseRad": -0.20216478895991918,
+          "equivalentDisplacementM": -0.0012870210192840387,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.08750000000000001,
+          "phaseRad": -0.2335062131203518,
+          "equivalentDisplacementM": -0.0014865467224309432,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.09375,
+          "phaseRad": -0.2668834371127602,
+          "equivalentDisplacementM": -0.0016990327298340312,
+          "meanTemperatureK": 300.0708981540363
+        },
+        {
+          "time": 0.1,
+          "phaseRad": -0.30225662372990025,
+          "equivalentDisplacementM": -0.0019242254299552278,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.10625000000000001,
+          "phaseRad": -0.33958741571862583,
+          "equivalentDisplacementM": -0.002161880632936868,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.1125,
+          "phaseRad": -0.37883895348545044,
+          "equivalentDisplacementM": -0.002411763683318802,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.11875000000000001,
+          "phaseRad": -0.4199758765946311,
+          "equivalentDisplacementM": -0.002673649469575495,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.125,
+          "phaseRad": -0.46296431225265855,
+          "equivalentDisplacementM": -0.002947322350806013,
+          "meanTemperatureK": 300.0708981540362
+        }
+      ],
+      "referenceEquivalentDisplacementM": -0.002976012910011518,
+      "displacementErrorM": 0.00002869055920550487,
+      "velocityRMSErrorMPerS": 0.0011936705360218736,
+      "firstThermalHarmonicRMSErrorK": 0.0053608633373439666,
+      "energyErrorJ": -3.552713678800501e-15
+    },
+    {
+      "nx": 64,
+      "ny": 24,
+      "acceleration": 0.42480883602378927,
+      "recordSpacingS": 0.00625,
+      "frames": [
+        {
+          "time": 0,
+          "phaseRad": 0
+        },
+        {
+          "time": 0.00625,
+          "phaseRad": 0.0011335005620607408,
+          "equivalentDisplacementM": 0.000007216088697976343,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.0125,
+          "phaseRad": 0.004854475960415439,
+          "equivalentDisplacementM": 0.000030904553808835726,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.018750000000000003,
+          "phaseRad": 0.011131126662210722,
+          "equivalentDisplacementM": 0.00007086295321891306,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.025,
+          "phaseRad": 0.019923526353927246,
+          "equivalentDisplacementM": 0.0001268371081219667,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.03125,
+          "phaseRad": 0.031187375558299868,
+          "equivalentDisplacementM": 0.00019854499928667133,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.037500000000000006,
+          "phaseRad": 0.044875948206954064,
+          "equivalentDisplacementM": 0.0002856891593229047,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.043750000000000004,
+          "phaseRad": 0.06094133137548363,
+          "equivalentDisplacementM": 0.0003879645650803773,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.05,
+          "phaseRad": 0.07933527435598942,
+          "equivalentDisplacementM": 0.000505064043012296,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.05625,
+          "phaseRad": 0.10000979090332929,
+          "equivalentDisplacementM": 0.0006366821031940689,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.0625,
+          "phaseRad": 0.12291759394579249,
+          "equivalentDisplacementM": 0.0007825177067774121,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.06875,
+          "phaseRad": 0.14801241121160125,
+          "equivalentDisplacementM": 0.0009422762753310643,
+          "meanTemperatureK": 300.0708981540361
+        },
+        {
+          "time": 0.07500000000000001,
+          "phaseRad": 0.17524921343470368,
+          "equivalentDisplacementM": 0.0011156711436439875,
+          "meanTemperatureK": 300.0708981540363
+        },
+        {
+          "time": 0.08125,
+          "phaseRad": 0.20458437684372946,
+          "equivalentDisplacementM": 0.0013024245941621853,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.08750000000000001,
+          "phaseRad": 0.23597579534879243,
+          "equivalentDisplacementM": 0.001502268571192072,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.09375,
+          "phaseRad": 0.26938295368818777,
+          "equivalentDisplacementM": 0.001714945146566808,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.1,
+          "phaseRad": 0.3047669699575921,
+          "equivalentDisplacementM": 0.001940206790395598,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.10625000000000001,
+          "phaseRad": 0.3420906139533557,
+          "equivalentDisplacementM": 0.002177816487840715,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.1125,
+          "phaseRad": 0.38131830633347685,
+          "equivalentDisplacementM": 0.002427547733776097,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.11875000000000001,
+          "phaseRad": 0.4224161025580273,
+          "equivalentDisplacementM": 0.0026891844305489223,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.125,
+          "phaseRad": 0.4653516647980957,
+          "equivalentDisplacementM": 0.002962520709146387,
+          "meanTemperatureK": 300.07089815403623
+        }
+      ],
+      "referenceEquivalentDisplacementM": 0.002976012910011518,
+      "displacementErrorM": -0.000013492200865130883,
+      "velocityRMSErrorMPerS": 0.0003116030512022294,
+      "firstThermalHarmonicRMSErrorK": 0.0028121451036566994,
+      "energyErrorJ": 1.5987211554602254e-14
+    },
+    {
+      "nx": 64,
+      "ny": 24,
+      "acceleration": -0.42480883602378927,
+      "recordSpacingS": 0.00625,
+      "frames": [
+        {
+          "time": 0,
+          "phaseRad": 0
+        },
+        {
+          "time": 0.00625,
+          "phaseRad": -0.0011335005620607408,
+          "equivalentDisplacementM": -0.000007216088697976343,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.0125,
+          "phaseRad": -0.004854475960415439,
+          "equivalentDisplacementM": -0.000030904553808835726,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.018750000000000003,
+          "phaseRad": -0.011131126662210722,
+          "equivalentDisplacementM": -0.00007086295321891306,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.025,
+          "phaseRad": -0.019923526353927246,
+          "equivalentDisplacementM": -0.0001268371081219667,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.03125,
+          "phaseRad": -0.031187375558299868,
+          "equivalentDisplacementM": -0.00019854499928667133,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.037500000000000006,
+          "phaseRad": -0.04487594820695384,
+          "equivalentDisplacementM": -0.0002856891593229033,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.043750000000000004,
+          "phaseRad": -0.06094133137548363,
+          "equivalentDisplacementM": -0.0003879645650803773,
+          "meanTemperatureK": 300.0708981540363
+        },
+        {
+          "time": 0.05,
+          "phaseRad": -0.07933527435598942,
+          "equivalentDisplacementM": -0.000505064043012296,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.05625,
+          "phaseRad": -0.10000979090332796,
+          "equivalentDisplacementM": -0.0006366821031940606,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.0625,
+          "phaseRad": -0.12291759394579273,
+          "equivalentDisplacementM": -0.0007825177067774137,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.06875,
+          "phaseRad": -0.14801241121160236,
+          "equivalentDisplacementM": -0.0009422762753310714,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.07500000000000001,
+          "phaseRad": -0.17524921343470368,
+          "equivalentDisplacementM": -0.0011156711436439875,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.08125,
+          "phaseRad": -0.20458437684372965,
+          "equivalentDisplacementM": -0.0013024245941621866,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.08750000000000001,
+          "phaseRad": -0.23597579534879243,
+          "equivalentDisplacementM": -0.001502268571192072,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.09375,
+          "phaseRad": -0.26938295368818976,
+          "equivalentDisplacementM": -0.001714945146566821,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.1,
+          "phaseRad": -0.304766969957595,
+          "equivalentDisplacementM": -0.0019402067903956162,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.10625000000000001,
+          "phaseRad": -0.3420906139533563,
+          "equivalentDisplacementM": -0.0021778164878407183,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.1125,
+          "phaseRad": -0.3813183063334762,
+          "equivalentDisplacementM": -0.002427547733776093,
+          "meanTemperatureK": 300.07089815403623
+        },
+        {
+          "time": 0.11875000000000001,
+          "phaseRad": -0.4224161025580271,
+          "equivalentDisplacementM": -0.0026891844305489214,
+          "meanTemperatureK": 300.0708981540362
+        },
+        {
+          "time": 0.125,
+          "phaseRad": -0.465351664798096,
+          "equivalentDisplacementM": -0.002962520709146389,
+          "meanTemperatureK": 300.07089815403634
+        }
+      ],
+      "referenceEquivalentDisplacementM": -0.002976012910011518,
+      "displacementErrorM": 0.000013492200865129148,
+      "velocityRMSErrorMPerS": 0.0003116030512022294,
+      "firstThermalHarmonicRMSErrorK": 0.0028121451036566903,
+      "energyErrorJ": 2.1316282072803006e-14
+    }
+  ],
+  "fin": [
+    {
+      "longFinN": 32,
+      "n": 32,
+      "lengthM": 0.1,
+      "recordSpacingS": 30,
+      "frames": [
+        {
+          "time": 0,
+          "sidePowerW": 0
+        },
+        {
+          "time": 30,
+          "sidePowerW": 3.2268290378493663,
+          "basePowerW": 14.807450392180908
+        },
+        {
+          "time": 60,
+          "sidePowerW": 4.238071671293868,
+          "basePowerW": 9.744196311655832
+        },
+        {
+          "time": 90,
+          "sidePowerW": 4.7215307546973495,
+          "basePowerW": 7.3586371330959075
+        },
+        {
+          "time": 120,
+          "sidePowerW": 4.953088427690571,
+          "basePowerW": 6.21617431324048
+        },
+        {
+          "time": 150,
+          "sidePowerW": 5.063996853730895,
+          "basePowerW": 5.668973054969682
+        },
+        {
+          "time": 180,
+          "sidePowerW": 5.1171183074586715,
+          "basePowerW": 5.406881821842398
+        },
+        {
+          "time": 210,
+          "sidePowerW": 5.142561720092158,
+          "basePowerW": 5.2813488229527135
+        },
+        {
+          "time": 240,
+          "sidePowerW": 5.154748269988914,
+          "basePowerW": 5.2212226843454115
+        },
+        {
+          "time": 270,
+          "sidePowerW": 5.160585222779993,
+          "basePowerW": 5.192424260218831
+        },
+        {
+          "time": 300,
+          "sidePowerW": 5.16338092937243,
+          "basePowerW": 5.1786307712078266
+        },
+        {
+          "time": 330,
+          "sidePowerW": 5.164719980009074,
+          "basePowerW": 5.172024147933552
+        },
+        {
+          "time": 360,
+          "sidePowerW": 5.165361340805801,
+          "basePowerW": 5.168859794733725
+        },
+        {
+          "time": 390,
+          "sidePowerW": 5.165668531333401,
+          "basePowerW": 5.167344174611207
+        },
+        {
+          "time": 420,
+          "sidePowerW": 5.165815665397004,
+          "basePowerW": 5.166618242894037
+        },
+        {
+          "time": 450,
+          "sidePowerW": 5.165886137728428,
+          "basePowerW": 5.1662705457027185
+        },
+        {
+          "time": 480,
+          "sidePowerW": 5.1659198916354105,
+          "basePowerW": 5.166104010292474
+        },
+        {
+          "time": 510,
+          "sidePowerW": 5.1659360586361665,
+          "basePowerW": 5.166024245359585
+        },
+        {
+          "time": 540,
+          "sidePowerW": 5.165943802092773,
+          "basePowerW": 5.165986040605639
+        },
+        {
+          "time": 570,
+          "sidePowerW": 5.1659475109513835,
+          "basePowerW": 5.165967741796339
+        },
+        {
+          "time": 600,
+          "sidePowerW": 5.165949287371529,
+          "basePowerW": 5.165958977274567
+        }
+      ],
+      "shellRMSErrorK": 0.00394364154767729,
+      "basePowerErrorW": -0.00039213544069927053,
+      "sidePowerErrorW": -0.0003921041064929298,
+      "efficiencyError": -0.00006535068441559932,
+      "effectivenessError": -0.002614027376623085,
+      "storagePowerW": 0.000009693916918074308,
+      "baseMinusSidePowerW": 0.000009689903038179182,
+      "energyErrorJ": 9.322320693172514e-12
+    },
+    {
+      "longFinN": 32,
+      "n": 16,
+      "lengthM": 0.05,
+      "recordSpacingS": 30,
+      "frames": [
+        {
+          "time": 0,
+          "sidePowerW": 0
+        },
+        {
+          "time": 30,
+          "sidePowerW": 2.7040354049610875,
+          "basePowerW": 6.365517410106985
+        },
+        {
+          "time": 60,
+          "sidePowerW": 2.867241613768135,
+          "basePowerW": 3.14654266372454
+        },
+        {
+          "time": 90,
+          "sidePowerW": 2.8796911261590763,
+          "basePowerW": 2.900996454607957
+        },
+        {
+          "time": 120,
+          "sidePowerW": 2.8806407858562193,
+          "basePowerW": 2.8822659749501325
+        },
+        {
+          "time": 150,
+          "sidePowerW": 2.8807132267287585,
+          "basePowerW": 2.880837197574874
+        },
+        {
+          "time": 180,
+          "sidePowerW": 2.880718752581904,
+          "basePowerW": 2.8807282091867816
+        },
+        {
+          "time": 210,
+          "sidePowerW": 2.8807191740988123,
+          "basePowerW": 2.8807198954571502
+        },
+        {
+          "time": 240,
+          "sidePowerW": 2.8807192062524902,
+          "basePowerW": 2.880719261278136
+        },
+        {
+          "time": 270,
+          "sidePowerW": 2.8807192087052007,
+          "basePowerW": 2.8807192129024766
+        },
+        {
+          "time": 300,
+          "sidePowerW": 2.880719208892256,
+          "basePowerW": 2.880719209213566
+        },
+        {
+          "time": 330,
+          "sidePowerW": 2.880719208906523,
+          "basePowerW": 2.880719208931987
+        },
+        {
+          "time": 360,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 390,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 420,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 450,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 480,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 510,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 540,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 570,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        },
+        {
+          "time": 600,
+          "sidePowerW": 2.8807192089074696,
+          "basePowerW": 2.8807192089145244
+        }
+      ],
+      "shellRMSErrorK": 0.004598078266122097,
+      "basePowerErrorW": -0.00022981621220408144,
+      "sidePowerErrorW": -0.00022981621925888263,
+      "efficiencyError": -0.00007660540641973856,
+      "effectivenessError": -0.0015321081283943272,
+      "storagePowerW": 7.054357098468245e-12,
+      "baseMinusSidePowerW": 7.054801187678095e-12,
+      "energyErrorJ": -1.901412360894028e-9
+    },
+    {
+      "longFinN": 48,
+      "n": 48,
+      "lengthM": 0.1,
+      "recordSpacingS": 30,
+      "frames": [
+        {
+          "time": 0,
+          "sidePowerW": 0
+        },
+        {
+          "time": 30,
+          "sidePowerW": 3.227047709354044,
+          "basePowerW": 14.809018582800853
+        },
+        {
+          "time": 60,
+          "sidePowerW": 4.238209151676459,
+          "basePowerW": 9.745323359076428
+        },
+        {
+          "time": 90,
+          "sidePowerW": 4.721670272131577,
+          "basePowerW": 7.35948601585078
+        },
+        {
+          "time": 120,
+          "sidePowerW": 4.953249660725306,
+          "basePowerW": 6.216788575457758
+        },
+        {
+          "time": 150,
+          "sidePowerW": 5.064178432137004,
+          "basePowerW": 5.669425877922549
+        },
+        {
+          "time": 180,
+          "sidePowerW": 5.117314394102856,
+          "basePowerW": 5.407233816033476
+        },
+        {
+          "time": 210,
+          "sidePowerW": 5.14276703745462,
+          "basePowerW": 5.281641264516293
+        },
+        {
+          "time": 240,
+          "sidePowerW": 5.154959101541296,
+          "basePowerW": 5.221481209006015
+        },
+        {
+          "time": 270,
+          "sidePowerW": 5.160799218995485,
+          "basePowerW": 5.1926639564295325
+        },
+        {
+          "time": 300,
+          "sidePowerW": 5.163596692141626,
+          "basePowerW": 5.1788602117503615
+        },
+        {
+          "time": 330,
+          "sidePowerW": 5.164936709027378,
+          "basePowerW": 5.172248083594604
+        },
+        {
+          "time": 360,
+          "sidePowerW": 5.165578590168099,
+          "basePowerW": 5.169080809801744
+        },
+        {
+          "time": 390,
+          "sidePowerW": 5.16588605748672,
+          "basePowerW": 5.167563654804689
+        },
+        {
+          "time": 420,
+          "sidePowerW": 5.166033337327239,
+          "basePowerW": 5.16683692278275
+        },
+        {
+          "time": 450,
+          "sidePowerW": 5.166103885805425,
+          "basePowerW": 5.166488811065574
+        },
+        {
+          "time": 480,
+          "sidePowerW": 5.166137679213641,
+          "basePowerW": 5.166322062163817
+        },
+        {
+          "time": 510,
+          "sidePowerW": 5.166153866585338,
+          "basePowerW": 5.1662421878128955
+        },
+        {
+          "time": 540,
+          "sidePowerW": 5.166161620494057,
+          "basePowerW": 5.1662039272232505
+        },
+        {
+          "time": 570,
+          "sidePowerW": 5.166165334691855,
+          "basePowerW": 5.166185600027165
+        },
+        {
+          "time": 600,
+          "sidePowerW": 5.166167113828792,
+          "basePowerW": 5.166176821121916
+        }
+      ],
+      "shellRMSErrorK": 0.0017528289152440968,
+      "basePowerErrorW": -0.00017429159334980682,
+      "sidePowerErrorW": -0.0001742776492292819,
+      "efficiencyError": -0.000029046274871658007,
+      "effectivenessError": -0.0011618509948618794,
+      "storagePowerW": 0.00000970733377947397,
+      "baseMinusSidePowerW": 0.000009707293123994987,
+      "energyErrorJ": -2.114575181622058e-11
+    },
+    {
+      "longFinN": 48,
+      "n": 24,
+      "lengthM": 0.05,
+      "recordSpacingS": 30,
+      "frames": [
+        {
+          "time": 0,
+          "sidePowerW": 0
+        },
+        {
+          "time": 30,
+          "sidePowerW": 2.704090251775125,
+          "basePowerW": 6.36863754699043
+        },
+        {
+          "time": 60,
+          "sidePowerW": 2.86735244121391,
+          "basePowerW": 3.1471213328466545
+        },
+        {
+          "time": 90,
+          "sidePowerW": 2.8798166498118234,
+          "basePowerW": 2.9011755317289496
+        },
+        {
+          "time": 120,
+          "sidePowerW": 2.8807682265153205,
+          "basePowerW": 2.88239886469637
+        },
+        {
+          "time": 150,
+          "sidePowerW": 2.880840874386672,
+          "basePowerW": 2.88096536502635
+        },
+        {
+          "time": 180,
+          "sidePowerW": 2.8808464206691524,
+          "basePowerW": 2.8808559248740493
+        },
+        {
+          "time": 210,
+          "sidePowerW": 2.8808468440986235,
+          "basePowerW": 2.8808475696947426
+        },
+        {
+          "time": 240,
+          "sidePowerW": 2.8808468764252297,
+          "basePowerW": 2.8808469318209973
+        },
+        {
+          "time": 270,
+          "sidePowerW": 2.880846878893132,
+          "basePowerW": 2.880846883124104
+        },
+        {
+          "time": 300,
+          "sidePowerW": 2.8808468790815143,
+          "basePowerW": 2.8808468794068176
+        },
+        {
+          "time": 330,
+          "sidePowerW": 2.8808468790958566,
+          "basePowerW": 2.880846879125238
+        },
+        {
+          "time": 360,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 390,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 420,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 450,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 480,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 510,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 540,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 570,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        },
+        {
+          "time": 600,
+          "sidePowerW": 2.880846879096537,
+          "basePowerW": 2.8808468791132325
+        }
+      ],
+      "shellRMSErrorK": 0.0020437023046503597,
+      "basePowerErrorW": -0.00010214601349600727,
+      "sidePowerErrorW": -0.00010214603019154112,
+      "efficiencyError": -0.00003404867673062473,
+      "effectivenessError": -0.0006809735346102741,
+      "storagePowerW": 1.6693757487473704e-11,
+      "baseMinusSidePowerW": 1.6695533844313104e-11,
+      "energyErrorJ": -4.4576609070645645e-9
+    }
+  ],
+  "passed": true,
+  "elapsedMs": 879.244368
+}

@@ -2,10 +2,10 @@ name: Dynamic simulation verification
 on:
   push:
     branches: [codex/dynamic-heat-simulation]
-    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
   pull_request:
     branches: [main]
-    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
 permissions:
   contents: read
 jobs:
@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci
       - run: npm test
       - run: node scripts/dynamic-benchmarks.mjs
       - run: node scripts/dynamic-radiation-benchmarks.mjs
@@ -38,7 +39,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-save --package-lock=false playwright@1.56.1
+      - run: npm ci
       - run: npx playwright install --with-deps ${{ matrix.engine }}
       - run: npm run build:public
       - run: node tests/dynamic-browser.mjs
@@ -76,6 +77,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Check fin power, efficiency, effectiveness and first offline query
+        run: node tests/dynamic-fin-learning-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise the development-only cavity UI in an isolated allowlisted server
         run: node tests/dynamic-cavity-browser.mjs
         env:
@@ -96,6 +102,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci
       - name: Verify the experimental stencil on smooth whole-field manufactured data only
         run: node scripts/dynamic-manufactured-benchmarks.mjs --full --multigrid --high-order | tee dynamic-high-order-manufactured.json
       - name: Verify first-order time refinement with the experimental stencil
@@ -116,6 +123,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci
       - name: Reproduce restricted cavity benchmarks (does not publish the model)
         run: node scripts/dynamic-cavity-benchmarks.mjs --full | tee dynamic-cfd-results.json
       - name: Verify full manufactured velocity, pressure and temperature fields

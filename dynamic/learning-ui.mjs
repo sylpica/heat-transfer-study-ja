@@ -21,5 +21,5 @@ export function attachLearningJourney({root,prepare,advance,rewind,locate,contex
  run.onclick=()=>act(async()=>{if(!journey?.canRun)return;const remaining=5-context().snapshot.time;if(remaining>0){const ok=await advance(remaining);if(!ok)throw Error('計算が完了しませんでした。画面のエラーを確認してください。');}journey.observe(context().snapshot);},()=>{if(journey?.result)result.focus();});
  back.onclick=()=>act(async()=>{if(await rewind())journey?.rewind(context().snapshot);},()=>{if(journey?.complete)status.focus();});
  render();
- return {event(type){if(!journey||preparing)return;if(type==='ready'||type==='left-thermal'){journey.invalidate('条件が再設定されました。「初期条件を準備」からやり直してください。');}else if(type==='advanced')journey.observe(context().snapshot);else if(type==='rewound')journey.rewind(context().snapshot);render();},probeMoved(probe){journey?.locate(probe);render();}};
+ return {event(type){if(!journey||preparing)return;if(type==='calculating'&&journey.prepared&&journey.path==='prediction'&&!journey.prediction)journey.invalidate('予想の確定前に計算を開始しました。もう一度、条件を準備してください。');else if(type==='ready'||type==='left-thermal'){journey.invalidate('条件が再設定されました。「初期条件を準備」からやり直してください。');}else if(type==='advanced')journey.observe(context().snapshot);else if(type==='rewound')journey.rewind(context().snapshot);render();},probeMoved(probe){journey?.locate(probe);render();}};
 }

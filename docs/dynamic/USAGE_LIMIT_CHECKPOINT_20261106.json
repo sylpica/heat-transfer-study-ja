@@ -1,0 +1,57 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T15:54:21.967149+00:00",
+  "lastVerifiedCommit": "1470f064fd9cf10f084eef4831aa8da698ffb304",
+  "sourceTreeDirty": true,
+  "stopReason": "Sub-agents reported usage limits; owner explicitly requires stopping rather than forcing continuation. Work preserved without publication.",
+  "filesSHA256": {
+    "docs/dynamic/HEAT_SINK_MATH_REFERENCE_20261105.json": "e8e98f0d2954839ea036bf1bf2bf1c374b061968ea2bfaaf9a0ea1240d872d5b",
+    "docs/dynamic/PROVIDED_CFD_BENCHMARKS_20261105.json": "0625ff12e2149425ff364f7043264873f263bb0cf041c674ec8e1b85b893cfe3",
+    "dynamic/dev/heat-sink-ui.mjs": "3bc0dc34f4e77349ead7787d9eb3d2a63a6b365b8eac1b74252de86044a3f360",
+    "dynamic/dev/heat-sink-view.mjs": "9dde15608a42b6c2e0e161f6898c5384dd76b960fe585b7319b1e14d28d37404",
+    "dynamic/dev/heat-sink-worker.mjs": "e91396bad242b3cfebf792ebf47d6ad623e1e5997a1a601036ae407b3163fc7c",
+    "dynamic/dev/heat-sink.html": "a435e7351eb76ee7a18f1bc7b55be34b3da11b6f6869b0bd4dbff9c0733156b0",
+    "dynamic/dev/heat-sink.mjs": "d7f8c895301f4e7d4a34ecb84a436dbe37f11341616e2c052c19307198098728",
+    "scripts/dynamic-heat-sink-reference.py": "d384dfeb2a1824abb79402d13a8e68b424162c6e0d04f9bd6c10c5b238ec44a9",
+    "scripts/dynamic-provided-cfd-check.mjs": "8c27b1db58d262a5e162a1774c4be68d29906505958691f8f96075fb3edb7fd3",
+    "tests/dynamic-heat-sink-browser.mjs": "14aa407a4152044119af973236173a46c0c5fe25f1ed50c1371f18632eee5e93",
+    "tests/dynamic-heat-sink-independent-review.test.mjs": "032ed81b555d77b6582f98f73d4c08c4cfa5d2b1919babd5b41f5a2a5c7440d8",
+    "tests/dynamic-heat-sink-view.test.mjs": "88f0ff4b797cb922f287db62e955f78ac1014f7f0e67b2b8238d2c391f82e5c5",
+    "tests/dynamic-heat-sink.test.mjs": "81866e0373a521d95212eefe671f44078dc7c915097c38abd58a987c8c016d40"
+  },
+  "lastVerifiedNode": {
+    "tests": 1262,
+    "pass": 1257,
+    "skip": 5,
+    "fail": 0,
+    "scope": "1470f06 before heat-sink additions"
+  },
+  "partialHeatSinkUnitLog": {
+    "tests": 7,
+    "pass": 6,
+    "fail": 1,
+    "rootRerun": false
+  },
+  "heatSinkChromium": {
+    "engine": "chromium",
+    "developmentOnly": true,
+    "actualWorkerMatchesKernel": true,
+    "baseAndFinTemperatures": true,
+    "energyBudget": true,
+    "threeDimensionalShapeNotSolution": true,
+    "rotationDoesNotChangePhysics": true,
+    "abFinCountAndZeroFinLimit": true,
+    "rewind": true,
+    "invalidDtAtomic": true,
+    "cancelRollbackAndRetry": true,
+    "contactResistance": true,
+    "mobileLightDark": true,
+    "localStorageUnchanged": true,
+    "offlineVerified": false,
+    "passed": true
+  },
+  "heatSinkWebKit": "not run",
+  "heatSinkFullRegression": "not run",
+  "releaseApproved": false,
+  "mainPublished": false
+}

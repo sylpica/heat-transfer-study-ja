@@ -82,7 +82,11 @@
         "../../dynamic/radial.mjs",
         "RADIAL_UI.md",
         "RADIAL_UI_CHECKPOINT_20261104.json",
-        "../../tests/dynamic-radial-browser.mjs"
+        "../../tests/dynamic-radial-browser.mjs",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ],
       "remainingOrScope": "公開候補は伝導/単一フィン/黒い周囲への放射。強制/自然対流の一般2D CFDは未完了。"
     },
@@ -146,7 +150,11 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "RADIATION_NETWORK.md",
-        "RADIATION_BENCHMARKS_20261104.json"
+        "RADIATION_BENCHMARKS_20261104.json",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -233,7 +241,11 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -258,7 +270,11 @@
         "MANUFACTURED_MULTIGRID_BENCHMARKS_20261104.json",
         "CFD_MULTIGRID_FULL_REPRODUCTION_20261104.json",
         "PRESSURE_SENSITIVITY.md",
-        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json"
+        "PRESSURE_AMPLITUDE_SENSITIVITY_20261104.json",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -331,7 +347,11 @@
         "CHANNEL_LEARNING.md",
         "CHANNEL_LEARNING_REFERENCE_20261105.json",
         "CHANNEL_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -665,7 +685,11 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ]
     },
     {
@@ -930,7 +954,11 @@
         "FIN_LEARNING.md",
         "FIN_LEARNING_REFERENCE_20261105.json",
         "FIN_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -980,7 +1008,11 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "SURFACE_EXCHANGE.md",
+        "SURFACE_EXCHANGE_REFERENCE_20261105.json",
+        "SURFACE_EXCHANGE_UI_BENCHMARKS_20261105.json",
+        "SURFACE_EXCHANGE_CHECKPOINT_20261105.json"
       ]
     },
     {

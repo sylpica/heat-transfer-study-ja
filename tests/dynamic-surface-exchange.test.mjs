@@ -16,6 +16,7 @@ test('combined surface uses one face temperature, distinct reservoirs and a cons
  }
  const mixed=surfaceExchange(350,100,1,bc);assert.ok(mixed.convectionOutwardWatts<0&&mixed.radiationOutwardWatts>0);
  const m=createThermal(slab(bc)),s=m.step(.01);near(s.netInput,mixed.inwardWatts*.01);near(s.energyError,0,1e-8);
+ const report=s.surfaceExchange[0];near(report.inwardWatts+report.convectionOutwardWatts+report.radiationOutwardWatts,0);assert.equal(report.side,'right');near(report.area,1);
 });
 test('zero coefficients reproduce insulation and the separate convection or radiation laws',()=>{
  const none=surfaceExchange(350,100,1,{...bc,h:0,emissivity:0});assert.equal(none.inwardWatts,0);assert.equal(none.surfaceTemperature,350);
@@ -40,7 +41,13 @@ test('invalid coupled inputs, unsupported geometry and overflow do not advance a
  for(const patch of [{h:-1},{h:NaN},{h:'12'},{emissivity:2},{temperature:0},{radiationTemperature:0},{radiationTemperature:1e100}])assert.throws(()=>validateSurfaceExchange({...bc,...patch}));
  assert.throws(()=>createThermal({...slab(bc),outline:[[0,0],[.1,0],[.1,1],[0,1]]}),/自由輪郭/);
  assert.throws(()=>createThermal({...slab(bc),materials:[{k:5,rho:1000,cp:1000,kTable:[[300,5],[500,6]]}]}),/検証待ち/);
- const m=createThermal(slab({...bc,h:1e308})),before=m.snapshot();assert.throws(()=>m.step(.001),/数値範囲|収束/);assert.deepEqual(m.snapshot(),before);
+ assert.throws(()=>createThermal(slab({...bc,h:1e308})),/数値範囲|収束/);
+});
+test('combined output overflow is checked before committing new or restored temperatures',()=>{
+ const m=createThermal({...slab(bc),source:1e100}),before=m.snapshot();assert.throws(()=>m.step(.01),/数値範囲/);assert.deepEqual(m.snapshot(),before);
+ assert.throws(()=>m.restore({...before,temperature:[1e100]}),/数値範囲/);assert.deepEqual(m.snapshot(),before);
+ const grid=createThermal({...slab(bc),nx:8,ny:4,boundaries:{left:bc,right:bc,top:bc,bottom:bc}}),rows=grid.snapshot().surfaceExchange;
+ assert.equal(rows.length,4);near(rows.reduce((sum,r)=>sum+r.area,0),2*(.1+1));
 });
 test('coupled slab and radial steady fields and a separate transient control-volume reference meet independent gates',()=>{
  const result=JSON.parse(execFileSync(process.execPath,['scripts/dynamic-surface-exchange-benchmarks.mjs'],{cwd:new URL('..',import.meta.url),encoding:'utf8'}));

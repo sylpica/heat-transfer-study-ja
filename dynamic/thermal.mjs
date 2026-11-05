@@ -39,6 +39,7 @@ export function createThermal(config){
  }
  if(c.outline&&faces.some(f=>['flux','convection','radiation','convection-radiation'].includes(f.bc.type)))throw Error('自由輪郭の表面積・法線は検証待ちです。階段近似の表面積は細分化だけでは正しくならないため、温度固定または断熱を選んでください。');
  if((variableK||variableCp)&&faces.some(f=>f.bc.type==='convection-radiation'))throw Error('温度依存物性と対流・放射の同時境界は検証待ちです。一定物性を選んでください。');
+ const combinedFaces=faces.filter(f=>f.bc.type==='convection-radiation');
  const loss=c.distributedConvection;
  if(loss){pos(loss.h,'側面のh',true);pos(loss.areaPerVolume,'側面積/体積',true);pos(loss.temperature,'流体絶対温度');for(let n=0;n<N;n++)if(mask[n])sumG[n]+=loss.h*loss.areaPerVolume*V;}
  const safeDt=Math.min(...Array.from(C,(v,n)=>mask[n]&&sumG[n]>0?.8*v/sumG[n]:Infinity));
@@ -59,6 +60,11 @@ export function createThermal(config){
    }
    if(profiles[material[n]])profiles[material[n]].at(T[n]+q/conductance);cpProfiles[material[n]]?.at(T[n]+q/conductance);return q;
   }
+ function surfaceSummary(values=T){
+  const groups=new Map();
+  for(const {n,bc,A,conductance,side} of combinedFaces){const r=surfaceExchange(values[n],conductance,A,bc);if(!groups.has(side))groups.set(side,{side,area:0,inwardWatts:0,convectionOutwardWatts:0,radiationOutwardWatts:0,balanceResidualW:0,surfaceTemperatureMinK:Infinity,surfaceTemperatureMaxK:-Infinity});const g=groups.get(side);g.area+=A;for(const key of ['inwardWatts','convectionOutwardWatts','radiationOutwardWatts','balanceResidualW'])g[key]+=r[key];g.surfaceTemperatureMinK=Math.min(g.surfaceTemperatureMinK,r.surfaceTemperature);g.surfaceTemperatureMaxK=Math.max(g.surfaceTemperatureMaxK,r.surfaceTemperature);}
+  const valuesByFace=[...groups.values()];if(valuesByFace.some(g=>Object.values(g).some(v=>typeof v==='number'&&!Number.isFinite(v))))throw Error('対流・放射の面積/合計出力が数値範囲外です。');return valuesByFace;
+ }
  function power(){
   updateProperties();const P=new Float64Array(N);let external=0;
   for(let n=0;n<N;n++)if(mask[n]){P[n]=source[n]*V;if(loss)P[n]+=loss.h*loss.areaPerVolume*V*(loss.temperature-T[n]);external+=P[n];}
@@ -70,13 +76,13 @@ export function createThermal(config){
   pos(dt,'時間刻み');if(dt>safeDt*(1+1e-12))throw Error(`時間刻みが安定性の上限${safeDt.toPrecision(4)} sを超えています。`);
   const {P,external}=power(),next=new Float64Array(T);
   for(let n=0;n<N;n++)if(mask[n]){const cp=cpProfiles[material[n]];next[n]=cp?cp.temperature(cp.enthalpy(T[n])+dt*P[n]/mass[n]):T[n]+dt*P[n]/C[n];profiles[material[n]]?.at(next[n]);if(!Number.isFinite(next[n])||next[n]<=0)throw Error('温度が非有限値または0 K以下となるため、更新前に計算を停止しました。時間刻みと熱源を見直してください。');}
-  energy(next);num(netInput+external*dt,'累積の熱流入');num(time+dt,'物理時間');
+  surfaceSummary(next);energy(next);num(netInput+external*dt,'累積の熱流入');num(time+dt,'物理時間');
   T.set(next);time+=dt;netInput+=external*dt;steps++;lastDt=dt;lastPower=external;return returnState?snapshot():undefined;
  }
- function snapshot(){const e=energy(T),values=T.filter((_,n)=>mask[n]),error=e-initialEnergy-netInput;return {temperature:Array.from(T),time,energy:e,energyReference:variableCp?'cp(T)は各表の下端、一定cpは273.15 K':'273.15 K',netInput,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy),Math.abs(netInput)),min:Math.min(...values),max:Math.max(...values),steps,lastDt,lastPower,safeDt:Number.isFinite(safeDt)?safeDt:null};}
- function restore(s){if(!s||s.temperature?.length!==N||![s.time,s.netInput,s.steps].every(Number.isFinite)||s.time<0||s.steps<0)throw Error('再生状態が不正です。');const next=Float64Array.from(s.temperature);for(let n=0;n<N;n++)if(mask[n]){pos(next[n],'再生温度');profiles[material[n]]?.at(next[n]);cpProfiles[material[n]]?.at(next[n]);}energy(next);T.set(next);time=s.time;netInput=s.netInput;steps=s.steps;lastDt=s.lastDt??0;lastPower=s.lastPower??0;return snapshot();}
+ function snapshot(){const e=energy(T),values=T.filter((_,n)=>mask[n]),error=e-initialEnergy-netInput;return {temperature:Array.from(T),...(combinedFaces.length?{surfaceExchange:surfaceSummary()}:{}),time,energy:e,energyReference:variableCp?'cp(T)は各表の下端、一定cpは273.15 K':'273.15 K',netInput,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy),Math.abs(netInput)),min:Math.min(...values),max:Math.max(...values),steps,lastDt,lastPower,safeDt:Number.isFinite(safeDt)?safeDt:null};}
+ function restore(s){if(!s||s.temperature?.length!==N||![s.time,s.netInput,s.steps].every(Number.isFinite)||s.time<0||s.steps<0)throw Error('再生状態が不正です。');const next=Float64Array.from(s.temperature);for(let n=0;n<N;n++)if(mask[n]){pos(next[n],'再生温度');profiles[material[n]]?.at(next[n]);cpProfiles[material[n]]?.at(next[n]);}surfaceSummary(next);energy(next);T.set(next);time=s.time;netInput=s.netInput;steps=s.steps;lastDt=s.lastDt??0;lastPower=s.lastPower??0;return snapshot();}
  function flux(){updateProperties();const qx=new Float64Array(N),qy=new Float64Array(N),cx=new Uint8Array(N),cy=new Uint8Array(N);for(const pair of pairs){const {n,m,A,di,dj}=pair,G=faceG(pair),q=G*(T[n]-T[m])/A;for(const cell of [n,m])if(di){qx[cell]+=q;cx[cell]++;}else{qy[cell]+=q;cy[cell]++;}}
   for(const face of faces){const q=boundaryHeat(face)/face.A,n=face.n;if(face.side==='left'||face.side==='right'){qx[n]+=(face.side==='left'?1:-1)*q;cx[n]++;}else{qy[n]+=(face.side==='bottom'?1:-1)*q;cy[n]++;}}
   for(let n=0;n<N;n++){if(cx[n])qx[n]/=cx[n];if(cy[n])qy[n]/=cy[n];}return {x:Array.from(qx),y:Array.from(qy)};}
- return {step,snapshot,restore,flux,safeDt,get time(){return time;},mesh:{...mesh,nx,ny,width:w,height:h,depth:z,dx,dy,mask:Array.from(mask),material:Array.from(material)},config:c};
+ surfaceSummary();return {step,snapshot,restore,flux,safeDt,get time(){return time;},mesh:{...mesh,nx,ny,width:w,height:h,depth:z,dx,dy,mask:Array.from(mask),material:Array.from(material)},config:c};
 }

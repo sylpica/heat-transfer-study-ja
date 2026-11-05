@@ -11,7 +11,11 @@
         "ARCHITECTURE.md",
         "RADIAL_LEARNING.md",
         "RADIAL_LEARNING_REFERENCE_20261105.json",
-        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json",
+        "RADIATION_LEARNING.md",
+        "RADIATION_LEARNING_REFERENCE_20261105.json",
+        "RADIATION_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_20261105.json"
       ]
     },
     {
@@ -462,7 +466,11 @@
         "../../tests/dynamic-learning.test.mjs",
         "RADIAL_LEARNING.md",
         "RADIAL_LEARNING_REFERENCE_20261105.json",
-        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json",
+        "RADIATION_LEARNING.md",
+        "RADIATION_LEARNING_REFERENCE_20261105.json",
+        "RADIATION_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_20261105.json"
       ]
     },
     {
@@ -655,7 +663,11 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "RADIATION_LEARNING.md",
+        "RADIATION_LEARNING_REFERENCE_20261105.json",
+        "RADIATION_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_20261105.json"
       ]
     },
     {
@@ -682,7 +694,11 @@
         "../../tests/dynamic-learning.test.mjs",
         "RADIAL_LEARNING.md",
         "RADIAL_LEARNING_REFERENCE_20261105.json",
-        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json",
+        "RADIATION_LEARNING.md",
+        "RADIATION_LEARNING_REFERENCE_20261105.json",
+        "RADIATION_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_20261105.json"
       ]
     },
     {
@@ -849,7 +865,11 @@
         "CAVITY_UI_CHECKPOINT_20261105.json",
         "RADIAL_LEARNING.md",
         "RADIAL_LEARNING_REFERENCE_20261105.json",
-        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json",
+        "RADIATION_LEARNING.md",
+        "RADIATION_LEARNING_REFERENCE_20261105.json",
+        "RADIATION_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_20261105.json"
       ],
       "remainingOrScope": "伝導/フィン/k(T)と開発用2Dキャビティを対照。CFDの3段階格子/全場/原典直接照合/ブラウザー実操作等は未完了。"
     },
@@ -922,7 +942,11 @@
         "../../tests/dynamic-learning.test.mjs",
         "RADIAL_LEARNING.md",
         "RADIAL_LEARNING_REFERENCE_20261105.json",
-        "RADIAL_LEARNING_CHECKPOINT_20261105.json"
+        "RADIAL_LEARNING_CHECKPOINT_20261105.json",
+        "RADIATION_LEARNING.md",
+        "RADIATION_LEARNING_REFERENCE_20261105.json",
+        "RADIATION_LEARNING_CHECKPOINT_20261105.json",
+        "LEARNING_SAMPLE_SCHEDULE_20261105.json"
       ]
     },
     {

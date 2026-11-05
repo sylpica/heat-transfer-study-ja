@@ -37,6 +37,17 @@ export class Experiment{
   if(!this.ready||!states?.length)return false;this.pause();this.error=null;this.busy=true;const token=this.epoch;this.emit('rewinding');
   try{const result=await Promise.all(this.group().map((a,i)=>a.request('restore',{snapshot:states[i]})));if(token!==this.epoch)return false;this.accept(result);if(reset){this.history=[];this.index=0;this.record();}else this.index=index;this.emit('state');this.emit('rewound');return true;}catch(error){if(token===this.epoch){this.ready=false;this.fail(error);}return false;}finally{if(token===this.epoch){this.busy=false;this.emit('controls');}}
  }
+ async advanceSamples({duration,spacing,dt}={}){
+  if(!this.ready||this.busy)return false;
+  if(![duration,spacing].every(x=>typeof x==='number'&&Number.isFinite(x)&&x>0))throw Error('記録時間と記録間隔は正の有限値です。');
+  const count=Math.ceil(duration/spacing),start=this.states[0].time;
+  if(!Number.isSafeInteger(count)||count<1||count>=this.maxFrames)throw Error('記録するコマ数が履歴上限を超えています。');
+  const targets=Array.from({length:count},(_,i)=>start+Math.min(duration,(i+1)*spacing));
+  if(targets.some((t,i)=>!Number.isFinite(t)||t<=(i?targets[i-1]:start)))throw Error('記録する時刻を浮動小数点で区別できません。');
+  this.pause();const token=this.epoch;
+  for(const target of targets){if(token!==this.epoch||!await this.advance({duration:target-this.states[0].time,dt}))return false;}
+  return token===this.epoch;
+ }
  rewind(index){return Number.isInteger(index)&&this.history[index]?this.restoreStates(this.history[index],index):Promise.resolve(false);}
  restart(){return this.restoreStates(this.initialStates,0,true);}
  play(parameters){if(!this.ready||this.busy||this.playing)return;this.playing=true;const tick=async()=>{if(!this.playing)return;try{const ok=await this.advance(parameters());if(ok&&this.playing)this.timer=setTimeout(tick,80);}catch(error){this.fail(error);}};tick();}

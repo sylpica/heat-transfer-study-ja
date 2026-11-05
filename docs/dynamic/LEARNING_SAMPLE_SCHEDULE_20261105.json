@@ -1,0 +1,763 @@
+{
+  "generatedAtUTC": "2026-11-05T05:42:04.398Z",
+  "sourceCommit": "6ed8035aee19b04e3f458a796fd8dbfae0b16e24",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "scripts/dynamic-learning-samples-benchmarks.mjs": "a03b23f2e1282e6ca348e4d86c4988f67421aeffd67c3b2399d96360b589f400",
+    "dynamic/thermal.mjs": "37138a24b0d77c8f173b0cd7176695f8f0e15142c4884f06a07a4b17f75227ab",
+    "dynamic/geometry.mjs": "8ff5b1038150553db51f5dbb16ae333f6ffbaea1985a8c86aef268fa4d16ce36",
+    "dynamic/properties.mjs": "47873b1a9a06832c8fbc93ac976849a343760faf253125cfe4e72e6c4553d90b",
+    "dynamic/presets.mjs": "b2b2e606d57426cec6c11caf958a32361c595055b061cad59850aa30212cd28b",
+    "dynamic/radial.mjs": "e118c7fe7a671646814e3659d2f4216259c15d8df8c5005d4bee00877cf6e901",
+    "dynamic/radial-learning.mjs": "809b1fdba5d1e9561bfd293981f2ca5744a4528f7718ceb01c2944b50a107b5e",
+    "dynamic/radiation-network.mjs": "fac3b84fa5532ae22b086609ff4d0c9abaa74327108a0c52e92c616de024f8ce",
+    "dynamic/radiation-learning.mjs": "45c4b2a84731cb8577eb28e8a25ca31077ab39293af191c11fbb379d25027125",
+    "docs/dynamic/RADIAL_LEARNING_REFERENCE_20261105.json": "26ce6c8a2320317e5243d1993c49e1288bc380e54f9073e78976c1a3566d8220",
+    "docs/dynamic/RADIATION_LEARNING_REFERENCE_20261105.json": "d0f46e6abc97b87a69a83d23af63e76c26fe92c66d2592aa724c71c5cddd0093"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "scope": "Kernel comparison of fixed target schedules. Browser Worker/controller binding is tested separately. Recording endpoints can change truncated Euler timesteps; this is not a claim of improved integration accuracy.",
+  "expertApproved": false,
+  "heating": [
+    {
+      "n": 24,
+      "recordSpacingS": 0.25,
+      "frames": [
+        {
+          "time": 0,
+          "leftC": 20
+        },
+        {
+          "time": 0.25,
+          "leftC": 20.00004569794072
+        },
+        {
+          "time": 0.5,
+          "leftC": 20.04133016719834
+        },
+        {
+          "time": 0.75,
+          "leftC": 20.29920352116295
+        },
+        {
+          "time": 1,
+          "leftC": 20.824908807392944
+        },
+        {
+          "time": 1.25,
+          "leftC": 21.540499268326812
+        },
+        {
+          "time": 1.5,
+          "leftC": 22.359738097161255
+        },
+        {
+          "time": 1.75,
+          "leftC": 23.221662124231614
+        },
+        {
+          "time": 2,
+          "leftC": 24.088613797304674
+        },
+        {
+          "time": 2.25,
+          "leftC": 24.93880748948436
+        },
+        {
+          "time": 2.5,
+          "leftC": 25.76035609433211
+        },
+        {
+          "time": 2.75,
+          "leftC": 26.547346392612667
+        },
+        {
+          "time": 3,
+          "leftC": 27.297411407061816
+        },
+        {
+          "time": 3.25,
+          "leftC": 28.010256910411954
+        },
+        {
+          "time": 3.5,
+          "leftC": 28.686771048616208
+        },
+        {
+          "time": 3.75,
+          "leftC": 29.32848644271826
+        },
+        {
+          "time": 4,
+          "leftC": 29.937255564509314
+        },
+        {
+          "time": 4.25,
+          "leftC": 30.515055846774146
+        },
+        {
+          "time": 4.5,
+          "leftC": 31.063874194031996
+        },
+        {
+          "time": 4.75,
+          "leftC": 31.585640325588543
+        },
+        {
+          "time": 5,
+          "leftC": 32.082190217948835
+        }
+      ],
+      "singleAdvanceLeftC": 32.08314946056345,
+      "sampledLeftC": 32.082190217948835,
+      "independentModalEulerC": 32.0821902179488,
+      "continuousCellAverageC": 32.125399784749575,
+      "sampledModalErrorK": 3.552713678800501e-14,
+      "sampledContinuumErrorK": -0.04320956680074062,
+      "energyErrorJ": -1.6484591469634324e-12
+    },
+    {
+      "n": 32,
+      "recordSpacingS": 0.25,
+      "frames": [
+        {
+          "time": 0,
+          "leftC": 20
+        },
+        {
+          "time": 0.25,
+          "leftC": 20.000160365832244
+        },
+        {
+          "time": 0.5,
+          "leftC": 20.052900930131216
+        },
+        {
+          "time": 0.75,
+          "leftC": 20.353015947974825
+        },
+        {
+          "time": 1,
+          "leftC": 20.936645483269444
+        },
+        {
+          "time": 1.25,
+          "leftC": 21.70868824112904
+        },
+        {
+          "time": 1.5,
+          "leftC": 22.576334333772365
+        },
+        {
+          "time": 1.75,
+          "leftC": 23.477627017026293
+        },
+        {
+          "time": 2,
+          "leftC": 24.375852836171703
+        },
+        {
+          "time": 2.25,
+          "leftC": 25.25061216921273
+        },
+        {
+          "time": 2.5,
+          "leftC": 26.091333610159268
+        },
+        {
+          "time": 2.75,
+          "leftC": 26.89321069544502
+        },
+        {
+          "time": 3,
+          "leftC": 27.654765213925486
+        },
+        {
+          "time": 3.25,
+          "leftC": 28.37640351023788
+        },
+        {
+          "time": 3.5,
+          "leftC": 29.05956260131478
+        },
+        {
+          "time": 3.75,
+          "leftC": 29.706205137625147
+        },
+        {
+          "time": 4,
+          "leftC": 30.31852156777262
+        },
+        {
+          "time": 4.25,
+          "leftC": 30.89875620404007
+        },
+        {
+          "time": 4.5,
+          "leftC": 31.44910783460665
+        },
+        {
+          "time": 4.75,
+          "leftC": 31.97167535655433
+        },
+        {
+          "time": 5,
+          "leftC": 32.46843059181293
+        }
+      ],
+      "singleAdvanceLeftC": 32.468505907118754,
+      "sampledLeftC": 32.46843059181293,
+      "independentModalEulerC": 32.468430591813174,
+      "continuousCellAverageC": 32.49226521408747,
+      "sampledModalErrorK": -2.4158453015843406e-13,
+      "sampledContinuumErrorK": -0.023834622274534922,
+      "energyErrorJ": 9.72022462519817e-12
+    }
+  ],
+  "radial": [
+    {
+      "n": 32,
+      "geometry": "sphere",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 65.94046730073472
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 60.66131623442493
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 56.849159842598624
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 53.79388927959434
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 51.22161079119138
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 48.99213097607844
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 47.02226594910633
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 45.257859288911334
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 43.66131503973594
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 42.205271475262464
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 40.869079528012435
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 39.63670097707484
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 38.49538358940822
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 37.43478831483185
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 36.44639288132964
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 35.52307151271532
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 34.65879089224961
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 33.84838523980392
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 33.08738670719271
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 32.37189539140252
+        }
+      ],
+      "singleAdvanceMeanC": 32.37168046031593,
+      "sampledContinuumMeanErrorK": -0.00734726773220018,
+      "shellRMSErrorK": 0.006509956584422557,
+      "energyErrorJ": 2.2737367544323206e-11
+    },
+    {
+      "n": 32,
+      "geometry": "cylinder",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 70.31230628513913
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 66.46989161603199
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 63.60872110697244
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 61.25486480560005
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 59.22544389916749
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 57.42681867274666
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 55.803412934250105
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 54.31903745386222
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 52.948567219463825
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 51.673717429593125
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 50.48069188815623
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 49.358779499013906
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 48.29946980888701
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 47.29587068650869
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 46.34231078640653
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 45.43405971141317
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 44.567125739366816
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 43.73810617783187
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 42.94407435388257
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 42.1824927003554
+        }
+      ],
+      "singleAdvanceMeanC": 42.182356207483,
+      "sampledContinuumMeanErrorK": -0.00017328211220046796,
+      "shellRMSErrorK": 0.008791947597386593,
+      "energyErrorJ": -5.093170329928398e-11
+    },
+    {
+      "n": 64,
+      "geometry": "sphere",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 65.9101742589292
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 60.64695672805192
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 56.841481361441595
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 53.78996443843164
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 51.220094101977
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 48.992281271689876
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 47.023627903008446
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 45.26013189401874
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 43.66428852243206
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 42.20879370426218
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 40.87303668352098
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 39.64100572979794
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 38.499967505345865
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 37.43959676966301
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 36.451381536431995
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 35.528203805238604
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 34.66403621008698
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 33.85371757560557
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 33.09278365720803
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 32.37733740786058
+        }
+      ],
+      "singleAdvanceMeanC": 32.37732663021194,
+      "sampledContinuumMeanErrorK": -0.0019052512741382088,
+      "shellRMSErrorK": 0.001678921273503902,
+      "energyErrorJ": 1.8189894035458565e-12
+    },
+    {
+      "n": 64,
+      "geometry": "cylinder",
+      "recordSpacingS": 0.05,
+      "frames": [
+        {
+          "time": 0,
+          "volumeMeanC": 80
+        },
+        {
+          "time": 0.05,
+          "volumeMeanC": 70.28328652034634
+        },
+        {
+          "time": 0.1,
+          "volumeMeanC": 66.45213866344147
+        },
+        {
+          "time": 0.15000000000000002,
+          "volumeMeanC": 63.595930836694095
+        },
+        {
+          "time": 0.2,
+          "volumeMeanC": 61.24500460437844
+        },
+        {
+          "time": 0.25,
+          "volumeMeanC": 59.217562375792
+        },
+        {
+          "time": 0.30000000000000004,
+          "volumeMeanC": 57.42038213560255
+        },
+        {
+          "time": 0.35000000000000003,
+          "volumeMeanC": 55.79808745591862
+        },
+        {
+          "time": 0.4,
+          "volumeMeanC": 54.31459816326384
+        },
+        {
+          "time": 0.45,
+          "volumeMeanC": 52.94485445841252
+        },
+        {
+          "time": 0.5,
+          "volumeMeanC": 51.670613235255814
+        },
+        {
+          "time": 0.55,
+          "volumeMeanC": 50.478106368583894
+        },
+        {
+          "time": 0.6000000000000001,
+          "volumeMeanC": 49.35664245631057
+        },
+        {
+          "time": 0.65,
+          "volumeMeanC": 48.29772533584128
+        },
+        {
+          "time": 0.7000000000000001,
+          "volumeMeanC": 47.29447353694371
+        },
+        {
+          "time": 0.75,
+          "volumeMeanC": 46.34122384791198
+        },
+        {
+          "time": 0.8,
+          "volumeMeanC": 45.43325218749271
+        },
+        {
+          "time": 0.8500000000000001,
+          "volumeMeanC": 44.566571803120326
+        },
+        {
+          "time": 0.9,
+          "volumeMeanC": 43.73778394941007
+        },
+        {
+          "time": 0.9500000000000001,
+          "volumeMeanC": 42.943965107815416
+        },
+        {
+          "time": 1,
+          "volumeMeanC": 42.182580241629694
+        }
+      ],
+      "singleAdvanceMeanC": 42.182578411807015,
+      "sampledContinuumMeanErrorK": -8.574083790335862e-05,
+      "shellRMSErrorK": 0.0021965101556839367,
+      "energyErrorJ": 7.275957614183426e-12
+    }
+  ],
+  "radiation": {
+    "recordSpacingS": 1,
+    "internalStepLimitS": 0.05,
+    "frames": [
+      {
+        "time": 0,
+        "temperatureC": [
+          200,
+          20
+        ]
+      },
+      {
+        "time": 1,
+        "temperatureC": [
+          193.89315730203862,
+          23.05342134898069
+        ]
+      },
+      {
+        "time": 2,
+        "temperatureC": [
+          188.18775117283377,
+          25.90612441358303
+        ]
+      },
+      {
+        "time": 3,
+        "temperatureC": [
+          182.84692781119566,
+          28.576536094402172
+        ]
+      },
+      {
+        "time": 4,
+        "temperatureC": [
+          177.83846525647056,
+          31.08076737176458
+        ]
+      },
+      {
+        "time": 5,
+        "temperatureC": [
+          173.13403351567553,
+          33.43298324216215
+        ]
+      },
+      {
+        "time": 6,
+        "temperatureC": [
+          168.70859583216742,
+          35.64570208391615
+        ]
+      },
+      {
+        "time": 7,
+        "temperatureC": [
+          164.5399201732693,
+          37.730039913365374
+        ]
+      },
+      {
+        "time": 8,
+        "temperatureC": [
+          160.60817760097672,
+          39.69591119951167
+        ]
+      },
+      {
+        "time": 9,
+        "temperatureC": [
+          156.89560972921186,
+          41.55219513539413
+        ]
+      },
+      {
+        "time": 10,
+        "temperatureC": [
+          153.38625156259002,
+          43.30687421870488
+        ]
+      },
+      {
+        "time": 11,
+        "temperatureC": [
+          150.06569906636906,
+          44.96715046681544
+        ]
+      },
+      {
+        "time": 12,
+        "temperatureC": [
+          146.9209131207985,
+          46.53954343960072
+        ]
+      },
+      {
+        "time": 13,
+        "temperatureC": [
+          143.94005326647215,
+          48.02997336676384
+        ]
+      },
+      {
+        "time": 14,
+        "temperatureC": [
+          141.11233599361054,
+          49.443832003194814
+        ]
+      },
+      {
+        "time": 15,
+        "temperatureC": [
+          138.42791337046378,
+          50.78604331476822
+        ]
+      },
+      {
+        "time": 16,
+        "temperatureC": [
+          135.87776861913432,
+          52.06111569043276
+        ]
+      },
+      {
+        "time": 17,
+        "temperatureC": [
+          133.45362588605502,
+          53.27318705697235
+        ]
+      },
+      {
+        "time": 18,
+        "temperatureC": [
+          131.14787195988663,
+          54.42606402005663
+        ]
+      },
+      {
+        "time": 19,
+        "temperatureC": [
+          128.9534880921534,
+          55.5232559539233
+        ]
+      },
+      {
+        "time": 20,
+        "temperatureC": [
+          126.86399039845622,
+          56.56800480077192
+        ]
+      }
+    ],
+    "temperatureErrorsK": [
+      4.588187306353575e-05,
+      -2.2940936560189584e-05
+    ],
+    "energyErrorJ": 1.4551915228366852e-11
+  },
+  "passed": true,
+  "elapsedMs": 522.459276
+}

@@ -32,7 +32,7 @@ if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catc
 
 attachNavigationContext(document.querySelector('main'),'radial');
 
-journeyUI=attachRadialJourney({root:$('radial-learning'),context:()=>({configs,meshes,snapshots:states}),pause:()=>experiment.pause(),locate:setProbe,rewind:()=>experiment.restart(),advance:duration=>{experiment.pause();return experiment.advance({duration});},prepare:()=>{
+journeyUI=attachRadialJourney({root:$('radial-learning'),context:()=>({configs,meshes,snapshots:states}),pause:()=>experiment.pause(),locate:setProbe,rewind:()=>experiment.restart(),advance:duration=>{experiment.pause();return experiment.advanceSamples({duration,spacing:.05});},prepare:()=>{
  const [a,b]=radialCoolingConfigs(matchMedia('(max-width:600px)').matches?32:64);configB=b;
  for(const [id,value]of Object.entries({geometry:a.geometry,n:a.n,radius:a.radius,length:b.length,initial:80,boundary:'temperature','boundary-temperature':20,source:0,interval:.25,speed:1,scale:'fixed'}))$(id).value=value;
  $('material').value='1';materialInputs();$('dt').value='';boundaryControls();setProbe(.5);return initialize();

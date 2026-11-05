@@ -24,6 +24,7 @@ jobs:
       - run: node scripts/dynamic-multigrid-benchmarks.mjs
       - run: node scripts/dynamic-cavity-time-benchmarks.mjs
       - run: node scripts/dynamic-radial-benchmarks.mjs
+      - run: node scripts/dynamic-learning-samples-benchmarks.mjs
       - run: npm run build:public
   browser:
     runs-on: ubuntu-24.04
@@ -45,6 +46,11 @@ jobs:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
       - run: node tests/dynamic-radiation-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check radiation learning without confusing transient and equilibrium temperatures
+        run: node tests/dynamic-radiation-learning-browser.mjs
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''

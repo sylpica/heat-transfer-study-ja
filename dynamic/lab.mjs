@@ -95,4 +95,4 @@ window.addEventListener('resize',render);
 
 for(const id of ['show-grid','show-contours','section-axis'])$(id).onchange=render;$('section-view').ontoggle=render;
 
-learning=attachLearningJourney({root:$('learning'),context:()=>({config:configA,mesh:meshA,snapshot:stateA}),prepare:async()=>{configB=null;$('material').value='1';$('interval').value='.5';$('speed').value='1';$('scale').value='auto';probe={x:.5,y:.5};return loadPreset('heating',matchMedia('(max-width:600px)').matches?24:32);},advance:duration=>{pause();return experiment.advance({duration});},rewind:()=>experiment.restart(),locate:p=>{probe=p;render();}});
+learning=attachLearningJourney({root:$('learning'),context:()=>({config:configA,mesh:meshA,snapshot:stateA}),prepare:async()=>{configB=null;$('material').value='1';$('interval').value='.5';$('speed').value='1';$('scale').value='auto';probe={x:.5,y:.5};return loadPreset('heating',matchMedia('(max-width:600px)').matches?24:32);},advance:duration=>{pause();return experiment.advanceSamples({duration,spacing:.25});},rewind:()=>experiment.restart(),locate:p=>{probe=p;render();}});

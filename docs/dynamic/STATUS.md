@@ -398,3 +398,7 @@ PROVIDED_CFD_BENCHMARK_REVIEW_20261106.md/.json、PROVIDED_CFD_BENCHMARKS_202611
 HEATED_CHANNEL_DEVELOPMENT.md。定常Poiseuilleを与えたGraetz型受動温度を別devモジュールで実装。入口/出口エンタルピー＋2壁熱と実蓄熱を保存的に計算。独立quartic/全格子行列指数、7数値＋2表示試験、両ブラウザーで実Worker数値/加熱冷却A/B/取消/復元/無効刻み/q0/明暗/幅/保存不変更を確認。全Node1287中1282成功・5skip・失敗0。初セル入口1次誤差・バルク行平均積・初期Nu4nyを保持し、一般2D CFDや円管相関と混同しない。奥行一様の熱量換算スパンを明示。独立AIレビューでも温度シフト/上下反射等を確認。環境が一時利用不可になった後に回復し、全未保存ファイル/ログの存在を確認して先に保存する。未検証公開/一般CFD/実機/全Phase完了は主張しない。
 
 加熱流路の最終チェックポイントはHEATED_CHANNEL_CHECKPOINT_20261106.json。奥行一様の説明と展開理論を含めて両ブラウザーを再実行し成功、rootが最終WebKit390px画像を実際に確認。公開ビルド/Worker hash/cache/dev除外も確認。後続の自由形状cut-cellは幾何だけを独立して実装中で、この1287件へ加算しない。
+
+### 2026-11-06 凸cut-cellの幾何基盤
+
+CUT_CELL_GEOMETRY.md / CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json。単一凸多角形の正面積/重心/共通開口/壁片法線をclipから計算し、Gauss/共有面/解析値/スリバーを検査。rootのsubnormal再現とGauss overflowのNaN比較すり抜けを修正。関連10試験、明示allowlistによるChromium/WebKitカーネル2本成功。熱PDE/安定化/UI/一般形状は未接続。公開ビルド/Worker hash/dev除外を確認。全Nodeは別途Graetzの新規検証を完結してから再実行し、先行1287件を今回へ転用しない。

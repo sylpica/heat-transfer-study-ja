@@ -1,0 +1,65 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T21:23:11.510253+00:00",
+  "baseSourceCommit": "3ec6216257463abd9bc49442fa5d5b61a190d625",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cut-cell-geometry.mjs": "1d2979be3cf665c4730f1e7ed78aa63b61ad0c9f60ca3d41d771001e84c68e76",
+    "tests/dynamic-cut-cell-geometry.test.mjs": "998e65fce6d63f6890ab753b7acd884663d255317ef6843f9d29a9dfc200de8d",
+    "tests/dynamic-cut-cell-polygon-review.test.mjs": "d1828255d2626cfc3af90cfb26f6ab07f7df1c7edcd2fe58af7719102e131267",
+    "tests/dynamic-cut-cell-browser.mjs": "3aec376e80e5a8646ca842d41511cd373e8996bc7ba34aa9b05c1b0ef430b10c",
+    ".github/workflows/dynamic-simulation.yml": "8d1b4216c7f331d61e224e05cd99b7e592a973eac99f905a10b187fa1ba3aff6"
+  },
+  "relatedNodeTests": {
+    "tests": 10,
+    "pass": 10,
+    "fail": 0
+  },
+  "priorFullNode": {
+    "tests": 1287,
+    "pass": 1282,
+    "skip": 5,
+    "fail": 0,
+    "scope": "Before cut-cell/Graetz additions, see HEATED_CHANNEL_CHECKPOINT_20261106.json"
+  },
+  "currentFullNode": "pending the independent Graetz verification in the shared workspace; no tests excluded or declared passing",
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "heatEquationSolved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "heatEquationSolved": false,
+      "passed": true
+    }
+  },
+  "browserScope": "Kernel compatibility only; isolated source allowlist, not application UI or heat equation.",
+  "rootIndependentSubnormalFractionProbes": 42,
+  "scope": "Convex polygon geometry only, no heat equation, no sliver stabilization, no general geometry or publication approval.",
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "developmentModulesExcluded": true,
+  "cacheName": "heat-study-ja-app-fcf92666638c0ebb",
+  "releaseApproved": false,
+  "mainPublished": false
+}

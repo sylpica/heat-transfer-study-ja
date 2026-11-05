@@ -1,0 +1,103 @@
+{
+  "generatedAtUTC": "2026-11-05T11:56:08.077984+00:00",
+  "baseSourceCommit": "6f8db09bd7c9f8bf04fdf5d73b8b9315fd0ce7e4",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/kinetic-energy.mjs": "e573dd8b64a89f4e5ad817ece6239066e54ee4175bb78ba569044f00e871a5b8",
+    "dynamic/dev/cavity-ui.mjs": "c46c99ae62476d9d0c4b069057e65c471ea9e944e03ee899c3b94ba2d2492e12",
+    "dynamic/dev/cavity.html": "3bdca67998986a06bf772408410daa6b0f377b2f5a8cd5f7e9bfd5e72163db58",
+    "tests/dynamic-kinetic-energy.test.mjs": "234744c6d7540ca94eec2068dfa75bc47b4087a4b40dd079b26bce06736f4eac",
+    "tests/dynamic-cavity-browser.mjs": "0037b660c2ca71aa022297174ec9e711ed930e766ba809880f68ae04b5b4fd0d"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "playwright": "1.56.1",
+    "webkit": "26.0 build 2215; user-local runtime libraries",
+    "webkitHostProbeSkippedLocally": true,
+    "realDevice": false
+  },
+  "node": {
+    "tests": 1240,
+    "pass": 1235,
+    "fail": 0,
+    "skipped": 5
+  },
+  "relatedNewKineticTests": 4,
+  "isolatedDevelopmentBrowserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerMatchesKernel": true,
+      "discreteKineticEnergyMatchesIndependentSum": true,
+      "pressureProjectionDiagnostics": true,
+      "mechanicalRewind": true,
+      "zeroTemperatureDifferenceEckertUndefined": true,
+      "calculatedBuoyancyReversal": true,
+      "comparison": true,
+      "rewind": true,
+      "cancelRollback": true,
+      "invalidDtRejected": true,
+      "pressureAndSpeedUnits": true,
+      "instantaneousStreamlines": true,
+      "zeroDifferenceNusseltUndefined": true,
+      "keyboardProbe": true,
+      "mobileDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerMatchesKernel": true,
+      "discreteKineticEnergyMatchesIndependentSum": true,
+      "pressureProjectionDiagnostics": true,
+      "mechanicalRewind": true,
+      "zeroTemperatureDifferenceEckertUndefined": true,
+      "calculatedBuoyancyReversal": true,
+      "comparison": true,
+      "rewind": true,
+      "cancelRollback": true,
+      "invalidDtRejected": true,
+      "pressureAndSpeedUnits": true,
+      "instantaneousStreamlines": true,
+      "zeroDifferenceNusseltUndefined": true,
+      "keyboardProbe": true,
+      "mobileDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    }
+  },
+  "visualInspection": "Local WebKit 390px/dark screenshot viewed; units/exponential notation/expanded diagnostics inspected. Not real-device verification.",
+  "screenshot": {
+    "path": "screenshots/kinetic-ui-mobile-20261105.png",
+    "sha256": "96e0e771ffee1fe5bf5380347a3743cec16d096d663837b8a72c4708f2a678e1"
+  },
+  "buildPublic": true,
+  "publicDistributionChecks": {
+    "workerHashUnchangedFrom7912646": true,
+    "cacheNameUnchanged": "heat-study-ja-app-fcf92666638c0ebb",
+    "allDevelopmentModulesExcluded": true,
+    "previousDistributionBrowserScripts": 24,
+    "previousCavityDevelopmentBrowserScripts": 2,
+    "previousMatrixSource": "791264614516bfcf09d3244865f69eb797bc1383",
+    "scope": "Previous public matrix not repeated here; changed development cavity scripts ran freshly in both engines. GPU source/solver and public code were unchanged."
+  },
+  "priorCleanCI": {
+    "sourceCommit": "d87083b519e3fd783ca707bc97bb06c90fc54037",
+    "databaseId": 42014069205,
+    "allFiveJobsSucceeded": true
+  },
+  "currentCI": "pending commit/push",
+  "notVerified": [
+    "full mechanical work/buoyancy/dissipation balance",
+    "general CFD approval; failed polynomial4 lid gate remains",
+    "real devices/assistive technology",
+    "development UI offline",
+    "all 72 requirements",
+    "main/public URL publication"
+  ],
+  "mainPublished": false
+}

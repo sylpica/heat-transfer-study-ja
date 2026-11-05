@@ -1,3 +1,4 @@
+import {macKineticDiagnostics} from './kinetic-energy.mjs';
 import {Actor} from '../actor.mjs';import {Experiment} from '../experiment.mjs';import {drawTraces} from '../trace-plot.mjs';import {cavityViewData,drawCavity} from './cavity-view.mjs';
 const $=id=>document.getElementById(id),probe=[.5,.5];let savedB=null,scheduled=false,acceptedConfigs=[];
 const experiment=new Experiment({actorFactory:options=>new Actor({...options,workerURL:new URL('./cavity-worker.mjs',import.meta.url)}),changed:({type,experiment:active})=>{
@@ -24,16 +25,17 @@ function render(){
  const data=experiment.states.map((s,i)=>cavityViewData(s,experiment.meshes[i])),quantity=$('quantity').value,unit={temperature:'℃',pressure:'Pa',speed:'m/s'}[quantity],values=data.flatMap(d=>d[quantity]),min=Math.min(...values),max=Math.max(...values),range=max>min?[min,max]:[min-.5,max+.5],velocityScale=Math.max(...data.flatMap(d=>d.speed));
  $('legend').textContent=`共通色スケール ${range[0].toPrecision(5)}〜${range[1].toPrecision(5)} ${unit}。矢印の共通基準：最大 ${velocityScale.toPrecision(5)} m/s。xは右、yは上。`;
  $('panel-b').hidden=experiment.states.length<2;$('clock').textContent=experiment.states[0].time.toFixed(3)+' s';
- const readings=[],diagnostics=[];
+ const readings=[],diagnostics=[],mechanical=[];
  experiment.states.forEach((s,i)=>{
   const mesh=experiment.meshes[i],c=acceptedConfigs[i],letter=i?'b':'a',label=i?'B':'A';
   drawCavity($('field-'+letter),s,mesh,{quantity,range,velocityScale,arrows:$('arrows').checked,streamlines:$('streamlines').checked,probe});
   const x=probe[0]*mesh.width,y=probe[1]*mesh.height,index=Math.min(mesh.ny-1,Math.floor(probe[1]*mesh.ny))*mesh.nx+Math.min(mesh.nx-1,Math.floor(probe[0]*mesh.nx)),[u,v]=data[i].velocity.at(x,y),Ra=Math.abs(c.gravityBeta*(c.leftTemperature-c.rightTemperature)*c.height**3/(c.nu*c.alpha));
   $('caption-'+letter).textContent=`${label}：t=${s.time.toFixed(3)} s、壁温 ${(c.leftTemperature-273.15).toFixed(2)}/${(c.rightTemperature-273.15).toFixed(2)} ℃、Ra=${Ra.toFixed(3)}、${mesh.nx}×${mesh.ny}。${experiment.ready?'計算済み':'前回受理した計算結果（新条件は未適用）'}`;
   readings.push(`${label}: x=${(x*1000).toFixed(2)}, y=${(y*1000).toFixed(2)} mm、T=${(s.temperature[index]-273.15).toFixed(5)} ℃、p=${s.pressure[index].toExponential(5)} Pa、u=${u.toExponential(5)}, v=${v.toExponential(5)} m/s`);
+  try{const r=macKineticDiagnostics(s,c),e=x=>x.toExponential(6),difference=Math.abs(c.leftTemperature-c.rightTemperature),maximumSpeed=Math.max(...data[i].speed),Ec=difference>0?maximumSpeed**2/(c.cp*difference):null;mechanical.push(`${label}\nMAC運動エネルギー=${e(r.kineticEnergyJ)} J\n圧力仕事（面から）=${e(r.pressurePowerByFacesW)} W\n圧力仕事（セルのp div uから）=${e(r.pressurePowerByCellsW)} W\n離散部分積分の差=${e(r.integrationByPartsResidualW)} W\n再構成した圧力補正の減少量=${e(r.projectionImpliedLossJ)} J\n直交投影での減少量=${e(r.orthogonalProjectionLossJ)} J\n直交との差=${e(r.projectionOrthogonalityDefectJ)} J\n投影の恒等式の差=${e(r.projectionIdentityResidualJ)} J\nEc=${Ec===null?'未定義（基準温度差0）':e(Ec)}（表示セル中心の最大速度基準、U²/(cp ΔT)）`);}catch(error){mechanical.push(`${label}：運動エネルギー診断を表示できません。${error.message}`);}
   diagnostics.push(`${label}\nRa=${Ra}、Pr=${c.nu/c.alpha}\n物理時刻=${s.time} s、ステップ数=${s.steps}、最終dt=${s.lastDt} s、自動上限=${s.safeDt} s\n瞬間左壁平均Nu=${s.nusselt===null?'未定義（温度差0）':s.nusselt}\n顕熱=${s.energy} J（奥行き1 mあたり）\n境界からの累積熱=${s.netInput} J、収支誤差=${s.energyError} J\n発散最大=${s.divergence} s⁻¹、正規化発散=${s.normalizedDivergence}\nPoisson残差=${s.pressureResidual}、右辺ノルム=${s.pressureRhsNorm}、最終反復=${s.pressureIterations}\nρ=${c.rho} kg/m³、cp=${c.cp} J/(kg K)、ν=${c.nu}、α=${c.alpha} m²/s\n運動量=${s.momentumScheme}、温度=${s.scalarScheme}`);
  });
- $('readout').textContent=readings.join('\n');$('diagnostic-values').textContent=diagnostics.join('\n\n');
+ $('mechanical-values').textContent=mechanical.join('\n\n');$('readout').textContent=readings.join('\n');$('diagnostic-values').textContent=diagnostics.join('\n\n');
  drawTraces($('graph'),experiment.states.map((_,i)=>({name:i?'B':'A',color:i?'#ca6300':'#1872c9',points:experiment.history.map(frame=>({x:frame[i].time,y:frame[i].nusselt})).filter(p=>p.y!==null)})),experiment.states[0].time,{yLabel:'左壁平均Nu [−]'});
 }
 $('settings').onsubmit=e=>{e.preventDefault();initialize();};

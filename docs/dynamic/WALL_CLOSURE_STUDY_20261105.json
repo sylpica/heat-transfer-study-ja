@@ -1,0 +1,181 @@
+{
+  "generatedAtUTC": "2026-11-05T10:58:25.446Z",
+  "sourceCommit": "599809ebd96f866772f9e9aa39fca8486c6d170d",
+  "sourceTreeDirty": false,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-wall-closure-study.mjs": "6e9920607bca9e84ff73360c12f175af370c1d90014046e95d2e5cc83cd234e6"
+  },
+  "transformedSourcesSHA256": {
+    "momentum": "a48114177a316e2be1812b4b85d422df98cad6bf0247444a68b37f8d2f88d0d1",
+    "cavity": "1c81abbb24a3aa1a41101305badb08dd7d8c9862c7cbd2a5c235f67e534b6c69"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "scope": "Controlled diagnostic of existing second-order, polynomial4 and a stencil-support-defined wall-local second-order shadow. No production registration or parameter fit. Same nominal dt at a given mesh; pointwise mixing is not a proof of global momentum conservation.",
+  "smoke": false,
+  "physicsGateEvaluated": true,
+  "threshold": 0.005,
+  "referenceY": [
+    0.2813,
+    0.5,
+    0.6172,
+    0.8516
+  ],
+  "referenceU": [
+    -0.15662,
+    -0.20581,
+    -0.13641,
+    0.23151
+  ],
+  "cases": [
+    {
+      "n": 16,
+      "scheme": "conservative2",
+      "time": 30,
+      "steps": 7680,
+      "nominalDt": 0.00390625,
+      "clippedSteps": 0,
+      "samples": [
+        -0.1465757459723113,
+        -0.18972172206749818,
+        -0.13092149324519017,
+        0.22531228822951713
+      ],
+      "maxReferenceError": 0.01608827793250181,
+      "lidGatePassed": null,
+      "lastSecondMaxVelocityChange": 1.9847083421176137e-08,
+      "divergence": 8.730793865652231e-13,
+      "normalizedDivergence": 8.730793865652231e-13,
+      "energyErrorJ": -6.572520305780927e-13,
+      "pressureResidual": 9.410532228688938e-10,
+      "totalPressureIterations": 23963,
+      "elapsedMs": 5531.503535999999
+    },
+    {
+      "n": 16,
+      "scheme": "polynomial4",
+      "time": 30,
+      "steps": 7680,
+      "nominalDt": 0.00390625,
+      "clippedSteps": 0,
+      "samples": [
+        -0.14982247350152164,
+        -0.2015346745109567,
+        -0.1370310921902696,
+        0.2359011269405036
+      ],
+      "maxReferenceError": 0.006797526498478368,
+      "lidGatePassed": null,
+      "lastSecondMaxVelocityChange": 1.7880932762226465e-08,
+      "divergence": 7.831513215705854e-13,
+      "normalizedDivergence": 7.831513215705854e-13,
+      "energyErrorJ": 1.3677947663381929e-12,
+      "pressureResidual": 9.668964444748487e-10,
+      "totalPressureIterations": 23016,
+      "elapsedMs": 7141.876841
+    },
+    {
+      "n": 16,
+      "scheme": "wall-local-study",
+      "time": 30,
+      "steps": 7680,
+      "nominalDt": 0.00390625,
+      "clippedSteps": 0,
+      "samples": [
+        -0.14870640068041613,
+        -0.19441543205870102,
+        -0.13132444984697028,
+        0.23071659528270602
+      ],
+      "maxReferenceError": 0.011394567941298978,
+      "lidGatePassed": null,
+      "lastSecondMaxVelocityChange": 1.933409827375998e-08,
+      "divergence": 8.824038721932936e-12,
+      "normalizedDivergence": 8.824038721932936e-12,
+      "energyErrorJ": 2.8421709430404007e-13,
+      "pressureResidual": 1.2420395747217425e-08,
+      "totalPressureIterations": 23954,
+      "elapsedMs": 7567.8075819999995
+    },
+    {
+      "n": 32,
+      "scheme": "conservative2",
+      "time": 30,
+      "steps": 15360,
+      "nominalDt": 0.001953125,
+      "clippedSteps": 0,
+      "samples": [
+        -0.15457899985463436,
+        -0.20394476167854722,
+        -0.13721944891213064,
+        0.23343932148042296
+      ],
+      "maxReferenceError": 0.0020410001453656512,
+      "lidGatePassed": true,
+      "lastSecondMaxVelocityChange": 1.853851511190996e-08,
+      "divergence": 3.5504932327512506e-13,
+      "normalizedDivergence": 3.5504932327512506e-13,
+      "energyErrorJ": -2.0961010704922955e-13,
+      "pressureResidual": 1.1679802382914803e-09,
+      "totalPressureIterations": 38638,
+      "elapsedMs": 34631.15419
+    },
+    {
+      "n": 32,
+      "scheme": "polynomial4",
+      "time": 30,
+      "steps": 15360,
+      "nominalDt": 0.001953125,
+      "clippedSteps": 0,
+      "samples": [
+        -0.15617443904037664,
+        -0.20737515461891468,
+        -0.13825595484080175,
+        0.2372303031268757
+      ],
+      "maxReferenceError": 0.005720303126875714,
+      "lidGatePassed": false,
+      "lastSecondMaxVelocityChange": 1.786801501202362e-08,
+      "divergence": 4.938272013532696e-13,
+      "normalizedDivergence": 4.938272013532696e-13,
+      "energyErrorJ": 2.3803181647963356e-13,
+      "pressureResidual": 1.5591639073847478e-09,
+      "totalPressureIterations": 36930,
+      "elapsedMs": 56125.860892
+    },
+    {
+      "n": 32,
+      "scheme": "wall-local-study",
+      "time": 30,
+      "steps": 15360,
+      "nominalDt": 0.001953125,
+      "clippedSteps": 0,
+      "samples": [
+        -0.15574954063826163,
+        -0.20604485077135898,
+        -0.13687010447523587,
+        0.2353703620200655
+      ],
+      "maxReferenceError": 0.003860362020065511,
+      "lidGatePassed": true,
+      "lastSecondMaxVelocityChange": 1.8627465320220082e-08,
+      "divergence": 4.476419235288631e-13,
+      "normalizedDivergence": 4.476419235288631e-13,
+      "energyErrorJ": -1.7053025658242404e-13,
+      "pressureResidual": 1.3283691513129445e-09,
+      "totalPressureIterations": 38791,
+      "elapsedMs": 59516.235048
+    }
+  ],
+  "releaseApproved": false,
+  "numericalGatesPassed": true,
+  "hybridPhysicalGatePassed": true,
+  "passed": true,
+  "elapsedMs": 170542.59667
+}

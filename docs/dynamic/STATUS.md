@@ -408,3 +408,7 @@ CUT_CELL_GEOMETRY.md / CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json。単一凸多
 GRAETZ_CONTINUOUS_REFERENCE_20261106.md/.json。速度重み付きcosine一般化固有解で連続定常の熱入口を別計算し、4格子のセル平均/壁/バルク/局所比へ照合。元の全場次数>.8仮説は不支持のまま保存し、解析的バルク半セル誤差と1次、全場/壁/Nuの単調改善を別検査。既存の絶対/相対予算は維持。最細128×64の温度RMS.00553742 K、壁RMS.01275 K、出口Nu相対差.04435%。rootがコード/データ/判定根拠を確認。cut-cell10件とGraetz2件を含む全Node1299中1294成功・5skip・失敗0。新しいcut-cell流束はアフィン整合の診断だけを別途開発中で、この件数へ加算しない。未検証公開/全Phase完成を行わない。
 
 3ec6216のCI42068324099は全5ジョブ成功をGitHubで確認し、HEATED_CHANNEL_CI_20261106.jsonへ保存。加熱流路までの保存点の結果であり、後続のcut-cell/Graetzと519c00eへ成功を転用しない。ローカルの最新全Node1299/1294成功/5skipと、各コミットのCIを別々に追跡する。
+
+### 2026-11-06 cut-cell非直交流束の局所診断
+
+CUT_CELL_FLUX_DIAGNOSTIC.md / CUT_CELL_FLUX_CHECKPOINT_20261106.json。同じ回転形状で単純2点法の最大面差.166655 Wを残し、実温度差からのLS補正で約8e-14 Wへ線形整合。共通面は実際の等大逆符号寄与を集計。7単体と両ブラウザーの隔離kernel試験が成功、全Node1306中1301成功・5skip・失敗0、公開ビルド/Worker/cache/dev除外も確認。時間PDE/行列性質/正値性/CFL/一般2次精度は未保証のまま、一般公開や全Phase4完成としない。

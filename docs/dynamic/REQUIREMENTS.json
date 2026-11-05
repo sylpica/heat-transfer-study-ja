@@ -861,7 +861,9 @@
         "ARCHITECTURE.md",
         "FIELD_INSPECTION.md",
         "CUT_CELL_GEOMETRY.md",
-        "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json"
+        "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json",
+        "CUT_CELL_FLUX_DIAGNOSTIC.md",
+        "CUT_CELL_FLUX_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "既存の自由輪郭/階段格子に加え、開発専用の単一凸多角形cut-cell面積/重心/開口/壁法線を検査。熱PDE/小セル安定化/凹や穴/曲線/一般CFD/公開は未完了。"
     },
@@ -985,7 +987,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "CUT_CELL_GEOMETRY.md",
-        "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json"
+        "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json",
+        "CUT_CELL_FLUX_DIAGNOSTIC.md",
+        "CUT_CELL_FLUX_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "閉輪郭/交差/分断等の検査を維持。新規凸cut-cellは閉終点/向きのみ同形状で処理し、正スリバーを削除せず未解像は拒否。一般幾何の修復/凹/穴/熱解析適格は未完了。"
     },
@@ -1061,7 +1065,9 @@
         "HEATED_CHANNEL_DEVELOPMENT.md",
         "HEATED_CHANNEL_CHECKPOINT_20261106.json",
         "CUT_CELL_GEOMETRY.md",
-        "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json"
+        "CUT_CELL_GEOMETRY_CHECKPOINT_20261106.json",
+        "CUT_CELL_FLUX_DIAGNOSTIC.md",
+        "CUT_CELL_FLUX_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。"
     },

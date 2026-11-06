@@ -1,0 +1,69 @@
+{
+  "generatedAtUTC": "2026-11-06T18:46:09.903401+00:00",
+  "ownCase": "FLAT_PLATE_STEADY_PR100_N512X256_20261106_v1.json",
+  "ownCaseSHA256": "3aeaed1c6b546e5ca833f9db9202774a775f0a281251ab2e07ec2d17649bd7d7",
+  "ownCaseSourceCommit": "547709eebd5e119a06fb61f3de3e51efb799e625",
+  "ownCaseSourceFilesSHA256": {
+    "dynamic/dev/flat-plate-thermal.mjs": "8d7b8a7a03ede7aa8f17b784cc34d23ad61f6d45d9696bfbd6758c648bf354bb",
+    "dynamic/dev/blasius-boundary-flow.mjs": "85970b47f2efecc795b247a9051fae4258e787a02160d302ffcb87352fb9301a",
+    "scripts/dynamic-flat-plate-steady-case.mjs": "6ba5e8319696660150540f0efb5f8df7f876fe9b8288679588e4a880ebb78513"
+  },
+  "referenceGeneratorSHA256": "216e145c2e4b1072f866507b0afb99ce05a1722847c7ed8e3549c230a77f6259",
+  "criteriaDeclaredAtCommit": "90e3206",
+  "method": "Independent Blasius/thermal BVP16/24, theta primitive J and separate Gauss32/64 in x=s^2 for actual cell averages; exact interval-integrated similarity wall heat. Product FV/RK2 are not the spatial reference.",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "BLASThreads": 1
+  },
+  "config": {
+    "width": 1,
+    "height": 0.12,
+    "depth": 0.03,
+    "nx": 512,
+    "ny": 256,
+    "nu": 0.0001,
+    "rho": 1,
+    "freeStreamVelocity": 1,
+    "cp": 1,
+    "k": 0.0001,
+    "inletTemperature": 300,
+    "wallTemperature": 320,
+    "initial": 300
+  },
+  "Pr": 1,
+  "reference": {
+    "wallDimensionlessTemperatureGradient": 0.33205733621519556,
+    "meanNuL": 66.41146724303911,
+    "BVP16Vs24MaximumStateDifference": 8.850334880109237e-14,
+    "cellMeanQuadratureRefinementRmsK": 5.834775399676878e-13,
+    "PrOneThetaEqualsOneMinusFprimeMaximumDifference": 3.203864514726533e-14,
+    "outerThetaAtDownstreamBoundary": 1.5058735479805923e-13
+  },
+  "ownMeanNuL": 67.37121124380847,
+  "meanNuRelativeDifference": 0.014451480152623148,
+  "temperatureCellMeanRmsErrorK": 0.05755513680043891,
+  "maximumCellMeanErrorK": 2.725542667381742,
+  "worstCell": {
+    "i": 0,
+    "j": 0,
+    "ownOffsetK": 11.228597459249556,
+    "referenceOffsetK": 13.954140126631298
+  },
+  "localWallHeatRelativeL2OutsideLeadingTenth": 0.004526352404184674,
+  "finestObjectiveApplies": true,
+  "original256FinestObjectiveApplies": false,
+  "supplementaryStreamwiseObjectiveApplies": false,
+  "supplementaryTransverseObjectiveApplies": true,
+  "supplementaryTransverseCriteriaDeclaredAtCommit": "a39c353",
+  "supplementaryCriteriaDeclaredAtCommit": "d81d658",
+  "checks": {
+    "cellMeanTemperatureRmsBelow015K": true,
+    "meanPlateNuWithin2Percent": true,
+    "localIntervalHeatL2Within2PercentOutsideLeadingTenth": true
+  },
+  "allFinestObjectivesPassed": true,
+  "generalFullNavierStokesAccuracyVerified": false,
+  "releaseApproved": false
+}

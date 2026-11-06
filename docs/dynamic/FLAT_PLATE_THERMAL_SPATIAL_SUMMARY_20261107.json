@@ -1,0 +1,159 @@
+{
+  "recordedAtUTC": "2026-11-06T18:47:43.987641+00:00",
+  "groups": {
+    "071": {
+      "Pr": 0.71,
+      "originalTwoDirectionGridSequence": [
+        {
+          "nx": 32,
+          "ny": 16,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR071_N32X16_20261106_v2.json",
+          "temperatureRmsK": 0.43858498923682304,
+          "meanNuRelativeDifference": 0.07836240450119744,
+          "localWallHeatRelativeL2": 0.18722144135259108,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": false,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": false
+          }
+        },
+        {
+          "nx": 64,
+          "ny": 32,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR071_N64X32_20261106_v1.json",
+          "temperatureRmsK": 0.2242778388176537,
+          "meanNuRelativeDifference": 0.05498975541725952,
+          "localWallHeatRelativeL2": 0.0441039258828768,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": false,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": false
+          }
+        },
+        {
+          "nx": 128,
+          "ny": 64,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR071_N128X64_20261106_v1.json",
+          "temperatureRmsK": 0.1371744717699026,
+          "meanNuRelativeDifference": 0.03464929108727169,
+          "localWallHeatRelativeL2": 0.009889629165195616,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": true,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": true
+          }
+        },
+        {
+          "nx": 256,
+          "ny": 128,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR071_N256X128_20261106_v1.json",
+          "temperatureRmsK": 0.08738551061159358,
+          "meanNuRelativeDifference": 0.020467284636013015,
+          "localWallHeatRelativeL2": 0.0024470458519678584,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": true,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": true
+          }
+        }
+      ],
+      "temperatureRmsObservedOrders": [
+        0.9675693630772705,
+        0.7092750526073996,
+        0.6505460288478364
+      ],
+      "originalFinalTemperatureOrderAbove05": true,
+      "original256AllObjectivesPassed": false,
+      "selectedSupplementary": {
+        "sourceFile": "FLAT_PLATE_SPATIAL_PR071_N512X128_20261106_v1.json",
+        "nx": 512,
+        "ny": 128,
+        "temperatureRmsK": 0.06627535047373732,
+        "meanNuRelativeDifference": 0.01695146005265135,
+        "localWallHeatRelativeL2": 0.0010160523459954453,
+        "allChecksPassed": true
+      }
+    },
+    "100": {
+      "Pr": 1,
+      "originalTwoDirectionGridSequence": [
+        {
+          "nx": 32,
+          "ny": 16,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR100_N32X16_20261106_v1.json",
+          "temperatureRmsK": 0.4901213084147982,
+          "meanNuRelativeDifference": 0.08851396702513173,
+          "localWallHeatRelativeL2": 0.23363297624081056,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": false,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": false
+          }
+        },
+        {
+          "nx": 64,
+          "ny": 32,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR100_N64X32_20261106_v1.json",
+          "temperatureRmsK": 0.23744962584790286,
+          "meanNuRelativeDifference": 0.06430728663099387,
+          "localWallHeatRelativeL2": 0.05677915894259599,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": false,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": false
+          }
+        },
+        {
+          "nx": 128,
+          "ny": 64,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR100_N128X64_20261106_v1.json",
+          "temperatureRmsK": 0.1409245472622336,
+          "meanNuRelativeDifference": 0.04154330875063739,
+          "localWallHeatRelativeL2": 0.0148626931467127,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": true,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": true
+          }
+        },
+        {
+          "nx": 256,
+          "ny": 128,
+          "sourceFile": "FLAT_PLATE_SPATIAL_PR100_N256X128_20261106_v1.json",
+          "temperatureRmsK": 0.09067502947624709,
+          "meanNuRelativeDifference": 0.0251124159379467,
+          "localWallHeatRelativeL2": 0.002244367531614915,
+          "checks": {
+            "cellMeanTemperatureRmsBelow015K": true,
+            "meanPlateNuWithin2Percent": false,
+            "localIntervalHeatL2Within2PercentOutsideLeadingTenth": true
+          }
+        }
+      ],
+      "temperatureRmsObservedOrders": [
+        1.0455173875018102,
+        0.7526985502789527,
+        0.6361457183546324
+      ],
+      "originalFinalTemperatureOrderAbove05": true,
+      "original256AllObjectivesPassed": false,
+      "selectedSupplementary": {
+        "sourceFile": "FLAT_PLATE_SPATIAL_PR100_N512X256_20261106_v1.json",
+        "nx": 512,
+        "ny": 256,
+        "temperatureRmsK": 0.05755513680043891,
+        "meanNuRelativeDifference": 0.014451480152623148,
+        "localWallHeatRelativeL2": 0.004526352404184674,
+        "allChecksPassed": true
+      }
+    }
+  },
+  "bothOriginal256ObjectivesPassed": false,
+  "bothOriginalTemperatureOrderGoalsPassed": true,
+  "selectedSupplementaryTargetsPassed": true,
+  "errorCancellationNote": "Pr1 local heat L2 increases from .2089% at 512x128 to .4526% at 512x256 while temperature and whole-plate Nu improve. Mixed directional errors need not decrease monotonically; no universal order is claimed.",
+  "physicalScope": "Prescribed steady Blasius; passive unsteady boundary-layer thermal PDE, not general NS or conjugate heat transfer.",
+  "realWorkerVerified": false,
+  "GUIVerified": false,
+  "releaseApproved": false
+}

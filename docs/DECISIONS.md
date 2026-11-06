@@ -422,3 +422,11 @@ cut-cell LS補正の定常精度と最大原理違反を残し、その時間接
 ## 2026-11-06：P1対流＋放射と旧線形の状態形式を混同しない
 
 実表面節点を持つP1では同じ節点の対流と灰色放射を評価し、FVの半セル表面抵抗を重ねない。境界に放射があるActorだけ別の非線形factoryへdispatchし、線形Actorは元のfactory/署名/復元形式を保つ。A/Bの各種別を受理状態へ結び、GUI整合のCPU比較を独立ソルバー検証へ数えない。放射を含む回復は既知辺の各成分と合計を保持し、相殺時も実熱量で丸め予算を作る。詳細：docs/dynamic/TRIANGLE_SURFACE_TRANSIENT.md、TRIANGLE_SURFACE_FLUX.md、TRIANGLE_SURFACE_UI.md。
+
+## 2026-11-07：限定した固体壁・流体温度の熱受け渡しと精度予算
+
+指定Poiseuilleの受動温度と有限厚固体壁を同じFV/SSPRK2へ接続し、各界面の同一熱を固体損失/流体入力へ逆符号で適用する。界面の内部熱を全外部入力へ足さず、固体/流体/全体の蓄熱を別検査。一般運動量共役とは表示しない。独立空気例の1/4刻みは.001K未達なので元失敗を保持し、同じ事前系列で確認した1/8へ細分化、閾値は変えない。フェイリスの定常Graetz/CWTと分担し、まだ統合しない。詳細：docs/dynamic/CONJUGATE_CHANNEL.md。
+
+## 2026-11-07：CIブラウザー依存を固定イメージで供給
+
+22a8612のWebKit CIはアプリ試験前の低速Ubuntu依存取得で15分に達しcancelled。実ログを保存し、43本の試験と15分制限を保ったままnpmと同版1.56.1の公式Playwright/noble imageへ変更する。実ブラウザーrevisionがない場合は事前検査で拒否し、ローカルlock確認と実CI成功を分ける。テスト削除や単なる時間延長で解決したことにしない。詳細：docs/dynamic/BROWSER_CI_ENVIRONMENT_20261107.md。

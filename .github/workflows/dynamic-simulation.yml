@@ -31,6 +31,9 @@ jobs:
       - run: npm run build:public
   browser:
     runs-on: ubuntu-24.04
+    container: mcr.microsoft.com/playwright:v1.56.1-noble
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
     timeout-minutes: 15
     strategy:
       fail-fast: false
@@ -42,7 +45,8 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
-      - run: npx playwright install --with-deps ${{ matrix.engine }}
+      - name: Verify the pinned image contains the exact npm browser revision
+        run: node scripts/dynamic-playwright-environment.mjs --engine=${{ matrix.engine }}
       - run: npm run build:public
       - run: node tests/dynamic-browser.mjs
         env:

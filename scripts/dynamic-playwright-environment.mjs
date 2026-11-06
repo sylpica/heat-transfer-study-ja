@@ -1,0 +1,7 @@
+// Verify the pinned browser image already contains the exact npm browser build.
+// No downloading or test skipping. --lock-only is a local dependency check only.
+import assert from 'node:assert/strict';import {readFileSync,existsSync} from 'node:fs';import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),project=JSON.parse(readFileSync(new URL('../package.json',import.meta.url))),version=require('playwright/package.json').version,args=process.argv.slice(2),lockOnly=args.length===1&&args[0]==='--lock-only';assert.match(project.devDependencies.playwright,/^\d+\.\d+\.\d+$/,'Pin Playwright exactly to the browser-image version.');assert.equal(version,project.devDependencies.playwright,'npm install must match the committed dependency.');
+if(lockOnly){console.log(JSON.stringify({playwrightVersion:version,lockOnly:true,browserImageVerified:false}));}else{
+ assert.equal(args.length,1,'Choose the single CI browser engine.');const match=/^--engine=(chromium|webkit)$/.exec(args[0]);assert.ok(match,'Choose Chromium or WebKit explicitly.');assert.equal(process.env.PLAYWRIGHT_BROWSERS_PATH,'/ms-playwright','Use the pinned official browser image path.');const engine=match[1],path=require('playwright')[engine].executablePath();assert.ok(path.startsWith('/ms-playwright/')&&existsSync(path),'Pinned image lacks the exact Playwright browser revision; update the image and dependency together.');console.log(JSON.stringify({playwrightVersion:version,engine,browserBinaryReady:true,path,testsStillRequired:true}));
+}

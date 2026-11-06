@@ -1,0 +1,36 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>熱的入口発達（Graetz型）の開発検証</title><link rel="stylesheet" href="cavity.css"></head><body>
+<main><h1>熱的入口発達（Graetz型）の開発検証</h1><p class="notice">開発用・公開承認前。速度は発達済みの定常Poiseuille流を与え、温度の定常な入口発達だけを解きます。一般2D流体解析・速度入口の発達計算ではなく、公開ビルドに含めません。</p>
+<p>左の入口から一様温度で入った流体が、上下の壁と熱をやり取りしながら右の出口へ進みます。既存の発達流路（周期境界・入口効果なし）と違い、入口から熱的に発達していく過程と局所Nuの変化を計算します。図と説明はアプリ作成です。</p>
+<form id="settings"><fieldset><legend>条件：平行平板間、入口温度一様</legend>
+<label>壁の境界条件<select id="bc"><option value="wall-heat-flux" selected>両壁とも一定熱流束</option><option value="wall-temperature">両壁とも一定温度</option></select></label>
+<label>平板間隔 H [mm]<input id="height-mm" type="number" value="10" min="0.1" max="1000" step="any" required></label>
+<label>流路長さ L [m]<input id="length" type="number" value="0.05" min="0.001" max="100" step="any" required></label>
+<label>奥行き [m]（熱量換算用）<input id="depth" type="number" value="0.01" min="0.0001" max="100" step="any" required></label>
+<label>断面平均速度 [m/s]<input id="speed" type="number" value="0.5" min="0.001" max="20" step="any" required></label>
+<label>入口温度 [K]<input id="inlet" type="number" value="300" min="1" max="5000" step="any" required></label>
+<label id="wall-flux-row">各壁から流体への熱流束 [W/m²]<input id="wall-flux" type="number" value="50" step="any" required></label>
+<label id="wall-temperature-row" hidden>壁温 [K]<input id="wall-temperature" type="number" value="320" min="1" max="5000" step="any"></label>
+<label>物性プリセット<select id="preset"><option value="air300" selected>空気300 K参考値</option><option value="manual">手入力</option></select></label>
+<label>密度 ρ [kg/m³]<input id="rho" type="number" value="1.177" step="any" required></label>
+<label>比熱 cp [J/(kg K)]<input id="cp" type="number" value="1006" step="any" required></label>
+<label>熱伝導率 k [W/(m K)]<input id="k" type="number" value="0.0264" step="any" required></label>
+<label>動粘度 ν [m²/s]<input id="nu" type="number" value="0.00001575" step="any" required></label>
+<label>格子（流れ方向×横断方向）<select id="grid"><option value="64,32,1">64×32（等間隔）</option><option value="128,64,1" selected>128×64（等間隔）</option><option value="300,128,1.02">300×128（入口細分）</option><option value="600,128,1.02">600×128（入口細分）</option></select></label>
+<button id="apply" type="submit">定常計算を実行</button>
+</fieldset></form>
+<p>速度は右向きの定常放物線分布で、両壁では0。熱流束は正が流体への加熱、負が冷却です。定常解を流れ方向へ逐次解くため、時間操作はありません。物性は一定とし、入力温度による変化は解きません。</p>
+<p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p>
+<section aria-label="定常温度場"><p id="legend"></p>
+<figure style="margin:0"><canvas id="field" width="800" height="300" tabindex="0" aria-label="定常温度場。クリックまたは矢印キーで測定点を移動"></canvas></figure>
+<pre id="readout"></pre>
+<p>流体温度はセル平均、速度は行平均、バルク温度は行の熱容量流量で重み付けした断面近似です。一定熱流束では壁温を半セル伝導から再構成し、一定壁温では壁熱流束を半セル差分から求めます。入口直後の局所Nuは入口角の特異性と格子に依存するセル平均量で、有限の物理的最大値ではありません。</p></section>
+<section aria-label="バルク温度と局所Nu"><canvas id="graph" width="800" height="300" role="img" aria-label="バルク温度と局所ヌセルト数の流れ方向変化"></canvas>
+<p>下段は両対数です。局所Nuは下流で発達限界（一定壁温 7.541／一定熱流束 140/17≈8.235、Dh=2H基準）へ近づきます。入口付近では相似解の漸近 Nu∝x*^(−1/3) に従います。</p></section>
+<details id="diagnostics"><summary>流量・熱収支・無次元数</summary><pre id="diagnostic-values"></pre><p>エンタルピー収支は、壁からの総熱移動率と流体の顕熱増加（出口−入口）の差を残差として表示します。収支の一致だけで、省略した物理（軸方向伝導など）が妥当だとは判断しません。</p></details>
+<details id="theory"><summary>式・仮定・数値誤差・適用範囲</summary>
+<p>速度はu(y)=6U(y/H)(1−y/H)、圧力勾配はdp/dx=−12ρνU/H²（与えた駆動で、圧力場を解いたものではありません）。温度は定常の ∂/∂x(uT)=α∂²T/∂y²（軸方向熱伝導を省略したGraetz型）を、流れ方向は風上セル収支、横断方向は陰的3重対角で解きます。入口温度は一様な指定値です。</p>
+<p>開発入力域は層流の目安としてRe_Dh≤2300、軸方向伝導の省略を前提にPe_Dh≥100とします。Dh=2Hです。これらの範囲だけで一般流路の精度を保証するものではありません。水力学的な入口発達、浮力、粘性加熱、物性の温度依存、乱流、側壁、一般形状、3D、圧縮性は解きません。奥行きは側壁のない熱量換算スパンです。</p>
+<p>空気300 K参考値：ρ=1.177 kg/m³、cp=1006 J/(kg K)、ν=1.575×10⁻⁵ m²/s、k=0.0264 W/(m K)。A Heat Transfer Textbook 第6版・付録A.6（書籍755/PDF769）で参照した値で、あらゆる条件の保証値ではありません。手入力値は利用者が根拠を確認して使う前提です。</p>
+<p>検証の要約（詳細は docs/dynamic/GRAETZ_CHANNEL.md）：独立なPythonスペクトル参照（既存の連続Graetz参照）と4格子で照合し、全温度RMS 0.0667→0.00554 Kと単調に減少。十分発達した局所Nuは一定熱流束で140/17、一定壁温で教科書式(7.63)の7.541へ収束。入口漸近は相似ODEから導いた Nu∝x*^(−1/3) の係数と小さいx*で照合。壁熱と流体顕熱の収支残差は相対1e-9未満。過渡ソルバー heated-channel を定常まで進めた場とも一致（最大差1e-7 K未満）を確認しています。</p>
+<p>この画面は履歴を持たず、既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLは未確認です。</p></details>
+</main><script type="module" src="graetz-ui.mjs"></script></body></html>

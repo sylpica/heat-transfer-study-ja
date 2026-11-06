@@ -108,14 +108,18 @@
       "ok": false
     }
   ],
-  "sourceDisagreementResolved": false,
-  "primaryDeVahlTableRead": false,
+  "sourceDisagreementResolved": true,
+  "primaryDeVahlTableRead": true,
   "referenceValuesRetained": {
     "oldOpenLBSecondaryMeanNu": 1.117,
     "ownerPackMeanNu": 1.118,
     "ownerPackLocalNuMaximum": 1.505,
     "oldMeanBudget": 0.006,
-    "oldGateChanged": false
+    "oldGateChanged": false,
+    "definitions": {
+      "oldOpenLBSecondaryMeanNu": "Nu_0: hot-wall mean, x=0",
+      "ownerPackMeanNu": "Nu / Nu_1/2: volume mean / vertical-midplane mean"
+    }
   },
   "nativeExtremaInterpretation": "Piecewise-linear interpolation along the centerline attains positive maxima at native staggered nodes or boundaries. Scan native nodes rather than create sub-grid extrema.",
   "oldDenseMaximumBiasAtTime1": {
@@ -125,12 +129,50 @@
   },
   "sourceInputsRedistributed": false,
   "notVerified": [
-    "Primary de Vahl paper table",
-    "Reason for 1.117 versus 1.118 discrepancy",
     "Ghia Re400/1000 or high Ra outside current model range",
-    "General CFD or thermal turbulence approval"
+    "General CFD or thermal turbulence approval",
+    "Direct primary-scan re-reading by the root implementation agent"
   ],
-  "updatedDriverSHA256": "5a34f3361c2e244ed503767868c67b5321f5ba8dd1f12f499a7cf690661a5394",
   "updatedComparisonArtifact": "PROVIDED_CFD_BENCHMARKS_20261106.json",
-  "updatedComparisonSHA256": "94a8016efdefa8681b0ec4f2d4834539bf84fac4d58ef826b4bd769d6aa06ac7"
+  "updatedComparisonSHA256": "94a8016efdefa8681b0ec4f2d4834539bf84fac4d58ef826b4bd769d6aa06ac7",
+  "resolutionKind": "Different definitions: volume/midplane Nu=1.118 versus hot-wall Nu_0=1.117",
+  "primaryDeVahlTableReadProvenance": {
+    "reader": "Independent Fairis validation line, as reported by owner in this task",
+    "rootAgentDirectRead": false,
+    "primary": "de Vahl Davis (1983), Table V p.256; WHICH NUSSELT NUMBER? pp.262–263",
+    "crossChecksReported": [
+      "Allen & Reis, Oxford OCCAM Preprint 13/34, Table 7",
+      "Barakos & Mitsoulis (1994), Table III"
+    ],
+    "rawScanRedistributed": false
+  },
+  "definitionResolutionReceivedAtUTC": "2026-11-06T03:41:09.804997+00:00",
+  "matchedWallComparisons": [
+    {
+      "time": 0.5,
+      "quantity": "Nu_0",
+      "value": 1.119942523695272,
+      "reference": 1.117,
+      "difference": 0.002942523695272037,
+      "relativeDifference": 0.0026343094854719418
+    },
+    {
+      "time": 1,
+      "quantity": "Nu_0",
+      "value": 1.119942764425673,
+      "reference": 1.117,
+      "difference": 0.0029427644256729835,
+      "relativeDifference": 0.0026345250006025722
+    },
+    {
+      "time": 2,
+      "quantity": "Nu_0",
+      "value": 1.1199427644252182,
+      "reference": 1.117,
+      "difference": 0.002942764425218236,
+      "relativeDifference": 0.0026345250001953424
+    }
+  ],
+  "updatedDriverSHA256AtOriginalRun": "5a34f3361c2e244ed503767868c67b5321f5ba8dd1f12f499a7cf690661a5394",
+  "historicalComparisonScope": "Original comparison artifact retained unchanged; its providedMeanDifference mixed wall and volume/midplane definitions. Use matchedWallComparisons here; old numerical gate remains unchanged."
 }

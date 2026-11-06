@@ -134,6 +134,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify boundary midpoint refinement geometry and nonnegative P1 couplings
+        run: node tests/dynamic-boundary-refined-mesh-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify the development P1 transient worker, independent time reference and actual cancel rollback
         run: node tests/dynamic-triangle-transient-browser.mjs
         env:

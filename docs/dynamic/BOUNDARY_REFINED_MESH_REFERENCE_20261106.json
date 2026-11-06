@@ -1,0 +1,1476 @@
+{
+  "generatedAtUTC": "2026-11-06T08:28:37.041535+00:00",
+  "sourceCommit": "f5b9afb9856ec2b9afffeaf955b22896ec8b8d5c",
+  "sourceTreeDirty": true,
+  "generatorSHA256": "20912651a49dec23d233d21ee67cb4a5bafe9d85acfe4466d631b62ae8265fea",
+  "productionSHA256": "6a5dcf381de5bbb4a121a652ab0d1af805a62048b53b3ffe54c0052a0a2bfbb3",
+  "criteriaDeclaredAtCommit": "f5b9afb",
+  "criteria": {
+    "areaRelativeBudget": 9.094947017729282e-13,
+    "boundaryLengthRelativeBudget": 9.094947017729282e-13,
+    "normalMomentRelativeBudget": 9.094947017729282e-13,
+    "matrixRelativeRoundoffBudget": 1.1368683772161603e-13,
+    "capacityRelativeRoundoffBudget": 1.1368683772161603e-13,
+    "affineEnergyRelativeBudget": 9.094947017729282e-13
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "BLASThreads": 1
+  },
+  "method": "Fraction arithmetic on all rounded normalized coordinates checks every internal incircle and boundary dot. Fraction physical triangle/polygon areas, independent boundary normals/moments, and physical-coordinate element-gradient full P1 K/C. Production predicates/cotangent/operator do not generate target matrix/area values.",
+  "rows": [
+    {
+      "name": "rectangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "subdivisions": 1,
+      "nodeCount": 7,
+      "triangleCount": 6,
+      "edgeCount": 12,
+      "refinement": {
+        "rounds": 1,
+        "splits": 2,
+        "additionalFlips": 0,
+        "originalNodeCount": 5,
+        "originalTriangleCount": 4,
+        "boundarySegmentCountByOutlineEdge": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 6,
+      "exactRationalNonnegativeBoundaryDotEdges": 6,
+      "sourcePolygonArea": 2.0,
+      "exactRationalPhysicalTriangleArea": 2.0,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 0.0,
+      "maximumPhysicalBoundaryLineResidualM": 0.0,
+      "independentMatrixRelativeDifference": 1.9737298215558337e-16,
+      "independentCapacityRelativeDifference": 0.0,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.11249999999999999,
+      "affineQuadraticFormWK": 52.19999999999999,
+      "affineEnergyRelativeError": 1.1102230246251565e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 2.496128994166618e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.22500000000000026,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "rectangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "subdivisions": 2,
+      "nodeCount": 17,
+      "triangleCount": 20,
+      "edgeCount": 36,
+      "refinement": {
+        "rounds": 1,
+        "splits": 4,
+        "additionalFlips": 0,
+        "originalNodeCount": 13,
+        "originalTriangleCount": 16,
+        "boundarySegmentCountByOutlineEdge": [
+          4,
+          2,
+          4,
+          2
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 24,
+      "exactRationalNonnegativeBoundaryDotEdges": 12,
+      "sourcePolygonArea": 2.0,
+      "exactRationalPhysicalTriangleArea": 2.0,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 0.0,
+      "maximumPhysicalBoundaryLineResidualM": 0.0,
+      "independentMatrixRelativeDifference": 2.322035084183334e-16,
+      "independentCapacityRelativeDifference": 0.0,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.11249999999999999,
+      "affineQuadraticFormWK": 52.199999999999996,
+      "affineEnergyRelativeError": 0.0,
+      "independentFullNeumannSmallestEigenvalueWPerK": -1.2075608555554156e-15,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.10275848889609958,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "rectangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "subdivisions": 4,
+      "nodeCount": 49,
+      "triangleCount": 72,
+      "edgeCount": 120,
+      "refinement": {
+        "rounds": 1,
+        "splits": 8,
+        "additionalFlips": 0,
+        "originalNodeCount": 41,
+        "originalTriangleCount": 64,
+        "boundarySegmentCountByOutlineEdge": [
+          8,
+          4,
+          8,
+          4
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 96,
+      "exactRationalNonnegativeBoundaryDotEdges": 24,
+      "sourcePolygonArea": 2.0,
+      "exactRationalPhysicalTriangleArea": 2.0,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 0.0,
+      "maximumPhysicalBoundaryLineResidualM": 0.0,
+      "independentMatrixRelativeDifference": 2.322035084183334e-16,
+      "independentCapacityRelativeDifference": 0.0,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.11249999999999999,
+      "affineQuadraticFormWK": 52.200000000000024,
+      "affineEnergyRelativeError": 4.440892098500626e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 1.7413964015352765e-15,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.03985309919376641,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "rectangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "subdivisions": 8,
+      "nodeCount": 161,
+      "triangleCount": 272,
+      "edgeCount": 432,
+      "refinement": {
+        "rounds": 1,
+        "splits": 16,
+        "additionalFlips": 0,
+        "originalNodeCount": 145,
+        "originalTriangleCount": 256,
+        "boundarySegmentCountByOutlineEdge": [
+          16,
+          8,
+          16,
+          8
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 384,
+      "exactRationalNonnegativeBoundaryDotEdges": 48,
+      "sourcePolygonArea": 2.0,
+      "exactRationalPhysicalTriangleArea": 2.0,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 0.0,
+      "maximumPhysicalBoundaryLineResidualM": 0.0,
+      "independentMatrixRelativeDifference": 2.322035084183334e-16,
+      "independentCapacityRelativeDifference": 0.0,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.11249999999999999,
+      "affineQuadraticFormWK": 52.19999999999988,
+      "affineEnergyRelativeError": 2.220446049250313e-15,
+      "independentFullNeumannSmallestEigenvalueWPerK": 5.402312345419086e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.012927868028053319,
+      "maximumConstantModeResidualWPerK": 4.440892098500626e-16
+    },
+    {
+      "name": "rotated",
+      "outline": [
+        [
+          0.3796960740752894,
+          0.30444417904640414
+        ],
+        [
+          0.7526270123177031,
+          0.449090351832389
+        ],
+        [
+          0.6803039259247107,
+          0.6355558209535959
+        ],
+        [
+          0.3073729876822969,
+          0.490909648167611
+        ]
+      ],
+      "subdivisions": 1,
+      "nodeCount": 7,
+      "triangleCount": 6,
+      "edgeCount": 12,
+      "refinement": {
+        "rounds": 1,
+        "splits": 2,
+        "additionalFlips": 0,
+        "originalNodeCount": 5,
+        "originalTriangleCount": 4,
+        "boundarySegmentCountByOutlineEdge": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 6,
+      "exactRationalNonnegativeBoundaryDotEdges": 6,
+      "sourcePolygonArea": 0.08,
+      "exactRationalPhysicalTriangleArea": 0.08,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 1.734723475976807e-16,
+      "maximumPhysicalBoundaryLineResidualM": 2.602085213965211e-17,
+      "independentMatrixRelativeDifference": 1.9737298215558337e-16,
+      "independentCapacityRelativeDifference": 2.842170943040401e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.11249999999999989,
+      "affineQuadraticFormWK": 2.0879999999999996,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": -2.473695825047998e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.22499999999999995,
+      "maximumConstantModeResidualWPerK": 1.3877787807814457e-17
+    },
+    {
+      "name": "rotated",
+      "outline": [
+        [
+          0.3796960740752894,
+          0.30444417904640414
+        ],
+        [
+          0.7526270123177031,
+          0.449090351832389
+        ],
+        [
+          0.6803039259247107,
+          0.6355558209535959
+        ],
+        [
+          0.3073729876822969,
+          0.490909648167611
+        ]
+      ],
+      "subdivisions": 2,
+      "nodeCount": 17,
+      "triangleCount": 20,
+      "edgeCount": 36,
+      "refinement": {
+        "rounds": 1,
+        "splits": 4,
+        "additionalFlips": 0,
+        "originalNodeCount": 13,
+        "originalTriangleCount": 16,
+        "boundarySegmentCountByOutlineEdge": [
+          4,
+          2,
+          4,
+          2
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 24,
+      "exactRationalNonnegativeBoundaryDotEdges": 12,
+      "sourcePolygonArea": 0.08,
+      "exactRationalPhysicalTriangleArea": 0.07999999999999999,
+      "areaRelativeError": 2.220446049250313e-16,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 5.204170427930421e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.1709383462843448e-16,
+      "independentMatrixRelativeDifference": 9.288140336733328e-16,
+      "independentCapacityRelativeDifference": 2.131628207280301e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.1124999999999998,
+      "affineQuadraticFormWK": 2.0880000000000005,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 7.66059442216026e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.10275848889609956,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "rotated",
+      "outline": [
+        [
+          0.3796960740752894,
+          0.30444417904640414
+        ],
+        [
+          0.7526270123177031,
+          0.449090351832389
+        ],
+        [
+          0.6803039259247107,
+          0.6355558209535959
+        ],
+        [
+          0.3073729876822969,
+          0.490909648167611
+        ]
+      ],
+      "subdivisions": 4,
+      "nodeCount": 49,
+      "triangleCount": 72,
+      "edgeCount": 120,
+      "refinement": {
+        "rounds": 1,
+        "splits": 8,
+        "additionalFlips": 0,
+        "originalNodeCount": 41,
+        "originalTriangleCount": 64,
+        "boundarySegmentCountByOutlineEdge": [
+          8,
+          4,
+          8,
+          4
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 96,
+      "exactRationalNonnegativeBoundaryDotEdges": 24,
+      "sourcePolygonArea": 0.08,
+      "exactRationalPhysicalTriangleArea": 0.08,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 6.938893903907228e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.1709383462843448e-16,
+      "independentMatrixRelativeDifference": 2.380085961287914e-15,
+      "independentCapacityRelativeDifference": 1.1368683772161591e-15,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.11249999999999959,
+      "affineQuadraticFormWK": 2.0879999999999996,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": -5.112075314902319e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.039853099193765326,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "rotated",
+      "outline": [
+        [
+          0.3796960740752894,
+          0.30444417904640414
+        ],
+        [
+          0.7526270123177031,
+          0.449090351832389
+        ],
+        [
+          0.6803039259247107,
+          0.6355558209535959
+        ],
+        [
+          0.3073729876822969,
+          0.490909648167611
+        ]
+      ],
+      "subdivisions": 8,
+      "nodeCount": 161,
+      "triangleCount": 272,
+      "edgeCount": 432,
+      "refinement": {
+        "rounds": 1,
+        "splits": 16,
+        "additionalFlips": 0,
+        "originalNodeCount": 145,
+        "originalTriangleCount": 256,
+        "boundarySegmentCountByOutlineEdge": [
+          16,
+          8,
+          16,
+          8
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 384,
+      "exactRationalNonnegativeBoundaryDotEdges": 48,
+      "sourcePolygonArea": 0.08,
+      "exactRationalPhysicalTriangleArea": 0.07999999999999999,
+      "areaRelativeError": 2.220446049250313e-16,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 6.938893903907228e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.1709383462843448e-16,
+      "independentMatrixRelativeDifference": 3.1347473636474917e-15,
+      "independentCapacityRelativeDifference": 2.842170943040393e-15,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.11249999999999892,
+      "affineQuadraticFormWK": 2.0880000000000067,
+      "affineEnergyRelativeError": 3.1086244689504383e-15,
+      "independentFullNeumannSmallestEigenvalueWPerK": -1.796288054044736e-15,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.012927868028055046,
+      "maximumConstantModeResidualWPerK": 4.440892098500626e-16
+    },
+    {
+      "name": "triangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0.5,
+          0.8660254037844386
+        ]
+      ],
+      "subdivisions": 1,
+      "nodeCount": 7,
+      "triangleCount": 6,
+      "edgeCount": 12,
+      "refinement": {
+        "rounds": 1,
+        "splits": 3,
+        "additionalFlips": 2,
+        "originalNodeCount": 4,
+        "originalTriangleCount": 3,
+        "boundarySegmentCountByOutlineEdge": [
+          2,
+          2,
+          2
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 6,
+      "exactRationalNonnegativeBoundaryDotEdges": 6,
+      "sourcePolygonArea": 0.4330127018922193,
+      "exactRationalPhysicalTriangleArea": 0.4330127018922193,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 1.2819751242557095e-16,
+      "maximumPhysicalBoundaryLineResidualM": 0.0,
+      "independentMatrixRelativeDifference": 1.8992224063047544e-16,
+      "independentCapacityRelativeDifference": 3.150582065370831e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 1.5052626332710354e-17,
+      "affineQuadraticFormWK": 11.301631519386925,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 2.0721159969918858e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.23872713470945459,
+      "maximumConstantModeResidualWPerK": 5.551115123125783e-17
+    },
+    {
+      "name": "triangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0.5,
+          0.8660254037844386
+        ]
+      ],
+      "subdivisions": 2,
+      "nodeCount": 16,
+      "triangleCount": 18,
+      "edgeCount": 33,
+      "refinement": {
+        "rounds": 1,
+        "splits": 6,
+        "additionalFlips": 3,
+        "originalNodeCount": 10,
+        "originalTriangleCount": 12,
+        "boundarySegmentCountByOutlineEdge": [
+          4,
+          4,
+          4
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 21,
+      "exactRationalNonnegativeBoundaryDotEdges": 12,
+      "sourcePolygonArea": 0.4330127018922193,
+      "exactRationalPhysicalTriangleArea": 0.4330127018922193,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 3.845925372767128e-16,
+      "maximumPhysicalBoundaryLineResidualM": 2.775557561562892e-17,
+      "independentMatrixRelativeDifference": 2.1366252070928485e-16,
+      "independentCapacityRelativeDifference": 2.1003880435805542e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 1.5052626332710354e-17,
+      "affineQuadraticFormWK": 11.301631519386921,
+      "affineEnergyRelativeError": 1.1102230246251565e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": -1.0260362959204597e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.12431618530586575,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "triangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0.5,
+          0.8660254037844386
+        ]
+      ],
+      "subdivisions": 4,
+      "nodeCount": 43,
+      "triangleCount": 60,
+      "edgeCount": 102,
+      "refinement": {
+        "rounds": 1,
+        "splits": 12,
+        "additionalFlips": 3,
+        "originalNodeCount": 31,
+        "originalTriangleCount": 48,
+        "boundarySegmentCountByOutlineEdge": [
+          8,
+          8,
+          8
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 78,
+      "exactRationalNonnegativeBoundaryDotEdges": 24,
+      "sourcePolygonArea": 0.4330127018922193,
+      "exactRationalPhysicalTriangleArea": 0.4330127018922193,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 3.700743415417188e-17,
+      "boundaryMomentRelativeError": 3.845925372767128e-16,
+      "maximumPhysicalBoundaryLineResidualM": 2.775557561562892e-17,
+      "independentMatrixRelativeDifference": 2.1366252070928485e-16,
+      "independentCapacityRelativeDifference": 2.1003880435805537e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 1.5052626332710354e-17,
+      "affineQuadraticFormWK": 11.301631519386934,
+      "affineEnergyRelativeError": 8.881784197001252e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": -2.383618476209384e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.05522408518225778,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "triangle",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0.5,
+          0.8660254037844386
+        ]
+      ],
+      "subdivisions": 8,
+      "nodeCount": 133,
+      "triangleCount": 216,
+      "edgeCount": 348,
+      "refinement": {
+        "rounds": 1,
+        "splits": 24,
+        "additionalFlips": 3,
+        "originalNodeCount": 109,
+        "originalTriangleCount": 192,
+        "boundarySegmentCountByOutlineEdge": [
+          16,
+          16,
+          16
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 300,
+      "exactRationalNonnegativeBoundaryDotEdges": 48,
+      "sourcePolygonArea": 0.4330127018922193,
+      "exactRationalPhysicalTriangleArea": 0.4330127018922193,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 0.0,
+      "boundaryMomentRelativeError": 1.2819751242557095e-16,
+      "maximumPhysicalBoundaryLineResidualM": 5.551115123125784e-17,
+      "independentMatrixRelativeDifference": 2.1366252070928495e-16,
+      "independentCapacityRelativeDifference": 4.2007760871611054e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 2.148927707652385e-16,
+      "affineQuadraticFormWK": 11.301631519386945,
+      "affineEnergyRelativeError": 1.7763568394002505e-15,
+      "independentFullNeumannSmallestEigenvalueWPerK": -4.27900506488009e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.020737735031814933,
+      "maximumConstantModeResidualWPerK": 4.440892098500626e-16
+    },
+    {
+      "name": "pentagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.5562763774894879,
+          0.8960214253505241
+        ],
+        [
+          0.14075159985400093,
+          0.675899366094765
+        ],
+        [
+          0.22169590081626195,
+          0.21269036149560155
+        ],
+        [
+          0.6872470076420271,
+          0.14653351201407133
+        ]
+      ],
+      "subdivisions": 1,
+      "nodeCount": 6,
+      "triangleCount": 5,
+      "edgeCount": 10,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 6,
+        "originalTriangleCount": 5,
+        "boundarySegmentCountByOutlineEdge": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 5,
+      "exactRationalNonnegativeBoundaryDotEdges": 5,
+      "sourcePolygonArea": 0.38042260651806153,
+      "exactRationalPhysicalTriangleArea": 0.38042260651806153,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 2.36103028337109e-17,
+      "boundaryMomentRelativeError": 7.295984817955646e-17,
+      "maximumPhysicalBoundaryLineResidualM": 0.0,
+      "independentMatrixRelativeDifference": 6.791515105710614e-17,
+      "independentCapacityRelativeDifference": 1.195374152573853e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.07310693165240388,
+      "affineQuadraticFormWK": 9.929030030121407,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 6.938893903907228e-17,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.42797543233281893,
+      "maximumConstantModeResidualWPerK": 4.163336342344337e-17
+    },
+    {
+      "name": "pentagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.5562763774894879,
+          0.8960214253505241
+        ],
+        [
+          0.14075159985400093,
+          0.675899366094765
+        ],
+        [
+          0.22169590081626195,
+          0.21269036149560155
+        ],
+        [
+          0.6872470076420271,
+          0.14653351201407133
+        ]
+      ],
+      "subdivisions": 2,
+      "nodeCount": 16,
+      "triangleCount": 20,
+      "edgeCount": 35,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 16,
+        "originalTriangleCount": 20,
+        "boundarySegmentCountByOutlineEdge": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 25,
+      "exactRationalNonnegativeBoundaryDotEdges": 10,
+      "sourcePolygonArea": 0.38042260651806153,
+      "exactRationalPhysicalTriangleArea": 0.3804226065180615,
+      "areaRelativeError": 1.1102230246251565e-16,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 2.36103028337109e-17,
+      "boundaryMomentRelativeError": 1.4591969635911292e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.032950748974852e-16,
+      "independentMatrixRelativeDifference": 3.3957575528553073e-16,
+      "independentCapacityRelativeDifference": 1.992290254289755e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.07310693165240387,
+      "affineQuadraticFormWK": 9.929030030121405,
+      "affineEnergyRelativeError": 0.0,
+      "independentFullNeumannSmallestEigenvalueWPerK": 4.410649299970891e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.21710127186054237,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "pentagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.5562763774894879,
+          0.8960214253505241
+        ],
+        [
+          0.14075159985400093,
+          0.675899366094765
+        ],
+        [
+          0.22169590081626195,
+          0.21269036149560155
+        ],
+        [
+          0.6872470076420271,
+          0.14653351201407133
+        ]
+      ],
+      "subdivisions": 4,
+      "nodeCount": 51,
+      "triangleCount": 80,
+      "edgeCount": 130,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 51,
+        "originalTriangleCount": 80,
+        "boundarySegmentCountByOutlineEdge": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 110,
+      "exactRationalNonnegativeBoundaryDotEdges": 20,
+      "sourcePolygonArea": 0.38042260651806153,
+      "exactRationalPhysicalTriangleArea": 0.3804226065180615,
+      "areaRelativeError": 1.1102230246251565e-16,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 7.08309085011327e-17,
+      "boundaryMomentRelativeError": 1.4591969635911292e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.696990516172971e-16,
+      "independentMatrixRelativeDifference": 8.149818126852736e-16,
+      "independentCapacityRelativeDifference": 5.976870762869262e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.07310693165240367,
+      "affineQuadraticFormWK": 9.929030030121409,
+      "affineEnergyRelativeError": 4.440892098500626e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": -1.863093013199091e-15,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.07992306351959519,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "pentagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.5562763774894879,
+          0.8960214253505241
+        ],
+        [
+          0.14075159985400093,
+          0.675899366094765
+        ],
+        [
+          0.22169590081626195,
+          0.21269036149560155
+        ],
+        [
+          0.6872470076420271,
+          0.14653351201407133
+        ]
+      ],
+      "subdivisions": 8,
+      "nodeCount": 181,
+      "triangleCount": 320,
+      "edgeCount": 500,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 181,
+        "originalTriangleCount": 320,
+        "boundarySegmentCountByOutlineEdge": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 460,
+      "exactRationalNonnegativeBoundaryDotEdges": 40,
+      "sourcePolygonArea": 0.38042260651806153,
+      "exactRationalPhysicalTriangleArea": 0.3804226065180615,
+      "areaRelativeError": 1.1102230246251565e-16,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 4.72206056674218e-17,
+      "boundaryMomentRelativeError": 4.92478975212006e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.696990516172971e-16,
+      "independentMatrixRelativeDifference": 1.6129848376062708e-15,
+      "independentCapacityRelativeDifference": 1.9922902542897497e-15,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.07310693165240358,
+      "affineQuadraticFormWK": 9.92903003012139,
+      "affineEnergyRelativeError": 1.4432899320127035e-15,
+      "independentFullNeumannSmallestEigenvalueWPerK": 8.555125891197171e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.024192334183713134,
+      "maximumConstantModeResidualWPerK": 4.440892098500626e-16
+    },
+    {
+      "name": "quadrilateral",
+      "outline": [
+        [
+          0.1,
+          0.2
+        ],
+        [
+          1.7,
+          0.3
+        ],
+        [
+          1.5,
+          1.4
+        ],
+        [
+          0,
+          1.1
+        ]
+      ],
+      "subdivisions": 1,
+      "nodeCount": 7,
+      "triangleCount": 6,
+      "edgeCount": 12,
+      "refinement": {
+        "rounds": 1,
+        "splits": 2,
+        "additionalFlips": 0,
+        "originalNodeCount": 5,
+        "originalTriangleCount": 4,
+        "boundarySegmentCountByOutlineEdge": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 6,
+      "exactRationalNonnegativeBoundaryDotEdges": 6,
+      "sourcePolygonArea": 1.5799999999999998,
+      "exactRationalPhysicalTriangleArea": 1.5799999999999998,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 4.306194079980315e-17,
+      "boundaryMomentRelativeError": 1.4053456007913375e-16,
+      "maximumPhysicalBoundaryLineResidualM": 8.656726190767258e-18,
+      "independentMatrixRelativeDifference": 1.1209961198331754e-16,
+      "independentCapacityRelativeDifference": 1.1512591161682637e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.07688037249283663,
+      "affineQuadraticFormWK": 41.238,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 4.386325969577896e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.28882101753867956,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "quadrilateral",
+      "outline": [
+        [
+          0.1,
+          0.2
+        ],
+        [
+          1.7,
+          0.3
+        ],
+        [
+          1.5,
+          1.4
+        ],
+        [
+          0,
+          1.1
+        ]
+      ],
+      "subdivisions": 2,
+      "nodeCount": 17,
+      "triangleCount": 20,
+      "edgeCount": 36,
+      "refinement": {
+        "rounds": 1,
+        "splits": 4,
+        "additionalFlips": 0,
+        "originalNodeCount": 13,
+        "originalTriangleCount": 16,
+        "boundarySegmentCountByOutlineEdge": [
+          4,
+          2,
+          4,
+          2
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 24,
+      "exactRationalNonnegativeBoundaryDotEdges": 12,
+      "sourcePolygonArea": 1.5799999999999998,
+      "exactRationalPhysicalTriangleArea": 1.5799999999999998,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 3.2296455599852365e-17,
+      "boundaryMomentRelativeError": 1.756682000989172e-16,
+      "maximumPhysicalBoundaryLineResidualM": 2.1773264873091063e-16,
+      "independentMatrixRelativeDifference": 1.3881905510010835e-16,
+      "independentCapacityRelativeDifference": 1.535012154891018e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.07688037249283658,
+      "affineQuadraticFormWK": 41.238,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 5.30821995517114e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.1307791461166636,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "quadrilateral",
+      "outline": [
+        [
+          0.1,
+          0.2
+        ],
+        [
+          1.7,
+          0.3
+        ],
+        [
+          1.5,
+          1.4
+        ],
+        [
+          0,
+          1.1
+        ]
+      ],
+      "subdivisions": 4,
+      "nodeCount": 49,
+      "triangleCount": 72,
+      "edgeCount": 120,
+      "refinement": {
+        "rounds": 1,
+        "splits": 8,
+        "additionalFlips": 0,
+        "originalNodeCount": 41,
+        "originalTriangleCount": 64,
+        "boundarySegmentCountByOutlineEdge": [
+          8,
+          4,
+          8,
+          4
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 96,
+      "exactRationalNonnegativeBoundaryDotEdges": 24,
+      "sourcePolygonArea": 1.5799999999999998,
+      "exactRationalPhysicalTriangleArea": 1.5799999999999998,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 1.6148227799926182e-17,
+      "boundaryMomentRelativeError": 1.7319786603502616e-16,
+      "maximumPhysicalBoundaryLineResidualM": 2.1773264873091063e-16,
+      "independentMatrixRelativeDifference": 4.935788625781632e-16,
+      "independentCapacityRelativeDifference": 3.474669347747577e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.0768803724928365,
+      "affineQuadraticFormWK": 41.237999999999985,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 3.2031331947620195e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.050925150875334974,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "quadrilateral",
+      "outline": [
+        [
+          0.1,
+          0.2
+        ],
+        [
+          1.7,
+          0.3
+        ],
+        [
+          1.5,
+          1.4
+        ],
+        [
+          0,
+          1.1
+        ]
+      ],
+      "subdivisions": 8,
+      "nodeCount": 161,
+      "triangleCount": 272,
+      "edgeCount": 432,
+      "refinement": {
+        "rounds": 1,
+        "splits": 16,
+        "additionalFlips": 0,
+        "originalNodeCount": 145,
+        "originalTriangleCount": 256,
+        "boundarySegmentCountByOutlineEdge": [
+          16,
+          8,
+          16,
+          8
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 384,
+      "exactRationalNonnegativeBoundaryDotEdges": 48,
+      "sourcePolygonArea": 1.5799999999999998,
+      "exactRationalPhysicalTriangleArea": 1.5799999999999998,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 3.3306690738754696e-16,
+      "boundaryNormalRelativeResidual": 9.15066241995817e-17,
+      "boundaryMomentRelativeError": 1.6064033454358014e-16,
+      "maximumPhysicalBoundaryLineResidualM": 2.9031019830788083e-16,
+      "independentMatrixRelativeDifference": 1.3573418720899489e-15,
+      "independentCapacityRelativeDifference": 1.2508809651891262e-15,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.07688037249283615,
+      "affineQuadraticFormWK": 41.237999999999914,
+      "affineEnergyRelativeError": 1.887379141862766e-15,
+      "independentFullNeumannSmallestEigenvalueWPerK": 4.969982758673552e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.016597824796412593,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "octagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.7299325843032731,
+          0.8273087329657096
+        ],
+        [
+          0.43114466495496184,
+          0.8940291141982222
+        ],
+        [
+          0.17269126703429039,
+          0.7299325843032731
+        ],
+        [
+          0.10597088580177788,
+          0.43114466495496184
+        ],
+        [
+          0.2700674156967268,
+          0.17269126703429039
+        ],
+        [
+          0.5688553350450382,
+          0.10597088580177788
+        ],
+        [
+          0.8273087329657096,
+          0.27006741569672676
+        ]
+      ],
+      "subdivisions": 1,
+      "nodeCount": 9,
+      "triangleCount": 8,
+      "edgeCount": 16,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 9,
+        "originalTriangleCount": 8,
+        "boundarySegmentCountByOutlineEdge": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 8,
+      "exactRationalNonnegativeBoundaryDotEdges": 8,
+      "sourcePolygonArea": 0.45254833995939053,
+      "exactRationalPhysicalTriangleArea": 0.45254833995939053,
+      "areaRelativeError": 0.0,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 2.26652544801291e-17,
+      "boundaryMomentRelativeError": 1.5332934166833736e-16,
+      "maximumPhysicalBoundaryLineResidualM": 0.0,
+      "independentMatrixRelativeDifference": 1.4890641573938512e-16,
+      "independentCapacityRelativeDifference": 2.0097183471152316e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.1863961030678926,
+      "affineQuadraticFormWK": 11.81151167294009,
+      "affineEnergyRelativeError": 1.1102230246251565e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": -1.6306400674181987e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.3181980515339461,
+      "maximumConstantModeResidualWPerK": 1.1102230246251565e-16
+    },
+    {
+      "name": "octagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.7299325843032731,
+          0.8273087329657096
+        ],
+        [
+          0.43114466495496184,
+          0.8940291141982222
+        ],
+        [
+          0.17269126703429039,
+          0.7299325843032731
+        ],
+        [
+          0.10597088580177788,
+          0.43114466495496184
+        ],
+        [
+          0.2700674156967268,
+          0.17269126703429039
+        ],
+        [
+          0.5688553350450382,
+          0.10597088580177788
+        ],
+        [
+          0.8273087329657096,
+          0.27006741569672676
+        ]
+      ],
+      "subdivisions": 2,
+      "nodeCount": 25,
+      "triangleCount": 32,
+      "edgeCount": 56,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 25,
+        "originalTriangleCount": 32,
+        "boundarySegmentCountByOutlineEdge": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 40,
+      "exactRationalNonnegativeBoundaryDotEdges": 16,
+      "sourcePolygonArea": 0.45254833995939053,
+      "exactRationalPhysicalTriangleArea": 0.4525483399593906,
+      "areaRelativeError": 2.220446049250313e-16,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 4.53305089602582e-17,
+      "boundaryMomentRelativeError": 1.226634733346699e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.1899258602067783e-16,
+      "independentMatrixRelativeDifference": 3.3733396365021484e-16,
+      "independentCapacityRelativeDifference": 3.0145775206728463e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.1863961030678925,
+      "affineQuadraticFormWK": 11.811511672940094,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 8.881784197001252e-16,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.14820676741278987,
+      "maximumConstantModeResidualWPerK": 2.220446049250313e-16
+    },
+    {
+      "name": "octagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.7299325843032731,
+          0.8273087329657096
+        ],
+        [
+          0.43114466495496184,
+          0.8940291141982222
+        ],
+        [
+          0.17269126703429039,
+          0.7299325843032731
+        ],
+        [
+          0.10597088580177788,
+          0.43114466495496184
+        ],
+        [
+          0.2700674156967268,
+          0.17269126703429039
+        ],
+        [
+          0.5688553350450382,
+          0.10597088580177788
+        ],
+        [
+          0.8273087329657096,
+          0.27006741569672676
+        ]
+      ],
+      "subdivisions": 4,
+      "nodeCount": 81,
+      "triangleCount": 128,
+      "edgeCount": 208,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 81,
+        "originalTriangleCount": 128,
+        "boundarySegmentCountByOutlineEdge": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 176,
+      "exactRationalNonnegativeBoundaryDotEdges": 32,
+      "sourcePolygonArea": 0.45254833995939053,
+      "exactRationalPhysicalTriangleArea": 0.4525483399593906,
+      "areaRelativeError": 2.220446049250313e-16,
+      "boundaryLengthRelativeError": 0.0,
+      "boundaryNormalRelativeResidual": 9.06610179205164e-17,
+      "boundaryMomentRelativeError": 1.226634733346699e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.7565572222100054e-16,
+      "independentMatrixRelativeDifference": 6.072011345703865e-16,
+      "independentCapacityRelativeDifference": 6.029155041345694e-16,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.18639610306789217,
+      "affineQuadraticFormWK": 11.811511672940096,
+      "affineEnergyRelativeError": 2.220446049250313e-16,
+      "independentFullNeumannSmallestEigenvalueWPerK": 1.3322676295501825e-15,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.052258876198474684,
+      "maximumConstantModeResidualWPerK": 3.3306690738754696e-16
+    },
+    {
+      "name": "octagon",
+      "outline": [
+        [
+          0.8940291141982222,
+          0.5688553350450382
+        ],
+        [
+          0.7299325843032731,
+          0.8273087329657096
+        ],
+        [
+          0.43114466495496184,
+          0.8940291141982222
+        ],
+        [
+          0.17269126703429039,
+          0.7299325843032731
+        ],
+        [
+          0.10597088580177788,
+          0.43114466495496184
+        ],
+        [
+          0.2700674156967268,
+          0.17269126703429039
+        ],
+        [
+          0.5688553350450382,
+          0.10597088580177788
+        ],
+        [
+          0.8273087329657096,
+          0.27006741569672676
+        ]
+      ],
+      "subdivisions": 8,
+      "nodeCount": 289,
+      "triangleCount": 512,
+      "edgeCount": 800,
+      "refinement": {
+        "rounds": 0,
+        "splits": 0,
+        "additionalFlips": 0,
+        "originalNodeCount": 289,
+        "originalTriangleCount": 512,
+        "boundarySegmentCountByOutlineEdge": [
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "negativeBoundaryConductanceCount": 0
+      },
+      "exactRationalInternalDelaunayEdges": 736,
+      "exactRationalNonnegativeBoundaryDotEdges": 64,
+      "sourcePolygonArea": 0.45254833995939053,
+      "exactRationalPhysicalTriangleArea": 0.4525483399593906,
+      "areaRelativeError": 2.220446049250313e-16,
+      "boundaryLengthRelativeError": 2.220446049250313e-16,
+      "boundaryNormalRelativeResidual": 1.359915268807746e-16,
+      "boundaryMomentRelativeError": 3.7757350385828077e-16,
+      "maximumPhysicalBoundaryLineResidualM": 1.7565572222100054e-16,
+      "independentMatrixRelativeDifference": 1.9228035928062225e-15,
+      "independentCapacityRelativeDifference": 1.708260595047947e-15,
+      "independentPhysicalOffDiagonalMaximumWPerK": 0.0,
+      "minimumProductionConductanceWPerK": 0.18639610306789176,
+      "affineQuadraticFormWK": 11.81151167294012,
+      "affineEnergyRelativeError": 2.4424906541753444e-15,
+      "independentFullNeumannSmallestEigenvalueWPerK": 3.5405706144686633e-15,
+      "independentFullNeumannSecondEigenvalueWPerK": 0.015591687080830125,
+      "maximumConstantModeResidualWPerK": 4.440892098500626e-16
+    }
+  ],
+  "geometryAndOperatorOnly": true,
+  "temperaturePDEImplemented": false,
+  "generalTerminationProved": false,
+  "releaseApproved": false
+}

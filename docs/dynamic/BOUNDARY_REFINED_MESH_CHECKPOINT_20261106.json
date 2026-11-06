@@ -1,0 +1,72 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-06T08:31:58.805959+00:00",
+  "baseSourceCommit": "f5b9afb9856ec2b9afffeaf955b22896ec8b8d5c",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/boundary-refined-triangle-mesh.mjs": "6a5dcf381de5bbb4a121a652ab0d1af805a62048b53b3ffe54c0052a0a2bfbb3",
+    "scripts/dynamic-boundary-refined-mesh-reference.py": "20912651a49dec23d233d21ee67cb4a5bafe9d85acfe4466d631b62ae8265fea",
+    "tests/dynamic-boundary-refined-mesh.test.mjs": "44c2a52348d47eb2f08ac4f16eca8f951ba87343374201a68461dc5d3ae4c5b8",
+    "tests/dynamic-boundary-refined-mesh-browser.mjs": "e5896b4c077c5f2cbf9c8630f95d83e057b26bc86ae0337cf1d0851fc72097e9",
+    "docs/dynamic/BOUNDARY_REFINED_MESH_REFERENCE_20261106.json": "fab8a7ebfb37b0e7d20be908662195530be9a3fa9be995f1f324de899e6db37f"
+  },
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "relatedNodeTests": 3,
+  "node": {
+    "tests": 1385,
+    "pass": 1380,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "geometryAndOperatorOnly": true,
+      "cases": 24,
+      "totalSplits": 135,
+      "allNodeConductancesNonnegative": true,
+      "maximumAreaRelativeError": 2.220446049250313e-16,
+      "resourceCapRejected": true,
+      "localStorageUnchanged": true,
+      "temperaturePDEImplemented": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "geometryAndOperatorOnly": true,
+      "cases": 24,
+      "totalSplits": 135,
+      "allNodeConductancesNonnegative": true,
+      "maximumAreaRelativeError": 2.220446049250313e-16,
+      "resourceCapRejected": true,
+      "localStorageUnchanged": true,
+      "temperaturePDEImplemented": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "criteriaDeclaredAtCommit": "f5b9afb",
+  "independentGeometryAndOperatorCases": 24,
+  "allBoundaryConductancesNonnegativeInRoundedNormalizedGeometry": true,
+  "coefficientClippingPerformed": false,
+  "existingNodesMovedOrRemoved": false,
+  "generalTerminationProved": false,
+  "temperaturePDEImplemented": false,
+  "dedicatedGUIImplemented": false,
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "generalAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

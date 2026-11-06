@@ -832,9 +832,13 @@
         "CHANNEL_LEARNING_CHECKPOINT_20261105.json",
         "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json",
         "HEATED_CHANNEL_DEVELOPMENT.md",
-        "HEATED_CHANNEL_CHECKPOINT_20261106.json"
+        "HEATED_CHANNEL_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_BOUNDARY_LAYER_WIP_20261106.md",
+        "FLAT_PLATE_BOUNDARY_FLOW.md",
+        "BLASIUS_FLOW_REFERENCE_20261106_v1.json",
+        "BLASIUS_FLOW_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "発達層流の周期温度輸送に加え、開発専用の指定Poiseuille平均流＋入口/対流出口/両壁等熱流束を検算。流体入口発達/一般2D圧力速度/平板外部/円柱/一般管/フィン間の流体連成は未完了。"
+      "remainingOrScope": "発達層流の周期温度輸送に加え、開発専用の指定Poiseuille平均流＋入口/対流出口/両壁等熱流束を検算。流体入口発達/一般2D圧力速度/平板外部/円柱/一般管/フィン間の流体連成は未完了。 平板はBlasiusの定常速度/全face流量だけを独立BVPと連続求積へ照合済み。温度/動的運動量/一般NS/専用UIは未完了。"
     },
     {
       "id": "Q46",
@@ -1380,9 +1384,13 @@
         "CFD_FINE_NATURAL_SUMMARY_20261106.json",
         "GHIA_MARCHI_RESOLUTION_20261106.md",
         "GHIA_MARCHI_RESOLUTION_20261106.json",
-        "CFD_MARCHI_RE100_20261106_v1.json"
+        "CFD_MARCHI_RE100_20261106_v1.json",
+        "FLAT_PLATE_BOUNDARY_LAYER_WIP_20261106.md",
+        "FLAT_PLATE_BOUNDARY_FLOW.md",
+        "BLASIUS_FLOW_REFERENCE_20261106_v1.json",
+        "BLASIUS_FLOW_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
+      "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。 平板はBlasiusの定常速度/全face流量だけを独立BVPと連続求積へ照合済み。温度/動的運動量/一般NS/専用UIは未完了。"
     },
     {
       "id": "Q66",

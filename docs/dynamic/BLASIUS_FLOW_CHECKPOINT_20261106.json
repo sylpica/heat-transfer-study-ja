@@ -1,0 +1,62 @@
+{
+  "recordedAtUTC": "2026-11-06T14:55:25.835213+00:00",
+  "basisCommit": "3a8658f32a16c44a4e41f9c94a6a4267b16d09af",
+  "filesSHA256": {
+    "dynamic/dev/blasius-boundary-flow.mjs": "8cc755b3f877f248a18a89a9890c18f8fdf002ccaff0c91f5310dfcd3d6cd6c0",
+    "tests/dynamic-blasius-flow.test.mjs": "2a4edebcdcb2e33873162bd37de505e02fe66c143335f89aa58b1124d164d3a8",
+    "tests/dynamic-blasius-flow-browser.mjs": "635fc23bf80f8249b032f11601292c92b222d7f163648b31737d4618c94d03fb",
+    "scripts/dynamic-independent-blasius-flow.py": "7a2de7387c43d3ada83fd92bcb317b93ed948478e0d5b10f6016a8b3cd539310",
+    "scripts/dynamic-blasius-flow-cases.mjs": "2caf3125bafc59b45b663f9169fcc7f4ae276edbdd831efb845152317ae52d97"
+  },
+  "independentReference": "BLASIUS_FLOW_REFERENCE_20261106_v1.json",
+  "node": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "total": 1425,
+    "passed": 1420,
+    "failed": 0,
+    "skipped": 5,
+    "durationMs": 116937.13128,
+    "log": "work/blasius-flow-full-node-20261106.log"
+  },
+  "browser": {
+    "chromium": {
+      "engine": "chromium",
+      "isolatedDevelopmentModule": true,
+      "cases": 7,
+      "allNativeFaceFlowsMatchNode": true,
+      "wallCurvatureMatchesIndependentBvp": true,
+      "massBudget": true,
+      "unknownPhysicsRejected": true,
+      "localStorageUnchanged": true,
+      "thermalTransportOrUIClaimed": false,
+      "independentReferenceRunRepeated": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "isolatedDevelopmentModule": true,
+      "cases": 7,
+      "allNativeFaceFlowsMatchNode": true,
+      "wallCurvatureMatchesIndependentBvp": true,
+      "massBudget": true,
+      "unknownPhysicsRejected": true,
+      "localStorageUnchanged": true,
+      "thermalTransportOrUIClaimed": false,
+      "independentReferenceRunRepeated": false,
+      "passed": true
+    }
+  },
+  "publicBuild": {
+    "passed": true,
+    "devIncluded": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cacheUnchanged": true
+  },
+  "velocityStageNumericallyChecked": true,
+  "fullNavierStokesVerified": false,
+  "temperatureTransportImplemented": false,
+  "GUIVerified": false,
+  "mainPublished": false,
+  "allPhase34Complete": false,
+  "releaseApproved": false
+}

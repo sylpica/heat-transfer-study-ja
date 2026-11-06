@@ -1,0 +1,38 @@
+{
+  "observedAtUTC": "2026-11-06T14:28:19.282Z",
+  "headSha": "c68d3e5aa685229035863e8f95dd9283bd5e7034",
+  "runId": 42224250852,
+  "jobs": [
+    {
+      "id": 127913620673,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127913621016,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127913621107,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127913621216,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127913621239,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "directGitHubObservation": true
+}

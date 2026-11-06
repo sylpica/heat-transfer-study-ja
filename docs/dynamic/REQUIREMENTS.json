@@ -1,6 +1,6 @@
 {
   "source": "REQUEST_20261104.md",
-  "checkedAt": "2026-11-05",
+  "checkedAt": "2026-11-06",
   "requirements": [
     {
       "id": "Q1",
@@ -721,9 +721,15 @@
         "HIGH_ORDER_MANUFACTURED_20261104.json",
         "HIGH_ORDER_TEMPORAL_20261104.json",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "CFD_FINE_GRID_20261106.md",
+        "CFD_FINE_GRID_CHECKPOINT_20261106.json",
+        "CFD_FINE_NATURAL_SUMMARY_20261106.json",
+        "GHIA_MARCHI_RESOLUTION_20261106.md",
+        "GHIA_MARCHI_RESOLUTION_20261106.json",
+        "CFD_MARCHI_RE100_20261106_v1.json"
       ],
-      "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
+      "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
     },
     {
       "id": "Q40",
@@ -839,9 +845,15 @@
         "CFD_DEVELOPMENT.md",
         "CFD_BENCHMARKS_20261104.json",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "CFD_FINE_GRID_20261106.md",
+        "CFD_FINE_GRID_CHECKPOINT_20261106.json",
+        "CFD_FINE_NATURAL_SUMMARY_20261106.json",
+        "GHIA_MARCHI_RESOLUTION_20261106.md",
+        "GHIA_MARCHI_RESOLUTION_20261106.json",
+        "CFD_MARCHI_RE100_20261106_v1.json"
       ],
-      "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
+      "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
     },
     {
       "id": "Q47",
@@ -1210,9 +1222,15 @@
         "RANS_UI_CHECKPOINT_20261105.json",
         "RANS_SSPRK2_BENCHMARKS_20261105.json",
         "HEATED_CHANNEL_DEVELOPMENT.md",
-        "HEATED_CHANNEL_CHECKPOINT_20261106.json"
+        "HEATED_CHANNEL_CHECKPOINT_20261106.json",
+        "CFD_FINE_GRID_20261106.md",
+        "CFD_FINE_GRID_CHECKPOINT_20261106.json",
+        "CFD_FINE_NATURAL_SUMMARY_20261106.json",
+        "GHIA_MARCHI_RESOLUTION_20261106.md",
+        "GHIA_MARCHI_RESOLUTION_20261106.json",
+        "CFD_MARCHI_RE100_20261106_v1.json"
       ],
-      "remainingOrScope": "矩形層流投影法と3実Reτの定常RANS平均流/受動平均温度を開発専用で限定検証。乱流の温度閉包は仮定、DNS速度のモデル誤差を記録。一般CFD/自由形状/乱流の正式承認/公開は未完了。"
+      "remainingOrScope": "矩形層流投影法と3実Reτの定常RANS平均流/受動平均温度を開発専用で限定検証。乱流の温度閉包は仮定、DNS速度のモデル誤差を記録。一般CFD/自由形状/乱流の正式承認/公開は未完了。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
     },
     {
       "id": "Q64",
@@ -1356,9 +1374,15 @@
         "TRIANGLE_STIFFNESS_CHECKPOINT_20261106.json",
         "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
         "TRIANGLE_TRANSIENT_REFERENCE_20261106.json",
-        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json"
+        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json",
+        "CFD_FINE_GRID_20261106.md",
+        "CFD_FINE_GRID_CHECKPOINT_20261106.json",
+        "CFD_FINE_NATURAL_SUMMARY_20261106.json",
+        "GHIA_MARCHI_RESOLUTION_20261106.md",
+        "GHIA_MARCHI_RESOLUTION_20261106.json",
+        "CFD_MARCHI_RE100_20261106_v1.json"
       ],
-      "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。"
+      "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
     },
     {
       "id": "Q66",

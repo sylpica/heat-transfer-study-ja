@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {createConjugateChannel} from '../dynamic/dev/conjugate-channel.mjs';import {conjugateAirConfig} from '../dynamic/dev/conjugate-channel-ui-config.mjs';
+const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/CONJUGATE_AIR_TIME_REFERENCE_20261107_v1.json',import.meta.url)));
+test('air and hypothetical-wall preset has explicit physical units, capacity regions and conservative flow limits',()=>{
+ const c=conjugateAirConfig(),m=createConjugateChannel(c);assert.equal(m.mesh.count,640);assert.equal(m.mesh.rowVelocity[0],0);assert.equal(c.solid.rho*c.solid.cp,1e6);assert.equal(c.fluid.k,.0264);assert.ok(Math.abs(m.snapshot().Pr-.706400625)<2*Number.EPSILON);for(const grid of [32,64,128])for(const velocity of [.12,.75])assert.doesNotThrow(()=>createConjugateChannel(conjugateAirConfig({grid,velocity})));
+ for(const wrong of [{grid:256},{velocity:0},{contactResistance:-1},{wallConductivity:0},{inletTemperature:NaN},{lowerHeatFlux:101},{initialWallTemperature:0},{rho:1}])assert.throws(()=>conjugateAirConfig(wrong));
+});
+test('actual air preset retains the failed quarter-safe-dt budget and verifies the separately selected eighth-safe-dt policy',()=>{
+ const c=conjugateAirConfig();assert.deepEqual(c,ref.config);const errors=[];
+ for(let i=0;i<ref.rows.length;i++){const r=ref.rows[i],m=createConjugateChannel(c);while(m.time<ref.reference.timeS)m.step(Math.min(m.safeDt*r.factor,ref.reference.timeS-m.time),false);const s=m.snapshot(),maximum=Math.max(...s.offsetTemperature.map((t,n)=>Math.abs(t-ref.reference.temperatureOffsetsK[n]))),heat=Math.max(...s.cumulativeComponentJ.map((v,n)=>Math.abs(v-ref.reference.cumulativeComponentJ[n])));assert.ok(Math.abs(maximum-r.maximumTemperatureErrorK)<1e-11);assert.ok(Math.abs(heat-r.maximumCumulativeComponentDifferenceJ)<1e-11);for(const err of Object.values(s.energyErrorJ))assert.ok(Math.abs(err)<=s.energyRoundoffBudgetJ);errors.push(maximum);}
+ assert.equal(ref.allChecksPassed,false);assert.equal(ref.checks.guiAutoQuarterDtBelow001K,false);assert.ok(errors[2]>.001);assert.ok(errors[3]<.001);assert.ok(errors.at(-1)<.001);const order=Math.log2(errors.at(-2)/errors.at(-1));assert.ok(order>1.8&&order<2.2);assert.ok(ref.rows.at(-1).maximumCumulativeComponentDifferenceJ<1e-4);
+});

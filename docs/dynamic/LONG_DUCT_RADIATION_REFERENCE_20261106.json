@@ -1,10 +1,10 @@
 {
-  "generatedAtUTC": "2026-11-05T22:11:46.973346+00:00",
+  "generatedAtUTC": "2026-11-06T03:36:14.288753+00:00",
   "recordedClientDate": "2026-11-06 Asia/Tokyo",
-  "generatorSHA256": "0c28eba7e237c854cc33125611f3f2c8899379aa70219bc658a239e9ddd008db",
+  "generatorSHA256": "e7f244d9c31a94d623eb90da49ba6887cbcd0b8f654695ca71ffebcdfa90e7b3",
   "providedPackSHA256": "3688be6cb043ed9b90b52c19adcc293c34704a42542d6554bd5cd746885c4fcb",
   "providedPackHashCheckedThisRun": true,
-  "sourceBeforeEdits": "5faaa2241424aebf9798117393b1a634f3590276",
+  "sourceBeforeEdits": "383ecea652559c9a1b81e8094c8590cfc1c4830a",
   "geometryCases": [
     {
       "id": "square",
@@ -425,7 +425,8 @@
         -0.6299999999999955,
         0.40000000000009095
       ],
-      "status": "Primary printed solution does not satisfy its displayed rounded nodal system. Preserve all values; do not tune sigma/emissivity or treat printed 46.53 as an exact solver target."
+      "solverIssueStatus": "closed_no_solver_error",
+      "status": "Closed as a solver-correct comparison: printed 46.53 W/m versus modern formula 46.62819046 W/m. Preserve the separate original intermediate-arithmetic discrepancy; decimal rounding alone has not been demonstrated. See EXAMPLE_10_9_DISPOSITION_20261106.md."
     }
   },
   "releaseApproved": false,

@@ -189,6 +189,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Exercise nodal convection-radiation surface drafts, mixed A/B factories and read-only RT0 display
+        run: node tests/dynamic-triangle-surface-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify mixed-boundary RT0 keeps prescribed boundary heat and closed-system compatibility
         run: node tests/dynamic-triangle-linear-flux-browser.mjs
         env:

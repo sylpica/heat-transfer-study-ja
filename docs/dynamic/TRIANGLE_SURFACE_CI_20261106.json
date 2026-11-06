@@ -1,0 +1,40 @@
+{
+  "checkedAtUTC": "2026-11-06T13:16:57.697Z",
+  "sourceCommit": "f9cd53a0190d5f6f5c59034954a9811dd278329f",
+  "runId": 42203960531,
+  "jobs": [
+    {
+      "id": 127845814384,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127845814698,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127845814775,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127845814822,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127845814889,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "allFiveJobsSuccessful": true,
+  "scope": "Nonlinear P1 surface core at this SHA; not transferred to later surface RT0/GUI",
+  "releaseApproved": false
+}

@@ -134,6 +134,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify the development P1 transient worker, independent time reference and actual cancel rollback
+        run: node tests/dynamic-triangle-transient-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify development-only convex long-duct view factors and nonlinear thermal response
         run: node tests/dynamic-long-duct-browser.mjs
         env:

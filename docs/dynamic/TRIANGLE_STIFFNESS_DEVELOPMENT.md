@@ -33,3 +33,7 @@
 隔離browserを4モジュールallowlistへ拡張し、Chromium→WebKitで12メッシュに加え実P1係数/二次形式26.1 W K/0辺40/商のsubnormal丸め/正容量/境界接続を確認、各1本成功。PDE/UI/実機の試験ではない。全Node（test-concurrency=1）は1337中1332成功・5skip・失敗0。公開ビルド/Worker hash/cache/dev除外も成功。TRIANGLE_STIFFNESS_CHECKPOINT_20261106.json参照。
 
 次は温度境界、体積発熱、時間積分、境界反力による全熱収支、取消/復元、独立連続解析解と固定格子時間解を接続・検証する。節点の線形場とセル平均を混同しない。元cut-cell LS補正は過渡未承認のまま保持。公開登録、実機/専門家、一般形状/精度/全Phase4の承認は行っていない。
+
+## 後続の時間モデル
+
+一定物性・一様固定境界のSSPRK2を別モジュールへ追加し、独立連続解/固定格子指数/熱収支/復元/実Workerを検証した。TRIANGLE_TRANSIENT_DEVELOPMENT.md参照。係数構築だけの本モジュールのscopeと、先行チェックポイントは保持する。

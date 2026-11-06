@@ -1,3 +1,4 @@
+import {cavityHeatFluxSections} from './cavity-heat-flux.mjs';
 import {macKineticDiagnostics} from './kinetic-energy.mjs';
 import {Actor} from '../actor.mjs';import {Experiment} from '../experiment.mjs';import {drawTraces} from '../trace-plot.mjs';import {cavityViewData,drawCavity} from './cavity-view.mjs';
 const $=id=>document.getElementById(id),probe=[.5,.5];let savedB=null,scheduled=false,acceptedConfigs=[];
@@ -10,7 +11,7 @@ function fail(error){experiment.fail(error);}
 function config(){
  if(!$('settings').reportValidity())throw Error('条件の入力範囲を確認してください。');
  const difference=Number($('difference').value),gravity=Number($('gravity').value),n=Number($('grid').value);
- if(![difference,gravity,n].every(Number.isFinite)||difference<0||difference>10||Math.abs(gravity)>9.81||![12,16,24,32].includes(n))throw Error('条件が範囲外です。');
+ if(![difference,gravity,n].every(Number.isFinite)||difference<0||difference>10||Math.abs(gravity)>9.81||![12,16,24,32,64].includes(n))throw Error('条件が範囲外です。');
  const rho=1.177,cp=1006,k=.0264;
  return {nx:n,ny:n,width:.01,height:.01,depth:1,rho,cp,nu:1.575e-5,alpha:k/(rho*cp),initial:300,leftTemperature:300+difference/2,rightTemperature:300-difference/2,gravityBeta:gravity/300,beta:1/300,referenceTemperature:300,scalarScheme:'central',pressurePreconditioner:'multigrid',momentumScheme:'conservative2',pressureTolerance:1e-11,maxPressureIterations:4000};
 }
@@ -25,7 +26,7 @@ function render(){
  const data=experiment.states.map((s,i)=>cavityViewData(s,experiment.meshes[i])),quantity=$('quantity').value,unit={temperature:'℃',pressure:'Pa',speed:'m/s'}[quantity],values=data.flatMap(d=>d[quantity]),min=Math.min(...values),max=Math.max(...values),range=max>min?[min,max]:[min-.5,max+.5],velocityScale=Math.max(...data.flatMap(d=>d.speed));
  $('legend').textContent=`共通色スケール ${range[0].toPrecision(5)}〜${range[1].toPrecision(5)} ${unit}。矢印の共通基準：最大 ${velocityScale.toPrecision(5)} m/s。xは右、yは上。`;
  $('panel-b').hidden=experiment.states.length<2;$('clock').textContent=experiment.states[0].time.toFixed(3)+' s';
- const readings=[],diagnostics=[],mechanical=[];
+ const readings=[],diagnostics=[],mechanical=[],heatValues=[];
  experiment.states.forEach((s,i)=>{
   const mesh=experiment.meshes[i],c=acceptedConfigs[i],letter=i?'b':'a',label=i?'B':'A';
   drawCavity($('field-'+letter),s,mesh,{quantity,range,velocityScale,arrows:$('arrows').checked,streamlines:$('streamlines').checked,probe});
@@ -33,9 +34,10 @@ function render(){
   $('caption-'+letter).textContent=`${label}：t=${s.time.toFixed(3)} s、壁温 ${(c.leftTemperature-273.15).toFixed(2)}/${(c.rightTemperature-273.15).toFixed(2)} ℃、Ra=${Ra.toFixed(3)}、${mesh.nx}×${mesh.ny}。${experiment.ready?'計算済み':'前回受理した計算結果（新条件は未適用）'}`;
   readings.push(`${label}: x=${(x*1000).toFixed(2)}, y=${(y*1000).toFixed(2)} mm、T=${(s.temperature[index]-273.15).toFixed(5)} ℃、p=${s.pressure[index].toExponential(5)} Pa、u=${u.toExponential(5)}, v=${v.toExponential(5)} m/s`);
   try{const r=macKineticDiagnostics(s,c),e=x=>x.toExponential(6),difference=Math.abs(c.leftTemperature-c.rightTemperature),maximumSpeed=Math.max(...data[i].speed),Ec=difference>0?maximumSpeed**2/(c.cp*difference):null;mechanical.push(`${label}\nMAC運動エネルギー=${e(r.kineticEnergyJ)} J\n圧力仕事（面から）=${e(r.pressurePowerByFacesW)} W\n圧力仕事（セルのp div uから）=${e(r.pressurePowerByCellsW)} W\n離散部分積分の差=${e(r.integrationByPartsResidualW)} W\n再構成した圧力補正の減少量=${e(r.projectionImpliedLossJ)} J\n直交投影での減少量=${e(r.orthogonalProjectionLossJ)} J\n直交との差=${e(r.projectionOrthogonalityDefectJ)} J\n投影の恒等式の差=${e(r.projectionIdentityResidualJ)} J\nEc=${Ec===null?'未定義（基準温度差0）':e(Ec)}（表示セル中心の最大速度基準、U²/(cp ΔT)）`);}catch(error){mechanical.push(`${label}：運動エネルギー診断を表示できません。${error.message}`);}
+  try{const heat=cavityHeatFluxSections(mesh,s,c),f=x=>x===null?'未定義（壁温差0）':x.toExponential(8);heatValues.push(`${label}\n左壁の高さ平均 Nu₀=${f(heat.leftWallNu)}\n鉛直中央面平均 Nu₁/₂=${f(heat.verticalMidplaneNu)}\n体積平均 Nu=${f(heat.volumeMeanNu)}\n左壁から正x方向の熱=${f(heat.sections[0].totalPowerPositiveXW)} W\n右壁から正x方向の熱=${f(heat.sections.at(-1).totalPowerPositiveXW)} W\n断面間Nuの最大差=${f(heat.maximumNuSectionSpread)}\n断面質量流量の最大絶対値=${f(heat.maximumSectionMassFlowMagnitudeKgPerS)} kg/s`);}catch(error){heatValues.push(`${label}：熱流診断を表示できません。${error.message}`);}
   diagnostics.push(`${label}\nRa=${Ra}、Pr=${c.nu/c.alpha}\n物理時刻=${s.time} s、ステップ数=${s.steps}、最終dt=${s.lastDt} s、自動上限=${s.safeDt} s\n瞬間左壁平均Nu=${s.nusselt===null?'未定義（温度差0）':s.nusselt}\n顕熱=${s.energy} J（奥行き1 mあたり）\n境界からの累積熱=${s.netInput} J、収支誤差=${s.energyError} J\n発散最大=${s.divergence} s⁻¹、正規化発散=${s.normalizedDivergence}\nPoisson残差=${s.pressureResidual}、右辺ノルム=${s.pressureRhsNorm}、最終反復=${s.pressureIterations}\nρ=${c.rho} kg/m³、cp=${c.cp} J/(kg K)、ν=${c.nu}、α=${c.alpha} m²/s\n運動量=${s.momentumScheme}、温度=${s.scalarScheme}`);
  });
- $('mechanical-values').textContent=mechanical.join('\n\n');$('readout').textContent=readings.join('\n');$('diagnostic-values').textContent=diagnostics.join('\n\n');
+ $('heat-flux-values').textContent=heatValues.join('\n\n');$('mechanical-values').textContent=mechanical.join('\n\n');$('readout').textContent=readings.join('\n');$('diagnostic-values').textContent=diagnostics.join('\n\n');
  drawTraces($('graph'),experiment.states.map((_,i)=>({name:i?'B':'A',color:i?'#ca6300':'#1872c9',points:experiment.history.map(frame=>({x:frame[i].time,y:frame[i].nusselt})).filter(p=>p.y!==null)})),experiment.states[0].time,{yLabel:'左壁平均Nu [−]'});
 }
 $('settings').onsubmit=e=>{e.preventDefault();initialize();};

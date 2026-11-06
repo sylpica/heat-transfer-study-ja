@@ -1,0 +1,127 @@
+{
+  "generatedAtUTC": "2026-11-06T14:11:37.459477+00:00",
+  "sourceCommit": "30790a7081706dde13121a8276589c09d8d26211",
+  "method": "Separate Python math.fsum evaluation of native section conductive and actual central advective heat, from saved own MAC fields. No JS diagnostic functions used. Not an independent momentum/temperature solution.",
+  "rows": [
+    {
+      "grid": 16,
+      "sourceFile": "CFD_FINE_NATURAL_N16_20261106_v1.json",
+      "sha256": "173d58c3639edab6ab5f9cab61433fa2e4f93bd599a714b40efa2fce95e22d98",
+      "timeS": 1,
+      "steady": true,
+      "allFineObjectivesPassed": false,
+      "Nu0_hotWall": 1.126318692915902,
+      "NuHalf_verticalMidplane": 1.1263186929169549,
+      "Nu_volumeTrapezoidalNativeSections": 1.126318692916274,
+      "maximumNuSectionSpread": 1.9624302183274267e-12,
+      "maximumSectionMassFlowKgPerS": 3.8163916471489756e-17,
+      "maximumDifferenceFromProductDiagnostics": {
+        "wall": 0.0,
+        "midplane": -8.43769498715119e-15,
+        "volume": -1.1102230246251565e-15,
+        "allNativeSectionsMaximum": 1.9095836023552692e-14
+      },
+      "localNuMaximum": 1.54152787397652,
+      "uMaximum": {
+        "value": 3.638742652372316,
+        "position": 0.84375
+      },
+      "vMaximum": {
+        "value": 3.7193443329278892,
+        "position": 0.15625
+      },
+      "fineObjectives": {
+        "wallNu": false,
+        "localNuMaximum": false,
+        "uMaximum": true,
+        "vMaximum": false,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true
+      }
+    },
+    {
+      "grid": 32,
+      "sourceFile": "CFD_FINE_NATURAL_N32_20261106_v1.json",
+      "sha256": "91049b43ecb222e22d4572b4ed3df902821a500aeb22d67d90a0664818c07518",
+      "timeS": 1,
+      "steady": true,
+      "allFineObjectivesPassed": false,
+      "Nu0_hotWall": 1.119942764440566,
+      "NuHalf_verticalMidplane": 1.1199427644237292,
+      "Nu_volumeTrapezoidalNativeSections": 1.1199427644289035,
+      "maximumNuSectionSpread": 1.858779796748422e-11,
+      "maximumSectionMassFlowKgPerS": 1.2125717097077882e-15,
+      "maximumDifferenceFromProductDiagnostics": {
+        "wall": 0.0,
+        "midplane": -3.9968028886505635e-15,
+        "volume": -1.3322676295501878e-15,
+        "allNativeSectionsMaximum": 2.220446049250313e-14
+      },
+      "localNuMaximum": 1.51519354445918,
+      "uMaximum": {
+        "value": 3.6468476776987515,
+        "position": 0.828125
+      },
+      "vMaximum": {
+        "value": 3.707512470082395,
+        "position": 0.171875
+      },
+      "fineObjectives": {
+        "wallNu": false,
+        "localNuMaximum": false,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true
+      }
+    },
+    {
+      "grid": 64,
+      "sourceFile": "CFD_FINE_NATURAL_N64_20261106_v1.json",
+      "sha256": "a641fc9b8dc67e53c8c1191f4b0f76011f913b3c2723ff44457cc8a01ab7dd80",
+      "timeS": 1,
+      "steady": true,
+      "allFineObjectivesPassed": true,
+      "Nu0_hotWall": 1.1183294127915815,
+      "NuHalf_verticalMidplane": 1.118329412685475,
+      "Nu_volumeTrapezoidalNativeSections": 1.1183294127224586,
+      "maximumNuSectionSpread": 1.0644751746724523e-10,
+      "maximumSectionMassFlowKgPerS": 3.707971429900425e-17,
+      "maximumDifferenceFromProductDiagnostics": {
+        "wall": 0.0,
+        "midplane": 3.774758283725532e-15,
+        "volume": 0.0,
+        "allNativeSectionsMaximum": 1.354472090042691e-14
+      },
+      "localNuMaximum": 1.508583318835008,
+      "uMaximum": {
+        "value": 3.649076785565971,
+        "position": 0.8203125
+      },
+      "vMaximum": {
+        "value": 3.700380952599891,
+        "position": 0.1796875
+      },
+      "fineObjectives": {
+        "wallNu": true,
+        "localNuMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true
+      }
+    }
+  ],
+  "wallNuObservedOrder16_32_64": 1.982574520244118,
+  "wallNuRichardsonEstimate": 1.117782880181571,
+  "richardsonIsNotExactReferenceOrGeneralAccuracyProof": true,
+  "steadyConservationNote": "The steady conservative discrete equations make native wall/section means converge to the same computed heat. Table V printed Nu0/NuHalf/Nu have separate definition labels and finite reported benchmark accuracy; do not change a computed definition or tune it to printed rounding.",
+  "referenceDefinitionsReceivedFromOwner": {
+    "Ra1000_hotWallNu0": 1.117,
+    "Ra1000_midplaneNuHalf": 1.118,
+    "Ra1000_volumeNu": 1.118
+  },
+  "externalReportCountsAddedToLocalTests": false,
+  "generalCFDAccuracyVerified": false,
+  "releaseApproved": false
+}

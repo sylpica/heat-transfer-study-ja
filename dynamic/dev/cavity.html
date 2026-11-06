@@ -4,7 +4,7 @@
 <form id="settings"><fieldset><legend>条件A：10 mm角、300 K付近の空気</legend>
 <label>左右壁の温度差 [K]<input id="difference" type="number" value="10" min="0" max="10" step="0.5" required></label>
 <label>鉛直浮力の向き [m/s²]<input id="gravity" type="number" value="9.81" min="-9.81" max="9.81" step="0.01" required></label>
-<label>各方向の格子数<select id="grid"><option>12</option><option selected>16</option><option>24</option><option>32</option></select></label>
+<label>各方向の格子数<select id="grid"><option>12</option><option selected>16</option><option>24</option><option>32</option><option value="64">64（計算量が多い）</option></select></label>
 <button id="apply" type="submit">初期状態から計算</button><button id="compare" type="button">現在の条件をBへ固定して比較</button><button id="uncompare" type="button" disabled>比較を解除</button>
 </fieldset></form>
 <p>右壁は300−ΔT/2 K、左壁は300＋ΔT/2 K。初期温度は300 K。上下は断熱、全壁は静止・滑りなし。正の浮力設定では温かい空気への浮力が上向きです。条件変更・比較開始では両方を時刻0へ戻します。</p>
@@ -17,6 +17,7 @@
 <div class="fields"><figure><canvas id="field-a" width="600" height="600" tabindex="0" aria-label="条件Aの計算場。クリックまたは矢印キーで測定点を移動"></canvas><figcaption id="caption-a"></figcaption></figure><figure id="panel-b" hidden><canvas id="field-b" width="600" height="600" tabindex="0" aria-label="条件Bの計算場。クリックまたは矢印キーで測定点を移動"></canvas><figcaption id="caption-b"></figcaption></figure></div>
 <p id="readout"></p><p>色はA/Bで共通。矢印は計算した速度の方向と大きさ、流線はその時刻の速度場に接する線です。流線は粒子の移動軌跡ではありません。温度と圧力の測定値は指定点が属するセル中心値、速度はMAC位置からの補間値です。</p></section>
 <section aria-label="履歴"><label>保存コマ<input id="history" type="range" min="0" max="0" value="0"></label><canvas id="graph" width="800" height="230" role="img" aria-label="左右壁からの熱移動を表す瞬間壁平均Nuの履歴"></canvas></section>
+<details id="heat-flux"><summary>壁面・中央面・体積平均の熱移動</summary><pre id="heat-flux-values"></pre><p>Nu₀は左壁の伝導熱流束の高さ平均、Nu₁/₂は鉛直中央面の伝導＋移流の熱流束の高さ平均です。体積平均Nuは各格子面の伝導＋移流をx方向に台形積分します。どれも基準長さは高さH、温度差は左壁−右壁です。瞬間値のため過渡中は一致せず、温度差0ではNuを定義しません。壁の熱は正x方向を正とし、左壁では流入、右壁では流出の符号です。</p><p>移流には計算で用いた面温度と速度を使い、基準300 Kを引きます。断面の正味質量流量が0なら基準温度の変更は断面熱を変えません。定常状態の保存的な離散式では各断面の熱が一致します。文献のNuを比較するときは平均の場所・定義・推定精度を対応させてください。</p><p>格子数を増やすと計算時間が長くなります。64格子の追加検証は正方形Ra=1000、Pr=0.71の定常熱・速度極値に限定したもので、すべての過渡場や一般CFDの精度承認ではありません。この画面は引き続き開発用です。</p></details>
 <details id="mechanical"><summary>運動エネルギーと圧力補正</summary><pre id="mechanical-values"></pre><p>MACの速度配置で積分した離散運動エネルギーを表示します。圧力補正前の速度は現在の速度・圧力勾配・最後の刻みから再構成します。閉境界で発散0のとき、圧力仕事の体積積分は0となり、直交投影で減る量はρΔV Σ|δu|²/2です。離散の部分積分と投影の整合性を調べる量で、連続圧力の精度評価は独立した参照場で行います。</p><p>運動エネルギーと顕熱は別の収支です。この低速Boussinesqモデルの温度式は、粘性散逸や圧縮の仕事を熱源へ戻しません。動く壁や浮力の仕事・粘性散逸の全収支を、この圧力補正の診断だけで承認しません。Ec=U²/(cp ΔT)は表示したセル中心最大速度からの参考値で、温度差0では定義しません。運動エネルギーはJ、仕事率はW、1回の補正の変化はJです。</p></details><details id="diagnostics"><summary>計算条件・収支・収束</summary><pre id="diagnostic-values"></pre><p>Poisson残差と発散が小さいことだけでは連続圧力の精度は保証できません。既定の運動量2次差分を使用し、実験用高次差分はこの画面では選べません。</p></details>
 <details><summary>理論・物性・適用範囲</summary><p>矩形2Dの非圧縮層流。MAC速度とセル温度、圧力投影、Boussinesq浮力を使用します。Ra≤1000、|β(T−300)|≤0.1の範囲。自由形状、障害物、入口・出口、乱流、共役伝熱、圧縮性、3D流れは未対応。奥行き1 mあたりを評価し、奥行き方向の端面をモデル化しません。</p>
 <p>参照物性は300 Kの空気：ρ=1.177 kg/m³、cₚ=1006 J/(kg K)、k=0.0264 W/(m K)、ν=1.575×10⁻⁵ m²/s。A Heat Transfer Textbook第6版・付録A.6（書籍755/PDF769）で参照した値。α=k/(ρcₚ)、β=1/300 K⁻¹は理想気体の近似。温度依存は未対応です。説明・表示はアプリ作成。</p>

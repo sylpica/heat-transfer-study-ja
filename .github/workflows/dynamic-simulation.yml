@@ -159,6 +159,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Exercise rotated rectangular mixed boundaries with explicit geometry refinement and retained A/B state
+        run: node tests/dynamic-triangle-linear-rectangle-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify mixed-boundary RT0 keeps prescribed boundary heat and closed-system compatibility
         run: node tests/dynamic-triangle-linear-flux-browser.mjs
         env:

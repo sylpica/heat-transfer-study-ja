@@ -43,7 +43,9 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "LONG_DUCT_UI_DEVELOPMENT.md",
-        "LONG_DUCT_UI_CHECKPOINT_20261106.json"
+        "LONG_DUCT_UI_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -100,7 +102,9 @@
         "LONG_DUCT_UI_CHECKPOINT_20261106.json",
         "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
         "TRIANGLE_TRANSIENT_REFERENCE_20261106.json",
-        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json"
+        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ],
       "remainingOrScope": "公開候補は伝導/径方向/単一フィン/放射ネットワーク/同一面の対流＋放射/発達流路/条件付き集中近似。一般2D強制・自然対流CFD/乱流は開発専用で公開範囲外。"
     },
@@ -173,7 +177,9 @@
         "MANUFACTURED_FIELDS_BENCHMARKS_20261104.json",
         "MANUFACTURED_SYMBOLIC_CHECK_20261104.json",
         "HEATED_CHANNEL_DEVELOPMENT.md",
-        "HEATED_CHANNEL_CHECKPOINT_20261106.json"
+        "HEATED_CHANNEL_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ],
       "remainingOrScope": "矩形の2D投影法を初期ベンチマークで検証中。一般流路/自由形状/乱流/CFDの正式公開は未完了。"
     },
@@ -340,7 +346,9 @@
         "LUMPED_RADIAL.md",
         "LUMPED_RADIAL_REFERENCE_20261105.json",
         "LUMPED_RADIAL_CHECKPOINT_20261105.json",
-        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -380,7 +388,9 @@
         "TRIANGLE_STIFFNESS_CHECKPOINT_20261106.json",
         "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
         "TRIANGLE_TRANSIENT_REFERENCE_20261106.json",
-        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json"
+        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -426,7 +436,9 @@
         "FIN_LEARNING.md",
         "FIN_LEARNING_REFERENCE_20261105.json",
         "FIN_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -469,7 +481,9 @@
         "CFD_KINETIC_DIAGNOSTICS.md",
         "CFD_KINETIC_CHECKPOINT_20261105.json",
         "HEATED_CHANNEL_DEVELOPMENT.md",
-        "HEATED_CHANNEL_CHECKPOINT_20261106.json"
+        "HEATED_CHANNEL_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -492,7 +506,9 @@
         "FIN_LEARNING_CHECKPOINT_20261105.json",
         "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json",
         "LONG_DUCT_UI_DEVELOPMENT.md",
-        "LONG_DUCT_UI_CHECKPOINT_20261106.json"
+        "LONG_DUCT_UI_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -522,7 +538,9 @@
         "TRIANGLE_LINEAR_UI.md",
         "TRIANGLE_LINEAR_UI_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_FLUX_UI.md",
-        "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json"
+        "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -603,7 +621,9 @@
         "LUMPED_RADIAL.md",
         "LUMPED_RADIAL_REFERENCE_20261105.json",
         "LUMPED_RADIAL_CHECKPOINT_20261105.json",
-        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -799,7 +819,9 @@
         "TRIANGLE_STIFFNESS_CHECKPOINT_20261106.json",
         "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
         "TRIANGLE_TRANSIENT_REFERENCE_20261106.json",
-        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json"
+        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -842,7 +864,9 @@
         "FLAT_PLATE_THERMAL_SPATIAL_SUMMARY_20261107.json",
         "FLAT_PLATE_TIME_REFERENCE_20261106_xy512.json",
         "FLAT_PLATE_STREAMWISE_REFINEMENT_20261107.md",
-        "FLAT_PLATE_RESTORE_ALL_GRIDS_20261107.json"
+        "FLAT_PLATE_RESTORE_ALL_GRIDS_20261107.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ],
       "remainingOrScope": "指定Poiseuilleの熱的入口/過渡に加え、定常Blasius中の平板受動温度を独立時間/連続セル平均・格子・実Workerで限定照合。元256の平均Nu失敗は保持し、追加精細ケースで目標達成。平板GUI/一般2D動的運動量/円柱/一般管/フィン間/共役/公開は未完了。フェイリスの定常Graetz/CWTは別ブランチで未統合。"
     },
@@ -946,7 +970,9 @@
         "CFD_DEVELOPMENT_UI.md",
         "CAVITY_UI_CHECKPOINT_20261105.json",
         "CFD_KINETIC_DIAGNOSTICS.md",
-        "CFD_KINETIC_CHECKPOINT_20261105.json"
+        "CFD_KINETIC_CHECKPOINT_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -971,7 +997,9 @@
         "RADIATION_LEARNING.md",
         "RADIATION_LEARNING_REFERENCE_20261105.json",
         "RADIATION_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -1141,7 +1169,9 @@
         "LUMPED_RADIAL.md",
         "LUMPED_RADIAL_REFERENCE_20261105.json",
         "LUMPED_RADIAL_CHECKPOINT_20261105.json",
-        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -1188,7 +1218,9 @@
         "TRIANGLE_LINEAR_UI.md",
         "TRIANGLE_LINEAR_UI_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_FLUX_UI.md",
-        "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json"
+        "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -1400,7 +1432,9 @@
         "FLAT_PLATE_THERMAL_SPATIAL_SUMMARY_20261107.json",
         "FLAT_PLATE_TIME_REFERENCE_20261106_xy512.json",
         "FLAT_PLATE_STREAMWISE_REFINEMENT_20261107.md",
-        "FLAT_PLATE_RESTORE_ALL_GRIDS_20261107.json"
+        "FLAT_PLATE_RESTORE_ALL_GRIDS_20261107.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ],
       "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。 平板はBlasiusの定常速度/全face流量だけを独立BVPと連続求積へ照合済み。温度/動的運動量/一般NS/専用UIは未完了。"
     },
@@ -1449,7 +1483,9 @@
         "CAVITY_UI_CHECKPOINT_20261105.json",
         "PUBLIC_WORKER_DISTRIBUTION.md",
         "GPU_DIFFUSION_DEVELOPMENT.md",
-        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ]
     },
     {
@@ -1528,7 +1564,9 @@
         "CAVITY_UI_CHECKPOINT_20261105.json",
         "PUBLIC_WORKER_DISTRIBUTION.md",
         "GPU_DIFFUSION_DEVELOPMENT.md",
-        "GPU_DIFFUSION_CHECKPOINT_20261105.json"
+        "GPU_DIFFUSION_CHECKPOINT_20261105.json",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ],
       "remainingOrScope": "公開候補の発達層流は限定条件で検証して公開allowlistへ登録。一般CFD/定常RANSと受動温度/GPU/製造解はdist外。未検証のk(T)フィンや自由輪郭の表面境界は拒否。一般承認やmain公開は未完了。"
     },
@@ -1538,7 +1576,9 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "FLAT_PLATE_UI.md",
+        "FLAT_PLATE_UI_CHECKPOINT_20261107.json"
       ],
       "remainingOrScope": "PR18へ段階保存し、全要求は継続中。"
     }

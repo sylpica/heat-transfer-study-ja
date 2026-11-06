@@ -1,0 +1,154 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-06T04:38:12.386831+00:00",
+  "baseSourceCommit": "87a88ae2597ad6940bd413881d2a152d10ff98ad",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/triangle-linear-transient.mjs": "f23be2e1bd58d2228b6e70f2595a1016d5602f394eb98327067c38e90708ea84",
+    "dynamic/dev/triangle-linear-worker.mjs": "db394dcae7621ccf01f7b567a18e9ea787bd2f8a65393567636ef4daebe61f36",
+    "dynamic/dev/triangle-boundaries.mjs": "110fb72458eb5260f4f6eb7d0927cef1e3cca612c8415752c7dc5db24d6657be",
+    "scripts/dynamic-triangle-linear-reference.py": "f658b1ffde3f12513470c2f864b9d20cdb552d0d27b6ca1919d736e676552752",
+    "tests/dynamic-triangle-linear-transient.test.mjs": "9b8f4e13d54685b6d0f9a4036c8ecfcd275ec1e798b349be26615af6ff251ed4",
+    "tests/dynamic-triangle-linear-browser.mjs": "d8fb329f64f72536c9e29bf643b596ad58b67dd132e14c749aff5272c3a41362",
+    "docs/dynamic/TRIANGLE_LINEAR_REFERENCE_20261106.json": "dc88ad91dc5653b2d73563554194361dc781bacf526d76cb8edba642b7edcad2"
+  },
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "relatedNodeTests": 6,
+  "node": {
+    "tests": 1372,
+    "pass": 1367,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "continuousCases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 16,
+          "independentTimeErrorK": 2.89263958563879e-07,
+          "energyErrorJ": -2.9103830456733704e-11
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 16,
+          "independentTimeErrorK": 4.717716706181818e-08,
+          "energyErrorJ": -9.094947017729282e-11
+        }
+      ],
+      "affineTimeErrorK": 3.449558162282873e-06,
+      "realRestore": true,
+      "invalidStepRejected": true,
+      "cancelOnActualProgress": true,
+      "rollbackRetryMaximumDifferenceK": 0,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "continuousCases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 16,
+          "independentTimeErrorK": 2.89263958563879e-07,
+          "energyErrorJ": -2.9103830456733704e-11
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 16,
+          "independentTimeErrorK": 4.717716706181818e-08,
+          "energyErrorJ": -9.094947017729282e-11
+        }
+      ],
+      "affineTimeErrorK": 3.449558162282873e-06,
+      "realRestore": true,
+      "invalidStepRejected": true,
+      "cancelOnActualProgress": true,
+      "rollbackRetryMaximumDifferenceK": 0,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "criteriaDeclaredAtCommit": "87a88ae",
+  "independentChecks": {
+    "finestFullFields": true,
+    "finestBoundaryHeat": true,
+    "lastSpatialOrders": true,
+    "finestTimeError": true,
+    "lastTimeOrder": true
+  },
+  "finestFields": [
+    {
+      "kind": "dirichlet-neumann",
+      "timeS": 2000,
+      "steps": 116,
+      "safeDt": 17.36111111111111,
+      "fullInterpolatedFieldRmsK": 0.01634638736866933,
+      "quadratureRefinementDifferenceK": 2.706168622523819e-16,
+      "maximumNodalErrorK": 0.0411309279620653,
+      "heatRelativeError": -0.0004133961215625481,
+      "boundaryRelativeError": -0.0004192294664008278,
+      "energyErrorJ": -2.9103830456733704e-11,
+      "roundoffBudgetJ": 9.179634281494579e-06,
+      "independentNodalRateMaximumDifferenceKPerS": 4.367166350771612e-16,
+      "fixedGridMaximumTimeErrorK": 2.89263958563879e-07
+    },
+    {
+      "kind": "robin-neumann",
+      "timeS": 2000,
+      "steps": 116,
+      "safeDt": 17.36111111111111,
+      "fullInterpolatedFieldRmsK": 0.00672906127806528,
+      "quadratureRefinementDifferenceK": 8.413408858487514e-16,
+      "maximumNodalErrorK": 0.012730873632044393,
+      "heatRelativeError": -0.00012445400784533156,
+      "boundaryRelativeError": 1.9172929342836653e-05,
+      "energyErrorJ": -9.094947017729282e-11,
+      "roundoffBudgetJ": 1.2955217368107621e-05,
+      "independentNodalRateMaximumDifferenceKPerS": 5.881796785733862e-16,
+      "fixedGridMaximumTimeErrorK": 4.717716706181818e-08
+    }
+  ],
+  "spatialOrders": {
+    "dirichlet-neumann": [
+      1.9674192953607372,
+      1.987619739612936,
+      1.996122397792891
+    ],
+    "robin-neumann": [
+      1.9797146367687921,
+      1.99119644237572,
+      1.9970599646415044
+    ]
+  },
+  "timeOrders": [
+    2.094004395433642,
+    2.0415518670134927
+  ],
+  "mixedBoundaryTimeIntegrationImplemented": true,
+  "mixedBoundaryGUIImplemented": false,
+  "mixedBoundaryEquilibratedFluxImplemented": false,
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "generalAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false,
+  "receivedIndependentCaseBMaterialAndSHAPending": true
+}

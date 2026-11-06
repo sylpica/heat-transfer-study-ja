@@ -139,6 +139,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify unpublished mixed-linear-boundary P1 worker against independent time references
+        run: node tests/dynamic-triangle-linear-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify read-only RT0 recovery against the independent constrained edge optimum
         run: node tests/dynamic-triangle-flux-browser.mjs
         env:

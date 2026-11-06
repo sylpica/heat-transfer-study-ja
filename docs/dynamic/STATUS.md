@@ -693,3 +693,6 @@ CIのpush/PR重複をCLIで再確認。同じ平板22a8612のpush run42279902275
 
 
 GPU Worker準備として、dev断熱拡散にbackend/条件/予算署名・保持Float32θを含む完全復元を追加。CPU代替も受理済みframeだけを公開し、最後の非同期待機中のabortを再確認して受理を防止。未知条件/異種backend/破損履歴は拒否。新3＋既存3Node成功、既存Chromium SwiftShaderの全連続/離散指数・非対称/意図した収支ゲート失敗・取消を再実行成功。WebKitはデバイス不可のCPU経路のみ成功、shader未実施として維持。実Worker/GUIは次。数値式/Float32の既存精度閾値は変更していない。
+
+
+非同期GPU専用runtime/実Workerを追加し、順序/古いinit破棄/実rollback後の処理を確認。9関連Node成功。ChromiumソフトウェアGPUの実Workerは連続RMS.000100374K、CPU差RMS6.39495e−8K/最大2.57901e−7Kで元予算内、完全復元/実progress取消後のbit再現/厳格ゲート後GPU保持も成功。WebKitはdevice不可のCPU Workerのみ成功しshader未実行として記録。GPU_WORKER.md/同CHECKPOINT参照。WGSL本文不変更、GUI/物理GPU性能/公開は未確認。CIへ新実Worker試験を追加し44ブラウザーコマンドとなる。

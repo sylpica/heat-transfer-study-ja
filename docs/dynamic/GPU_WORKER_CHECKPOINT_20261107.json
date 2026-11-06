@@ -1,0 +1,223 @@
+{
+  "recordedAtUTC": "2026-11-06T23:23:43.411672+00:00",
+  "basisCommit": "e3507f962cde5b24db404d90ef2b080a0c8b1da3",
+  "sourceAndTestsSHA256": {
+    "dynamic/dev/adiabatic-diffusion.mjs": "5b38665875f0f15f0bf72dca5579517ab76314c07d58c6b3f95da94cc90b01a7",
+    "dynamic/dev/adiabatic-diffusion-runtime.mjs": "01759c114eab37ed5b1095f6d505a1bf4020872d7b5748b855a57d2aba90e626",
+    "dynamic/dev/adiabatic-diffusion-worker.mjs": "cfb69b57b6ab324c062f94c612656d787c4709638776a770e1bf2e70bf69d9e8",
+    "tests/dynamic-gpu-worker-browser.mjs": "8b46e8beac5c1273e637446db01814579a40b1600b895ecf5363083a4ba673b5",
+    "tests/dynamic-gpu-worker-runtime.test.mjs": "d565d5452804afa03ae04dbffad7738bfb78c8a7644bb7bbd616a70b291542cb"
+  },
+  "wgslUnchangedFromCommit": "b25b892",
+  "wgslSHA256": "f78c4191041ce5d30ac5897d24b6681fdc5120c92d96f257485fec65010d0667",
+  "focusedNode": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "log": "work/gpu-async-runtime-node-20261107.log",
+    "logSHA256": "ed5a5dce5fca91310b93febd49eda62f1bccba7bab80560ac8cdcf35fa679352"
+  },
+  "browser": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualDedicatedWorker": true,
+        "backend": "webgpu",
+        "precision": "Float32 excess temperature; Float64 readback diagnostics",
+        "adapter": {
+          "vendor": "google",
+          "architecture": "swiftshader",
+          "isFallbackAdapter": true
+        },
+        "fallbackReason": null,
+        "continuousCellMeanRmsK": 0.00010037356046095401,
+        "cpuDifferenceRmsK": 6.394943736142244e-08,
+        "cpuDifferenceMaximumK": 2.5790080826482153e-07,
+        "completeRestore": true,
+        "realProgressCancelRollback": true,
+        "exactReplay": true,
+        "foreignRestoreAndInvalidInitKeepWorker": true,
+        "strictNumericalGateKeepsGPU": true,
+        "asyncInitCancelAndReuse": true,
+        "explicitFallbackPolicy": true,
+        "localStorageUnchanged": true,
+        "gpuShaderTests": "executed in software adapter",
+        "physicalGPUVerified": false,
+        "performanceVerified": false,
+        "GUIVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/gpu-async-worker-chromium-20261107.log",
+      "logSHA256": "a5c47179e787a69706e419efa6c35c15f008209ee5a79b67c84d2ba77deef30d"
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualDedicatedWorker": true,
+        "backend": "cpu",
+        "precision": "Float64",
+        "adapter": null,
+        "fallbackReason": "WebGPU is unavailable; the identical insulated diffusion equations use CPU",
+        "continuousCellMeanRmsK": 0.00010036365115160071,
+        "cpuDifferenceRmsK": 0,
+        "cpuDifferenceMaximumK": 0,
+        "completeRestore": true,
+        "realProgressCancelRollback": true,
+        "exactReplay": true,
+        "foreignRestoreAndInvalidInitKeepWorker": true,
+        "strictNumericalGateKeepsGPU": null,
+        "asyncInitCancelAndReuse": true,
+        "explicitFallbackPolicy": true,
+        "localStorageUnchanged": true,
+        "gpuShaderTests": "not run: device unavailable; CPU equations only",
+        "physicalGPUVerified": false,
+        "performanceVerified": false,
+        "GUIVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/gpu-async-worker-webkit-20261107.log",
+      "logSHA256": "f5b2be7455de577bbccb853e166dffdf5318fe47fa6a6b280e86afbc04edabb7"
+    }
+  },
+  "priorShaderRegression": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "generatedAtUTC": "2026-11-06T20:02:50.385Z",
+        "scope": "Development-only insulated constant-property rectangle. Software WebGPU validates the shader, not real-GPU performance. WebKit without a device tests the identical CPU alternative only.",
+        "realDevice": false,
+        "physicalGPUVerified": false,
+        "space": [
+          {
+            "nx": 16,
+            "ny": 8,
+            "timeS": 0.2,
+            "steps": 52,
+            "dtS": 0.00390625,
+            "continuousCellAverageRMSErrorK": 0.0004405317145624611,
+            "cpuDifferenceRMSErrorK": 6.78044762506093e-08,
+            "cpuDifferenceMaxK": 2.48866399488179e-07,
+            "energyErrorJ": 0,
+            "energyToleranceScaleJ": 0.968245804309845,
+            "energyErrorFractionOfScale": 0,
+            "inputRoundingMaxK": 2.9698185244342312e-08,
+            "gpuElapsedMs": 9.5,
+            "cpuElapsedMs": 6.5999999940395355
+          },
+          {
+            "nx": 32,
+            "ny": 16,
+            "timeS": 0.2,
+            "steps": 205,
+            "dtS": 0.0009765625,
+            "continuousCellAverageRMSErrorK": 0.00011099173264461725,
+            "cpuDifferenceRMSErrorK": 6.00023175062283e-08,
+            "cpuDifferenceMaxK": 3.219191739844973e-07,
+            "energyErrorJ": 0,
+            "energyToleranceScaleJ": 0.9919915199279785,
+            "energyErrorFractionOfScale": 0,
+            "inputRoundingMaxK": 2.951924216176849e-08,
+            "gpuElapsedMs": 22.80000001192093,
+            "cpuElapsedMs": 20.299999982118607
+          },
+          {
+            "nx": 64,
+            "ny": 32,
+            "timeS": 0.2,
+            "steps": 820,
+            "dtS": 0.000244140625,
+            "continuousCellAverageRMSErrorK": 2.9438697206631683e-05,
+            "cpuDifferenceRMSErrorK": 1.6727259760823389e-06,
+            "cpuDifferenceMaxK": 3.0919084110792028e-06,
+            "energyErrorJ": 0,
+            "energyToleranceScaleJ": 0.9979934692382812,
+            "energyErrorFractionOfScale": 0,
+            "inputRoundingMaxK": 2.9769296361337183e-08,
+            "gpuElapsedMs": 74.19999998807907,
+            "cpuElapsedMs": 181.59999999403954
+          }
+        ],
+        "time": [
+          {
+            "dtS": 0.015625,
+            "semiDiscreteRMSErrorK": 0.00016983255424098153
+          },
+          {
+            "dtS": 0.0078125,
+            "semiDiscreteRMSErrorK": 8.496467249896897e-05
+          },
+          {
+            "dtS": 0.00390625,
+            "semiDiscreteRMSErrorK": 4.2708065196639894e-05
+          },
+          {
+            "dtS": 0.001953125,
+            "semiDiscreteRMSErrorK": 2.1345105480094995e-05
+          }
+        ],
+        "backend": "webgpu",
+        "adapter": {
+          "vendor": "google",
+          "architecture": "swiftshader",
+          "isFallbackAdapter": true
+        },
+        "combinedGridAndTimeOrders": [
+          1.9887936650743725,
+          1.91466648742321
+        ],
+        "fixedGridTimeOrders": [
+          0.9991780152562414,
+          0.9923545660248226,
+          1.0006032491502084
+        ],
+        "asymmetric": {
+          "nx": 17,
+          "ny": 11,
+          "energyErrorJ": -4.4200469784558134e-10,
+          "energyErrorFractionOfScale": 6.245483272127329e-10,
+          "cpuRMSErrorK": 2.9529234945532143e-08
+        },
+        "failedEnergyGatePreservesState": true,
+        "cancelPreservesStateAndRetry": true,
+        "nonMultipleWorkgroupUniform": true,
+        "precisionBudgetSelectsCPU": true,
+        "positiveAbsoluteTemperaturePreserved": true,
+        "gpuShaderTests": "executed",
+        "passed": true
+      },
+      "log": "work/gpu-restoration-shader-chromium-20261107.log",
+      "logSHA256": "d344c794c45aaaf153bea835bc174177896d4464064ba5865317474fd2c7b348"
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "generatedAtUTC": "2026-11-06T20:02:59.229Z",
+        "scope": "Development-only insulated constant-property rectangle. Software WebGPU validates the shader, not real-GPU performance. WebKit without a device tests the identical CPU alternative only.",
+        "realDevice": false,
+        "physicalGPUVerified": false,
+        "space": [],
+        "time": [],
+        "backend": "cpu",
+        "adapter": null,
+        "gpuShaderTests": "not run: WebGPU device unavailable",
+        "cpuFallbackReason": "WebGPU is unavailable; the identical insulated diffusion equations use CPU",
+        "cpuContinuousRMSErrorK": 0.00047163866154419353,
+        "passed": true
+      },
+      "log": "work/gpu-restoration-fallback-webkit-20261107.log",
+      "logSHA256": "73464bd55e0b79b64f625f988072e7398f754b54ce851da4083ad1ad638dfef0"
+    }
+  },
+  "GUIVerified": false,
+  "physicalGPUVerified": false,
+  "performanceVerified": false,
+  "offlineVerified": false,
+  "releaseApproved": false
+}

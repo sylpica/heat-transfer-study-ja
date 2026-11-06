@@ -2,10 +2,10 @@ name: Dynamic simulation verification
 on:
   push:
     branches: [codex/dynamic-heat-simulation]
-    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/lib/de-vahl-reference.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
   pull_request:
     branches: [main]
-    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/lib/de-vahl-reference.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
 permissions:
   contents: read
 jobs:
@@ -136,6 +136,11 @@ jobs:
           BROWSER_EXECUTABLE: ''
       - name: Verify the development P1 transient worker, independent time reference and actual cancel rollback
         run: node tests/dynamic-triangle-transient-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise actual P1 nodal temperature interpolation, grid comparison and probe controls
+        run: node tests/dynamic-triangle-ui-browser.mjs
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''

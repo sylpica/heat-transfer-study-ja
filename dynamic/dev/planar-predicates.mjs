@@ -32,3 +32,10 @@ export function edgeCotangentDyadic(a,b,c,d=null){
  point(d);const w=exactDifference(a,d),z=exactDifference(b,d),areaD=cross(w,z),dotD=add(mul(w[0],z[0]),mul(w[1],z[1]));if(sign(areaD)>=0)throw Error('隣接三角形は共通辺の反対側です。');
  const opposite=neg(areaD);return {numerator:add(mul(dotC,opposite),mul(dotD,areaC)),denominator:mul(areaC,opposite)};
 }
+
+// Exact area ratios for display/probe points near a triangle edge. A negative
+// numerator means outside; callers must not expand the physical triangle.
+export function triangleBarycentricDyadics(a,b,c,p){
+ point(a);point(b);point(c);point(p);const denominator=cross(exactDifference(b,a),exactDifference(c,a));if(sign(denominator)<=0)throw Error('反時計回りの正三角形が必要です。');
+ const numerators=[[b,c],[c,a],[a,b]].map(([u,v])=>cross(exactDifference(u,p),exactDifference(v,p)));return {numerators,denominator,inside:numerators.every(v=>v.n>=0n)};
+}

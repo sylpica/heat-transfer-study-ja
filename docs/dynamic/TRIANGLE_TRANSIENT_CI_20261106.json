@@ -1,0 +1,40 @@
+{
+  "sourceCommit": "fd26b7bbbefe1d2f6099f13b0672dc76f4b6bc44",
+  "runId": 42154427634,
+  "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42154427634",
+  "checkedAtUTC": "2026-11-06T03:46:51.173Z",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 127685058507,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127685058766,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127685058823,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127685058834,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127685058870,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "scope": "Exact-source P1 core CI, before the subsequent GUI and de Vahl definition metadata. Not a claim about later HEAD, main deployment, real devices or expert review."
+}

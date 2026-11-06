@@ -127,7 +127,12 @@
         "../../dynamic/radial.mjs",
         "RADIAL_UI.md",
         "RADIAL_UI_CHECKPOINT_20261104.json",
-        "../../tests/dynamic-radial-browser.mjs"
+        "../../tests/dynamic-radial-browser.mjs",
+        "TRIANGLE_MESH_DEVELOPMENT.md",
+        "TRIANGLE_STIFFNESS_DEVELOPMENT.md",
+        "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
+        "TRIANGLE_UI_DEVELOPMENT.md",
+        "TRIANGLE_UI_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -462,7 +467,12 @@
         "FIN_LEARNING.md",
         "FIN_LEARNING_REFERENCE_20261105.json",
         "FIN_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_FIN_20261105.json",
+        "TRIANGLE_MESH_DEVELOPMENT.md",
+        "TRIANGLE_STIFFNESS_DEVELOPMENT.md",
+        "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
+        "TRIANGLE_UI_DEVELOPMENT.md",
+        "TRIANGLE_UI_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -950,9 +960,11 @@
         "TRIANGLE_STIFFNESS_CHECKPOINT_20261106.json",
         "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
         "TRIANGLE_TRANSIENT_REFERENCE_20261106.json",
-        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json"
+        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json",
+        "TRIANGLE_UI_DEVELOPMENT.md",
+        "TRIANGLE_UI_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "既存の自由輪郭/階段格子に加え、開発専用の単一凸多角形cut-cell幾何と全壁Dirichletの小規模定常PDEを検査。非直交補正の最大原理違反を記録し時間接続は保留。過渡/小セル安定化/凹や穴/曲線/一般CFD/公開は未完了。"
+      "remainingOrScope": "既存階段格子と凸cut-cell定常PDEに加え、開発専用の厳密符号Delaunay三角形P1・正lumped容量・SSPRK2過渡と実温度場GUIを独立解析解/時間行列指数で検査。旧cut-cell補正の最大原理違反は残し、その時間接続は保留。凸3プリセット・一定物性・全周固定温度のみ。凹/穴/曲線/混合境界/保存的熱流束回復/一般CFD/公開は未完了。"
     },
     {
       "id": "Q56",
@@ -1018,7 +1030,12 @@
         "RADIATION_BENCHMARKS_20261104.json",
         "EXPERIMENT_CONTROLLER.md",
         "CFD_DEVELOPMENT_UI.md",
-        "CAVITY_UI_CHECKPOINT_20261105.json"
+        "CAVITY_UI_CHECKPOINT_20261105.json",
+        "TRIANGLE_MESH_DEVELOPMENT.md",
+        "TRIANGLE_STIFFNESS_DEVELOPMENT.md",
+        "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
+        "TRIANGLE_UI_DEVELOPMENT.md",
+        "TRIANGLE_UI_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -1082,7 +1099,11 @@
         "CUT_CELL_STEADY_CHECKPOINT_20261106.json",
         "TRIANGLE_MESH_DEVELOPMENT.md",
         "TRIANGLE_MESH_REFERENCE_20261106.json",
-        "TRIANGLE_MESH_CHECKPOINT_20261106.json"
+        "TRIANGLE_MESH_CHECKPOINT_20261106.json",
+        "TRIANGLE_STIFFNESS_DEVELOPMENT.md",
+        "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
+        "TRIANGLE_UI_DEVELOPMENT.md",
+        "TRIANGLE_UI_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "閉輪郭/交差/分断等の検査を維持。新規凸cut-cellは閉終点/向きのみ同形状で処理し、正スリバーを削除せず未解像は拒否。一般幾何の修復/凹/穴/熱解析適格は未完了。"
     },

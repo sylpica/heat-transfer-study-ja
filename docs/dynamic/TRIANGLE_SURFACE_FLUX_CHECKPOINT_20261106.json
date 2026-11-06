@@ -1,0 +1,204 @@
+{
+  "generatedAtUTC": "2026-11-06T12:54:21.292966+00:00",
+  "baseSourceCommit": "4f9d21f52af31ead0b790303a5313233b93dcb3a",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/triangle-surface-boundaries.mjs": "7a645bac87a9ffd0a3a7ecd618fadab7a5a9f08b7852f62eab79636a36a03426",
+    "dynamic/dev/triangle-surface-field.mjs": "1b2fc18865bbf38e200df738901855613bdab8b273432ac66fe4015ec5095540",
+    "dynamic/dev/triangle-surface-flux-recovery.mjs": "6f352a37575b5b5f724bf11f1036041df6cffe238a8c15558943d18db27725fd",
+    "scripts/dynamic-triangle-surface-flux-reference.py": "09cc7ee3e53c8c01944319ac4de76eb0c9cd9d01ce57f89a248dcb39e5ae80b5",
+    "tests/dynamic-triangle-surface-flux.test.mjs": "09b4150709c1cb3a13d2b9f588bb2369a7b24e83588f18beba107c1f7e07a7ce",
+    "tests/dynamic-triangle-surface-flux-browser.mjs": "ed75585ae77f610ac314742eeb26fb1b38e289ac3920fc42b4073ced2882f3aa",
+    "docs/dynamic/TRIANGLE_SURFACE_FLUX_REFERENCE_20261106.json": "46bc6dfb4250b60f9e6eed755effe5a388d06413085cbef852066673a6780257"
+  },
+  "criteriaDeclaredAtCommit": "4f9d21f",
+  "relatedNodeTests": 2,
+  "node": {
+    "tests": 1414,
+    "pass": 1409,
+    "skipped": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "knownBoundaryPowersPreserved": true,
+      "independentConstrainedOptimum": true,
+      "closedGaugeAndOpenDirichlet": true,
+      "tinyRadiationHeatPreserved": true,
+      "nonlinearKnownConvectionAndRadiation": true,
+      "readOnlyStateAndRealRestore": true,
+      "cases": [
+        {
+          "kind": "rectangle",
+          "n": 4,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 1.807975991141575e-11,
+          "maximumElementResidualW": 1.9150792063271638e-11,
+          "iterations": 49
+        },
+        {
+          "kind": "pentagon",
+          "n": 4,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 1.8191670392297965e-11,
+          "maximumElementResidualW": 2.9658879519001147e-11,
+          "iterations": 59
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 2,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 7.638334409421077e-14,
+          "maximumElementResidualW": 1.3734198963296264e-13,
+          "iterations": 0
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 4,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 1.1812772982011666e-13,
+          "maximumElementResidualW": 1.0099121539042249e-13,
+          "iterations": 0
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 8,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 2.4868995751603507e-14,
+          "maximumElementResidualW": 1.6002014528263957e-14,
+          "iterations": 0
+        },
+        {
+          "kind": "closed-nonlinear-transient",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 2.403632848313464e-12,
+          "maximumElementResidualW": 3.833582756795906e-12,
+          "iterations": 61
+        },
+        {
+          "kind": "closed-equilibrium-cancellation",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.2046415409007693e-14,
+          "maximumElementResidualW": 7.031412489292659e-16,
+          "iterations": 0
+        },
+        {
+          "kind": "tiny-radiative-source",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 9.781881288367608e-120,
+          "maximumElementResidualW": 2.126804467052292e-119,
+          "iterations": 59
+        }
+      ],
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "knownBoundaryPowersPreserved": true,
+      "independentConstrainedOptimum": true,
+      "closedGaugeAndOpenDirichlet": true,
+      "tinyRadiationHeatPreserved": true,
+      "nonlinearKnownConvectionAndRadiation": true,
+      "readOnlyStateAndRealRestore": true,
+      "cases": [
+        {
+          "kind": "rectangle",
+          "n": 4,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 1.807975991141575e-11,
+          "maximumElementResidualW": 1.9149903884851938e-11,
+          "iterations": 49
+        },
+        {
+          "kind": "pentagon",
+          "n": 4,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 1.8193446749137365e-11,
+          "maximumElementResidualW": 2.9659073808030456e-11,
+          "iterations": 59
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 2,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 7.638334409421077e-14,
+          "maximumElementResidualW": 1.357136625301791e-13,
+          "iterations": 0
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 4,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 1.1812772982011666e-13,
+          "maximumElementResidualW": 1.0018830209901358e-13,
+          "iterations": 0
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 8,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 2.4424906541753444e-14,
+          "maximumElementResidualW": 1.5842734531664396e-14,
+          "iterations": 0
+        },
+        {
+          "kind": "closed-nonlinear-transient",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 2.403854892918389e-12,
+          "maximumElementResidualW": 3.833579287348954e-12,
+          "iterations": 61
+        },
+        {
+          "kind": "closed-equilibrium-cancellation",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.2046415409007693e-14,
+          "maximumElementResidualW": 7.031412489292663e-16,
+          "iterations": 0
+        },
+        {
+          "kind": "tiny-radiative-source",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 9.78175500465151e-120,
+          "maximumElementResidualW": 2.126777729909458e-119,
+          "iterations": 59
+        }
+      ],
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "surfaceCoreWorkerRegressionBothEngines": [
+    "tests/dynamic-triangle-surface-browser.mjs"
+  ],
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "guiImplemented": false,
+  "generalContinuousTransientAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

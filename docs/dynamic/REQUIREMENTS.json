@@ -966,9 +966,12 @@
         "TRIANGLE_UI_DEVELOPMENT.md",
         "TRIANGLE_UI_CHECKPOINT_20261106.json",
         "TRIANGLE_OUTLINE_EDITOR.md",
-        "TRIANGLE_OUTLINE_EDITOR_CHECKPOINT_20261106.json"
+        "TRIANGLE_OUTLINE_EDITOR_CHECKPOINT_20261106.json",
+        "TRIANGLE_FLUX_RECOVERY.md",
+        "TRIANGLE_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_FLUX_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "既存階段格子と凸cut-cell定常PDEに加え、開発専用の厳密符号Delaunay三角形P1・正lumped容量・SSPRK2過渡と実温度場GUIを独立解析解/時間行列指数で検査。旧cut-cell補正の最大原理違反は残し、その時間接続は保留。凸3プリセットと3〜12頂点編集・一定物性・全周固定温度のみ。凹/穴/曲線/混合境界/保存的熱流束回復/一般CFD/公開は未完了。"
+      "remainingOrScope": "既存階段格子と凸cut-cell定常PDEに加え、開発専用の厳密符号Delaunay三角形P1・正lumped容量・SSPRK2過渡と実温度場GUIを独立解析解/時間行列指数で検査。旧cut-cell補正の最大原理違反は残し、その時間接続は保留。凸3プリセットと3〜12頂点編集・一定物性・全周固定温度のみ。保存的RT0後処理は独立最適辺熱・連続全流束を4格子で局所検証。凹/穴/曲線/混合境界/回復流束GUI/一般CFD/公開は未完了。"
     },
     {
       "id": "Q56",
@@ -1109,7 +1112,10 @@
         "TRIANGLE_UI_DEVELOPMENT.md",
         "TRIANGLE_UI_CHECKPOINT_20261106.json",
         "TRIANGLE_OUTLINE_EDITOR.md",
-        "TRIANGLE_OUTLINE_EDITOR_CHECKPOINT_20261106.json"
+        "TRIANGLE_OUTLINE_EDITOR_CHECKPOINT_20261106.json",
+        "TRIANGLE_FLUX_RECOVERY.md",
+        "TRIANGLE_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_FLUX_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "閉輪郭/交差/分断等の検査を維持。新規凸cut-cellは閉終点/向きのみ同形状で処理し、正スリバーを削除せず未解像は拒否。一般幾何の修復/凹/穴/熱解析適格は未完了。"
     },

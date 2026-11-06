@@ -1,0 +1,109 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-06T04:08:04.661847+00:00",
+  "baseSourceCommit": "36cb7b9bdaf3fbd4d21e6414d5fe59d9a84e9a4f",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/triangle-diffusion.mjs": "2f6e3f3816ef6b2856a5f7362dc8cf4e57a2a56bd06afe2b1ced702ec0b3cb1e",
+    "dynamic/dev/triangle-flux-recovery.mjs": "ff42efe54ce0a407434dd2cfe65c82d15609b4f2482295aac912497fb4e8044c",
+    "scripts/dynamic-triangle-flux-reference.py": "09c691cf67aedf9aec43cc8aae48bfc15e104b222695f3c7f7e0bae7584cd991",
+    "tests/dynamic-triangle-flux-recovery.test.mjs": "53fc82de450fd32aa2a9803f086a8abbacf1448861637a8676d7abf9f22a115f",
+    "tests/dynamic-triangle-flux-browser.mjs": "cfcf64ab2d7d3d60b1fcd88a8ce818164744bb0810bdf29a12ef6ffa47b7f1b6",
+    "docs/dynamic/TRIANGLE_FLUX_REFERENCE_20261106.json": "b619451fc73941d8694e4ddeee4c10f9a0614b58a5145207ed25aaf87ee0ca07"
+  },
+  "operationPolicy": "Root only; no subagents; local commands, engines and Node files sequential",
+  "relatedNodeTests": 5,
+  "node": {
+    "tests": 1361,
+    "pass": 1356,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerRates": true,
+      "independentEdgeOptimum": true,
+      "conservativePostprocessOnly": true,
+      "physicalStateUnchanged": true,
+      "realRestoreUnchanged": true,
+      "cases": [
+        {
+          "subdivisions": 4,
+          "triangles": 64,
+          "independentMaximumEdgeErrorW": 7.815970093361102e-14,
+          "maximumElementResidualW": 3.552713678800501e-15,
+          "iterations": 18
+        },
+        {
+          "subdivisions": 16,
+          "triangles": 1024,
+          "independentMaximumEdgeErrorW": 4.4941828036826337e-13,
+          "maximumElementResidualW": 3.0036043097148024e-13,
+          "iterations": 85
+        }
+      ],
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerRates": true,
+      "independentEdgeOptimum": true,
+      "conservativePostprocessOnly": true,
+      "physicalStateUnchanged": true,
+      "realRestoreUnchanged": true,
+      "cases": [
+        {
+          "subdivisions": 4,
+          "triangles": 64,
+          "independentMaximumEdgeErrorW": 7.815970093361102e-14,
+          "maximumElementResidualW": 5.329070518200751e-15,
+          "iterations": 18
+        },
+        {
+          "subdivisions": 16,
+          "triangles": 1024,
+          "independentMaximumEdgeErrorW": 4.4941828036826337e-13,
+          "maximumElementResidualW": 3.0036043097148024e-13,
+          "iterations": 85
+        }
+      ],
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "predeclaredCriteriaCommit": "36cb7b9",
+  "independentChecks": {
+    "edgeOptimum": true,
+    "localBalance": true,
+    "finestVectorAccuracy": true,
+    "lastRefinementOrder": true
+  },
+  "finestContinuousVectorRelativeL2": 0.05381951037895009,
+  "continuousVectorOrders": [
+    1.0279944751082564,
+    1.170147651671198,
+    1.132961618442499
+  ],
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "equilibratedConservativeFluxPostprocessImplemented": true,
+  "postprocessChangesTemperature": false,
+  "dedicatedFluxGUIImplemented": false,
+  "generalAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

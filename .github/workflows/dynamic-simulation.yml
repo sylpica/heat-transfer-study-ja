@@ -139,6 +139,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify read-only RT0 recovery against the independent constrained edge optimum
+        run: node tests/dynamic-triangle-flux-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise actual P1 nodal temperature interpolation, grid comparison and probe controls
         run: node tests/dynamic-triangle-ui-browser.mjs
         env:

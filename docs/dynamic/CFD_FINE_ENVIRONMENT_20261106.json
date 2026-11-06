@@ -1,0 +1,14 @@
+{
+  "observedAtUTC": "2026-11-06T13:55:09.634630+00:00",
+  "environmentObservedAfterLidRuns": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "scope": "Same workspace after the first three lid measurements; no Node/runtime installations changed during those runs. The original driver did not embed environment fields. This sidecar records observation time rather than inventing an in-run timestamp.",
+  "cases": [
+    "CFD_FINE_LID_N16_20261106_v1.json",
+    "CFD_FINE_LID_N32_20261106_v1.json",
+    "CFD_FINE_LID_N64_20261106_v1.json"
+  ]
+}

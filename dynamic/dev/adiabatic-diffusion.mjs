@@ -55,7 +55,7 @@ function cpuModel(spec,reason){
   restore(s){if(closed||busy)throw Error('Diffusion model is closed or busy');validateRestore(s);accepted=model.restore(s);return snapshot();},
   async advance({duration,dt,signal,onProgress}={}){
    if(closed||busy)throw Error('Diffusion model is closed or busy');const p=plan(duration,dt,spec.safeDt),before=accepted;if(!Number.isFinite(before.time+duration)||before.time+duration<=before.time||!Number.isSafeInteger(before.steps+p.steps))throw Error('Physical time or step count is not representable');busy=true;
-   try{cancelled(signal);for(let i=0;i<p.steps;i++){model.step(i===p.steps-1?p.lastDt:p.dt,false);if((i+1)%32===0||i===p.steps-1){onProgress?.((i+1)/p.steps);cancelled(signal);await yieldThread();cancelled(signal);if(closed)throw Error('Diffusion model was closed');}}accepted=model.snapshot();return snapshot();
+   try{cancelled(signal);for(let i=0;i<p.steps;i++){model.step(i===p.steps-1?p.lastDt:p.dt,false);if((i+1)%32===0||i===p.steps-1){onProgress?.((i+1)/p.steps);cancelled(signal);await yieldThread();cancelled(signal);if(closed)throw Error('Diffusion model was closed');}}const candidate=model.snapshot(),target=before.time+duration,clockBudget=64*Number.EPSILON*target*(p.steps+1);if(!Number.isFinite(candidate.time)||Math.abs(candidate.time-target)>clockBudget)throw Error('CPU substep clock differs from the declared interval beyond roundoff');accepted=model.restore({...candidate,time:target});return snapshot();
    }catch(error){model.restore(before);throw error;}finally{busy=false;}
   },close(){closed=true;}
  };

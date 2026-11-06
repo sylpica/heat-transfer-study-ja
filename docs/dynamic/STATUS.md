@@ -699,3 +699,6 @@ GPU Worker準備として、dev断熱拡散にbackend/条件/予算署名・保�
 
 
 実imageのe3507f9 CI失敗を切り分け、元失敗をGPU_WORKER_CI_FIX_20261107.jsonへ保持。輪郭編集試験はRAF前caption読取を、同じ期待表示を待つ形へ修正。コンテナーの旧cache用git fetchはマウント所有者と実HOMEのGit信頼設定が不一致だったため、当該GITHUB_WORKSPACEだけをsafe.directoryへ追加。44ブラウザー試験を削除せず、ローカル輪郭編集/旧cache更新・オフラインは両エンジン成功。実CIでの新修正成功は未確定。
+
+
+GPU GUI準備でCPUの16,384細刻み加算時計と宣言区間の丸め差を確認。既存A/B時刻閾値を緩めず、内部差が丸め予算内か検査して要求終点へCPU時計を確定。同一Euler温度列/ステップ/端数刻みは直接コアとbit一致。GUIの仮想物性/cosセル平均preset・実寸比viewを準備し新2件込み12関連Nodeと現実Worker両エンジン再実行成功。GPU_UI_WIP_20261107.mdへ接続前条件を保存、HTML/UIは次。

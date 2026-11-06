@@ -1,0 +1,84 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-06T04:24:36.268208+00:00",
+  "baseSourceCommit": "ed54bf74ec5d1bd927cb5d6e9c21f176d4a4de8a",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/convex-triangle-mesh.mjs": "f6b44f644ebf7f39298023f9605278dd51751b3a4db892f8933a39c11625dc11",
+    "dynamic/dev/triangle-boundaries.mjs": "84ea8042b2ea44dbc47b8a4d587d7d6d2131a511c8a2a0a1e2e777f980ef26e8",
+    "tests/dynamic-triangle-boundaries.test.mjs": "2854ed4bcfb84a49a04311822a5cbb15b87ab81a518a1c356455ec9bb6bbe0d3",
+    "tests/dynamic-triangle-mesh-browser.mjs": "2294111ea13435084aa4433c0701595de0b404d07238ce465d548714854213f4"
+  },
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "relatedNodeTests": 3,
+  "node": {
+    "tests": 1366,
+    "pass": 1361,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "linearBoundaryAssemblyOnly": true,
+      "topologicalBoundaryIdentity": true,
+      "negativeDynamicBoundaryConductancesRejected": true,
+      "p1Operator": {
+        "affineQuadraticFormWK": 26.100000000000016,
+        "zeroWeightEdges": 40,
+        "unknownGraphConnectedToDirichlet": true,
+        "temperaturePDEImplemented": false
+      },
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "linearBoundaryAssemblyOnly": true,
+      "topologicalBoundaryIdentity": true,
+      "negativeDynamicBoundaryConductancesRejected": true,
+      "p1Operator": {
+        "affineQuadraticFormWK": 26.100000000000016,
+        "zeroWeightEdges": 40,
+        "unknownGraphConnectedToDirichlet": true,
+        "temperaturePDEImplemented": false
+      },
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "RT0WorkerRegression": {
+    "chromium": true,
+    "webkit": true
+  },
+  "boundaryTopologyImplemented": true,
+  "linearBoundaryAssemblyImplemented": true,
+  "mixedBoundaryTimeIntegrationImplemented": false,
+  "mixedBoundaryGUIImplemented": false,
+  "robinSpatialAccuracyVerified": false,
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "generalAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

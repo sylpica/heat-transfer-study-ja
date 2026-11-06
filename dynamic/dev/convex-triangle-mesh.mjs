@@ -14,7 +14,7 @@ export function createConvexTriangleMesh(input){
  function circle(a,b,c,d){const r=inCircle2D(a,b,c,d);predicateCounts.inCircle++;if(r.exactFallback)predicateCounts.inCircleExactFallback++;return r.sign;}
  let direction=0;for(let i=0;i<q.length;i++){for(let j=0;j<i;j++)if(equal(q[i],q[j]))throw Error('重複または正規化で一致した頂点があります。');for(let j=0;j<q.length;j++){if(j===i||j===(i+1)%q.length)continue;const s=orient(q[i],q[(i+1)%q.length],q[j]);if(!s)throw Error('一直線の頂点はこの厳密凸メッシュの対象外です。');if(direction&&direction!==s)throw Error('凹・交差輪郭はこのメッシュの対象外です。');direction=s;}}
  if(direction<0){p.reverse();q.reverse();repaired.push('同じ輪郭を反時計回りへ並べ替えました。');}
- const center=[0,1].map(k=>sum(q.map(a=>a[k]/q.length))),nodes=[],indices=new Map(),triangles=[],boundaryEdges=new Set();
+ const center=[0,1].map(k=>sum(q.map(a=>a[k]/q.length))),nodes=[],indices=new Map(),triangles=[],boundaryEdges=new Map();
  function node(sector,a,b){
   const next=(sector+1)%q.length,c=n-a-b;let id,position,boundary=false;
   if(a===0&&b===0){id='center';position=center;}
@@ -27,9 +27,9 @@ export function createConvexTriangleMesh(input){
  function ccw(t){const s=orient(...t.map(i=>nodes[i].normalized));if(s===0)throw Error('正の三角形を解像できません。');return s>0?t:[t[0],t[2],t[1]];}
  for(let sector=0;sector<q.length;sector++){
   for(let a=0;a<n;a++)for(let b=0;a+b<n;b++){triangles.push(ccw([node(sector,a,b),node(sector,a+1,b),node(sector,a,b+1)]));if(a+b<=n-2)triangles.push(ccw([node(sector,a+1,b),node(sector,a+1,b+1),node(sector,a,b+1)]));}
-  for(let t=0;t<n;t++)boundaryEdges.add(edgeKey(node(sector,n-t,t),node(sector,n-t-1,t+1)));
+  for(let t=0;t<n;t++)boundaryEdges.set(edgeKey(node(sector,n-t,t),node(sector,n-t-1,t+1)),sector);
  }
- function connectivity(){const edges=new Map();triangles.forEach((t,triangle)=>{for(let i=0;i<3;i++){const a=t[i],b=t[(i+1)%3],key=edgeKey(a,b);if(!edges.has(key))edges.set(key,[]);edges.get(key).push({triangle,a,b,opposite:t[(i+2)%3]});}});for(const [key,e]of edges)if(e.length!==(boundaryEdges.has(key)?1:2))throw Error('三角形の境界・隣接が一致しません。');for(const key of boundaryEdges)if(!edges.has(key))throw Error('輪郭辺がメッシュから失われています。');return edges;}
+ function connectivity(){const edges=new Map();triangles.forEach((t,triangle)=>{for(let i=0;i<3;i++){const a=t[i],b=t[(i+1)%3],key=edgeKey(a,b);if(!edges.has(key))edges.set(key,[]);edges.get(key).push({triangle,a,b,opposite:t[(i+2)%3]});}});for(const [key,e]of edges)if(e.length!==(boundaryEdges.has(key)?1:2))throw Error('三角形の境界・隣接が一致しません。');for(const key of boundaryEdges.keys())if(!edges.has(key))throw Error('輪郭辺がメッシュから失われています。');return edges;}
  let flips=0,edges;
  for(;;){edges=connectivity();let changed=false;for(const [key,e]of edges){if(e.length===1)continue;const first=e[0],other=e[1],a=nodes[first.a].normalized,b=nodes[first.b].normalized,c=nodes[first.opposite].normalized,d=nodes[other.opposite].normalized;if(circle(a,b,c,d)<=0)continue;
    // Only a strictly convex quadrilateral can exchange its diagonal.
@@ -39,7 +39,7 @@ export function createConvexTriangleMesh(input){
  }
  const elements=triangles.map((t,id)=>{const [a,b,c]=t.map(i=>nodes[i].normalized),twice=finite((b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]),'三角形の向き付き面積',true),area=finite(twice/2*areaScale,'三角形面積',true),sides=[Math.hypot(b[0]-c[0],b[1]-c[1]),Math.hypot(c[0]-a[0],c[1]-a[1]),Math.hypot(a[0]-b[0],a[1]-b[1])],quality=finite(2*Math.sqrt(3)*twice/sum(sides.map(v=>v*v)),'三角形品質',true);return {id,nodes:[...t],area,normalizedTwiceArea:twice,quality};}),area=sum(elements.map(e=>e.area)),fanArea=sum(q.map((a,i)=>{const b=q[(i+1)%q.length];return finite(((a[0]-center[0])*(b[1]-center[1])-(a[1]-center[1])*(b[0]-center[0]))/2*areaScale,'元輪郭面積',true);})),areaResidual=finite(area-fanArea,'輪郭と全要素の面積差');
  if(Math.abs(areaResidual)>4096*Number.EPSILON*fanArea)throw Error('輪郭と全三角形の面積が一致しません。');
- const outputEdges=[];for(const [key,e]of edges){const a=e[0].a,b=e[0].b,isBoundary=boundaryEdges.has(key);if(isBoundary&&(!nodes[a].boundary||!nodes[b].boundary))throw Error('輪郭の節点状態が不正です。');outputEdges.push({nodes:[a,b],triangles:e.map(v=>v.triangle),oppositeNodes:e.map(v=>v.opposite),boundary:isBoundary,exactlyCocircular:e.length===2?circle(...triangles[e[0].triangle].map(i=>nodes[i].normalized),nodes[e[1].opposite].normalized)===0:false});}
+ const outputEdges=[];for(const [key,e]of edges){const a=e[0].a,b=e[0].b,isBoundary=boundaryEdges.has(key);if(isBoundary&&(!nodes[a].boundary||!nodes[b].boundary))throw Error('輪郭の節点状態が不正です。');outputEdges.push({nodes:[a,b],triangles:e.map(v=>v.triangle),oppositeNodes:e.map(v=>v.opposite),boundary:isBoundary,outlineEdge:isBoundary?boundaryEdges.get(key):null,exactlyCocircular:e.length===2?circle(...triangles[e[0].triangle].map(i=>nodes[i].normalized),nodes[e[1].opposite].normalized)===0:false});}
  const maximumBoundaryLineResidual=Math.max(...nodes.filter(v=>v.boundary).map(v=>Math.min(...q.map((a,i)=>{const b=q[(i+1)%q.length];return Math.abs((b[0]-a[0])*(v.normalized[1]-a[1])-(b[1]-a[1])*(v.normalized[0]-a[0]))/Math.hypot(b[0]-a[0],b[1]-a[1]);}))));
  return {kind:'convex-conforming-delaunay-development-mesh',outline:p,nodes,elements,edges:outputEdges,subdivisions:n,repaired,numerics:{normalizationOrigin:origin,normalizationScale:scale,area,referencePolygonArea:fanArea,areaResidual,maximumNormalizedBoundaryLineResidual:maximumBoundaryLineResidual,minimumTriangleQuality:Math.min(...elements.map(e=>e.quality)),flips,predicates:predicateCounts,allLocalInteriorEdgesDelaunay:true,sourceBoundaryCornersPreserved:true,zeroAreaElementsRemoved:0},scope:{strictConvexOnly:true,piecewiseLinearGeometry:true,exactArithmeticOnRoundedNormalizedCoordinates:true,stiffnessAssembled:false,temperaturePDEImplemented:false,monotonicityVerified:false,temporalStabilityVerified:false,generalAccuracyVerified:false},releaseApproved:false};
 }

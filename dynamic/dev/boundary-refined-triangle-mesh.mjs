@@ -1,6 +1,6 @@
 // Development geometry prototype. No PDE or general termination guarantee.
 // Split encroached boundary segments at midpoints, then restore local Delaunay.
-import {createConvexTriangleMesh} from './convex-triangle-mesh.mjs';
+import {createConvexTriangleMesh,trianglePhysicalFidelity} from './convex-triangle-mesh.mjs';
 import {orientation2D,inCircle2D,edgeCotangentDyadic} from './planar-predicates.mjs';
 const finite=(x,name,positive=false)=>{if(typeof x!=='number'||!Number.isFinite(x)||(positive&&x<=0))throw Error(`${name}が数値範囲外です。`);return x===0?0:x;};
 function sum(values){let s=0,error=0;for(const v of values){const y=v-error,t=s+y;error=(t-s)-y;s=t;}return finite(s,'面積合計');}
@@ -30,5 +30,5 @@ export function createBoundaryRefinedTriangleMesh(input){
  if(negativeBoundary||nodes.length-output.length+elements.length!==1)throw Error('境界分割後の係数/円板位相を検証できません。');
  const maximumLineResidual=Math.max(...nodes.filter(n=>n.boundary).map(n=>Math.min(...base.outline.map((a,i)=>{const b=base.outline[(i+1)%base.outline.length],u=a.map((x,k)=>(x-origin[k])/scale),v=b.map((x,k)=>(x-origin[k])/scale);return Math.abs((v[0]-u[0])*(n.normalized[1]-u[1])-(v[1]-u[1])*(n.normalized[0]-u[0]))/Math.hypot(v[0]-u[0],v[1]-u[1]);}))));
  if(maximumLineResidual>4096*Number.EPSILON)throw Error('分割境界が元の輪郭線から丸め予算を超えて離れています。');
- return {...base,generator:'convex-boundary-refined-delaunay-development-v1',nodes,elements,edges:output,numerics:{...base.numerics,area,areaResidual,minimumTriangleQuality:Math.min(...elements.map(e=>e.quality)),boundaryRefinement:{rounds,splits,additionalFlips:flips,originalNodeCount,originalTriangleCount,boundarySegmentCountByOutlineEdge:count,negativeBoundaryConductanceCount:0},maximumNormalizedBoundaryLineResidual:maximumLineResidual,maximumPhysicalCoordinateReconstructionNormalizedError:Math.max(...nodes.flatMap(n=>n.point.map((x,k)=>Math.abs((x-origin[k])/scale-n.normalized[k]))))},scope:{...base.scope,allBoundaryCotangentsNonnegative:true,temperaturePDEImplemented:false,generalTerminationProved:false,generalAccuracyVerified:false},releaseApproved:false};
+ return {...base,generator:'convex-boundary-refined-delaunay-development-v1',nodes,elements,edges:output,numerics:{...base.numerics,area,areaResidual,minimumTriangleQuality:Math.min(...elements.map(e=>e.quality)),boundaryRefinement:{rounds,splits,additionalFlips:flips,originalNodeCount,originalTriangleCount,boundarySegmentCountByOutlineEdge:count,negativeBoundaryConductanceCount:0},maximumNormalizedBoundaryLineResidual:maximumLineResidual,...trianglePhysicalFidelity(nodes,elements,origin,scale)},scope:{...base.scope,allBoundaryCotangentsNonnegative:true,temperaturePDEImplemented:false,generalTerminationProved:false,generalAccuracyVerified:false},releaseApproved:false};
 }

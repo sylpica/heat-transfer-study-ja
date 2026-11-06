@@ -138,7 +138,12 @@
         "TRIANGLE_LINEAR_UI.md",
         "TRIANGLE_LINEAR_UI_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_FLUX_UI.md",
-        "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json"
+        "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json",
+        "BOUNDARY_REFINED_TRANSIENT.md",
+        "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_RECTANGLE_UI.md",
+        "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -202,7 +207,12 @@
         "STATUS.md",
         "ARCHITECTURE.md",
         "TRIANGLE_OUTLINE_EDITOR.md",
-        "TRIANGLE_OUTLINE_EDITOR_CHECKPOINT_20261106.json"
+        "TRIANGLE_OUTLINE_EDITOR_CHECKPOINT_20261106.json",
+        "BOUNDARY_REFINED_TRANSIENT.md",
+        "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_RECTANGLE_UI.md",
+        "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -843,9 +853,14 @@
         "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json",
         "BOUNDARY_REFINED_MESH.md",
         "BOUNDARY_REFINED_MESH_REFERENCE_20261106.json",
-        "BOUNDARY_REFINED_MESH_CHECKPOINT_20261106.json"
+        "BOUNDARY_REFINED_MESH_CHECKPOINT_20261106.json",
+        "BOUNDARY_REFINED_TRANSIENT.md",
+        "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_RECTANGLE_UI.md",
+        "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "板/径方向の固定温度/熱流束/対流/放射/同一面対流＋放射と、開発専用の流路両壁q入力を検算。自由輪郭の面積/法線を要する一般境界/連成は保護して未公開。 凸P1は輪郭辺の位相IDと線形境界項/正係数判定を開発用に組立済みだが、正の未知系の別過渡モデルをsin/cos連続全場・アフィン行列指数・実Workerへ限定検証。正方形の専用GUIも実Worker/両ブラウザーで検査。混合境界の回復流束も既知境界熱を保持して独立限定検証。回復流束も正方形GUIへ任意矢印/測定/診断として接続し、既知境界熱と主状態の不変更を両ブラウザー確認。一般形状・精度は未完了。"
+      "remainingOrScope": "板/径方向/同一表面や開発流路の限定境界を検算。開発P1は一定の固定温度/断熱/指定熱流束/row-lumped Robinを、正方形と明示した境界中点分割の回転矩形で連続全場・時間指数・制約付き回復流束へ照合し、専用GUIの実Worker/両ブラウザーで確認。一般輪郭/任意境界/非線形境界・連成・一般精度/正式公開は未完了。"
     },
     {
       "id": "Q48",
@@ -1015,9 +1030,14 @@
         "TRIANGLE_LINEAR_FLUX_UI_CHECKPOINT_20261106.json",
         "BOUNDARY_REFINED_MESH.md",
         "BOUNDARY_REFINED_MESH_REFERENCE_20261106.json",
-        "BOUNDARY_REFINED_MESH_CHECKPOINT_20261106.json"
+        "BOUNDARY_REFINED_MESH_CHECKPOINT_20261106.json",
+        "BOUNDARY_REFINED_TRANSIENT.md",
+        "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_RECTANGLE_UI.md",
+        "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "既存階段格子と凸cut-cell定常PDEに加え、開発専用の厳密符号Delaunay三角形P1・正lumped容量・SSPRK2過渡と実温度場GUIを独立解析解/時間行列指数で検査。旧cut-cell補正の最大原理違反は残し、その時間接続は保留。凸3プリセットと3〜12頂点編集・一定物性・全周固定温度のみ。保存的RT0後処理は独立最適辺熱・連続全流束を4格子で局所検証し、実GUIの共通尺度矢印/測定/診断へ接続。凹/穴/曲線/混合境界/一般CFD/公開は未完了。"
+      "remainingOrScope": "開発用凸Delaunay P1の全周固定過渡・3〜12頂点編集・実温度場/保存的RT0 GUIを限定検証。明示した境界中点分割の回転矩形へ線形混合境界も接続し、連続全場/時間指数/制約辺熱と両ブラウザーGUIへ照合。負係数は切り捨てず、物理座標と正規化形状の忠実度も検査。旧cut-cellの最大原理違反と時間接続保留は保持。一般編集輪郭の混合境界GUI/凹/穴/曲線/一般CFD/正式公開は未完了。"
     },
     {
       "id": "Q56",
@@ -1179,9 +1199,14 @@
         "TRIANGLE_PHYSICAL_MAPPING_FIX_20261106.md",
         "BOUNDARY_REFINED_MESH.md",
         "BOUNDARY_REFINED_MESH_REFERENCE_20261106.json",
-        "BOUNDARY_REFINED_MESH_CHECKPOINT_20261106.json"
+        "BOUNDARY_REFINED_MESH_CHECKPOINT_20261106.json",
+        "BOUNDARY_REFINED_TRANSIENT.md",
+        "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_RECTANGLE_UI.md",
+        "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "閉輪郭/交差/分断等の検査を維持。新規凸cut-cellは閉終点/向きのみ同形状で処理し、正スリバーを削除せず未解像は拒否。一般幾何の修復/凹/穴/熱解析適格は未完了。"
+      "remainingOrScope": "閉輪郭/交差/分断等の検査、同形状を保つ閉終点/向き修復のみ維持。凸Delaunayは負の境界cotangentを実中点分割で解消する別方式を限定検証し、物理座標の再構成/要素面積忠実度も検査して不適格は拒否。一般終了保証/凹/穴/一般幾何修復と熱解析適格は未完了。"
     },
     {
       "id": "Q65",

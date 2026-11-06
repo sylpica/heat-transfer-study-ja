@@ -1,0 +1,472 @@
+{
+  "generatedAtUTC": "2026-11-06T09:13:14.104750+00:00",
+  "label": "after",
+  "sourceCommit": "deca3bc791a7ed54f4b22b19faf06d74f118dab2",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/convex-triangle-mesh.mjs": "296587f20a9959aaa31c2a49136a58429510e867645c2ade1f9c24a0ee59f0e6",
+    "dynamic/dev/boundary-refined-triangle-mesh.mjs": "f86992c83066a286d3238e37ead8cad077d9d2019dc054793799c03ae3db081a"
+  },
+  "generatorSHA256": "ec1ae82187244ef4acaf1adcfc6a2ac69bda5ce1dd4436d1d77ef8f76301290d",
+  "method": "Exact Fraction physical determinant evaluated on every supplied IEEE node, compared with reported normalized P1 area. No production predicate, cotangent, topology test or approximate determinant generates the area oracle.",
+  "rows": [
+    {
+      "name": "quantized-1000000000000-3",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            1000000000000,
+            1000000000000
+          ],
+          [
+            1000000000004,
+            1000000000000
+          ],
+          [
+            1000000000004,
+            1000000000004
+          ],
+          [
+            1000000000000,
+            1000000000004
+          ]
+        ],
+        "subdivisions": 3
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-1000000000000-5",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            1000000000000,
+            1000000000000
+          ],
+          [
+            1000000000004,
+            1000000000000
+          ],
+          [
+            1000000000004,
+            1000000000004
+          ],
+          [
+            1000000000000,
+            1000000000004
+          ]
+        ],
+        "subdivisions": 5
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-1000000000000-10",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            1000000000000,
+            1000000000000
+          ],
+          [
+            1000000000004,
+            1000000000000
+          ],
+          [
+            1000000000004,
+            1000000000004
+          ],
+          [
+            1000000000000,
+            1000000000004
+          ]
+        ],
+        "subdivisions": 10
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-100000000000000-3",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            100000000000000,
+            100000000000000
+          ],
+          [
+            100000000000004,
+            100000000000000
+          ],
+          [
+            100000000000004,
+            100000000000004
+          ],
+          [
+            100000000000000,
+            100000000000004
+          ]
+        ],
+        "subdivisions": 3
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-100000000000000-5",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            100000000000000,
+            100000000000000
+          ],
+          [
+            100000000000004,
+            100000000000000
+          ],
+          [
+            100000000000004,
+            100000000000004
+          ],
+          [
+            100000000000000,
+            100000000000004
+          ]
+        ],
+        "subdivisions": 5
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-100000000000000-10",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            100000000000000,
+            100000000000000
+          ],
+          [
+            100000000000004,
+            100000000000000
+          ],
+          [
+            100000000000004,
+            100000000000004
+          ],
+          [
+            100000000000000,
+            100000000000004
+          ]
+        ],
+        "subdivisions": 10
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-1000000000000000-3",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            1000000000000000,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000004
+          ],
+          [
+            1000000000000000,
+            1000000000000004
+          ]
+        ],
+        "subdivisions": 3
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-1000000000000000-5",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            1000000000000000,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000004
+          ],
+          [
+            1000000000000000,
+            1000000000000004
+          ]
+        ],
+        "subdivisions": 5
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "quantized-1000000000000000-10",
+      "expected": "rejected",
+      "input": {
+        "outline": [
+          [
+            1000000000000000,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000004
+          ],
+          [
+            1000000000000000,
+            1000000000000004
+          ]
+        ],
+        "subdivisions": 10
+      },
+      "rejected": true,
+      "message": "物理座標の再構成精度が幾何の丸め予算を超えます。原点を近くへ移すか、正確に表現できる分割数へ変更してください。"
+    },
+    {
+      "name": "retained-1000000000-1-4",
+      "expected": "accepted",
+      "input": {
+        "outline": [
+          [
+            1000000000,
+            1000000000
+          ],
+          [
+            1000000001,
+            1000000000
+          ],
+          [
+            1000000001,
+            1000000001
+          ],
+          [
+            1000000000,
+            1000000001
+          ]
+        ],
+        "subdivisions": 4
+      },
+      "rejected": false,
+      "nodeCount": 41,
+      "triangleCount": 64,
+      "maximumExactPhysicalAreaRelativeError": 0.0,
+      "reportedCoordinateReconstructionNormalizedError": 0,
+      "reportedPhysicalElementAreaRelativeError": 0
+    },
+    {
+      "name": "retained-1000000000000000-4-16",
+      "expected": "accepted",
+      "input": {
+        "outline": [
+          [
+            1000000000000000,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000004
+          ],
+          [
+            1000000000000000,
+            1000000000000004
+          ]
+        ],
+        "subdivisions": 16
+      },
+      "rejected": false,
+      "nodeCount": 545,
+      "triangleCount": 1024,
+      "maximumExactPhysicalAreaRelativeError": 0.0,
+      "reportedCoordinateReconstructionNormalizedError": 0,
+      "reportedPhysicalElementAreaRelativeError": 0
+    },
+    {
+      "name": "retained-9007199254740992-64-4",
+      "expected": "accepted",
+      "input": {
+        "outline": [
+          [
+            9007199254740992,
+            9007199254740992
+          ],
+          [
+            9007199254741056,
+            9007199254740992
+          ],
+          [
+            9007199254741056,
+            9007199254741056
+          ],
+          [
+            9007199254740992,
+            9007199254741056
+          ]
+        ],
+        "subdivisions": 4
+      },
+      "rejected": false,
+      "nodeCount": 41,
+      "triangleCount": 64,
+      "maximumExactPhysicalAreaRelativeError": 0.0,
+      "reportedCoordinateReconstructionNormalizedError": 0,
+      "reportedPhysicalElementAreaRelativeError": 0
+    },
+    {
+      "name": "retained-3000000000000000-3-3",
+      "expected": "accepted",
+      "input": {
+        "outline": [
+          [
+            3000000000000000,
+            3000000000000000
+          ],
+          [
+            3000000000000003,
+            3000000000000000
+          ],
+          [
+            3000000000000003,
+            3000000000000003
+          ],
+          [
+            3000000000000000,
+            3000000000000003
+          ]
+        ],
+        "subdivisions": 3
+      },
+      "rejected": false,
+      "nodeCount": 25,
+      "triangleCount": 36,
+      "maximumExactPhysicalAreaRelativeError": 6.661338147750939e-16,
+      "reportedCoordinateReconstructionNormalizedError": 1.1102230246251565e-16,
+      "reportedPhysicalElementAreaRelativeError": 6.661338147750939e-16
+    },
+    {
+      "name": "retained-0-1e-12-4",
+      "expected": "accepted",
+      "input": {
+        "outline": [
+          [
+            0,
+            0
+          ],
+          [
+            1e-12,
+            0
+          ],
+          [
+            1e-12,
+            1e-12
+          ],
+          [
+            0,
+            1e-12
+          ]
+        ],
+        "subdivisions": 4
+      },
+      "rejected": false,
+      "nodeCount": 41,
+      "triangleCount": 64,
+      "maximumExactPhysicalAreaRelativeError": 8.438663626531239e-16,
+      "reportedCoordinateReconstructionNormalizedError": 0,
+      "reportedPhysicalElementAreaRelativeError": 8.881784197001252e-16
+    },
+    {
+      "name": "slender",
+      "expected": "accepted",
+      "input": {
+        "outline": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0.4,
+            1e-09
+          ]
+        ],
+        "subdivisions": 4
+      },
+      "rejected": false,
+      "nodeCount": 31,
+      "triangleCount": 48,
+      "maximumExactPhysicalAreaRelativeError": 3.11233468501765e-16,
+      "reportedCoordinateReconstructionNormalizedError": 0,
+      "reportedPhysicalElementAreaRelativeError": 0
+    },
+    {
+      "name": "refined-binary-large-translation",
+      "expected": "accepted",
+      "input": {
+        "outline": [
+          [
+            1000000000000000,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000000
+          ],
+          [
+            1000000000000004,
+            1000000000000002
+          ],
+          [
+            1000000000000000,
+            1000000000000002
+          ]
+        ],
+        "subdivisions": 4
+      },
+      "rejected": false,
+      "nodeCount": 49,
+      "triangleCount": 72,
+      "maximumExactPhysicalAreaRelativeError": 0.0,
+      "reportedCoordinateReconstructionNormalizedError": 0,
+      "reportedPhysicalElementAreaRelativeError": 0
+    }
+  ],
+  "generalAccuracyVerified": false,
+  "releaseApproved": false
+}

@@ -696,3 +696,6 @@ GPU Worker準備として、dev断熱拡散にbackend/条件/予算署名・保�
 
 
 非同期GPU専用runtime/実Workerを追加し、順序/古いinit破棄/実rollback後の処理を確認。9関連Node成功。ChromiumソフトウェアGPUの実Workerは連続RMS.000100374K、CPU差RMS6.39495e−8K/最大2.57901e−7Kで元予算内、完全復元/実progress取消後のbit再現/厳格ゲート後GPU保持も成功。WebKitはdevice不可のCPU Workerのみ成功しshader未実行として記録。GPU_WORKER.md/同CHECKPOINT参照。WGSL本文不変更、GUI/物理GPU性能/公開は未確認。CIへ新実Worker試験を追加し44ブラウザーコマンドとなる。
+
+
+実imageのe3507f9 CI失敗を切り分け、元失敗をGPU_WORKER_CI_FIX_20261107.jsonへ保持。輪郭編集試験はRAF前caption読取を、同じ期待表示を待つ形へ修正。コンテナーの旧cache用git fetchはマウント所有者と実HOMEのGit信頼設定が不一致だったため、当該GITHUB_WORKSPACEだけをsafe.directoryへ追加。44ブラウザー試験を削除せず、ローカル輪郭編集/旧cache更新・オフラインは両エンジン成功。実CIでの新修正成功は未確定。

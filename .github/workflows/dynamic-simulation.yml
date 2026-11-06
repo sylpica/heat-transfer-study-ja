@@ -44,6 +44,8 @@ jobs:
         engine: [chromium, webkit]
     steps:
       - uses: actions/checkout@v4
+      - name: Trust only this mounted Actions checkout inside the browser container
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

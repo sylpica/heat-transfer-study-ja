@@ -1,0 +1,59 @@
+{
+  "checkedAtUTC": "2026-11-06T23:27:42.361Z",
+  "commit": "e3507f962cde5b24db404d90ef2b080a0c8b1da3",
+  "runId": 42285015033,
+  "jobs": [
+    {
+      "id": 128123569732,
+      "name": "browser (chromium)",
+      "conclusion": "failure",
+      "failedSteps": [
+        "Verify convex vertex editing rejects invalid drafts and cancels in-flight work atomically"
+      ]
+    },
+    {
+      "id": 128123569950,
+      "name": "numerical-and-regression",
+      "conclusion": "success",
+      "failedSteps": []
+    },
+    {
+      "id": 128123570190,
+      "name": "high-order-manufactured-verification",
+      "conclusion": "success",
+      "failedSteps": []
+    },
+    {
+      "id": 128123570225,
+      "name": "browser (webkit)",
+      "conclusion": "failure",
+      "failedSteps": [
+        "Fetch the exact previous worker/cache source without changing the checkout"
+      ]
+    },
+    {
+      "id": 128123570266,
+      "name": "cfd-development-benchmarks",
+      "conclusion": "success",
+      "failedSteps": []
+    }
+  ],
+  "failures": [
+    {
+      "engine": "chromium",
+      "test": "tests/dynamic-triangle-editor-browser.mjs",
+      "assertion": "caption must show 変更条件は未適用",
+      "observed": "A：145節点/256要素、分割8、t=1.000 s。受理した状態。",
+      "fix": "Wait for the existing requestAnimationFrame render to show the same exact required caption before the unchanged assertion. No arbitrary delay or timeout extension."
+    },
+    {
+      "engine": "webkit",
+      "step": "git fetch previous cache source",
+      "observed": "fatal: detected dubious ownership in repository at /__w/heat-transfer-study-ja/heat-transfer-study-ja",
+      "fix": "Add only GITHUB_WORKSPACE to the disposable container's Git safe.directory after checkout. Retain git fetch/show and cache migration tests."
+    }
+  ],
+  "localEditorAndCacheRegressions": "Both Chromium and WebKit passed after the exact-caption wait; Git container ownership change still requires actual CI validation.",
+  "remoteFixVerified": false,
+  "allFiveSucceeded": false
+}

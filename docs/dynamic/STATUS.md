@@ -687,3 +687,6 @@ WebKit CIの実依存install中断に対して、全43試験/両エンジン/15�
 
 
 CIのpush/PR重複をCLIで再確認。同じ平板22a8612のpush run42279902275は全5ジョブ成功をGitHub job APIで直接確認、FLAT_PLATE_UI_PUSH_CI_20261107.jsonへ保存。PR runのinstall中cancelledは保持する。最新6f99414以外の同一ブランチ/同workflowで滞留した過去5実行だけ取消要求を送り、対象と結果を保存。今後はheadリポジトリ/ブランチ別concurrencyで重複を抑え、他ラインを取消対象にしない。最新image変更のCI成功とは区別する。
+
+
+次のPhase4はGPU_WORKER_WIP_20261107.mdに事前保存。既存の限定断熱矩形GPUの式/閾値は保ち、別非同期runtimeと完全復元・実取消へ接続する。既存の同期Worker基盤は変えず、ソフトウェアGPU検査/非対応時の同一CPU経路/実GPU性能を分ける。公開/一般精度は承認しない。

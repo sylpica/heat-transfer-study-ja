@@ -6,6 +6,7 @@ const base={width:1,height:.12,depth:.03,nu:.0001,rho:1,freeStreamVelocity:1},ca
  {name:'Re-upper-eta-upper',config:{...base,height:24/Math.sqrt(1e5),nu:.00001,nx:64,ny:48}},
  {name:'eta-lower',config:{...base,height:.1,nx:48,ny:40}},
  {name:'streamwise-512',config:{...base,nx:512,ny:128}},
+ {name:'transverse-512-256',config:{...base,nx:512,ny:256}},
  {name:'dimensional-air-flow',config:{...base,width:.2,height:.025,nu:1.5e-5,rho:1.177,nx:32,ny:32}},
 ];
 const bytes=readFileSync(new URL('../dynamic/dev/blasius-boundary-flow.mjs',import.meta.url));

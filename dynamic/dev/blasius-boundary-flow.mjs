@@ -33,7 +33,7 @@ export function createBlasiusBoundaryFlow(input){
  if(!input||typeof input!=='object'||Array.isArray(input))throw Error('平板外部流れの条件が必要です。');
  const c=structuredClone(input),allowed=new Set(['width','height','depth','nx','ny','nu','rho','freeStreamVelocity']);
  if(Object.keys(c).some(key=>!allowed.has(key)))throw Error('未対応の流れ条件を暗黙に無視しません。');
- const {nx,ny}=c;if(!Number.isSafeInteger(nx)||nx<4||nx>512||!Number.isSafeInteger(ny)||ny<8||ny>128)throw Error('流れ格子は横4〜512、縦8〜128です。');
+ const {nx,ny}=c;if(!Number.isSafeInteger(nx)||nx<4||nx>512||!Number.isSafeInteger(ny)||ny<8||ny>256)throw Error('流れ格子は横4〜512、縦8〜256です。');
  for(const key of ['width','height','depth','nu','rho','freeStreamVelocity'])finite(c[key],key,true);
  const L=c.width,H=c.height,D=c.depth,U=c.freeStreamVelocity,Re=finite(U*L/c.nu,'Re_L',true),outerEta=finite(H*Math.sqrt(U/(c.nu*L)),'外側η',true);
  const inside=(x,low,high)=>x>=low*(1-8*Number.EPSILON)&&x<=high*(1+8*Number.EPSILON);

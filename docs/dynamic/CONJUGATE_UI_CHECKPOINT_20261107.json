@@ -1,0 +1,167 @@
+{
+  "recordedAtUTC": "2026-11-06T19:53:30.676326+00:00",
+  "basisCommit": "22c38b187913a7f26f855d99f3f1e25620990c45",
+  "sourceAndTestsSHA256": {
+    "dynamic/dev/conjugate-channel.html": "6a7981c1f65c430b48e3e1e33fd9d38cdc0937d4fbdb525e013bd22b221effc5",
+    "dynamic/dev/conjugate-channel.css": "b1cede40f14bc59461cfcf73f7a76118c66255a8eb5ab6463456663bcb171c50",
+    "dynamic/dev/conjugate-channel-ui.mjs": "b92956ff37c13f598f91a3a638637a719bfcac7e34457e265fcc67ddf5fc2d6c",
+    "dynamic/dev/conjugate-channel-ui-config.mjs": "7f5c9c037585cf6a5682d43a7786f8ac70d2947030203ff02287217af04079cd",
+    "dynamic/dev/conjugate-channel-view.mjs": "85a554446ac96811dc579bd6a360e484b4ea0b9dd33674d011590ad60af8a261",
+    "dynamic/dev/conjugate-channel-worker.mjs": "3f7bc77fa03d9f30c49cc78416147029405a0744697b5605e81371a7997554a3",
+    "dynamic/dev/conjugate-channel.mjs": "e341b96901fe9c968161b35445f3212f4b49466df71c2c39789366fc367a10f4",
+    "tests/dynamic-conjugate-ui-browser.mjs": "0912aeeeed452cb669353b66086e287665c270036bec5a94b688e9419719dce3",
+    "tests/dynamic-conjugate-view.test.mjs": "2c99b545183d975f04009852a4f6df5f2a6095da343129a75579e2857892d30b",
+    ".github/workflows/dynamic-simulation.yml": "d1872d9c56aeae8bc3485d1dd6795029ef946e8a8fe1aab30108b942d90fbe00"
+  },
+  "node": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "total": 1444,
+    "passed": 1439,
+    "failed": 0,
+    "skipped": 5,
+    "durationMs": 108219.662895,
+    "log": "work/conjugate-ui-full-node-20261107.log",
+    "logSHA256": "22dac8ec9cfb30154ae7e6ff0ee20cb2ee563afc57fc56178925898c9348cdd2"
+  },
+  "browser": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualWorkerCpuAndIndependentAirReference": true,
+        "actualRewindAndReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+        "physicalSolidFluidProbe": true,
+        "contactAndAsymmetricHeatingCoolingComparison": true,
+        "colorModesAndInvalidDisplayKeepPhysics": true,
+        "realProgressCancelRollback": true,
+        "largeCells": 10240,
+        "uniformAndTinyHeat": true,
+        "keyboardAndPointer": true,
+        "mobileDarkLight": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "generalMomentumCouplingVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/conjugate-ui-chromium-20261107.log",
+      "logSHA256": "e46983adffa357efa7e8ade271ebfd79583e2d358ad91dcc5c2ac84138873ab6",
+      "screenshots": {
+        "field": {
+          "path": "work/conjugate-ui-chromium-field-dark-20261107.png",
+          "SHA256": "ba9fdac0513a06d0fb7035267f542153b32ed085b574e8ed88cf029db02dab6a",
+          "visuallyInspected": false
+        },
+        "settings": {
+          "path": "work/conjugate-ui-chromium-settings-dark-20261107.png",
+          "SHA256": "82fd16fef591929dfb6a148bad6c144b30b5be7438351bc1aef625b253b6e1de",
+          "visuallyInspected": false
+        }
+      }
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualWorkerCpuAndIndependentAirReference": true,
+        "actualRewindAndReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+        "physicalSolidFluidProbe": true,
+        "contactAndAsymmetricHeatingCoolingComparison": true,
+        "colorModesAndInvalidDisplayKeepPhysics": true,
+        "realProgressCancelRollback": true,
+        "largeCells": 10240,
+        "uniformAndTinyHeat": true,
+        "keyboardAndPointer": true,
+        "mobileDarkLight": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "generalMomentumCouplingVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/conjugate-ui-webkit-20261107.log",
+      "logSHA256": "2ec67bbe4d1694ed74d2b2e7aa7ce8f9e01340d7a99461d1dbc1e7f92e48033b",
+      "screenshots": {
+        "field": {
+          "path": "work/conjugate-ui-webkit-field-dark-20261107.png",
+          "SHA256": "ed10646465b3ccedcf518d15b0994a9ead564c72e66e90092e45f461a058df0b",
+          "visuallyInspected": true
+        },
+        "settings": {
+          "path": "work/conjugate-ui-webkit-settings-dark-20261107.png",
+          "SHA256": "5ea9b86293b23eebaae1c0e9c09abc407f85a12d3955f02db8b2a496f6006f3b",
+          "visuallyInspected": true
+        }
+      }
+    }
+  },
+  "existingHeatedChannelRegression": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualWorkerMatchesKernel": true,
+        "inletOutletWallEnergyAccounting": true,
+        "measuredBulkAndReconstructedWall": true,
+        "initialNuGridDependenceExplicit": true,
+        "abHeatingCoolingSigns": true,
+        "rewindActualField": true,
+        "keyboardProbe": true,
+        "invalidDtAtomic": true,
+        "zeroFluxUndefinedNu": true,
+        "cancelRollbackAndRetry": true,
+        "mobileLightDark": true,
+        "localStorageUnchanged": true,
+        "offlineVerified": false,
+        "passed": true
+      },
+      "log": "work/conjugate-heated-channel-regression-chromium-20261107.log",
+      "logSHA256": "860dc406d822cafbc77ebda79da686d874b79911978931a6b92670ba81cebc49"
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualWorkerMatchesKernel": true,
+        "inletOutletWallEnergyAccounting": true,
+        "measuredBulkAndReconstructedWall": true,
+        "initialNuGridDependenceExplicit": true,
+        "abHeatingCoolingSigns": true,
+        "rewindActualField": true,
+        "keyboardProbe": true,
+        "invalidDtAtomic": true,
+        "zeroFluxUndefinedNu": true,
+        "cancelRollbackAndRetry": true,
+        "mobileLightDark": true,
+        "localStorageUnchanged": true,
+        "offlineVerified": false,
+        "passed": true
+      },
+      "log": "work/conjugate-heated-channel-regression-webkit-20261107.log",
+      "logSHA256": "f13ce3018bb4e6b785a853543469cb7652f303f9bccaf397635500b13704787e"
+    }
+  },
+  "independentAirTimeReference": "CONJUGATE_AIR_TIME_REFERENCE_20261107_v1.json",
+  "autoTimePolicyResolution": "CONJUGATE_AIR_TIME_RESOLUTION_20261107.json",
+  "originalQuarterStepPlanPassed": false,
+  "selectedAutoDtFractionOfSafeDt": 0.125,
+  "selectedMaximumAirTemperatureErrorK": 0.00025978242651980565,
+  "spatialReference": "CONJUGATE_SPATIAL_REFERENCE_20261107_v1.json",
+  "GUIVerified": true,
+  "realDeviceVerified": false,
+  "dedicatedOfflineVerified": false,
+  "generalMomentumCouplingVerified": false,
+  "mainPublished": false,
+  "allPhase34Complete": false,
+  "releaseApproved": false,
+  "publicBuild": {
+    "passed": true,
+    "devIncluded": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cacheName": "heat-study-ja-app-4a24eb30c8fdd98c"
+  }
+}

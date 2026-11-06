@@ -129,6 +129,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Exercise actual solid-fluid storage and contact heat UI with retained physical state
+        run: node tests/dynamic-conjugate-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise the development-only steady RANS and passive-temperature UI
         run: node tests/dynamic-rans-browser.mjs
         env:

@@ -1,0 +1,28 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>有限厚壁と流体の共役温度・開発検証</title><link rel="stylesheet" href="conjugate-channel.css"></head><body><main>
+<h1>有限厚壁と流体の共役温度</h1><p class="notice">開発用・公開承認前。固体壁の伝導と蓄熱、指定の定常Poiseuille流による温度輸送を同時に計算します。運動量まで連成する一般CFDではありません。</p>
+<p>上下の固体壁と、その間を流れる空気の温度を観察します。壁の温度は計算結果です。外側から入れた熱が、壁に蓄えられる分、流体へ渡る分、出口へ運び去られる分に分かれます。図・解説はアプリ作成です。</p>
+<form id="settings" novalidate><fieldset><legend>条件A：長さ50 mm・流体高さ10 mm・各固体厚1 mm</legend>
+<label>断面平均速度 [m/s]<input id="speed" type="number" value=".5" min=".12" max=".75" step="any" required></label>
+<label>下の外側からの熱 [W/m²]<input id="lower-flux" type="number" value="50" min="-100" max="100" step="any" required></label>
+<label>上の外側からの熱 [W/m²]<input id="upper-flux" type="number" value="50" min="-100" max="100" step="any" required></label>
+<label>流体入口・初期温度 [K]<input id="inlet" type="number" value="300" min="280" max="330" step="any" required></label>
+<label>固体の初期温度 [K]<input id="wall-initial" type="number" value="310" min="280" max="330" step="any" required></label>
+<label>仮想固体の熱伝導率 [W/(m K)]<input id="wall-k" type="number" value="5" min=".2" max="20" step="any" required></label>
+<label>各界面の接触熱抵抗 [m² K/W]<input id="contact" type="number" value=".001" min="0" max=".05" step="any" required></label>
+<label>横×（下固体＋流体＋上固体）格子<select id="grid"><option value="32">32×（2＋16＋2）</option><option value="64">64×（4＋32＋4）</option><option value="128">128×（8＋64＋8）</option></select></label>
+<div class="buttons"><button id="apply" type="submit">初期状態から計算</button><button id="compare" type="button">現在の条件をBへ固定</button><button id="uncompare" type="button" disabled>比較を解除</button></div></fieldset></form>
+<p>外側の熱は固体に入る向きが正、負は冷却です。界面熱は計算し、流体へ入る向きを正にします。上下を別々に指定できます。接触抵抗0は完全接触ですが、固体・流体の格子中心間の伝導抵抗は残ります。条件の適用はA/Bを時刻0に戻します。</p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value=".01" min="0" max=".2" step="any"></label><label>刻み上限 [s]（空欄は自動）<input id="dt" type="number" min="0" step="any"></label><div class="buttons"><button id="run">再生</button><button id="pause">一時停止・計算取消</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div><p>物理時刻 <output id="clock">0.000000 s</output>。再生は実時間と同速ではありません。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p><progress id="progress" max="1" value="0" aria-label="計算の進捗"></progress></section>
+<section aria-label="温度と界面熱の表示"><label>共通温度色<select id="color-mode"><option value="auto">実温度から自動</option><option value="fixed">固定280〜330 K</option><option value="manual">手動</option></select></label><label>手動下限 [K]<input id="color-min" type="number" value="295" step="any"></label><label>手動上限 [K]<input id="color-max" type="number" value="315" step="any"></label><label><input id="arrows" type="checkbox" checked>指定の流速矢印</label><p id="legend"></p><p id="view-error" role="alert" hidden></p>
+<div class="fields"><figure><canvas id="field-a" width="800" height="300" tabindex="0" role="img" aria-describedby="caption-a"></canvas><figcaption id="caption-a"></figcaption></figure><figure id="panel-b" hidden><canvas id="field-b" width="800" height="300" tabindex="0" role="img" aria-describedby="caption-b"></canvas><figcaption id="caption-b"></figcaption></figure></div><pre id="readout"></pre>
+<p>温度は所属セルの平均。上下の薄い領域が有限厚の固体で、層厚の比を保って縦に拡大しています。横矢印は流体に与えた定常行平均速度で、固体や渦を動かす表示ではありません。細い外側矢印は指定熱、太い界面矢印は実計算した熱です。矢印の共通基準と縦倍率を表示します。画素より小さい矢印は図だけ省略し、数値は保持します。</p></section>
+<section aria-label="実計算の履歴"><label>保存コマ<input id="history" type="range" min="0" max="0" value="0"></label><canvas id="graph" width="800" height="200" role="img" aria-label="出口の流量平均温度の履歴"></canvas><canvas id="heat-graph" width="800" height="200" role="img" aria-label="上下界面から流体への熱入力合計の履歴"></canvas><p>Aは実線、Bは破線。上下界面熱は内部の受け渡しで、外側指定熱とは別です。履歴スライダーで全場・熱・時計へ実際に戻します。メモリー上限に合わせて古いコマを除き、初期状態は別保持します。実験履歴はページを閉じると消えます。</p></section>
+<details id="diagnostics"><summary>固体・流体・全体の蓄熱と9成分の熱収支</summary><pre id="diagnostic-values"></pre><p>エンタルピー基準は300 K。界面は固体損失・流体入力の同じ熱で、全体の外部入力には加えません。入口の基準相対エンタルピーが0でも、流体が入らないという意味ではありません。</p></details>
+<details id="theory"><summary>式・単位・前提・確認方法</summary>
+<p>流体：ρcp(∂tT＋u∂xT)=k∂yyT。固体：ρcp∂tT=k(∂xxT＋∂yyT)。u=6Ub(y/H)(1−y/H)は指定した定常発達流で、温度から速度を変えません。流体入口は指定温度、右端は対流流出。固体の左右端は断熱、外側上下は指定熱流束です。奥行は側壁を設けない10 mm幅あたりの熱量換算です。Re_Dh≤1000、Pe_Dh≥100、L/H≥5、Dh=2Hの限定範囲です。</p>
+<p>界面の熱Q=A(T_s−T_f)/(dy_s/(2k_s)＋R″＋dy_f/(2k_f))を一度だけ求め、固体から引いて流体へ加えます。T_s・T_fは隣接セル平均、Aは面積、R″は面積基準接触抵抗。界面の両面温度を半セル抵抗から再構成し、その差q″R″を表示します。完全接触でも中心温度が同じになるとは限りません。別の熱伝達率hを足して二重に熱を入れません。</p>
+<p>流体は300 K空気の一定参考値ρ=1.177 kg/m³、cp=1006 J/(kg K)、k=.0264 W/(m K)、ν=1.575×10⁻⁵ m²/s（原書付録A.6、印刷755/PDF769）。固体は<b>仮想物性</b>ρ=1000 kg/m³、cp=1000 J/(kg K)、kは指定値です。特定の樹脂・金属・製品の性能を表しません。浮力、流体の軸伝導、非定常運動量、粘性仕事、物性の温度依存、一般形状、側壁、3D、乱流は解いていません。一般の共役CFDや全条件の工学精度を確認済みとはしません。</p>
+<p>セル中心FV、風上移流・中央伝導・SSPRK2。安定上限は全固体/流体の係数から求め、自動刻みはA/B最小上限の1/8。既定例の独立指数照合で1/4は目標.001 Kを超えたため、閾値を維持して1/8に細分化しました。安定性は精度と異なります。粗格子と精細格子を同じ条件・物理時刻で比較してください。温度色は全A/Bで共通で、固定/手動範囲から外れる値は端色へ飽和しますが、数値は切り捨てません。</p>
+<p>独立検証は連続3層線形場・接触温度差、別物理K/Cと行列指数、非一様連続製造場の4格子。これを任意の実材料・実流路・一般連成の専門家承認へ転用しません。単位はm/K/s/J/W、℃表示へ暗黙変換しません。熱収支では固体・流体・全体を別に確認し、正味が小さい場合も各成分を見ます。</p>
+<p>データは画面内だけ、既存の学習履歴・メモ・設定を変更/外部送信しません。専用オフライン、実機、支援技術、専門家校閲、実公開URLは未確認です。表示だけのエラーは計算の物理条件を変えず、前の図の時刻は各説明に残します。</p></details>
+</main><script type="module" src="conjugate-channel-ui.mjs"></script></body></html>

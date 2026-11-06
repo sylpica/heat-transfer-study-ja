@@ -1,0 +1,47 @@
+{
+  "checkedAtUTC": "2026-11-06T19:53:30.595Z",
+  "commit": "22a861236ad5dd125c9cf997abbdb47f344fe05b",
+  "runId": 42279911742,
+  "jobs": [
+    {
+      "id": 128105896156,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128105896494,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128105896495,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 128105896639,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128105896668,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "webkit": {
+    "jobId": 128105896495,
+    "cancelledDuring": "npx playwright install --with-deps webkit",
+    "browserTestsStarted": false,
+    "observedDownloadMirror": "azure.archive.ubuntu.com",
+    "firstInstallDownloadAtUTC": "2026-11-06T19:28:40Z",
+    "cancelledAtUTC": "2026-11-06T19:43:38Z",
+    "reason": "Cancellation after approximately the job's 15 minute limit while installing 181 system packages; browser tests were skipped. Log shows slow package downloads; not an application assertion failure. Successful local WebKit execution remains separate evidence."
+  },
+  "allFiveSucceeded": false
+}

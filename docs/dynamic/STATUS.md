@@ -702,3 +702,10 @@ GPU Worker準備として、dev断熱拡散にbackend/条件/予算署名・保�
 
 
 GPU GUI準備でCPUの16,384細刻み加算時計と宣言区間の丸め差を確認。既存A/B時刻閾値を緩めず、内部差が丸め予算内か検査して要求終点へCPU時計を確定。同一Euler温度列/ステップ/端数刻みは直接コアとbit一致。GUIの仮想物性/cosセル平均preset・実寸比viewを準備し新2件込み12関連Nodeと現実Worker両エンジン再実行成功。GPU_UI_WIP_20261107.mdへ接続前条件を保存、HTML/UIは次。
+
+
+## 2026-11-07：限定CPU/WebGPUの画面・回帰を保存
+
+gpu-diffusion.htmlを専用非同期Workerへ接続し、実backend/精度/adapter/代替理由、実セル/実寸比、初期から固定した温度色、同物理CPU-B比較と異条件の判定分離、実復元/取消/履歴を実装。粗格子のキーが同じセル内に留まる初回GUI不具合は隣接セル中心へ移る操作に修正し端点も検査。両ブラウザーで実Worker/CPU/連続モード、bit再現/実progress取消、明示GPU不可時の旧CPU状態保持、8192セル・等温0・モバイル明暗/保存不変更が成功。Chromiumの図・WebKitのフォームを実際に目視。
+
+全Node1454中1449成功・5skip・失敗0、公開ビルド成功・devなし/Worker/cache不変更。GPU_UI.md/同CHECKPOINTへhash/実測/元不具合を保存。45ブラウザーコマンドへ新GUI追加。先行993cb4eの両ブラウザー・数値・高次MMS成功でコンテナーGit信頼/既存caption待機の修正は実CI裏付け済み、CFDは確認時実行中。今回GUIのCI/物理GPU性能/実機/公開/全Phaseは別の未完了。

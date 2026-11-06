@@ -1,0 +1,40 @@
+{
+  "checkedAtUTC": "2026-11-06T23:42:24.374Z",
+  "commit": "993cb4e3658114efb1ea4a08f74eea1c147adb11",
+  "runId": 42312466227,
+  "jobs": [
+    {
+      "id": 128217084617,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128217084930,
+      "name": "cfd-development-benchmarks",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 128217085024,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128217085068,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128217085096,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "browserContainerAndExactCaptionFixVerified": true,
+  "allFiveSucceeded": false,
+  "scope": "The current fixed-image browser jobs, including the original shader regression, dedicated GPU Worker and cache migration, passed. GPU UI files added after this commit were tested locally and are not part of this CI record. CFD was still running when checked."
+}

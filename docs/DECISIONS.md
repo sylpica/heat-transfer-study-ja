@@ -430,3 +430,7 @@ cut-cell LS補正の定常精度と最大原理違反を残し、その時間接
 ## 2026-11-07：CIブラウザー依存を固定イメージで供給
 
 22a8612のWebKit CIはアプリ試験前の低速Ubuntu依存取得で15分に達しcancelled。実ログを保存し、43本の試験と15分制限を保ったままnpmと同版1.56.1の公式Playwright/noble imageへ変更する。実ブラウザーrevisionがない場合は事前検査で拒否し、ローカルlock確認と実CI成功を分ける。テスト削除や単なる時間延長で解決したことにしない。詳細：docs/dynamic/BROWSER_CI_ENVIRONMENT_20261107.md。
+
+## 2026-11-07：GPUの非同期確定と同じ式のCPU代替を分ける
+
+GPU取得/計算は非同期なので既存の同期Workerを広げず、別runtimeで取消rollback完了を待って次のinit/restoreを処理する。古くなった新規モデルは完成後破棄、無効initで受理済み旧backendを失わない。CPUでも未受理状態をsnapshotへ出さず、最後のyield後のabortを検査。多数刻みの加算時計丸めは、宣言区間/端数刻みの終点と丸め予算を検査して整えるが、温度列/熱/刻みは補正しない。GUIは同物理条件だけでCPU/GPU差を表示し、装置不可によるCPU成功をGPU成功と数えない。詳細：docs/dynamic/GPU_WORKER.md、GPU_UI.md。

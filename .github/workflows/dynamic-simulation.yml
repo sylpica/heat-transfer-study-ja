@@ -124,6 +124,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify solid-wall and prescribed-flow temperature coupling against independent time and manufactured references
+        run: node tests/dynamic-conjugate-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise the development-only steady RANS and passive-temperature UI
         run: node tests/dynamic-rans-browser.mjs
         env:

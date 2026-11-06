@@ -17,6 +17,6 @@ test('preserving Reynolds number while scaling length speed density and span pre
 });
 test('unknown physics and unresolved input ranges reject, caller data and accepted output stay protected',()=>{
  const c={...config},before=structuredClone(c),flow=createBlasiusBoundaryFlow(c);c.rho=99;assert.equal(flow.config.rho,1);assert.deepEqual(before,config);assert.throws(()=>{flow.u[0]=99;});assert.throws(()=>{flow.config.rho=2;});
- for(const bad of [{...config,nx:3},{...config,ny:129},{...config,width:NaN},{...config,depth:0},{...config,freeStreamVelocity:-1},{...config,nu:.01},{...config,nu:1e-6},{...config,height:.5},{...config,height:.01},{...config,lidVelocity:0},{...config,temperature:300}])assert.throws(()=>createBlasiusBoundaryFlow(bad));
+ for(const bad of [{...config,nx:513},{...config,nx:3},{...config,ny:129},{...config,width:NaN},{...config,depth:0},{...config,freeStreamVelocity:-1},{...config,nu:.01},{...config,nu:1e-6},{...config,height:.5},{...config,height:.01},{...config,lidVelocity:0},{...config,temperature:300}])assert.throws(()=>createBlasiusBoundaryFlow(bad));
  for(const eta of [-1,NaN,Infinity,'1'])assert.throws(()=>blasiusSimilarity(eta));assert.deepEqual(createBlasiusBoundaryFlow(config).u,flow.u);
 });

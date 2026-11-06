@@ -33,7 +33,7 @@ export function createBlasiusBoundaryFlow(input){
  if(!input||typeof input!=='object'||Array.isArray(input))throw Error('平板外部流れの条件が必要です。');
  const c=structuredClone(input),allowed=new Set(['width','height','depth','nx','ny','nu','rho','freeStreamVelocity']);
  if(Object.keys(c).some(key=>!allowed.has(key)))throw Error('未対応の流れ条件を暗黙に無視しません。');
- const {nx,ny}=c;if(!Number.isSafeInteger(nx)||nx<4||nx>256||!Number.isSafeInteger(ny)||ny<8||ny>128)throw Error('流れ格子は横4〜256、縦8〜128です。');
+ const {nx,ny}=c;if(!Number.isSafeInteger(nx)||nx<4||nx>512||!Number.isSafeInteger(ny)||ny<8||ny>128)throw Error('流れ格子は横4〜512、縦8〜128です。');
  for(const key of ['width','height','depth','nu','rho','freeStreamVelocity'])finite(c[key],key,true);
  const L=c.width,H=c.height,D=c.depth,U=c.freeStreamVelocity,Re=finite(U*L/c.nu,'Re_L',true),outerEta=finite(H*Math.sqrt(U/(c.nu*L)),'外側η',true);
  const inside=(x,low,high)=>x>=low*(1-8*Number.EPSILON)&&x<=high*(1+8*Number.EPSILON);
@@ -50,7 +50,7 @@ export function createBlasiusBoundaryFlow(input){
  for(let j=0;j<=ny;j++)for(let i=0;i<nx;i++){
   const q=finite(-(psi[j*(nx+1)+i+1]-psi[j*(nx+1)+i])*D,'y面体積流量');qy.push(q);v.push(finite(q/finite(dx*D,'y面積',true),'y面平均速度'));
  }
- const inlet=sum(Array.from({length:ny},(_,j)=>qx[j*(nx+1)])),outlet=sum(Array.from({length:ny},(_,j)=>qx[j*(nx+1)+nx])),upper=sum(qy.slice(ny*nx)),boundaryScale=finite(Math.abs(inlet)+Math.abs(outlet)+Math.abs(upper),'領域流量尺度',true),gradientScale=finite(U/dx+Math.max(...v.map(Math.abs))/dy,'流れの勾配尺度',true);
+ const inlet=sum(Array.from({length:ny},(_,j)=>qx[j*(nx+1)])),outlet=sum(Array.from({length:ny},(_,j)=>qx[j*(nx+1)+nx])),upper=sum(qy.slice(ny*nx)),boundaryScale=finite(Math.abs(inlet)+Math.abs(outlet)+Math.abs(upper),'領域流量尺度',true),gradientScale=finite(U/dx+v.reduce((m,x)=>Math.max(m,Math.abs(x)),0)/dy,'流れの勾配尺度',true);
  let maximumCellVolumeFluxImbalance=0;
  for(let j=0;j<ny;j++)for(let i=0;i<nx;i++)maximumCellVolumeFluxImbalance=Math.max(maximumCellVolumeFluxImbalance,Math.abs(qx[j*(nx+1)+i+1]-qx[j*(nx+1)+i]+qy[(j+1)*nx+i]-qy[j*nx+i]));
  const normalizedDivergence=finite(maximumCellVolumeFluxImbalance/volume/gradientScale,'正規化発散'),boundaryResidual=finite(inlet-outlet-upper,'領域流量差'),boundaryRelativeResidual=Math.abs(boundaryResidual)/boundaryScale;

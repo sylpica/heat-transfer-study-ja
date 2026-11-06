@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {conjugateTimeCases} from '../scripts/dynamic-conjugate-time-cases.mjs';
+const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/CONJUGATE_TIME_REFERENCE_20261107_v1.json',import.meta.url)));
+test('actual conjugate solid/fluid temperatures and all nine heat components converge to a separate physical affine exponential',()=>{
+ const own=conjugateTimeCases();assert.deepEqual(own.config,ref.config);const errors=[];
+ for(let i=0;i<own.cases.length;i++){const c=own.cases[i],s=c.snapshot,row=ref.rows[i];assert.equal(c.factor,row.factor);const max=Math.max(...s.offsetTemperature.map((t,n)=>Math.abs(t-ref.reference.temperatureOffsetsK[n]))),heat=Math.max(...s.cumulativeComponentJ.map((v,n)=>Math.abs(v-ref.reference.cumulativeComponentJ[n])));assert.ok(Math.abs(max-row.maximumTemperatureErrorK)<1e-11);assert.ok(Math.abs(heat-row.maximumCumulativeComponentDifferenceJ)<1e-11);for(const value of Object.values(s.energyErrorJ))assert.ok(Math.abs(value)<=s.energyRoundoffBudgetJ);errors.push(max);assert.equal(s.releaseApproved,false);}
+ assert.ok(errors.at(-1)<.001);const order=Math.log2(errors.at(-2)/errors.at(-1));assert.ok(order>1.8&&order<2.2);assert.ok(ref.rows.at(-1).maximumCumulativeComponentDifferenceJ<1e-4);assert.equal(ref.allChecksPassed,true);assert.equal(ref.GUIVerified,false);
+});

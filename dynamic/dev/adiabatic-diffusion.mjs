@@ -4,13 +4,19 @@ import {createThermal} from '../thermal.mjs';
 
 export class GPUUnavailableError extends Error{}
 export class GPUPrecisionUnsupportedError extends Error{}
+const canonical=v=>Array.isArray(v)?v.map(canonical):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonical(v[k])])):v;
+const signature=(spec,backend,policy={})=>JSON.stringify(['adiabatic-diffusion-state-v1',backend,canonical(spec.config),canonical(policy)]);
+const meshFor=spec=>({kind:'insulated-rectangular-diffusion',nx:spec.config.nx,ny:spec.config.ny,count:spec.config.nx*spec.config.ny,width:spec.config.width,height:spec.config.height,depth:spec.config.depth,dx:spec.dx,dy:spec.dy,cellCapacity:spec.capacity});
 const positive=(v,name)=>{if(typeof v!=='number'||!Number.isFinite(v)||v<=0)throw Error(name+' must be finite and positive');return v;};
 export function diffusionConfig(input){
+ if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!['nx','ny','width','height','depth','materials','initial','boundaries','edge','source','contactResistance','regions','outline','distributedConvection'].includes(k)))throw Error('Unknown or invalid insulated diffusion condition');
  const c=structuredClone(input),{nx,ny}=c;
+ if(c.boundaries&&(typeof c.boundaries!=='object'||Array.isArray(c.boundaries)||Object.keys(c.boundaries).some(k=>!['left','right','bottom','top'].includes(k))))throw Error('Unknown insulated rectangle side');
  if(![nx,ny].every(n=>Number.isSafeInteger(n)&&n>=1&&n<=128)||nx*ny>16384)throw Error('Development diffusion supports 1–128 cells per axis and at most 16384 cells');
  for(const key of ['width','height','depth'])positive(c[key],key);
  if(c.materials?.length!==1||c.materials[0].kTable||c.materials[0].cpTable)throw Error('One constant-property material is required');
- const m=c.materials[0];for(const key of ['k','rho','cp'])positive(m[key],key);
+ const m=c.materials[0];if(Object.keys(m).some(k=>!['k','rho','cp','name','id'].includes(k)))throw Error('Unknown constant material condition');for(const key of ['k','rho','cp'])positive(m[key],key);
+ if([...Object.values(c.boundaries??{}),...(c.edge?[c.edge]:[])].some(b=>!b||typeof b!=='object'||Array.isArray(b)||Object.keys(b).some(k=>k!=='type')))throw Error('Unknown insulated boundary condition');
  if(c.regions||c.outline||c.distributedConvection||(c.source??0)!==0||(c.contactResistance??0)!==0||Object.values(c.boundaries??{}).some(b=>b.type!=='insulated')||c.edge&&c.edge.type!=='insulated')throw Error('Only a source-free rectangular body with all faces insulated is supported');
  const initial=Array.isArray(c.initial)?c.initial:Array(nx*ny).fill(c.initial);if(initial.length!==nx*ny)throw Error('Initial field length differs from mesh');initial.forEach(t=>positive(t,'initial K'));c.initial=initial;
  const dx=c.width/nx,dy=c.height/ny,alpha=m.k/(m.rho*m.cp),volume=dx*dy*c.depth,capacity=m.rho*m.cp*volume;
@@ -38,12 +44,18 @@ fn main(@builtin(global_invocation_id) id:vec3<u32>){
 }`;
 
 function cpuModel(spec,reason){
- const model=createThermal(spec.config);let busy=false,closed=false;
- return {backend:'cpu',fallbackReason:reason??null,precision:'Float64',safeDt:spec.safeDt,
-  snapshot:()=>({...model.snapshot(),backend:'cpu',precision:'Float64'}),
+ const model=createThermal(spec.config),identity=signature(spec,'cpu'),N=spec.config.nx*spec.config.ny,initial=spec.config.initial,min=Math.min(...initial),max=Math.max(...initial);let busy=false,closed=false,accepted=model.snapshot();
+ const snapshot=()=>structuredClone({...accepted,backend:'cpu',precision:'Float64',fallbackReason:reason??null,diffusionSignature:identity,safeDt:spec.safeDt});
+ function validateRestore(s){
+  if(!s||s.backend!=='cpu'||s.diffusionSignature!==identity||!Array.isArray(s.temperature)||s.temperature.length!==N||!Number.isSafeInteger(s.steps)||s.steps<0||!Number.isFinite(s.time)||s.time<0||!Number.isFinite(s.lastDt)||s.lastDt<0||s.lastDt>spec.safeDt*(1+1e-12)||s.netInput!==0||s.lastPower!==0||(s.steps===0?(s.time!==0||s.lastDt!==0||s.temperature.some((t,i)=>t!==initial[i])):(s.time<=0||s.lastDt<=0||s.time<s.lastDt||s.time>s.steps*spec.safeDt*(1+1e-10))))throw Error('CPU diffusion restore model, conditions or clock differ');
+  const tolerance=128*Number.EPSILON*Math.max(...initial)*(1+Math.sqrt(s.steps));for(const t of s.temperature)if(!Number.isFinite(t)||t<=0||t<min-tolerance||t>max+tolerance)throw Error('CPU diffusion restore violates temperature or maximum principle');
+  const change=spec.capacity*s.temperature.reduce((v,t,i)=>v+(t-initial[i]),0),budget=1024*Number.EPSILON*spec.capacity*(s.temperature.reduce((v,t)=>v+Math.abs(t),0)+initial.reduce((v,t)=>v+Math.abs(t),0))*(1+Math.sqrt(s.steps));if(!Number.isFinite(change)||!Number.isFinite(budget)||Math.abs(change)>budget)throw Error('CPU diffusion restore violates insulated energy balance');
+ }
+ return {backend:'cpu',fallbackReason:reason??null,precision:'Float64',safeDt:spec.safeDt,mesh:meshFor(spec),snapshot,
+  restore(s){if(closed||busy)throw Error('Diffusion model is closed or busy');validateRestore(s);accepted=model.restore(s);return snapshot();},
   async advance({duration,dt,signal,onProgress}={}){
-   if(closed||busy)throw Error('Diffusion model is closed or busy');const p=plan(duration,dt,spec.safeDt),before=model.snapshot();if(!Number.isFinite(before.time+duration)||before.time+duration<=before.time)throw Error('Physical time is not representable');busy=true;
-   try{cancelled(signal);for(let i=0;i<p.steps;i++){model.step(i===p.steps-1?p.lastDt:p.dt,false);if((i+1)%32===0||i===p.steps-1){onProgress?.((i+1)/p.steps);cancelled(signal);await yieldThread();if(closed)throw Error('Diffusion model was closed');}}return {...model.snapshot(),backend:'cpu',precision:'Float64'};
+   if(closed||busy)throw Error('Diffusion model is closed or busy');const p=plan(duration,dt,spec.safeDt),before=accepted;if(!Number.isFinite(before.time+duration)||before.time+duration<=before.time||!Number.isSafeInteger(before.steps+p.steps))throw Error('Physical time or step count is not representable');busy=true;
+   try{cancelled(signal);for(let i=0;i<p.steps;i++){model.step(i===p.steps-1?p.lastDt:p.dt,false);if((i+1)%32===0||i===p.steps-1){onProgress?.((i+1)/p.steps);cancelled(signal);await yieldThread();cancelled(signal);if(closed)throw Error('Diffusion model was closed');}}accepted=model.snapshot();return snapshot();
    }catch(error){model.restore(before);throw error;}finally{busy=false;}
   },close(){closed=true;}
  };
@@ -63,7 +75,7 @@ async function gpuModel(spec,gpu,{inputRoundingBudgetK,energyToleranceFraction})
  if(initial.some(t=>!Number.isFinite(t)||reference+t<=0)||rounding>inputRoundingBudgetK){device.destroy();throw new GPUPrecisionUnsupportedError('Float32 input violates the positive-temperature or input-rounding budget');}
  const initialSum=initial.reduce((s,t)=>s+t,0),initialMin=Math.min(...initial),initialMax=Math.max(...initial),contrast=capacity*N*Math.max(inputRoundingBudgetK,initialMax-initialMin);
  if(!(contrast>0)||!Number.isFinite(contrast)||!Number.isFinite(capacity*initialSum+capacity*N*(reference-273.15))){device.destroy();throw Error('GPU energy scale is not representable');}
- const buffers=[];let accepted=initial,time=0,steps=0,busy=false,closed=false,lost=null;
+ const identity=signature(spec,'webgpu',{inputRoundingBudgetK,energyToleranceFraction}),buffers=[];let accepted=initial,time=0,steps=0,busy=false,closed=false,lost=null;
  device.lost.then(info=>{if(!closed)lost=info.message||'WebGPU device lost';});
  const buffer=(size,usage)=>{const b=device.createBuffer({size,usage});buffers.push(b);return b;};
  const dispose=()=>{closed=true;for(const b of buffers)b.destroy();device.destroy();};
@@ -73,17 +85,25 @@ async function gpuModel(spec,gpu,{inputRoundingBudgetK,energyToleranceFraction})
    a=buffer(bytes,storage),b=buffer(bytes,storage),readback=buffer(bytes,GPUBufferUsage.MAP_READ|GPUBufferUsage.COPY_DST),normal=buffer(16,GPUBufferUsage.UNIFORM|GPUBufferUsage.COPY_DST),last=buffer(16,GPUBufferUsage.UNIFORM|GPUBufferUsage.COPY_DST),layout=pipeline.getBindGroupLayout(0);
   const groups=[normal,last].map(uniform=>[[a,b],[b,a]].map(([input,output])=>device.createBindGroup({layout,entries:[{binding:0,resource:{buffer:input}},{binding:1,resource:{buffer:output}},{binding:2,resource:{buffer:uniform}}]})));
   const params=dt=>{const data=new ArrayBuffer(16),v=new DataView(data);v.setUint32(0,c.nx,true);v.setUint32(4,c.ny,true);v.setFloat32(8,c.nx>1?alpha*dt/dx**2:0,true);v.setFloat32(12,c.ny>1?alpha*dt/dy**2:0,true);return data;};
-  function snapshot(){const temperature=Array.from(accepted,t=>reference+t),sum=accepted.reduce((s,t)=>s+t,0),energyErrorJ=capacity*(sum-initialSum);return {backend:'webgpu',precision:'Float32 excess temperature; Float64 readback diagnostics',referenceTemperatureK:reference,inputRoundingMaxK:rounding,temperature,time,steps,energyErrorJ,energyToleranceScaleJ:contrast,energyErrorFractionOfScale:Math.abs(energyErrorJ)/contrast,adapter:{vendor:adapter.info?.vendor??'',architecture:adapter.info?.architecture??'',isFallbackAdapter:adapter.info?.isFallbackAdapter??null},physicalGPUVerified:false};}
-  return {backend:'webgpu',fallbackReason:null,precision:'Float32 excess temperature',safeDt:spec.safeDt,snapshot,
+  function snapshot(){const temperature=Array.from(accepted,t=>reference+t),sum=accepted.reduce((s,t)=>s+t,0),energyErrorJ=capacity*(sum-initialSum);return {backend:'webgpu',diffusionSignature:identity,fallbackReason:null,safeDt:spec.safeDt,offsetTemperature:Array.from(accepted),precision:'Float32 excess temperature; Float64 readback diagnostics',referenceTemperatureK:reference,inputRoundingMaxK:rounding,temperature,time,steps,energyErrorJ,energyToleranceScaleJ:contrast,energyErrorFractionOfScale:Math.abs(energyErrorJ)/contrast,adapter:{vendor:adapter.info?.vendor??'',architecture:adapter.info?.architecture??'',isFallbackAdapter:adapter.info?.isFallbackAdapter??null},physicalGPUVerified:false};}
+  function validateAccepted(values){
+   const errorJ=capacity*(values.reduce((s,t)=>s+t,0)-initialSum),tolerance=32*2**-23*Math.max(1,Math.abs(initialMin),Math.abs(initialMax));
+   if(values.some(t=>!Number.isFinite(t)||Math.fround(t)!==t||reference+t<=0||t<initialMin-tolerance||t>initialMax+tolerance)||!Number.isFinite(errorJ)||Math.abs(errorJ)/contrast>energyToleranceFraction)throw Error('GPU temperature, maximum principle or energy gate failed before state acceptance');
+  }
+  return {backend:'webgpu',fallbackReason:null,precision:'Float32 excess temperature',safeDt:spec.safeDt,mesh:meshFor(spec),snapshot,
+   restore(s){
+    if(closed||busy||lost)throw Error(lost||'Diffusion model is closed or busy');
+    if(!s||s.backend!=='webgpu'||s.diffusionSignature!==identity||s.referenceTemperatureK!==reference||!Array.isArray(s.offsetTemperature)||s.offsetTemperature.length!==N||!Array.isArray(s.temperature)||s.temperature.length!==N||s.temperature.some((t,i)=>t!==reference+s.offsetTemperature[i])||!Number.isSafeInteger(s.steps)||s.steps<0||!Number.isFinite(s.time)||s.time<0||(s.steps===0?(s.time!==0||s.offsetTemperature.some((t,i)=>t!==initial[i])):(s.time<=0||s.time>s.steps*spec.safeDt*(1+1e-10))))throw Error('GPU diffusion restore model, conditions, field or clock differ');
+    validateAccepted(s.offsetTemperature);accepted=Float32Array.from(s.offsetTemperature);time=s.time;steps=s.steps;return snapshot();
+   },
    async advance({duration,dt,signal,onProgress}={}){
-    if(closed||busy||lost)throw Error(lost||'Diffusion model is closed or busy');const p=plan(duration,dt,spec.safeDt),nextTime=time+duration;if(!Number.isFinite(nextTime)||nextTime<=time)throw Error('Physical time is not representable');busy=true;let mapped=false,scopeOpen=false;
+    if(closed||busy||lost)throw Error(lost||'Diffusion model is closed or busy');const p=plan(duration,dt,spec.safeDt),nextTime=time+duration;if(!Number.isFinite(nextTime)||nextTime<=time||!Number.isSafeInteger(steps+p.steps))throw Error('Physical time or step count is not representable');busy=true;let mapped=false,scopeOpen=false;
     try{
      cancelled(signal);device.pushErrorScope('validation');scopeOpen=true;device.queue.writeBuffer(a,0,accepted);device.queue.writeBuffer(normal,0,params(p.dt));device.queue.writeBuffer(last,0,params(p.lastDt));
      for(let first=0;first<p.steps;first+=32){const end=Math.min(first+32,p.steps),encoder=device.createCommandEncoder();for(let i=first;i<end;i++){const pass=encoder.beginComputePass();pass.setPipeline(pipeline);pass.setBindGroup(0,groups[i===p.steps-1?1:0][i%2]);pass.dispatchWorkgroups(Math.ceil(c.nx/8),Math.ceil(c.ny/8));pass.end();}device.queue.submit([encoder.finish()]);await device.queue.onSubmittedWorkDone();if(lost||closed)throw Error(lost||'Diffusion model was closed');onProgress?.(end/p.steps);cancelled(signal);}
      const encoder=device.createCommandEncoder();encoder.copyBufferToBuffer(p.steps%2?b:a,0,readback,0,bytes);device.queue.submit([encoder.finish()]);await readback.mapAsync(GPUMapMode.READ);mapped=true;const next=new Float32Array(readback.getMappedRange().slice(0));readback.unmap();mapped=false;
      const validation=await device.popErrorScope();scopeOpen=false;if(validation)throw Error('WebGPU validation error: '+validation.message);cancelled(signal);if(lost||closed)throw Error(lost||'Diffusion model was closed');
-     const errorJ=capacity*(next.reduce((s,t)=>s+t,0)-initialSum),maxPrincipleTolerance=32*2**-23*Math.max(1,Math.abs(initialMin),Math.abs(initialMax));
-     if(next.some(t=>!Number.isFinite(t)||reference+t<=0||t<initialMin-maxPrincipleTolerance||t>initialMax+maxPrincipleTolerance)||!Number.isFinite(errorJ)||Math.abs(errorJ)/contrast>energyToleranceFraction)throw Error('GPU temperature, maximum principle or energy gate failed before state acceptance');
+     validateAccepted(next);
      accepted=next;time=nextTime;steps+=p.steps;return snapshot();
     }finally{if(mapped)readback.unmap();if(scopeOpen)try{await device.popErrorScope();}catch{}busy=false;}
    },close:dispose

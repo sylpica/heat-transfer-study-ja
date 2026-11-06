@@ -690,3 +690,6 @@ CIのpush/PR重複をCLIで再確認。同じ平板22a8612のpush run42279902275
 
 
 次のPhase4はGPU_WORKER_WIP_20261107.mdに事前保存。既存の限定断熱矩形GPUの式/閾値は保ち、別非同期runtimeと完全復元・実取消へ接続する。既存の同期Worker基盤は変えず、ソフトウェアGPU検査/非対応時の同一CPU経路/実GPU性能を分ける。公開/一般精度は承認しない。
+
+
+GPU Worker準備として、dev断熱拡散にbackend/条件/予算署名・保持Float32θを含む完全復元を追加。CPU代替も受理済みframeだけを公開し、最後の非同期待機中のabortを再確認して受理を防止。未知条件/異種backend/破損履歴は拒否。新3＋既存3Node成功、既存Chromium SwiftShaderの全連続/離散指数・非対称/意図した収支ゲート失敗・取消を再実行成功。WebKitはデバイス不可のCPU経路のみ成功、shader未実施として維持。実Worker/GUIは次。数値式/Float32の既存精度閾値は変更していない。

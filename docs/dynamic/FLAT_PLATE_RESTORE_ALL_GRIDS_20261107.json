@@ -1,0 +1,148 @@
+{
+  "recordedAtUTC": "2026-11-06T18:52:11.745Z",
+  "sourceCommit": "1836f74c20a207003b314d94512ba42cc1aebd55",
+  "sourceFilesSHA256": {
+    "dynamic/dev/flat-plate-thermal.mjs": "8d7b8a7a03ede7aa8f17b784cc34d23ad61f6d45d9696bfbd6758c648bf354bb",
+    "dynamic/dev/blasius-boundary-flow.mjs": "85970b47f2efecc795b247a9051fae4258e787a02160d302ffcb87352fb9301a"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux"
+  },
+  "rows": [
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR071_N32X16_20261106_v1.json",
+      "sha256": "6c94d1479cd39219a3c491de4efa48f4093914bcad4e900a21feafc5ffdf7b82",
+      "sourceCommit": "3de871a660f154bbb6731b49564cdca29e6b2716",
+      "nx": 32,
+      "ny": 16,
+      "Pr": 0.71,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 7.105427357601002e-15,
+      "stepEnergyErrorJ": -5.0306980803327406e-17,
+      "stepEnergyBudgetJ": 3.7876966593909005e-13
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR071_N64X32_20261106_v1.json",
+      "sha256": "6ae661d15b21efb8a1856bc99db9409f8e2799f5cd1bfd6d63f80c5dfbfbbd5e",
+      "sourceCommit": "4096dac2b737ea3898f835c5ac46e90b1186dc7d",
+      "nx": 64,
+      "ny": 32,
+      "Pr": 0.71,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 6.776263578034403e-21,
+      "stepEnergyErrorJ": -2.3245294578089215e-16,
+      "stepEnergyBudgetJ": 5.794222304059656e-13
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR071_N128X64_20261106_v1.json",
+      "sha256": "f571ad75eec7efdfb5b2e4970f42a2c1550c8dfae45c77ae5a08a075cf69e517",
+      "sourceCommit": "7b8b78ae54efc7c15155894821327f040f2965f8",
+      "nx": 128,
+      "ny": 64,
+      "Pr": 0.71,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 0,
+      "stepEnergyErrorJ": -7.476658181460039e-16,
+      "stepEnergyBudgetJ": 9.255742650588973e-13
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR071_N256X128_20261106_v1.json",
+      "sha256": "70e02cf6e144ab28abebf8d0598b7301f7c7fec3cb1dc5cd3cab7bc7cccc05bd",
+      "sourceCommit": "a7bbec485305360f94082dda35d5cc0396038e86",
+      "nx": 256,
+      "ny": 128,
+      "Pr": 0.71,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 0,
+      "stepEnergyErrorJ": -2.4494295480792516e-15,
+      "stepEnergyBudgetJ": 1.5520846217471543e-12
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR071_N512X128_20261106_v1.json",
+      "sha256": "f4cfc6c715abb028f275f7c0495746b69d829df055af2bb484f2c3ccaad23d49",
+      "sourceCommit": "ba5756259118bc4637f50edfdbdbed8bee18c980",
+      "nx": 512,
+      "ny": 128,
+      "Pr": 0.71,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 0,
+      "stepEnergyErrorJ": -3.4139358007223564e-15,
+      "stepEnergyBudgetJ": 1.8050832354628107e-12
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR100_N32X16_20261106_v1.json",
+      "sha256": "d10471380358f61657a5f1d313b8d5126c17eb3412556fc7520726ee8d01c50c",
+      "sourceCommit": "f9af168f531e2b526eb2119b82d34785c9cf2d33",
+      "nx": 32,
+      "ny": 16,
+      "Pr": 1,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 0,
+      "stepEnergyErrorJ": -7.19910242530375e-17,
+      "stepEnergyBudgetJ": 4.407896531080384e-13
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR100_N64X32_20261106_v1.json",
+      "sha256": "88afa536c2409e7423732ab5f66a95f8c3b4734b66aa6d4b0c64b46ff50b1266",
+      "sourceCommit": "4096dac2b737ea3898f835c5ac46e90b1186dc7d",
+      "nx": 64,
+      "ny": 32,
+      "Pr": 1,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 0,
+      "stepEnergyErrorJ": -1.700029006457271e-16,
+      "stepEnergyBudgetJ": 4.616576507512284e-13
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR100_N128X64_20261106_v1.json",
+      "sha256": "6cdd6b3b72ff343f0d40cec04682bcc8a4cfdff402c646e92c8e9139c476d89e",
+      "sourceCommit": "7b8b78ae54efc7c15155894821327f040f2965f8",
+      "nx": 128,
+      "ny": 64,
+      "Pr": 1,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 1.7763568394002505e-15,
+      "stepEnergyErrorJ": -5.655198531684391e-16,
+      "stepEnergyBudgetJ": 7.231020308401493e-13
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR100_N256X128_20261106_v1.json",
+      "sha256": "80c65c621d2b56d3cf0241e7bfb3a4e0ce704ff79f20d7b6e8e27ae66425bfa1",
+      "sourceCommit": "08728ec2586b2ce1b9a84fbcdb8aa3b16cbedda8",
+      "nx": 256,
+      "ny": 128,
+      "Pr": 1,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 0,
+      "stepEnergyErrorJ": -1.7650811368064012e-15,
+      "stepEnergyBudgetJ": 1.1868248677230873e-12
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR100_N512X128_20261106_v1.json",
+      "sha256": "bbf3e01cf8673450815dea452bb4a0faf29d6c17d00a58e9e78e5adae927de73",
+      "sourceCommit": "79f79c4dc5ee646ce5016efe9e70033a5f47cfd8",
+      "nx": 512,
+      "ny": 128,
+      "Pr": 1,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 0,
+      "stepEnergyErrorJ": -2.5908095113713614e-15,
+      "stepEnergyBudgetJ": 1.4073731413737113e-12
+    },
+    {
+      "sourceFile": "FLAT_PLATE_STEADY_PR100_N512X256_20261106_v1.json",
+      "sha256": "3aeaed1c6b546e5ca833f9db9202774a775f0a281251ab2e07ec2d17649bd7d7",
+      "sourceCommit": "547709eebd5e119a06fb61f3de3e51efb799e625",
+      "nx": 512,
+      "ny": 256,
+      "Pr": 1,
+      "completeSnapshotExactlyRestored": true,
+      "maximumChangeAfterOneActualStepK": 3.552713678800501e-15,
+      "stepEnergyErrorJ": -5.646524914304507e-15,
+      "stepEnergyBudgetJ": 2.0397388938325653e-12
+    }
+  ],
+  "scope": "Actual complete restore and one-step continuation of all own saved grids after cap/min-max changes. Not a repeat of the independent spatial reference or an additional uniform-start steady run.",
+  "releaseApproved": false
+}

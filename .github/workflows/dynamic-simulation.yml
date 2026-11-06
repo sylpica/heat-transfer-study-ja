@@ -114,6 +114,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify passive flat-plate temperature Worker against independent time reference and actual rollback
+        run: node tests/dynamic-flat-plate-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise the development-only steady RANS and passive-temperature UI
         run: node tests/dynamic-rans-browser.mjs
         env:

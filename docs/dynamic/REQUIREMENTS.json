@@ -1,6 +1,6 @@
 {
   "source": "REQUEST_20261104.md",
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-07",
   "requirements": [
     {
       "id": "Q1",
@@ -823,7 +823,7 @@
     {
       "id": "Q45",
       "requirement": "平板・円柱・管・フィン間の強制対流",
-      "status": "partial_limited_developed_parallel_plate_transport",
+      "status": "partial_parallel_plate_and_passive_external_boundary_layer",
       "evidence": [
         "DEVELOPED_CHANNEL.md",
         "DEVELOPED_CHANNEL_BENCHMARKS_20261104.json",
@@ -836,9 +836,15 @@
         "FLAT_PLATE_BOUNDARY_LAYER_WIP_20261106.md",
         "FLAT_PLATE_BOUNDARY_FLOW.md",
         "BLASIUS_FLOW_REFERENCE_20261106_v1.json",
-        "BLASIUS_FLOW_CHECKPOINT_20261106.json"
+        "BLASIUS_FLOW_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_THERMAL.md",
+        "FLAT_PLATE_THERMAL_CHECKPOINT_20261107.json",
+        "FLAT_PLATE_THERMAL_SPATIAL_SUMMARY_20261107.json",
+        "FLAT_PLATE_TIME_REFERENCE_20261106_xy512.json",
+        "FLAT_PLATE_STREAMWISE_REFINEMENT_20261107.md",
+        "FLAT_PLATE_RESTORE_ALL_GRIDS_20261107.json"
       ],
-      "remainingOrScope": "発達層流の周期温度輸送に加え、開発専用の指定Poiseuille平均流＋入口/対流出口/両壁等熱流束を検算。流体入口発達/一般2D圧力速度/平板外部/円柱/一般管/フィン間の流体連成は未完了。 平板はBlasiusの定常速度/全face流量だけを独立BVPと連続求積へ照合済み。温度/動的運動量/一般NS/専用UIは未完了。"
+      "remainingOrScope": "指定Poiseuilleの熱的入口/過渡に加え、定常Blasius中の平板受動温度を独立時間/連続セル平均・格子・実Workerで限定照合。元256の平均Nu失敗は保持し、追加精細ケースで目標達成。平板GUI/一般2D動的運動量/円柱/一般管/フィン間/共役/公開は未完了。フェイリスの定常Graetz/CWTは別ブランチで未統合。"
     },
     {
       "id": "Q46",
@@ -1388,7 +1394,13 @@
         "FLAT_PLATE_BOUNDARY_LAYER_WIP_20261106.md",
         "FLAT_PLATE_BOUNDARY_FLOW.md",
         "BLASIUS_FLOW_REFERENCE_20261106_v1.json",
-        "BLASIUS_FLOW_CHECKPOINT_20261106.json"
+        "BLASIUS_FLOW_CHECKPOINT_20261106.json",
+        "FLAT_PLATE_THERMAL.md",
+        "FLAT_PLATE_THERMAL_CHECKPOINT_20261107.json",
+        "FLAT_PLATE_THERMAL_SPATIAL_SUMMARY_20261107.json",
+        "FLAT_PLATE_TIME_REFERENCE_20261106_xy512.json",
+        "FLAT_PLATE_STREAMWISE_REFINEMENT_20261107.md",
+        "FLAT_PLATE_RESTORE_ALL_GRIDS_20261107.json"
       ],
       "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。 平板はBlasiusの定常速度/全face流量だけを独立BVPと連続求積へ照合済み。温度/動的運動量/一般NS/専用UIは未完了。"
     },

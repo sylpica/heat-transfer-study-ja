@@ -1,0 +1,583 @@
+{
+  "generatedAtUTC": "2026-11-06T18:34:56.815171+00:00",
+  "sourceCommit": "7134d360bbef0137a2c9258a6e4b20d69c67fcc2",
+  "generatorSHA256": "85970b47f2efecc795b247a9051fae4258e787a02160d302ffcb87352fb9301a",
+  "referenceGeneratorSHA256": "0d165c78c76c8f2a4424b21b6d55d1fc3aa7a35f153baa12c78665033da1b598",
+  "environment": {
+    "product": {
+      "node": "v24.19.0",
+      "platform": "linux"
+    },
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "BLASThreads": 1
+  },
+  "criteriaDeclaredAtCommit": "5c4870a",
+  "quadratureDetailsDeclaredBeforeEvaluationAtCommit": "7d51571",
+  "adaptiveQuadratureDetailsDeclaredBeforeEvaluationAtCommit": "126b5a7",
+  "method": "Independent SciPy collocation BVP on eta16/24, separate DOP853+Brent shooting; integrate continuous u along vertical faces and v dx in x=s^2 coordinates along horizontal faces with adaptive Gauss32/64/128/256 and bounded-memory row blocks. No product shooting/interpolation or streamfunction differences generate reference flux.",
+  "reference": {
+    "wallCurvature": 0.3320573362151983,
+    "BVP16WallCurvature": 0.3320573362152031,
+    "DOP853WallCurvature": 0.3320573362151125,
+    "BVP16vs24MaximumStateDifferenceOn0To16": 3.047562202596055e-14,
+    "DOP853vsBVP24MaximumStateDifferenceOn0To16": 2.1077140033298747e-11,
+    "maximumSimilaritySampleDifference": 1.7763568394002505e-12,
+    "BVP16Nodes": 3936,
+    "BVP24Nodes": 4322
+  },
+  "rows": [
+    {
+      "name": "base-16",
+      "config": {
+        "width": 1,
+        "height": 0.12,
+        "depth": 0.03,
+        "nu": 0.0001,
+        "rho": 1,
+        "freeStreamVelocity": 1,
+        "nx": 16,
+        "ny": 16
+      },
+      "faceCounts": {
+        "u": 272,
+        "v": 272
+      },
+      "ownFieldSHA256": "e1cba73f421963229dbab5248b6a18e6c7fe8ce47af34a1ae5b4750c9c9fc90a",
+      "ownDiagnostics": {
+        "Re_L": 10000,
+        "outerEta": 12,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.0036,
+        "outletVolumeFlowM3PerS": 0.0030837637027443824,
+        "upperOutflowM3PerS": 0.0005162362972556173,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.0072,
+        "boundaryVolumeFlowResidualM3PerS": 2.168404344971009e-19,
+        "boundaryRelativeResidual": 3.0116727013486234e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 3.6422416731934915e-20,
+        "normalizedDivergence": 1.0287101609389403e-16,
+        "wallShearForceN": 0.00019923440172916386,
+        "meanFrictionCoefficient": 0.013282293448610925
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 1.0446739682803037e-15,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 1.0446739682803037e-15,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 6.5278005801731415e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 1.853308088592409e-14,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.994132719535969e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "base-32",
+      "config": {
+        "width": 1,
+        "height": 0.12,
+        "depth": 0.03,
+        "nu": 0.0001,
+        "rho": 1,
+        "freeStreamVelocity": 1,
+        "nx": 32,
+        "ny": 32
+      },
+      "faceCounts": {
+        "u": 1056,
+        "v": 1056
+      },
+      "ownFieldSHA256": "15d55f07e9246fd193bd7616c550729bf0de01b00956faf373de7e7991df9d17",
+      "ownDiagnostics": {
+        "Re_L": 10000,
+        "outerEta": 12,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.0036,
+        "outletVolumeFlowM3PerS": 0.0030837637027443824,
+        "upperOutflowM3PerS": 0.0005162362972556173,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.0072,
+        "boundaryVolumeFlowResidualM3PerS": 2.168404344971009e-19,
+        "boundaryRelativeResidual": 3.0116727013486234e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 1.3552527156068805e-20,
+        "normalizedDivergence": 6.651268072340408e-17,
+        "wallShearForceN": 0.00019923440172916386,
+        "meanFrictionCoefficient": 0.013282293448610925
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 5.672861992077801e-14,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 5.672861992077801e-14,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 4.647387437268595e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 1.3147833636825084e-14,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.994132719535969e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "base-64",
+      "config": {
+        "width": 1,
+        "height": 0.12,
+        "depth": 0.03,
+        "nu": 0.0001,
+        "rho": 1,
+        "freeStreamVelocity": 1,
+        "nx": 64,
+        "ny": 64
+      },
+      "faceCounts": {
+        "u": 4160,
+        "v": 4160
+      },
+      "ownFieldSHA256": "bd4594229d302f971a8e88ad9b63c897e1860518b09ed8a728994262729549a0",
+      "ownDiagnostics": {
+        "Re_L": 10000,
+        "outerEta": 12,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.0036,
+        "outletVolumeFlowM3PerS": 0.0030837637027443824,
+        "upperOutflowM3PerS": 0.0005162362972556173,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.0072,
+        "boundaryVolumeFlowResidualM3PerS": 2.168404344971009e-19,
+        "boundaryRelativeResidual": 3.0116727013486234e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 1.3552527156068805e-20,
+        "normalizedDivergence": 1.1220880188054843e-16,
+        "wallShearForceN": 0.00019923440172916386,
+        "meanFrictionCoefficient": 0.013282293448610925
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 1.782634482916668e-12,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 1.782634482916668e-12,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 3.5020106630369462e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 9.29477487453719e-15,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.994132719535969e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "scaled",
+      "config": {
+        "width": 4,
+        "height": 0.48,
+        "depth": 0.15,
+        "nu": 0.0012,
+        "rho": 7,
+        "freeStreamVelocity": 3,
+        "nx": 32,
+        "ny": 32
+      },
+      "faceCounts": {
+        "u": 1056,
+        "v": 1056
+      },
+      "ownFieldSHA256": "7dfc9e968de0ec2b6d71b813c9b3c91cbde34321184349c15b73cb548aeac8cc",
+      "ownDiagnostics": {
+        "Re_L": 10000,
+        "outerEta": 12,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.216,
+        "outletVolumeFlowM3PerS": 0.18502582216466293,
+        "upperOutflowM3PerS": 0.03097417783533707,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.432,
+        "boundaryVolumeFlowResidualM3PerS": 0,
+        "boundaryRelativeResidual": 0,
+        "maximumCellVolumeFluxImbalanceM3PerS": 8.673617379884035e-19,
+        "normalizedDivergence": 7.094685943829769e-17,
+        "wallShearForceN": 0.2510353461787465,
+        "meanFrictionCoefficient": 0.013282293448610927
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 5.6727867002602674e-14,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 5.6727867002602674e-14,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 4.6881705050993575e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 1.3187110868305173e-14,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.995867443011946e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "Re-upper-eta-upper",
+      "config": {
+        "width": 1,
+        "height": 0.0758946638440411,
+        "depth": 0.03,
+        "nu": 1e-05,
+        "rho": 1,
+        "freeStreamVelocity": 1,
+        "nx": 64,
+        "ny": 48
+      },
+      "faceCounts": {
+        "u": 3120,
+        "v": 3136
+      },
+      "ownFieldSHA256": "b5a4f02b2f3308dec3eba1ad966841e7ca1b7693c0f808d50d4a93204994abf8",
+      "ownDiagnostics": {
+        "Re_L": 99999.99999999999,
+        "outerEta": 23.999999999999996,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.002276839915321233,
+        "outletVolumeFlowM3PerS": 0.002113591664303285,
+        "upperOutflowM3PerS": 0.00016324825101794824,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.004553679830642466,
+        "boundaryVolumeFlowResidualM3PerS": -1.0842021724855044e-19,
+        "boundaryRelativeResidual": 2.380936325803427e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 8.470329472543003e-21,
+        "normalizedDivergence": 1.2485708970551638e-16,
+        "wallShearForceN": 6.300344977251472e-05,
+        "meanFrictionCoefficient": 0.0042002299848343146
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 4.6130641312441396e-17,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 4.6130641312441396e-17,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 2.7127793262122796e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 4.687468391425497e-15,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 9.462916561453483e-16,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "eta-lower",
+      "config": {
+        "width": 1,
+        "height": 0.1,
+        "depth": 0.03,
+        "nu": 0.0001,
+        "rho": 1,
+        "freeStreamVelocity": 1,
+        "nx": 48,
+        "ny": 40
+      },
+      "faceCounts": {
+        "u": 1960,
+        "v": 1968
+      },
+      "ownFieldSHA256": "69e2507cd0191c9a4d1ec3662e6a609a3e2f7806fcfc7ed015a43f5d7b3338d5",
+      "ownDiagnostics": {
+        "Re_L": 10000,
+        "outerEta": 10,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.003,
+        "outletVolumeFlowM3PerS": 0.0024837637028807193,
+        "upperOutflowM3PerS": 0.0005162362971192809,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.006000000000000001,
+        "boundaryVolumeFlowResidualM3PerS": -1.0842021724855044e-19,
+        "boundaryRelativeResidual": 1.8070036208091736e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 1.3552527156068805e-20,
+        "normalizedDivergence": 9.06449030949092e-17,
+        "wallShearForceN": 0.00019923440172916383,
+        "meanFrictionCoefficient": 0.013282293448610923
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 5.110895159778777e-13,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 5.110895159778777e-13,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 4.379725025936235e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 1.2859089516583282e-14,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.9923979960599922e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "streamwise-512",
+      "config": {
+        "width": 1,
+        "height": 0.12,
+        "depth": 0.03,
+        "nu": 0.0001,
+        "rho": 1,
+        "freeStreamVelocity": 1,
+        "nx": 512,
+        "ny": 128
+      },
+      "faceCounts": {
+        "u": 65664,
+        "v": 66048
+      },
+      "ownFieldSHA256": "af0d18498c3df7fb23ac8ec57bd40a27d3487e99868883adda139530336b4883",
+      "ownDiagnostics": {
+        "Re_L": 10000,
+        "outerEta": 12,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.0036,
+        "outletVolumeFlowM3PerS": 0.0030837637027443824,
+        "upperOutflowM3PerS": 0.0005162362972556173,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.0072,
+        "boundaryVolumeFlowResidualM3PerS": 2.168404344971009e-19,
+        "boundaryRelativeResidual": 3.0116727013486234e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 3.3881317890172014e-21,
+        "normalizedDivergence": 6.651268072340408e-17,
+        "wallShearForceN": 0.00019923440172916386,
+        "meanFrictionCoefficient": 0.013282293448610925
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 1.4182154980194503e-14,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 1.4182154980194503e-14,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 2.347692985473169e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 3.373543999370044e-15,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.994132719535969e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "transverse-512-256",
+      "config": {
+        "width": 1,
+        "height": 0.12,
+        "depth": 0.03,
+        "nu": 0.0001,
+        "rho": 1,
+        "freeStreamVelocity": 1,
+        "nx": 512,
+        "ny": 256
+      },
+      "faceCounts": {
+        "u": 131328,
+        "v": 131584
+      },
+      "ownFieldSHA256": "6c98860de6d60e69eb83a1ba8935870d92bcc53e8cc31543ae5d74d54d521b25",
+      "ownDiagnostics": {
+        "Re_L": 10000,
+        "outerEta": 12,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.0036,
+        "outletVolumeFlowM3PerS": 0.0030837637027443824,
+        "upperOutflowM3PerS": 0.0005162362972556173,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.0072,
+        "boundaryVolumeFlowResidualM3PerS": 2.168404344971009e-19,
+        "boundaryRelativeResidual": 3.0116727013486234e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 3.3881317890172014e-21,
+        "normalizedDivergence": 9.187621643976994e-17,
+        "wallShearForceN": 0.00019923440172916386,
+        "meanFrictionCoefficient": 0.013282293448610925
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 1.1411416094953769e-17,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 1.151253088831918e-11,
+          "meetsUnchangedBudget": false
+        },
+        {
+          "fromOrder": 64,
+          "toOrder": 128,
+          "maximumDifferenceRelativeToBoundaryFlow": 1.1411416094953769e-17,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 1.3540762809579163e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 3.373543999370044e-15,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.994132719535969e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    },
+    {
+      "name": "dimensional-air-flow",
+      "config": {
+        "width": 0.2,
+        "height": 0.025,
+        "depth": 0.03,
+        "nu": 1.5e-05,
+        "rho": 1.177,
+        "freeStreamVelocity": 1,
+        "nx": 32,
+        "ny": 32
+      },
+      "faceCounts": {
+        "u": 1056,
+        "v": 1056
+      },
+      "ownFieldSHA256": "c7b98153b1f4fdb69997460a6a029db9588c81d0155de7dc8f41d2f01429655d",
+      "ownDiagnostics": {
+        "Re_L": 13333.333333333334,
+        "outerEta": 14.433756729740644,
+        "inputRangeRelativeRoundoffBudget": 1.7763568394002505e-15,
+        "wallCurvature": 0.3320573362152731,
+        "finiteEtaMax": 12,
+        "similarityIntervals": 8192,
+        "shootingTerminalSlopeError": 2.220446049250313e-16,
+        "finiteTailCurvature": 7.881007574618972e-13,
+        "inletVolumeFlowM3PerS": 0.00075,
+        "outletVolumeFlowM3PerS": 0.000660585250444204,
+        "upperOutflowM3PerS": 8.941474955579599e-05,
+        "positiveBoundaryFlowL1ScaleM3PerS": 0.0015,
+        "boundaryVolumeFlowResidualM3PerS": 2.710505431213761e-20,
+        "boundaryRelativeResidual": 1.807003620809174e-17,
+        "maximumCellVolumeFluxImbalanceM3PerS": 3.3881317890172014e-21,
+        "normalizedDivergence": 8.633515006633184e-17,
+        "wallShearForceN": 4.06163993245159e-05,
+        "meanFrictionCoefficient": 0.011502803547016681
+      },
+      "referenceQuadratureRefinementRelativeToBoundaryFlow": 4.8438990810315925e-15,
+      "referenceQuadratureLevels": [
+        {
+          "fromOrder": 32,
+          "toOrder": 64,
+          "maximumDifferenceRelativeToBoundaryFlow": 4.8438990810315925e-15,
+          "meetsUnchangedBudget": true
+        }
+      ],
+      "maximumXFluxErrorRelativeToBoundaryFlow": 3.950561665994057e-15,
+      "maximumYFluxErrorRelativeToBoundaryFlow": 1.0916560624213423e-14,
+      "wallCurvatureAbsoluteDifference": 7.482903185973555e-14,
+      "meanDragDifference": 2.5934115965853266e-15,
+      "checks": {
+        "referenceQuadratureConverged": true,
+        "allXFaceFluxes": true,
+        "allYFaceFluxes": true,
+        "wallCurvature": true,
+        "cellDivergence": true,
+        "wholeMass": true,
+        "similarityMeanDrag": true
+      }
+    }
+  ],
+  "allChecksPassed": true,
+  "temperatureTransportVerified": false,
+  "fullNavierStokesVerified": false,
+  "GUIVerified": false,
+  "releaseApproved": false
+}

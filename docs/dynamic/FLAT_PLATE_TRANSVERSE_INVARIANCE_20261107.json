@@ -1,0 +1,9 @@
+{
+  "recordedAtUTC": "2026-11-06T18:35:13.295463+00:00",
+  "oldFlowSourceSHA256": "09e5909ac1a285fd60685783603f95a5d0385aa44256560870065ae327f6d7fa",
+  "newFlowSourceSHA256": "85970b47f2efecc795b247a9051fae4258e787a02160d302ffcb87352fb9301a",
+  "allEightOldFullFlowHashesIdentical": true,
+  "allFourFixedGridThermalSnapshotsBitIdentical": true,
+  "scope": "Transverse resource extension only; earlier selected trajectories unchanged, not a full physics proof.",
+  "releaseApproved": false
+}

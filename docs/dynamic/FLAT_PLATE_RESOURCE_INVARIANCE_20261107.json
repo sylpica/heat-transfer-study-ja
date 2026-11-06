@@ -1,0 +1,17 @@
+{
+  "recordedAtUTC": "2026-11-06T18:22:05.228108+00:00",
+  "oldFlowGeneratorSHA256": "8cc755b3f877f248a18a89a9890c18f8fdf002ccaff0c91f5310dfcd3d6cd6c0",
+  "newFlowGeneratorSHA256": "09e5909ac1a285fd60685783603f95a5d0385aa44256560870065ae327f6d7fa",
+  "allSevenOldFullFlowHashesIdentical": true,
+  "allFourFixedGridThermalSnapshotsBitIdentical": true,
+  "thermalSourceBefore": {
+    "dynamic/dev/flat-plate-thermal.mjs": "744ebf212f9b1f8fcf16cbf6c87fce0fb9d81f0225db62fc212b9190b28b69ef",
+    "dynamic/dev/blasius-boundary-flow.mjs": "8cc755b3f877f248a18a89a9890c18f8fdf002ccaff0c91f5310dfcd3d6cd6c0"
+  },
+  "thermalSourceAfter": {
+    "dynamic/dev/flat-plate-thermal.mjs": "8d7b8a7a03ede7aa8f17b784cc34d23ad61f6d45d9696bfbd6758c648bf354bb",
+    "dynamic/dev/blasius-boundary-flow.mjs": "09e5909ac1a285fd60685783603f95a5d0385aa44256560870065ae327f6d7fa"
+  },
+  "scope": "Resource cap and min/max aggregation changed; these selected full states are unchanged, not a general physics proof.",
+  "releaseApproved": false
+}

@@ -1,6 +1,6 @@
 // Development-only linear boundaries. Narrow independent reference cases are
 // available; general geometry and boundary accuracy remain unapproved.
-import {createConvexTriangleMesh} from './convex-triangle-mesh.mjs';
+import {createConvexTriangleMesh} from './convex-triangle-mesh.mjs';import {createBoundaryRefinedTriangleMesh} from './boundary-refined-triangle-mesh.mjs';
 import {assembleTriangleDiffusion} from './triangle-stiffness.mjs';
 import {assembleTriangleBoundaries} from './triangle-boundaries.mjs';
 const EPS=Number.EPSILON;
@@ -8,8 +8,8 @@ const finite=(x,name,positive=false)=>{if(typeof x!=='number'||!Number.isFinite(
 function sum(xs){let s=0,e=0;for(const x of xs){const y=x-e,t=s+y;e=(t-s)-y;s=t;}return finite(s,'集計');}
 function product(x,y,name){const r=finite(x*y,name);if(x!==0&&y!==0&&r===0)throw Error(name+'が丸めで0に潰れます。');return r;}
 export function createTriangleLinearTransient(input){
- if(!input||typeof input!=='object'||Object.keys(input).some(k=>!['outline','subdivisions','k','depth','rho','cp','boundaries','referenceTemperatureK','initial','source','maxTemperature'].includes(k)))throw Error('対応する一定物性/線形境界の条件が必要です。');
- const c=structuredClone(input),mesh=createConvexTriangleMesh({outline:c.outline,subdivisions:c.subdivisions}),op=assembleTriangleDiffusion({mesh,k:c.k,depth:c.depth,rho:c.rho,cp:c.cp}),reference=finite(c.referenceTemperatureK??300,'参照温度[K]',true),maximum=finite(c.maxTemperature??2000,'監視上限[K]',true),bc=assembleTriangleBoundaries({operator:op,boundaries:c.boundaries,referenceTemperatureK:reference}),source=finite(c.source??0,'体積発熱[W/m³]'),C=op.lumpedCapacityJPerK,unknown=bc.unknownNodeIds,safeDt=bc.safeDt;
+ if(!input||typeof input!=='object'||Object.keys(input).some(k=>!['outline','subdivisions','k','depth','rho','cp','boundaries','referenceTemperatureK','initial','source','maxTemperature','boundaryRefinement'].includes(k)))throw Error('対応する一定物性/線形境界の条件が必要です。');
+ const c=structuredClone(input);if(c.boundaryRefinement!==undefined&&typeof c.boundaryRefinement!=='boolean')throw Error('追加境界分割は真偽値で明示してください。');const mesh=(c.boundaryRefinement?createBoundaryRefinedTriangleMesh:createConvexTriangleMesh)({outline:c.outline,subdivisions:c.subdivisions}),op=assembleTriangleDiffusion({mesh,k:c.k,depth:c.depth,rho:c.rho,cp:c.cp}),reference=finite(c.referenceTemperatureK??300,'参照温度[K]',true),maximum=finite(c.maxTemperature??2000,'監視上限[K]',true),bc=assembleTriangleBoundaries({operator:op,boundaries:c.boundaries,referenceTemperatureK:reference}),source=finite(c.source??0,'体積発熱[W/m³]'),C=op.lumpedCapacityJPerK,unknown=bc.unknownNodeIds,safeDt=bc.safeDt;
  const sourceRate=finite(source/(c.rho*c.cp),'体積発熱の温度率');if(source!==0&&sourceRate===0)throw Error('体積発熱温度率が丸めで失われます。');
  const sourceNode=op.volume.map(v=>product(source,v,'節点発熱')),sourceTotal=sum(sourceNode),fixed=bc.fixedTemperatureK.map(t=>t===null?null:finite(t-reference,'固定温度差')),rawInitial=c.initial??reference;
  if(Array.isArray(rawInitial)&&rawInitial.length!==mesh.nodes.length)throw Error('初期値は全節点順です。');
@@ -17,7 +17,7 @@ export function createTriangleLinearTransient(input){
  const ambient=c.boundaries.filter(b=>b.type==='convection'&&b.h>0).map(b=>finite(b.ambientK-reference,'流体温度差')),baseMin=Math.min(...initial,...fixed.filter(x=>x!==null),...ambient),baseMax=Math.max(...initial,...fixed.filter(x=>x!==null),...ambient),forcing=sourceNode.map((v,i)=>finite(v+bc.prescribedFluxInputW[i],'指定発熱/流束による流入')),forcingRates=unknown.map(i=>{const rate=finite(forcing[i]/C[i],'指定流入の温度率');if(forcing[i]!==0&&rate===0)throw Error('指定流入の温度率が失われます。');return rate;}),minRate=Math.min(0,...forcingRates),maxRate=Math.max(0,...forcingRates);
  if(c.boundaries.some(b=>b.type==='convection'&&b.h>0&&b.ambientK>maximum))throw Error('流体温度が監視上限を超えます。');
  const neighbors=mesh.nodes.map(()=>[]);for(const e of op.edges){const [a,b]=e.nodes;if(e.conductanceWPerK!==0){neighbors[a].push({id:b,G:e.conductanceWPerK});neighbors[b].push({id:a,G:e.conductanceWPerK});}}
- const signature=JSON.stringify({kind:'convex-P1-linear-boundary-SSPRK2',outline:mesh.outline,subdivisions:mesh.subdivisions,k:c.k,depth:c.depth,rho:c.rho,cp:c.cp,boundaries:c.boundaries,reference,maximum,source,initial}),energy=field=>sum(C.map((v,i)=>product(v,field[i],'蓄熱'))),initialEnergy=energy(initial);
+ const signature=JSON.stringify({kind:'convex-P1-linear-boundary-SSPRK2',...(c.boundaryRefinement?{meshGenerator:mesh.generator}:{}),outline:mesh.outline,subdivisions:mesh.subdivisions,k:c.k,depth:c.depth,rho:c.rho,cp:c.cp,boundaries:c.boundaries,reference,maximum,source,initial}),energy=field=>sum(C.map((v,i)=>product(v,field[i],'蓄熱'))),initialEnergy=energy(initial);
  let theta=initial.slice(),time=0,steps=0,lastDt=0,cumulativeSource=0,cumulativeBoundary=0,cumulativeBudget=0;
  function bounds(t,count){const lo=finite(baseMin+product(minRate,t,'下限の流入効果'),'温度差下限'),hi=finite(baseMax+product(maxRate,t,'上限の流入効果'),'温度差上限'),magnitude=Math.max(Math.abs(lo),Math.abs(hi));return {lo,hi,magnitude,tolerance:finite(1024*EPS*(count+1)*magnitude,'最大原理丸め幅')};}
  function inspect(field,t,count){

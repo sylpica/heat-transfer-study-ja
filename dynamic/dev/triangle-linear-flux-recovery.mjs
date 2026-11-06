@@ -1,6 +1,6 @@
 // Unpublished mixed-boundary RT0 prototype. Independent verification pending.
 // Known Neumann/Robin edge powers remain fixed; closed systems use one dual gauge.
-import {createConvexTriangleMesh} from './convex-triangle-mesh.mjs';
+import {createConvexTriangleMesh} from './convex-triangle-mesh.mjs';import {createBoundaryRefinedTriangleMesh} from './boundary-refined-triangle-mesh.mjs';
 import {assembleTriangleDiffusion} from './triangle-stiffness.mjs';import {assembleTriangleBoundaries} from './triangle-boundaries.mjs';
 const finite=(x,name,positive=false)=>{if(typeof x!=='number'||!Number.isFinite(x)||(positive&&x<=0))throw Error(`${name}が数値範囲外です。`);return x===0?0:x;};
 const dot=(a,b)=>finite(a.reduce((s,x,i)=>s+x*b[i],0),'内積');
@@ -10,7 +10,7 @@ const sum=a=>finite(a.reduce((s,x)=>s+x,0),'集計');
 export function createTriangleLinearFluxRecovery({mesh:input,k,depth,rho,cp,source=0,boundaries,referenceTemperatureK=300}){
  for(const [name,x]of Object.entries({k,depth,rho,cp}))finite(x,name,true);finite(source,'発熱');
  if(input?.kind!=='convex-conforming-delaunay-development-mesh')throw Error('対応する凸P1メッシュが必要です。');
- const mesh=createConvexTriangleMesh({outline:input.outline,subdivisions:input.subdivisions});
+ if(input.generator!==undefined&&input.generator!=='convex-boundary-refined-delaunay-development-v1')throw Error('未対応のメッシュ生成方式です。');const mesh=(input.generator?createBoundaryRefinedTriangleMesh:createConvexTriangleMesh)({outline:input.outline,subdivisions:input.subdivisions});
  const topology=m=>JSON.stringify({outline:m.outline,nodes:m.nodes,elements:m.elements,edges:m.edges,subdivisions:m.subdivisions});if(topology(mesh)!==topology(input))throw Error('正規のメッシュと節点/接続が一致しません。');
  const conditions=structuredClone(boundaries),bc=assembleTriangleBoundaries({operator:assembleTriangleDiffusion({mesh,k,depth,rho,cp}),boundaries:conditions,referenceTemperatureK});
  const points=mesh.nodes.map(n=>n.point),centres=mesh.elements.map(t=>[0,1].map(k=>sum(t.nodes.map(i=>points[i][k]/3)))),incident=mesh.elements.map(()=>[]),volumetricCapacity=finite(rho*cp,'体積容量',true);
@@ -38,7 +38,7 @@ export function createTriangleLinearFluxRecovery({mesh:input,k,depth,rho,cp,sour
  }
  return {recover(state){
   if(state?.kind!=='convex-P1-linear-boundary-SSPRK2-development-state'||!Array.isArray(state.nodalTemperatureRateKPerS)||state.nodalTemperatureRateKPerS.length!==points.length||!Array.isArray(state.elementHeatFluxWPerM2)||state.elementHeatFluxWPerM2.length!==mesh.elements.length)throw Error('実P1状態の瞬間節点温度率と片側Fourier熱流束が必要です。');
-  const signature=JSON.parse(state.modelSignature);if(signature.kind!=='convex-P1-linear-boundary-SSPRK2'||signature.reference!==referenceTemperatureK||JSON.stringify(signature.boundaries)!==JSON.stringify(conditions)||JSON.stringify(signature.outline)!==JSON.stringify(mesh.outline)||Object.entries({subdivisions:mesh.subdivisions,k,depth,rho,cp,source}).some(([key,value])=>signature[key]!==value))throw Error('回復条件と実状態のモデル条件が一致しません。');
+  const signature=JSON.parse(state.modelSignature);if(signature.kind!=='convex-P1-linear-boundary-SSPRK2'||signature.meshGenerator!==mesh.generator||signature.reference!==referenceTemperatureK||JSON.stringify(signature.boundaries)!==JSON.stringify(conditions)||JSON.stringify(signature.outline)!==JSON.stringify(mesh.outline)||Object.entries({subdivisions:mesh.subdivisions,k,depth,rho,cp,source}).some(([key,value])=>signature[key]!==value))throw Error('回復条件と実状態のモデル条件が一致しません。');
   const rate=state.nodalTemperatureRateKPerS.map(x=>finite(x,'温度率'));if(bc.fixedTemperatureK.some((v,i)=>v!==null&&rate[i]!==0))throw Error('固定温度境界の温度率は0です。');
   if(!Array.isArray(state.temperatureExcess)||state.temperatureExcess.length!==points.length||!state.temperatureExcess.every(Number.isFinite))throw Error('全節点の保持温度差が必要です。');
   const raw=state.elementHeatFluxWPerM2.map(q=>{if(!Array.isArray(q)||q.length!==2)throw Error('実要素熱流束が不正です。');return q.map(x=>finite(x,'片側熱流束'));});

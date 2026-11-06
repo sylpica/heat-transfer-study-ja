@@ -109,6 +109,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Check the isolated steady Blasius flow stage without claiming temperature transport
+        run: node tests/dynamic-blasius-flow-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise the development-only steady RANS and passive-temperature UI
         run: node tests/dynamic-rans-browser.mjs
         env:

@@ -606,3 +606,10 @@ GHIA_MARCHI_RESOLUTION_20261106.md/JSON、CFD_MARCHI_RE100_20261106_v1.json参�
 
 
 P1表面GUI c68d3e5/run42224250852はGitHubから全5ジョブ成功を直接確認し、TRIANGLE_SURFACE_UI_CI_20261106.jsonへ保存。自然対流GUI a8c18aa/run42232910996は4成功/CFD実行中のため全成功とはしない。Marchi比較の後続SHAへCI成功を転用しない。
+
+
+## 2026-11-06：平板境界層の定常速度段階を独立照合
+
+未対応Q45の平板外部に向け、別Blasius射撃/ψ差の保存的面流量を試作し7d51571へ保存。別SciPy BVP16/24・DOP853・連続u/vのGauss32/64面積分で7ケースを照合し、全face流量の最大差<1.86e−14（境界L1流量尺度）、参照精細化差<1.79e−12、壁曲率差<7.49e−14、質量/発散の事前予算も成功。BLASIUS_FLOW_REFERENCE_20261106_v1.json/FLAT_PLATE_BOUNDARY_FLOW.md参照。JSON化の初回失敗を修正して再実行し、基準を変更しない。
+
+新3Nodeと両ブラウザーの全7ケース/全face・未知条件拒否・保存不変更が成功。温度/動的運動量/一般NS/GUI/工学的公開の承認ではない。全Node/ビルドをこの後に実行し、次に受動非定常温度の独立検証へ進む。root単独・逐次を維持する。

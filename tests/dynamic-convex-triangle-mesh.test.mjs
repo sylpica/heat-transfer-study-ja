@@ -10,3 +10,7 @@ test('clockwise input and repeated closing point preserve polygon area and origi
 test('unsupported/degenerate or unrepresentable meshes reject before silently removing area or accepting invalid triangles',()=>{
  for(const input of [null,{}, {outline:[]},{outline:[[0,0],[1,0],[2,0]]},{outline:[[0,0],[1,0],[.5,.5],[1,1],[0,1]]},{outline:[[0,0],[1,1],[0,1],[1,0]]},{outline:[[0,0],[1,0],[1,0],[0,1]]},{outline:[[0,0],[Infinity,0],[0,1]]},{outline:[[0,0],[1,0],[0,1]],subdivisions:0},{outline:[[0,0],[1,0],[0,1]],subdivisions:17},{outline:[[0,0],[1e-200,0],[0,1e-200]]},{outline:[[0,0],[1e200,0],[0,1e200]]},{outline:[[0,0],[1,0],[0,1]],source:1}])assert.throws(()=>createConvexTriangleMesh(input));
 });
+test('physical coordinate reconstruction rejects collapsed subcells at huge offsets while retaining exactly representable translations',()=>{
+ const unresolved=1e16;assert.throws(()=>createConvexTriangleMesh({outline:[[unresolved,unresolved],[unresolved+4,unresolved],[unresolved+4,unresolved+4],[unresolved,unresolved+4]],subdivisions:16}),/物理座標/);
+ const x=1e9,m=createConvexTriangleMesh({outline:[[x,x],[x+1,x],[x+1,x+1],[x,x+1]],subdivisions:4});assert.equal(new Set(m.nodes.map(n=>n.point.join(','))).size,m.nodes.length);assert.equal(m.numerics.area,1);assert.equal(m.numerics.physicalNodesDistinct,true);assert.equal(m.numerics.physicalElementOrientationsPositive,true);
+});

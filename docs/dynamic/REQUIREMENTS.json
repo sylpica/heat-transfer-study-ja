@@ -830,9 +830,13 @@
         "TRIANGLE_LINEAR_REFERENCE_20261106.json",
         "TRIANGLE_LINEAR_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_UI.md",
-        "TRIANGLE_LINEAR_UI_CHECKPOINT_20261106.json"
+        "TRIANGLE_LINEAR_UI_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_FLUX_RECOVERY.md",
+        "TRIANGLE_LINEAR_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_LINEAR_FLUX_CHECKPOINT_20261106.json",
+        "TRIANGLE_PHYSICAL_MAPPING_FIX_20261106.md"
       ],
-      "remainingOrScope": "板/径方向の固定温度/熱流束/対流/放射/同一面対流＋放射と、開発専用の流路両壁q入力を検算。自由輪郭の面積/法線を要する一般境界/連成は保護して未公開。 凸P1は輪郭辺の位相IDと線形境界項/正係数判定を開発用に組立済みだが、正の未知系の別過渡モデルをsin/cos連続全場・アフィン行列指数・実Workerへ限定検証。正方形の専用GUIも実Worker/両ブラウザーで検査。混合境界の回復流束/一般形状・精度は未完了。"
+      "remainingOrScope": "板/径方向の固定温度/熱流束/対流/放射/同一面対流＋放射と、開発専用の流路両壁q入力を検算。自由輪郭の面積/法線を要する一般境界/連成は保護して未公開。 凸P1は輪郭辺の位相IDと線形境界項/正係数判定を開発用に組立済みだが、正の未知系の別過渡モデルをsin/cos連続全場・アフィン行列指数・実Workerへ限定検証。正方形の専用GUIも実Worker/両ブラウザーで検査。混合境界の回復流束も既知境界熱を保持して独立限定検証。回復流束のGUI/一般形状・精度は未完了。"
     },
     {
       "id": "Q48",
@@ -993,7 +997,11 @@
         "TRIANGLE_LINEAR_REFERENCE_20261106.json",
         "TRIANGLE_LINEAR_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_UI.md",
-        "TRIANGLE_LINEAR_UI_CHECKPOINT_20261106.json"
+        "TRIANGLE_LINEAR_UI_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_FLUX_RECOVERY.md",
+        "TRIANGLE_LINEAR_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_LINEAR_FLUX_CHECKPOINT_20261106.json",
+        "TRIANGLE_PHYSICAL_MAPPING_FIX_20261106.md"
       ],
       "remainingOrScope": "既存階段格子と凸cut-cell定常PDEに加え、開発専用の厳密符号Delaunay三角形P1・正lumped容量・SSPRK2過渡と実温度場GUIを独立解析解/時間行列指数で検査。旧cut-cell補正の最大原理違反は残し、その時間接続は保留。凸3プリセットと3〜12頂点編集・一定物性・全周固定温度のみ。保存的RT0後処理は独立最適辺熱・連続全流束を4格子で局所検証し、実GUIの共通尺度矢印/測定/診断へ接続。凹/穴/曲線/混合境界/一般CFD/公開は未完了。"
     },
@@ -1148,7 +1156,11 @@
         "TRIANGLE_BOUNDARY_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_TRANSIENT.md",
         "TRIANGLE_LINEAR_REFERENCE_20261106.json",
-        "TRIANGLE_LINEAR_CHECKPOINT_20261106.json"
+        "TRIANGLE_LINEAR_CHECKPOINT_20261106.json",
+        "TRIANGLE_LINEAR_FLUX_RECOVERY.md",
+        "TRIANGLE_LINEAR_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_LINEAR_FLUX_CHECKPOINT_20261106.json",
+        "TRIANGLE_PHYSICAL_MAPPING_FIX_20261106.md"
       ],
       "remainingOrScope": "閉輪郭/交差/分断等の検査を維持。新規凸cut-cellは閉終点/向きのみ同形状で処理し、正スリバーを削除せず未解像は拒否。一般幾何の修復/凹/穴/熱解析適格は未完了。"
     },

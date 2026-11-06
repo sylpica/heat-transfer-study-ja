@@ -38,14 +38,14 @@ def operator(c,flow_reference):
     return coo_matrix((values,(rows,cols)),shape=(N+5,N+5)).tocsc(),capacity
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--tag',default='v1');args=parser.parse_args();assert re.fullmatch('[a-z0-9-]{1,32}',args.tag)
-    output=ROOT/f'docs/dynamic/FLAT_PLATE_TIME_REFERENCE_20261106_{args.tag}.json';assert not output.exists(),'Protect existing result.'
+    parser=argparse.ArgumentParser();parser.add_argument('--tag',default='v1');parser.add_argument('--case',choices=['dimensionless','air'],default='dimensionless');args=parser.parse_args();assert re.fullmatch('[a-z0-9-]{1,32}',args.tag)
+    prefix='FLAT_PLATE_AIR_TIME_REFERENCE' if args.case=='air' else 'FLAT_PLATE_TIME_REFERENCE';output=ROOT/f'docs/dynamic/{prefix}_20261106_{args.tag}.json';assert not output.exists(),'Protect existing result.'
     bvp=blasius.reference(24)
-    own=json.loads(subprocess.check_output(['node','scripts/dynamic-flat-plate-time-cases.mjs'],cwd=ROOT,text=True))
-    retained=ROOT/f'work/flat-plate-time-own-20261106-{args.tag}.json'
+    own=json.loads(subprocess.check_output(['node','scripts/dynamic-flat-plate-time-cases.mjs','--case',args.case],cwd=ROOT,text=True))
+    case_prefix='air-' if args.case=='air' else '';retained=ROOT/f'work/flat-plate-time-own-20261106-{case_prefix}{args.tag}.json'
     with retained.open('x') as stream:json.dump(own,stream)
-    c=own['config'];N=c['nx']*c['ny'];matrix,C=operator(c,bvp);initial=np.zeros(N+5);initial[-1]=1
-    exact=expm_multiply(matrix*.5,initial);theta=exact[:N];components=exact[N:N+4];net=float(components[0]+components[1]-components[2]-components[3]);storage=C*float(np.sum(theta))
+    c=own['config'];target=own.get('targetTimeS',.5);N=c['nx']*c['ny'];matrix,C=operator(c,bvp);initial=np.zeros(N+5);initial[-1]=1
+    exact=expm_multiply(matrix*target,initial);theta=exact[:N];components=exact[N:N+4];net=float(components[0]+components[1]-components[2]-components[3]);storage=C*float(np.sum(theta))
     # Check the augmented rows against independent physical storage algebra.
     probe=initial.copy();probe[:N]=np.linspace(0,20,N);rate=matrix@probe;power=float(rate[N]+rate[N+1]-rate[N+2]-rate[N+3]);identity=float(abs(C*np.sum(rate[:N])-power));assert identity<1e-12
     assert abs(storage-net)<1e-12
@@ -55,7 +55,7 @@ def main():
         row={'factor':case['factor'],'maximumDt':case['maximumDt'],'steps':state['steps'],'timeS':state['time'],'maximumTemperatureErrorK':float(np.max(np.abs(error))),'temperatureRmsErrorK':float(np.sqrt(np.mean(error**2))),'maximumCumulativeComponentDifferenceJ':float(np.max(np.abs(cum))),'netInputDifferenceJ':state['netInputJ']-net,'ownEnergyErrorJ':state['energyErrorJ'],'ownEnergyRoundoffBudgetJ':state['energyRoundoffBudgetJ']};rows.append(row);print(json.dumps(row),flush=True)
     orders=[math.log2(a['maximumTemperatureErrorK']/b['maximumTemperatureErrorK']) for a,b in zip(rows,rows[1:])]
     checks={'finestMaximumDifferenceBelow001K':rows[-1]['maximumTemperatureErrorK']<.001,'finalTimeOrderBetween18And22':1.8<orders[-1]<2.2,'allOwnEnergyBudgets':all(abs(r['ownEnergyErrorJ'])<=r['ownEnergyRoundoffBudgetJ'] for r in rows)}
-    result={'generatedAtUTC':datetime.now(timezone.utc).isoformat(),'sourceCommit':own['sourceCommit'],'sourceFilesSHA256':own['sourceFilesSHA256'],'referenceGeneratorSHA256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'independentFlowGeneratorSHA256':hashlib.sha256((ROOT/'scripts/dynamic-independent-blasius-flow.py').read_bytes()).hexdigest(),'criteriaDeclaredAtCommit':'90e3206','method':'Separate SciPy Blasius collocation and continuous face-velocity quadrature, physical upwind/y-diffusion sparse matrix and four affine heat integrals, scipy expm_multiply. Product RK2/RHS/assembly are not reference solvers.','environment':{'product':own['environment'],'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'BLASThreads':1},'config':c,'reference':{'timeS':.5,'temperatureOffsetsK':theta.tolist(),'cumulativeComponentsJ':components.tolist(),'netInputJ':net,'storageChangeJ':storage,'storagePowerIdentityResidualW':identity,'energyResidualJ':storage-net},'rows':rows,'maximumErrorTimeOrders':orders,'checks':checks,'allChecksPassed':all(checks.values()),'continuousThermalSpatialAccuracyVerified':False,'realWorkerVerified':False,'GUIVerified':False,'releaseApproved':False}
+    result={'generatedAtUTC':datetime.now(timezone.utc).isoformat(),'sourceCommit':own['sourceCommit'],'sourceFilesSHA256':own['sourceFilesSHA256'],'referenceGeneratorSHA256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'independentFlowGeneratorSHA256':hashlib.sha256((ROOT/'scripts/dynamic-independent-blasius-flow.py').read_bytes()).hexdigest(),'criteriaDeclaredAtCommit':'b941a77' if args.case=='air' else '90e3206','method':'Separate SciPy Blasius collocation and continuous face-velocity quadrature, physical upwind/y-diffusion sparse matrix and four affine heat integrals, scipy expm_multiply. Product RK2/RHS/assembly are not reference solvers.','environment':{'product':own['environment'],'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__,'BLASThreads':1},'config':c,'reference':{'timeS':target,'temperatureOffsetsK':theta.tolist(),'cumulativeComponentsJ':components.tolist(),'netInputJ':net,'storageChangeJ':storage,'storagePowerIdentityResidualW':identity,'energyResidualJ':storage-net},'rows':rows,'maximumErrorTimeOrders':orders,'checks':checks,'allChecksPassed':all(checks.values()),'continuousThermalSpatialAccuracyVerified':False,'realWorkerVerified':False,'GUIVerified':False,'releaseApproved':False}
     with output.open('x') as stream:json.dump(result,stream,indent=2);stream.write('\n')
     print(json.dumps({'output':str(output),'orders':orders,'checks':checks}),flush=True)
     if not result['allChecksPassed']:raise RuntimeError('Saved failed time comparison; do not approve')

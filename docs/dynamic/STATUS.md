@@ -684,3 +684,6 @@ flat-plate.htmlに受動温度/再構成流速・板区間q・瞬間Nu・符号�
 
 
 WebKit CIの実依存install中断に対して、全43試験/両エンジン/15分を保ち、既存npm固定版と同じ公式Playwright v1.56.1-nobleイメージへ変更。OS依存/ブラウザーのapt再取得を置換し、実revisionパスを事前検査する。変更前後のYAMLで全テストコマンド同一、ローカル依存版一致のみ確認。イメージ自体と実CIは対象SHAでこれから確認、先行成功を転用しない。BROWSER_CI_ENVIRONMENT_20261107.md参照。
+
+
+CIのpush/PR重複をCLIで再確認。同じ平板22a8612のpush run42279902275は全5ジョブ成功をGitHub job APIで直接確認、FLAT_PLATE_UI_PUSH_CI_20261107.jsonへ保存。PR runのinstall中cancelledは保持する。最新6f99414以外の同一ブランチ/同workflowで滞留した過去5実行だけ取消要求を送り、対象と結果を保存。今後はheadリポジトリ/ブランチ別concurrencyで重複を抑え、他ラインを取消対象にしない。最新image変更のCI成功とは区別する。

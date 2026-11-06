@@ -11,3 +11,9 @@ browserジョブを公式Playwrightイメージ `mcr.microsoft.com/playwright:v1
 ## 検査範囲
 
 YAMLを変更前後で構文解析し、全43本の実ブラウザーコマンドが順序/内容とも同一と確認。試験削除・閾値緩和・timeout延長・失敗の成功化はしない。ローカル `node scripts/dynamic-playwright-environment.mjs --lock-only` は1.56.1一致を確認、browserImageVerified=falseと明示。実image取得/起動と全試験の成否はこの変更の対象SHAのGitHub Actionsで確認する。先行ローカルの共役/既存加熱流路の両エンジン成功はCONJUGATE_UI_CHECKPOINTへ分離保存。
+
+## 同じSHAの別イベントと滞留の確認
+
+接続APIのcommit-run取得がPRイベントだけを返すため、CLIで当該ブランチ/当該workflowだけを列挙した。同じ22a8612にはpush実行42279902275もあり、こちらはGitHub job APIで全5ジョブsuccessを直接確認した。FLAT_PLATE_UI_PUSH_CI_20261107.jsonに保存。PR実行のcancelledは書き換えず、イベント別に保持する。固定imageへの変更は、成功が一度もなかったという理由ではなく、不安定な繰り返し依存取得を避けるための改善である。
+
+pushとPRの重複実行により同一ブランチの過去5実行が滞留していたため、最新6f99414を保持し、古いSHAの実行中/待機だけに取消要求を送った。CI_SUPERSEDED_RUNS_20261107.jsonに対象/結果を保存し、取消を成功として計上しない。以後はworkflow＋headリポジトリ＋ブランチを同じconcurrency keyにして、新しい同一ラインの実行を優先する。別ブランチ・他者の検証を同じgroupへ入れず、権限/基準/試験数は不変更。

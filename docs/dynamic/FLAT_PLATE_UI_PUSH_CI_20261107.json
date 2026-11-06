@@ -1,0 +1,40 @@
+{
+  "checkedAtUTC": "2026-11-06T19:58:15.324Z",
+  "commit": "22a861236ad5dd125c9cf997abbdb47f344fe05b",
+  "event": "push",
+  "runId": 42279902275,
+  "jobs": [
+    {
+      "id": 128105863741,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128105864152,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128105864243,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128105864299,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 128105864363,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "allFiveSucceeded": true,
+  "distinction": "Same commit as the cancelled PR-triggered run, but a separate push-triggered execution. Both outcomes are retained; the cancelled run is not relabelled."
+}

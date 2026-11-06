@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
     paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/lib/de-vahl-reference.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:

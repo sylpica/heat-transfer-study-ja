@@ -143,7 +143,12 @@
         "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_RECTANGLE_UI.md",
         "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
-        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json",
+        "TRIANGLE_CUSTOM_LINEAR.md",
+        "TRIANGLE_CUSTOM_LINEAR_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_UI.md",
+        "TRIANGLE_CUSTOM_UI_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -212,7 +217,12 @@
         "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_RECTANGLE_UI.md",
         "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
-        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json",
+        "TRIANGLE_CUSTOM_LINEAR.md",
+        "TRIANGLE_CUSTOM_LINEAR_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_UI.md",
+        "TRIANGLE_CUSTOM_UI_CHECKPOINT_20261106.json"
       ]
     },
     {
@@ -858,9 +868,14 @@
         "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_RECTANGLE_UI.md",
         "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
-        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json",
+        "TRIANGLE_CUSTOM_LINEAR.md",
+        "TRIANGLE_CUSTOM_LINEAR_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_UI.md",
+        "TRIANGLE_CUSTOM_UI_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "板/径方向/同一表面や開発流路の限定境界を検算。開発P1は一定の固定温度/断熱/指定熱流束/row-lumped Robinを、正方形と明示した境界中点分割の回転矩形で連続全場・時間指数・制約付き回復流束へ照合し、専用GUIの実Worker/両ブラウザーで確認。一般輪郭/任意境界/非線形境界・連成・一般精度/正式公開は未完了。"
+      "remainingOrScope": "一定の温度/断熱/指定熱流束/row-lumped Robinを開発P1の正方形・回転矩形と凸編集輪郭で実装。矩形は連続全場/時間指数/RT0へ照合、4凸形状は独立物理K/C・固定格子時間指数、13ケースは直接制約辺熱へ照合。辺別draft/共有角拒否/位相変更時の明示全断熱化/旧状態保持を実GUI両ブラウザーで確認。一般連続場精度、P1非線形表面境界/変物性/共役、凹/穴/正式公開は未完了。"
     },
     {
       "id": "Q48",
@@ -1035,9 +1050,14 @@
         "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_RECTANGLE_UI.md",
         "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
-        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json",
+        "TRIANGLE_CUSTOM_LINEAR.md",
+        "TRIANGLE_CUSTOM_LINEAR_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_UI.md",
+        "TRIANGLE_CUSTOM_UI_CHECKPOINT_20261106.json"
       ],
-      "remainingOrScope": "開発用凸Delaunay P1の全周固定過渡・3〜12頂点編集・実温度場/保存的RT0 GUIを限定検証。明示した境界中点分割の回転矩形へ線形混合境界も接続し、連続全場/時間指数/制約辺熱と両ブラウザーGUIへ照合。負係数は切り捨てず、物理座標と正規化形状の忠実度も検査。旧cut-cellの最大原理違反と時間接続保留は保持。一般編集輪郭の混合境界GUI/凹/穴/曲線/一般CFD/正式公開は未完了。"
+      "remainingOrScope": "開発用凸Delaunay P1過渡・3〜12頂点編集・実温度場/保存的RT0 GUIを限定検証。明示境界分割の回転矩形と、凸編集輪郭の各辺へ線形境界を接続し、連続矩形場/固定格子時間指数/制約辺熱と両ブラウザーGUIへ照合。負係数を切り捨てず、物理座標忠実度を検査して不適格は拒否。旧cut-cell最大原理違反と時間接続保留は保持。一般連続場精度・非線形境界/変物性・凹/穴/曲線/一般CFD/正式公開は未完了。"
     },
     {
       "id": "Q56",
@@ -1204,7 +1224,12 @@
         "BOUNDARY_REFINED_TRANSIENT_CHECKPOINT_20261106.json",
         "TRIANGLE_LINEAR_RECTANGLE_UI.md",
         "TRIANGLE_COORDINATE_FIDELITY_FIX_20261106.md",
-        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json"
+        "TRIANGLE_COORDINATE_AND_RECTANGLE_CHECKPOINT_20261106.json",
+        "TRIANGLE_CUSTOM_LINEAR.md",
+        "TRIANGLE_CUSTOM_LINEAR_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_FLUX_REFERENCE_20261106.json",
+        "TRIANGLE_CUSTOM_UI.md",
+        "TRIANGLE_CUSTOM_UI_CHECKPOINT_20261106.json"
       ],
       "remainingOrScope": "閉輪郭/交差/分断等の検査、同形状を保つ閉終点/向き修復のみ維持。凸Delaunayは負の境界cotangentを実中点分割で解消する別方式を限定検証し、物理座標の再構成/要素面積忠実度も検査して不適格は拒否。一般終了保証/凹/穴/一般幾何修復と熱解析適格は未完了。"
     },

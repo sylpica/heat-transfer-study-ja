@@ -1,0 +1,40 @@
+{
+  "checkedAtUTC": "2026-11-06T10:15:15.169Z",
+  "sourceCommit": "c4d19cb5cf6ae433065de2c03d6381ba27b15b63",
+  "runId": 42194150336,
+  "jobs": [
+    {
+      "id": 127813097836,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127813098185,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127813098209,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127813098227,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127813098423,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "allFiveJobsSuccessful": true,
+  "scope": "Coordinate-fidelity guard and rotated rectangular GUI at this SHA; not transferred to later custom convex boundary GUI",
+  "releaseApproved": false
+}

@@ -1,0 +1,299 @@
+{
+  "generatedAtUTC": "2026-11-06T10:13:43.533610+00:00",
+  "sourceCommit": "3c386bc31c115ce04f7ac6937a6ec95e5d669ad6",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/triangle-linear-ui.mjs": "e5b917f90c3e1ab7f071bc5a81b7515cef99f632528d589e8f7a19ab29bd81a4",
+    "dynamic/dev/triangle-linear.html": "e8dddd6c558c50a2b09eb4a39e883e36e330e57bca51e2709e37dedfe6b02d13",
+    "dynamic/dev/triangle-boundary-editor.mjs": "775f2d666fb2b8c922278d0292067c9e7a9444b7d0e31801338e0d1face6343f",
+    "dynamic/dev/triangle-linear-outline-config.mjs": "70280e14ab07e0b73c86bb0cf44e396a89f83d16659045c43b59f1022466b9b4",
+    "dynamic/dev/convex-outline-editor.mjs": "0ffc52b32617dbb47ea38b45d4e0229d5036883e5c59fe6f1066a584d7145f55",
+    "tests/dynamic-triangle-custom-linear.test.mjs": "f0f61db7ea44cc44de1d49bda6826517c011216aa1f727bb83b5021a3c2af1ba",
+    "tests/dynamic-triangle-custom-flux.test.mjs": "d4f8e2ac3627591dc97ef68b2fe967a5cd4f4445fa6f65fc8acd60bcb14e2506",
+    "tests/dynamic-triangle-custom-ui-browser.mjs": "924a9b85295a3b4fca53bd2e25ee2b9a4f71548e8942e89466ba1a4e4d63e7a8",
+    "tests/dynamic-triangle-editor-browser.mjs": "ddd451c7330887c62698e6ad469ca4e6a28eab104634c3cf6c54763a0009e8f2",
+    "docs/dynamic/TRIANGLE_CUSTOM_LINEAR_REFERENCE_20261106.json": "68814b2511eade6ea836dfacb98cc7e70ac36ecfcc8850dd8646cf5f3b6bd502",
+    "docs/dynamic/TRIANGLE_CUSTOM_FLUX_REFERENCE_20261106.json": "9d5fd6d6833930d173d79ead23d07a280a9b8df1bb905059e75bbb52f281e988"
+  },
+  "criteriaDeclaredAtCommit": {
+    "time": "ac0ec9f",
+    "flux": "08bd569"
+  },
+  "relatedNode": {
+    "configurationAndTime": 3,
+    "constrainedFlux": 2
+  },
+  "node": {
+    "tests": 1405,
+    "pass": 1400,
+    "skipped": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "customUI": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualEditedOutlineAndFaceInputs": true,
+        "actualWorkerTemperatureAndRT0MatchCPU": true,
+        "noRectangularReferenceOnCustomOutline": true,
+        "conflictingCornerRejectsAndKeepsAcceptedState": true,
+        "acceptedCustomBReferenceRetained": true,
+        "commonABPhysicalScale": true,
+        "realRewind": true,
+        "vertexCountChangeExplicitlyResetsBoundaryDraft": true,
+        "invalidGeometryDraftAtomic": true,
+        "uniformPolygonHeatingNoRoundoffArrows": true,
+        "keyboardEditingAndMinimumVertexGuard": true,
+        "boundaryEditCancelsOnActualProgressAndRetainsPrimary": true,
+        "mobileLightDark": true,
+        "localStorageUnchanged": true,
+        "generalContinuousFieldAccuracyVerified": false,
+        "offlineVerified": false,
+        "realDevice": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "timeWorker": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualWorker": true,
+        "cases": [
+          {
+            "shape": "triangle",
+            "n": 4,
+            "nodes": 43,
+            "maximumTimeErrorK": 3.432109259904337e-06
+          },
+          {
+            "shape": "pentagon",
+            "n": 4,
+            "nodes": 51,
+            "maximumTimeErrorK": 3.5222346372876245e-06
+          },
+          {
+            "shape": "quad",
+            "n": 4,
+            "nodes": 45,
+            "maximumTimeErrorK": 2.4110162240020827e-06
+          },
+          {
+            "shape": "octagon",
+            "n": 4,
+            "nodes": 81,
+            "maximumTimeErrorK": 1.741588635972846e-06
+          }
+        ],
+        "fullRestore": true,
+        "conflictingCornerRejectsWithoutReplacingAcceptedWorker": true,
+        "cancelOnActualProgress": true,
+        "rollbackRetryDifferenceK": 0,
+        "localStorageUnchanged": true,
+        "generalContinuousFieldAccuracyVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "fluxWorker": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "kernelCompatibilityOnly": true,
+        "actualWorker": true,
+        "knownBoundaryPowersPreserved": true,
+        "independentConstrainedOptimum": true,
+        "closedGaugeAndOpenDirichlet": true,
+        "customConvexFamilies": 4,
+        "readOnlyStateAndRealRestore": true,
+        "cases": [
+          {
+            "kind": "triangle",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 1.0703660180411134e-12,
+            "maximumElementResidualW": 8.759659664292485e-13,
+            "iterations": 92
+          },
+          {
+            "kind": "pentagon",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 4.958282048828089e-12,
+            "maximumElementResidualW": 4.385452938293621e-12,
+            "iterations": 109
+          },
+          {
+            "kind": "quad",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 1.049160758270773e-12,
+            "maximumElementResidualW": 1.2705353262532082e-12,
+            "iterations": 106
+          },
+          {
+            "kind": "octagon",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 3.3915786845639673e-12,
+            "maximumElementResidualW": 4.595004932106406e-12,
+            "iterations": 107
+          },
+          {
+            "kind": "closed-pentagon",
+            "n": 4,
+            "closed": true,
+            "maximumIndependentEdgeDifferenceW": 1.1869129810937462e-13,
+            "maximumElementResidualW": 1.506645285961894e-13,
+            "iterations": 61
+          }
+        ],
+        "localStorageUnchanged": true,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      }
+    },
+    "webkit": {
+      "customUI": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualEditedOutlineAndFaceInputs": true,
+        "actualWorkerTemperatureAndRT0MatchCPU": true,
+        "noRectangularReferenceOnCustomOutline": true,
+        "conflictingCornerRejectsAndKeepsAcceptedState": true,
+        "acceptedCustomBReferenceRetained": true,
+        "commonABPhysicalScale": true,
+        "realRewind": true,
+        "vertexCountChangeExplicitlyResetsBoundaryDraft": true,
+        "invalidGeometryDraftAtomic": true,
+        "uniformPolygonHeatingNoRoundoffArrows": true,
+        "keyboardEditingAndMinimumVertexGuard": true,
+        "boundaryEditCancelsOnActualProgressAndRetainsPrimary": true,
+        "mobileLightDark": true,
+        "localStorageUnchanged": true,
+        "generalContinuousFieldAccuracyVerified": false,
+        "offlineVerified": false,
+        "realDevice": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "timeWorker": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualWorker": true,
+        "cases": [
+          {
+            "shape": "triangle",
+            "n": 4,
+            "nodes": 43,
+            "maximumTimeErrorK": 3.432109259904337e-06
+          },
+          {
+            "shape": "pentagon",
+            "n": 4,
+            "nodes": 51,
+            "maximumTimeErrorK": 3.5222346372876245e-06
+          },
+          {
+            "shape": "quad",
+            "n": 4,
+            "nodes": 45,
+            "maximumTimeErrorK": 2.4110162240020827e-06
+          },
+          {
+            "shape": "octagon",
+            "n": 4,
+            "nodes": 81,
+            "maximumTimeErrorK": 1.741588635972846e-06
+          }
+        ],
+        "fullRestore": true,
+        "conflictingCornerRejectsWithoutReplacingAcceptedWorker": true,
+        "cancelOnActualProgress": true,
+        "rollbackRetryDifferenceK": 5.551115123125783e-17,
+        "localStorageUnchanged": true,
+        "generalContinuousFieldAccuracyVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "fluxWorker": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "kernelCompatibilityOnly": true,
+        "actualWorker": true,
+        "knownBoundaryPowersPreserved": true,
+        "independentConstrainedOptimum": true,
+        "closedGaugeAndOpenDirichlet": true,
+        "customConvexFamilies": 4,
+        "readOnlyStateAndRealRestore": true,
+        "cases": [
+          {
+            "kind": "triangle",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 1.0703660180411134e-12,
+            "maximumElementResidualW": 8.760214775804798e-13,
+            "iterations": 92
+          },
+          {
+            "kind": "pentagon",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 4.958417357259215e-12,
+            "maximumElementResidualW": 4.385133966014476e-12,
+            "iterations": 109
+          },
+          {
+            "kind": "quad",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 1.049160758270773e-12,
+            "maximumElementResidualW": 1.2705136422097585e-12,
+            "iterations": 106
+          },
+          {
+            "kind": "octagon",
+            "n": 8,
+            "closed": false,
+            "maximumIndependentEdgeDifferenceW": 3.3915786845639673e-12,
+            "maximumElementResidualW": 4.5953241212259854e-12,
+            "iterations": 107
+          },
+          {
+            "kind": "closed-pentagon",
+            "n": 4,
+            "closed": true,
+            "maximumIndependentEdgeDifferenceW": 1.186921654711126e-13,
+            "maximumElementResidualW": 1.5066648016009987e-13,
+            "iterations": 61
+          }
+        ],
+        "localStorageUnchanged": true,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      }
+    }
+  },
+  "legacyBrowserRegressionsBothEngines": [
+    "tests/dynamic-triangle-editor-browser.mjs",
+    "tests/dynamic-triangle-linear-ui-browser.mjs",
+    "tests/dynamic-triangle-linear-rectangle-browser.mjs"
+  ],
+  "sharedEditorSelectionRegression": {
+    "before": "The native select input bubbled to a parent redraw before change, resetting vertex 2 to vertex 0. Captured in the new UI failure before the fix.",
+    "after": "The editor owns select input; selection does not change the physical draft. Both GUI families explicitly assert selected vertex identity."
+  },
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "generalContinuousFieldAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

@@ -18,6 +18,9 @@ export function mountConvexOutlineEditor({svg,select,xInput,yInput,moveButton,in
  }
  function edit(operation){if(!draft)return;try{operation();applied=false;syncInputs();message();render();changed(draft.outline);return true;}catch(error){message(error);return false;}}
  function physical(event){const p=new DOMPoint(event.clientX,event.clientY).matrixTransform(svg.getScreenCTM().inverse());return [bounds[0]+(p.x-plot.left)/plot.scale,bounds[3]-(p.y-plot.top)/plot.scale];}
+ // Selecting a vertex changes editor focus, not the physical draft. A parent
+ // form must not redraw this select between its input and change events.
+ select.oninput=event=>event.stopPropagation();
  select.onchange=()=>{if(!draft)return;draft.select(Number(select.value));syncInputs();render();};
  moveButton.onclick=()=>edit(()=>{if(!xInput.value.trim()||!yInput.value.trim())throw Error('x、yを入力してください。');draft.move(draft.selected,[Number(xInput.value),Number(yInput.value)]);});
  insertButton.onclick=()=>edit(()=>draft.insertAfter(draft.selected));removeButton.onclick=()=>edit(()=>draft.remove(draft.selected));fitButton.onclick=()=>{if(!draft)return;bounds=outlineDraftBounds(draft.outline);render();};

@@ -1,0 +1,80 @@
+{
+  "checkedAtUTC": "2026-11-06T04:18:14.789Z",
+  "scope": "Exact-source saved GUI/editor CI before RT0 recovery. No transfer to later HEAD.",
+  "runs": [
+    {
+      "sourceCommit": "7a1639de017638588e55097540f54b9000af83ba",
+      "runId": 42158701000,
+      "jobs": [
+        {
+          "id": 127698915808,
+          "name": "cfd-development-benchmarks",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127698915950,
+          "name": "browser (webkit)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127698916014,
+          "name": "browser (chromium)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127698916026,
+          "name": "high-order-manufactured-verification",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127698916072,
+          "name": "numerical-and-regression",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "sourceCommit": "2be9ce2bc0a986e9c57c299482232dcd31f4ed16",
+      "runId": 42159587796,
+      "jobs": [
+        {
+          "id": 127701805624,
+          "name": "cfd-development-benchmarks",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127701805947,
+          "name": "browser (chromium)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127701806002,
+          "name": "browser (webkit)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127701806006,
+          "name": "high-order-manufactured-verification",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 127701806056,
+          "name": "numerical-and-regression",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "releaseApproved": false,
+  "mainPublished": false
+}

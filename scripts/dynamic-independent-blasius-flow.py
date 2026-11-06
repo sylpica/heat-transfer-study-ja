@@ -81,7 +81,7 @@ def main():
         refinement=max(float(np.max(np.abs(qx32-qx64))),float(np.max(np.abs(qy32-qy64))))/scale
         x_error=float(np.max(np.abs(np.array(flow['xVolumeFluxM3PerS']).reshape(ny,nx+1)-qx64)))/scale
         y_error=float(np.max(np.abs(np.array(flow['yVolumeFluxM3PerS']).reshape(ny+1,nx)-qy64)))/scale
-        shear_ref=4*curvature/np.sqrt(c['freeStreamVelocity']*c['width']/c['nu'])
+        shear_ref=float(4*curvature/np.sqrt(c['freeStreamVelocity']*c['width']/c['nu']))
         curvature_error=abs(flow['diagnostics']['wallCurvature']-curvature)
         checks={'referenceQuadrature32To64':refinement<1e-11,'allXFaceFluxes':x_error<1e-9,'allYFaceFluxes':y_error<1e-9,'wallCurvature':curvature_error<1e-11,'cellDivergence':flow['diagnostics']['normalizedDivergence']<1e-12,'wholeMass':flow['diagnostics']['boundaryRelativeResidual']<1e-12,'similarityMeanDrag':abs(flow['diagnostics']['meanFrictionCoefficient']-shear_ref)<1e-10}
         row={'name':case['name'],'config':c,'faceCounts':{'u':(nx+1)*ny,'v':nx*(ny+1)},'ownFieldSHA256':hashlib.sha256(json.dumps(flow,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'ownDiagnostics':flow['diagnostics'],'referenceQuadratureRefinementRelativeToBoundaryFlow':refinement,'maximumXFluxErrorRelativeToBoundaryFlow':x_error,'maximumYFluxErrorRelativeToBoundaryFlow':y_error,'wallCurvatureAbsoluteDifference':curvature_error,'meanDragDifference':flow['diagnostics']['meanFrictionCoefficient']-shear_ref,'checks':checks}

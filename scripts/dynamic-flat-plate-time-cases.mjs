@@ -1,0 +1,5 @@
+import {createFlatPlateThermal} from '../dynamic/dev/flat-plate-thermal.mjs';import {readFileSync} from 'node:fs';import {createHash} from 'node:crypto';import {execFileSync} from 'node:child_process';
+const config={width:1,height:.12,depth:.03,nx:16,ny:16,nu:.0001,rho:1,freeStreamVelocity:1,cp:1,k:.0001/.71,inletTemperature:300,wallTemperature:320,initial:300},cases=[];
+for(const factor of [1,.5,.25,.125]){const model=createFlatPlateThermal(config),maximumDt=model.safeDt*factor;while(model.time<.5)model.step(Math.min(maximumDt,.5-model.time),false);cases.push({factor,maximumDt,snapshot:model.snapshot()});}
+const hashes=Object.fromEntries(['dynamic/dev/flat-plate-thermal.mjs','dynamic/dev/blasius-boundary-flow.mjs'].map(p=>[p,createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex')]));
+console.log(JSON.stringify({sourceCommit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceFilesSHA256:hashes,environment:{node:process.version,platform:process.platform},config,cases,releaseApproved:false}));

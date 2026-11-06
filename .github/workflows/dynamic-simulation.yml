@@ -159,6 +159,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify custom convex RT0 known boundary powers and independent constrained edge optima
+        run: node tests/dynamic-triangle-custom-flux-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Exercise the restricted square mixed-boundary UI with actual P1 fields and signed heat
         run: node tests/dynamic-triangle-linear-ui-browser.mjs
         env:

@@ -35,4 +35,28 @@ class Limits(unittest.TestCase):
         m=P1(n=16,ra=1000);grid=np.linspace(0,1,m.n+1);x,y=np.meshgrid(grid,grid);psi=.01*np.sin(np.pi*x)**2*np.sin(np.pi*y)**2;u=m.n*np.diff(psi,axis=0)
         one=m.convective_load(np.ones_like(m.T),u);load=m.convective_load(np.sin(m.xy[:,0])+np.cos(m.xy[:,1]),u)
         self.assertLess(abs(one).max(),1e-15);self.assertLess(abs(load.sum()),1e-15)
+    def test_minute_source_heat_has_no_one_joule_floor(self):
+        for cls in (FVM,P1):
+            m=cls(n=8,ra=0,K=.5,C=2,source=1);m.T[:]=0
+            if cls is P1:m.T[m.back]=1
+            m.initial=m.T.copy();m.step(1e-20);e=m.metrics()['energy'];self.assertGreater(e['solidStorage'],0);self.assertGreater(e['fluidStorage'],0);self.assertGreater(e['actualScaleWithoutOneJouleFloor'],0);self.assertLess(e['actualScaleWithoutOneJouleFloor'],1e-15);self.assertLess(e['relativeMaximumError'],1e-9)
+    def test_independent_physical_graph_and_lu_time_reference_reproduced(self):
+        from pathlib import Path
+        root=Path(__file__).resolve().parents[2];ref=json.loads((root/'docs/dynamic/support-conjugate/INDEPENDENT_TIME.json').read_text());self.assertTrue(ref['passed'])
+        for entry in ref['cases']:
+            errors=[];velocities=[]
+            for row in entry['cases']:
+                m=FVM(**entry['config']);x,y=np.meshgrid((np.arange(m.nx)+.5)/m.n-m.d,(np.arange(m.n)+.5)/m.n);m.T=.3+.05*np.sin(np.pi*x)*np.sin(np.pi*y);m.initial=m.T.copy()
+                while m.time<entry['time']:m.step(min(row['maximumDt'],entry['time']-m.time))
+                te=float(abs(m.T.ravel()-entry['referenceTemperature']).max());ue=float(max(abs(m.u.ravel()-entry['referenceU']).max(),abs(m.v.ravel()-entry['referenceV']).max()));qe=float(abs(m.heats-entry['referenceFourHeat']).max());self.assertLess(abs(te-row['maximumTemperatureError']),1e-12);self.assertLess(abs(ue-row['maximumVelocityError']),1e-12);self.assertLess(abs(qe-row['maximumAllFourHeatError']),1e-12);errors.append(te);velocities.append(ue)
+            self.assertLess(errors[-1],.001);self.assertLess(velocities[-1],1e-5);self.assertTrue(1.8<math.log2(errors[-2]/errors[-1])<2.2)
+    def test_saved_spatial_states_and_all_limits(self):
+        from pathlib import Path
+        root=Path(__file__).resolve().parents[2];D=root/'docs/dynamic/support-conjugate';report=json.loads((D/'RESULTS.json').read_text());self.assertTrue(report['passed']);self.assertTrue(all(report['checks'].values()));self.assertLess(report['maximumMeasuredRelativeThreeEnergyError'],1e-9)
+        for row in report['spatialSeries']:
+            for key,cls in (('fvFile',FVM),('p1File',P1)):
+                j=json.loads((D/row[key]).read_text());d=np.load(D/j['stateFile']);m=cls(**j['config']);m.T=d['temperature'];m.initial=d['initial'];m.u=d['u'];m.v=d['v'];m.heats=d['heats'];m.comp=d['compensation'];m.time=float(d['time']);m.steps=int(d['steps']);self.assertLess(m.energy(m.T,m.heats)['relativeMaximumError'],1e-9);self.assertLess(abs(m.rhs(m.T,m.u,m.v)[3][3]-j['last']['interfaceIntoFluid']),1e-10);self.assertLess(abs(m.n*(np.diff(m.u,axis=1)+np.diff(m.v,axis=0))).max(),1e-9)
+                if cls is P1:
+                    metrics=m.metrics();trace=m.T[m.interface_nodes];self.assertEqual(metrics['interfaceTemperatureMinimum'],float(trace.min()));self.assertEqual(metrics['interfaceTemperatureMaximum'],float(trace.max()));self.assertGreater(metrics['interfaceTemperatureMaximum']-metrics['interfaceTemperatureMinimum'],.05)
+        self.assertFalse(report['scope']['highRaConjugateVerified']);self.assertFalse(report['scope']['releaseApproved'])
 if __name__=='__main__':unittest.main(verbosity=2)

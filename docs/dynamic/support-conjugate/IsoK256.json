@@ -1,0 +1,697 @@
+{
+  "config": {
+    "n": 16,
+    "ra": 1000,
+    "K": 256.0,
+    "C": 32.0,
+    "source": 0
+  },
+  "method": "fv",
+  "initialization": "uniform fluid/solid cell or free-node initial .5; fixed nodes prescribed",
+  "seed": null,
+  "history": [
+    {
+      "time": 0.1,
+      "steps": 2926,
+      "solidTemperatureMin": 0.9988869704639891,
+      "solidTemperatureMax": 0.9998885523746264,
+      "fluidTemperatureMin": 0.025767487416729042,
+      "fluidTemperatureMax": 0.9725452181637301,
+      "solidMeanTemperature": 0.9994609808386307,
+      "fluidMeanTemperature": 0.4964866884135182,
+      "interfaceTemperatureMean": 0.9989227628898296,
+      "interfaceTemperatureMinimum": 0.9987243493854154,
+      "interfaceTemperatureMaximum": 0.9991298143180108,
+      "backInput": 1.1046125389354984,
+      "coldWallInput": -1.0698995267392262,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1002641562564341,
+      "effectiveHeatTransferRatio": 1.1014506798037411,
+      "solidBiFromInterfaceAverage": 0.001075635429495841,
+      "maximumFaceSpeed": 3.5113582752992527,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.21945989875587332,
+      "maximumDctRelativeResidual": 6.678054509016518e-15,
+      "energy": {
+        "solidStorage": 3.9956878467090453,
+        "fluidStorage": -0.0035133115864818404,
+        "totalStorage": 3.9921745351225635,
+        "errorsSolidFluidTotal": [
+          -2.6645352591003757e-15,
+          -1.3877787807814457e-17,
+          -2.6645352591003757e-15
+        ],
+        "relativeMaximumError": 3.1217941299174382e-16,
+        "actualScaleWithoutOneJouleFloor": 8.535268977428837
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.174643400321641,
+        -0.1824688651990749,
+        0.0,
+        0.17895555361259308
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true
+    },
+    {
+      "time": 0.2,
+      "steps": 5852,
+      "solidTemperatureMin": 0.9987557000250789,
+      "solidTemperatureMax": 0.9999034880509775,
+      "fluidTemperatureMin": 0.02147991044304537,
+      "fluidTemperatureMax": 0.9774915641860134,
+      "solidMeanTemperature": 0.99945351445883,
+      "fluidMeanTemperature": 0.4984040302572309,
+      "interfaceTemperatureMean": 0.9989068755530457,
+      "interfaceTemperatureMinimum": 0.9985715306490873,
+      "interfaceTemperatureMaximum": 0.9992597175432671,
+      "backInput": 1.119070554899963,
+      "coldWallInput": -1.1089171678172849,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1199066300733254,
+      "effectiveHeatTransferRatio": 1.1211321670533982,
+      "solidBiFromInterfaceAverage": 0.0010948556318880842,
+      "maximumFaceSpeed": 3.748174141408996,
+      "divergence": 1.2545520178264269e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.019307520941032e-15,
+      "energy": {
+        "solidStorage": 3.99562811567064,
+        "fluidStorage": -0.001595969742769144,
+        "totalStorage": 3.994032145927871,
+        "errorsSolidFluidTotal": [
+          -6.217248937900877e-15,
+          6.591949208711867e-17,
+          -6.217248937900877e-15
+        ],
+        "relativeMaximumError": 7.014935085901613e-16,
+        "actualScaleWithoutOneJouleFloor": 8.862874512404398
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.285103562863171,
+        -0.29107141693529365,
+        0.0,
+        0.28947544719252444
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 0.05721309594834367,
+        "relativeVelocity": 0.07188512511146955,
+        "relativeInterfaceHeat": 0.017539385239290113
+      }
+    },
+    {
+      "time": 0.30000000000000004,
+      "steps": 8778,
+      "solidTemperatureMin": 0.9987353352510469,
+      "solidTemperatureMax": 0.9999045921453864,
+      "fluidTemperatureMin": 0.021212226922762586,
+      "fluidTemperatureMax": 0.9779335941401726,
+      "solidMeanTemperature": 0.9994500768348074,
+      "fluidMeanTemperature": 0.4990869979222028,
+      "interfaceTemperatureMean": 0.9989001529931072,
+      "interfaceTemperatureMinimum": 0.9985480166695839,
+      "interfaceTemperatureMaximum": 0.9992701105705789,
+      "backInput": 1.1262419779093875,
+      "coldWallInput": -1.1223633045186816,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1262455372047726,
+      "effectiveHeatTransferRatio": 1.1274855988660002,
+      "solidBiFromInterfaceAverage": 0.0011010601551425783,
+      "maximumFaceSpeed": 3.7206839884004435,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.019307520941032e-15,
+      "energy": {
+        "solidStorage": 3.995600614678459,
+        "fluidStorage": -0.0009130020777971745,
+        "totalStorage": 3.9946876126006616,
+        "errorsSolidFluidTotal": [
+          -5.329070518200751e-15,
+          1.457167719820518e-16,
+          -5.329070518200751e-15
+        ],
+        "relativeMaximumError": 5.793193561408932e-16,
+        "actualScaleWithoutOneJouleFloor": 9.198847685152602
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.397540765225159,
+        -0.402853152624492,
+        0.0,
+        0.4019401505466947
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 0.007473888998604183,
+        "relativeVelocity": 0.008702775467583166,
+        "relativeInterfaceHeat": 0.0056283527188749375
+      }
+    },
+    {
+      "time": 0.4,
+      "steps": 11704,
+      "solidTemperatureMin": 0.9987351835485964,
+      "solidTemperatureMax": 0.9999047547494172,
+      "fluidTemperatureMin": 0.021222889130156998,
+      "fluidTemperatureMax": 0.9779822939787276,
+      "solidMeanTemperature": 0.9994503811055031,
+      "fluidMeanTemperature": 0.49932842642079356,
+      "interfaceTemperatureMean": 0.9989007668908089,
+      "interfaceTemperatureMinimum": 0.9985478266449674,
+      "interfaceTemperatureMaximum": 0.9992714695896388,
+      "backInput": 1.1256234987730522,
+      "coldWallInput": -1.1242244787919975,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.125597955512549,
+      "effectiveHeatTransferRatio": 1.1268366116246957,
+      "solidBiFromInterfaceAverage": 0.001100426378539742,
+      "maximumFaceSpeed": 3.7162524707989335,
+      "divergence": 1.0658141036401503e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.995603048844025,
+        "fluidStorage": -0.0006715735792063998,
+        "totalStorage": 3.9949314752648184,
+        "errorsSolidFluidTotal": [
+          -7.993605777301127e-15,
+          2.636779683484747e-16,
+          -7.549516567451064e-15
+        ],
+        "relativeMaximumError": 8.382419234125754e-16,
+        "actualScaleWithoutOneJouleFloor": 9.536156035668409
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.510138645784679,
+        -0.5152071705198527,
+        0.0,
+        0.514535596940646
+      ],
+      "interfaceTemperatureJumpMax": 1.1102230246251565e-16,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 0.0007367604444680209,
+        "relativeVelocity": 0.0011966852689609111,
+        "relativeInterfaceHeat": 0.0005753223778100089
+      }
+    },
+    {
+      "time": 0.5,
+      "steps": 14630,
+      "solidTemperatureMin": 0.9987356005653133,
+      "solidTemperatureMax": 0.9999048011088337,
+      "fluidTemperatureMin": 0.021232530426531726,
+      "fluidTemperatureMax": 0.9779935386019951,
+      "solidMeanTemperature": 0.9994505948198826,
+      "fluidMeanTemperature": 0.4994138558488944,
+      "interfaceTemperatureMean": 0.9989011915026758,
+      "interfaceTemperatureMinimum": 0.9985483018519855,
+      "interfaceTemperatureMaximum": 0.9992718295633448,
+      "backInput": 1.125183403978724,
+      "coldWallInput": -1.124687177561106,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1251732384443955,
+      "effectiveHeatTransferRatio": 1.126410948365939,
+      "solidBiFromInterfaceAverage": 0.0011000106917636123,
+      "maximumFaceSpeed": 3.7156531270264,
+      "divergence": 1.1102230246251565e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.995604758559061,
+        "fluidStorage": -0.0005861441511055554,
+        "totalStorage": 3.9950186144079556,
+        "errorsSolidFluidTotal": [
+          -7.549516567451064e-15,
+          2.498001805406602e-16,
+          -7.105427357601002e-15
+        ],
+        "relativeMaximumError": 7.646168342184865e-16,
+        "actualScaleWithoutOneJouleFloor": 9.87359449804347
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.622675656100112,
+        -0.6276570416921492,
+        0.0,
+        0.6270708975410434
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 0.0001443840008537034,
+        "relativeVelocity": 0.00016390127772259616,
+        "relativeInterfaceHeat": 0.0003774681565842189
+      }
+    },
+    {
+      "time": 0.6,
+      "steps": 17556,
+      "solidTemperatureMin": 0.998735765262898,
+      "solidTemperatureMax": 0.9999048171092294,
+      "fluidTemperatureMin": 0.021236150341427625,
+      "fluidTemperatureMax": 0.9779973052725318,
+      "solidMeanTemperature": 0.9994506741453915,
+      "fluidMeanTemperature": 0.4994440887851978,
+      "interfaceTemperatureMean": 0.9989013489532339,
+      "interfaceTemperatureMinimum": 0.9985484897823369,
+      "interfaceTemperatureMaximum": 0.9992719526198685,
+      "backInput": 1.1250199174972408,
+      "coldWallInput": -1.1248442886575125,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1250163026974056,
+      "effectiveHeatTransferRatio": 1.1262536624625943,
+      "solidBiFromInterfaceAverage": 0.0010998570922486272,
+      "maximumFaceSpeed": 3.7155160175413213,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.9956053931631312,
+        "fluidStorage": -0.0005559112148022204,
+        "totalStorage": 3.995049481948329,
+        "errorsSolidFluidTotal": [
+          -7.549516567451064e-15,
+          2.5326962749261384e-16,
+          -7.549516567451064e-15
+        ],
+        "relativeMaximumError": 7.393470176306672e-16,
+        "actualScaleWithoutOneJouleFloor": 10.211059742479875
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.735184437737805,
+        -0.7401349557894689,
+        0.0,
+        0.7395790445746664
+      ],
+      "interfaceTemperatureJumpMax": 1.1102230246251565e-16,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 4.707647361101852e-05,
+        "relativeVelocity": 5.4331126041607725e-05,
+        "relativeInterfaceHeat": 0.00013949642028623108
+      }
+    },
+    {
+      "time": 0.7000000000000001,
+      "steps": 20482,
+      "solidTemperatureMin": 0.9987358237191286,
+      "solidTemperatureMax": 0.9999048227643523,
+      "fluidTemperatureMin": 0.021237434017871,
+      "fluidTemperatureMax": 0.9779986355689383,
+      "solidMeanTemperature": 0.9994507022382513,
+      "fluidMeanTemperature": 0.49945478802091536,
+      "interfaceTemperatureMean": 0.9989014047107256,
+      "interfaceTemperatureMinimum": 0.9985485564892848,
+      "interfaceTemperatureMaximum": 0.9992719961027209,
+      "backInput": 1.1249620166273075,
+      "coldWallInput": -1.124899864022887,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.124960738539922,
+      "effectiveHeatTransferRatio": 1.1261979743293107,
+      "solidBiFromInterfaceAverage": 0.0010998027093059675,
+      "maximumFaceSpeed": 3.7155679364192156,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.9956056179060098,
+        "fluidStorage": -0.0005452119790846435,
+        "totalStorage": 3.995060405926925,
+        "errorsSolidFluidTotal": [
+          -1.1102230246251565e-14,
+          4.371503159461554e-16,
+          -1.1102230246251565e-14
+        ],
+        "relativeMaximumError": 1.0524903573417028e-15,
+        "actualScaleWithoutOneJouleFloor": 10.548533930793155
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.847683041580339,
+        -0.8526226356534032,
+        0.0,
+        0.8520774236743182
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 1.663887863567748e-05,
+        "relativeVelocity": 1.9127400501495627e-05,
+        "relativeInterfaceHeat": 4.9392085945728606e-05
+      }
+    },
+    {
+      "time": 0.8,
+      "steps": 23408,
+      "solidTemperatureMin": 0.9987358443840006,
+      "solidTemperatureMax": 0.9999048247658922,
+      "fluidTemperatureMin": 0.021237888087155633,
+      "fluidTemperatureMax": 0.9779991065683886,
+      "solidMeanTemperature": 0.9994507121740202,
+      "fluidMeanTemperature": 0.4994585744008684,
+      "interfaceTemperatureMean": 0.9989014244309108,
+      "interfaceTemperatureMinimum": 0.9985485800707519,
+      "interfaceTemperatureMaximum": 0.9992720114944834,
+      "backInput": 1.1249415385681232,
+      "coldWallInput": -1.1249195433375485,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1249410863691687,
+      "effectiveHeatTransferRatio": 1.1261782783121614,
+      "solidBiFromInterfaceAverage": 0.0010997834749142202,
+      "maximumFaceSpeed": 3.715586328045493,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.995605697392162,
+        "fluidStorage": -0.000541425599131673,
+        "totalStorage": 3.9950642717930305,
+        "errorsSolidFluidTotal": [
+          -1.687538997430238e-14,
+          4.996003610813204e-16,
+          -1.6431300764452317e-14
+        ],
+        "relativeMaximumError": 1.5501903797385667e-15,
+        "actualScaleWithoutOneJouleFloor": 10.886011289238128
+      },
+      "cumulativeBackColdSourceInterface": [
+        4.96017804514402,
+        -0.965113773350973,
+        0.0,
+        0.9645723477518409
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 5.89344794410529e-06,
+        "relativeVelocity": 6.769522713328018e-06,
+        "relativeInterfaceHeat": 1.7469511062860534e-05
+      }
+    },
+    {
+      "time": 0.9,
+      "steps": 26334,
+      "solidTemperatureMin": 0.9987358516954521,
+      "solidTemperatureMax": 0.9999048254742476,
+      "fluidTemperatureMin": 0.021238048761336708,
+      "fluidTemperatureMax": 0.9779992732693782,
+      "solidMeanTemperature": 0.9994507156897987,
+      "fluidMeanTemperature": 0.499459914372056,
+      "interfaceTemperatureMean": 0.9989014314089238,
+      "interfaceTemperatureMinimum": 0.9985485884141101,
+      "interfaceTemperatureMaximum": 0.999272016941833,
+      "backInput": 1.124934292404248,
+      "coldWallInput": -1.1249265084631412,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1249341323786275,
+      "effectiveHeatTransferRatio": 1.1261713088066536,
+      "solidBiFromInterfaceAverage": 0.0010997766687564977,
+      "maximumFaceSpeed": 3.715592833744151,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.99560572551839,
+        "fluidStorage": -0.0005400856279439703,
+        "totalStorage": 3.9950656398904463,
+        "errorsSolidFluidTotal": [
+          -2.353672812205332e-14,
+          5.273559366969494e-16,
+          -2.2648549702353193e-14
+        ],
+        "relativeMaximumError": 2.0970953422175674e-15,
+        "actualScaleWithoutOneJouleFloor": 11.223489770934531
+      },
+      "cumulativeBackColdSourceInterface": [
+        5.072671775065693,
+        -1.0776061351752242,
+        0.0,
+        1.0770660495472797
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 2.0859815219598232e-06,
+        "relativeVelocity": 2.395485263110383e-06,
+        "relativeInterfaceHeat": 6.181686857057944e-06
+      }
+    },
+    {
+      "time": 1.0,
+      "steps": 29260,
+      "solidTemperatureMin": 0.9987358542828594,
+      "solidTemperatureMax": 0.9999048257249306,
+      "fluidTemperatureMin": 0.021238105622054058,
+      "fluidTemperatureMax": 0.9779993322642656,
+      "solidMeanTemperature": 0.9994507169339923,
+      "fluidMeanTemperature": 0.4994603885776948,
+      "interfaceTemperatureMean": 0.9989014338783634,
+      "interfaceTemperatureMinimum": 0.9985485913666923,
+      "interfaceTemperatureMaximum": 0.9992720188696221,
+      "backInput": 1.124931728071033,
+      "coldWallInput": -1.124928973392548,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1249316714384021,
+      "effectiveHeatTransferRatio": 1.1261688423758789,
+      "solidBiFromInterfaceAverage": 0.0010997742601326942,
+      "maximumFaceSpeed": 3.71559513584725,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.9956057354719396,
+        "fluidStorage": -0.0005396114223052105,
+        "totalStorage": 3.9950661240496346,
+        "errorsSolidFluidTotal": [
+          -6.616929226765933e-14,
+          5.30825383648903e-16,
+          -6.52811138479592e-14
+        ],
+        "relativeMaximumError": 5.723507628958594e-15,
+        "actualScaleWithoutOneJouleFloor": 11.560968650215461
+      },
+      "cumulativeBackColdSourceInterface": [
+        5.185165054280974,
+        -1.1900989302312739,
+        0.0,
+        1.1895593188089681
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 7.382235693853545e-07,
+        "relativeVelocity": 8.477308170793867e-07,
+        "relativeInterfaceHeat": 2.1876352918686702e-06
+      }
+    },
+    {
+      "time": 1.1,
+      "steps": 32186,
+      "solidTemperatureMin": 0.9987358551985221,
+      "solidTemperatureMax": 0.9999048258136453,
+      "fluidTemperatureMin": 0.021238125744619866,
+      "fluidTemperatureMax": 0.9779993531421195,
+      "solidMeanTemperature": 0.9994507173743028,
+      "fluidMeanTemperature": 0.4994605563954729,
+      "interfaceTemperatureMean": 0.9989014347522788,
+      "interfaceTemperatureMinimum": 0.9985485924115876,
+      "interfaceTemperatureMaximum": 0.9992720195518517,
+      "backInput": 1.1249308205738089,
+      "coldWallInput": -1.1249298457124213,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1249308005303802,
+      "effectiveHeatTransferRatio": 1.1261679695247968,
+      "solidBiFromInterfaceAverage": 0.0010997734077390594,
+      "maximumFaceSpeed": 3.7155959505366543,
+      "divergence": 1.2878587085651816e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.9956057389944224,
+        "fluidStorage": -0.0005394436045271407,
+        "totalStorage": 3.995066295389895,
+        "errorsSolidFluidTotal": [
+          -1.9939605522267811e-13,
+          4.822531263215524e-16,
+          -1.9895196601282805e-13
+        ],
+        "relativeMaximumError": 1.6758157093221564e-14,
+        "actualScaleWithoutOneJouleFloor": 11.898447670199428
+      },
+      "cumulativeBackColdSourceInterface": [
+        5.297658173995065,
+        -1.3025918786049706,
+        0.0,
+        1.302052435000443
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 2.612517508993051e-07,
+        "relativeVelocity": 3.0000503398730254e-07,
+        "relativeInterfaceHeat": 7.741880847346034e-07
+      }
+    },
+    {
+      "time": 1.2000000000000002,
+      "steps": 35112,
+      "solidTemperatureMin": 0.9987358555225677,
+      "solidTemperatureMax": 0.9999048258450404,
+      "fluidTemperatureMin": 0.021238132865843095,
+      "fluidTemperatureMax": 0.977999360530633,
+      "solidMeanTemperature": 0.9994507175301249,
+      "fluidMeanTemperature": 0.4994606157849113,
+      "interfaceTemperatureMean": 0.9989014350615502,
+      "interfaceTemperatureMinimum": 0.9985485927813675,
+      "interfaceTemperatureMaximum": 0.999272019793287,
+      "backInput": 1.1249304994185536,
+      "coldWallInput": -1.1249301544197763,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1249304923226053,
+      "effectiveHeatTransferRatio": 1.126167660629389,
+      "solidBiFromInterfaceAverage": 0.0010997731060833876,
+      "maximumFaceSpeed": 3.7155962388489856,
+      "divergence": 1.4210854715202004e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.995605740240999,
+        "fluidStorage": -0.0005393842150886383,
+        "totalStorage": 3.9950663560259105,
+        "errorsSolidFluidTotal": [
+          -4.556355293061642e-13,
+          7.28583859910259e-16,
+          -4.547473508864641e-13
+        ],
+        "relativeMaximumError": 3.723751694405771e-14,
+        "actualScaleWithoutOneJouleFloor": 12.23592673997759
+      },
+      "cumulativeBackColdSourceInterface": [
+        5.410151237263108,
+        -1.4150848812367425,
+        0.0,
+        1.414545497021653
+      ],
+      "interfaceTemperatureJumpMax": 1.1102230246251565e-16,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 9.245500243171278e-08,
+        "relativeVelocity": 1.0616949604102631e-07,
+        "relativeInterfaceHeat": 2.739793942476821e-07
+      }
+    },
+    {
+      "time": 1.3000000000000003,
+      "steps": 38038,
+      "solidTemperatureMin": 0.9987358556372448,
+      "solidTemperatureMax": 0.9999048258561511,
+      "fluidTemperatureMin": 0.02123813538598988,
+      "fluidTemperatureMax": 0.9779993631453725,
+      "solidMeanTemperature": 0.9994507175852692,
+      "fluidMeanTemperature": 0.4994606368023832,
+      "interfaceTemperatureMean": 0.998901435170999,
+      "interfaceTemperatureMinimum": 0.9985485929122296,
+      "interfaceTemperatureMaximum": 0.9992720198787295,
+      "backInput": 1.1249303857637756,
+      "coldWallInput": -1.124930263668967,
+      "solidSourcePower": 0.0,
+      "interfaceIntoFluid": 1.1249303832502107,
+      "effectiveHeatTransferRatio": 1.126167551313646,
+      "solidBiFromInterfaceAverage": 0.0010997729993297324,
+      "maximumFaceSpeed": 3.715596340880535,
+      "divergence": 1.0658141036401503e-14,
+      "maximumObservedCellPe": 0.23472405554227121,
+      "maximumDctRelativeResidual": 7.0733829455275626e-15,
+      "energy": {
+        "solidStorage": 3.9956057406821532,
+        "fluidStorage": -0.0005393631976168163,
+        "totalStorage": 3.9950663774845365,
+        "errorsSolidFluidTotal": [
+          -7.66053886991358e-13,
+          1.231653667943533e-15,
+          -7.647216193618078e-13
+        ],
+        "relativeMaximumError": 6.092652201866727e-14,
+        "actualScaleWithoutOneJouleFloor": 12.573405827377556
+      },
+      "cumulativeBackColdSourceInterface": [
+        5.522644280555336,
+        -1.5275779030700347,
+        0.0,
+        1.5270385398724167
+      ],
+      "interfaceTemperatureJumpMax": 0.0,
+      "interfaceFluxJumpMax": 0.0,
+      "interfaceTraceIsSharedHarmonicReconstruction": true,
+      "change": {
+        "temperature": 3.271912396574095e-08,
+        "relativeVelocity": 3.7572578071511775e-08,
+        "relativeInterfaceHeat": 9.695923969676206e-08
+      }
+    }
+  ],
+  "last": {
+    "time": 1.3000000000000003,
+    "steps": 38038,
+    "solidTemperatureMin": 0.9987358556372448,
+    "solidTemperatureMax": 0.9999048258561511,
+    "fluidTemperatureMin": 0.02123813538598988,
+    "fluidTemperatureMax": 0.9779993631453725,
+    "solidMeanTemperature": 0.9994507175852692,
+    "fluidMeanTemperature": 0.4994606368023832,
+    "interfaceTemperatureMean": 0.998901435170999,
+    "interfaceTemperatureMinimum": 0.9985485929122296,
+    "interfaceTemperatureMaximum": 0.9992720198787295,
+    "backInput": 1.1249303857637756,
+    "coldWallInput": -1.124930263668967,
+    "solidSourcePower": 0.0,
+    "interfaceIntoFluid": 1.1249303832502107,
+    "effectiveHeatTransferRatio": 1.126167551313646,
+    "solidBiFromInterfaceAverage": 0.0010997729993297324,
+    "maximumFaceSpeed": 3.715596340880535,
+    "divergence": 1.0658141036401503e-14,
+    "maximumObservedCellPe": 0.23472405554227121,
+    "maximumDctRelativeResidual": 7.0733829455275626e-15,
+    "energy": {
+      "solidStorage": 3.9956057406821532,
+      "fluidStorage": -0.0005393631976168163,
+      "totalStorage": 3.9950663774845365,
+      "errorsSolidFluidTotal": [
+        -7.66053886991358e-13,
+        1.231653667943533e-15,
+        -7.647216193618078e-13
+      ],
+      "relativeMaximumError": 6.092652201866727e-14,
+      "actualScaleWithoutOneJouleFloor": 12.573405827377556
+    },
+    "cumulativeBackColdSourceInterface": [
+      5.522644280555336,
+      -1.5275779030700347,
+      0.0,
+      1.5270385398724167
+    ],
+    "interfaceTemperatureJumpMax": 0.0,
+    "interfaceFluxJumpMax": 0.0,
+    "interfaceTraceIsSharedHarmonicReconstruction": true
+  },
+  "steady": true,
+  "failure": null,
+  "elapsedSeconds": 20.80247189302463,
+  "sourceCommit": "715e35261b19598088c3850b72fcdc7dbf871400",
+  "sourceSHA256": "cf85d29a28ae899a360c98ccf88ab95593d0c9951efcd1cf6acdc80897cc38d4",
+  "stateFile": "IsoK256.npz",
+  "releaseApproved": false
+}

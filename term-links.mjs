@@ -12,6 +12,19 @@ const latin=/[A-Za-z0-9_]/;
 // compounds whose meaning actually diverges from the head label are listed.
 const falseCompounds=['比熱比','対流圏'];
 const shortLabels=new Set(['比熱','積分','対流','黒体','潜熱','顕熱','層流','乱流','向流','並流','射度',
+  // Two-character labels added 2026-11-07 after a full-corpus false-link
+  // measurement (questions, glossary, all 76 section texts, notes, deep
+  // lessons, guide): every shipped occurrence of 蒸発 (261), 液滴 (103),
+  // 管群 (38) and its alias 管束 (22) denotes the term itself or a direct
+  // derivative (蒸発潜熱・蒸発部・蒸発器, 液滴飛散・液滴分布, 管群相関), with
+  // no divergent compound (蒸発散 does not occur). 濡れ was measured and
+  // deliberately NOT added: of its 205 occurrences, 濡れ縁 (wetted
+  // perimeter, the hydraulic-diameter context) and 濡れた断面・閉流路
+  // (wetted cross-section) account for a large share and belong to a
+  // different concept than the wetting entry, so auto-linking it would
+  // systematically mislead. It stays reachable via glossary browsing,
+  // search and deep links.
+  '蒸発','液滴','管群','管束',
   'bi','fo','re','pr','nu','ra','gr','sc','sh','pe']);
 export function termCandidates(terms){
   if(!Array.isArray(terms))return [];
@@ -75,6 +88,65 @@ export function renderTermLinks(input,terms,{limit=4,highlights=[]}={}){
   const text=String(input??'');
   return renderMatchedText(text,matchTerms(text,terms,limit),highlights);
 }
+// Bulk rendering path (glossary page, search snippets): compiling the
+// candidate list costs milliseconds per call, so rendering hundreds of
+// texts through renderTermLinks recompiles it hundreds of times (measured
+// 13 s for all 504 glossary entries' body fields). compileTermMatcher pays
+// that cost once and buckets candidates by first folded character, which
+// keeps per-text matching near-instant. fastMatches is a positional scan
+// that returns exactly what compiledMatches returns: the earliest valid
+// occurrence wins, ties at one position follow candidate order (longest
+// label first), and the latin-boundary / false-compound validity rules are
+// identical. Texts whose case fold changes length fall back to
+// compiledMatches, like the original stable/unstable split.
+export function compileTermMatcher(terms){
+  const candidates=compileTerms(terms);
+  const buckets=new Map();
+  for(const item of candidates){
+    const first=item.key[0];
+    if(!buckets.has(first))buckets.set(first,[]);
+    buckets.get(first).push(item);
+  }
+  return {candidates,buckets};
+}
+function fastMatches(text,matcher,maxMatches,excludeId=null){
+  const folded=text.toLocaleLowerCase();
+  if(folded.length!==text.length){
+    const pool=excludeId?matcher.candidates.filter(item=>item.id!==excludeId):matcher.candidates;
+    return compiledMatches(text,pool,maxMatches);
+  }
+  const matches=[];let cursor=0;
+  while(cursor<text.length&&matches.length<maxMatches){
+    let found=null,at=-1;
+    for(let i=cursor;i<text.length;i++){
+      const bucket=matcher.buckets.get(folded[i]);
+      if(!bucket)continue;
+      for(const item of bucket){
+        if(item.id===excludeId)continue;
+        if(!folded.startsWith(item.key,i))continue;
+        const stop=i+item.label.length;
+        let valid=true;
+        if(/^[A-Za-z]/.test(item.label)){
+          if(i>0&&latin.test(text[i-1]))valid=false;
+          if(text[stop]&&latin.test(text[stop]))valid=false;
+        }else if(falseCompounds.some(compound=>compound.length>item.label.length&&compound.startsWith(item.label)&&text.startsWith(compound,i))){
+          valid=false;
+        }
+        if(valid){found=item;at=i;break;}
+      }
+      if(found)break;
+    }
+    if(!found)break;
+    matches.push({start:at,end:at+found.label.length,id:found.id,label:text.slice(at,at+found.label.length)});
+    cursor=at+found.label.length;
+  }
+  return matches;
+}
+export function renderTermLinksFast(input,matcher,{limit=4,highlights=[],excludeId=null}={}){
+  const text=String(input??'');
+  if(!matcher||!Number.isInteger(limit)||limit<1)return renderMatchedText(text,[],highlights);
+  return renderMatchedText(text,fastMatches(text,matcher,limit,excludeId),highlights);
+}
 function renderMatchedText(text,hits,highlights=[]){
   const ranges=[];
   for(const [start,end] of (Array.isArray(highlights)?highlights:[])
@@ -105,17 +177,27 @@ function renderMatchedText(text,hits,highlights=[]){
   }
   return output+slice(cursor,text.length);
 }
-export function linkTermTextNodes(container,terms,{limit=3}={}){
+export function linkTermTextNodes(container,terms,{limit=3,labels=false}={}){
   const doc=container?.ownerDocument;
   if(!doc||!Number.isInteger(limit)||limit<1)return;
   const walker=doc.createTreeWalker(container,4),nodes=[];
   const candidates=compileTerms(terms);
   while(walker.nextNode())nodes.push(walker.currentNode);
   const budget=new Map();
+  // Label-contained text is skipped by default: a term control inside a
+  // label would hijack the label's activation behaviour. The simulator
+  // field labels opt in via {labels:true} because the app's delegated
+  // [data-term-id] handler calls preventDefault before the label default
+  // can run (the same mechanism the answer-choice labels already rely on),
+  // and the control cluster (.input-unit: input, unit, select) stays
+  // excluded either way.
+  const skip=labels
+    ?'a,button,summary,input,textarea,select,option,code,pre,svg,math,script,style,[data-term-id],.input-unit'
+    :'a,button,summary,label,input,textarea,select,option,code,pre,svg,math,script,style,[data-term-id]';
   for(const node of nodes){
     const parent=node.parentElement;
     // Do not nest controls or alter editable fields, formula markup or diagrams.
-    if(!parent||parent.closest('a,button,summary,label,input,textarea,select,option,code,pre,svg,math,script,style,[data-term-id]'))continue;
+    if(!parent||parent.closest(skip))continue;
     const block=parent.closest('p,li,td,dd')||parent,left=limit-(budget.get(block)||0);
     if(left<=0)continue;
     const hits=compiledMatches(node.textContent,candidates,left);
@@ -134,11 +216,23 @@ export function renderTermLearningLinks(term){
   return (sections.length?`<div class="term-related"><strong>関連する節</strong>${sections.map(id=>`<button type="button" class="text-link" data-section="${escapeText(id)}">§${escapeText(id)}の教材へ →</button>`).join('')}</div>`:'')+
     (simulations.length?`<div class="term-related"><strong>関連するモデル</strong>${simulations.map(id=>`<a class="text-link" href="#guide/sim-${id}">${models[id]}の説明と計算へ →</a>`).join('')}</div>`:'');
 }
-export function renderTermExample(term){
- return term.example?`<p class="term-example"><strong>独立作成の例：</strong>${escapeText(term.example)}</p>`:'';
+export function renderTermExample(term,terms=[],matcher=null){
+  if(!term.example)return '';
+  // The example prose links onward to other terms (never to the term
+  // itself); with no terms/matcher supplied it stays plain escaped text.
+  const body=matcher?renderTermLinksFast(term.example,matcher,{limit:3,excludeId:term.id})
+    :terms.length?renderTermLinks(term.example,terms.filter(item=>item.id!==term.id),{limit:3})
+    :escapeText(term.example);
+  return `<p class="term-example"><strong>独立作成の例：</strong>${body}</p>`;
 }
 export function renderTermSheet(term,terms=[]){
   const detail=term.detail||term.meaning,brief=term.brief||term.meaning;
+  // Sheet prose links onward to other terms, so a learner can keep tapping
+  // through the sheet itself; the term's own label is excluded to avoid a
+  // self-referring control. Formula and unit stay plain (formula text is
+  // an equation, and the unit line is a terse label).
+  const others=terms.filter(item=>item.id!==term.id);
+  const linked=value=>renderTermLinks(value,others,{limit:4});
   const related=Array.isArray(term.related)?term.related.slice(0,8):[];
   const relatedMarkup=related.map(label=>{
     const matches=terms.filter(item=>item.id!==term.id&&[item.ja,item.en,...(item.aliases||[])].includes(label));
@@ -150,12 +244,12 @@ export function renderTermSheet(term,terms=[]){
     <p class="eyebrow">${term.source?.type==='supplement'?'補足説明':'書籍に関連する用語'} · 学習用ミニ辞典</p>
     <h2 id="term-sheet-title">${escapeText(term.ja)}</h2>
     ${term.en?`<p class="term-english" lang="en">${escapeText(term.en)}</p>`:''}
-    <p id="term-sheet-brief" class="term-sheet-brief">${escapeText(brief)}</p>
-    ${term.beginner&&term.beginner!==brief&&term.beginner!==detail?`<h3>はじめての説明</h3><p>${escapeText(term.beginner)}</p>`:''}
-    <h3>詳しい説明</h3><p>${escapeText(detail)}</p>
+    <p id="term-sheet-brief" class="term-sheet-brief">${linked(brief)}</p>
+    ${term.beginner&&term.beginner!==brief&&term.beginner!==detail?`<h3>はじめての説明</h3><p>${linked(term.beginner)}</p>`:''}
+    <h3>詳しい説明</h3><p>${linked(detail)}</p>
     ${term.formula?`<p><strong>関連式：</strong> <span class="term-formula">${escapeText(term.formula)}</span></p>`:''}
     ${term.unit?`<p><strong>単位：</strong> ${escapeText(term.unit)}</p>`:''}
-    ${renderTermExample(term)}
+    ${renderTermExample(term,terms)}
     ${related.length?`<p><strong>関連語：</strong> ${relatedMarkup}</p>`:''}
     ${renderTermLearningLinks(term)}
     <button type="button" class="button secondary" data-term-detail="${escapeText(term.id)}">用語集で詳しく見る</button>

@@ -131,7 +131,7 @@ button.text-link { border: 0; background: transparent; font-family: inherit; tex
 .status-pill { display: inline-flex; align-items: center; min-height: 22px; padding: 3px 8px; border-radius: 99px; background: var(--surface-soft); color: var(--muted); font-size: 10px; line-height: 1.3; white-space: nowrap; }
 .tone-blue { color: var(--blue); background: var(--blue-soft); }.tone-amber { color: var(--amber); background: var(--amber-soft); }.tone-green { color: var(--green); background: var(--green-soft); }.tone-violet { color: var(--violet); background: var(--violet-soft); }.tone-neutral { color: var(--muted); background: var(--surface-soft); }
 .muted { color: var(--muted); }.small-note { color: var(--faint); font-size: 11px; line-height: 1.7; }.progress-line { position: relative; height: 7px; overflow: hidden; background: var(--surface-soft); border-radius: 99px; }.progress-line span { display: block; height: 100%; background: var(--accent); border-radius: inherit; transition: width .3s; }
-.card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }.card-heading h2 { margin: 3px 0 0; font-size: 17px; }.card-heading .eyebrow { font-size: 9px; }
+.card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }.card-heading h2 { margin: 3px 0 0; font-size: 17px; }.card-heading .eyebrow { font-size: 9px; }.card-heading-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }.section-status-toggle { margin-top: 12px; }
 .hero-card { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 26px; align-items: center; min-height: 245px; padding: 29px clamp(24px, 4vw, 50px); overflow: hidden; background: linear-gradient(119deg, #e6f1e9 0%, #f2f3e8 54%, #f6eddb 100%); border: 1px solid #dce5d9; border-radius: 16px; }
 :root[data-theme="dark"] .hero-card { background: linear-gradient(119deg, #1b3935, #27352c 55%, #3a3224); border-color: #3b5144; }
 .hero-copy h2 { margin: 7px 0 10px; font-size: clamp(24px, 3vw, 32px); letter-spacing: -.03em; }.hero-copy > p:not(.eyebrow) { max-width: 620px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }.hero-actions { display: flex; gap: 9px; flex-wrap: wrap; margin-top: 19px; }
@@ -145,7 +145,15 @@ button.text-link { border: 0; background: transparent; font-family: inherit; tex
 
 /* Search and glossary */
 .search-form { padding: 19px 21px 15px; }.search-form > label,.glossary-search label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 11px; }.search-input-row { display: flex; gap: 9px; }.search-input-wrap { position: relative; display: flex; align-items: center; flex: 1; min-width: 0; }.search-input-wrap > span { position: absolute; left: 13px; color: var(--faint); font-size: 19px; }.search-input-wrap input { width: 100%; padding-left: 40px; padding-right: 50px; }.clear-search { position: absolute; right: 2px; min-width: 44px; min-height: 44px; color: var(--faint); background: transparent; border: 0; border-radius: 50%; font-size: 18px; }.filter-row { display: flex; align-items: end; gap: 14px; flex-wrap: wrap; margin-top: 12px; }.filter-row label { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 10px; }.filter-row select { min-height: 34px; max-width: 240px; padding: 5px 24px 5px 8px; font-size: 11px; }.search-hint { margin-left: auto; color: var(--faint); font-size: 10px; }.search-results { margin-top: 25px; }.results-heading { display: flex; align-items: baseline; gap: 10px; margin-bottom: 11px; }.results-heading h2 { margin: 0; font-size: 16px; }.results-heading span { color: var(--muted); font-size: 11px; }.result-list { display: grid; gap: 9px; }.result-card { padding: 16px 19px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }.result-meta { display: flex; gap: 8px; align-items: center; color: var(--faint); font-size: 10px; }.result-card h3 { margin: 8px 0 4px; font-size: 14px; }.result-link { padding: 0; color: var(--accent-strong); background: transparent; border: 0; font-weight: 650; text-align: left; }.result-card p { margin: 5px 0 6px; color: var(--muted); font-size: 12px; line-height: 1.8; }.result-card > small { color: var(--faint); font-size: 10px; }
-.glossary-search { max-width: 530px; padding: 15px 17px; }.glossary-search input { width: 100%; }.glossary-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 16px; }.term-card { padding: 19px; }.term-heading { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }.term-heading h2 { margin: 0; font-size: 18px; }.term-heading span { color: var(--muted); font-size: 11px; }.term-card p { margin: 12px 0 16px; color: var(--muted); font-size: 12px; line-height: 1.85; }.term-source { margin: 0 0 8px; color: var(--faint); font-size: 10px; }.term-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }.term-links small { color: var(--muted); }.notice-card { display: flex; gap: 11px; align-items: flex-start; margin-top: 16px; padding: 15px 18px; color: var(--muted); background: var(--blue-soft); border-radius: 9px; }.notice-card p { margin: 0; font-size: 11px; line-height: 1.75; }.notice-icon { width: 19px; height: 19px; display: grid; flex-shrink: 0; place-items: center; color: var(--blue); border: 1px solid currentColor; border-radius: 50%; font-size: 11px; font-weight: 700; }.compact-notice { margin-top: 16px; padding: 11px; }
+.glossary-search { max-width: 530px; padding: 15px 17px; }.glossary-search input { width: 100%; }.glossary-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 16px; }.term-card { padding: 19px; }
+/* J1 glossary rows: compact row (name + brief + toggle) with the full body
+   expanding in place, so the list no longer renders 475 full cards. */
+.term-row { padding: 14px 17px; }
+.term-row .term-heading { align-items: center; }
+.term-row .term-heading h2 { font-size: 16px; overflow-wrap: anywhere; }
+.term-toggle { flex: 0 0 auto; min-height: 44px; margin-left: auto; }
+.term-row .term-brief { margin: 8px 0 2px; }
+.term-body { margin-top: 6px; padding-top: 4px; border-top: 1px solid var(--line); }.term-heading { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }.term-heading h2 { margin: 0; font-size: 18px; }.term-heading span { color: var(--muted); font-size: 11px; }.term-card p { margin: 12px 0 16px; color: var(--muted); font-size: 12px; line-height: 1.85; }.term-source { margin: 0 0 8px; color: var(--faint); font-size: 10px; }.term-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }.term-links small { color: var(--muted); }.notice-card { display: flex; gap: 11px; align-items: flex-start; margin-top: 16px; padding: 15px 18px; color: var(--muted); background: var(--blue-soft); border-radius: 9px; }.notice-card p { margin: 0; font-size: 11px; line-height: 1.75; }.notice-icon { width: 19px; height: 19px; display: grid; flex-shrink: 0; place-items: center; color: var(--blue); border: 1px solid currentColor; border-radius: 50%; font-size: 11px; font-weight: 700; }.compact-notice { margin-top: 16px; padding: 11px; }
 
 /* Quiz, review and learning record */
 .quiz-setup-layout { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(260px,.75fr); gap: 15px; }.quiz-setup-card,.quick-session-card,.question-bank-card { padding: 23px; }.quiz-setup-card h2,.quick-session-card h2 { margin: 4px 0 17px; font-size: 19px; }.stack-form { display: grid; gap: 13px; }.stack-form label,.report-modal label { display: grid; gap: 5px; color: var(--muted); font-size: 11px; }.form-two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px; }.quick-session-card > p:not(.eyebrow) { color: var(--muted); font-size: 12px; line-height: 1.8; }.quick-buttons { display: flex; flex-wrap: wrap; gap: 8px; }.quick-divider { height: 1px; margin: 19px 0 14px; background: var(--line); }.quick-stat { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 4px; margin: 6px 0 8px; }.quick-stat strong { font-size: 32px; }.quick-stat span { color: var(--muted); }.quick-stat small { grid-column: 1 / -1; color: var(--faint); font-size: 10px; }.question-bank-card { margin-top: 15px; }.question-bank-list { margin: 12px 0; border-top: 1px solid var(--line); }.bank-item { display: grid; grid-template-columns: 44px minmax(0,1fr) 18px; align-items: center; gap: 9px; width: 100%; min-height: 57px; padding: 9px 4px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line); text-align: left; }.bank-item:hover strong { color: var(--accent); }.bank-item-index { display: grid; width: 33px; height: 33px; place-items: center; color: var(--accent); background: var(--accent-soft); border-radius: 8px; font-size: 9px; }.bank-item strong { display: block; font-size: 11px; line-height: 1.6; }.bank-item small { display: block; margin-top: 3px; color: var(--faint); font-size: 9px; }.bank-item > b { color: var(--faint); }
@@ -305,6 +313,38 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .sim-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
 .sim-tab { display: flex; gap: 8px; align-items: center; min-height: 44px; padding: 10px 18px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 9px; }
 .sim-tab.selected { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-strong); }
+/* Compact mode picker (checklist #9): the bar replaces the permanently
+   expanded 20-button list; the grouped list exists only while picking. */
+.sim-picker { margin-bottom: 20px; }
+.sim-mode-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 8px 8px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 9px; }
+.sim-current { display: flex; align-items: center; gap: 9px; min-width: 0; font-size: 14px; }
+.sim-current strong { overflow-wrap: anywhere; }
+.sim-picker-toggle { flex: 0 0 auto; }
+.sim-mode-panel { margin-top: 10px; padding: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 9px; }
+.sim-mode-panel .sim-tabs { display: block; margin-bottom: 0; }
+.sim-tab-group + .sim-tab-group { margin-top: 14px; }
+.sim-tab-cat { margin: 0 0 8px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.sim-tab-row { display: flex; flex-wrap: wrap; gap: 8px; }
+/* 通常シミュレーター (dynamic lab entry + guide) */
+.lab-entry-card, .lab-guide-card { padding: 25px; }
+.lab-entry-card h2, .lab-guide-card h2 { margin: 5px 0 12px; font-size: 20px; }
+.lab-entry-card > p, .lab-guide-card > p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+.lab-entry-actions { margin: 18px 0 20px; }
+.lab-entry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.lab-entry-item { display: grid; gap: 4px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 9px; }
+.lab-entry-item:hover { border-color: var(--accent); }
+.lab-entry-item strong { color: var(--accent-strong); font-size: 14px; }
+.lab-entry-item span { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.lab-guide-card { margin-top: 18px; }
+.lab-step h3 { margin: 20px 0 6px; font-size: 15px; }
+.lab-step p { margin: 0 0 10px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+.lab-guide-card .small-note { margin-top: 18px; }
+@media(max-width:600px) {
+  .lab-entry-grid { grid-template-columns: minmax(0, 1fr); }
+  .lab-entry-card, .lab-guide-card { padding: 21px; }
+  .sim-mode-bar { padding-left: 12px; }
+  .sim-mode-panel { padding: 13px; }
+}
 .sim-intro h2 { margin: 7px 0 22px; font-size: 17px; line-height: 1.7; }
 .sim-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 12px; }
 .sim-field { display: grid; align-content: start; gap: 7px; font-size: 12px; }
@@ -318,6 +358,13 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .formula-card strong { font-size: 17px; overflow-wrap: anywhere; }
 .formula-card p,.assumption-card p { margin-bottom: 0; color: var(--muted); font-size: 12px; line-height: 1.9; }
 .assumption-card strong { font-size: 13px; }
+/* J2: the formula and assumption cards are reference material (checklist
+   #3), so they sit behind one collapsed disclosure at the bottom of the
+   simulator input card instead of always expanding it. */
+.sim-reference { margin-top: 24px; padding: 6px 16px 16px; background: var(--surface-soft); border-radius: 9px; }
+.sim-reference summary { display: flex; align-items: center; min-height: 44px; color: var(--accent-strong); font-size: 13px; font-weight: 650; cursor: pointer; }
+.sim-reference .formula-card,.sim-reference .assumption-card { margin-top: 0; padding: 0; background: none; border-radius: 0; }
+.sim-reference .assumption-card { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .result-number { display: grid; gap: 9px; margin: 24px 0; }
 .result-number > span { color: var(--muted); font-size: 12px; }
 .result-number strong { font-size: clamp(29px,3.2vw,43px); color: var(--accent-strong); overflow-wrap: anywhere; }
@@ -412,7 +459,16 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   .calendar-card { padding: 18px 12px; }
   .calendar-grid { gap: 3px; }
   .calendar-day { min-height: 47px; }
-  .sim-fields { grid-template-columns: minmax(0,1fr); }
+  .sim-fields { grid-template-columns: minmax(0,1fr); gap: 14px 12px; }
+  /* J2: on narrow screens each field used to stack label + input + help
+     vertically (~95px per field, pushing the result far down). Fields now
+     put the label and the input side by side in one row; help text spans
+     the full width below. Item order, items and behaviour are unchanged.
+     Fields holding a <select> keep the stacked full-width layout because
+     their option labels are long. */
+  .sim-field { grid-template-columns: minmax(0,1fr) minmax(148px,160px); align-items: center; gap: 6px 10px; }
+  .sim-field small { grid-column: 1 / -1; }
+  .sim-field:has(.input-unit select) { grid-template-columns: minmax(0,1fr); align-items: start; }
   .sim-input-card,.sim-output-card,.settings-card,.plan-form-card,.suggestion-card,.day-detail { padding: 21px; }
   .report-modal { padding: 23px 18px; }
 }

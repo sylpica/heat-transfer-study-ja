@@ -7,6 +7,12 @@
 // assertions pin the corrected copy plus the implementation facts the copy
 // rests on; the rendered appearance is checked in the batch log
 // (audit2-fix-b13-log.md).
+// PREMISE CHANGE (2026-11-05): the owner decided on 2026-11-04 to include the
+// Japanese translation in the public build. All 76 sections now ship as
+// bundled content (data/sections/*-ja.json via data/content-manifest.json),
+// checked against the original by the translator; expert review is still
+// outstanding and the copy must keep saying so. The reader assertions below
+// were updated to pin the new disclosure instead of the old exclusion.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
@@ -38,13 +44,15 @@ test('A2-R2-08: position saving really is per-section and translation-independen
 });
 
 // ---------- A2-R2-08: reader page heading copy ----------
-test('A2-R2-08: reader heading discloses that the public build ships no translation',()=>{
+test('A2-R2-08: reader page discloses the shipped translation and its review state',()=>{
   assert.equal(appJs.includes('アプリ内に訳文がある節では'),false,
-    'the misleading translation conditional must be gone from the reader heading');
-  assert.ok(appJs.includes('書籍の日本語訳は公開版に収録していません。'),
-    'reader heading must state up front that no book translation is included');
+    'the misleading translation conditional must stay gone from the reader page');
+  assert.equal(appJs.includes('書籍の日本語訳は公開版に収録していません。'),false,
+    'the old no-translation disclosure must be gone (owner decision 2026-11-04)');
+  assert.ok(appJs.includes('書籍の日本語訳（全76節）を収録しています。翻訳は作業者が原本と照合済みですが、専門家校閲は未実施です。'),
+    'reader page must disclose the shipped translation and that expert review is outstanding');
   assert.ok(appJs.includes('自分の訳稿などをローカル教材として追加した場合は、その本文を段落や式とともに表示します。'),
-    'body display must be attributed to locally added material only');
+    'locally added material must still be described as an additional source');
 });
 test('A2-R2-08: premise holds in the shipped data (no section carries body blocks)',()=>{
   const sections=book.chapters.flatMap(chapter=>chapter.sections);
@@ -53,8 +61,10 @@ test('A2-R2-08: premise holds in the shipped data (no section carries body block
     'public data must not embed Japanese body blocks (readable text comes from the local pack)');
   assert.ok(sections.every(s=>!Array.isArray(s.blocksEn)||s.blocksEn.length===0),
     'public data must not embed English body blocks either');
-  // In-app bodies appear only when the runtime local-content pack merges
-  // blocks in; that merge path is the behaviour the new copy describes.
+  // In-app bodies come from the bundled content manifest (the shipped
+  // translation) and may be overridden by the runtime local-content pack.
+  assert.ok(appJs.includes("'./data/content-manifest.json'"),
+    'the bundled content manifest must remain a core data file');
   assert.ok(appJs.includes("fetch('./data/local-content-manifest.json')"),
-    'the local content pack merge path must remain the source of in-app bodies');
+    'the local content pack merge path must remain available');
 });

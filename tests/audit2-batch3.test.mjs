@@ -267,8 +267,9 @@ test('R5-11-005: lesson 11.6 marks the Sc upper bound as an app operational rang
 });
 test('batch3 guards: totals unchanged and changed section questions are versioned consistently in both files',()=>{
   assert.equal(questions.length,751);
-  // 470 at batch-3 time; B-4 added five source-verified terms (475).
-  assert.equal(glossary.length,475);
+  // 470 at batch-3 time; B-4 added five source-verified terms (475);
+  // the 2026-11-07 expansion added 29 more source-verified terms (504).
+  assert.equal(glossary.length,504);
   const changed=['supp-section-5-6','supp-section-6-2','supp-section-6-6','supp-section-7-6','supp-section-9-4','supp-section-10-5','supp-section-11-8'];
   for(const id of changed){
     assert.equal(q(id).revision,sq(id).revision,id);

@@ -59,8 +59,9 @@ test('A2-UXS-12: every glossary related label resolves to exactly one term',()=>
 });
 
 // ---------- Glossary additions and detail appends (B-3 proposals) ----------
-test('glossary proposals: 475 terms; five source-verified additions carry the full schema',()=>{
-  assert.equal(glossary.length,475);
+test('glossary proposals: 475 terms at batch-5 time (504 after the 2026-11-07 expansion); five source-verified additions carry the full schema',()=>{
+  // 2026-11-07 expansion added 29 further source-verified terms (docs/GLOSSARY_EXPANSION_20261107.md).
+  assert.equal(glossary.length,504);
   for(const id of ['entropy-generation','radiation-heat-transfer-coefficient','temperature-efficiency-p','temperature-ratio-r','p-ntu-method']){
     const t=term(id);assert.ok(t,`${id} missing`);
     for(const key of ['ja','en','meaning','brief','beginner','detail','formula','unit','category','related','relatedSections','source','reviewStatus'])
@@ -181,7 +182,7 @@ test('A2-DOC-01: README states the measured current content and publication stat
   assert.ok(readme.includes('**751問**'));
   assert.ok(readme.includes('図解76点'));
   assert.ok(readme.includes('学習ガイド48項目'));
-  assert.ok(readme.includes('用語集475語'));
+  assert.ok(readme.includes('用語集504語'));
   assert.ok(readme.includes('公開済みです（https://sylpica.github.io/heat-transfer-study-ja/）'));
   assert.ok(readme.includes('PR #1はマージ済みです'));
   assert.equal(readme.includes('図解28点'),false);
@@ -195,5 +196,5 @@ test('A2-DOC-03: VERIFICATION.md points at the current owner URL with a dated no
 });
 test('A2-DOC-05: SECTION_PROGRESS.md carries the 2026-10-31 freshness note',()=>{
   assert.ok(sectionProgressMd.includes('2026-10-31：監査フェーズB完了時点の鮮度注記'));
-  assert.ok(sectionProgressMd.includes('用語475語'));
+  assert.ok(sectionProgressMd.includes('用語504語'));
 });

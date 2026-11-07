@@ -40,7 +40,10 @@ test('radial combined boundary returns independently balanced component diagnost
 test('invalid coupled inputs, unsupported geometry and overflow do not advance an accepted model',()=>{
  for(const patch of [{h:-1},{h:NaN},{h:'12'},{emissivity:2},{temperature:0},{radiationTemperature:0},{radiationTemperature:1e100}])assert.throws(()=>validateSurfaceExchange({...bc,...patch}));
  assert.throws(()=>createThermal({...slab(bc),outline:[[0,0],[.1,0],[.1,1],[0,1]]}),/自由輪郭/);
- assert.throws(()=>createThermal({...slab(bc),materials:[{k:5,rho:1000,cp:1000,kTable:[[300,5],[500,6]]}]}),/検証待ち/);
+ // 変物性×同時境界は2026-11-07に受理へ移行した（旧「検証待ち」拒否の想定を置き換え）。
+ // 直接回帰は tests/dynamic-surface-exchange-variable.test.mjs が担う。
+ const accepted=createThermal({...slab(bc),materials:[{k:5,rho:1000,cp:1000,kTable:[[300,5],[500,6]]}]});
+ assert.ok(Number.isFinite(accepted.step(.01).temperature[0]));
  assert.throws(()=>createThermal(slab({...bc,h:1e308})),/数値範囲|収束/);
 });
 test('combined output overflow is checked before committing new or restored temperatures',()=>{

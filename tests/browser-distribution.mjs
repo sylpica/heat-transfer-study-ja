@@ -1,4 +1,5 @@
-// Checks the exact public Pages artifact, where book text and original figures are absent.
+// Checks the exact public Pages artifact: the bundled Japanese translation
+// is present (owner decision 2026-11-04) and original figures are absent.
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {existsSync} from 'node:fs';
@@ -24,6 +25,12 @@ try {
     args:engine==='chromium'?['--no-sandbox',...(ignoreCert?['--ignore-certificate-errors']:[])]:[]});
   const context=await browser.newContext({viewport:{width:390,height:844},ignoreHTTPSErrors:ignoreCert});
   const page=await context.newPage();
+  // Slow environments: re-rendering the quiz start screen while the
+  // 751-item question-bank panel is open costs tens of seconds of layout
+  // (measured 25-50 s for the panel open alone), so the default 30 s
+  // actionability timeout is too small for any click that triggers such
+  // a render. Assertions and flows are unchanged.
+  page.setDefaultTimeout(180000);
   const errors=[],external=[];
   const base=liveBase?new URL(liveBase).href:`http://127.0.0.1:${server.address().port}`;
   page.on('pageerror',error=>errors.push(error.message));
@@ -53,7 +60,7 @@ try {
     assert.match(workerSource,/const PDF_CACHE_NAME='heat-study-ja-pdf-[0-9a-f]{16}';/,
       'PDF cache name must derive from the shipped PDF hash: unchanged PDFs keep the learner-saved cache across app revisions, replaced PDFs get a fresh cache');
   }
-  assert.match(await page.locator('.app-footer').innerText(),/76節に独自日本語ノート・発展教材・図解を収録/);
+  assert.match(await page.locator('.app-footer').innerText(),/原書の日本語訳を全76節に収録/);
   await nav('reader');
   await page.locator('.reader-toc .toc-item.selected').waitFor({state:'attached'});
   assert.ok((await readerContrast()).every(value=>value>=4.5),'目次の選択行の文字コントラスト');
@@ -75,14 +82,14 @@ try {
 
   assert.match(await page.locator('#reader-article').innerText(),/原本の翻訳・節本文ではありません/);
   assert.ok((await page.locator('.brand').getAttribute('aria-label')).includes('熱移動を学ぶ'));
-  assert.ok((await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('aria-label')).includes('原本PDFを開く'));
+  assert.ok((await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('aria-label')).includes('原本PDFを開く'));
   for(const action of ['reader-font-down','reader-font-up']){
     const button=page.locator(`[data-action="${action}"]`);
     assert.ok((await button.getAttribute('aria-label')).includes(await button.innerText()));
   }
-  assert.equal(await page.locator('.reader-toc .toc-item:not(.not-ready)').count(),0);
-  assert.match(await page.locator('.not-translated').innerText(),/公開していません/);
-  assert.match(await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=17$/);
+  assert.equal(await page.locator('.reader-toc .toc-item:not(.not-ready)').count(),76);
+  assert.match(await page.locator('#reader-article').innerText(),/専門家校閲待ち/);
+  assert.match(await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('href'),/AHTTv600\.pdf#page=17$/);
   assert.equal(await page.locator('.reader-toc .toc-item.selected').getAttribute('data-section'),'1.1');
   await page.locator('[data-action="toggle-read"]').click();
   await page.waitForFunction(()=>JSON.parse(localStorage.getItem('heat-study-ja:v1'))?.readSections?.['1.1']===true);
@@ -96,19 +103,20 @@ try {
   assert.equal(readingRecord.bookmark.bookPage,3);
   assert.equal(readingRecord.note.sectionId,'1.1');
   await page.locator('.reader-pager [data-section="1.2"]').click();
-  assert.match(await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=20$/);
+  assert.match(await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('href'),/AHTTv600\.pdf#page=20$/);
   await page.locator('.reader-toc [data-section="1.3"]').click();
-  assert.match(await page.locator('.not-translated').innerText(),/旧PC.*下書き.*未移行/s);
-  assert.match(await page.locator('.not-translated a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=25$/);
+  assert.ok(await page.locator('#reader-article .book-content').count()===1);
+  assert.match(await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('href'),/AHTTv600\.pdf#page=25$/);
   await page.waitForFunction(()=>document.querySelector('#pdf-cache-status')?.textContent.includes('未保存'));
   await nav('home');
   assert.match(await page.locator('.hero-side').innerText(),/1 \/ 76 節を読了/);
   await nav('plan');
-  assert.match(await page.locator('.suggested-steps li').first().innerText(),/1\.2.*英語原本PDF/s);
-  for(const path of ['data/sections/1-1-en.json','data/sections/1-1-ja.json','data/figures/fig1-1-021.png']){
+  assert.match(await page.locator('.suggested-steps li').first().innerText(),/1\.2.*日本語訳または英語原本/s);
+  for(const path of ['data/sections/1-1-en.json','data/figures/fig1-1-021.png']){
     const status=await page.evaluate(async path=>(await fetch(path)).status,path);
     assert.equal(status,404,path);
   }
+  assert.equal(await page.evaluate(async path=>(await fetch(path)).status,'data/sections/1-1-ja.json'),200,'bundled Japanese translation must ship');
   await nav('guide');
   await page.locator('.guide-section').first().waitFor();
   assert.equal(await page.locator('.guide-section').count(),GUIDE_SECTIONS.length);
@@ -127,6 +135,10 @@ try {
   await page.locator('#guide-search-form button').click();
   assert.ok(await page.locator('#guide-sim-radiation').count());
   await nav('glossary');
+  // J1 (UI/UX audit 2026-11-07): glossary terms are collapsed rows now, so
+  // expand a row before asserting on or clicking its full body (same kind of
+  // adaptation as F3's question bank; the verified content is unchanged).
+  const expandTerm=async id=>{const toggle=page.locator(`#term-${id} [data-term-toggle]`);if(await toggle.getAttribute('aria-expanded')==='false')await toggle.click();};
   await page.locator('#term-biot-number [data-start-question="supp-expanded-bi-calc"]').waitFor({state:'attached'});
   await page.locator('#term-rayleigh-number [data-start-question="supp-chapter-ch8-ra"]').waitFor({state:'attached'});
   await page.locator('#term-fick-diffusive-flux [data-start-question="supp-chapter-ch11-fick"]').waitFor({state:'attached'});
@@ -134,6 +146,7 @@ try {
   assert.match(await page.locator('#term-heat .term-links a').getAttribute('href'),/AHTTv600\.pdf#page=17$/);
   assert.match(await page.locator('#term-heat-flux .term-links a').getAttribute('href'),/AHTTv600\.pdf#page=25$/);
   assert.match(await page.locator('#term-pool-boiling .term-links a').getAttribute('href'),/AHTTv600\.pdf#page=485$/);
+  await expandTerm('pool-boiling');
   assert.match(await page.locator('#term-pool-boiling').innerText(),/外部から強制的に流していない液体/);
   assert.ok(await page.locator('#term-pool-boiling [data-start-question="book-9-1-wire-flux"]').count());
   assert.match(await page.locator('#term-electrical-resistance .term-links a').getAttribute('href'),/AHTTv600\.pdf#page=486$/);
@@ -167,21 +180,25 @@ try {
     'insulated-fin-tip','fin-tip-convection','hyperbolic-tangent','stefan-boltzmann',
     'fick-law','molar-fraction','schmidt-number','sherwood-number','mass-diffusivity']){
     const card=page.locator('#term-'+id);
+    await expandTerm(id);
     assert.ok((await card.locator('.term-example').innerText()).includes('独立作成の例'),id);
     assert.ok(await card.locator('[data-section]').count(),id+' section link');
   }
   await page.locator('#glossary-query').fill('5.0 s');
   await page.locator('#term-mass-diffusivity').waitFor({state:'visible'});
   assert.equal(await page.locator('.term-card').count(),1,'independent examples are searchable');
+  await expandTerm('mass-diffusivity');
   await page.locator('#term-mass-diffusivity [data-section="11.3"]').click();
   await page.locator('#reader-deep-lesson').waitFor();
   assert.match(await page.locator('#reader-deep-lesson').innerText(),/Fick/);
   await nav('glossary');
   await page.locator('#glossary-query').fill('');
   await page.locator('#term-thermal-conductivity').waitFor();
+  await expandTerm('thermal-conductivity');
   await page.locator('#term-thermal-conductivity .term-links a').click();
   assert.match(page.url(),/#guide\/sim-conduction$/);
   await nav('glossary');
+  await expandTerm('thermal-conductivity');
   await page.locator('#term-thermal-conductivity [data-start-question="supp-flat-thickness"]').click();
   assert.match(await page.locator('.question-card').innerText(),/厚さ L/);
   await page.locator('.question-card h2 [data-term-id="thermal-conductivity"]').click();
@@ -356,6 +373,7 @@ try {
   assert.match(await page.locator('.result-number').innerText(),/3\.750×10⁻⁴/);
   await page.locator('#sim-form input[name="k"]').fill('15');
   assert.match(await page.locator('.related-reading a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=\d+$/);
+  await page.locator('[data-action="toggle-sim-picker"]').click();
   await page.locator('[data-sim-mode="radiation"]').click();
   assert.match(await page.locator('.result-number').innerText(),/W/);
   await page.locator('#sim-form input[name="emissivity"]').fill('0');
@@ -375,6 +393,7 @@ try {
   await page.locator('#sim-form input[name="surrounding"]').fill('25');
   // Full interactive time-dependent cooling, validity warning, heat-flow sign
   // and mobile chart are checked on the exact allowlisted public distribution.
+  await page.locator('[data-action="toggle-sim-picker"]').click();
   await page.locator('[data-sim-mode="transient"]').click();
   assert.equal(await page.locator('.sim-output-card .status-pill').innerText(),'非定常・Biを確認');
   assert.match(await page.locator('.sim-physical-diagram desc').textContent(),/2,000秒/);
@@ -402,10 +421,12 @@ try {
   await page.locator('.sim-intro a[href="#guide/sim-transient"]').click();
   assert.match(await page.locator('#guide-sim-transient').innerText(),/集中熱容量法/);
   await nav('simulator');
+  await page.locator('[data-action="toggle-sim-picker"]').click();
   await page.locator('[data-sim-mode="transient"]').click();
   await nav('quiz');
   assert.equal(Number(await page.locator('#quiz-start-form select[name="count"] option').last().getAttribute('value')),await page.locator('.bank-item').count());
-  await page.locator('[data-start-question="book-9-1-transition-flux"]').click();
+  await page.locator('[data-action="toggle-question-bank"]').click({timeout:180000});
+  await page.locator('[data-start-question="book-9-1-transition-flux"]').click({timeout:180000});
   await page.keyboard.press('1');
   await page.keyboard.press('Enter');
   assert.match(await page.locator('.answer-source a[href*="AHTTv600.pdf"]').getAttribute('href'),/AHTTv600\.pdf#page=490$/);
@@ -513,7 +534,7 @@ try {
       await nav(route);
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth)<=width+2,`${route}@${width}`);
       if(route==='reader'){
-        const status=page.locator('.reader-toc .toc-item i').filter({hasText:'翻訳下書き・未移行'}).first();
+        const status=page.locator('.reader-toc .toc-item i').filter({hasText:'訳文あり'}).first();
         assert.ok(await status.evaluate(element=>element.getBoundingClientRect().height<=20&&element.scrollWidth<=element.clientWidth+1&&parseFloat(getComputedStyle(element).fontSize)>=10),`目次の進捗表示@${width}`);
         assert.ok(await page.locator('.reader-toc .toc-item').first().evaluate(element=>element.getBoundingClientRect().height>=44),`目次のタップ領域@${width}`);
       }
@@ -579,6 +600,8 @@ try {
   await page.locator('#term-fourier-law').waitFor({state:'visible'});
   // Earlier E2E steps can leave a suspended set; replacing it is confirmed
   // in the app's own start dialog (B-12 removed the native confirm).
+  // J1: the reload above reset the expansion state, so expand the row first.
+  await expandTerm('thermal-conductivity');
   await page.locator('#term-thermal-conductivity [data-start-question="supp-flat-thickness"]').click();
   await confirmQuizReplacement();
   await page.locator('.question-card').waitFor({state:'visible'});
@@ -701,12 +724,23 @@ try {
     (await (await fetch('./data/questions.json')).json()).filter(q=>q.reportHistory?.some(r=>['internal_independent_check','authored_with_internal_check','internal_audit_followup'].includes(r.type))));
   assert.equal(pending.length,444);
   for(const q of pending){
+    if(pending.indexOf(q)%50===0)console.log(`問題バンク検証 ${pending.indexOf(q)+1}/${pending.length}`);
     await nav('quiz');
     if(await page.locator('[data-action="exit-quiz"]').count()){
       await page.locator('[data-action="exit-quiz"]').click();
       await page.locator('[data-action="discard-quiz"]').click();
     }
-    await page.locator(`.bank-item[data-start-question="${q.id}"]`).click();
+    // Wait for the bank panel to exist before judging its hidden state:
+    // a bare count() snapshot can run ahead of the route render, skip the
+    // toggle, and leave the item inside the still-hidden panel.
+    await page.locator('#question-bank-panel').waitFor({state:'attached'});
+    if(await page.locator('#question-bank-panel[hidden]').count()){
+      // Opening the 751-item panel costs tens of seconds of layout on a
+      // slow machine (measured 25-50 s), beyond the default 30 s timeout.
+      await page.locator('[data-action="toggle-question-bank"]').click({timeout:180000});
+      await page.waitForFunction(()=>!document.querySelector('#question-bank-panel')?.hidden);
+    }
+    await page.locator(`.bank-item[data-start-question="${q.id}"]`).click({timeout:180000});
     await confirmQuizReplacement();
     await page.locator('.question-card').waitFor({state:'visible'});
     assert.equal(await page.locator('.answer-options input').count(),4,q.id);

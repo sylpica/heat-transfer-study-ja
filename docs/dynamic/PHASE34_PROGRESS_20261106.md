@@ -72,3 +72,10 @@ Re100の追加Ghia未達は、受領報告と原Marchi PDFの直接読取後、�
 既存の断熱矩形に完全復元と別非同期runtimeを追加し、実rollback後の再処理/古いinit破棄/旧backend保持を実Workerで検査。CPUの最後のyield取消・受理前snapshot・サブステップ時計丸めも修正し、温度列/ステップは変えずに検査。ソフトウェアGPU/同一CPUの専用画面、同物理のCPU-B比較・実寸比/セル測定・固定初期色・履歴/取消を両ブラウザーで確認。GPU_UI.md/同CHECKPOINT参照。
 
 全Node1454中1449成功/5スキップ、公開ビルド・dev除外/Worker/cache不変更。ChromiumはSwiftShader、WebKitはGPU不可のCPUでshader未実行。物理GPU速度/長時間/専用オフライン/一般GPUモデル/公開は未完了。これは限定モデルの接続でPhase4全体の完成宣言ではない。
+
+
+## 2026-11-07：既存MACの移動壁条件を別画面へ接続
+
+Re≤100・等温/浮力0の移動壁例を実u/v/p/T、瞬間流線、中心線2成分、離散機械診断・履歴/A-B/実復元/取消へ接続。上壁再構成に実lidVelocityを渡し、2角は未定義、p/Tセル中心と速度評価点を区別。自然対流UI・数値ソルバーは不変更で、新ソルバー/新定常検算として再計数しない。新4Node/両ブラウザーの実全場CPU比較・境界/角・正負/格子・64短過渡・DPR2/モバイルが成功。
+
+全Node1458中1453成功/5スキップ、公開ビルド/Worker/cache不変更。LID_CAVITY_UI.md/同CHECKPOINT。GPU画面の最新WebKit CIの描画待機レースも保持して修正し、両画面を両エンジンで再実行成功。一般CFD/全Phase/公開の未達は維持する。

@@ -712,3 +712,10 @@ gpu-diffusion.htmlを専用非同期Workerへ接続し、実backend/精度/adapt
 
 
 次のPhase4画面はLID_CAVITY_UI_WIP_20261107.mdへ事前保存。既存MACのRe≤100移動壁/等温例を別画面へ接続し、自然対流UIや数値コアを変えない。仮想SIのpresetと静止0・正負x鏡映の新2Nodeが成功。非ゼロ流でのTのbit等値という試験誤認は、実測4.55e−13Kの差をPoisson残差と加算丸めの解析上界で確認して修正し、静止exact0は維持。元失敗ログと説明を保存。ソルバー自体は既存Marchi参照の2c3694eから不変更。新たな定常検算として再計数しない。
+
+
+## 2026-11-07：移動壁MACの画面接続と描画readyの再確認
+
+既存cavity.mjs（2c3694eから不変更）のRe≤100移動壁/等温例を別UIへ接続。実速度/投影p・実lid境界補間と角未定義、速度評価点/p,Tセル中心の区別、中心線2成分/機械診断・A/B/実復元/取消を確認。新4Nodeと両エンジンで全u/v/p/TのCPU比較・正負/格子・64短過渡・静止0・DPR2/モバイル・保存不変更が成功。WebKit図/フォームも実確認。新ソルバー・新定常計算へ加算しない。
+
+全Node1458中1453成功・5skip・失敗0、公開ビルド成功/Worker/cache不変更。LID_CAVITY_UI_CHECKPOINT_20261107.jsonへhash/元試験失敗と修正・実測を保存。GPUの22b2012 WebKit CIのbackend空表示はRAF前の読取と初期markup有効によるものと切り分け、初期disabled/同じ表示の描画待機で修正。Node後はmarkup/ブラウザー待機だけを変え、数値/Node-testソース不変更でGPU/移動壁の両ブラウザーを再実行成功。46ブラウザーコマンドへ追加、最新リモートCI・一般CFD/公開/全Phaseは未完了。

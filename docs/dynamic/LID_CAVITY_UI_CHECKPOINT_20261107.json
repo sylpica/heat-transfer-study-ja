@@ -1,0 +1,210 @@
+{
+  "recordedAtUTC": "2026-11-07T00:06:31.131918+00:00",
+  "basisCommit": "22b20122e6afffa9ae86d56a05a76bf948092cb9",
+  "sourceAndTestsSHA256": {
+    "dynamic/dev/lid-cavity.html": "2ebf7e1d788667efd1c393e8ce5f7918e5d5528e738cbed2056c4dfaed7d81d4",
+    "dynamic/dev/lid-cavity.css": "7eafe02a283c06e78ad95c1ef4e09e5de4f474876fb61a7bd8ef1405c0bd5095",
+    "dynamic/dev/lid-cavity-ui.mjs": "8f0265f63d0225c17f09925faac4d657864be7dbe7d5ea9870ac9f4a34ef99a6",
+    "dynamic/dev/lid-cavity-ui-config.mjs": "6e71d7606446360a2fed75c41ce884569015b0aa86cb3660a695a4c0efaa33bf",
+    "dynamic/dev/lid-cavity-view.mjs": "151e6c3e3aceccae54cb8de07bcb3bd6cd228ace229fdb3b61e7db7a4a557d8d",
+    "dynamic/dev/cavity.mjs": "0ed223dfa2e8f36735f15fed92380e514f08a26ddfda7227f9f8ae283cc9373e",
+    "dynamic/dev/cavity-worker.mjs": "c58d64d7a341df8467ab9de521fca3e0b177fdc6961fea714a9b1eadc0e99acb",
+    "dynamic/dev/cavity-fields.mjs": "b64279038b1621f10962065976fc0d14884d3dc5624e3f62e7a089c9ee79e98c",
+    "dynamic/dev/kinetic-energy.mjs": "e573dd8b64a89f4e5ad817ece6239066e54ee4175bb78ba569044f00e871a5b8",
+    "tests/dynamic-lid-cavity-ui-browser.mjs": "117c4ecaad2e2e44b621c27d70ebee4af4ab6916f6b3e2e1d1612c5a86ca9b56",
+    "tests/dynamic-lid-cavity-view.test.mjs": "2a177ded9466161e624c9a112b049b307224cdfee8e9a2516fa50a27b7fea320",
+    "tests/dynamic-lid-cavity-preset.test.mjs": "544bf097480c3c03081f5941fa8183ec6e552876110ae375ddafbd7a2047c2e1",
+    ".github/workflows/dynamic-simulation.yml": "0d2da5fd6e2917333512d453fdde51f897183419245e497807cce87d386eb3eb"
+  },
+  "unchangedMACCoreSince": "2c3694e",
+  "newNumericalSolvers": 0,
+  "newSteadyBenchmarks": 0,
+  "reusedSteadyReference": "GHIA_MARCHI_RESOLUTION_20261106.json",
+  "node": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "total": 1458,
+    "passed": 1453,
+    "failed": 0,
+    "skipped": 5,
+    "durationMs": 107436.569177,
+    "log": "work/lid-ui-full-node-20261107.log",
+    "logSHA256": "7556b2e4c3205a30659d3af252b7e198f57cbe1905c35e2ac4be46c7ac66e880",
+    "afterNodeRun": "Only startup-disabled markup and browser render-readiness waits changed; affected GPU/lid browser tests were rerun in both engines. No numerical or Node-test source changed."
+  },
+  "browser": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "existingUnchangedMACCore": true,
+        "actualWorkerAllFacesPressureTemperatureMatchCPU": true,
+        "movingBoundaryInterpolationAndUndefinedCorners": true,
+        "pressureCellCoordinatesDistinctFromVelocityPoint": true,
+        "centerlineAndKineticDiagnostics": true,
+        "realRewindAndBitReplay": true,
+        "invalidDraftRetainsAcceptedWall": true,
+        "oppositeWallAndGridComparison": true,
+        "actualProgressCancelRollback": true,
+        "zeroLidExactStaticLimit": true,
+        "fine64ShortTransientOnly": true,
+        "mobileLightDark": true,
+        "devicePixelRatio": 2,
+        "physicalAspect": true,
+        "localStorageUnchanged": true,
+        "newSteadyBenchmarkCount": 0,
+        "offlineVerified": false,
+        "generalCFDApproved": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/lid-ui-render-ready-chromium-20261107.log",
+      "logSHA256": "682feb771ea4d3f6a83e02ffafdb5a28be281b5c490f8e5b9cf274a7dec4ba1f",
+      "screenshots": {
+        "field": {
+          "path": "work/lid-ui-chromium-field-dark-20261107.png",
+          "SHA256": "ad69598f5388bedd6375420b0154e6193b86ab786689ffdd01eef21aefa76ae8",
+          "visuallyInspected": false
+        },
+        "settings": {
+          "path": "work/lid-ui-chromium-settings-dark-20261107.png",
+          "SHA256": "38856eba2dec91b4d02d186b8f54626d7a9dfc271285c4e1eb87f6263de8b44a",
+          "visuallyInspected": false
+        }
+      }
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "existingUnchangedMACCore": true,
+        "actualWorkerAllFacesPressureTemperatureMatchCPU": true,
+        "movingBoundaryInterpolationAndUndefinedCorners": true,
+        "pressureCellCoordinatesDistinctFromVelocityPoint": true,
+        "centerlineAndKineticDiagnostics": true,
+        "realRewindAndBitReplay": true,
+        "invalidDraftRetainsAcceptedWall": true,
+        "oppositeWallAndGridComparison": true,
+        "actualProgressCancelRollback": true,
+        "zeroLidExactStaticLimit": true,
+        "fine64ShortTransientOnly": true,
+        "mobileLightDark": true,
+        "devicePixelRatio": 2,
+        "physicalAspect": true,
+        "localStorageUnchanged": true,
+        "newSteadyBenchmarkCount": 0,
+        "offlineVerified": false,
+        "generalCFDApproved": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/lid-ui-render-ready-webkit-20261107.log",
+      "logSHA256": "4dd5eecd982bb2d47f0ec1418808ab76dadcdb4717da4d40a3c7c5541fba90bf",
+      "screenshots": {
+        "field": {
+          "path": "work/lid-ui-webkit-field-dark-20261107.png",
+          "SHA256": "753d381c9989c8298bc22bb436b99d3ce065defd3965d31330956e2a19932682",
+          "visuallyInspected": true
+        },
+        "settings": {
+          "path": "work/lid-ui-webkit-settings-dark-20261107.png",
+          "SHA256": "450965ce8f425d3f29511381f02a7098d6e5d21110be70ad5b6eff214076f72f",
+          "visuallyInspected": true
+        }
+      }
+    }
+  },
+  "gpuRenderReadyRegression": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualBackend": "webgpu-software",
+        "actualWorkerCpuAndContinuousMode": true,
+        "actualRewindAndBitReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedBackend": true,
+        "samePhysicsCpuComparisonAndDifferentConditionSeparation": true,
+        "actualProgressCancelRollback": true,
+        "unavailableExplicitGpuKeepsAcceptedState": null,
+        "initialFixedCommonColorScale": true,
+        "keyboardAndPointer": true,
+        "physicalAspect": true,
+        "largeCells": 8192,
+        "uniformZeroHeat": true,
+        "mobileLightDark": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "physicalGPUVerified": false,
+        "performanceVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/gpu-ui-render-ready-chromium-20261107.log",
+      "logSHA256": "c99637bc032aafa523a8536f57ba8f43eb9394cb13f9ec89d0e86959be5a7a5b"
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualBackend": "cpu-device-unavailable",
+        "actualWorkerCpuAndContinuousMode": true,
+        "actualRewindAndBitReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedBackend": true,
+        "samePhysicsCpuComparisonAndDifferentConditionSeparation": true,
+        "actualProgressCancelRollback": true,
+        "unavailableExplicitGpuKeepsAcceptedState": true,
+        "initialFixedCommonColorScale": true,
+        "keyboardAndPointer": true,
+        "physicalAspect": true,
+        "largeCells": 8192,
+        "uniformZeroHeat": true,
+        "mobileLightDark": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "physicalGPUVerified": false,
+        "performanceVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/gpu-ui-render-ready-webkit-20261107.log",
+      "logSHA256": "a316020aa24bce5a23931f84416ba75de885db525f19f668435538042bcb01a0"
+    }
+  },
+  "isothermalRoundoffMeasurement": {
+    "timeS": 0.1,
+    "steps": 16,
+    "maximumTemperatureDeviationK": 4.547473508864641e-13,
+    "maximumDivergence": 4.3567233154462315e-13,
+    "energyErrorJ": 0,
+    "netInputJ": 0,
+    "independentUniformAdvectionBoundK": 1.1697802101973142e-12,
+    "additionRoundoffBoundK": 8.526512829121202e-12
+  },
+  "initialPresetExactEqualityFailure": {
+    "log": "work/lid-cavity-preset-initial-failure-20261107.log",
+    "logSHA256": "55f0267d2b9b37e3400d2dfdcba44c4c80fd5dca83782b228d18b7beab6a3b45",
+    "resolution": "Moving-flow scalar equality is checked against its finite-Poisson-divergence and addition-roundoff bound; static-zero exact equality is retained, no state/RHS/heat correction."
+  },
+  "initialPointerTestFailure": {
+    "log": "work/lid-ui-chromium-20261107.log",
+    "logSHA256": "c348e4855f54aadce649d328b84f7d9cf9feed87994c85018b272109316b553c",
+    "resolution": "Cap field width at 640 CSS pixels for a visible whole square and scroll the actual canvas start into view before real pointer measurement; original physical corner criterion retained."
+  },
+  "realDeviceVerified": false,
+  "dedicatedOfflineVerified": false,
+  "generalCFDApproved": false,
+  "mainPublished": false,
+  "allPhase34Complete": false,
+  "releaseApproved": false,
+  "publicBuild": {
+    "passed": true,
+    "devIncluded": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cacheName": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "gpuRenderReadyFixSourcesSHA256": {
+    "dynamic/dev/gpu-diffusion.html": "d95cfb21b6c2ab35ad8ccb74580d715bbfcdcbd80ee82d71885718484723cf37",
+    "tests/dynamic-gpu-ui-browser.mjs": "3512991f8614adc503fa515d25dd7455b21b24645eb89a550fe8cee120bbb953"
+  }
+}

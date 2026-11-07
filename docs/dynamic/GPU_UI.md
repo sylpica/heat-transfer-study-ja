@@ -23,3 +23,5 @@ ChromiumのソフトウェアGPUとWebKitのdevice-unavailable CPUで、それ�
 先行993cb4e/run42312466227は両ブラウザー・数値・高次MMSの4ジョブ成功/CFD実行中を直接確認した。固定imageでの当該チェックアウト信頼/輪郭caption待機修正は両ブラウザーの実ジョブで裏付けられたが、後続の今回GUIや全5成功へ転用しない（GPU_WORKER_IMAGE_CI_20261107.json）。
 
 実GPU/ドライバー/性能/長時間/実機/支援技術/専用オフライン/一般物理精度/自由形状/高度な他モデルGPU対応/工学公開・main・全Phase3/4は未完了。この画面は開発検証用に限定する。
+
+後続22b2012のCIではWebKitがstatus-readyと最初から有効だったmarkupを先に観測し、RAF前のbackend-summary空文字を読んで失敗した。GPU_UI_RENDER_READY_FIX_20261107.jsonに保存。初期ボタンをHTMLでもdisabledとし、ready/advanced後の実描画を待って同じbackend条件を検査するよう修正、両ブラウザー再実行成功。物理コード・精度予算・timeoutは不変更。新CI成功はまだ未確定で、元GPU_UI_CHECKPOINTの旧時点記録と分ける。

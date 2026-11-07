@@ -1,0 +1,82 @@
+{
+  "recordedAtUTC": "2026-11-07T00:43:45.724720+00:00",
+  "initialCriteriaCommit": "b56cab5",
+  "supplementaryTimeCriteriaCommit": "9b432e0",
+  "sourceFilesSHA256": {
+    "dynamic/dev/pipe-wall-temperature.mjs": "6d985ea6fb1d23df541fd09ab947bf2d18679a40d5229f8932b5f9a1e82c7e7f",
+    "dynamic/dev/pipe-wall-temperature-worker.mjs": "b7d8888f73ff948a216054dbcbe46c92a8c3bcb45e596bdeccedd88360fbd5bb",
+    "tests/dynamic-pipe-wall-temperature-worker-browser.mjs": "60301741434517b6285279e51041adaebe43aa6c6f8739ace43591a84e595e36",
+    "dynamic/worker-runtime.mjs": "4a45869d90b22bcea712ba808239f44f43c473d4fd1ad8d4817a590b307e3104"
+  },
+  "workerResults": [
+    {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorker": true,
+      "maximumDifferenceFromIndependentExponentialK": 1.935786517193172e-07,
+      "maximumAllHeatDifferenceJ": 1.5313760869162252e-05,
+      "annularHeatBalance": true,
+      "completeRestore": true,
+      "invalidInitAndRestoreKeepWorker": true,
+      "realProgressCancelRollback": true,
+      "coolingSymmetryMaximumDifferenceK": 0,
+      "manufacturedCases": 4,
+      "maximumManufacturedFixedPointRateKPerS": 5.39375030038524e-12,
+      "maximumManufacturedOneStepDriftK": 0,
+      "largeCells": 8192,
+      "tinyHeatPreserved": true,
+      "localStorageUnchanged": true,
+      "GUIVerified": false,
+      "offlineVerified": false,
+      "generalPipeCFDVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorker": true,
+      "maximumDifferenceFromIndependentExponentialK": 1.935786517193172e-07,
+      "maximumAllHeatDifferenceJ": 1.5313760869162252e-05,
+      "annularHeatBalance": true,
+      "completeRestore": true,
+      "invalidInitAndRestoreKeepWorker": true,
+      "realProgressCancelRollback": true,
+      "coolingSymmetryMaximumDifferenceK": 0,
+      "manufacturedCases": 4,
+      "maximumManufacturedFixedPointRateKPerS": 5.39375030038524e-12,
+      "maximumManufacturedOneStepDriftK": 0,
+      "largeCells": 8192,
+      "tinyHeatPreserved": true,
+      "localStorageUnchanged": true,
+      "GUIVerified": false,
+      "offlineVerified": false,
+      "generalPipeCFDVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  ],
+  "workerLogs": [
+    "work/pipe-wall-temperature-worker-chromium-20261107.log",
+    "work/pipe-wall-temperature-worker-webkit-20261107.log"
+  ],
+  "relatedNode": {
+    "total": 16,
+    "pass": 16,
+    "skip": 0,
+    "fail": 0,
+    "log": "work/pipe-wall-temperature-numerical-node-20261107.log"
+  },
+  "originalTimeV1AllChecksPassed": false,
+  "supplementaryTimeV2AllChecksPassed": true,
+  "spatialGeneratorInitialFailure": {
+    "reason": "A numpy.bool_ in the comparison checks was not JSON serializable; numerical computation had completed. Cast only report booleans and serialize fully before creating the exclusive result file.",
+    "log": "work/pipe-wall-temperature-spatial-reference-20261107.log",
+    "preservedPartial": "work/pipe-wall-temperature-spatial-reference-20261107-partial.json.txt",
+    "partialSHA256": "6dc80e30111d9aa9aa2650fb63c55e4a3310cb3b06fec2109196bd5053d4f433"
+  },
+  "productTimeToSteadyVerified": false,
+  "GUIVerified": false,
+  "generalPipeCFDVerified": false,
+  "releaseApproved": false
+}

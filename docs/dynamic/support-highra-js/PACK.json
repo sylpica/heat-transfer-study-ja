@@ -1,0 +1,159 @@
+{
+  "schema": "support-highra-js-comparison-v1",
+  "units": "L=H=depth=alpha=rho=cp=deltaT=1, nu=Pr=.71; physical reference Tc=300 K,Th=301 K",
+  "temperature": "theta=T-300; initial canonical cold theta=.5, u=v=0",
+  "pressure": "JS mean of SSPRK2 stage pressures; DCT centered-buoyancy mean + .5*rho*gBeta*(y-.5); mean-zero gauge",
+  "cases": [
+    {
+      "ra": 10000,
+      "n": 64,
+      "jsDt": 1.719300176056338e-05,
+      "originalDctDt": 2.9296875e-05,
+      "source": "RA10000_N64_DT1_stagev2.npz",
+      "sourceSHA256": "4c10dac53ff59071ab11dc2008bbc031761d52f033bf4b6d29a3cb2ab8df1b16",
+      "canonicalSteady": {
+        "time": 0.7000000000000001,
+        "steps": 23898,
+        "Nu0": 2.25063197334316,
+        "NuMidplane": 2.250631973362501,
+        "NuVolume": 2.250631973353318,
+        "NuCold": 2.2506319733431495,
+        "NuSectionSpread": 1.935163140842633e-11,
+        "NuLocalMaximum": 3.5507389091934556,
+        "uMaximum": 16.18043063980575,
+        "uMaximumPosition": 0.8203125,
+        "vMaximum": 19.638804964387894,
+        "vMaximumPosition": 0.1171875,
+        "divergence": 4.050093593832571e-13,
+        "pressureSolveResidualMax": 4.3520742565306136e-14,
+        "pressureSolveRhsMax": 2.368039563428802,
+        "maximumProjectionRelativeResidual": 3.86782260034483e-14,
+        "currentCellPe": 0.3075538245099624,
+        "maximumObservedStagePe": 0.36229669779423096,
+        "temperatureMin": 0.004566109611793187,
+        "temperatureMax": 0.9954338903882066,
+        "energyErrorJ": 8.326672684688674e-17,
+        "cumulativeBoundaryHeatJ": [
+          1.588152294823189,
+          -1.5881522948231894
+        ]
+      },
+      "coldStartRecomputed": false,
+      "checkpoints": [
+        1,
+        16
+      ],
+      "file": "RA10000_N64_comparison.json.gz",
+      "sha256": "ad5ad4232b20d4ec93b3d065e5ec7d274d2dfd2c51ab168a59bab1f0f34d96a2",
+      "uncompressedBytes": 1404404
+    },
+    {
+      "ra": 100000,
+      "n": 128,
+      "jsDt": 2.9319790040656316e-06,
+      "originalDctDt": 7.32421875e-06,
+      "source": "RA100000_N128_DT1_stagev2.npz",
+      "sourceSHA256": "19b825117924eb0cf3e56de09c25333ee95f01fc77e966ee922b7ed4c4934bf5",
+      "canonicalSteady": {
+        "time": 0.37500000000000006,
+        "steps": 51210,
+        "Nu0": 4.531632341090627,
+        "NuMidplane": 4.531632478679955,
+        "NuVolume": 4.5316324158283505,
+        "NuCold": 4.531632341090628,
+        "NuSectionSpread": 1.375893283750429e-07,
+        "NuLocalMaximum": 7.7674665228088315,
+        "uMaximum": 34.756244757377054,
+        "uMaximumPosition": 0.85546875,
+        "vMaximum": 68.66751654588741,
+        "vMaximumPosition": 0.06640625,
+        "divergence": 3.097966327914037e-12,
+        "pressureSolveResidualMax": 3.62383734131555e-13,
+        "pressureSolveRhsMax": 11.816566776250212,
+        "maximumProjectionRelativeResidual": 7.112659192954605e-14,
+        "currentCellPe": 0.5364649730147457,
+        "maximumObservedStagePe": 0.7054228933698965,
+        "temperatureMin": 0.0028411563682062923,
+        "temperatureMax": 0.9971588436317936,
+        "energyErrorJ": 5.551115123125783e-17,
+        "cumulativeBoundaryHeatJ": [
+          1.6863074330576369,
+          -1.6863074330576369
+        ]
+      },
+      "coldStartRecomputed": false,
+      "checkpoints": [
+        1,
+        16
+      ],
+      "file": "RA100000_N128_comparison.json.gz",
+      "sha256": "9512e3ea29ee0190162e8de5f36b1ae5f86243e438314a0f94df6825ddf7a9c0",
+      "uncompressedBytes": 5606400
+    },
+    {
+      "ra": 1000000,
+      "n": 192,
+      "jsDt": 6.181154469759653e-07,
+      "originalDctDt": 3.255208333333333e-06,
+      "source": "RA1000000_N192_DT1_stagev3.npz",
+      "sourceSHA256": "81d2bb5f19b6063e5572dbdaa30b0b8bb0331f6bfebba998577173a09d5f42a9",
+      "canonicalSteady": {
+        "time": 0.275,
+        "steps": 117481,
+        "Nu0": 8.852661159604214,
+        "NuMidplane": 8.85266103335123,
+        "NuVolume": 8.852661087379415,
+        "NuCold": 8.852661159604219,
+        "NuSectionSpread": 1.262529885082131e-07,
+        "NuLocalMaximum": 17.750825114318175,
+        "uMaximum": 64.90533747394937,
+        "uMaximumPosition": 0.8515625,
+        "vMaximum": 220.56940272387646,
+        "vMaximumPosition": 0.0390625,
+        "divergence": 1.106315039578476e-11,
+        "pressureSolveResidualMax": 3.1549086260129755e-12,
+        "pressureSolveRhsMax": 72.25799625512542,
+        "maximumProjectionRelativeResidual": 7.941726288501327e-14,
+        "currentCellPe": 1.150004016636695,
+        "maximumObservedStagePe": 1.5917539785284038,
+        "temperatureMin": 0.0025471128283292136,
+        "temperatureMax": 0.997452887171671,
+        "energyErrorJ": -8.635067969306773e-17,
+        "cumulativeBoundaryHeatJ": [
+          2.407286647293608,
+          -2.407286647293608
+        ]
+      },
+      "coldStartRecomputed": false,
+      "checkpoints": [
+        1,
+        16
+      ],
+      "file": "RA1000000_N192_comparison.json.gz",
+      "sha256": "70829e99d36b2dab084351723f1c122e9cdafe46fa24f9101db31269a51e835f",
+      "uncompressedBytes": 12616095
+    }
+  ],
+  "failureReplay": {
+    "file": "RA1000000_N128_pre_failure.json.gz",
+    "sha256": "b8f1aa74f4475479f4881892b74611ee817ef96ce7dc4f2bf715670b4bed260c",
+    "uncompressedBytes": 4983791
+  },
+  "tolerances": {
+    "projectionVelocityMax": 1e-08,
+    "projectionPressureMaxFloor": 1e-05,
+    "projectionPressureRelativeToMax": 1e-09,
+    "continuationTemperatureMax": 1e-09,
+    "continuationVelocityMax": 1e-07,
+    "continuationNuAbsolute": 1e-07,
+    "literatureAverageNuRelative": 0.01,
+    "literatureLocalNuRelative": 0.02
+  },
+  "sourceSHA256": {
+    "scripts/support-highra-js/prepare_pack.py": "c0c6cd65f8497bbbbabf69ac2557d47d699d9d263545db7dcd249abb447b8879",
+    "scripts/support-natconv/prototype.py": "de31a1c215a814379cf5fb2b4ac97224fb51bd47c83c449aed8ac57c52d89c4d"
+  },
+  "fullJsColdToSteadyVerified": false,
+  "wholeRaContinuumApproved": false,
+  "releaseApproved": false
+}

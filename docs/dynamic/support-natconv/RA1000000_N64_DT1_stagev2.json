@@ -1,0 +1,43 @@
+{
+  "generatedAtUTC": "2026-11-07T07:26:09.417611+00:00",
+  "sourceCommit": "e7a314324b98331d28403473f048eaa3dfc92b4f",
+  "prototypeSHA256": "71b31bbd84d1ecf67a2698b6a520ce15a0e1a2f768b53281a582597121750fb3",
+  "ra": 1000000,
+  "grid": 64,
+  "dtFactor": 1,
+  "units": "alpha=L=H=rho=cp=depth=deltaT=1; nu=Pr=.71; gBeta=.71Ra; Tc=0,Th=1 retained offsets; no absolute-temperature property claim",
+  "method": "uniform MAC conservative2 momentum and central scalar, joint SSPRK2; exact typeII DCT orthonormal Neumann projection on each Euler-stage velocity; no-slip half-cell velocity ghosts",
+  "history": [],
+  "last": {
+    "time": 0.0016729199561718656,
+    "steps": 82,
+    "Nu0": 7.170739330523617,
+    "NuMidplane": 2.626156236917865e-12,
+    "NuVolume": 1.150062684631132,
+    "NuCold": 7.170739330523617,
+    "NuSectionSpread": 7.17073933052099,
+    "NuLocalMaximum": 10.578885870221782,
+    "uMaximum": 17.09303556095928,
+    "uMaximumPosition": 0.9140625,
+    "vMaximum": 127.19105630809864,
+    "vMaximumPosition": 0.0234375,
+    "divergence": 2.0463630789890885e-12,
+    "pressureSolveResidualMax": 1.4779288903810084e-12,
+    "pressureSolveRhsMax": 307.30321500735863,
+    "maximumProjectionRelativeResidual": 6.6440521616810065e-15,
+    "currentCellPe": 1.995860309558091,
+    "maximumObservedStagePe": 2.007662299976939,
+    "temperatureMin": 0.03243164278027007,
+    "temperatureMax": 0.9675683572197299,
+    "energyErrorJ": -5.637851296924623e-18,
+    "cumulativeBoundaryHeatJ": [
+      0.022955340865054567,
+      -0.022955340865054567
+    ]
+  },
+  "steady": false,
+  "failure": "central cell Peclet >2: 2.007662299976939",
+  "elapsedSeconds": 0.06593252799939364,
+  "fullState": "RA1000000_N64_DT1_stagev2.npz",
+  "releaseApproved": false
+}

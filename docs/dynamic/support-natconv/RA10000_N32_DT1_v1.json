@@ -1,0 +1,251 @@
+{
+  "generatedAtUTC": "2026-11-07T07:22:46.293170+00:00",
+  "sourceCommit": "e7a314324b98331d28403473f048eaa3dfc92b4f",
+  "prototypeSHA256": "f2c1efbb9dde94726f5dd49e3d854166d6c0c80caab63d3d941e32688833bea9",
+  "ra": 10000,
+  "grid": 32,
+  "dtFactor": 1,
+  "units": "alpha=L=H=rho=cp=depth=deltaT=1; nu=Pr=.71; gBeta=.71Ra; Tc=0,Th=1 retained offsets; no absolute-temperature property claim",
+  "method": "uniform MAC conservative2 momentum and central scalar, joint SSPRK2; exact typeII DCT orthonormal Neumann projection each RHS; no-slip half-cell velocity ghosts",
+  "history": [
+    {
+      "time": 0.1,
+      "steps": 854,
+      "Nu0": 2.330103349568661,
+      "NuMidplane": 2.230464355240316,
+      "NuVolume": 2.2811268585367697,
+      "NuCold": 2.3301033495686583,
+      "NuSectionSpread": 0.09963899432834511,
+      "NuLocalMaximum": 3.656975359083283,
+      "uMaximum": 16.520497495292215,
+      "uMaximumPosition": 0.828125,
+      "vMaximum": 19.950768063544796,
+      "vMaximumPosition": 0.109375,
+      "divergence": 2.1799451133119874e-11,
+      "currentCellPe": 0.6241730793364205,
+      "maximumObservedStagePe": 0.7215364118655166,
+      "temperatureMin": 0.009238603195859956,
+      "temperatureMax": 0.9907613968041381,
+      "energyErrorJ": 2.7755575615628914e-17,
+      "cumulativeBoundaryHeatJ": [
+        0.23818235573746221,
+        -0.23818235573746213
+      ]
+    },
+    {
+      "time": 0.2,
+      "steps": 1708,
+      "Nu0": 2.2688955495482963,
+      "NuMidplane": 2.2690646056718196,
+      "NuVolume": 2.2690830593740854,
+      "NuCold": 2.268895549548293,
+      "NuSectionSpread": 0.0002826784046128239,
+      "NuLocalMaximum": 3.6110772633321417,
+      "uMaximum": 16.195442989723762,
+      "uMaximumPosition": 0.828125,
+      "vMaximum": 19.641372660680336,
+      "vMaximumPosition": 0.109375,
+      "divergence": 4.686739885073621e-11,
+      "currentCellPe": 0.6158055474485146,
+      "maximumObservedStagePe": 0.7215364118655166,
+      "temperatureMin": 0.009104152444733744,
+      "temperatureMax": 0.9908958475552622,
+      "energyErrorJ": 4.163336342344337e-17,
+      "cumulativeBoundaryHeatJ": [
+        0.46539701656052285,
+        -0.46539701656052246
+      ],
+      "change": {
+        "interval": 0.1,
+        "temperature": 0.015460394075319073,
+        "velocity": 0.39785030044036773,
+        "relativeVelocity": 0.020189525638855923,
+        "relativeNu": 0.005307782415865594
+      }
+    },
+    {
+      "time": 0.30000000000000004,
+      "steps": 2562,
+      "Nu0": 2.2679658992377343,
+      "NuMidplane": 2.2680196199522866,
+      "NuVolume": 2.2679961871409082,
+      "NuCold": 2.26796589923773,
+      "NuSectionSpread": 5.372071455678196e-05,
+      "NuLocalMaximum": 3.610680898492525,
+      "uMaximum": 16.178047919167593,
+      "uMaximumPosition": 0.828125,
+      "vMaximum": 19.62653151056093,
+      "vMaximumPosition": 0.109375,
+      "divergence": 7.216272024379577e-11,
+      "currentCellPe": 0.6153622838242037,
+      "maximumObservedStagePe": 0.7215364118655166,
+      "temperatureMin": 0.00910469132564222,
+      "temperatureMax": 0.9908953086743513,
+      "energyErrorJ": 0.0,
+      "cumulativeBoundaryHeatJ": [
+        0.6922067118181204,
+        -0.6922067118181197
+      ],
+      "change": {
+        "interval": 0.1,
+        "temperature": 0.0003140693481279433,
+        "velocity": 0.018210756902464098,
+        "relativeVelocity": 0.0009247985587699412,
+        "relativeNu": 0.00047922136701089373
+      }
+    },
+    {
+      "time": 0.4,
+      "steps": 3416,
+      "Nu0": 2.2679598393394054,
+      "NuMidplane": 2.2679618920452542,
+      "NuVolume": 2.2679609548601913,
+      "NuCold": 2.267959839339401,
+      "NuSectionSpread": 2.052705853294867e-06,
+      "NuLocalMaximum": 3.6106925345916707,
+      "uMaximum": 16.177483961572264,
+      "uMaximumPosition": 0.828125,
+      "vMaximum": 19.626082977072308,
+      "vMaximumPosition": 0.109375,
+      "divergence": 9.71738245425513e-11,
+      "currentCellPe": 0.6153485347547726,
+      "maximumObservedStagePe": 0.7215364118655166,
+      "temperatureMin": 0.00910474848712517,
+      "temperatureMax": 0.9908952515128662,
+      "energyErrorJ": 5.551115123125783e-17,
+      "cumulativeBoundaryHeatJ": [
+        0.9190030130620964,
+        -0.9190030130620953
+      ],
+      "change": {
+        "interval": 0.1,
+        "temperature": 5.074634021773328e-06,
+        "velocity": 0.0005729054800021061,
+        "relativeVelocity": 2.9094562250319812e-05,
+        "relativeNu": 1.55347827489659e-05
+      }
+    },
+    {
+      "time": 0.5,
+      "steps": 4270,
+      "Nu0": 2.267960087627705,
+      "NuMidplane": 2.2679601429868725,
+      "NuVolume": 2.2679601172621062,
+      "NuCold": 2.267960087627703,
+      "NuSectionSpread": 5.535916969279242e-08,
+      "NuLocalMaximum": 3.610693348451406,
+      "uMaximum": 16.177469159073514,
+      "uMaximumPosition": 0.828125,
+      "vMaximum": 19.626071874920715,
+      "vMaximumPosition": 0.109375,
+      "divergence": 1.2141754268668592e-10,
+      "currentCellPe": 0.6153481899546084,
+      "maximumObservedStagePe": 0.7215364118655166,
+      "temperatureMin": 0.009104749795966356,
+      "temperatureMax": 0.9908952502040229,
+      "energyErrorJ": -1.3877787807814457e-17,
+      "cumulativeBoundaryHeatJ": [
+        1.145799026967006,
+        -1.1457990269670044
+      ],
+      "change": {
+        "interval": 0.1,
+        "temperature": 1.245086470036405e-07,
+        "velocity": 1.4802498750299264e-05,
+        "relativeVelocity": 7.517338857874506e-07,
+        "relativeNu": 3.693178194526181e-07
+      }
+    },
+    {
+      "time": 0.6,
+      "steps": 5124,
+      "Nu0": 2.26796010121637,
+      "NuMidplane": 2.267960102417863,
+      "NuVolume": 2.2679601018535185,
+      "NuCold": 2.267960101216368,
+      "NuSectionSpread": 1.2014949035688005e-09,
+      "NuLocalMaximum": 3.6106933788369773,
+      "uMaximum": 16.177468823993312,
+      "uMaximumPosition": 0.828125,
+      "vMaximum": 19.62607163922252,
+      "vMaximumPosition": 0.109375,
+      "divergence": 1.446665010007564e-10,
+      "currentCellPe": 0.6153481825810626,
+      "maximumObservedStagePe": 0.7215364118655166,
+      "temperatureMin": 0.009104749803568058,
+      "temperatureMax": 0.9908952501964191,
+      "energyErrorJ": -9.71445146547012e-17,
+      "cumulativeBoundaryHeatJ": [
+        1.3725950371136586,
+        -1.3725950371136566
+      ],
+      "change": {
+        "interval": 0.1,
+        "temperature": 4.359873295722849e-09,
+        "velocity": 3.3529962806255753e-07,
+        "relativeVelocity": 1.7027942348029268e-08,
+        "relativeNu": 6.794029456903279e-09
+      }
+    },
+    {
+      "time": 0.7000000000000001,
+      "steps": 5978,
+      "Nu0": 2.2679601016524575,
+      "NuMidplane": 2.2679601016734035,
+      "NuVolume": 2.267960101663479,
+      "NuCold": 2.2679601016524487,
+      "NuSectionSpread": 2.0954793455985055e-11,
+      "NuLocalMaximum": 3.6106933797357286,
+      "uMaximum": 16.177468817338898,
+      "uMaximumPosition": 0.828125,
+      "vMaximum": 19.626071634924127,
+      "vMaximumPosition": 0.109375,
+      "divergence": 1.673754468356492e-10,
+      "currentCellPe": 0.6153481824462946,
+      "maximumObservedStagePe": 0.7215364118655166,
+      "temperatureMin": 0.00910474980284512,
+      "temperatureMax": 0.99089525019714,
+      "energyErrorJ": -4.0245584642661925e-16,
+      "cumulativeBoundaryHeatJ": [
+        1.5993910472768278,
+        -1.5993910472768254
+      ],
+      "change": {
+        "interval": 0.1,
+        "temperature": 1.2610062993800852e-10,
+        "velocity": 6.717845835169101e-09,
+        "relativeVelocity": 3.4116080673945366e-10,
+        "relativeNu": 8.37931582310284e-11
+      }
+    }
+  ],
+  "last": {
+    "time": 0.7000000000000001,
+    "steps": 5978,
+    "Nu0": 2.2679601016524575,
+    "NuMidplane": 2.2679601016734035,
+    "NuVolume": 2.267960101663479,
+    "NuCold": 2.2679601016524487,
+    "NuSectionSpread": 2.0954793455985055e-11,
+    "NuLocalMaximum": 3.6106933797357286,
+    "uMaximum": 16.177468817338898,
+    "uMaximumPosition": 0.828125,
+    "vMaximum": 19.626071634924127,
+    "vMaximumPosition": 0.109375,
+    "divergence": 1.673754468356492e-10,
+    "currentCellPe": 0.6153481824462946,
+    "maximumObservedStagePe": 0.7215364118655166,
+    "temperatureMin": 0.00910474980284512,
+    "temperatureMax": 0.99089525019714,
+    "energyErrorJ": -4.0245584642661925e-16,
+    "cumulativeBoundaryHeatJ": [
+      1.5993910472768278,
+      -1.5993910472768254
+    ]
+  },
+  "steady": true,
+  "failure": null,
+  "elapsedSeconds": 2.243431152019184,
+  "fullState": "RA10000_N32_DT1_v1.npz",
+  "releaseApproved": false
+}

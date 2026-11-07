@@ -1,0 +1,35 @@
+{
+  "equalFlux": {
+    "polynomial": "17/70 - z + 2 z^3 - z^4",
+    "nusseltExactFraction": "140/17",
+    "nusselt": 8.235294117647058,
+    "bulkOffsetIntegral": 0,
+    "wallBulkOffsetDimensionless": 0.24285714285714285
+  },
+  "equalWallTemperature": {
+    "eigenvalueSeries70Digits": "2.827762827776039201862934646010599959587913625147210399896817284077173",
+    "nusseltSeries70Digits": "7.54070087406943787163449238936159989223443633372589439972484609087246",
+    "eigenvalueShooting": 2.8277628277760556,
+    "nusseltShooting": 7.540700874069482,
+    "nusseltFluxIntegral": 7.540700874069489,
+    "relativeSeriesShootingDifference": 5.81070682557034e-15,
+    "relativeFluxIntegralDifference": 9.422767825249146e-16
+  },
+  "textbook": {
+    "title": "A Heat Transfer Textbook, sixth edition, Version 6.00",
+    "section": "7.5",
+    "equations": [
+      "7.62",
+      "7.63"
+    ],
+    "bookPage": 386,
+    "pdfPageOneBased": 400,
+    "pageImageInspected": true,
+    "printedNuEqualFlux": 8.235,
+    "printedNuEqualTemperature": 7.541,
+    "printedValuesRounded": true,
+    "rawTextOrFigureRedistributed": false
+  },
+  "releaseApproved": false,
+  "generatorSHA256": "cf743ea9e1db22f58447ba7e4089d80b91873a51f547b2ae57f7410f83bad1a2"
+}

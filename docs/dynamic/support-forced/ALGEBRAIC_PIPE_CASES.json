@@ -1,0 +1,118 @@
+{
+  "cases": [
+    {
+      "kind": "laminar",
+      "input": {
+        "density": 998,
+        "velocity": 0.00501002004008016,
+        "viscosity": 0.001,
+        "cp": 4180,
+        "conductivity": 0.6,
+        "diameter": 0.02,
+        "length": 1,
+        "inlet": 20,
+        "wall": 60
+      },
+      "re": 100,
+      "darcy": 0.64,
+      "pressureDropPa": 0.4008016032064128,
+      "hydraulicPowerW": 6.308393648197784e-7
+    },
+    {
+      "kind": "laminar",
+      "input": {
+        "density": 998,
+        "velocity": 0.04008016032064128,
+        "viscosity": 0.001,
+        "cp": 4180,
+        "conductivity": 0.6,
+        "diameter": 0.02,
+        "length": 1,
+        "inlet": 20,
+        "wall": 60
+      },
+      "re": 800,
+      "darcy": 0.08,
+      "pressureDropPa": 3.2064128256513023,
+      "hydraulicPowerW": 0.00004037371934846582
+    },
+    {
+      "kind": "laminar",
+      "input": {
+        "density": 998,
+        "velocity": 0.1002004008016032,
+        "viscosity": 0.001,
+        "cp": 4180,
+        "conductivity": 0.6,
+        "diameter": 0.02,
+        "length": 1,
+        "inlet": 20,
+        "wall": 60
+      },
+      "re": 1999.9999999999998,
+      "darcy": 0.032,
+      "pressureDropPa": 8.016032064128254,
+      "hydraulicPowerW": 0.00025233574592791125
+    },
+    {
+      "kind": "turbulent",
+      "input": {
+        "density": 996,
+        "velocity": 0.38409638554216863,
+        "viscosity": 0.000797,
+        "cp": 4180,
+        "conductivity": 0.613,
+        "diameter": 0.025,
+        "length": 3,
+        "inlet": 25,
+        "wall": 60
+      },
+      "re": 11999.999999999998,
+      "darcy": 0.029930490172368162,
+      "pressureDropPa": 263.8790177728744,
+      "hydraulicPowerW": 0.04975250796584239
+    },
+    {
+      "kind": "turbulent",
+      "input": {
+        "density": 996,
+        "velocity": 3.2008032128514055,
+        "viscosity": 0.000797,
+        "cp": 4180,
+        "conductivity": 0.613,
+        "diameter": 0.025,
+        "length": 3,
+        "inlet": 25,
+        "wall": 60
+      },
+      "re": 100000.00000000001,
+      "darcy": 0.017992027544212322,
+      "pressureDropPa": 11015.612360801508,
+      "hydraulicPowerW": 17.307626627376436
+    },
+    {
+      "kind": "turbulent",
+      "input": {
+        "density": 996,
+        "velocity": 32.00803212851405,
+        "viscosity": 0.000797,
+        "cp": 4180,
+        "conductivity": 0.613,
+        "diameter": 0.025,
+        "length": 3,
+        "inlet": 25,
+        "wall": 60
+      },
+      "re": 1000000,
+      "darcy": 0.011626315113955708,
+      "pressureDropPa": 711820.722623681,
+      "hydraulicPowerW": 11184.06030393715
+    }
+  ],
+  "sourceSHA256": {
+    "laminar-pipe-convection.mjs": "fcccf7d50aba9b127b74075a8c3a83d0dae1ee44301a7c1fcc03b6b15b0a48f3",
+    "turbulent-pipe-convection.mjs": "59c3a4aab29574002d282318f2d4a903e56c9d04fd88b7ab7b9a212fd411b986"
+  },
+  "newModelAdded": false,
+  "releaseApprovalChanged": false
+}

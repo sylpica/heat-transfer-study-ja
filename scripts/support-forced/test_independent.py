@@ -4,11 +4,21 @@ import numpy as np
 from independent_pressure import neumann,projection_checks,manufacture_checks,lid_checks
 from graetz_reference import reference
 from independent_channel import evaluate
+from algebraic_pipe_reference import evaluate as evaluate_algebraic
 
 OUT=Path(__file__).resolve().parents[2]/'docs/dynamic/support-forced'
 def read(name):return json.loads((OUT/name).read_text())
 
 class IndependentChecks(unittest.TestCase):
+    def test_algebraic_pipe_poiseuille_and_empirical_formula_separation(self):
+        r=evaluate_algebraic(read('ALGEBRAIC_PIPE_CASES.json'))
+        for row in r['cases']:
+            self.assertLess(row['relativeImplementationDifference'],1e-12)
+            self.assertLess(row['relativeHydraulicPowerIdentity'],1e-12)
+            if row['kind']=='turbulent':
+                self.assertTrue(row['correlationDifferenceIsNotDiscretizationError'])
+                self.assertGreater(abs(row['relativeVersusTextbook742']),1e-4)
+
     def test_neumann_manufactured_modes_and_density_units(self):
         n=20;h=.07;j,i=np.meshgrid(np.arange(n),np.arange(n),indexing='ij')
         exact=np.cos(np.pi*3*(i+.5)/n)*np.cos(np.pi*5*(j+.5)/n)
@@ -70,5 +80,8 @@ class IndependentChecks(unittest.TestCase):
                 self.assertEqual(hashlib.sha256((OUT/path).read_bytes()).hexdigest(),expected)
         mapping={'INDEPENDENT_PRESSURE.json':'independent_pressure.py','INDEPENDENT_CHANNEL.json':'independent_channel.py','GRAETZ_CONTINUOUS.json':'graetz_reference.py'}
         for record,script in mapping.items():self.assertEqual(read(record)['generatorSHA256'],hashlib.sha256(Path(__file__).with_name(script).read_bytes()).hexdigest())
+        algebra=read('ALGEBRAIC_PIPE_REFERENCE.json')
+        self.assertEqual(algebra['inputSHA256'],hashlib.sha256((OUT/'ALGEBRAIC_PIPE_CASES.json').read_bytes()).hexdigest())
+        self.assertEqual(algebra['generatorSHA256'],hashlib.sha256(Path(__file__).with_name('algebraic_pipe_reference.py').read_bytes()).hexdigest())
 
 if __name__=='__main__':unittest.main()

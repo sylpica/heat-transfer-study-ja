@@ -1,0 +1,79 @@
+{
+  "cases": [
+    {
+      "exactPoiseuillePa": 0.4008016032064129,
+      "relativeImplementationDifference": 2.770006446439765e-16,
+      "kind": "laminar",
+      "re": 100.0,
+      "outputPressureDropPa": 0.4008016032064128,
+      "relativeHydraulicPowerIdentity": 1.6783847729133967e-16
+    },
+    {
+      "exactPoiseuillePa": 3.206412825651303,
+      "relativeImplementationDifference": 2.770006446439765e-16,
+      "kind": "laminar",
+      "re": 800.0,
+      "outputPressureDropPa": 3.2064128256513023,
+      "relativeHydraulicPowerIdentity": 1.6783847729133967e-16
+    },
+    {
+      "exactPoiseuillePa": 8.016032064128256,
+      "relativeImplementationDifference": 2.2160051571518127e-16,
+      "kind": "laminar",
+      "re": 1999.9999999999998,
+      "outputPressureDropPa": 8.016032064128254,
+      "relativeHydraulicPowerIdentity": 2.1483325093291488e-16
+    },
+    {
+      "sameFormulaPressurePa": 263.87901777287436,
+      "relativeImplementationDifference": 2.1541469776780137e-16,
+      "textbookEquation742PressurePa": 263.5226578826623,
+      "relativeVersusTextbook742": 0.0013522931693059626,
+      "smoothColebrookPressurePa": 259.5703370653339,
+      "relativeVersusSmoothColebrook": 0.016599280011167172,
+      "correlationDifferenceIsNotDiscretizationError": true,
+      "kind": "turbulent",
+      "re": 11999.999999999998,
+      "outputPressureDropPa": 263.8790177728744,
+      "relativeHydraulicPowerIdentity": 1.3946822356515434e-16
+    },
+    {
+      "sameFormulaPressurePa": 11015.612360801506,
+      "relativeImplementationDifference": 1.6512830553284876e-16,
+      "textbookEquation742PressurePa": 11001.474145473207,
+      "relativeVersusTextbook742": 0.001285120079486779,
+      "smoothColebrookPressurePa": 11014.23206851904,
+      "relativeVersusSmoothColebrook": 0.00012531897583789586,
+      "correlationDifferenceIsNotDiscretizationError": true,
+      "kind": "turbulent",
+      "re": 100000.00000000001,
+      "outputPressureDropPa": 11015.612360801508,
+      "relativeHydraulicPowerIdentity": 2.0526868040826438e-16
+    },
+    {
+      "sameFormulaPressurePa": 711820.722623681,
+      "relativeImplementationDifference": 0.0,
+      "textbookEquation742PressurePa": 710939.4026761027,
+      "relativeVersusTextbook742": 0.0012396555096831907,
+      "smoothColebrookPressurePa": 712967.2141969415,
+      "relativeVersusSmoothColebrook": -0.0016080565142843062,
+      "correlationDifferenceIsNotDiscretizationError": true,
+      "kind": "turbulent",
+      "re": 1000000.0,
+      "outputPressureDropPa": 711820.722623681,
+      "relativeHydraulicPowerIdentity": 3.252824741843555e-16
+    }
+  ],
+  "primaryReference": {
+    "title": "AHTT Version6.00",
+    "section": "7.3",
+    "equation": "7.42",
+    "bookPage": 369,
+    "pdfPageOneBased": 383,
+    "pageImageInspected": true
+  },
+  "empiricalPhysicalUncertaintyApproved": false,
+  "releaseApprovalChanged": false,
+  "inputSHA256": "cb41fafe48e4219eaa5edf8acad84f14ebbf40b764f42a689136b0d80edd7337",
+  "generatorSHA256": "69099a155acaa36668902a31eac3f59a4ae5ebbbc48b06b5039528db7ed15673"
+}

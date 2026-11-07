@@ -23,6 +23,7 @@ for(const [rho,nu,H,U] of [[1.177,1.575e-5,.01,.5],[1000,1e-6,.002,.1],[.7,.01,1
 }
 for(const direction of [-1,1]){const config={caseId:'MKM180',halfGap:.05,nu:1.5e-5,rho:1.2,rows:16,direction},m=createCessProfile(config);pressure.push({model:'cess-imposed-closure',config,output:m.meanFlow??m});}
 const source=readFileSync(new URL('work/support3-muse-graetz-channel.mjs',root),'utf8');
+if(createHash('sha256').update(source).digest('hex')!=='43a60f18d20653b328a51e6137c8d10a22b33d443088b0228df647d265be544b')throw Error('Pinned Muse source differs; do not label a different implementation as the reviewed commit.');
 const {solveGraetzChannel}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const graetz=[];
 for(const ny of [16,32,64,128])for(const type of ['wall-heat-flux','wall-temperature']){

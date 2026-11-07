@@ -1,0 +1,78 @@
+{
+  "recordedAtUTC": "2026-11-07T09:48:13.603011+00:00",
+  "baseCommit": "cc932b70146ad88a0ba4ff22d46b80af7afa7430",
+  "headBeforeFinalSaving": "ef5b84956b37c757944f137903bafa56a54e6600",
+  "testedUncommittedChangesIncluded": true,
+  "identity": "Final tested code/data are identified by SHA256 below; final record-only commit may differ.",
+  "environment": {
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "nodeCommand": "node --test --test-concurrency=1 tests/*.test.mjs",
+  "node": {
+    "total": 1507,
+    "pass": 1502,
+    "fail": 0,
+    "skip": 5,
+    "cancelled": 0,
+    "durationMs": 114022.85514
+  },
+  "independentPython": {
+    "total": 8,
+    "pass": 8,
+    "fail": 0
+  },
+  "relatedNode": {
+    "total": 2,
+    "pass": 2,
+    "fail": 0
+  },
+  "publicBuild": "passed",
+  "excludedPathsExist": {
+    "dist/dynamic/dev": false,
+    "dist/scripts/support-forced": false,
+    "dist/scripts/support-conjugate": false,
+    "dist/scripts/support-natconv": false,
+    "dist/docs/dynamic/support-forced": false
+  },
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheDeclaration": "const CACHE_NAME='heat-study-ja-app-4a24eb30c8fdd98c';",
+  "browserTestsThisSupport": "not run; no UI/worker/production implementation changes",
+  "newRemoteCIStatus": "not claimed",
+  "sourceAndEvidenceSHA256": {
+    "docs/dynamic/support-forced/ALGEBRAIC_PIPE_CASES.json": "cb41fafe48e4219eaa5edf8acad84f14ebbf40b764f42a689136b0d80edd7337",
+    "docs/dynamic/support-forced/ALGEBRAIC_PIPE_REFERENCE.json": "8ba776c87c9b6ccceb2af4b17e50d35c997269b79b4c51a4884e0b666b444f82",
+    "docs/dynamic/support-forced/CHANNEL_CASES.json": "8f104a1ab89b5ce9d1c5a9e90ce40caca93fd821b5b4aa1b9ae325a3404207d6",
+    "docs/dynamic/support-forced/GRAETZ_CONTINUOUS.json": "2d64ad3f1a95d6ef87ed24761ae7fcbb0ba5c4a1ab8305e9a7fab75c932a6cd6",
+    "docs/dynamic/support-forced/INDEPENDENT_CHANNEL.json": "9a6dab3bc1544b49e7917fadf6495cf0aec62ebc03ada2d27e8c8036ca15901b",
+    "docs/dynamic/support-forced/INDEPENDENT_PRESSURE.json": "d2c4b6bf3c8346f8c84ebe04156b8a836e7f86875c380e1992e59b11af8456fd",
+    "docs/dynamic/support-forced/PRESSURE_CASES.json": "c056371cf8ce48cadd378316a6d1c72b28e87f2433ff1eb63681f92196902aa0",
+    "docs/dynamic/support-forced/PRESSURE_PROJECTION_FRESH.json": "77ae2e2d98cb28afb016d62ef69fe65b56b2f52bbcce70fad548d7145cddf458",
+    "dynamic/dev/cavity.mjs": "0ed223dfa2e8f36735f15fed92380e514f08a26ddfda7227f9f8ae283cc9373e",
+    "dynamic/dev/cess-profile.mjs": "88d991039ff911c62a81b355cb093538379dae6dd4ffe4155b2cc1a45fa05b12",
+    "dynamic/dev/heated-channel.mjs": "f776853840f410f680a936d0b2883b2817be103f6318af2c526aaacf44f753e1",
+    "dynamic/dev/heated-pipe.mjs": "f1c7e67ce03611f54da12843692c1677026d32fca16f556c4ae0f92f3e38dcff",
+    "dynamic/dev/manufactured-cavity.mjs": "e19855f1139668e86288210aecb562c0eba3da5c9b56d96da8b390b38a780fe0",
+    "dynamic/dev/pipe-wall-temperature.mjs": "6d985ea6fb1d23df541fd09ab947bf2d18679a40d5229f8932b5f9a1e82c7e7f",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "dynamic/developed-channel.mjs": "357326dfb119cba71a13c6e5528e8d6a61346060414d2eef19029947b0ba788e",
+    "laminar-pipe-convection.mjs": "fcccf7d50aba9b127b74075a8c3a83d0dae1ee44301a7c1fcc03b6b15b0a48f3",
+    "scripts/support-forced/algebraic_pipe_cases.mjs": "99e1238c7d566d7e22618cc138026eb12a5894362fad81ef7cf1389daacb9d1b",
+    "scripts/support-forced/algebraic_pipe_reference.py": "69099a155acaa36668902a31eac3f59a4ae5ebbbc48b06b5039528db7ed15673",
+    "scripts/support-forced/channel_cases.mjs": "ce396241846fc5a7cd5ed932ac52ccbc8d96170be648d4cd5814079af56a5242",
+    "scripts/support-forced/graetz_reference.py": "cf743ea9e1db22f58447ba7e4089d80b91873a51f547b2ae57f7410f83bad1a2",
+    "scripts/support-forced/independent_channel.py": "aa7089fe5fc8d94140c082dd510de550a1fd5bfa765331dc87346c6863cfb55d",
+    "scripts/support-forced/independent_pressure.py": "afc792b2662f58744a338ccede3276d577683f4c7e5c2943e9fbc79dfde65910",
+    "scripts/support-forced/pressure_cases.mjs": "2f6aee3eb4563f71de09e1ed0387e39f416339c662c12d542c96abc3e71bf8b3",
+    "scripts/support-forced/projection_fresh.mjs": "ec287b2c0222fc1156a01808b3d50d1f442bfe3ebfbf4230fcc505ccb3b4f600",
+    "scripts/support-forced/test_independent.py": "f0c2a6ca69ac21cc754d4ad8d3e6c5fadcaaa31d44e2c2f52717a8ec6269b19d",
+    "tests/support-forced-pressure.test.mjs": "e7211d166b3c5831451d2b0aa7cbfc530979e5e547e12d67ce3648b0169c9795",
+    "turbulent-pipe-convection.mjs": "59c3a4aab29574002d282318f2d4a903e56c9d04fd88b7ab7b9a212fd411b986"
+  },
+  "mainlineOrMuseBranchWritten": false,
+  "releaseApprovalChanged": false
+}

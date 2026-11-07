@@ -27,4 +27,7 @@ test('support fin-gap evidence preserves the independent continuous limit and th
  assert.ok(ref.equalWallTemperature.relativeSeriesShootingDifference<1e-9);
  for(const type of ['wall-temperature','wall-heat-flux']){const last=v.graetz.filter(r=>r.boundary===type).at(-1);assert.ok(Math.abs(last.relativeNuDifference)<.001);}
  assert.equal(v.pressureAccuracyApproved,false);assert.equal(v.releaseApproved,false);
+ const algebra=read('ALGEBRAIC_PIPE_REFERENCE.json');assert.equal(algebra.empiricalPhysicalUncertaintyApproved,false);
+ assert.ok(algebra.cases.every(r=>r.relativeImplementationDifference<1e-12));
+ assert.ok(algebra.cases.filter(r=>r.kind==='turbulent').every(r=>r.correlationDifferenceIsNotDiscretizationError));
 });

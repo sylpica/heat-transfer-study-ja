@@ -1,0 +1,49 @@
+Full Node final run (sequential):
+﹣ private legacy Japanese drafts remain labeled unverified in a local pack (0.223767ms) # SKIP
+﹣ reviewed local sections retain original page locations, both languages, and figure descriptions (0.10627ms) # SKIP
+﹣ 18 reviewed Japanese questions have complete rationale and valid source pages (0.117237ms) # SKIP
+﹣ chapter 8 opening retains both languages, eight equations, dimensional annotations, and the original figure (0.055674ms) # SKIP
+﹣ vertical natural convection retains source caveats, mean-value overbars, all figures and ten question rationales (0.098839ms) # SKIP
+✔ SVGs, comparison plots, formulas and user-data escape (17.564984ms)
+ℹ tests 1507
+ℹ suites 0
+ℹ pass 1502
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 5
+ℹ todo 0
+ℹ duration_ms 114022.85514
+
+Independent Python:
+test_algebraic_pipe_poiseuille_and_empirical_formula_separation (__main__.IndependentChecks.test_algebraic_pipe_poiseuille_and_empirical_formula_separation) ... ok
+test_archived_input_and_generator_provenance (__main__.IndependentChecks.test_archived_input_and_generator_provenance) ... ok
+test_continuous_forcing_separates_space_time_and_pcg (__main__.IndependentChecks.test_continuous_forcing_separates_space_time_and_pcg) ... ok
+test_existing_channels_match_momentum_integrals_and_thermal_limits (__main__.IndependentChecks.test_existing_channels_match_momentum_integrals_and_thermal_limits) ... ok
+test_independent_continuous_graetz_solutions (__main__.IndependentChecks.test_independent_continuous_graetz_solutions) ... ok
+test_independent_projection_lu_gauge_and_velocity (__main__.IndependentChecks.test_independent_projection_lu_gauge_and_velocity) ... ok
+test_lid_cross_method_reconstruction_is_numerical_not_exact (__main__.IndependentChecks.test_lid_cross_method_reconstruction_is_numerical_not_exact) ... ok
+test_neumann_manufactured_modes_and_density_units (__main__.IndependentChecks.test_neumann_manufactured_modes_and_density_units) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.365s
+
+OK
+
+Related Node:
+✔ support pressure evidence retains actual iterations, independent errors and original source identities (31.14216ms)
+✔ support fin-gap evidence preserves the independent continuous limit and the pinned Muse ownership boundary (0.848774ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.676424
+
+Public build:
+
+> build:public
+> node scripts/build-public-site.mjs
+
+公開配信物：許諾済みの原本PDF、アプリ・独自ガイド・問題・用語・書籍の目次情報。翻訳・原図・抽出本文は含めていません。

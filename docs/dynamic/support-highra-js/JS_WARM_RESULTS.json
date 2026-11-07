@@ -1,0 +1,204 @@
+{
+  "cases": [
+    {
+      "ra": 1000000,
+      "n": 128,
+      "dt": 9.27173170463948e-7,
+      "mgBuildMs": 244.50403700000004,
+      "levels": [
+        {
+          "nx": 128,
+          "ny": 128,
+          "size": 16384,
+          "nonzeros": 81408,
+          "omega": 0.6
+        },
+        {
+          "nx": 64,
+          "ny": 64,
+          "size": 4096,
+          "nonzeros": 83220,
+          "omega": 0.6
+        },
+        {
+          "nx": 32,
+          "ny": 32,
+          "size": 1024,
+          "nonzeros": 23716,
+          "omega": 0.577508785630613
+        },
+        {
+          "nx": 16,
+          "ny": 16,
+          "size": 256,
+          "nonzeros": 5476,
+          "omega": 0.5452008206568951
+        },
+        {
+          "nx": 8,
+          "ny": 8,
+          "size": 64,
+          "nonzeros": 1156,
+          "omega": 0.5376207822583846
+        },
+        {
+          "nx": 4,
+          "ny": 4,
+          "size": 16,
+          "nonzeros": 196,
+          "omega": 0.5660602701312638
+        }
+      ],
+      "projections": [
+        {
+          "tolerance": 1e-12,
+          "warm": false,
+          "elapsedMs": 159.056372,
+          "iterations": 11,
+          "residualL2": 0.00019810783757060355,
+          "rhsL2": 896604062.168889,
+          "relativeResidualL2": 2.2095353560118815e-13,
+          "divergence": 1.0913936421275139e-11,
+          "velocityMaximumDifference": 5.684341886080802e-14,
+          "pressureMaximumDifference": 1.3096723705530167e-9,
+          "pressureToleranceBudget": 0.0002390599692087332
+        },
+        {
+          "tolerance": 1e-12,
+          "warm": true,
+          "elapsedMs": 13.359887000000015,
+          "iterations": 0,
+          "residualL2": 0.00027126461572689515,
+          "rhsL2": 896604062.168889,
+          "relativeResidualL2": 3.0254671729983564e-13,
+          "divergence": 1.4551915228366852e-11,
+          "velocityMaximumDifference": 1.7053025658242404e-13,
+          "pressureMaximumDifference": 3.716559149324894e-8,
+          "pressureToleranceBudget": 0.0002390599692087332
+        },
+        {
+          "tolerance": 1e-10,
+          "warm": false,
+          "elapsedMs": 96.07949400000007,
+          "iterations": 9,
+          "residualL2": 0.039629556257971287,
+          "rhsL2": 896604062.168889,
+          "relativeResidualL2": 4.419961712208533e-11,
+          "divergence": 1.3251337804831564e-9,
+          "velocityMaximumDifference": 9.023892744153272e-12,
+          "pressureMaximumDifference": 2.486922312527895e-7,
+          "pressureToleranceBudget": 0.0002390599692087332
+        }
+      ],
+      "rk2SetupMs": 264.222353,
+      "measuredSixteenStepsMs": 713.8277409999994,
+      "meanMeasuredStepMs": 44.61423381249996,
+      "checkpoints": [
+        {
+          "step": 1,
+          "temperatureMaximum": 1.1102230246251565e-16,
+          "velocityMaximum": 4.547473508864641e-13,
+          "centeredStageMeanPressureMaximum": 1.060616341419518e-7,
+          "NuMaximumDifference": 4.973799150320701e-14,
+          "nu": {
+            "Nu0": 8.886861288577077,
+            "NuCold": 8.88686128857708,
+            "NuMidplane": 8.886861084976493,
+            "NuVolume": 8.886861173313045,
+            "NuLocalMaximum": 18.02376768137964
+          },
+          "maximumPe": 1.7305031846544914,
+          "divergence": 2.687272626644699e-11,
+          "relativeEnergyError": 7.098156342342115e-20,
+          "pressureStages": [
+            {
+              "iterations": 0,
+              "residual": 0.0002713247851647308,
+              "rhsNorm": 896604062.168889,
+              "divergence": 1.2164491636212915e-11
+            },
+            {
+              "iterations": 0,
+              "residual": 0.0008458892582748585,
+              "rhsNorm": 896604062.168878,
+              "divergence": 5.4072302191343624e-11
+            }
+          ]
+        },
+        {
+          "step": 16,
+          "temperatureMaximum": 4.440892098500626e-16,
+          "velocityMaximum": 7.105427357601002e-13,
+          "centeredStageMeanPressureMaximum": 6.895243132021278e-8,
+          "NuMaximumDifference": 6.394884621840902e-14,
+          "nu": {
+            "Nu0": 8.886861288503809,
+            "NuCold": 8.886861288503818,
+            "NuMidplane": 8.88686108381489,
+            "NuVolume": 8.886861172608372,
+            "NuLocalMaximum": 18.023767681518194
+          },
+          "maximumPe": 1.730503184624122,
+          "divergence": 4.04227762373921e-11,
+          "relativeEnergyError": 1.5649406232187712e-19,
+          "pressureStages": [
+            {
+              "iterations": 0,
+              "residual": 0.00038863374350472647,
+              "rhsNorm": 896604062.1687038,
+              "divergence": 2.4016344468691386e-11
+            },
+            {
+              "iterations": 0,
+              "residual": 0.0008734524121191824,
+              "rhsNorm": 896604062.1686918,
+              "divergence": 5.906031219637953e-11
+            }
+          ]
+        }
+      ],
+      "dctColdStartDt": 0.00000732421875,
+      "dctSteadyStateSafeDt": 0.0000035270178518691756,
+      "originalMgRejectsThisSize": false,
+      "originalGridAndRaGatesLiftedForDiagnostics": true,
+      "actualTailFile": "JS_RA1000000_N128_warm_tail.json.gz",
+      "actualTailSHA256": "affc6887569fb3d8d3a4055036107f8796765fd52e88b013066bb7bf60820987",
+      "heapUsedBytes": 128184680
+    }
+  ],
+  "failureReplays": [],
+  "patches": [
+    {
+      "label": "MG dimension admission only",
+      "needle": "nx>128||ny>128",
+      "replacement": "nx>192||ny>192"
+    },
+    {
+      "label": "RK2 grid admission only",
+      "needle": "[4,8,16,32,64].includes(nx)",
+      "replacement": "[4,8,16,32,64,128,192].includes(nx)"
+    },
+    {
+      "label": "RK2 Ra admission only",
+      "needle": "Ra>1000*(1+32*EPS)",
+      "replacement": "Ra>1e6*(1+32*EPS)"
+    },
+    {
+      "label": "diagnostic velocity/pressure initial-state hook only",
+      "needle": "snapshot();return {step,snapshot,restore,mesh,",
+      "replacement": "snapshot();return {_supportPrime(s){u=Float64Array.from(s.u);v=Float64Array.from(s.v);pressure=Float64Array.from(s.pressure);inspect(theta,wall,u,v);},step,snapshot,restore,mesh,"
+    }
+  ],
+  "sourceSHA256": {
+    "dynamic/dev/cavity.mjs": "0ed223dfa2e8f36735f15fed92380e514f08a26ddfda7227f9f8ae283cc9373e",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "dynamic/dev/thermal-wall-cavity.mjs": "1e884c200d9e58b139e1637f884d2d1f589c62726fef0d5b5c82bd134b0acf23"
+  },
+  "diagnosticSHA256": {
+    "mg": "10493ca9a1fc3cc32642d87ce4afdb316d2c29258cd4458f51d7bf9a29349ffe",
+    "rk2": "a6f8e52ac272e923b0b7e795633db2d69fa8ae85d596d9a511352291617ada39"
+  },
+  "generatorSHA256": "fe533830d52c891750047517ab87629923a4b5ba5bdb942f9fde02129d99e4db",
+  "fullJsColdToSteadyVerified": false,
+  "releaseApproved": false
+}

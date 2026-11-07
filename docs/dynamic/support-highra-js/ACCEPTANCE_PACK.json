@@ -1,0 +1,224 @@
+{
+  "schema": "support-highra-acceptance-v1",
+  "benchmark": "de Vahl Davis1983 TableV, Pr=.71, velocity scale alpha/L; definitions kept separate",
+  "conditions": {
+    "width": 1,
+    "height": 1,
+    "depth": 1,
+    "alpha": 1,
+    "nu": 0.71,
+    "rho": 1,
+    "cp": 1,
+    "temperatureColdK": 300,
+    "temperatureHotK": 301,
+    "scalarScheme": "central",
+    "momentumScheme": "conservative2",
+    "timeIntegrator": "joint SSPRK2, project each Euler candidate velocity",
+    "wall": "no-slip, horizontal adiabatic"
+  },
+  "cases": [
+    {
+      "ra": 10000,
+      "n": 64,
+      "initialization": "cold: theta=.5,u=v=0",
+      "dctSteadyReference": {
+        "Nu0": 2.25063197334316,
+        "NuVolume": 2.250631973353318,
+        "NuMidplane": 2.250631973362501,
+        "NuLocalMaximum": 3.5507389091934556,
+        "uMaximum": 16.18043063980575,
+        "vMaximum": 19.638804964387894,
+        "uMaximumPosition": 0.8203125,
+        "vMaximumPosition": 0.1171875,
+        "maximumObservedStagePe": 0.36229669779423096
+      },
+      "literatureReference": {
+        "Nu0": 2.238,
+        "NuVolume": 2.243,
+        "NuMidplane": 2.243,
+        "NuLocalMaximum": 3.528,
+        "uMaximum": 16.178,
+        "vMaximum": 19.617,
+        "uMaximumPosition": 0.823,
+        "vMaximumPosition": 0.119
+      },
+      "sameGridSteadyAgreement": {
+        "NuRelative": 1e-05,
+        "temperatureMaximum": 2e-06,
+        "velocityMaximumRelativeToFieldPeak": 2e-05
+      },
+      "literatureCriteria": {
+        "averageNuRelative": 0.01,
+        "localMaximumNuRelative": 0.02,
+        "velocityMaximumRelative": 0.01,
+        "positionAbsolute": 0.016625
+      },
+      "source": "RA10000_N64_DT1_stagev2.json",
+      "pureJsColdToSteadyRunThisSupport": false
+    },
+    {
+      "ra": 100000,
+      "n": 128,
+      "initialization": "cold: theta=.5,u=v=0",
+      "dctSteadyReference": {
+        "Nu0": 4.531632341090627,
+        "NuVolume": 4.5316324158283505,
+        "NuMidplane": 4.531632478679955,
+        "NuLocalMaximum": 7.7674665228088315,
+        "uMaximum": 34.756244757377054,
+        "vMaximum": 68.66751654588741,
+        "uMaximumPosition": 0.85546875,
+        "vMaximumPosition": 0.06640625,
+        "maximumObservedStagePe": 0.7054228933698965
+      },
+      "literatureReference": {
+        "Nu0": 4.509,
+        "NuVolume": 4.519,
+        "NuMidplane": 4.519,
+        "NuLocalMaximum": 7.717,
+        "uMaximum": 34.73,
+        "vMaximum": 68.59,
+        "uMaximumPosition": 0.855,
+        "vMaximumPosition": 0.066
+      },
+      "sameGridSteadyAgreement": {
+        "NuRelative": 1e-05,
+        "temperatureMaximum": 2e-06,
+        "velocityMaximumRelativeToFieldPeak": 2e-05
+      },
+      "literatureCriteria": {
+        "averageNuRelative": 0.01,
+        "localMaximumNuRelative": 0.02,
+        "velocityMaximumRelative": 0.01,
+        "positionAbsolute": 0.008812500000000001
+      },
+      "source": "RA100000_N128_DT1_stagev2.json",
+      "pureJsColdToSteadyRunThisSupport": false
+    },
+    {
+      "ra": 1000000,
+      "n": 192,
+      "initialization": "cold: theta=.5,u=v=0",
+      "dctSteadyReference": {
+        "Nu0": 8.852661159604214,
+        "NuVolume": 8.852661087379415,
+        "NuMidplane": 8.85266103335123,
+        "NuLocalMaximum": 17.750825114318175,
+        "uMaximum": 64.90533747394937,
+        "vMaximum": 220.56940272387646,
+        "uMaximumPosition": 0.8515625,
+        "vMaximumPosition": 0.0390625,
+        "maximumObservedStagePe": 1.5917539785284038
+      },
+      "literatureReference": {
+        "Nu0": 8.817,
+        "NuVolume": 8.8,
+        "NuMidplane": 8.799,
+        "NuLocalMaximum": 17.925,
+        "uMaximum": 64.63,
+        "vMaximum": 219.36,
+        "uMaximumPosition": 0.85,
+        "vMaximumPosition": 0.038
+      },
+      "sameGridSteadyAgreement": {
+        "NuRelative": 1e-05,
+        "temperatureMaximum": 2e-06,
+        "velocityMaximumRelativeToFieldPeak": 2e-05
+      },
+      "literatureCriteria": {
+        "averageNuRelative": 0.01,
+        "localMaximumNuRelative": 0.02,
+        "velocityMaximumRelative": 0.01,
+        "positionAbsolute": 0.006208333333333333
+      },
+      "source": "RA1000000_N192_DT1_stagev3.json",
+      "pureJsColdToSteadyRunThisSupport": false
+    }
+  ],
+  "warm128": {
+    "packet": {
+      "file": "RA1000000_N128_warm_comparison.json.gz",
+      "sha256": "805ac2cda26191c1f7b4abf96aca315aff9c1a600207f55258f7872ed1985ccd",
+      "uncompressedBytes": 5603261,
+      "ra": 1000000.0,
+      "n": 128,
+      "jsDt": 9.27173170463948e-07,
+      "originalDctDt": 7.32421875e-06,
+      "source": "RA1000000_N128_WARM_FROM192.npz",
+      "sourceSHA256": "f76763aa681a2f75e0fb972ae8cb382281ead150bbfce175b24ec6cec8f97dc8",
+      "coldStart": false
+    },
+    "reference": {
+      "time": 0.17500000000000002,
+      "steps": 49623,
+      "Nu0": 8.886861288582027,
+      "NuMidplane": 8.886861085054454,
+      "NuVolume": 8.886861173360309,
+      "NuCold": 8.886861288582029,
+      "NuSectionSpread": 2.0352757523767195e-07,
+      "NuLocalMaximum": 18.023767681374892,
+      "uMaximum": 64.98587740705797,
+      "uMaximumPosition": 0.84765625,
+      "vMaximum": 220.55627734067386,
+      "vMaximumPosition": 0.03515625,
+      "divergence": 6.707523425575346e-12,
+      "pressureSolveResidualMax": 5.968558980384842e-13,
+      "pressureSolveRhsMax": 23.222048466301885,
+      "maximumProjectionRelativeResidual": 4.7302784192690164e-14,
+      "currentCellPe": 1.7305031846565182,
+      "maximumObservedStagePe": 1.7341070318287994,
+      "temperatureMin": 0.0038133568857819486,
+      "temperatureMax": 0.9961866431142181,
+      "energyErrorJ": 2.7755575615628914e-17,
+      "cumulativeBoundaryHeatJ": [
+        1.5550948021636044,
+        -1.5550948021636044
+      ],
+      "change": {
+        "temperature": 1.1423990586845179e-08,
+        "relativeVelocity": 6.326740160275307e-08,
+        "relativeNu": 6.910006604682748e-08
+      }
+    },
+    "coldStart": false
+  },
+  "steadyDetection": {
+    "temperatureMaximumChange": 1e-07,
+    "velocityChangeRelative": 1e-06,
+    "NuRelativeChange": 1e-06,
+    "consecutiveIntervals": 2,
+    "sampleIntervalByRa": {
+      "10000": 0.1,
+      "100000": 0.025,
+      "1000000": 0.025
+    },
+    "shortTailIsNotSteadyDetection": true
+  },
+  "mandatoryChecks": {
+    "maximumStagePe": 2,
+    "temperatureOffsetLower": -1e-10,
+    "temperatureOffsetUpper": 1.0000000001,
+    "divergenceNormalizedByMaxOneOrSpeedOverCell": 1e-09,
+    "totalEnergyErrorAbsolute": 1e-08,
+    "allStagesChecked": true,
+    "failedStepAtomic": true
+  },
+  "basePackClarification": "PACK.json originalDctDt is the COLD/default diffusion bound; use JS_RESULTS.dctSteadyStateSafeDt for the loaded steady field.",
+  "originalSources": {
+    "paper": "de Vahl Davis1983 TableV, Pr=.71; velocities normalized by alpha/L",
+    "ownerPackSHA256": "22029fe4045039c60b4459b4120a66efe408dd96135a454ab2d80c4cb6cd1c6d",
+    "Nu0CrossCheckURL": "https://www.frontiersin.org/journals/mechanical-engineering/articles/10.3389/fmech.2018.00015/full",
+    "primaryHostedTextURL": "https://www.academia.edu/32025749/NATURAL_CONVECTION_OF_AIR_IN_A_SQUARE_CAVITY_A_BENCH_MARK_NUMERICAL_SOLUTION",
+    "newPrimaryPageImageRead": false,
+    "Ra1e5Positions": "Newly read from hosted TableV text; not claimed supplied/verified by original pack",
+    "Ra1e6VPosition": ".038 is owner-pack rounded value; hosted TableV text .0379 retained as source precision note",
+    "rawThirdPartyTablesRedistributed": false
+  },
+  "wholeRaContinuumApproved": false,
+  "releaseApproved": false,
+  "sourceSHA256": {
+    "RA1000000_N128_WARM_FROM192.npz": "f76763aa681a2f75e0fb972ae8cb382281ead150bbfce175b24ec6cec8f97dc8",
+    "RESULTS.json": "47e550cd229c7cba31b27e1fdc427570f2eb2a923581f18698ec5b43e1e235c5"
+  },
+  "generatorSHA256": "5536f8fd11bbf35ad4c975a7b3eb3c0b4b0091253360703c79d8e7494b7cb5e0"
+}

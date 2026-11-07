@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "file": "RA1000000_N128_warm_comparison.json.gz",
+      "sha256": "805ac2cda26191c1f7b4abf96aca315aff9c1a600207f55258f7872ed1985ccd",
+      "uncompressedBytes": 5603261,
+      "ra": 1000000.0,
+      "n": 128,
+      "jsDt": 9.27173170463948e-07,
+      "originalDctDt": 7.32421875e-06,
+      "source": "RA1000000_N128_WARM_FROM192.npz",
+      "sourceSHA256": "f76763aa681a2f75e0fb972ae8cb382281ead150bbfce175b24ec6cec8f97dc8",
+      "coldStart": false
+    }
+  ],
+  "tolerances": {
+    "projectionVelocityMax": 1e-08,
+    "projectionPressureMaxFloor": 1e-05,
+    "projectionPressureRelativeToMax": 1e-09,
+    "continuationTemperatureMax": 1e-09,
+    "continuationVelocityMax": 1e-07,
+    "continuationNuAbsolute": 1e-07,
+    "literatureAverageNuRelative": 0.01,
+    "literatureLocalNuRelative": 0.02
+  }
+}

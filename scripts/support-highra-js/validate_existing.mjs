@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';import {performance} from 'node:perf_hook
 import {projectFaces} from '../../dynamic/dev/cavity.mjs';
 import {createNeumannMultigrid as originalMg} from '../../dynamic/dev/poisson-multigrid.mjs';
 const root=new URL('../../',import.meta.url),dir=new URL('docs/dynamic/support-highra-js/',root),sha=x=>createHash('sha256').update(x).digest('hex');
-const pack=JSON.parse(readFileSync(new URL('PACK.json',dir))),patches=[];
+const warmOnly=process.argv.includes('--warm-only'),pack=JSON.parse(readFileSync(new URL(warmOnly?'WARM_RUN_PACK.json':'PACK.json',dir))),patches=[];
 function change(raw,needle,replacement,label){if(raw.split(needle).length!==2)throw Error('Source changed: '+label);patches.push({label,needle,replacement});return raw.replace(needle,replacement);}
 const mgRaw=readFileSync(new URL('dynamic/dev/poisson-multigrid.mjs',root),'utf8');
 const mgDiagnostic=change(mgRaw,'nx>128||ny>128','nx>192||ny>192','MG dimension admission only');
@@ -48,7 +48,7 @@ for(const item of pack.cases){
  const t=performance.now(),m=model(data),setupMs=performance.now()-t;let elapsed=0;const checkpoints=[];
  if(Math.abs(m.safeDt-dt)>1e-14*Math.max(1,dt))throw Error('Independent dt formula differs from original JS');
  for(let step=1;step<=16;step++){const clock=performance.now();m.step(dt,false);elapsed+=performance.now()-clock;const ref=data.checkpoints.find(x=>x.step===step);if(ref)checkpoints.push({step,...difference(m.snapshot(),ref.state,n,ra)});}
- const final=m.snapshot(),file=`JS_RA${ra}_N${n}_tail.json.gz`,bytes=gzipSync(Buffer.from(JSON.stringify(final)));writeFileSync(new URL(file,dir),bytes,{flag:'wx'});
+ const final=m.snapshot(),file=`JS_RA${ra}_N${n}_${warmOnly?'warm_':''}tail.json.gz`,bytes=gzipSync(Buffer.from(JSON.stringify(final)));writeFileSync(new URL(file,dir),bytes,{flag:'wx'});
  let originalRejects192=false;try{if(n===192)originalMg({nx:n,ny:n,dx:1/n,dy:1/n});}catch{originalRejects192=true;}
  const peak=Math.max(1,maxAbs(data.initial.u),maxAbs(data.initial.v));
  const row={ra,n,dt,mgBuildMs:buildMs,levels:mg.levels,projections,rk2SetupMs:setupMs,measuredSixteenStepsMs:elapsed,meanMeasuredStepMs:elapsed/16,checkpoints,
@@ -57,12 +57,12 @@ for(const item of pack.cases){
   actualTailFile:file,actualTailSHA256:sha(bytes),heapUsedBytes:process.memoryUsage().heapUsed};results.push(row);
  console.error(JSON.stringify({ra,n,mgBuildMs:buildMs,projectionIterations:projections.map(x=>x.iterations),stepMs:elapsed/16,last:checkpoints.at(-1)}));
 }
-const failureData=open(pack.failureReplay),replays=[];
-for(const expected of failureData.trials){const m=model(failureData),dt=expected.dt;let accepted=0,failure=null,atomic=null;
+const failureData=warmOnly?null:open(pack.failureReplay),replays=[];
+for(const expected of failureData?.trials??[]){const m=model(failureData),dt=expected.dt;let accepted=0,failure=null,atomic=null;
  for(let i=0;i<64;i++){const before=JSON.stringify(m.snapshot());try{m.step(dt,false);accepted++;}catch(e){failure=e.message;atomic=before===JSON.stringify(m.snapshot());break;}}
  const last=m.snapshot();replays.push({factor:expected.factor,dt,acceptedSteps:accepted,expectedAcceptedSteps:expected.acceptedSteps,failure,atomic,
   final:difference(last,expected.last,128,1e6),scope:failureData.scope});console.error(JSON.stringify({replay:replays.at(-1)}));
 }
 const files=['dynamic/dev/cavity.mjs','dynamic/dev/poisson-multigrid.mjs','dynamic/dev/thermal-wall-cavity.mjs'];
-writeFileSync(new URL('JS_RESULTS.json',dir),JSON.stringify({cases:results,failureReplays:replays,patches,sourceSHA256:Object.fromEntries(files.map(p=>[p,sha(readFileSync(new URL(p,root)))])),diagnosticSHA256:{mg:sha(mgDiagnostic),rk2:sha(diagnosed)},
+writeFileSync(new URL(warmOnly?'JS_WARM_RESULTS.json':'JS_RESULTS.json',dir),JSON.stringify({cases:results,failureReplays:replays,patches,sourceSHA256:Object.fromEntries(files.map(p=>[p,sha(readFileSync(new URL(p,root)))])),diagnosticSHA256:{mg:sha(mgDiagnostic),rk2:sha(diagnosed)},
  generatorSHA256:sha(readFileSync(new URL(import.meta.url))),fullJsColdToSteadyVerified:false,releaseApproved:false},null,2)+'\n',{flag:'wx'});

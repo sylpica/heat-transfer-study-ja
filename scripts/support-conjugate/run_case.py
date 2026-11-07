@@ -7,8 +7,12 @@ import numpy as np
 from models import FVM,P1
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'docs/dynamic/support-conjugate'
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--method',choices=['fv','p1'],default='fv');p.add_argument('--grid',type=int,default=32);p.add_argument('--ra',type=int,default=1000);p.add_argument('--K',type=float,default=.5);p.add_argument('--C',type=float,default=2);p.add_argument('--source',type=float,default=0);p.add_argument('--end',type=float,default=3);p.add_argument('--tag',required=True);a=p.parse_args();assert a.tag.isalnum();out=OUT/(a.tag+'.json');state=out.with_suffix('.npz');assert not out.exists() and not state.exists(),'Protect saved result'
-    c=dict(n=a.grid,ra=a.ra,K=a.K,C=a.C,source=a.source);m=(FVM if a.method=='fv' else P1)(**c);history=[];previous=None;steady_count=0;start=time.perf_counter();nextlog=10;failure=None
+    p=argparse.ArgumentParser();p.add_argument('--method',choices=['fv','p1'],default='fv');p.add_argument('--grid',type=int,default=32);p.add_argument('--ra',type=int,default=1000);p.add_argument('--K',type=float,default=.5);p.add_argument('--C',type=float,default=2);p.add_argument('--source',type=float,default=0);p.add_argument('--end',type=float,default=3);p.add_argument('--tag',required=True);p.add_argument('--seed');a=p.parse_args();assert a.tag.isalnum();out=OUT/(a.tag+'.json');state=out.with_suffix('.npz');assert not out.exists() and not state.exists(),'Protect saved result'
+    c=dict(n=a.grid,ra=a.ra,K=a.K,C=a.C,source=a.source);m=(FVM if a.method=='fv' else P1)(**c);
+    if a.seed:
+        from seed import initialize_from_own_coarse
+        initialize_from_own_coarse(m,OUT/a.seed,a.method)
+    history=[];previous=None;steady_count=0;start=time.perf_counter();nextlog=10;failure=None
     try:
         for target in np.arange(.1,a.end+.05,.1):
             while m.time<target:
@@ -20,7 +24,7 @@ def main():
             history.append(r);previous=(m.T.copy(),m.u.copy(),m.v.copy());print(json.dumps({'sample':a.tag,**r,'consecutiveSteadyIntervals':steady_count}),flush=True)
             if steady_count>=2:break
     except ValueError as e:failure=str(e)
-    result={'config':c,'method':a.method,'history':history,'last':m.metrics(),'steady':steady_count>=2,'failure':failure,'elapsedSeconds':time.perf_counter()-start,'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'sourceSHA256':hashlib.sha256(Path(__file__).with_name('models.py').read_bytes()).hexdigest(),'stateFile':state.name,'releaseApproved':False}
+    result={'config':c,'method':a.method,'initialization':'own-method coarse steady interpolation' if a.seed else 'uniform fluid/solid cell or free-node initial .5; fixed nodes prescribed','seed':a.seed,'history':history,'last':m.metrics(),'steady':steady_count>=2,'failure':failure,'elapsedSeconds':time.perf_counter()-start,'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'sourceSHA256':hashlib.sha256(Path(__file__).with_name('models.py').read_bytes()).hexdigest(),'stateFile':state.name,'releaseApproved':False}
     np.savez_compressed(state,temperature=m.T,u=m.u,v=m.v,pressureStageMean=m.p,heats=m.heats,compensation=m.comp,cellMeans=m.cell_means(),initial=m.initial,time=m.time,steps=m.steps);out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'output':str(out),'steady':result['steady'],'failure':failure,'seconds':result['elapsedSeconds']}),flush=True)
     if failure or not result['steady']:raise SystemExit(1)
 if __name__=='__main__':main()

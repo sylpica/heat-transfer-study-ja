@@ -178,6 +178,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify joint finite-capacity wall and projected buoyancy Worker with full pressure and heat restoration
+        run: node tests/dynamic-thermal-wall-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify solid-wall and prescribed-flow temperature coupling against independent time and manufactured references
         run: node tests/dynamic-conjugate-worker-browser.mjs
         env:

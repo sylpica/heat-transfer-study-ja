@@ -163,6 +163,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Exercise fixed-wall air pipe, local resulting wall heat, accepted state and rollback
+        run: node tests/dynamic-pipe-wall-temperature-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify solid-wall and prescribed-flow temperature coupling against independent time and manufactured references
         run: node tests/dynamic-conjugate-worker-browser.mjs
         env:

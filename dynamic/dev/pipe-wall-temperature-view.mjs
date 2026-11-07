@@ -1,0 +1,20 @@
+// Constant wall temperature: actual local wall heat is a result, never an imposed flux.
+import {heatedPipeLayout,sampleHeatedPipe} from './heated-pipe-view.mjs';
+export {heatedPipeLayout,sampleHeatedPipe};
+const finite=(v,name)=>{if(typeof v!=='number'||!Number.isFinite(v))throw Error(`${name}は有限値が必要です。`);return v;};
+const compact=v=>v!==0&&(Math.abs(v)<.001||Math.abs(v)>=1e4)?v.toExponential(2):Number(v.toPrecision(4)).toString();
+export function drawWallTemperaturePipe(canvas,s,m,{range,probe=[.75,.5],velocityScale,arrows=true}={}){
+ const reading=sampleHeatedPipe(s,m,probe),p=heatedPipeLayout(m,canvas.clientWidth),[low,high]=range||[];
+ finite(low,'色下限');finite(high,'色上限');finite(velocityScale,'速度基準');if(s.wallHeatFluxWPerM2.length!==m.nx)throw Error('壁熱の断面数が不正です。');s.wallHeatFluxWPerM2.forEach(q=>finite(q,'実壁熱流束'));if(!(high>low&&velocityScale>0))throw Error('色/速度スケールが不正です。');
+ const ratio=devicePixelRatio||1,W=p.logicalWidth,H=p.logicalHeight;canvas.style.width='100%';canvas.width=Math.round(W*ratio);canvas.height=Math.round(H*ratio);canvas.dataset.plot=JSON.stringify(p);const ctx=canvas.getContext('2d'),fg=getComputedStyle(document.body).getPropertyValue('--fg').trim()||'#152538';ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,W,H);
+ const color=t=>`hsl(${240*(1-Math.max(0,Math.min(1,(t-low)/(high-low))))} 68% 52%)`;
+ for(let j=0;j<m.nr;j++)for(let i=0;i<m.nx;i++){ctx.fillStyle=color(s.temperature[j*m.nx+i]);ctx.fillRect(p.left+p.width*i/m.nx,p.top+p.height*(1-(j+1)/m.nr),p.width/m.nx+.5,p.height/m.nr+.5);}
+ for(let i=0;i<m.nx;i++){ctx.fillStyle=color(s.wallTemperature[i]);ctx.fillRect(p.left+p.width*i/m.nx,p.top-4,p.width/m.nx+.5,4);}
+ ctx.strokeStyle=fg;ctx.lineWidth=1;ctx.strokeRect(p.left,p.top,p.width,p.height);ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(p.left-20,p.base);ctx.lineTo(p.left+p.width+20,p.base);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle=fg;ctx.font='14px system-ui';ctx.fillText('環帯平均温度 [K]・指定発達速度',8,20);ctx.fillText(`指定円周壁温 Tw=${compact(s.wallTemperature[0])} K`,8,43);ctx.font='12px system-ui';ctx.fillText('r≥0 の半径断面（全周一様・アプリ作成）',8,64);ctx.fillText('r [m]',3,p.top-12);ctx.fillText(compact(m.radius),2,p.top+12);ctx.fillText('0',28,p.base);ctx.fillText('対称軸：面積0、熱流0（壁ではない）',p.left,p.base+22);ctx.fillText('0',p.left,p.base+46);ctx.textAlign='right';ctx.fillText(`${compact(m.width)} m`,p.left+p.width,p.base+46);ctx.textAlign='left';ctx.fillText('x → 入口から出口',p.left,p.base+66);ctx.fillText(p.verticalExaggeration>1.0001?`半径方向×${p.verticalExaggeration.toFixed(2)}拡大、軸は実寸`:'図の縦横は実寸比',8,H-9);
+ function arrow(x,y,dx,dy){if(dx===0&&dy===0)return;const angle=Math.atan2(dy,dx);for(const [stroke,width]of [['#fff',4],['#111',1.6]]){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+dx,y+dy);ctx.moveTo(x+dx-5*Math.cos(angle-.6),y+dy-5*Math.sin(angle-.6));ctx.lineTo(x+dx,y+dy);ctx.lineTo(x+dx-5*Math.cos(angle+.6),y+dy-5*Math.sin(angle+.6));ctx.stroke();}}
+ if(arrows){const stride=Math.max(1,Math.floor(m.nr/4));for(let j=0;j<m.nr;j+=stride)for(const x of [.15,.45,.75])arrow(p.left+p.width*x,p.base-p.height*(j+.5)/m.nr,.1*p.width*m.rowAreaMeanVelocityMPerS[j]/velocityScale,0);for(const x of [.25,.55,.85]){const q=s.wallHeatFluxWPerM2[Math.min(m.nx-1,Math.floor(x*m.nx))];if(q!==0)arrow(p.left+p.width*x,p.top+(q>0?-24:5),0,q>0?25:-25);}}
+ // Mark the actual annular representative, not the pointer as a pointwise T.
+ const x=p.left+reading.x/m.width*p.width,y=p.base-reading.areaCentroidRadius/m.radius*p.height;for(const [stroke,width]of [['#fff',5],['#111',2]]){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x-6,y);ctx.lineTo(x+6,y);ctx.moveTo(x,y-6);ctx.lineTo(x,y+6);ctx.stroke();}
+ canvas.setAttribute('aria-label',`時刻${s.time}秒。全円管のr≥0半径断面、各色は全周環帯体積平均。対称軸r=0の熱流0、外周壁r=${m.radius}mの指定温度${s.wallTemperature[0]}K。熱流束は各断面の結果です。測定環帯平均温度${reading.temperatureK.toFixed(7)}K。半径方向表示倍率${p.verticalExaggeration.toFixed(2)}。流速は指定放物線の環帯平均で、流れの時間変化や3Dを計算しません。矢印キーで隣のセルへ移動。`);
+ return {plot:p,reading};
+}

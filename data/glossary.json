@@ -6607,7 +6607,8 @@
     "ja": "対流物質移動係数",
     "en": "convective mass transfer coefficient",
     "aliases": [
-      "濃度基準物質移動係数"
+      "濃度基準物質移動係数",
+      "物質移動係数"
     ],
     "category": "物質移動",
     "brief": "表面と流体の濃度差に対する、対流物質移動の流束の比例係数。",
@@ -8522,7 +8523,8 @@
     "en": "eddy viscosity",
     "category": "乱流",
     "aliases": [
-      "乱流動粘性係数"
+      "乱流動粘性係数",
+      "渦拡散率"
     ],
     "brief": "乱流による運動量輸送を、動粘度と似た形でモデル化する係数。",
     "meaning": "乱流による運動量輸送を、動粘度と似た形でモデル化する係数。",
@@ -9500,7 +9502,8 @@
     "en": "boiling number",
     "category": "相変化",
     "aliases": [
-      "Bo数（沸騰）"
+      "Bo数（沸騰）",
+      "沸騰数"
     ],
     "brief": "管内沸騰の壁熱流束を質量速度と潜熱で割った無次元量。",
     "meaning": "管内沸騰の壁熱流束を質量速度と潜熱で割った無次元量。",
@@ -15552,7 +15555,8 @@
     "ja": "境界層エネルギー方程式",
     "en": "boundary layer energy equation",
     "aliases": [
-      "エネルギー方程式（境界層）"
+      "エネルギー方程式（境界層）",
+      "エネルギー方程式"
     ],
     "category": "境界層",
     "brief": "薄い境界層の中で流体が顕熱を運ぶ様子を表す式で、移流と壁法線方向の伝導のつり合いを扱う。",
@@ -16474,6 +16478,946 @@
       "type": "supplement",
       "guideId": "chapter3-effectiveness-ntu",
       "reference": "原典第3章 §3.3に基づく独立執筆の補足。原典に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "internal-energy",
+    "ja": "内部エネルギー",
+    "en": "internal energy",
+    "meaning": "系（物体）の内部に蓄えられるエネルギーの総量。本書では主に温度で決まる熱的な内部エネルギー U を指し、熱力学第一法則で熱・仕事と結ばれる。",
+    "brief": "系（物体）の内部に蓄えられるエネルギーの総量。",
+    "beginner": "物体の中に蓄えられたエネルギーの総量です。熱を加えると増え、熱や仕事として外へ出すと減ります。",
+    "detail": "閉じた系の第一法則は原典 (1.1) の形 Q̇ = Ẇ_k + dU/dt（系へ入る熱と系から出る仕事を正とする）。固体・液体など体積変化が無視でき比熱が一定なら ΔU = mcΔT と書ける。単位質量あたりは比内部エネルギー û [J/kg] で、エンタルピーとは ĥ = û + p/ρ の関係がある（原典 §11.2）。",
+    "formula": "Q̇ = Ẇ_k + dU/dt（原典 (1.1)）、ΔU = mcΔT（一定比熱・体積変化なし）",
+    "unit": "U: J、û: J/kg",
+    "category": "熱力学",
+    "related": [
+      "エントロピー",
+      "熱容量",
+      "比熱容量",
+      "検査体積のエネルギー収支"
+    ],
+    "relatedSections": [
+      "1.2"
+    ],
+    "confusions": [
+      "総括熱伝達率 U [W/(m²·K)] と内部エネルギー U [J] は同じ文字でも別物であり、原典 §2.4 も混同への注意を明記している。単位で見分けること。"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter1-energy-balance",
+      "reference": "原典第1章 §1.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [
+      "普遍気体定数"
+    ],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "gas-constant",
+    "ja": "気体定数",
+    "en": "universal gas constant / specific gas constant",
+    "meaning": "理想気体の状態方程式に現れる定数。物質量あたりの普遍気体定数 R◦ と、単位質量あたりの気体定数 R = R◦/M を区別する。",
+    "brief": "理想気体の状態方程式に現れる定数。",
+    "beginner": "気体の圧力・体積・温度の関係を表す式に出てくる定数です。気体の種類によらない普遍気体定数と、種類ごとに決まる気体定数があります。",
+    "detail": "原典 §11.2 では普遍気体定数を R◦ と書き、R◦ = 8314.46 J/(kmol·K)（付録の定数表では 8314.462618…）。モル基準では pV̄ = R◦T、質量基準では p = ρRT で、R = R◦/M（M はモル質量）。混合物では平均モル質量から実効的な R が決まる。",
+    "formula": "pV̄ = R◦T、R = R◦/M",
+    "unit": "R◦: J/(kmol·K)、R: J/(kg·K)",
+    "category": "熱力学",
+    "related": [
+      "モル質量",
+      "混合物の平均モル質量",
+      "理想気体の全モル濃度",
+      "モル濃度"
+    ],
+    "relatedSections": [
+      "11.2"
+    ],
+    "confusions": [
+      "R◦ は気体の種類によらないが、質量基準の R は気体ごとに異なる。モル質量の単位（kg/kmol か g/mol か）を取り違えると 1000 倍ずれる。"
+    ],
+    "example": "空気（M≈28.97 kg/kmol）では R = 8314.46/28.97 ≈ 287 J/(kg·K)。",
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "continuity-equation",
+    "ja": "連続の式",
+    "en": "continuity equation",
+    "meaning": "質量保存を表す方程式。流れの中で流体が湧きも消えもしないことを、密度と速度場の関係として表す。",
+    "brief": "質量保存を表す方程式。",
+    "beginner": "流れの途中で流体が勝手に増えたり減ったりしない、という事実を式にしたものです。管が細い所では速く流れることも、この式から出てきます。",
+    "detail": "一般形は ∂ρ/∂t + ∇·(ρV) = 0。非圧縮・定常・二次元では原典 §6.2 の (6.11a) ∂u/∂x + ∂v/∂y = 0 となる。境界層や管内流の支配方程式の一つで、運動量方程式・エネルギー方程式と組み合わせて解く。成分ごとの保存は成分保存方程式が担う。",
+    "formula": "∂u/∂x + ∂v/∂y = 0（非圧縮・二次元、原典 (6.11a)）",
+    "unit": "各項 1/s",
+    "category": "流体力学",
+    "related": [
+      "運動量方程式",
+      "境界層エネルギー方程式",
+      "成分保存方程式",
+      "境界層"
+    ],
+    "relatedSections": [
+      "6.2"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter6-flat-boundary",
+      "reference": "原典第6章 §6.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "momentum-equation",
+    "ja": "運動量方程式",
+    "en": "momentum equation",
+    "meaning": "流体の運動量保存（ニュートンの第二法則）を表す方程式。圧力・粘性による力と、流れの勢いの変化を結ぶ。",
+    "brief": "流体の運動量保存を表す方程式。",
+    "beginner": "流れがどう加速・減速するかを決める式です。押す力と流れの勢いの変化のつり合いを表します。",
+    "detail": "粘性流の基本形はナビエ-ストークス方程式。境界層近似では原典 §6.2 の境界層運動量方程式となり、平板（零圧力勾配）では u∂u/∂x + v∂u/∂y = ν∂²u/∂y²。連続の式と連立して速度分布を与え、積分形に直した運動量積分方程式も同じ節で扱われる。",
+    "formula": "u∂u/∂x + v∂u/∂y = ν∂²u/∂y²（零圧力勾配の境界層）",
+    "unit": "各項 m/s²",
+    "category": "流体力学",
+    "related": [
+      "連続の式",
+      "境界層",
+      "境界層エネルギー方程式",
+      "運動量厚さ",
+      "速度境界層"
+    ],
+    "relatedSections": [
+      "6.2"
+    ],
+    "confusions": [
+      "運動量方程式は流れの勢いの収支であり、エネルギーの収支を表すエネルギー方程式（境界層エネルギー方程式）とは別物。"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter6-flat-boundary",
+      "reference": "原典第6章 §6.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "streamline",
+    "ja": "流線",
+    "en": "streamline",
+    "meaning": "ある瞬間に、流れの各点で速度ベクトルに接するように引いた曲線。定常流では流体粒子の軌跡と一致する。",
+    "brief": "各点で流れの向きに接する曲線。",
+    "beginner": "流れの様子を描いた線です。その瞬間、その場所の流れの向きを、線の向きが表します。",
+    "detail": "原典 §6.2 では流れ関数 ψ の等値線として導入され、流線を横切る流れはなく、二本の流線の間を流れる質量流量は ψ の差で与えられる。定常流では流線は粒子の軌跡そのものだが、非定常流では瞬間の流線と粒子軌跡（流跡線）は一致しない。",
+    "formula": "定常・二次元では流線は流れ関数 ψ = 一定の曲線",
+    "unit": "なし",
+    "category": "流体力学",
+    "related": [
+      "境界層",
+      "速度境界層",
+      "運動量方程式",
+      "よどみ点"
+    ],
+    "relatedSections": [
+      "6.2"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter6-flat-boundary",
+      "reference": "原典第6章 §6.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "sutherland-formula",
+    "ja": "サザーランド式",
+    "en": "Sutherland formula",
+    "meaning": "気体の粘度 μ の温度依存性を表す近似式。温度が上がると気体の粘度が増えることを表す。",
+    "brief": "気体の粘度の温度依存性を表す近似式。",
+    "beginner": "気体は熱くなると粘り気が増えます（液体とは逆です）。その増え方を計算する式です。",
+    "detail": "原典 (6.122)：μ/μ_ref = (T/T_ref)^{3/2}·(T_ref + S)/(T + S)。S は気体ごとのサザーランド定数、温度は K で入れる。膜温度などで物性を評価する際の温度補正に使う。液体の粘度は温度上昇で低下し、気体とは逆の傾向である。",
+    "formula": "μ/μ_ref = (T/T_ref)^{1.5} (T_ref+S)/(T+S)（原典 (6.122)）",
+    "unit": "μ: Pa·s、T: K、S: K",
+    "category": "流体力学",
+    "related": [
+      "動粘度",
+      "膜温度（物性評価）",
+      "密度"
+    ],
+    "relatedSections": [
+      "6.8"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter6-flat-boundary",
+      "reference": "原典第6章 §6.8に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [
+      {
+        "id": "supp-chapter-ch7-nu-boundary",
+        "label": "十分発達した円管層流のNuの前提条件"
+      }
+    ],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "fully-developed-flow",
+    "ja": "十分発達した流れ",
+    "en": "fully developed flow",
+    "meaning": "管内などの流れで、速度分布が流れ方向に変化しなくなった状態。熱的には無次元温度分布の形が流れ方向に変わらなくなった状態をいう。",
+    "brief": "速度分布が流れ方向に変化しなくなった流れ。",
+    "beginner": "管の入口では流れの形がどんどん変わりますが、十分下流では形が変わらなくなります。その落ち着いた状態です。",
+    "detail": "水力学的な条件は原典 (7.2) の ∂u/∂x = 0（断面内の各位置で）。熱的に十分発達とは (T_s−T)/(T_s−T_b) の分布形が x によらないことで、円管では等温壁で Nu = 3.657、等熱流束で Nu = 4.364 に落ち着く。入口に近い助走区間では境界層が発達途中で、局所熱伝達率は発達域より大きい。",
+    "formula": "∂u/∂x = 0（水力学的条件、原典 (7.2)）",
+    "unit": "なし",
+    "category": "管内対流",
+    "related": [
+      "水力学的に十分発達した流れ",
+      "熱的に十分発達した流れ",
+      "水力学的助走長",
+      "熱的助走長",
+      "混合平均温度"
+    ],
+    "relatedSections": [
+      "7.2"
+    ],
+    "confusions": [
+      "「十分発達」は速度だけの状態ではない。速度が発達しても温度分布が発達途中なら、熱的には未発達として扱う。"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter7-internal-flow",
+      "reference": "原典第7章 §7.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [
+      "管束"
+    ],
+    "relatedQuestions": [
+      {
+        "id": "supp-geometry-correlation-crossflow-tube-bank-v1",
+        "label": "管群に単独円柱の相関を使う可否"
+      }
+    ],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "tube-bank",
+    "ja": "管群",
+    "en": "tube bank / tube bundle",
+    "meaning": "多数の円管（円柱）を規則正しく並べた配列と、そのまわりを流れる流体との熱移動。熱交換器の伝熱面として使われる。",
+    "brief": "多数の円管を規則正しく並べた配列。",
+    "beginner": "パイプを何本も並べた束です。まわりを流れる流体との間で熱を交換します。",
+    "detail": "原典 §7.6。配列には格子配列（in-line）と千鳥配列（staggered）がある。横流れの相関は Nu_D = C Re_D^n Pr^{1/3}（原典 (7.69)）の形で、Re_D は管の間の最小断面積における最大流速で定義する。列数が少ない場合は列数の補正が要る。",
+    "formula": "Nu_D = C Re_D^n Pr^{1/3}（原典 (7.69)、Re_D は最大流速基準）",
+    "unit": "なし",
+    "category": "強制対流",
+    "related": [
+      "円柱横流れ",
+      "多管式熱交換器",
+      "熱交換器"
+    ],
+    "relatedSections": [
+      "7.6"
+    ],
+    "confusions": [
+      "単独円柱の横流れ相関を管群にそのまま使うことはできない。Re の定義流速も、接近流速ではなく最小断面積での最大流速である。"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter7-internal-flow",
+      "reference": "原典第7章 §7.6に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [
+      {
+        "id": "supp-dropwise-contact-angle-evidence-v1",
+        "label": "静的接触角だけで滴状凝縮を評価できるか"
+      }
+    ],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "contact-angle",
+    "ja": "接触角",
+    "en": "contact angle",
+    "meaning": "固体表面上で、気液界面が固体となす角。原典では液体の側で測る角度と定義され、濡れやすさの指標になる。",
+    "brief": "気液界面が固体表面となす角で、濡れやすさを表す。",
+    "beginner": "水滴が表面でぺたっと広がるか、丸く盛り上がるかを表す角度です。小さいほどよく濡れます。",
+    "detail": "原典 §9.6 の脚注の定義：接触角は液体の中で、表面から気液界面へ向けて測る。0° で液体が表面を完全に濡らし、180° は濡れない球状の液滴に対応する。親水性表面では小さく、疎水性表面では大きい（ハスの葉で約160°）。表面の酸化・粗さ・汚染で大きく変わり、遷移沸騰や限界熱流束、滴状凝縮の生じやすさに効く。",
+    "formula": "なし（角度そのものが量）",
+    "unit": "°（度）",
+    "category": "相変化・界面",
+    "related": [
+      "濡れ",
+      "表面張力",
+      "滴状凝縮",
+      "遷移沸騰",
+      "限界熱流束"
+    ],
+    "relatedSections": [
+      "9.6",
+      "9.10"
+    ],
+    "confusions": [
+      "角度を蒸気側で測る流儀の文献もあるため、出典では定義の向きを確認する。本書と本アプリは液体側で測る定義で統一している。"
+    ],
+    "example": "ハスの葉の接触角は約160°で、水滴はほぼ球形になって転がり落ちる（原典 §9.6 脚注）。",
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter9-latent-boiling",
+      "reference": "原典第9章 §9.6に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "wetting",
+    "ja": "濡れ",
+    "en": "wetting",
+    "meaning": "液体が固体表面に広がって接触を保つ性質・現象。接触角が小さいほど濡れがよい。",
+    "brief": "液体が固体表面に広がる性質。",
+    "beginner": "液体が表面にぴたっと付くかどうかです。よく濡れる表面では液が広がり、濡れない表面でははじかれます。",
+    "detail": "沸騰・凝縮を通じ、表面状態の中心的な概念。濡れのよい表面では核沸騰の気泡が離れやすく、原典 §9.3 では限界熱流束の検証条件の一つに数えられる。滴状凝縮は濡れを抑えた表面で起こり（原典 §9.10）、濡れ剤（wetting agent）や非濡れ被覆で接触角を変えて制御する。濡れは材質だけでなく粗さ・酸化・汚染でも変わる。",
+    "formula": "なし（程度は接触角で測る）",
+    "unit": "なし",
+    "category": "相変化・界面",
+    "related": [
+      "接触角",
+      "表面張力",
+      "滴状凝縮",
+      "膜状凝縮",
+      "核沸騰"
+    ],
+    "relatedSections": [
+      "9.7",
+      "9.10"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter9-latent-boiling",
+      "reference": "原典第9章 §9.7に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [
+      {
+        "id": "supp-section-9-2",
+        "label": "核沸騰で表面状態が重要になる理由"
+      }
+    ],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "nucleation",
+    "ja": "核生成",
+    "en": "nucleation",
+    "meaning": "液体の中に蒸気泡の核（小さな気泡）が生まれること。一般には、新しい相の小さな核が現れることをいう。",
+    "brief": "新しい相の小さな核が生まれること。",
+    "beginner": "沸騰の「種」ができることです。液体の中に小さな泡のもとが現れる現象をいいます。",
+    "detail": "沸騰では、表面の微小な窪み（核生成サイト）に残った気体・蒸気が核となり、壁面過熱度が足りると成長を始める（核沸騰開始）。原典 §9.2 の例では、平衡にある核の半径は R_b = 2σ/(p_sat(T_w) − p_l) で、過熱度が大きいほど小さな核まで活性化する。核を持たない液体が自発的に核を作る均一核生成には、はるかに大きな過熱度が要る。",
+    "formula": "R_b = 2σ/(p_sat(T_w) − p_l)（原典 §9.2）",
+    "unit": "R_b: m、σ: N/m、p: Pa",
+    "category": "沸騰・凝縮・二相流",
+    "related": [
+      "核沸騰",
+      "核沸騰開始",
+      "沸騰核生成サイト密度",
+      "表面張力",
+      "過冷却液体"
+    ],
+    "relatedSections": [
+      "9.2"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter9-latent-boiling",
+      "reference": "原典第9章 §9.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [
+      "流動沸騰"
+    ],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "convective-boiling",
+    "ja": "対流沸騰",
+    "en": "convective boiling / flow boiling",
+    "meaning": "管内などを流れる液体が、流れながら壁面で沸騰する現象。核沸騰と強制対流による蒸発の両方が効く。",
+    "brief": "流れる液体が管内などで沸騰する現象。",
+    "beginner": "プール沸騰が「止まった液体の沸騰」なら、こちらは「流れながらの沸騰」です。",
+    "detail": "原典 §9.8。熱伝達は核沸騰成分と対流成分の組合せで整理され、Chen 型の相関では h_fb/h_lo が対流数 Co と沸騰数 Boi の関数として表される（原典 (9.49)）。乾き度が上がると液膜が薄くなり、やがてドライアウトに至る。プール沸騰の相関をそのまま流動条件に使うことはできない。",
+    "formula": "h_fb/h_lo = fn(Boi, Co)（原典 (9.49)）",
+    "unit": "h: W/(m²·K)",
+    "category": "沸騰・凝縮・二相流",
+    "related": [
+      "対流数",
+      "ボイリング数",
+      "核沸騰",
+      "乾き度",
+      "管内流のドライアウト"
+    ],
+    "relatedSections": [
+      "9.8"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter9-latent-boiling",
+      "reference": "原典第9章 §9.8に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "convection-number",
+    "ja": "対流数",
+    "en": "convection number",
+    "meaning": "管内対流沸騰の相関で使う無次元数。蒸気と液体の流れの比を表し、小さいほど対流蒸発の影響が強い。",
+    "brief": "管内沸騰で対流成分の効き方を表す無次元数。",
+    "beginner": "流れる二相流の中で、液体と蒸気のどちらの流れが支配的かを表す比です。",
+    "detail": "原典 (9.47)：Co ≡ ((1−x)/x)^{0.8}·(ρ_g/ρ_f)^{0.5}。x は乾き度、ρ_g・ρ_f は蒸気と液体の密度。Co が大きい（低乾き度）領域では核沸騰が支配的で、Co が小さい（高乾き度）領域では対流蒸発が支配的になる。Chen 型相関では沸騰数 Boi と組み合わせて使う。",
+    "formula": "Co = ((1−x)/x)^0.8 (ρ_g/ρ_f)^0.5（原典 (9.47)）",
+    "unit": "無次元",
+    "category": "沸騰・凝縮・二相流",
+    "related": [
+      "対流沸騰",
+      "ボイリング数",
+      "乾き度"
+    ],
+    "relatedSections": [
+      "9.8"
+    ],
+    "confusions": [
+      "対流数 Co と沸騰数 Boi は別の量。Co は流れの比、Boi は加熱の強さの比を表す。"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter9-latent-boiling",
+      "reference": "原典第9章 §9.8に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "specular-reflection",
+    "ja": "鏡面反射",
+    "en": "specular reflection",
+    "meaning": "入射した放射が、鏡のように入射角と等しい反射角で一方向へ反射されること。",
+    "brief": "鏡のように一方向へ跳ね返る反射。",
+    "beginner": "鏡の反射です。光が決まった一つの方向へだけ跳ね返ります。",
+    "detail": "原典 §10.1（図10.3）。面の粗さが放射の波長に比べて小さいときに近づく理想化で、反対の極限が拡散反射。実際の面は両者の中間にあり、放射熱交換の標準的なモデルでは拡散面が仮定される。鏡面性が効く系では形態係数による扱いも変わる。",
+    "formula": "反射角 = 入射角（面の法線を基準）",
+    "unit": "なし",
+    "category": "熱放射",
+    "related": [
+      "拡散反射",
+      "反射率",
+      "放射形態係数",
+      "灰色体"
+    ],
+    "relatedSections": [
+      "10.1"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter10-view-factors",
+      "reference": "原典第10章 §10.1に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "diffuse-reflection",
+    "ja": "拡散反射",
+    "en": "diffuse reflection",
+    "meaning": "入射した放射が、表面からあらゆる方向へ散らばって反射されること。",
+    "brief": "あらゆる方向へ散らばる反射。",
+    "beginner": "すりガラスや白い壁の反射です。光がいろいろな方向へ散らばります。",
+    "detail": "原典 §10.1（図10.3）。面の微細な粗さのために反射の方向が広がる。拡散面では射度の方向分布がランベルトの余弦則に従う。原典 §10.4 の灰色面の放射交換は、面を拡散的と仮定して組み立てられている。",
+    "formula": "なし（拡散面の射度は方向によらない）",
+    "unit": "なし",
+    "category": "熱放射",
+    "related": [
+      "鏡面反射",
+      "反射率",
+      "射度",
+      "放射形態係数"
+    ],
+    "relatedSections": [
+      "10.1"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter10-view-factors",
+      "reference": "原典第10章 §10.1に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "greenhouse-effect",
+    "ja": "温室効果",
+    "en": "greenhouse effect",
+    "meaning": "太陽光のような短波長放射は通すが、物体からの長波長（赤外）放射は通しにくい層があるため、内部が温まりやすくなる現象。",
+    "brief": "短波長は通し長波長は通しにくいために起こる保温効果。",
+    "beginner": "ガラスが日光は通すのに、中からの熱の放射は外へ逃がしにくいために、温室が暖かくなる現象です。",
+    "detail": "原典 §10.6。ガラスの透過率は波長で大きく変わり、可視域では高く、室温物体の放射が集中する赤外域ではほぼ不透明になる。この波長選択性が本質で、二酸化炭素や水蒸気を含む大気でも同じ仕組みが働く。単に「放射を閉じ込める」ではなく、透過率の波長依存性として理解する。",
+    "formula": "なし（透過率の波長依存性が本質）",
+    "unit": "なし",
+    "category": "太陽放射",
+    "related": [
+      "透過率",
+      "キルヒホッフの法則",
+      "黒体",
+      "プランクの放射法則"
+    ],
+    "relatedSections": [
+      "10.6"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter10-view-factors",
+      "reference": "原典第10章 §10.6に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "mean-beam-length",
+    "ja": "平均ビーム長",
+    "en": "mean beam length",
+    "meaning": "気体放射で、容器内の気体から壁面への放射を、一次元の気体層の放射で代表させるための等価な経路長。",
+    "brief": "気体放射を代表させる等価な経路長。",
+    "beginner": "ガスの中を放射が進む距離は方向ごとに違います。それを1つの代表長さに置き換えたものです。",
+    "detail": "原典 §10.5。幾何学的平均ビーム長は L_0 = 3.6·V/A（V は気体体積、A は周囲面積）で与えられ、形状ごとの値は表10.4 にある（立方体 2ℓ/3、球 2D/3、無限円柱 D など）。実際の放射率の評価では L_0 を約10%減らした有効長を使うことが多い。気体の放射率・吸収率は分圧と長さの積 pL で整理される。",
+    "formula": "L_0 = 3.6 V/A（原典 §10.5、表10.4）",
+    "unit": "m",
+    "category": "気体放射",
+    "related": [
+      "等温気体層の放射率",
+      "非灰色気体",
+      "吸収率",
+      "放射率"
+    ],
+    "relatedSections": [
+      "10.5"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter10-view-factors",
+      "reference": "原典第10章 §10.5に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "monte-carlo-method",
+    "ja": "モンテカルロ法",
+    "en": "Monte Carlo method",
+    "meaning": "乱数を使った統計的な試行を多数繰り返して、複雑な問題の解を近似する数値手法。",
+    "brief": "乱数による多数の試行で解を近似する手法。",
+    "beginner": "サイコロを何万回も振って平均を取るように、ランダムな試行を重ねて答えに近づける方法です。",
+    "detail": "原典 §10.3 では放射交換・形態係数の評価法として紹介される。光子（エネルギー束）の集団を射出・追跡し、吸収・反射の統計から交換量を求める。複雑な形状や鏡面性のある系にも適用できるが、統計誤差は試行数の平方根に反比例してしか減らない。",
+    "formula": "統計誤差 ∝ 1/√N（N は試行数）",
+    "unit": "なし",
+    "category": "熱放射",
+    "related": [
+      "放射形態係数",
+      "鏡面反射",
+      "拡散反射"
+    ],
+    "relatedSections": [
+      "10.3"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter10-view-factors",
+      "reference": "原典第10章 §10.3に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [
+      "分子量"
+    ],
+    "relatedQuestions": [
+      {
+        "id": "supp-mass-intro-molar-mass-rate-v1",
+        "label": "モル質量とモル移動率の換算"
+      }
+    ],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "molar-mass",
+    "ja": "モル質量",
+    "en": "molar mass",
+    "meaning": "物質 1 モルあたりの質量。混合物については、組成で平均した平均モル質量が定義される。",
+    "brief": "物質 1 モルあたりの質量。",
+    "beginner": "原子や分子を決まった個数だけ集めたときの質量です。水なら約 18 kg/kmol です。",
+    "detail": "原典 §11.2。単位は kg/kmol。モル濃度 c_i = ρ_i/M_i の換算や、普遍気体定数から気体定数 R = R◦/M を得る際に使う。混合物の平均モル質量はモル分率基準で M = Σ y_i M_i。",
+    "formula": "M = Σ y_i M_i（混合物の平均モル質量）",
+    "unit": "kg/kmol",
+    "category": "物質移動",
+    "related": [
+      "気体定数",
+      "混合物の平均モル質量",
+      "モル分率",
+      "モル濃度",
+      "質量分率"
+    ],
+    "relatedSections": [
+      "11.2"
+    ],
+    "example": "水のモル質量は約 18.02 kg/kmol、二酸化炭素は約 44.01 kg/kmol。",
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "evaporation",
+    "ja": "蒸発",
+    "en": "evaporation",
+    "meaning": "液体の表面から、液体内部での沸騰を伴わずに蒸気が発生する現象。周囲気体への物質移動として扱われる。",
+    "brief": "液体の表面から蒸気が発生する現象。",
+    "beginner": "洗濯物が乾くときの現象です。沸騰と違い、表面からだけ静かに蒸気が出ていきます。",
+    "detail": "原典 §11.7。蒸発速度は、表面における飽和濃度（質量分率）と周囲気体の濃度の差で決まり、物質移動係数で表される。蒸発には気化潜熱が要り、その熱が液体側から供給されると液温が下がる（蒸発冷却と湿球温度の原理）。蒸発する液滴では、直径の二乗が時間とともに直線的に減る D² 則（原典 (11.75)）が成り立つ。",
+    "formula": "D² の減少が時間に比例する（D² 則、原典 (11.75)）",
+    "unit": "蒸発流束 kg/(m²·s)",
+    "category": "熱・物質移動",
+    "related": [
+      "蒸発冷却",
+      "湿球温度",
+      "対流物質移動係数",
+      "露点温度",
+      "潜熱"
+    ],
+    "relatedSections": [
+      "11.7"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.7に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "dew-point-temperature",
+    "ja": "露点温度",
+    "en": "dew-point temperature",
+    "meaning": "湿った空気を圧力一定で冷やしていったとき、水蒸気が飽和に達して凝縮し始める温度。",
+    "brief": "空気を冷やして水滴がつき始める温度。",
+    "beginner": "冷たいコップに水滴がつく現象の境目の温度です。空気中の水蒸気の量だけで決まります。",
+    "detail": "原典 §11.7。露点温度 T_dp では、飽和圧力 p_sat(T_dp) が空気中の水蒸気分圧 p_v に等しい。表面温度が露点を下回ると、その面で凝縮が始まる。除湿機は冷却面を露点以下にして水分を取り除く。乾球温度（通常の温度）や湿球温度とは別の量である。",
+    "formula": "p_sat(T_dp) = p_v",
+    "unit": "°C または K",
+    "category": "熱・物質移動",
+    "related": [
+      "湿球温度",
+      "相対湿度",
+      "飽和圧力",
+      "分圧",
+      "蒸発"
+    ],
+    "relatedSections": [
+      "11.7"
+    ],
+    "confusions": [
+      "露点温度は空気の状態（水蒸気量）だけで決まり、冷やす面の性質にはよらない。湿球温度は蒸発とのつり合いで決まる別の温度。"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.7に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "sublimation",
+    "ja": "昇華",
+    "en": "sublimation",
+    "meaning": "固体が液体を経ずに直接気体になる相変化。その逆（気体から直接固体へ）も含めて扱う。",
+    "brief": "固体が液体を経ずに直接気体になる相変化。",
+    "beginner": "ドライアイスが煙になって消える現象です。液体にならずに直接気体になります。",
+    "detail": "原典 §11.4 で定義される。§11.6 ではナフタレンの昇華が、物質移動係数を測る実験法として使われる（例題11.11）。昇華速度から Sherwood 数の相関を検証でき、熱伝達との類推で結ばれる。気体から直接固体になる逆向きの過程は、霜の生成がその例である。",
+    "formula": "なし（速度は物質移動係数と濃度差で表す）",
+    "unit": "昇華潜熱 J/kg",
+    "category": "物質移動",
+    "related": [
+      "対流物質移動係数",
+      "シャーウッド数",
+      "潜熱",
+      "蒸発"
+    ],
+    "relatedSections": [
+      "11.4",
+      "11.6"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.4に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "stefan-tube",
+    "ja": "ステファン管",
+    "en": "Stefan tube",
+    "meaning": "管の底の液体が蒸発し、静止した気体の中を拡散する様子から、気体の拡散係数を測定する古典的な装置・方法。",
+    "brief": "拡散係数を測る古典的な実験装置。",
+    "beginner": "細い管の下に液体を入れ、上部へ蒸気が拡散していく速さ（液面の下がり方）から、拡散の速さを測る装置です。",
+    "detail": "原典 §11.5（例題11.10）。管内の気体は全体としてほぼ静止し、蒸気は拡散とステファン流で運ばれる。液面の低下速度を測定して拡散係数 D_12 を求める。停滞気体中のステファン拡散式の実験的裏付けとして長く使われてきた。",
+    "formula": "なし（液面低下速度と拡散式から D を決める）",
+    "unit": "D: m²/s",
+    "category": "物質移動",
+    "related": [
+      "ステファン流",
+      "物質拡散係数",
+      "等モル向流拡散",
+      "フィックの法則"
+    ],
+    "relatedSections": [
+      "11.5"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.5に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "transpiration-cooling",
+    "ja": "蒸散冷却",
+    "en": "transpiration cooling",
+    "meaning": "多孔質の壁や表面から冷却気体を吹き出させ、境界層を厚くして壁への熱伝達を減らす冷却法。",
+    "brief": "表面から気体を吹き出して熱の侵入を防ぐ冷却法。",
+    "beginner": "汗をかいて体を冷やすのと似た仕組みで、表面から気体をにじみ出させて、熱の侵入を減らします。",
+    "detail": "原典 §11.9（図11.21）。高質量移動速度での熱伝達として扱われ、吹き出しによって壁面近くの温度勾配が緩やかになり、熱流束が減る。効果は吹き出しの強さと主流の条件で決まる。ロケットノズルやガスタービン翼の冷却に応用される。",
+    "formula": "なし（効果は吹き出しの強さで変わる）",
+    "unit": "なし",
+    "category": "熱・物質移動",
+    "related": [
+      "蒸発冷却",
+      "境界層",
+      "対流熱伝達率",
+      "ステファン流"
+    ],
+    "relatedSections": [
+      "11.9"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.9に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "self-diffusion",
+    "ja": "自己拡散",
+    "en": "self-diffusion",
+    "meaning": "化学的には同一の物質の中で、区別をつけた分子（同位体で標識した分子など）が拡散する現象。フィック拡散の分子論的な基礎になる。",
+    "brief": "同一物質の中での分子の拡散。",
+    "beginner": "同じ物質同士でも、分子は絶えず動き回って混ざり合います。その動きを捉えた拡散です。",
+    "detail": "原典 §11.3 で、拡散の分子論的な意味づけとして導入される。濃度勾配がなくても、分子の熱運動によって混合が進む。液体の自己拡散係数は、原典 §11.10 の Sutherland–Einstein の枠組みで粘度と結ばれる。",
+    "formula": "なし",
+    "unit": "D: m²/s",
+    "category": "物質移動",
+    "related": [
+      "物質拡散係数",
+      "フィックの法則",
+      "平均自由行程"
+    ],
+    "relatedSections": [
+      "11.3"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.3に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "concentration-polarization",
+    "ja": "濃度分極",
+    "en": "concentration polarization",
+    "meaning": "膜分離などで、膜表面の近くの溶質濃度が主流より高くなり、分離性能を落とす現象。",
+    "brief": "膜表面に溶質がたまって性能を落とす現象。",
+    "beginner": "ろ過膜の表面に、通れない成分がたまってしまう現象です。たまると水が通りにくくなります。",
+    "detail": "原典 §11.11 の逆浸透の説明で扱われる。膜を透過する溶媒の流れが溶質を膜面へ運ぶ一方、主流への戻り拡散は限られるため、膜面の濃度が上がり、浸透圧が増えて水の透過流束が減る。流速を上げて濃度境界層を薄くすると抑えられる。",
+    "formula": "なし",
+    "unit": "なし",
+    "category": "物質移動",
+    "related": [
+      "活量",
+      "理想溶液",
+      "濃度境界層",
+      "対流物質移動係数"
+    ],
+    "relatedSections": [
+      "11.11"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.11に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "mean-free-path",
+    "ja": "平均自由行程",
+    "en": "mean free path",
+    "meaning": "気体分子が、他の分子と衝突するまでに進む平均の距離。粘度や拡散などの輸送現象を分子論で説明する際の基本量。",
+    "brief": "分子が衝突するまでに進む平均の距離。",
+    "beginner": "空気の分子が、隣の分子にぶつかるまでに進める平均の距離です。とても短い距離です。",
+    "detail": "原典では §6.2 の粘度の分子論モデルと、§11.10 の混合物の輸送物性で使われる。平均自由行程 ℓ と分子の平均速度 c̄ から、拡散係数 D ≈ (1/3)c̄ℓ、粘度 μ ≈ (1/3)ρc̄ℓ のような見積もりが得られる。常圧の気体では ℓ は 100 nm の程度である。",
+    "formula": "D ≈ (1/3) c̄ ℓ（分子論の見積もり）",
+    "unit": "m",
+    "category": "物質移動",
+    "related": [
+      "自己拡散",
+      "物質拡散係数",
+      "動粘度"
+    ],
+    "relatedSections": [
+      "6.2",
+      "11.10"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.10に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "ideal-solution",
+    "ja": "理想溶液",
+    "en": "ideal solution",
+    "meaning": "混合による熱や体積の変化がなく、各成分の蒸気圧がラウールの法則で表される、理想化された溶液。",
+    "brief": "ラウールの法則が成り立つ理想化された溶液。",
+    "beginner": "分子同士の相性が「ちょうど中立」な混ざり方をした溶液の理想形です。現実の溶液を測る基準になります。",
+    "detail": "原典 §11.2・§11.4。理想溶液では成分 i の分圧が p_i = x_i p_i,sat(T)（ラウールの法則）となり、活量係数は 1 である。実在溶液とのずれは活量・活量係数で表す。希薄側の溶質についてはヘンリーの法則が対応する近似になる。",
+    "formula": "p_i = x_i p_i,sat(T)（ラウールの法則）",
+    "unit": "p: Pa",
+    "category": "物質移動",
+    "related": [
+      "ラウールの法則",
+      "ヘンリーの法則",
+      "活量",
+      "活量係数",
+      "化学ポテンシャル"
+    ],
+    "relatedSections": [
+      "11.2",
+      "11.4"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter11-fick-mass",
+      "reference": "原典第11章 §11.2に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
+    }
+  },
+  {
+    "aliases": [],
+    "relatedQuestions": [],
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review",
+    "id": "droplet",
+    "ja": "液滴",
+    "en": "droplet",
+    "meaning": "液体が表面張力でまとまった小さな粒。凝縮では滴状凝縮の単位となり、蒸発・燃焼では縮小していく対象となる。",
+    "brief": "液体の小さな粒。",
+    "beginner": "水滴のことです。丸くなろうとする表面張力と、重力ではがれようとする力のつり合いで、振る舞いが決まります。",
+    "detail": "原典 §9.10 の滴状凝縮では、液滴の生成・成長・合体と、重力で滑落するまでの周期が熱伝達を決める。§11.7 では、蒸発する液滴の直径が D² 則で減ることが示される。液滴の形は接触角と表面張力で決まり、ボンド数が小さいほど球形に近づく。",
+    "formula": "なし",
+    "unit": "径 m",
+    "category": "相変化・界面",
+    "related": [
+      "滴状凝縮",
+      "接触角",
+      "表面張力",
+      "蒸発",
+      "ボンド数"
+    ],
+    "relatedSections": [
+      "9.10"
+    ],
+    "source": {
+      "type": "supplement",
+      "guideId": "chapter9-latent-boiling",
+      "reference": "原典第9章 §9.10に基づく独立執筆の補足。原書翻訳・転載ではなく専門家校閲前。"
     }
   }
 ]

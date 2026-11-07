@@ -34,3 +34,7 @@ FIN_LEARNING_REFERENCE_20261105.json。scripts/dynamic-fin-learning-reference.py
 最初のWebKit試験では、サーバー停止後に初訪問のクエリ付きfin-learning.htmlを開くと、HTML/UI/Worker本体はキャッシュから読めても、module Worker内のradial/developed-channel/radiation-network/thermal/worker-runtimeのimportがネットワークへ出て失敗した。30秒の既存待機を伸ばさず、実際の失敗として扱った。
 
 公開ビルドでWorkerの依存を1ファイルへまとめる修正後、同じ試験で初期化・予想・600秒計算が成功した。PUBLIC_WORKER_DISTRIBUTION.md参照。モジュール分割した原ソースと開発専用CFDは保持し、一般CFDを公開依存へ入れていない。Chromiumのブラウザーofflineと、WebKitのサーバー停止によるSW応答の検証は実機Safariの検証とは区別する。
+
+## 学習条件の固定範囲（2026-11-07、連成受入に伴う明記）
+
+学習画面のフィン条件（一定物性・一定流体温度293.15 K・指定h）は教育設計として固定であり、FinJourney の完全一致ガードは物性表（kTable/cpTable）と流体温度スケジュール（temperatureSchedule）を含む条件を意図的に拒否する。これは未検証ではなく仕様である。物性表とフィン側面対流の連成、および流体温度の時間変化は、汎用実験画面（dynamic/index.html）側でのみ解禁した。検証と受入条件の判定は FIN_COUPLING_ACCEPTANCE_20261107.md に記録する。解析定常予測 steadyFinPrediction は一定物性専用であり、物性表の条件では明示的に拒否する（公称kでの代用はしない）。観察値 finObservation の基部熱流は、物性表がある場合はカーネルと同じく第1セルの現在温度で評価した k を使う。

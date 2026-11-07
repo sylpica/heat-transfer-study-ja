@@ -1,0 +1,66 @@
+{
+  "law": "cylinder-crossflow-transient-reference-v1",
+  "generatorSHA256": "1d6849479abaa9b69e95f6d85b9ec50be8e1c0f119d4e9a51c993c12772b4e6b",
+  "releaseApproved": false,
+  "precision": "lumped values: mpmath 50 digits; gradient values: float64 matrix exponential with recorded grid self-difference",
+  "reference": {
+    "gradientCase": {
+      "source": "independent Python cell-centred radial FV + matrix exponential (expm), n=512; self-difference vs n=256 recorded",
+      "diameter": 0.02,
+      "length": 0.1,
+      "solidConductivity": 15.0,
+      "solidDensity": 8000.0,
+      "solidCp": 500.0,
+      "heatTransferCoefficient": 500.0,
+      "initialTemperature": 400.0,
+      "fluidTemperature": 300.0,
+      "biotNumber": 0.3333333333333333,
+      "referenceGridSelfDifferenceK": 8.581921622408117e-05,
+      "samples": [
+        {
+          "time": 2.0,
+          "centreTemperature": 399.70839160234675,
+          "outerCellTemperature": 389.21090196902276,
+          "surfaceTemperature": 389.18187141192254,
+          "meanTemperature": 395.35569694154793
+        },
+        {
+          "time": 5.0,
+          "centreTemperature": 395.52282625430144,
+          "outerCellTemperature": 382.1950760575912,
+          "surfaceTemperature": 382.16832855480646,
+          "meanTemperature": 388.94491232484825
+        },
+        {
+          "time": 10.0,
+          "centreTemperature": 385.6377527319179,
+          "outerCellTemperature": 373.052200984108,
+          "surfaceTemperature": 373.0284287091376,
+          "meanTemperature": 379.26187888376245
+        },
+        {
+          "time": 20.0,
+          "centreTemperature": 368.04874145468244,
+          "outerCellTemperature": 358.0143432510444,
+          "surfaceTemperature": 357.9954645191046,
+          "meanTemperature": 362.95701060132444
+        }
+      ]
+    },
+    "lumpedCase": {
+      "source": "analytic lumped-capacitance exponential, mpmath 50 digits; tau = rho*cp*R/(2h)",
+      "diameter": 0.02,
+      "length": 0.1,
+      "solidConductivity": 400.0,
+      "solidDensity": 8900.0,
+      "solidCp": 385.0,
+      "heatTransferCoefficient": 50.0,
+      "initialTemperature": 400.0,
+      "fluidTemperature": 300.0,
+      "biotNumber": 0.00125,
+      "tauSeconds": 342.65000000000003,
+      "ratioAtTau": 0.36787944117144233,
+      "ratioAtTwoTau": 0.1353352832366127
+    }
+  }
+}

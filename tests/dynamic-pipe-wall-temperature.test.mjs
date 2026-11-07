@@ -1,0 +1,16 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {createWallTemperaturePipe} from '../dynamic/dev/pipe-wall-temperature.mjs';import {createHeatedPipe} from '../dynamic/dev/heated-pipe.mjs';
+const base={width:5,radius:.5,nx:16,nr:8,rho:1,cp:100,k:1,nu:.01,bulkVelocity:1,wallTemperature:300,inlet:300,initial:300,referenceTemperatureK:300,maxTemperature:2000};
+test('constant-wall circular pipe exact equal-temperature limit and annular mass are preserved with Nu undefined',()=>{
+ const m=createWallTemperaturePipe(base),s=m.step(m.safeDt/2);assert.ok(s.temperature.every(t=>t===300));assert.ok(s.offsetTemperature.every(t=>t===0));assert.ok(s.cumulativeComponentJ.every(q=>q===0));assert.ok(s.wallHeatFluxWPerM2.every(q=>q===0));assert.ok(s.wallToBulkNusselt.every(q=>q===null));assert.equal(m.mesh.axisRadialAreaM2,0);assert.ok(Math.abs(s.massFlowKgPerS-Math.PI*.25)<1e-15);
+});
+test('actual half-cell wall power is integrated as a changing result rather than constant flux and hot/cold histories are antisymmetric',()=>{
+ const a=createWallTemperaturePipe({...base,wallTemperature:301}),b=createWallTemperaturePipe({...base,wallTemperature:299}),initial=a.snapshot();assert.ok(initial.wallHeatFluxWPerM2.every(q=>q===32));assert.ok(initial.wallToBulkNusselt.every(nu=>nu===32));assert.ok(Math.abs(initial.instantaneousPowersW.wallInput-32*2*Math.PI*.5*5)<1e-12);
+ const dt=a.safeDt/2,hot=a.step(dt),cold=b.step(dt);assert.ok(hot.instantaneousPowersW.wallInput<initial.instantaneousPowersW.wallInput);assert.ok(Math.abs(hot.cumulativeComponentJ[0]-initial.instantaneousPowersW.wallInput*dt)>1e-3);assert.ok(Math.abs(hot.energyErrorJ)<=hot.energyRoundoffBudgetJ);assert.deepEqual(cold.offsetTemperature,hot.offsetTemperature.map(v=>v===0?0:-v));assert.deepEqual(cold.cumulativeComponentJ,hot.cumulativeComponentJ.map(v=>v===0?0:-v));assert.ok(hot.wallTemperature.every(t=>t===301));
+});
+test('retained infinitesimal wall heat survives rounded Kelvin and complete restore and cancellation state stay reproducible',()=>{
+ const m=createWallTemperaturePipe({...base,wallTemperature:301}),s=m.step(1e-20);assert.ok(s.temperature.every(t=>t===300));assert.ok(s.offsetTemperature.some(t=>t>0));assert.ok(s.storageChangeJ>0);assert.ok(Math.abs(s.energyErrorJ)<=s.energyRoundoffBudgetJ);const next=m.step(m.safeDt/8);assert.deepEqual(m.restore(s),s);assert.deepEqual(m.step(m.safeDt/8),next);
+ const before=JSON.stringify(m.snapshot());for(const mutate of [s=>s.cumulativeComponentJ[0]+=1,s=>s.time=-1,s=>s.temperature[0]+=1,s=>s.signature='other']){const bad=structuredClone(next);mutate(bad);assert.throws(()=>m.restore(bad));assert.equal(JSON.stringify(m.snapshot()),before);}assert.throws(()=>m.step(2*m.safeDt));assert.equal(JSON.stringify(m.snapshot()),before);
+});
+test('a wall-temperature model rejects simultaneous flux, unsupported physics and constant-flux snapshots',()=>{
+ for(const extra of [{wallHeatFlux:1},{source:1},{wallTemperature:0},{wallTemperature:340}])assert.throws(()=>createWallTemperaturePipe({...base,...extra}));const m=createWallTemperaturePipe(base),q={...base,wallHeatFlux:0};delete q.wallTemperature;assert.throws(()=>m.restore(createHeatedPipe(q).snapshot()));
+});

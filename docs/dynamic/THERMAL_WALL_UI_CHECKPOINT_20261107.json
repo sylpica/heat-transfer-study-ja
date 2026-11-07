@@ -1,0 +1,99 @@
+{
+  "recordedAtUTC": "2026-11-07T02:45:19.614853+00:00",
+  "parentCommit": "0fa3965",
+  "planCommit": "42cd72a",
+  "sourceFilesSHA256": {
+    "dynamic/dev/thermal-wall.html": "1c399374a6b23243cd441a427ba0932a2a088f3919bf2750101a13cffd22f54d",
+    "dynamic/dev/thermal-wall-ui.mjs": "0371d81c79c1a5de8d7d08380fb82727b8cd3a4e1b105aa7bae24213667871a8",
+    "dynamic/dev/thermal-wall-view.mjs": "1b09634f52bd2aef7b71e0ad2c9fe46b950529c49e3e48943643cc3907a3e7e7",
+    "dynamic/dev/thermal-wall-ui-config.mjs": "a5524a5b8227dd3a431113de94fcfb086f3492f6d783bead686127a6756e1676",
+    "dynamic/dev/thermal-wall-cavity.mjs": "1e884c200d9e58b139e1637f884d2d1f589c62726fef0d5b5c82bd134b0acf23",
+    "tests/dynamic-thermal-wall-ui-browser.mjs": "921c0b3ae3a2f51266bd9217e6dfd37c4316b41dc9f2125a8cf847c06cbdfcd9",
+    "tests/dynamic-thermal-wall-view.test.mjs": "f10d5ff9de5684f91f6ad243faab2e99797c605347fe2bf8090802399eeda7c5"
+  },
+  "logSHA256": {
+    "work/thermal-wall-ui-full-node-20261107.log": "d3af36e37f83479a27ae3c2724c136fd548f6c25e960cb1816891ab2d83ccb53",
+    "work/thermal-wall-ui-public-build-20261107.log": "a1519e1ddca76c828c9c4a482b7fef6f54a05766f45304f836f664f17bea67d9",
+    "work/thermal-wall-ui-unit-20261107.log": "a343674e66985cfa05bd0af3bf0fe9043009956eafb5ddd9c4d3e7f14de8052c",
+    "work/thermal-wall-ui-unit-rerun-20261107.log": "f3cb32e9875edac922da6c51c8a87ec7308206c5f05de1d9abee9626b7ff896b"
+  },
+  "node": {
+    "tests": 1501,
+    "pass": 1496,
+    "fail": 0,
+    "skipped": 5,
+    "concurrency": 1,
+    "durationMs": 114251.441072
+  },
+  "actualUiResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerCpuAndIndependentAirReference": true,
+      "fullCpuBitmapMatchesAllThreeQuantities": true,
+      "initialPressureExplicitlyUncomputed": true,
+      "actualRewindAndReplay": true,
+      "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+      "wallNodeAndFluidCellAndVelocityPointDistinct": true,
+      "finiteAndThermostatDifferentGridComparison": true,
+      "realProgressCancelRollback": true,
+      "maximumGuiCells": 1024,
+      "uniformAndTinyHeat": true,
+      "keyboardAndPointer": true,
+      "mobileDarkLight": true,
+      "devicePixelRatio": 2,
+      "localStorageUnchanged": true,
+      "generalConjugateCFDApproved": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerCpuAndIndependentAirReference": true,
+      "fullCpuBitmapMatchesAllThreeQuantities": true,
+      "initialPressureExplicitlyUncomputed": true,
+      "actualRewindAndReplay": true,
+      "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+      "wallNodeAndFluidCellAndVelocityPointDistinct": true,
+      "finiteAndThermostatDifferentGridComparison": true,
+      "realProgressCancelRollback": true,
+      "maximumGuiCells": 1024,
+      "uniformAndTinyHeat": true,
+      "keyboardAndPointer": true,
+      "mobileDarkLight": true,
+      "devicePixelRatio": 2,
+      "localStorageUnchanged": true,
+      "generalConjugateCFDApproved": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "viewedScreenshots": [
+    {
+      "path": "work/thermal-wall-ui-webkit-field-dark-20261107.png",
+      "SHA256": "c0018263720f86b229e1e8947d390aeff81e39afe4db40e79c5bed1d7fe33888",
+      "actuallyViewed": true
+    },
+    {
+      "path": "work/thermal-wall-ui-webkit-settings-dark-20261107.png",
+      "SHA256": "e64023535d13efac999dda5880dd6590d8e462a62365462e6fbc6f28fee109c7",
+      "actuallyViewed": true
+    }
+  ],
+  "publicBuildPassed": true,
+  "publicDevelopmentAbsent": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCache": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "oldNumericalAndAirConfigUnchangedFrom": "0fa3965",
+  "initialTestFailure": "Deep strict comparison distinguishes -0/+0. Physical boundary zero asserted with x===0; original log preserved, product unchanged.",
+  "ciBrowserCommandsPerEngine": 54,
+  "latestCiForThisCommit": "not yet pushed/checked",
+  "realDevicesVerified": false,
+  "dedicatedOfflineVerified": false,
+  "generalConjugateCFDApproved": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

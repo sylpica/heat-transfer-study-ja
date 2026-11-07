@@ -183,6 +183,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Exercise actual finite-capacity and thermostated wall UI, stage pressure and complete rollback
+        run: node tests/dynamic-thermal-wall-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify solid-wall and prescribed-flow temperature coupling against independent time and manufactured references
         run: node tests/dynamic-conjugate-worker-browser.mjs
         env:

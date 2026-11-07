@@ -29,7 +29,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -64,7 +69,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -131,7 +141,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
       "remainingOrScope": "公開候補は伝導/径方向/単一フィン/放射ネットワーク/同一面の対流＋放射/発達流路/条件付き集中近似。一般2D強制・自然対流CFD/乱流は開発専用で公開範囲外。"
     },
@@ -141,7 +156,12 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -253,9 +273,14 @@
         "TRIANGLE_SURFACE_UI.md",
         "TRIANGLE_SURFACE_UI_CHECKPOINT_20261106.json",
         "CONJUGATE_CHANNEL.md",
-        "CONJUGATE_UI_CHECKPOINT_20261107.json"
+        "CONJUGATE_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
-      "remainingOrScope": "同一表面の対流＋放射、および開発専用の有限容量基部＋同一1Dフィンの保存的熱連成を検算。一般固体流体/自由形状/3Dの連成は未完了。"
+      "remainingOrScope": "同一表面の対流＋放射、および開発専用の有限容量基部＋同一1Dフィンの保存的熱連成を検算。一般固体流体/自由形状/3Dの連成は未完了。 一様温度壁容量と閉正方形の全未知RK2は独立時間/限定空間/実空気・画面で検証。空間固体の一般共役、物体周囲/高Ra/開領域は未完了。"
     },
     {
       "id": "Q12",
@@ -329,7 +354,12 @@
         "TRIANGLE_STIFFNESS_CHECKPOINT_20261106.json",
         "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
         "TRIANGLE_TRANSIENT_REFERENCE_20261106.json",
-        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json"
+        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -365,7 +395,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -391,7 +426,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -440,7 +480,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -467,7 +512,12 @@
         "LUMPED_RADIAL.md",
         "LUMPED_RADIAL_REFERENCE_20261105.json",
         "LUMPED_RADIAL_CHECKPOINT_20261105.json",
-        "LUMPED_RADIAL_BENCHMARKS_20261105.json"
+        "LUMPED_RADIAL_BENCHMARKS_20261105.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -495,7 +545,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -544,7 +599,12 @@
         "CONJUGATE_CHANNEL.md",
         "CONJUGATE_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -576,7 +636,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -615,7 +680,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -624,7 +694,12 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -678,7 +753,12 @@
       "evidence": [
         "STATUS.md",
         "../../dynamic/lab.mjs",
-        "EXPERIMENT_CONTROLLER.md"
+        "EXPERIMENT_CONTROLLER.md",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -701,7 +781,12 @@
         "FLAT_PLATE_UI_CHECKPOINT_20261107.json",
         "GPU_WORKER.md",
         "GPU_UI.md",
-        "GPU_UI_CHECKPOINT_20261107.json"
+        "GPU_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -720,7 +805,12 @@
         "GPU_DIFFUSION_CHECKPOINT_20261105.json",
         "GPU_WORKER.md",
         "GPU_UI.md",
-        "GPU_UI_CHECKPOINT_20261107.json"
+        "GPU_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -746,7 +836,12 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -769,7 +864,12 @@
         "CHANNEL_LEARNING.md",
         "CHANNEL_LEARNING_REFERENCE_20261105.json",
         "CHANNEL_LEARNING_CHECKPOINT_20261105.json",
-        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json"
+        "LEARNING_SAMPLE_SCHEDULE_WITH_CHANNEL_20261105.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -778,7 +878,12 @@
       "status": "partial",
       "evidence": [
         "STATUS.md",
-        "ARCHITECTURE.md"
+        "ARCHITECTURE.md",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -830,7 +935,12 @@
         "GHIA_MARCHI_RESOLUTION_20261106.json",
         "CFD_MARCHI_RE100_20261106_v1.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
       "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
     },
@@ -911,7 +1021,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -981,9 +1096,14 @@
         "CFD_FINE_NATURAL_SUMMARY_20261106.json",
         "GHIA_MARCHI_RESOLUTION_20261106.md",
         "GHIA_MARCHI_RESOLUTION_20261106.json",
-        "CFD_MARCHI_RE100_20261106_v1.json"
+        "CFD_MARCHI_RE100_20261106_v1.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
-      "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
+      "remainingOrScope": "矩形の2D投影法と開発専用UI/Workerで限定検証。一般流路/自由形状/乱流/CFDの正式公開は未完了。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。 一様温度壁容量と閉正方形の全未知RK2は独立時間/限定空間/実空気・画面で検証。空間固体の一般共役、物体周囲/高Ra/開領域は未完了。"
     },
     {
       "id": "Q47",
@@ -1041,7 +1161,12 @@
         "TRIANGLE_SURFACE_UI.md",
         "TRIANGLE_SURFACE_UI_CHECKPOINT_20261106.json",
         "CONJUGATE_CHANNEL.md",
-        "CONJUGATE_UI_CHECKPOINT_20261107.json"
+        "CONJUGATE_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
       "remainingOrScope": "凸P1の線形境界GUIに加え、同一面の対流＋指定した黒い周囲放射の非線形時間系/閉系/既知辺熱保持RT0を限定検証して辺draft GUIへ接続。物理K/C＋DOP853、連続定常Brent場/160桁4乗差/直接制約辺熱へ照合し、実GUIの線形/非線形A/B・極限・復元/取消/保存不変更を両ブラウザー確認。一般連続過渡場精度、P1変物性/一般放射囲い/共役/凹/穴/正式公開は未完了。"
     },
@@ -1076,7 +1201,12 @@
         "CONJUGATE_CHANNEL.md",
         "CONJUGATE_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1112,7 +1242,12 @@
         "GPU_UI.md",
         "GPU_UI_CHECKPOINT_20261107.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1181,7 +1316,12 @@
         "TRIANGLE_STIFFNESS_CHECKPOINT_20261106.json",
         "TRIANGLE_TRANSIENT_DEVELOPMENT.md",
         "TRIANGLE_TRANSIENT_REFERENCE_20261106.json",
-        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json"
+        "TRIANGLE_TRANSIENT_CHECKPOINT_20261106.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1297,7 +1437,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1365,7 +1510,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1417,7 +1567,12 @@
         "GHIA_MARCHI_RESOLUTION_20261106.json",
         "CFD_MARCHI_RE100_20261106_v1.json",
         "LID_CAVITY_UI.md",
-        "LID_CAVITY_UI_CHECKPOINT_20261107.json"
+        "LID_CAVITY_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
       "remainingOrScope": "矩形層流投影法と3実Reτの定常RANS平均流/受動平均温度を開発専用で限定検証。乱流の温度閉包は仮定、DNS速度のモデル誤差を記録。一般CFD/自由形状/乱流の正式承認/公開は未完了。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。"
     },
@@ -1596,7 +1751,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
       "remainingOrScope": "伝導/径方向/フィン/放射/発達層流と開発用CFDの製造解/3格子/時間精細化を記録。定常RANS平均流と受動温度も別方法へ数値照合。高次移動壁の不合格、一般CFD/乱流閉包の物理承認、原典全範囲/実機/専門家確認は残る。 2026-11-06追加：Ra1000/Pr.71の64格子で熱/速度極値の6予算と両ブラウザー実Workerを限定検証。Re100は原Ghia未達を保持し、原Marchi Table12/13全28内点ずつへ同じ.005予算でMAC64が達成。一般全場精度/高Re・Ra/外部流れ/共役/公開の承認ではない。 平板はBlasiusの定常速度/全face流量だけを独立BVPと連続求積へ照合済み。温度/動的運動量/一般NS/専用UIは未完了。"
     },
@@ -1624,7 +1784,12 @@
         "GPU_DIFFUSION_CHECKPOINT_20261105.json",
         "GPU_WORKER.md",
         "GPU_UI.md",
-        "GPU_UI_CHECKPOINT_20261107.json"
+        "GPU_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1663,7 +1828,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1688,7 +1858,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ]
     },
     {
@@ -1763,7 +1938,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
       "remainingOrScope": "公開候補の発達層流は限定条件で検証して公開allowlistへ登録。一般CFD/定常RANSと受動温度/GPU/製造解はdist外。未検証のk(T)フィンや自由輪郭の表面境界は拒否。一般承認やmain公開は未完了。"
     },
@@ -1788,7 +1968,12 @@
         "PIPE_WALL_TEMPERATURE.md",
         "PIPE_WALL_TEMPERATURE_UI_CHECKPOINT_20261107.json",
         "ORTHOGONAL_UI.md",
-        "ORTHOGONAL_UI_CHECKPOINT_20261107.json"
+        "ORTHOGONAL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_UI.md",
+        "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+        "THERMAL_WALL_CENTRAL_TIME.md",
+        "THERMAL_WALL_AIR.md",
+        "THERMAL_WALL_FLOW_SPACE.md"
       ],
       "remainingOrScope": "PR18へ段階保存し、全要求は継続中。"
     }

@@ -153,6 +153,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Exercise annular air pipe fields, true heat histories, accepted conditions and rollback
+        run: node tests/dynamic-heated-pipe-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify solid-wall and prescribed-flow temperature coupling against independent time and manufactured references
         run: node tests/dynamic-conjugate-worker-browser.mjs
         env:

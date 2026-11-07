@@ -1,0 +1,64 @@
+{
+  "recordedAtAsiaTokyo": "2026-11-07T17:58:19.932844+09:00",
+  "testedCommit": "c68787a",
+  "baseCommit": "83f9f0483e10844c79e181cebb006c5d28233034",
+  "subsequentChanges": "formulation/report documentation and test-result records only",
+  "testedSourceFilesSHA256": {
+    "scripts/support-conjugate/build_report.py": "b95e999c7df6dab1c9b12d525186951e52aa0b7a5b378f2570dcf817467336f2",
+    "scripts/support-conjugate/models.py": "cf85d29a28ae899a360c98ccf88ab95593d0c9951efcd1cf6acdc80897cc38d4",
+    "scripts/support-conjugate/independent_time.py": "b9f524ab5a029d25ed305cdc6679cd194cb1adea076d849f28bf08eb28383b58",
+    "scripts/support-conjugate/run_case.py": "823145fd7519d7df1124a56e06f447e41110c85a2d0586d0776610ca3c13c249",
+    "scripts/support-conjugate/test_limits.py": "691d95b3ee58bff009f61c433f060ed8a4687d355d9f4b391c34d594ccd21c59",
+    "scripts/support-conjugate/seed.py": "922e731f7b3e28c3a60c570364c53c95fb0cccda02f10a2458ae86fa07fbecbf",
+    "scripts/support-conjugate/limits_study.py": "c6f214d1b579c847d32e1b015caa238f020d4a49587c749558cc0ef88aafb2a8",
+    "tests/dynamic-support-conjugate.test.mjs": "68ed430c4dc3f55e0a855dc3957172041b596f2196415128a2203abf68513ff8"
+  },
+  "node": {
+    "version": "v24.19.0",
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "tests": 1505,
+    "pass": 1500,
+    "fail": 0,
+    "skip": 5,
+    "durationMs": 113705.707629,
+    "rawLogSHA256": "338e514c4a0a7e415fd2130ff1604c9d01542026a721d59077a2627b7d67b75c",
+    "skippedCases": [
+      "﹣ private legacy Japanese drafts remain labeled unverified in a local pack (0.229856ms) # SKIP",
+      "﹣ reviewed local sections retain original page locations, both languages, and figure descriptions (0.140441ms) # SKIP",
+      "﹣ 18 reviewed Japanese questions have complete rationale and valid source pages (0.185089ms) # SKIP",
+      "﹣ chapter 8 opening retains both languages, eight equations, dimensional annotations, and the original figure (0.087041ms) # SKIP",
+      "﹣ vertical natural convection retains source caveats, mean-value overbars, all figures and ten question rationales (0.127272ms) # SKIP"
+    ]
+  },
+  "python": {
+    "command": "python3 scripts/support-conjugate/test_limits.py",
+    "tests": 6,
+    "pass": 6,
+    "fail": 0,
+    "rawLogSHA256": "edc441785285381785c0f2a08275a482c67af284dee902fddc5e1b4ddcee5515",
+    "verbatimFinalSummary": "Ran 6 tests in 0.485s\n\nOK"
+  },
+  "publicBuild": {
+    "passed": true,
+    "supportAndDevExcluded": true,
+    "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cache": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "initialP1InterfaceExtremaDisplayFix": {
+    "original": "MainP116.json",
+    "corrected": "MainP116v2.json",
+    "allTenSavedFieldArraysBitIdentical": true,
+    "physicalNumericalMethodsChanged": false
+  },
+  "unmetRunPreserved": {
+    "file": "SolidDominated.json",
+    "time": 3,
+    "steady": false,
+    "failure": null,
+    "resolution": "Same initial/case/method and original steady tolerance; separate extension reaches steady at5.8 (SolidDominatedLong.json)"
+  },
+  "productionMainlineOrMuseBranchChanged": false,
+  "previousRaSupportSourcesChanged": false,
+  "browserPortOrOwnCiClaimed": false,
+  "releaseApproved": false
+}

@@ -1,0 +1,59 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>径方向多層・中空の開発検証</title><link rel="stylesheet" href="cavity.css"><style>
+.layer-row{border:1px solid #8291a5;border-radius:.4rem;padding:.6rem;margin:.6rem 0}
+.layer-row-head{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.3rem}
+.layer-row-head strong{margin-right:auto}
+.layer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:.2rem .8rem}
+.layer-grid label{margin:.15rem 0}
+.layer-grid input{width:6.5rem}
+.bc-params label{margin-right:.8rem}
+</style></head><body><main>
+<h1>径方向多層・中空の開発検証</h1><p class="notice">開発用・公開承認前。同心の多層（最大8層）円筒・球の半径方向1D非定常熱伝導を解きます。界面では熱流束の連続と、接触熱抵抗による温度ジャンプを分けて返します。角度・軸方向・流体連成・相変化・温度依存物性は解かず、公開ビルドに含めません。</p>
+<form id="settings"><fieldset><legend>条件：形状と全体</legend>
+<label>検証プリセット<select id="preset"><option value="custom">手入力</option></select></label>
+<label>形状<select id="geometry"><option value="cylinder" selected>円筒</option><option value="sphere">球</option></select></label>
+<label>円筒の長さ [mm]<input id="length" type="number" value="100" step="any" required></label>
+<label>内半径 [mm]<input id="inner-radius" type="number" value="3" min="0" step="any" required></label>
+<label>初期温度 [K]<input id="initial" type="number" value="350" step="any" required></label>
+</fieldset>
+<fieldset><legend>条件：層の構成（内側から）</legend>
+<div id="layers"></div>
+<div class="buttons"><button id="add-layer" type="button">層を追加</button></div>
+<p>層は最大8層です。各層は一様なセルに分割され、物性は層ごとに一定です。</p>
+</fieldset>
+<fieldset><legend>条件：界面の接触熱抵抗 Rc″ [m² K/W]</legend>
+<div id="interfaces"></div>
+<p>0は完全接触です。温度ジャンプは熱流束と Rc″ の積で生じ、界面の両側温度として分けて表示します。Rc″ は界面の位置に紐づくため、層の順序を変えたら値を確認してください。</p>
+</fieldset>
+<fieldset><legend>条件：境界条件</legend>
+<p>内面（中空の場合のみ有効）：
+<label>種類<select id="inner-bc-type"><option value="insulated">断熱</option><option value="temperature" selected>指定温度</option><option value="flux">指定熱流束（内向き）</option><option value="convection">対流</option><option value="radiation">放射</option><option value="convection-radiation">対流＋放射</option></select></label></p>
+<div class="bc-params" id="inner-bc-params">
+<label data-bc-param="temperature">温度 [K]<input id="inner-bc-temperature" type="number" value="390" step="any"></label>
+<label data-bc-param="flux">熱流束 [W/m²]<input id="inner-bc-flux" type="number" value="2000" step="any"></label>
+<label data-bc-param="h">h [W/(m² K)]<input id="inner-bc-h" type="number" value="100" step="any"></label>
+<label data-bc-param="emissivity">放射率<input id="inner-bc-emissivity" type="number" value="0.8" step="any"></label>
+<label data-bc-param="radiationTemperature">放射周囲温度 [K]<input id="inner-bc-radiation-temperature" type="number" value="300" step="any"></label>
+</div>
+<p>外面：
+<label>種類<select id="outer-bc-type"><option value="insulated">断熱</option><option value="temperature" selected>指定温度</option><option value="flux">指定熱流束（内向き）</option><option value="convection">対流</option><option value="radiation">放射</option><option value="convection-radiation">対流＋放射</option></select></label></p>
+<div class="bc-params" id="outer-bc-params">
+<label data-bc-param="temperature">温度 [K]<input id="outer-bc-temperature" type="number" value="310" step="any"></label>
+<label data-bc-param="flux">熱流束 [W/m²]<input id="outer-bc-flux" type="number" value="-2000" step="any"></label>
+<label data-bc-param="h">h [W/(m² K)]<input id="outer-bc-h" type="number" value="100" step="any"></label>
+<label data-bc-param="emissivity">放射率<input id="outer-bc-emissivity" type="number" value="0.8" step="any"></label>
+<label data-bc-param="radiationTemperature">放射周囲温度 [K]<input id="outer-bc-radiation-temperature" type="number" value="300" step="any"></label>
+</div>
+<button id="apply" type="submit">初期状態から計算</button></fieldset></form>
+<p id="summary"></p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="1" min="0.001" max="100000" step="any"></label><div class="buttons"><button id="run">再生</button><button id="pause">一時停止</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div><p>物理時刻 <output id="clock">0.000 s</output>。実時間と同速ではありません。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p></section>
+<section aria-label="温度場と分布"><p id="legend"></p><div class="fields"><figure><canvas id="field" width="600" height="300" role="img" aria-label="多層円筒・球の断面模式図"></canvas></figure></div>
+<label>測定位置（半径方向）<input id="probe" type="range" min="0" max="31" step="1" value="16"></label><pre id="readout"></pre>
+<canvas id="graph" width="800" height="220" role="img" aria-label="半径方向の温度分布グラフ"></canvas>
+<p>温度は各セルの平均です。模式図は1D解の表示であり、角度・軸方向の温度分布を解いたものではありません。界面の温度ジャンプは、分布グラフの縦の線分と下の数値で示します。</p></section>
+<details id="diagnostics"><summary>各界面の熱流と全熱収支</summary><pre id="diagnostic-values"></pre><p>熱流は外向きを正とします。界面では左右どちらの側から見ても同じ熱流が流れ（熱流束の連続）、温度だけが接触熱抵抗の分だけ跳びます。</p></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>各層は一定物性（k・ρ・cp）と一様発熱を持ち、有限体積の陽解法で解きます。材料界面では、両側の半セルの伝導抵抗と接触熱抵抗 Rc″ の直列抵抗で1つの界面熱流を運ぶため、熱流束の連続と温度ジャンプが同時に成り立ちます。刻みは安定上限 safeDt 以下に自動で割り、収支が壊れた状態は受理しません。</p>
+<p>検証の要約（詳細は docs/dynamic/RADIAL_MULTILAYER.md と RADIAL_MULTILAYER_REFERENCE_20261107.json）：定常解を独立な抵抗網計算と照合しました。円筒3層では格子細分で約2次収束し、相対誤差は 5.52e-5／7.21e-5／1.63e-5 です。接触抵抗のケース（Rc″=0.005 m² K/W）では解析どおりの温度ジャンプ 56.7188 K を再現します。単層では既存の createRadial と温度場・エネルギー・安定刻みがビット同一です。</p>
+<p>解かないもの：角度・軸方向の伝導、流体との連成、相変化、物性の温度依存、層内部の物性分布。実在の界面の接触状態を保証するものではありません。</p>
+<p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="radial-multilayer-ui.mjs"></script></body></html>

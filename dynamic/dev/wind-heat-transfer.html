@@ -1,0 +1,24 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>風速からの熱伝達率推定の開発検証</title><link rel="stylesheet" href="cavity.css"></head><body><main>
+<h1>風速からの熱伝達率推定の開発検証</h1><p class="notice">開発用・公開承認前。教科書の相関式だけを使い、主流速度から平均熱伝達率hを推定します。適用範囲外では推定値を出さず、理由を表示します。</p>
+<form id="settings"><fieldset><legend>条件：形状・流れ・物性（膜温度で評価）</legend>
+<label>例題プリセット<select id="preset"><option value="" selected>手入力</option><option value="ex65">例題6.5：層流平板</option><option value="ex69">例題6.9：観測遷移（気体）</option><option value="ex611">例題6.11：急峻遷移（気体）</option><option value="ex78">例題7.8：円柱横流れ</option></select></label>
+<label>代表形状<select id="geometry"><option value="flat-plate" selected>平板</option><option value="cylinder">円柱（横流れ）</option><option value="fin-plate">平板フィン面（代表形状：平板）</option><option value="fin-pin">ピンフィン面（代表形状：円柱）</option></select></label>
+<label>主流速度 u∞ [m/s]<input id="velocity" type="number" value="15" min="0" step="any" required></label>
+<label>代表長さ（平板長さ／円柱直径）[m]<input id="length" type="number" value="0.5" min="0" step="any" required></label>
+<label>密度 ρ [kg/m³]<input id="density" type="number" value="1" min="0" step="any" required></label>
+<label>粘度 μ [Pa·s]<input id="viscosity" type="number" value="0.0000195" min="0" step="any" required></label>
+<label>比熱 cp [J/(kg K)]<input id="cp" type="number" value="1052.697435897436" min="0" step="any" required></label>
+<label>熱伝導率 k [W/(m K)]<input id="conductivity" type="number" value="0.0292" min="0" step="any" required></label>
+<label>表面温度 Ts [K]<input id="surface" type="number" value="383.15" min="0" step="any" required></label>
+<label>主流温度 T∞ [K]<input id="free" type="number" value="293.15" min="0" step="any" required></label>
+<label>平板のレジーム<select id="regime"><option value="" selected>自動（全体が層流として評価）</option><option value="laminar">層流（式6.68）</option><option value="liquid-metal">液体金属（式6.69）</option><option value="mixed-abrupt">急峻遷移（例題6.11の縮約）</option><option value="mixed-observed">観測遷移（式6.120、気体）</option></select></label>
+<label>流体種別<select id="fluid"><option value="" selected>指定なし</option><option value="gas">気体</option><option value="liquid">液体</option></select></label>
+<label>遷移Reynolds数（急峻遷移）<input id="tre" type="number" min="0" step="any" disabled></label>
+<label>遷移開始Reynolds数（観測遷移）<input id="tstart" type="number" min="0" step="any" disabled></label>
+<label>遷移終了Reynolds数（観測遷移）<input id="tend" type="number" min="0" step="any" disabled></label>
+<button id="apply" type="submit">推定する</button></fieldset></form>
+<p id="error" role="alert" hidden></p>
+<section aria-label="推定結果"><pre id="readout">まだ推定していません。例題プリセットを選ぶか、条件を入れて「推定する」を押してください。</pre><pre id="warnings" hidden></pre><p id="handoff" hidden><a id="handoff-link" href="./heat-sink.html" target="_blank" rel="noopener">この推定hをヒートシンク画面で使う</a></p></section>
+<details><summary>相関式と適用範囲</summary><p>平板（等温・板全体の平均Nu_L、物性は膜温度）：層流は式(6.68)（Pr≧0.6、Pe_L＞100、Re_L≦5×10⁵）、液体金属は式(6.69)（Pe_L＞100）、観測遷移（気体）は式(6.120)と勾配の式(6.115)（遷移開始Re_l≦5×10⁵、Re_l＜Re_u≦Re_L、Pr≧0.6）、急峻遷移は式(6.120)の例題6.11による縮約（気体）／式(6.113)からの導出（液体）。レジーム未指定でRe_L＞5×10⁵の場合は外挿せず拒否します。</p><p>円柱横流れ（円周平均Nu_D、物性は膜温度）：Pe_D≦0.2は式(7.67)、Re_D＜4000は式(7.66)、40,000＜Re_D＜400,000は式(7.68)、その他はChurchill–Bernstein全体式(7.65)。Re_D≦10⁷を保守的上限とします。式(7.65)は既存の静的モデルと実装を共有し、値が食い違わないようにしています。</p><p>平板フィン面は平板、ピンフィン面は円柱を代表形状として適用します。フィン間干渉・バイパス流れ・フィン効率は含みません。</p></details>
+<details><summary>理論・仮定・適用限界</summary><p>物性は利用者が膜温度Tf＝(Ts＋T∞)/2で評価して入力します。流体データベースや温度補間は行いません。表面は等温・滑らか、流れは非圧縮と仮定します。放射と浮力（混合対流）は含みません。hは風速に比例しません（層流平板では流速4倍でhは2倍）。</p><p>対象外：平板の局所h、一様熱流束平板、非加熱始端、粗さ壁、圧力勾配、管群、球、圧縮性流れ（100 m/s超では警告のみ）。式(7.66)と式(7.65)の間にはRe_D＝4000の境界で構成式由来の段差があります（教科書の構成そのまま）。急峻遷移の液体形は式(6.113)からの導出であり、教科書に印刷された完成形ではありません。</p><p>この開発ページは入力と結果をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。オフライン、実機、支援技術、専門家承認、公開URLでの動作は未検証です。</p></details>
+</main><script type="module" src="wind-heat-transfer-ui.mjs"></script></body></html>

@@ -38,10 +38,44 @@ export function createThermal(config){
   }
  }
  if(c.outline&&faces.some(f=>['flux','convection','radiation','convection-radiation'].includes(f.bc.type)))throw Error('自由輪郭の表面積・法線は検証待ちです。階段近似の表面積は細分化だけでは正しくならないため、温度固定または断熱を選んでください。');
- if((variableK||variableCp)&&faces.some(f=>f.bc.type==='convection-radiation'))throw Error('温度依存物性と対流・放射の同時境界は検証待ちです。一定物性を選んでください。');
  const combinedFaces=faces.filter(f=>f.bc.type==='convection-radiation');
  const loss=c.distributedConvection;
- if(loss){pos(loss.h,'側面のh',true);pos(loss.areaPerVolume,'側面積/体積',true);pos(loss.temperature,'流体絶対温度');for(let n=0;n<N;n++)if(mask[n])sumG[n]+=loss.h*loss.areaPerVolume*V;}
+ // Distributed lateral loss (the fin model). The ambient temperature may carry
+ // a validated step schedule, temperatureSchedule: [{at, temperature}, ...],
+ // meaning the ambient equals the last entry with at<=t, or the base
+ // temperature before the first entry. The schedule is copied and validated
+ // once here, then evaluated from the model's own physical time, so
+ // snapshot/restore/history/A-B states stay consistent by construction and no
+ // per-step external input or Worker message path is needed. Post-construction
+ // mutation of the returned config object is not an input path: h,
+ // areaPerVolume, the base temperature and the schedule are captured below and
+ // the config values are never re-read during stepping.
+ // Stability note: sumG gains lossRate only; the ambient temperature value
+ // never enters sumG, so a time-varying ambient cannot invalidate safeDt. If h
+ // itself ever becomes time-varying, sumG/safeDt must be recomputed at every
+ // change (not implemented, by design).
+ let lossRate=0,ambientAt=null;
+ if(loss){
+  const lossH=pos(loss.h,'側面のh',true),lossAreaPerVolume=pos(loss.areaPerVolume,'側面積/体積',true),ambientBase=pos(loss.temperature,'流体絶対温度');
+  let schedule=null;
+  if(loss.temperatureSchedule!==undefined){
+   if(!Array.isArray(loss.temperatureSchedule)||loss.temperatureSchedule.length<1||loss.temperatureSchedule.length>128)throw Error('流体温度の変化スケジュールは1〜128件の配列で指定してください。');
+   let previousAt=-Infinity;
+   schedule=loss.temperatureSchedule.map(entry=>{
+    if(!entry||typeof entry!=='object'||Array.isArray(entry))throw Error('流体温度の変化スケジュールが不正です。');
+    const at=num(entry.at,'流体温度の変化時刻[s]');if(at<0||at<=previousAt)throw Error('流体温度の変化時刻は0以上で、重複なく昇順に指定してください。');previousAt=at;
+    return {at,temperature:pos(entry.temperature,'変化後の流体絶対温度')};
+   });
+  }
+  lossRate=lossH*lossAreaPerVolume*V;
+  ambientAt=t=>{let value=ambientBase;if(schedule)for(const entry of schedule){if(t>=entry.at)value=entry.temperature;else break;}return value;};
+  for(let n=0;n<N;n++)if(mask[n])sumG[n]+=lossRate;
+ }
+ // safeDt premise with property tables: C uses each table's minimum cp and the
+ // conductances in sumG use each table's maximum k (the initial k[n] above),
+ // so the bound stays conservative for every temperature the tables can take.
+ // The distributed loss is linear in T (h is temperature-independent), so
+ // unlike a radiation face it contributes no tangent-slope term to the bound.
  const safeDt=Math.min(...Array.from(C,(v,n)=>mask[n]&&sumG[n]>0?.8*v/sumG[n]:Infinity));
  if(!(safeDt>0))throw Error('格子/物性による安定時間刻みが不正です。');
  const energy=values=>num(values.reduce((sum,t,n)=>sum+(mask[n]?(cpProfiles[material[n]]?mass[n]*cpProfiles[material[n]].enthalpy(t):C[n]*(t-273.15)):0),0),'顕熱');
@@ -62,12 +96,12 @@ export function createThermal(config){
   }
  function surfaceSummary(values=T){
   const groups=new Map();
-  for(const {n,bc,A,conductance,side} of combinedFaces){const r=surfaceExchange(values[n],conductance,A,bc);if(!groups.has(side))groups.set(side,{side,area:0,inwardWatts:0,convectionOutwardWatts:0,radiationOutwardWatts:0,balanceResidualW:0,surfaceTemperatureMinK:Infinity,surfaceTemperatureMaxK:-Infinity});const g=groups.get(side);g.area+=A;for(const key of ['inwardWatts','convectionOutwardWatts','radiationOutwardWatts','balanceResidualW'])g[key]+=r[key];g.surfaceTemperatureMinK=Math.min(g.surfaceTemperatureMinK,r.surfaceTemperature);g.surfaceTemperatureMaxK=Math.max(g.surfaceTemperatureMaxK,r.surfaceTemperature);}
+  for(const {n,bc,A,dist,conductance,side} of combinedFaces){const r=surfaceExchange(values[n],variableK?2*(profiles[material[n]]?.at(values[n])??c.materials[material[n]].k)*A/dist:conductance,A,bc);if(!groups.has(side))groups.set(side,{side,area:0,inwardWatts:0,convectionOutwardWatts:0,radiationOutwardWatts:0,balanceResidualW:0,surfaceTemperatureMinK:Infinity,surfaceTemperatureMaxK:-Infinity});const g=groups.get(side);g.area+=A;for(const key of ['inwardWatts','convectionOutwardWatts','radiationOutwardWatts','balanceResidualW'])g[key]+=r[key];g.surfaceTemperatureMinK=Math.min(g.surfaceTemperatureMinK,r.surfaceTemperature);g.surfaceTemperatureMaxK=Math.max(g.surfaceTemperatureMaxK,r.surfaceTemperature);}
   const valuesByFace=[...groups.values()];if(valuesByFace.some(g=>Object.values(g).some(v=>typeof v==='number'&&!Number.isFinite(v))))throw Error('対流・放射の面積/合計出力が数値範囲外です。');return valuesByFace;
  }
  function power(){
-  updateProperties();const P=new Float64Array(N);let external=0;
-  for(let n=0;n<N;n++)if(mask[n]){P[n]=source[n]*V;if(loss)P[n]+=loss.h*loss.areaPerVolume*V*(loss.temperature-T[n]);external+=P[n];}
+  updateProperties();const P=new Float64Array(N);let external=0,ambient=loss?ambientAt(time):0;
+  for(let n=0;n<N;n++)if(mask[n]){P[n]=source[n]*V;if(loss)P[n]+=lossRate*(ambient-T[n]);external+=P[n];}
   for(const pair of pairs){const {n,m}=pair,G=faceG(pair),q=G*(T[m]-T[n]);P[n]+=q;P[m]-=q;}
   for(const face of faces){const q=boundaryHeat(face);P[face.n]+=q;external+=q;}
   return {P,external};
@@ -79,7 +113,7 @@ export function createThermal(config){
   surfaceSummary(next);energy(next);num(netInput+external*dt,'累積の熱流入');num(time+dt,'物理時間');
   T.set(next);time+=dt;netInput+=external*dt;steps++;lastDt=dt;lastPower=external;return returnState?snapshot():undefined;
  }
- function snapshot(){const e=energy(T),values=T.filter((_,n)=>mask[n]),error=e-initialEnergy-netInput;return {temperature:Array.from(T),...(combinedFaces.length?{surfaceExchange:surfaceSummary()}:{}),time,energy:e,energyReference:variableCp?'cp(T)は各表の下端、一定cpは273.15 K':'273.15 K',netInput,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy),Math.abs(netInput)),min:Math.min(...values),max:Math.max(...values),steps,lastDt,lastPower,safeDt:Number.isFinite(safeDt)?safeDt:null};}
+ function snapshot(){const e=energy(T),values=T.filter((_,n)=>mask[n]),error=e-initialEnergy-netInput;return {temperature:Array.from(T),...(loss?{ambientTemperature:ambientAt(time)}:{}),...(combinedFaces.length?{surfaceExchange:surfaceSummary()}:{}),time,energy:e,energyReference:variableCp?'cp(T)は各表の下端、一定cpは273.15 K':'273.15 K',netInput,energyError:error,relativeEnergyError:Math.abs(error)/Math.max(1,Math.abs(initialEnergy),Math.abs(netInput)),min:Math.min(...values),max:Math.max(...values),steps,lastDt,lastPower,safeDt:Number.isFinite(safeDt)?safeDt:null};}
  function restore(s){if(!s||s.temperature?.length!==N||![s.time,s.netInput,s.steps].every(Number.isFinite)||s.time<0||s.steps<0)throw Error('再生状態が不正です。');const next=Float64Array.from(s.temperature);for(let n=0;n<N;n++)if(mask[n]){pos(next[n],'再生温度');profiles[material[n]]?.at(next[n]);cpProfiles[material[n]]?.at(next[n]);}surfaceSummary(next);energy(next);T.set(next);time=s.time;netInput=s.netInput;steps=s.steps;lastDt=s.lastDt??0;lastPower=s.lastPower??0;return snapshot();}
  function flux(){updateProperties();const qx=new Float64Array(N),qy=new Float64Array(N),cx=new Uint8Array(N),cy=new Uint8Array(N);for(const pair of pairs){const {n,m,A,di,dj}=pair,G=faceG(pair),q=G*(T[n]-T[m])/A;for(const cell of [n,m])if(di){qx[cell]+=q;cx[cell]++;}else{qy[cell]+=q;cy[cell]++;}}
   for(const face of faces){const q=boundaryHeat(face)/face.A,n=face.n;if(face.side==='left'||face.side==='right'){qx[n]+=(face.side==='left'?1:-1)*q;cx[n]++;}else{qy[n]+=(face.side==='bottom'?1:-1)*q;cy[n]++;}}

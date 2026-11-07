@@ -1,3 +1,4 @@
+import {positiveTable} from './properties.mjs';
 // One-dimensional rectangular fins, prescribed lateral h, adiabatic tips.
 export const FIN_INITIAL_POSE=Object.freeze({yaw:Math.PI/6,pitch:Math.PI/9});
 export const FIN_CHOICES=Object.freeze({tradeoff:'長いほうは熱移動率が大きく、効率は小さい',both:'長いほうは熱移動率も効率も大きい',equal:'熱移動率も効率も同じになる'});
@@ -6,12 +7,22 @@ export function finLearningConfigs(n=48){
  return [.1,.05].map((length,i)=>({nx:i?n/2:n,ny:1,width:length,height:.01,depth:.01,materials:[{k:200,rho:2700,cp:896}],initial:293.15,boundaries:{left:{type:'temperature',temperature:353.15},right:{type:'insulated'},top:{type:'insulated'},bottom:{type:'insulated'}},source:0,distributedConvection:{h:25,areaPerVolume:400,temperature:293.15}}));
 }
 export function finObservation(config,snapshot){
- const n=config.nx,L=config.width,A=config.height*config.depth,P=2*(config.height+config.depth),k=config.materials[0].k,h=config.distributedConvection.h,ambient=config.distributedConvection.temperature,base=config.boundaries.left.temperature,delta=base-ambient,dx=L/n;
+ const n=config.nx,L=config.width,A=config.height*config.depth,P=2*(config.height+config.depth),k=config.materials[0].k,h=config.distributedConvection.h,ambient=snapshot.ambientTemperature??config.distributedConvection.temperature,base=config.boundaries.left.temperature,delta=base-ambient,dx=L/n;
  if(snapshot.temperature?.length!==n||snapshot.temperature.some(t=>!Number.isFinite(t)||t<=0)||![A,P,k,h,delta,dx].every(x=>Number.isFinite(x)&&x>0))throw Error('フィンの観察条件が不正です。');
- const basePower=2*k*A/dx*(base-snapshot.temperature[0]),sidePower=h*P*dx*snapshot.temperature.reduce((sum,t)=>sum+t-ambient,0),idealPower=h*P*L*delta,bareBasePower=h*A*delta;
+ // With a k(T) table the kernel evaluates the base-face conductance with k at
+ // the first cell's current temperature (boundaryHeat in thermal.mjs). Use the
+ // same evaluation here so the displayed base power is the flux the solver
+ // actually applied; reading the nominal constant k instead would silently
+ // desync the display from the solution. Constant-k configs keep k itself.
+ const kBase=config.materials[0].kTable?positiveTable(config.materials[0].kTable).at(snapshot.temperature[0]):k;
+ const basePower=2*kBase*A/dx*(base-snapshot.temperature[0]),sidePower=h*P*dx*snapshot.temperature.reduce((sum,t)=>sum+t-ambient,0),idealPower=h*P*L*delta,bareBasePower=h*A*delta;
  return {lengthM:L,basePowerW:basePower,sidePowerW:sidePower,efficiency:sidePower/idealPower,effectiveness:sidePower/bareBasePower,bareBasePowerW:bareBasePower,nearTipCellC:snapshot.temperature.at(-1)-273.15,nearTipPositionM:L-dx/2,netStoragePowerW:snapshot.lastPower};
 }
 export function steadyFinPrediction(config){
+ // The closed form assumes constant k. With a property table there is no such
+ // closed form, and silently substituting the nominal k would desync the
+ // prediction from the solver, so refuse explicitly instead.
+ if(config.materials[0].kTable||config.materials[0].cpTable)throw Error('解析定常予測は一定物性の専用です。物性表の条件では数値解の観察値を使ってください。');
  const A=config.height*config.depth,P=2*(config.height+config.depth),L=config.width,k=config.materials[0].k,h=config.distributedConvection.h,delta=config.boundaries.left.temperature-config.distributedConvection.temperature;
  if(![A,P,L,k,h,delta].every(x=>Number.isFinite(x)&&x>0))throw Error('解析フィン条件が不正です。');
  const m=Math.sqrt(h*P/(k*A)),power=k*A*m*delta*Math.tanh(m*L);
@@ -22,7 +33,7 @@ export class FinJourney{
  invalidate(reason){this.prepared=false;this.prediction=null;this.result=null;this.located=false;this.rewound=false;this.reason=reason;}
  prepare({configs,snapshots}){
   this.invalidate('');if(configs?.length!==2||snapshots?.length!==2)throw Error('長短2条件のフィンを準備してください。');const expected=finLearningConfigs(configs[0]?.nx);
-  for(let i=0;i<2;i++){const c=configs[i],e=expected[i],s=snapshots[i];if(['nx','ny','width','height','depth','initial','source'].some(k=>c[k]!==e[k])||c.materials?.length!==1||Object.entries(e.materials[0]).some(([k,v])=>c.materials[0][k]!==v)||c.materials[0].kTable||c.materials[0].cpTable||c.regions||c.outline||c.contactResistance||['left','right','top','bottom'].some(side=>c.boundaries?.[side]?.type!==e.boundaries[side].type||(side==='left'&&c.boundaries[side].temperature!==353.15))||Object.entries(e.distributedConvection).some(([k,v])=>c.distributedConvection?.[k]!==v)||s?.time!==0||s.temperature?.length!==e.nx||s.temperature.some(t=>t!==293.15))throw Error('学習用のフィン条件/初期状態が一致しません。');}
+  for(let i=0;i<2;i++){const c=configs[i],e=expected[i],s=snapshots[i];if(['nx','ny','width','height','depth','initial','source'].some(k=>c[k]!==e[k])||c.materials?.length!==1||Object.entries(e.materials[0]).some(([k,v])=>c.materials[0][k]!==v)||c.materials[0].kTable||c.materials[0].cpTable||c.regions||c.outline||c.contactResistance||['left','right','top','bottom'].some(side=>c.boundaries?.[side]?.type!==e.boundaries[side].type||(side==='left'&&c.boundaries[side].temperature!==353.15))||Object.entries(e.distributedConvection).some(([k,v])=>c.distributedConvection?.[k]!==v)||c.distributedConvection?.temperatureSchedule||s?.time!==0||s.temperature?.length!==e.nx||s.temperature.some(t=>t!==293.15))throw Error('学習用のフィン条件/初期状態が一致しません。');}
   this.configs=structuredClone(configs);this.prepared=true;
  }
  locate(pose){if(this.prepared&&[pose?.yaw,pose?.pitch].every(Number.isFinite)&&Math.hypot(Math.atan2(Math.sin(pose.yaw-FIN_INITIAL_POSE.yaw),Math.cos(pose.yaw-FIN_INITIAL_POSE.yaw)),Math.atan2(Math.sin(pose.pitch-FIN_INITIAL_POSE.pitch),Math.cos(pose.pitch-FIN_INITIAL_POSE.pitch)))>=.1)this.located=true;}

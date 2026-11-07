@@ -1,0 +1,48 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3次元直方体 非定常熱伝導の開発検証</title><link rel="stylesheet" href="cavity.css"><style>
+.faces{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem}
+.faces fieldset{margin:0}
+.faces label{display:flex}
+.preset-label{display:flex;max-width:100%}
+.preset-label select{flex:1;min-width:0}
+.slice-controls{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center}
+</style></head><body><main>
+<h1>3次元直方体 非定常熱伝導の開発検証</h1><p class="notice">開発用・公開承認前。軸平行な直方体のセル中心有限体積による3次元非定常熱伝導を解きます。一定物性・一様初期温度・面ごとに4種の境界条件までで、放射・温度依存物性・体積発熱・複数材料は解かず、公開ビルドに含めません。</p>
+<p>表示は3次元そのものの描画ではなく、選んだ方向の1層分の断面（セル平均温度の色）です。図と説明はアプリ作成です。</p>
+<form id="settings">
+<fieldset><legend>条件：直方体と材料</legend>
+<label class="preset-label">プリセット<select id="preset"></select></label>
+<label>x寸法 [mm]<input id="sx" type="number" step="any" required></label>
+<label>y寸法 [mm]<input id="sy" type="number" step="any" required></label>
+<label>z寸法 [mm]<input id="sz" type="number" step="any" required></label>
+<label>nx（x方向セル数）<input id="nx" type="number" step="1" required></label>
+<label>ny（y方向セル数）<input id="ny" type="number" step="1" required></label>
+<label>nz（z方向セル数）<input id="nz" type="number" step="1" required></label>
+<label>熱伝導率 k [W/(m K)]<input id="k" type="number" step="any" required></label>
+<label>密度 ρ [kg/m³]<input id="rho" type="number" step="any" required></label>
+<label>比熱 cp [J/(kg K)]<input id="cp" type="number" step="any" required></label>
+<label>初期温度 [K]<input id="t0" type="number" step="any" required></label>
+</fieldset>
+<fieldset><legend>境界条件：6面</legend>
+<div class="faces" id="faces"></div>
+</fieldset>
+<button id="apply" type="submit">初期状態から計算</button>
+</form>
+<p id="summary"></p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="5" min="0.001" max="100000" step="any"></label><div class="buttons"><button id="run">再生</button><button id="pause">一時停止</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div><p>物理時刻 <output id="clock">0.000 s</output>。実時間と同速ではありません。1コマは安定刻み safeDt 以下に自動で割って進めます。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p></section>
+<section aria-label="断面と温度"><div class="slice-controls">
+<label>断面の向き<select id="plane"><option value="xy">xy断面（z一定）</option><option value="xz">xz断面（y一定）</option><option value="yz">yz断面（x一定）</option></select></label>
+<label>断面の位置（層）<input id="slice" type="range" min="0" max="0" step="1" value="0"></label><output id="slice-pos"></output>
+<label>測定セルの列<input id="probe-col" type="range" min="0" max="0" step="1" value="0"></label>
+<label>測定セルの行<input id="probe-row" type="range" min="0" max="0" step="1" value="0"></label>
+</div>
+<p id="legend"></p>
+<div class="fields"><figure><canvas id="field" width="600" height="340" role="img" aria-label="直方体の断面温度分布"></canvas></figure></div>
+<pre id="readout"></pre>
+<p>断面図のセルをクリックしても測定セルを選べます。温度は各セルの平均です。</p></section>
+<details id="diagnostics"><summary>診断（安定刻み・エネルギー収支）</summary><pre id="diagnostic-values"></pre></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>支配関係はセル中心有限体積の熱収支で、内部面のコンダクタンスは中心間距離に対する kA/d、温度指定の面は面上に境界節点を置く半セル抵抗 2kA/d、対流の面は半セル伝導と膜抵抗の直列 A/(d/(2k)+1/h) です。熱流束は内向きを正とし温度に依存しません。時間積分は陽解法（前進オイラー）で、刻みは構築時に計算する安定上限 safeDt（離散系の上限に安全率0.8）を超えられません。</p>
+<p>検証の要約（詳細は docs/dynamic/TRANSIENT_BRICK_3D_DEVELOPMENT.md）：全面温度指定の過渡解を1次元級数の積（mpmath 50桁のセル平均）と比較し、立方体で RMS 誤差 0.4916 → 0.1176 → 0.0291 K（格子 4³ → 8³ → 16³、観測次数 2.06 / 2.02）を得ました。厚さ一様条件では2次元矩形FVMとビット一致し、定常極限は独立な直接解と最大 6.8e-13 K で一致します。エネルギー収支は補償付き加算で追跡し、誤差を診断に表示します。</p>
+<p>解かないもの：放射境界と対流＋放射の同時境界、物性の温度依存、体積発熱、複数材料・接触熱抵抗、非直方体形状、陰解法・適応刻み。温度指定・対流の面は半セル近似であり、面温度そのものを解く表面交換型ではありません。格子は各軸64セル・合計32,768セルが上限です。</p>
+<p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="transient-brick-3d-ui.mjs"></script></body></html>

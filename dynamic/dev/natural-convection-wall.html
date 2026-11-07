@@ -1,0 +1,31 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>鉛直加熱壁の自然対流（相似解と相関式）の開発検証</title><link rel="stylesheet" href="cavity.css"></head><body><main>
+<h1>鉛直加熱壁の自然対流（相似解と相関式）の開発検証</h1><p class="notice">開発用・公開承認前。鉛直平板まわりの層流自然対流を、等温壁は教科書§8.3の相似解（Ostrach）で、一様熱流束壁は式(8.44b)で計算します。検証済み範囲（Pr=0.1〜100、層流Ra_L≲10⁹）の外では値を出さず、理由を表示します。公開ビルドに含めません。</p>
+<form id="settings"><fieldset><legend>条件：鉛直平板と流体物性（膜温度で評価）</legend>
+<label>例題プリセット<select id="preset"><option value="" selected>手入力</option><option value="ex81">例題8.1：等温壁</option><option value="ex83">例題8.3：等温壁</option><option value="uhf">一様熱流束の参照ケース</option></select></label>
+<label>壁種別<select id="wallkind"><option value="isothermal" selected>等温壁（相似解）</option><option value="uniform-flux">一様熱流束壁（式8.44b）</option></select></label>
+<label>壁の高さ L [m]<input id="length" type="number" value="0.30" min="0" step="any" required></label>
+<label>壁温 Tw [K]<input id="walltemp" type="number" value="323.15" step="any" required></label>
+<label>壁熱流束 q″ [W/m²]<input id="heatflux" type="number" value="100" min="0" step="any" required disabled></label>
+<label>周囲温度 T∞ [K]<input id="ambient" type="number" value="293.15" step="any" required></label>
+<label>熱膨張係数 β [1/K]<input id="beta" type="number" value="0.00325" min="0" step="any" required></label>
+<label>動粘度 ν [m²/s]<input id="nu" type="number" value="0.00001643" min="0" step="any" required></label>
+<label>温度拡散率 α [m²/s]<input id="alpha" type="number" value="0.00002315" min="0" step="any" required></label>
+<label>熱伝導率 k [W/(m K)]<input id="k" type="number" value="0.02672" min="0" step="any" required></label>
+<label>重力加速度 g [m/s²]<input id="gravity" type="number" value="9.8" min="0" step="any" required></label>
+<button id="apply" type="submit">計算する</button></fieldset></form>
+<p id="summary">例題8.1の条件（等温壁 Tw=323.15 K、T∞=293.15 K、L=0.30 m、膜温度で評価した空気の物性、g=9.8）を初期値にしています。</p>
+<p id="status" role="status" aria-live="polite">準備中</p>
+<p id="error" role="alert" hidden></p>
+<section aria-label="計算結果"><pre id="readout">まだ計算していません。条件を入れて「計算する」を押してください。</pre><pre id="warnings" hidden></pre></section>
+<section aria-label="プロファイル" id="profiles-isothermal"><div class="fields"><figure><canvas id="graph-velocity" width="600" height="300" role="img" aria-label="上端断面の速度分布グラフ"></canvas><figcaption>上端（x = L）断面の速度分布 u(y)。y は壁からの距離です。</figcaption></figure><figure><canvas id="graph-temperature" width="600" height="300" role="img" aria-label="上端断面の温度分布グラフ"></canvas><figcaption>上端（x = L）断面の温度分布 T(y)。表示範囲は境界層の外縁までです。</figcaption></figure></div></section>
+<section aria-label="壁温分布" id="profiles-uniform" hidden><figure><canvas id="graph-walltemp" width="800" height="260" role="img" aria-label="一様熱流束壁の壁面温度差分布グラフ"></canvas><figcaption>壁面温度差 ΔT(x) の高さ方向分布（式(8.40)）。下端で0、上端で最大になります。</figcaption></figure></section>
+<details><summary>解法と式</summary>
+<p>等温壁：相似変数 η=(y/x)(Gr_x/4)^¼、θ=(T−T∞)/(Tw−T∞) として境界層方程式を f′′′+3ff′′−2(f′)²+θ=0、θ′′+3·Pr·f·θ′=0（f(0)=f′(0)=0、θ(0)=1、f′(∞)=θ(∞)=0）に帰着させ、台形コロケーションとNewton反復で解きます（単独の射撃法は使いません）。局所Nu_x=−θ′(0)·(Gr_x/4)^¼、平均Nu_L=(4/3)Nu_x（x=L）です。比較用の式(8.13a) Churchill–Chu と式(8.27) Squire–Eckert は、同じ入力で評価した平均Nu_Lです。</p>
+<p>一様熱流束壁：修正Rayleigh数 Ra*_L=gβq″L⁴/(kνα)（式(8.42)）と Raithby–Hollands の平均式(8.44b)で平均Nu_Lを求め、壁面温度差の分布は ΔT∝x^{1/5}（式(8.40)）、その平均は式(8.41)に従います。比較用は式(8.43b)を平均温度差基準へ換算した値です。</p>
+<p>式(8.44a)について：教科書に印刷された局所式(8.44a)は、(8.44b)と(8.40)/(8.41)の組合せと、ちょうど自らの先行係数0.630の分だけ食い違います（書籍側の印刷不整合として開発記録に残してあります）。そのため本画面でも(8.44a)は計算に使わず、正しい式として提示もしません。計算経路は(8.44b)です。</p></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>物性は利用者が膜温度 Tf=(Tw+T∞)/2 で評価して入力します（教科書の処方どおり）。流体データベースや温度補間は行いません。物性一定・Boussinesq近似・滑らかな鉛直平板・層流境界層を仮定し、放射と端部効果は含みません。加熱壁では流れは上向き、冷却壁では下向きになり、h は変わりません。</p>
+<p>適用範囲は検証済みの範囲だけです：Pr=0.1〜100、Ra_L=10⁴〜10⁹（層流）。乱流域の式(8.13b)、傾斜板・水平板、鉛直円柱、閉空間は扱いません。範囲外は外挿せず、理由を表示して計算しません。一様熱流束では式(8.44b)の適用条件 Nu≳5 を満たさない条件も計算しません。</p>
+<p>検証の要約（詳細は docs/dynamic/NATURAL_CONVECTION_WALL_DEVELOPMENT.md）：相似解は2つの独立な50桁参照（mpmath の射撃法と scipy の solve_bvp）と θ′(0) で 3e-15 まで一致し、Pr=0.72 では −θ′(0)=0.5046341858 です。例題8.1では式(8.13a)の評価値 Nu_L=47.346（印刷値 47.33）に対し相似解は 46.797、例題8.3では式(8.27)の評価値 61.247（印刷値 61.25）です。</p>
+<p>この開発ページは入力と結果をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="natural-convection-wall-ui.mjs"></script></body></html>

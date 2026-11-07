@@ -1,0 +1,30 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>直線フィン（先端条件の切替）の開発検証</title><link rel="stylesheet" href="cavity.css"></head><body><main>
+<h1>直線フィン（先端条件の切替）の開発検証</h1><p class="notice">開発用・公開承認前。一様断面の直線フィンの軸方向1D非定常熱伝導を解きます。基部の熱拡がり・フィン群・放射・温度依存物性・流体は解かず、公開ビルドに含めません。</p>
+<p>基部は指定温度に保たれ、側面は一様なhで周囲流体へ放熱します。先端は、先端面が同じ流体へ対流する場合と断熱の場合を切り替えて比べられます。図と説明はアプリ作成です。</p>
+<form id="settings"><fieldset><legend>条件：直線フィン</legend>
+<label>長さ L [mm]<input id="flen" type="number" value="100" min="0.1" max="100000" step="any" required></label>
+<label>厚さ [mm]<input id="fthick" type="number" value="10" min="0.001" max="100000" step="any" required></label>
+<label>奥行 [mm]<input id="fdepth" type="number" value="10" min="0.001" max="100000" step="any" required></label>
+<label>先端条件<select id="tip"><option value="convection" selected>先端面対流</option><option value="insulated">断熱先端</option></select></label>
+<label>熱伝導率 k [W/(m K)]<input id="k" type="number" value="200" step="any" required></label>
+<label>密度 ρ [kg/m³]<input id="rho" type="number" value="2700" step="any" required></label>
+<label>比熱 cp [J/(kg K)]<input id="cp" type="number" value="900" step="any" required></label>
+<label>熱伝達率 h [W/(m² K)]<input id="h" type="number" value="25" step="any" required></label>
+<label>基部温度 [K]<input id="tb" type="number" value="353.15" step="any" required></label>
+<label>周囲温度 [K]<input id="tinf" type="number" value="293.15" step="any" required></label>
+<label>初期温度 [K]<input id="t0" type="number" value="293.15" step="any" required></label>
+<label>軸方向のセル数<select id="cells"><option>16</option><option selected>32</option><option>64</option><option>128</option></select></label>
+<button id="apply" type="submit">初期状態から計算</button></fieldset></form>
+<p id="summary">長さ 100.0 mm・厚さ 10.0 mm・奥行 10.0 mm（断面積 100.0 mm²、周長 40.0 mm）、k=200 W/(m K)、ρ=2700 kg/m³、cp=900 J/(kg K)（一定物性）、h=25 W/(m² K)。先端条件：先端面も同じhで対流。</p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="30" min="0.001" max="100000" step="any"></label><div class="buttons"><button id="run">再生</button><button id="pause">一時停止・計算取消</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div><p>物理時刻 <output id="clock">0.000 s</output>。実時間と同速ではありません。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p></section>
+<section aria-label="温度場と分布"><p id="legend"></p><div class="fields"><figure><canvas id="field" width="600" height="300" role="img" aria-label="直線フィンの側面模式図"></canvas></figure></div>
+<label>測定位置（軸方向）<input id="probe" type="range" min="0" max="31" step="1" value="16"></label><pre id="readout"></pre>
+<canvas id="graph" width="800" height="200" role="img" aria-label="軸方向の温度分布グラフ"></canvas>
+<p>温度は各セルの平均です。側面模式図は1D解の表示で、厚さは誇張して描いています。断面内の温度分布を解いたものではありません。</p></section>
+<details id="diagnostics"><summary>各部の熱流と全熱収支</summary><pre id="diagnostic-values"></pre><p>放熱は周囲へ正、基部からの熱流はフィンへの入力を正と定義します。基部熱流と総放熱の差がフィンの蓄熱になります。定常では両者は一致します。</p></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>支配関係は、断面積 Ac・周長 P の軸方向1D熱収支で、フィン定数は m=√(hP/(kAc)) です。定常解は解析的に書け、先端対流では H=h/(mk) として θ/θb=[cosh(m(L−x))+H sinh(m(L−x))]/[cosh(mL)+H sinh(mL)]、断熱先端では H=0 の場合です。数値は有限体積の陽解法で、刻みは安定上限 safeDt 以下に自動で割り、全体のエネルギー収支が丸め予算を超えた状態は受理しません。効率 η の分母は、先端対流では先端面積を含む全表面積、断熱では側面積のみで、学習用フィンモデルと同じ定義です。</p>
+<p>検証の要約（詳細は docs/dynamic/FIN_CONVECTIVE_TIP_DEVELOPMENT.md）：定常解を50桁の解析参照と照合しました。正準条件（L=100 mm、断面10 mm×10 mm、k=200、h=25、基部−周囲=60 K）で、参照の基部熱流は先端対流 5.259731 W・η=0.855241、断熱先端 5.166343 W・η=0.861057 です。この離散モデルは格子を細かくすると約2次でその値へ近づきます。断熱式に修正長さ Lc=L+Ac/P を使う近似は正準条件で相対誤差0.00018%まで小さくなることも測定済みです。過渡は行列指数による独立参照と照合済みです。</p>
+<p>解かないもの：基部内2D熱拡がり、複数フィンの相互作用、先端だけ異なるh、断面変化、放射、物性の温度依存、流体。断面一様の仮定が崩れる条件（h(Ac/P)/k&gt;0.1）は理由を表示して受理しません。任意の実フィンの性能保証ではありません。</p>
+<p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="fin-convective-tip-ui.mjs"></script></body></html>

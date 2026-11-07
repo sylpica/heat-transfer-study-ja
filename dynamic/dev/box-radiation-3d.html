@@ -1,0 +1,24 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>直方体エンクロージャの放射交換（開発検証）</title><link rel="stylesheet" href="cavity.css"><style>fieldset{min-width:0}label,select,input{min-width:0}.wide{display:flex}.wide select{flex:1 1 auto;min-width:0}table{border-collapse:collapse;width:100%;min-width:640px}th,td{border-bottom:1px solid #8291a5;padding:.4rem;text-align:right}th:first-child{text-align:left}.table-scroll{overflow-x:auto}.face-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:.6rem}.face-grid fieldset{margin:0}</style></head><body><main>
+<h1>直方体エンクロージャの放射交換（開発検証）</h1><p class="notice">開発用・公開承認前。軸平行な直方体の閉じた囲いです。6面はすべて等温の灰色拡散面で、面内の伝導・対流・参加媒体・開口・曲面は解かず、一般形状も扱いません。形態係数は検証済みの3次元核、交換は検証済みの放射ネットワークで解き、公開ビルドに含めません。</p>
+<form id="settings">
+<fieldset><legend>寸法と積分解像度</legend>
+<label class="wide">検証済みプリセット<select id="preset"><option value="" selected>手入力</option><option value="gray">灰色箱 2×1×3（検証済みの参照ケース）</option><option value="iso">等温黒体立方体（交換は厳密にゼロ）</option><option value="flat">扁平箱 1×1×0.001（解像度の自動引上げ／明示・低では拒否）</option></select></label>
+<label>x寸法 [m]<input id="dim-x" type="number" value="2" min="0" step="any" required></label>
+<label>y寸法 [m]<input id="dim-y" type="number" value="1" min="0" step="any" required></label>
+<label>z寸法 [m]<input id="dim-z" type="number" value="3" min="0" step="any" required></label>
+<label>監視上限温度 [K]<input id="max-temperature" type="number" value="700" min="0" step="any" required></label>
+<label class="wide">形態係数の積分解像度<select id="resolution"><option value="auto" selected>自動（受入精度まで自動で引上げ）</option><option value="low">明示：低（分離10・極16・ガウス6）</option><option value="mid">明示：中（分離20・極32・ガウス7）</option><option value="high">明示：高（分離32・極48・ガウス8）</option><option value="max">明示：最高（分離64・極64・ガウス8）</option></select></label>
+</fieldset>
+<fieldset><legend>6面の条件</legend><div class="face-grid" id="faces"></div>
+<button id="apply" type="submit">初期状態から計算</button></fieldset></form>
+<p id="summary">—</p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="60" min="0.001" step="any"></label><div class="buttons"><button id="run">再生</button><button id="pause">一時停止</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div><p>物理時刻 <output id="clock">0.000 s</output>。実時間と同速ではありません。1コマは安定刻み safeDt 以下へ自動で細分して進めます。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p></section>
+<section aria-label="各面の温度と正味放射"><p id="legend"></p><div id="figure"></div><pre id="readout"></pre><p>表は横にスクロールできます。正味放射は外向きが正です。</p><div class="table-scroll"><table id="face-values"><caption>全6面の面積・温度・射度・照射・正味放射</caption><thead><tr><th>面</th><th>面積 [m²]</th><th>温度 [K]</th><th>射度 J [W/m²]</th><th>照射 G [W/m²]</th><th>正味放射 [W]</th><th>正味熱流束 [W/m²]</th></tr></thead><tbody></tbody></table></div></section>
+<details id="diagnostics"><summary>形態係数・受入判定・熱収支</summary><pre id="diagnostic-values"></pre></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>閉じた囲いの射度は J_i＝ε_i σT_i⁴＋(1−ε_i)Σ_j F_ij J_j を解き、面iからjへの正味交換は Q_ij＝A_i F_ij (J_i−J_j) [W] です。形態係数 F は3次元核が式(10.17a)の二重積分から求め、各行の総和は1、A_i F_ij＝A_j F_ji（相反則）を満たします。各面の蓄熱は C_i dT_i/dt＝P_i−Σ_j Q_ij で、Heun法で時間を進め、刻みは放射の安定上限 safeDt 以下に限ります。温度は絶対温度Kで計算・表示します。</p>
+<p>受入判定：放射ネットワークは総和則・相反則とも1e-12以内の行列だけを受け付けますが、形態係数核自身の残差保証は1e-9です。接続層はネットワークと同じ式で事前に判定し、解像度が未指定なら受入を満たすまで段階的に上げます。再正規化やクリッピングによる補正は一切しません。最大解像度でも受入に届かない寸法の偏りは、実測残差を示して拒否します。</p>
+<p>検証の要約（詳細は docs/dynamic/BOX_RADIATION_3D_DEVELOPMENT.md と BOX_RADIATION_3D_GUI_20261107.md）：灰色箱2×1×3（面ごとに温度・放射率が異なる条件）で、独立参照（教科書Table 10.3の解析式をmpmath 50桁で評価し射度系を解いたもの）との最大相対差は射度3.0×10⁻¹⁴・正味出力3.6×10⁻¹³でした。等温黒体立方体では全交換と放射収支が厳密に0、外部入力なしの過渡3000コマでもエネルギー保存の相対誤差は2.0×10⁻¹⁴でした。接続層のスナップショットは、同じ形態係数と面条件を素の放射ネットワークへ直接与えた結果と全項目一致します（接続層は数値偏差を加えません）。</p>
+<p>適用限界：軸平行な直方体だけです。一般形状・曲面・開口・参加媒体は扱いません。各面は等温で、面内の温度分布や伝導は解きません。外部入力は面ごとの一定値（power [W] か heatFlux [W/m²] の一方）だけです。全反射（ε＝0のみ）の囲いは射度の水準が一意でないため、ネットワークが特異として拒否するか、物理的に正しいゼロ交換を返します。任意の実エンクロージャの性能保証ではありません。</p>
+<p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="box-radiation-3d-ui.mjs"></script></body></html>

@@ -1,0 +1,38 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>円柱横流れの過渡伝導（開発検証）</title><link rel="stylesheet" href="cavity.css"></head><body><main>
+<h1>円柱横流れの過渡伝導（開発検証）</h1><p class="notice">開発用・公開承認前。一様な横流れに置かれた固体円柱の半径方向1D非定常伝導を解きます。熱伝達率hは周方向平均・表面一様・時間一定とし、流体は一様で温度一定です。局所hの周方向分布・流れ場そのもの・端面・放射は解かず、公開ビルドに含めません。</p>
+<form id="settings">
+<fieldset><legend>条件：円柱・固体・温度</legend>
+<label>検証済みプリセット<select id="preset"><option value="" selected>手入力</option><option value="gradient">内部勾配ケース（直接h、Bi=1/3）</option><option value="lumped">集中定数ケース（直接h、τ=342.65 s）</option><option value="ex78">例題7.8（風速→h、式7.66）</option></select></label>
+<label>直径 D [mm]<input id="diameter" type="number" value="20" min="0" step="any" required></label>
+<label>長さ L [mm]<input id="length" type="number" value="100" min="0" step="any" required></label>
+<label>熱伝導率 k [W/(m K)]<input id="k" type="number" value="15" step="any" required></label>
+<label>密度 ρ [kg/m³]<input id="rho" type="number" value="8000" step="any" required></label>
+<label>比熱 cp [J/(kg K)]<input id="cp" type="number" value="500" step="any" required></label>
+<label>初期温度 [K]<input id="t0" type="number" value="400" step="any" required></label>
+<label>流体温度 T∞ [K]<input id="tinf" type="number" value="300" step="any" required></label>
+<label>半径方向のセル数<select id="cells"><option>16</option><option selected>32</option><option>64</option><option>128</option></select></label>
+</fieldset>
+<fieldset><legend>熱伝達率 h の与え方（どちらか一方）</legend>
+<label>与え方<select id="hsource"><option value="direct" selected>hを直接指定</option><option value="wind">風速から推定（教科書§7.6の相関）</option></select></label>
+<label>熱伝達率 h [W/(m² K)]<input id="h" type="number" value="500" step="any"></label>
+<label>主流速度 u∞ [m/s]<input id="velocity" type="number" step="any" disabled></label>
+<label>流体の密度 ρf [kg/m³]<input id="fdensity" type="number" step="any" disabled></label>
+<label>流体の粘度 μf [Pa·s]<input id="fviscosity" type="number" step="any" disabled></label>
+<label>流体の比熱 cpf [J/(kg K)]<input id="fcp" type="number" step="any" disabled></label>
+<label>流体の熱伝導率 kf [W/(m K)]<input id="fk" type="number" step="any" disabled></label>
+<label>膜温度の表面温度 [K]（空欄＝初期温度）<input id="film" type="number" step="any" disabled></label>
+<button id="apply" type="submit">初期状態から計算</button></fieldset></form>
+<p id="summary">直径 20.00 mm・長さ 100.0 mm、k=15 W/(m K)、ρ=8000 kg/m³、cp=500 J/(kg K)（一定物性）、h=500 W/(m² K)（直接指定）、Bi=0.333333。</p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="2" min="0.001" max="100000" step="any"></label><div class="buttons"><button id="run">再生</button><button id="pause">一時停止</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div><p>物理時刻 <output id="clock">0.000 s</output>。実時間と同速ではありません。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p></section>
+<section aria-label="温度場と分布"><p id="legend"></p><div class="fields"><figure><canvas id="field" width="600" height="300" role="img" aria-label="円柱断面の模式図"></canvas></figure></div>
+<label>測定位置（半径方向）<input id="probe" type="range" min="0" max="31" step="1" value="16"></label><pre id="readout"></pre><pre id="warnings" hidden></pre>
+<canvas id="graph" width="800" height="200" role="img" aria-label="半径方向の温度分布グラフ"></canvas>
+<p>温度は各セルの平均です。断面図は1D解の表示であり、角度方向・軸方向の温度分布を解いたものではありません（hを周方向平均・表面一様と置く前提の帰結です）。端面からの熱交換も含みません。</p></section>
+<details id="diagnostics"><summary>熱伝達率の内訳と全熱収支</summary><pre id="diagnostic-values"></pre><p>表面熱流・積算熱量は円柱の内向きを正と定義します（冷却中は負）。積算熱量と内部エネルギーの変化の差が収支誤差です。定常では表面熱流は0へ近づきます。</p></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>内部の伝導は、円柱のセル中心有限体積モデル（既存の放射方向モデル）をそのまま使い、表面は半セルの伝導抵抗と対流の直列抵抗で処理します。陽解法の刻みは安定上限 safeDt 以下へ自動で割り、表示する1コマの中でも細分して進めます。表面温度は半セル抵抗で再構成した値で、最外セルの平均温度とは少し異なります。</p>
+<p>hを風速から推定する場合は、教科書§7.6の円柱横流れ相関（Pe_D≦0.2は式(7.67)、Re_D＜4000は式(7.66)、40,000＜Re_D＜400,000は式(7.68)、その他はChurchill–Bernstein全体式(7.65)、Re_D≦10⁷を上限）だけを使い、範囲外は外挿せず理由を表示します。流体物性は膜温度Tf＝(Ts＋T∞)/2で評価した利用者供給値で、過渡の間は固定し、hは一度だけ評価します（膜温度の表面温度は初期温度が既定です）。</p>
+<p>検証の要約（詳細は docs/dynamic/CYLINDER_CROSSFLOW_TRANSIENT_DEVELOPMENT.md）：例題7.8の条件では h＝2833.9817356038657 W/(m² K) が50桁参照と相対差10⁻¹²以内で一致します。集中定数ケース（Bi＝0.00125）では時定数 τ＝ρcpR/(2h)＝342.65 s が解析値と一致し、平均温度の減衰比は t＝τ で e⁻¹ と相対差3.2×10⁻⁴、t＝2τ で e⁻² と6.3×10⁻⁴でした。内部勾配ケース（Bi＝1/3）は独立な Python 参照（行列指数による厳密伝播）と照合し、格子128で中心4.1×10⁻⁴ K・表面7.9×10⁻⁴ K・平均8.2×10⁻⁵ K以内の誤差です。t＝600 sまでの相対エネルギー誤差は1.2×10⁻¹⁴でした。</p>
+<p>適用限界：Bi＝hR/k＞10 は、局所hの周方向非一様が内部の角度方向分布として現れる領域であり、1次元放射＋周方向平均hの前提が崩れるため、理由を表示して受理しません（教科書の限界ではなく本モデルの開発範囲です）。解かないもの：端面、放射、浮力・混合対流、物性の温度依存、相変化、粗さ、管群。任意の実円柱の性能保証ではありません。</p>
+<p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="cylinder-crossflow-transient-ui.mjs"></script></body></html>

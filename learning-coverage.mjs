@@ -1,5 +1,21 @@
 // A descriptive coverage report, deliberately NOT a fabricated overall completion percentage.
 // Never treat a draft record or an original English PDF as a published Japanese lesson.
+// Count public Japanese sections only from a fully recognized manifest:
+// every entry must be a bundled translation file for a real section (the
+// public build validates those files and enforces their count). A manifest
+// with any unrecognized entry is unexamined, so report null rather than a
+// fabricated number; an empty manifest is a definite zero.
+function bundledTranslationCount(paths,sections){
+  if(!Array.isArray(paths)||paths.length===0)return 0;
+  const ids=new Set(sections.map(section=>section.id));
+  let count=0;
+  for(const path of paths){
+    const match=typeof path==='string'&&path.match(/^\.\/data\/sections\/(\d+)-(\d+)-ja\.json$/);
+    if(!match||!ids.has(match[1]+'.'+match[2]))return null;
+    count++;
+  }
+  return count;
+}
 export function learningCoverage({book,questions,glossary,guides,contentManifest,originalNotes=null,deepLessons=null}) {
   const sections=book.chapters.flatMap(ch=>ch.sections);
   const publishedFilePaths=contentManifest.files||[];
@@ -26,7 +42,7 @@ export function learningCoverage({book,questions,glossary,guides,contentManifest
     oldPcDraftOnlyRecordSections:sections.filter(s=>s.translationStatus==='draft_complete').length,
     protectedPriorSections:sections.filter(s=>s.translationStatus==='private_only').length,
     publicChapterManifestFiles:publishedFilePaths.length,
-    publicJapaneseSections:publishedFilePaths.length===0?0:null, // Must inspect manifested files before assigning a nonzero count.
+    publicJapaneseSections:bundledTranslationCount(publishedFilePaths,sections),
     originalChapterGuides:guides.filter(g=>g.bookChapter&&book.chapters.some(ch=>ch.id===g.bookChapter)).length,
     chaptersWithOriginalPractice:new Set(original.map(q=>q.source.chapterId).filter(Boolean)).size,
     independentlyAuthoredJapaneseNotes:originalNotes?.notes?.length??null,

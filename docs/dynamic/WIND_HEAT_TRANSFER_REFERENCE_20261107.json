@@ -1,0 +1,109 @@
+{
+  "generatedBy": "scripts/dynamic-wind-heat-transfer-reference.py",
+  "generatorSHA256": "3cbe4751b3895ec1d70a8b85c43dac37c73095f3db2f467e26e8e3599139b267",
+  "precisionDigits": 50,
+  "textbook": "A Heat Transfer Textbook, 6th ed. (Lienhard)",
+  "releaseApproved": false,
+  "reference": {
+    "flatPlateLaminarEx65": {
+      "source": "Example 6.5, eqn. (6.68)",
+      "kinematicViscosity": 1.95e-05,
+      "conductivity": 0.0292,
+      "prandtl": 0.703,
+      "velocity": 15.0,
+      "length": 0.5,
+      "reynolds": 384615.3846153846,
+      "nusselt": 366.1563023739426,
+      "h": 21.383528058638248,
+      "book": {
+        "reynolds": 384600,
+        "nusselt": 366.2,
+        "h": 21.4
+      }
+    },
+    "flatPlateMixedObservedEx69": {
+      "source": "Example 6.9, eqns. (6.115) and (6.120)",
+      "kinematicViscosity": 1.575e-05,
+      "conductivity": 0.0264,
+      "prandtl": 0.708,
+      "velocity": 10.0,
+      "length": 2.0,
+      "reynolds": 1269841.2698412698,
+      "transitionStart": 400000.0,
+      "transitionEnd": 870000.0,
+      "c": 2.5453639233956045,
+      "terms": [
+        599.7118987806812,
+        374.290807379558,
+        460.02850361860055
+      ],
+      "nusselt": 1434.0312097788396,
+      "h": 18.929211969080683,
+      "book": {
+        "c": 2.55,
+        "terms": [
+          599.9,
+          374.3,
+          459.2
+        ],
+        "nusselt": 1433,
+        "h": 18.92
+      }
+    },
+    "flatPlateAbruptEx611a": {
+      "source": "Example 6.11, abrupt-transition reduction of eqn. (6.120)",
+      "prandtl": 0.708,
+      "reynolds": 1269841.2698412698,
+      "transitionReynolds": 400000.0,
+      "nusselt": 1759.8722134773236,
+      "book": {
+        "nusselt": 1760
+      }
+    },
+    "flatPlateAbruptEx611b": {
+      "source": "Example 6.11, abrupt-transition reduction of eqn. (6.120)",
+      "prandtl": 0.708,
+      "reynolds": 1269841.2698412698,
+      "transitionReynolds": 870000.0,
+      "nusselt": 1151.711535069719,
+      "book": {
+        "nusselt": 1152
+      }
+    },
+    "flatPlateLiquidAbrupt": {
+      "source": "Abrupt-transition average developed from eqn. (6.113) as the text suggests",
+      "prandtl": 7.0,
+      "reynolds": 2000000.0,
+      "transitionReynolds": 300000.0,
+      "nusselt": 8617.198943237463
+    },
+    "flatPlateLiquidMetal": {
+      "source": "eqn. (6.69)",
+      "peclet": 200.0,
+      "nusselt": 15.980613254815974
+    },
+    "cylinderEx78": {
+      "source": "Example 7.8 evaluated forward, eqn. (7.66)",
+      "reynolds": 457.0,
+      "prandtl": 0.712,
+      "nusselt": 10.694270700391945,
+      "h": 2833.981735603865,
+      "book": {
+        "nusselt": 10.69,
+        "h": 2833
+      }
+    },
+    "cylinderNakaiOkazaki": {
+      "source": "eqn. (7.67)",
+      "peclet": 0.1,
+      "nusselt": 0.5063310247796459
+    },
+    "cylinderComponent768": {
+      "source": "eqn. (7.68) compared with eqn. (7.65)",
+      "reynolds": 100000.0,
+      "prandtl": 0.7,
+      "nusselt768": 243.95183127464477,
+      "nusselt765": 214.12604287337518
+    }
+  }
+}

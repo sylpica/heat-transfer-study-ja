@@ -1,13 +1,15 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>自然対流の開発検証</title><link rel="stylesheet" href="cavity.css"></head><body>
 <main><h1>自然対流の開発検証</h1><p class="notice">開発用。一般CFDとしての公開承認前です。この画面・計算コードは公開ビルドに含めません。</p>
-<p>左右を温度の異なる壁にした、密閉された正方形内の空気を計算します。温かい側の上昇流と循環を、計算した速度場で観察します。</p>
-<form id="settings"><fieldset><legend>条件A：10 mm角、300 K付近の空気</legend>
-<label>左右壁の温度差 [K]<input id="difference" type="number" value="10" min="0" max="10" step="0.5" required></label>
+<p>左右を温度の異なる壁にした、密閉された矩形内の流体を計算します。温かい側の上昇流と循環を、計算した速度場で観察します。</p>
+<form id="settings"><fieldset><legend>条件A：高さ10 mm、300 K付近</legend>
+<label>左右壁の温度差 [K]<input id="difference" type="number" value="10" min="0" max="12" step="0.5" required></label>
 <label>鉛直浮力の向き [m/s²]<input id="gravity" type="number" value="9.81" min="-9.81" max="9.81" step="0.01" required></label>
-<label>各方向の格子数<select id="grid"><option>12</option><option selected>16</option><option>24</option><option>32</option><option value="64">64（計算量が多い）</option></select></label>
+<label>プラントル数 Pr<select id="prandtl"><option value="0.1">0.1</option><option value="0.71" selected>0.71</option><option value="1">1</option><option value="7">7</option></select></label>
+<label>アスペクト比（幅/高さ）<select id="aspect"><option value="0.5">0.5（幅5 mm）</option><option value="1" selected>1（幅10 mm）</option><option value="2">2（幅20 mm）</option></select></label>
+<label>高さ方向の格子数<select id="grid"><option>12</option><option selected>16</option><option>24</option><option>32</option><option value="64">64（計算量が多い）</option></select></label>
 <button id="apply" type="submit">初期状態から計算</button><button id="compare" type="button">現在の条件をBへ固定して比較</button><button id="uncompare" type="button" disabled>比較を解除</button>
 </fieldset></form>
-<p>右壁は300−ΔT/2 K、左壁は300＋ΔT/2 K。初期温度は300 K。上下は断熱、全壁は静止・滑りなし。正の浮力設定では温かい空気への浮力が上向きです。条件変更・比較開始では両方を時刻0へ戻します。</p>
+<p>右壁は300−ΔT/2 K、左壁は300＋ΔT/2 K。初期温度は300 K。幅はアスペクト比×10 mm、幅方向の格子数は正方形セルになるよう連動します。上下は断熱、全壁は静止・滑りなし。正の浮力設定では温かい流体への浮力が上向きです。条件変更・比較開始では両方を時刻0へ戻します。</p>
 <section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="0.1" min="0.0001" max="1" step="0.01"></label><label>時間刻み上限 [s]（空欄は自動）<input id="dt" type="number" min="0" step="any"></label>
 <div class="buttons"><button id="run">再生</button><button id="pause">一時停止・計算取消</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div>
 <p>物理時刻 <output id="clock">0.000 s</output>。再生は計算完了ごとに次のコマへ進み、実時間との同速再生を保証しません。</p>
@@ -20,6 +22,7 @@
 <details id="heat-flux"><summary>壁面・中央面・体積平均の熱移動</summary><pre id="heat-flux-values"></pre><p>Nu₀は左壁の伝導熱流束の高さ平均、Nu₁/₂は鉛直中央面の伝導＋移流の熱流束の高さ平均です。体積平均Nuは各格子面の伝導＋移流をx方向に台形積分します。どれも基準長さは高さH、温度差は左壁−右壁です。瞬間値のため過渡中は一致せず、温度差0ではNuを定義しません。壁の熱は正x方向を正とし、左壁では流入、右壁では流出の符号です。</p><p>移流には計算で用いた面温度と速度を使い、基準300 Kを引きます。断面の正味質量流量が0なら基準温度の変更は断面熱を変えません。定常状態の保存的な離散式では各断面の熱が一致します。文献のNuを比較するときは平均の場所・定義・推定精度を対応させてください。</p><p>格子数を増やすと計算時間が長くなります。64格子の追加検証は正方形Ra=1000、Pr=0.71の定常熱・速度極値に限定したもので、すべての過渡場や一般CFDの精度承認ではありません。この画面は引き続き開発用です。</p></details>
 <details id="mechanical"><summary>運動エネルギーと圧力補正</summary><pre id="mechanical-values"></pre><p>MACの速度配置で積分した離散運動エネルギーを表示します。圧力補正前の速度は現在の速度・圧力勾配・最後の刻みから再構成します。閉境界で発散0のとき、圧力仕事の体積積分は0となり、直交投影で減る量はρΔV Σ|δu|²/2です。離散の部分積分と投影の整合性を調べる量で、連続圧力の精度評価は独立した参照場で行います。</p><p>運動エネルギーと顕熱は別の収支です。この低速Boussinesqモデルの温度式は、粘性散逸や圧縮の仕事を熱源へ戻しません。動く壁や浮力の仕事・粘性散逸の全収支を、この圧力補正の診断だけで承認しません。Ec=U²/(cp ΔT)は表示したセル中心最大速度からの参考値で、温度差0では定義しません。運動エネルギーはJ、仕事率はW、1回の補正の変化はJです。</p></details><details id="diagnostics"><summary>計算条件・収支・収束</summary><pre id="diagnostic-values"></pre><p>Poisson残差と発散が小さいことだけでは連続圧力の精度は保証できません。既定の運動量2次差分を使用し、実験用高次差分はこの画面では選べません。</p></details>
 <details><summary>理論・物性・適用範囲</summary><p>矩形2Dの非圧縮層流。MAC速度とセル温度、圧力投影、Boussinesq浮力を使用します。Ra≤1000、|β(T−300)|≤0.1の範囲。自由形状、障害物、入口・出口、乱流、共役伝熱、圧縮性、3D流れは未対応。奥行き1 mあたりを評価し、奥行き方向の端面をモデル化しません。</p>
-<p>参照物性は300 Kの空気：ρ=1.177 kg/m³、cₚ=1006 J/(kg K)、k=0.0264 W/(m K)、ν=1.575×10⁻⁵ m²/s。A Heat Transfer Textbook第6版・付録A.6（書籍755/PDF769）で参照した値。α=k/(ρcₚ)、β=1/300 K⁻¹は理想気体の近似。温度依存は未対応です。説明・表示はアプリ作成。</p>
+<p>物性はρ=1.177 kg/m³、cₚ=1006 J/(kg K)を固定し、ν·αは300 Kの空気の積（ν=1.575×10⁻⁵ m²/s、α=k/(ρcₚ)、k=0.0264 W/(m K)から3.512×10⁻¹⁰ m⁴/s²。A Heat Transfer Textbook第6版・付録A.6（書籍755/PDF769）で参照した値）に固定して、比ν/α=Prでνとαへ配分します。Raは温度差と浮力だけで決まりPrに依りません。Pr=0.71ではν≈1.579×10⁻⁵、α≈2.224×10⁻⁵ m²/sで空気にほぼ一致しますが、それ以外のPrは特定の実在流体ではなく仮想流体です。β=1/300 K⁻¹は理想気体の近似。温度依存は未対応です。説明・表示はアプリ作成。</p>
+<p>Prとアスペクト比の選択肢は、Ra=1000・高さ方向32格子で定常Nuを検証済みの範囲（Pr=0.1/0.71/1/7、アスペクト比0.5/1/2）だけです。それ以外の格子・過渡場への一般化はしていません。温度差と浮力の組合せでRa&gt;1000になる条件は、計算核が従来どおり拒否します。</p>
 <p>Nuは瞬間の左壁平均q″をkΔT/Hで割った値で、定常相関ではありません。壁温を時刻0で急に変えるため、初期Nuは半セルの近似と格子数に依存します（16格子では初期値16）。初期点を物理的な有限の最大値とは扱わず、格子を変えるときは同じ正の物理時刻で比べてください。ΔT=0では定義しません。熱量の基準は273.15 K。履歴はメモリー内のみで、再読み込みで消えます。既存アプリの回答履歴へは保存・送信しません。この開発画面のオフライン利用は未検証です。</p></details>
 </main><script type="module" src="cavity-ui.mjs"></script></body></html>

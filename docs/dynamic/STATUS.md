@@ -731,3 +731,6 @@ gpu-diffusion.htmlを専用非同期Workerへ接続し、実backend/精度/adapt
 
 
 円管の連続quartic環帯平均への独立空間4系列を完了。RMS .0137647→.00659505→.00321097→.00158372K、最終次数1.01969（軸風上/入口半dxを含む全場1次）、最細Nu_D4.36447122で48/11との差.0191321%。実コアへ独立定常場を渡した固定点も全系列で率<1e−10K/s・1刻み差<1e−10K・収支成功。製品を一様初期から定常へ時間発展した測定ではない。HEATED_PIPE_SPATIAL_REFERENCE_20261107_v1.jsonへ自作全場/方法/hashを保存、新goldentestを含む関連6Node成功。実Worker/GUI/実空気preset/一般円管CFDは次でありreleaseApproved=falseを維持。
+
+
+円管の別Workerを実接続し、Chromium/WebKitとも独立時間指数への最大温度差7.71628e−6K/全4熱差1.40220e−5J、全4定常固定点、完全復元、破損熱/未知物理拒否後の旧状態保持、実progress取消後の全場・熱の再現、加熱冷却対称、8192環帯セル/微小熱/保存不変更が成功。最初の試験は他モデルのエラー文言を期待して失敗したため円管の厳密な拒否文へ修正（元ログ保持、製品数値不変更）。HEATED_PIPE_WORKER_CHECKPOINT_20261107.json参照。CIへ実Worker試験追加、47コマンド。実空気preset/GUI/公開/一般円管CFDは未完了。

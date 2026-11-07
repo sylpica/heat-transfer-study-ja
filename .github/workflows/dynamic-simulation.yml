@@ -168,6 +168,11 @@ jobs:
         env:
           BROWSER_ENGINE: ${{ matrix.engine }}
           BROWSER_EXECUTABLE: ''
+      - name: Verify orthogonal concave P1 Worker, independent trajectories and real rollback
+        run: node tests/dynamic-orthogonal-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
       - name: Verify solid-wall and prescribed-flow temperature coupling against independent time and manufactured references
         run: node tests/dynamic-conjugate-worker-browser.mjs
         env:

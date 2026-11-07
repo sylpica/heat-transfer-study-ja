@@ -1,0 +1,66 @@
+{
+  "recordedAtUTC": "2026-11-07T01:08:08.685802+00:00",
+  "numericalBaseCommit": "fd0aed2",
+  "sourceFilesSHA256": {
+    "dynamic/dev/orthogonal-diffusion.mjs": "fdc127602630a706c7d72d5ee650ea73fff32ce1be785df0be6140ce47db5ece",
+    "dynamic/dev/orthogonal-diffusion-worker.mjs": "d028a31fe862401c72e039650c0b9675a55a3bc77362f53485554033f9e22a82",
+    "tests/dynamic-orthogonal-worker-browser.mjs": "a536f6879eec67713e46ccbfc524940c6e2db67b5c5ef3353b98263b44f2596b",
+    "dynamic/worker-runtime.mjs": "4a45869d90b22bcea712ba808239f44f43c473d4fd1ad8d4817a590b307e3104"
+  },
+  "browserResults": [
+    {
+      "engine": "chromium",
+      "engineScope": "isolated orthogonal P1 Worker",
+      "actualWorker": true,
+      "maximumDifferenceFromIndependentExponentialK": 3.46876503380944e-05,
+      "maximumBothHeatIntegralDifferenceJ": 3.714517656266958e-06,
+      "completeRestore": true,
+      "invalidInitAndRestoreKeepState": true,
+      "realProgressCancelRollback": true,
+      "mirrorMaximumDifferenceK": 0,
+      "smoothSpatialCases": 3,
+      "maximumSpatialTrajectoryDifferenceK": 0,
+      "maximumReactionDifferenceW": 0,
+      "fineNodes": 225,
+      "uniformAndTinyHeat": true,
+      "localStorageUnchanged": true,
+      "singularConcaveCornerFieldVerified": false,
+      "GUIVerified": false,
+      "generalFreeShapeApproved": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "engineScope": "isolated orthogonal P1 Worker",
+      "actualWorker": true,
+      "maximumDifferenceFromIndependentExponentialK": 3.46876503380944e-05,
+      "maximumBothHeatIntegralDifferenceJ": 3.714517656266958e-06,
+      "completeRestore": true,
+      "invalidInitAndRestoreKeepState": true,
+      "realProgressCancelRollback": true,
+      "mirrorMaximumDifferenceK": 0,
+      "smoothSpatialCases": 3,
+      "maximumSpatialTrajectoryDifferenceK": 0,
+      "maximumReactionDifferenceW": 0,
+      "fineNodes": 225,
+      "uniformAndTinyHeat": true,
+      "localStorageUnchanged": true,
+      "singularConcaveCornerFieldVerified": false,
+      "GUIVerified": false,
+      "generalFreeShapeApproved": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  ],
+  "logs": [
+    "work/orthogonal-worker-chromium-20261107.log",
+    "work/orthogonal-worker-webkit-20261107.log"
+  ],
+  "singularConcaveCornerFieldVerified": false,
+  "GUIVerified": false,
+  "generalFreeShapeApproved": false,
+  "releaseApproved": false
+}

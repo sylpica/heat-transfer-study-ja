@@ -1,0 +1,420 @@
+{
+  "generatedBy": "scripts/dynamic-natural-convection-wall-reference.py",
+  "generatorSHA256": "5d35fd4859f38f6abfe68be5056d1ef9d732a56dcf918eab057602e444c9355a",
+  "precisionDigits": 50,
+  "integrationTolerance": "Taylor integration tol 1e-30 at 50-digit arithmetic; shooting Newton stops at tail residuals below 1e-12",
+  "textbook": "A Heat Transfer Textbook, 6th ed. (Lienhard)",
+  "initialGuessSource": "findroot starting points are taken from the independent JS trapezoidal-collocation solver; all recorded values are converged 50-digit shooting results, cross-checked against scipy solve_bvp with unrelated analytic initial profiles",
+  "releaseApproved": false,
+  "reference": {
+    "similarity": {
+      "0.1": {
+        "prandtl": 0.1,
+        "etaMax": 60.0,
+        "fDoublePrime0": 0.8591671799336585,
+        "thetaPrime0": -0.23015193202861858,
+        "wallTemperatureGradient": 0.23015193202861858,
+        "fPrimeMax": 0.4336241013244669,
+        "etaAtFPrimeMax": 1.1988202317364376,
+        "fInfinity": 1.5238991786236762,
+        "tailFPrimeAbs": 2.4171403703460256e-14,
+        "tailThetaAbs": 5.891653156668176e-16,
+        "localNuCoeff": 0.2894007332388997,
+        "averageNuCoeff": 0.38586764431853293,
+        "churchillChuAsymptoticAverageCoeff": 0.38638815417407474,
+        "squireEckertAverageCoeff": 0.37646599939604525,
+        "ratioSimilarityToChurchillChu": 0.9986528835060836,
+        "ratioSimilarityToSquireEckert": 1.0249734237290233,
+        "etaMaxSensitivityThetaPrime0": 1.4874700326187496e-12
+      },
+      "0.5": {
+        "prandtl": 0.5,
+        "etaMax": 40.0,
+        "fDoublePrime0": 0.7131525841846519,
+        "thetaPrime0": -0.441166995752452,
+        "wallTemperatureGradient": 0.441166995752452,
+        "fPrimeMax": 0.30496519013130857,
+        "etaAtFPrimeMax": 1.0034321051693993,
+        "fInfinity": 0.7026995440166912,
+        "tailFPrimeAbs": 5.290839716692395e-15,
+        "tailThetaAbs": 4.954562747391487e-17,
+        "localNuCoeff": 0.3709757452564876,
+        "averageNuCoeff": 0.4946343270086501,
+        "churchillChuAsymptoticAverageCoeff": 0.4933524851014641,
+        "squireEckertAverageCoeff": 0.519374401727112,
+        "ratioSimilarityToChurchillChu": 1.002598227324065,
+        "ratioSimilarityToSquireEckert": 0.952365625575323
+      },
+      "0.71": {
+        "prandtl": 0.71,
+        "etaMax": 40.0,
+        "fDoublePrime0": 0.677455053255755,
+        "thetaPrime0": -0.5020860903969999,
+        "wallTemperatureGradient": 0.5020860903969999,
+        "fPrimeMax": 0.27732657847008757,
+        "etaAtFPrimeMax": 0.9630835100270098,
+        "fInfinity": 0.6024581459026419,
+        "tailFPrimeAbs": 2.0214715760817947e-15,
+        "tailThetaAbs": 4.554853720221743e-18,
+        "localNuCoeff": 0.38676628147597464,
+        "averageNuCoeff": 0.5156883753012995,
+        "churchillChuAsymptoticAverageCoeff": 0.5142450690544765,
+        "squireEckertAverageCoeff": 0.5481337281209036,
+        "ratioSimilarityToChurchillChu": 1.0028066506295854,
+        "ratioSimilarityToSquireEckert": 0.9408075964768081,
+        "etaMaxSensitivityThetaPrime0": 4.0091470651382935e-51
+      },
+      "0.72": {
+        "prandtl": 0.72,
+        "etaMax": 40.0,
+        "fDoublePrime0": 0.6760195301957003,
+        "thetaPrime0": -0.5046341858313959,
+        "wallTemperatureGradient": 0.5046341858313959,
+        "fPrimeMax": 0.2762433071414566,
+        "etaAtFPrimeMax": 0.9614970307167303,
+        "fInfinity": 0.5988788058667439,
+        "tailFPrimeAbs": 9.093521889391981e-16,
+        "tailThetaAbs": 1.6865272985835596e-18,
+        "localNuCoeff": 0.3873722855353599,
+        "averageNuCoeff": 0.5164963807138132,
+        "churchillChuAsymptoticAverageCoeff": 0.5150505780590503,
+        "squireEckertAverageCoeff": 0.549229365761025,
+        "ratioSimilarityToChurchillChu": 1.0028071081100642,
+        "ratioSimilarityToSquireEckert": 0.9404019757722601
+      },
+      "1": {
+        "prandtl": 1.0,
+        "etaMax": 40.0,
+        "fDoublePrime0": 0.6421881643827938,
+        "thetaPrime0": -0.5671465084929717,
+        "wallTemperatureGradient": 0.5671465084929717,
+        "fPrimeMax": 0.2513282508390559,
+        "etaAtFPrimeMax": 0.9247835745291866,
+        "fInfinity": 0.5229795062377569,
+        "tailFPrimeAbs": 1.9712902323984385e-14,
+        "tailThetaAbs": 4.6885833799772927e-17,
+        "localNuCoeff": 0.40103314208165414,
+        "averageNuCoeff": 0.5347108561088721,
+        "churchillChuAsymptoticAverageCoeff": 0.5333014411516237,
+        "squireEckertAverageCoeff": 0.5736007896511478,
+        "ratioSimilarityToChurchillChu": 1.0026428110792367,
+        "ratioSimilarityToSquireEckert": 0.9322003486677073,
+        "etaMaxSensitivityThetaPrime0": 5.345529420184391e-51
+      },
+      "2": {
+        "prandtl": 2.0,
+        "etaMax": 30.0,
+        "fDoublePrime0": 0.5712631358609717,
+        "thetaPrime0": -0.7164667356280093,
+        "wallTemperatureGradient": 0.7164667356280093,
+        "fPrimeMax": 0.20280808579694273,
+        "etaAtFPrimeMax": 0.850955006700571,
+        "fInfinity": 0.40462204079629566,
+        "tailFPrimeAbs": 1.169288535049588e-16,
+        "tailThetaAbs": 3.861078609193141e-18,
+        "localNuCoeff": 0.42601366983580113,
+        "averageNuCoeff": 0.5680182264477348,
+        "churchillChuAsymptoticAverageCoeff": 0.5672520120906088,
+        "squireEckertAverageCoeff": 0.6151175307114554,
+        "ratioSimilarityToChurchillChu": 1.0013507477114134,
+        "ratioSimilarityToSquireEckert": 0.9234303984000509
+      },
+      "7": {
+        "prandtl": 7.0,
+        "etaMax": 30.0,
+        "fDoublePrime0": 0.45078041389693085,
+        "thetaPrime0": -1.0543136300920526,
+        "wallTemperatureGradient": 1.0543136300920526,
+        "fPrimeMax": 0.13140783647737725,
+        "etaAtFPrimeMax": 0.7285608208288277,
+        "fInfinity": 0.2752058581162442,
+        "tailFPrimeAbs": 7.0602644890772805e-15,
+        "tailThetaAbs": 4.5107872240286925e-17,
+        "localNuCoeff": 0.45833214057710625,
+        "averageNuCoeff": 0.611109520769475,
+        "churchillChuAsymptoticAverageCoeff": 0.6123082038408475,
+        "squireEckertAverageCoeff": 0.6567273617579595,
+        "ratioSimilarityToChurchillChu": 0.9980423534033133,
+        "ratioSimilarityToSquireEckert": 0.9305376269592721,
+        "etaMaxSensitivityThetaPrime0": 1.0899175475979687e-12
+      },
+      "10": {
+        "prandtl": 10.0,
+        "etaMax": 30.0,
+        "fDoublePrime0": 0.4191962552526038,
+        "thetaPrime0": -1.1693339451753264,
+        "wallTemperatureGradient": 1.1693339451753264,
+        "fPrimeMax": 0.11495241746232425,
+        "etaAtFPrimeMax": 0.6957296062701678,
+        "fInfinity": 0.2492298303846592,
+        "tailFPrimeAbs": 2.4476766285916758e-14,
+        "tailThetaAbs": 8.240063008056341e-17,
+        "localNuCoeff": 0.4649685293758162,
+        "averageNuCoeff": 0.6199580391677549,
+        "churchillChuAsymptoticAverageCoeff": 0.6216051411075298,
+        "squireEckertAverageCoeff": 0.6627600699154002,
+        "ratioSimilarityToChurchillChu": 0.9973502440201182,
+        "ratioSimilarityToSquireEckert": 0.9354185131383839
+      },
+      "100": {
+        "prandtl": 100.0,
+        "etaMax": 30.0,
+        "fDoublePrime0": 0.25169299144071394,
+        "thetaPrime0": -2.19137425498646,
+        "wallTemperatureGradient": 2.19137425498646,
+        "fPrimeMax": 0.04421268270595677,
+        "etaAtFPrimeMax": 0.5020267777891612,
+        "fInfinity": 0.13662897786708159,
+        "tailFPrimeAbs": 1.4851686117667695e-14,
+        "tailThetaAbs": 1.1447398609501825e-18,
+        "localNuCoeff": 0.49000617982926825,
+        "averageNuCoeff": 0.653341573105691,
+        "churchillChuAsymptoticAverageCoeff": 0.6555393087659022,
+        "squireEckertAverageCoeff": 0.6763958931317283,
+        "ratioSimilarityToChurchillChu": 0.9966474387869301,
+        "ratioSimilarityToSquireEckert": 0.9659159373081121,
+        "etaMaxSensitivityThetaPrime0": 9.330557455882393e-08
+      }
+    },
+    "crossMethodCheck": {
+      "0.1": {
+        "scipyToleranceUsed": 1e-12,
+        "scipyThetaPrime0": -0.23015193202861983,
+        "scipyFDoublePrime0": 0.8591671799336582,
+        "scipyFPrimeMax": 0.43362385669393055,
+        "relDiffThetaPrime0": 5.3946682025236955e-15,
+        "relDiffFDoublePrime0": 3.6451262490423603e-16,
+        "relDiffFPrimeMax": 5.641534582011184e-07
+      },
+      "0.5": {
+        "scipyToleranceUsed": 1e-11,
+        "scipyThetaPrime0": -0.4411669957524508,
+        "scipyFDoublePrime0": 0.7131525841846502,
+        "scipyFPrimeMax": 0.3049651279724273,
+        "relDiffThetaPrime0": 2.7264649543278353e-15,
+        "relDiffFDoublePrime0": 2.330620206316878e-15,
+        "relDiffFPrimeMax": 2.0382287322597457e-07
+      },
+      "0.71": {
+        "scipyToleranceUsed": 1e-12,
+        "scipyThetaPrime0": -0.5020860903969997,
+        "scipyFDoublePrime0": 0.677455053255755,
+        "scipyFPrimeMax": 0.2773264185070936,
+        "relDiffThetaPrime0": 4.688625045043262e-16,
+        "relDiffFDoublePrime0": 7.675166415968363e-17,
+        "relDiffFPrimeMax": 5.768036906720509e-07
+      },
+      "0.72": {
+        "scipyToleranceUsed": 1e-11,
+        "scipyThetaPrime0": -0.5046341858313954,
+        "scipyFDoublePrime0": 0.6760195301956996,
+        "scipyFPrimeMax": 0.2762432589864733,
+        "relDiffThetaPrime0": 8.597879208553215e-16,
+        "relDiffFDoublePrime0": 9.461705888471291e-16,
+        "relDiffFPrimeMax": 1.7432090506898841e-07
+      },
+      "1": {
+        "scipyToleranceUsed": 1e-12,
+        "scipyThetaPrime0": -0.5671465084929743,
+        "scipyFDoublePrime0": 0.6421881643827948,
+        "scipyFPrimeMax": 0.2513281363983838,
+        "relDiffThetaPrime0": 4.6855530984059346e-15,
+        "relDiffFDoublePrime0": 1.60811692484008e-15,
+        "relDiffFPrimeMax": 4.5534344713546985e-07
+      },
+      "2": {
+        "scipyToleranceUsed": 1e-11,
+        "scipyThetaPrime0": -0.7164667356280091,
+        "scipyFDoublePrime0": 0.5712631358609717,
+        "scipyFPrimeMax": 0.20280805008980243,
+        "relDiffThetaPrime0": 2.839542036901042e-16,
+        "relDiffFDoublePrime0": 2.6956847456928844e-17,
+        "relDiffFPrimeMax": 1.7606369177733902e-07
+      },
+      "7": {
+        "scipyToleranceUsed": 1e-11,
+        "scipyThetaPrime0": -1.0543136300920537,
+        "scipyFDoublePrime0": 0.4507804138969313,
+        "scipyFPrimeMax": 0.13140781020777048,
+        "relDiffThetaPrime0": 9.529428833802019e-16,
+        "relDiffFDoublePrime0": 1.0311522225018266e-15,
+        "relDiffFPrimeMax": 1.9990898159186393e-07
+      },
+      "10": {
+        "scipyToleranceUsed": 1e-11,
+        "scipyThetaPrime0": -1.1693339451753226,
+        "scipyFDoublePrime0": 0.4191962552526024,
+        "scipyFPrimeMax": 0.11495240832538847,
+        "relDiffThetaPrime0": 3.3161199196302762e-15,
+        "relDiffFDoublePrime0": 3.3713101667438207e-15,
+        "relDiffFPrimeMax": 7.94845030548987e-08
+      },
+      "100": {
+        "scipyToleranceUsed": 1e-11,
+        "scipyThetaPrime0": -2.191374254986466,
+        "scipyFDoublePrime0": 0.2516929914407148,
+        "scipyFPrimeMax": 0.0442126689428062,
+        "relDiffThetaPrime0": 2.6226410806886126e-15,
+        "relDiffFDoublePrime0": 3.328197945447922e-15,
+        "relDiffFPrimeMax": 3.1129417460582695e-07
+      }
+    },
+    "profileSamplesPr071": [
+      {
+        "eta": 0.0,
+        "f": 0.0,
+        "fPrime": 0.0,
+        "theta": 1.0
+      },
+      {
+        "eta": 0.25,
+        "f": 0.01865172893508506,
+        "fPrime": 0.13949515244358718,
+        "theta": 0.8745877747799214
+      },
+      {
+        "eta": 0.5,
+        "f": 0.06527182669805229,
+        "fPrime": 0.2253303927935227,
+        "theta": 0.7505660283071539
+      },
+      {
+        "eta": 1.0,
+        "f": 0.19634277450227547,
+        "fPrime": 0.2770722973487552,
+        "theta": 0.5190176242491819
+      },
+      {
+        "eta": 1.5,
+        "f": 0.32727102466355074,
+        "fPrime": 0.23767723362179385,
+        "theta": 0.3306552348975608
+      },
+      {
+        "eta": 2.0,
+        "f": 0.42967113196559786,
+        "fPrime": 0.1710890893064767,
+        "theta": 0.19689588743999548
+      },
+      {
+        "eta": 3.0,
+        "f": 0.5433587354976517,
+        "fPrime": 0.06720600462265902,
+        "theta": 0.06142805287722464
+      },
+      {
+        "eta": 4.0,
+        "f": 0.5842286722961889,
+        "fPrime": 0.021999549839048536,
+        "theta": 0.017686267607484988
+      },
+      {
+        "eta": 6.0,
+        "f": 0.6009275292286526,
+        "fPrime": 0.0019278697541292842,
+        "theta": 0.0013785130954341543
+      },
+      {
+        "eta": 8.0,
+        "f": 0.6023371532821233,
+        "fPrime": 0.00015429633170126902,
+        "theta": 0.00010600449342947604
+      },
+      {
+        "eta": 10.0,
+        "f": 0.6024487611612779,
+        "fPrime": 1.2016906905605094e-05,
+        "theta": 8.14254689884362e-06
+      }
+    ],
+    "example81": {
+      "source": "Example 8.1 (Churchill-Chu eqn. (8.13a)); book prints Ra_L = 6.78e7, Nu_L = 47.33, h = 4.22 W/m^2 K",
+      "book": {
+        "rayleigh": 67800000.0,
+        "averageNusselt": 47.33,
+        "averageH": 4.22
+      },
+      "prandtlFromProperties": 0.709719222462203,
+      "rayleigh": 67827513.54328659,
+      "grashof": 95569503.25788707,
+      "thetaPrime0": -0.5020141619512245,
+      "similarityAverageNusselt": 46.79716454436728,
+      "churchillChuAverageNusselt": 47.34618987348718,
+      "squireEckertAverageNusselt": 49.74087252569903,
+      "similarityAverageH": 4.168067455418312,
+      "similarityAverageHeatFlux": 125.04202366254937,
+      "maxVelocityAtTop": 0.2969924937276591,
+      "etaAtMaxVelocity": 0.9631284033955066,
+      "yAtMaxVelocity": 0.004132764050895583
+    },
+    "example83": {
+      "source": "Example 8.3 (Squire-Eckert eqn. (8.27)); book prints Ra_L = 1.555e8, Nu_L = 61.25, h = 4.02 W/m^2 K, q = 104 W/m^2; Problem 8.29 prints u_max = 0.35 m/s",
+      "book": {
+        "rayleigh": 155500000.0,
+        "averageNusselt": 61.25,
+        "averageH": 4.02,
+        "averageHeatFlux": 104.0,
+        "maxVelocityAtTop": 0.35,
+        "deltaOverL": 0.0431
+      },
+      "prandtlFromProperties": 0.7130591956619973,
+      "rayleigh": 155501727.60683072,
+      "grashof": 218076884.15330568,
+      "thetaPrime0": -0.502868417269488,
+      "similarityAverageNusselt": 57.614328919383375,
+      "churchillChuAverageNusselt": 58.13306639973247,
+      "squireEckertAverageNusselt": 61.24737431887586,
+      "similarityAverageH": 3.7780596188885647,
+      "similarityAverageHeatFlux": 98.22955009110268,
+      "maxVelocityAtTop": 0.3227388403559841,
+      "etaAtMaxVelocity": 0.9625956189893973,
+      "yAtMaxVelocity": 0.0044809124810513395,
+      "squireEckertDeltaOverL": 0.04357097801623734,
+      "squireEckertMaxVelocityAtTop": 0.34532083742217745
+    },
+    "uniformHeatFluxCase": {
+      "source": "Raithby-Hollands eqn. (8.44b) with the Example 8.3 fluid at q_w = 100 W/m^2, L = 0.40 m, g = 9.8 m/s^2",
+      "heatFlux": 100.0,
+      "length": 0.4,
+      "prandtl": 0.7130591956619973,
+      "modifiedRayleigh": 9120603396.394657,
+      "averageNusselt": 61.27755796343033,
+      "meanDeltaT": 24.886295366016483,
+      "topDeltaT": 29.86355443921978,
+      "midDeltaT": 25.99773413908725,
+      "localNusseltAtTopFromProfile": 51.06463163619195,
+      "localNusseltAtTopPrinted844a": 32.170717930800926,
+      "ratioPrinted844aToProfile": 0.63,
+      "churchillChu843bAverageNusseltMeanBasis": 60.61031006794812,
+      "ratioRhToChurchillChu": 1.0110088183798134,
+      "equivalentRayleigh": 148840843.19805494
+    },
+    "uniformHeatFluxCorrelationSweep": {
+      "0.1": {
+        "raithbyHollandsAverageCoeff": 0.5014770159718894,
+        "churchillChu843bAverageCoeffMeanBasis": 0.49097265849196653,
+        "ratio": 1.0213949948092573
+      },
+      "0.71": {
+        "raithbyHollandsAverageCoeff": 0.6239375262866043,
+        "churchillChu843bAverageCoeffMeanBasis": 0.6171267527822903,
+        "ratio": 1.0110362635773087
+      },
+      "1": {
+        "raithbyHollandsAverageCoeff": 0.6409670122130627,
+        "churchillChu843bAverageCoeffMeanBasis": 0.6353550273606496,
+        "ratio": 1.008832833000041
+      },
+      "7": {
+        "raithbyHollandsAverageCoeff": 0.7081457250564794,
+        "churchillChu843bAverageCoeffMeanBasis": 0.7096011774807277,
+        "ratio": 0.9979489148687499
+      },
+      "100": {
+        "raithbyHollandsAverageCoeff": 0.7436657524130234,
+        "churchillChu843bAverageCoeffMeanBasis": 0.7494061554218407,
+        "ratio": 0.9923400642398165
+      }
+    }
+  }
+}

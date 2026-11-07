@@ -1,0 +1,324 @@
+{
+ "generatedAtUTC": "2026-11-07T01:19:07.326Z",
+ "module": "dynamic/dev/radial-multilayer.mjs",
+ "releaseApproved": false,
+ "steady": {
+  "cylinderThreeLayer": {
+   "analyticHeatRateW": 97.75842279255073,
+   "rows": [
+    {
+     "cellsPerLayer": 8,
+     "steps": 11000,
+     "heatRateRelativeError": 0.0008808964047423151,
+     "maxInterfaceTemperatureErrorK": 0.025543466636179346,
+     "outerSurfaceTemperatureErrorK": 0,
+     "energyErrorJ": -2.8421709430404007e-12
+    },
+    {
+     "cellsPerLayer": 16,
+     "steps": 44000,
+     "heatRateRelativeError": 0.00022072247190640937,
+     "maxInterfaceTemperatureErrorK": 0.006413625640732334,
+     "outerSurfaceTemperatureErrorK": 0,
+     "energyErrorJ": 2.3803181647963356e-11
+    },
+    {
+     "cellsPerLayer": 32,
+     "steps": 176500,
+     "heatRateRelativeError": 0.000055207540948787326,
+     "maxInterfaceTemperatureErrorK": 0.001605136740352009,
+     "outerSurfaceTemperatureErrorK": 0,
+     "energyErrorJ": 5.885709697395214e-10
+    },
+    {
+     "cellsPerLayer": 64,
+     "steps": 707000,
+     "heatRateRelativeError": 0.000013798851369650755,
+     "maxInterfaceTemperatureErrorK": 0.0004013612264088806,
+     "outerSurfaceTemperatureErrorK": 0,
+     "energyErrorJ": 4.366498274066544e-9
+    }
+   ]
+  },
+  "sphereTwoLayerConvection": {
+   "analyticHeatRateW": 5.438174464562019,
+   "rows": [
+    {
+     "cellsPerLayer": 8,
+     "steps": 28000,
+     "heatRateRelativeError": 0.0011506730189217995,
+     "maxInterfaceTemperatureErrorK": 0.015029797102840803,
+     "outerSurfaceTemperatureErrorK": 0.04115378949313708,
+     "energyErrorJ": -5.924150059399835e-13
+    },
+    {
+     "cellsPerLayer": 16,
+     "steps": 113000,
+     "heatRateRelativeError": 0.0002882270623558725,
+     "maxInterfaceTemperatureErrorK": 0.003767611322587072,
+     "outerSurfaceTemperatureErrorK": 0.01030843311298213,
+     "energyErrorJ": -5.10613773485602e-12
+    },
+    {
+     "cellsPerLayer": 32,
+     "steps": 455000,
+     "heatRateRelativeError": 0.00007209477852154755,
+     "maxInterfaceTemperatureErrorK": 0.0009425778896456904,
+     "outerSurfaceTemperatureErrorK": 0.002578467809769336,
+     "energyErrorJ": -2.2673773969472677e-10
+    }
+   ]
+  },
+  "cylinderContactResistance": {
+   "analyticHeatRateW": 42.76495632101656,
+   "rows": [
+    {
+     "cellsPerLayer": 8,
+     "steps": 9500,
+     "heatRateRelativeError": 0.0002609833845500509,
+     "maxInterfaceTemperatureErrorK": 0.008052024597873242,
+     "outerSurfaceTemperatureErrorK": 0,
+     "energyErrorJ": 3.268496584496461e-13
+    },
+    {
+     "cellsPerLayer": 16,
+     "steps": 38000,
+     "heatRateRelativeError": 0.00006531835555134702,
+     "maxInterfaceTemperatureErrorK": 0.0020145337497297078,
+     "outerSurfaceTemperatureErrorK": 0,
+     "energyErrorJ": 1.0579981335467892e-11
+    },
+    {
+     "cellsPerLayer": 32,
+     "steps": 152000,
+     "heatRateRelativeError": 0.000016328371315821322,
+     "maxInterfaceTemperatureErrorK": 0.0005037790834876432,
+     "outerSurfaceTemperatureErrorK": 0,
+     "energyErrorJ": 2.8038726895829313e-10
+    }
+   ]
+  }
+ },
+ "transient": {
+  "sphereTwoLayer": {
+   "referenceSelfConvergence": {
+    "meshRmsK_320vs640_on32Shells": 0.000026761756714669248,
+    "timeRmsK_dtVsHalfDt_on32Shells": 0.00010539813052472677
+   },
+   "rows": [
+    {
+     "cellsPerLayer": 8,
+     "volumeWeightedRmsK": 0.046927620184253754,
+     "maxShellErrorK": 0.0824862898846277,
+     "energyErrorJ": 2.842170943040401e-14,
+     "relativeEnergyError": 5.865476590988504e-17
+    },
+    {
+     "cellsPerLayer": 16,
+     "volumeWeightedRmsK": 0.011569386014616163,
+     "maxShellErrorK": 0.020447173898958226,
+     "energyErrorJ": 2.8421709430404007e-13,
+     "relativeEnergyError": 5.865476590988504e-16
+    },
+    {
+     "cellsPerLayer": 32,
+     "volumeWeightedRmsK": 0.002700262962706,
+     "maxShellErrorK": 0.0047748149527819805,
+     "energyErrorJ": 2.984279490192421e-13,
+     "relativeEnergyError": 6.158750420537929e-16
+    }
+   ]
+  },
+  "hollowCylinderTwoLayer": {
+   "referenceSelfConvergence": {
+    "meshRmsK_320vs640_on32Shells": 0.00007001173836966226,
+    "timeRmsK_dtVsHalfDt_on32Shells": 0.00035857087275313257
+   },
+   "rows": [
+    {
+     "cellsPerLayer": 8,
+     "volumeWeightedRmsK": 0.13453039712176895,
+     "maxShellErrorK": 0.3613101375306087,
+     "energyErrorJ": -3.183231456205249e-12,
+     "relativeEnergyError": 2.9335805913442392e-15
+    },
+    {
+     "cellsPerLayer": 16,
+     "volumeWeightedRmsK": 0.03354001035908948,
+     "maxShellErrorK": 0.09231676707725,
+     "energyErrorJ": -1.4779288903810084e-12,
+     "relativeEnergyError": 1.3620195602669684e-15
+    },
+    {
+     "cellsPerLayer": 32,
+     "volumeWeightedRmsK": 0.008237685877640219,
+     "maxShellErrorK": 0.02248563244700108,
+     "energyErrorJ": -1.8189894035458565e-12,
+     "relativeEnergyError": 1.6763317664824225e-15
+    }
+   ]
+  }
+ },
+ "interfaceFlux": {
+  "sphereTwoLayer": [
+   {
+    "cellsPerLayer": 16,
+    "samples": [
+     {
+      "timeS": 0.25,
+      "solverWatts": 0.000707817244413957,
+      "leftRelativeDifference": 0.24045253510035977,
+      "rightRelativeDifference": 2.6341051855143784,
+      "sidesRelativeDifference": 2.3936526504140185
+     },
+     {
+      "timeS": 0.5,
+      "solverWatts": 0.07481212643535926,
+      "leftRelativeDifference": 0.07928902221474868,
+      "rightRelativeDifference": 0.44528221662729095,
+      "sidesRelativeDifference": 0.3659931944125423
+     },
+     {
+      "timeS": 1,
+      "solverWatts": 0.9127114534182628,
+      "leftRelativeDifference": 0.020496245307678972,
+      "rightRelativeDifference": 0.08946960085316111,
+      "sidesRelativeDifference": 0.06897335554548213
+     }
+    ]
+   },
+   {
+    "cellsPerLayer": 32,
+    "samples": [
+     {
+      "timeS": 0.25,
+      "solverWatts": 0.0005090551049180894,
+      "leftRelativeDifference": 0.08534435555885642,
+      "rightRelativeDifference": 0.48554813695615,
+      "sidesRelativeDifference": 0.40020378139729357
+     },
+     {
+      "timeS": 0.5,
+      "solverWatts": 0.07068558646474879,
+      "leftRelativeDifference": 0.023357253311363454,
+      "rightRelativeDifference": 0.09989015767998373,
+      "sidesRelativeDifference": 0.07653290436862027
+     },
+     {
+      "timeS": 1,
+      "solverWatts": 0.9049695320592221,
+      "leftRelativeDifference": 0.0054541050951486154,
+      "rightRelativeDifference": 0.022071247798061987,
+      "sidesRelativeDifference": 0.01661714270291337
+     }
+    ]
+   },
+   {
+    "cellsPerLayer": 64,
+    "samples": [
+     {
+      "timeS": 0.25,
+      "solverWatts": 0.00046150922234013646,
+      "leftRelativeDifference": 0.025447555726109808,
+      "rightRelativeDifference": 0.1039473713771526,
+      "sidesRelativeDifference": 0.07849981565104279
+     },
+     {
+      "timeS": 0.5,
+      "solverWatts": 0.0696501350652418,
+      "leftRelativeDifference": 0.0063059856901115366,
+      "rightRelativeDifference": 0.023713218508324602,
+      "sidesRelativeDifference": 0.01740723281821307
+     },
+     {
+      "timeS": 1,
+      "solverWatts": 0.9030334246356095,
+      "leftRelativeDifference": 0.0014026211079902278,
+      "rightRelativeDifference": 0.005476270038420251,
+      "sidesRelativeDifference": 0.004073648930430023
+     }
+    ]
+   }
+  ],
+  "hollowCylinderTwoLayer": [
+   {
+    "cellsPerLayer": 16,
+    "samples": [
+     {
+      "timeS": 0.5,
+      "solverWatts": 40.84905578553851,
+      "leftRelativeDifference": 0.06359435961806091,
+      "rightRelativeDifference": 0.16911973813380823,
+      "sidesRelativeDifference": 0.10552537851574732
+     },
+     {
+      "timeS": 1,
+      "solverWatts": 73.30208164571695,
+      "leftRelativeDifference": 0.016379110245960758,
+      "rightRelativeDifference": 0.04879994256513519,
+      "sidesRelativeDifference": 0.03242083231917443
+     },
+     {
+      "timeS": 2,
+      "solverWatts": 86.20035433357108,
+      "leftRelativeDifference": 0.006203745625299356,
+      "rightRelativeDifference": 0.010878750564493686,
+      "sidesRelativeDifference": 0.004675004939194329
+     }
+    ]
+   },
+   {
+    "cellsPerLayer": 32,
+    "samples": [
+     {
+      "timeS": 0.5,
+      "solverWatts": 41.294896297656535,
+      "leftRelativeDifference": 0.014712990565662299,
+      "rightRelativeDifference": 0.04791410474805816,
+      "sidesRelativeDifference": 0.033201114182395866
+     },
+     {
+      "timeS": 1,
+      "solverWatts": 73.44914203832195,
+      "leftRelativeDifference": 0.00417550166053851,
+      "rightRelativeDifference": 0.011823130626475338,
+      "sidesRelativeDifference": 0.007647628965936827
+     },
+     {
+      "timeS": 2,
+      "solverWatts": 86.23230862868007,
+      "leftRelativeDifference": 0.0015956376738243184,
+      "rightRelativeDifference": 0.00228856655344652,
+      "sidesRelativeDifference": 0.0006929288796222016
+     }
+    ]
+   },
+   {
+    "cellsPerLayer": 64,
+    "samples": [
+     {
+      "timeS": 0.5,
+      "solverWatts": 41.40413169653754,
+      "leftRelativeDifference": 0.00353693859388354,
+      "rightRelativeDifference": 0.012617306545326135,
+      "sidesRelativeDifference": 0.009080367951442595
+     },
+     {
+      "timeS": 1,
+      "solverWatts": 73.4852253608824,
+      "leftRelativeDifference": 0.0010538311699817325,
+      "rightRelativeDifference": 0.002878679222550031,
+      "sidesRelativeDifference": 0.0018248480525682982
+     },
+     {
+      "timeS": 2,
+      "solverWatts": 86.24025765379163,
+      "leftRelativeDifference": 0.00040452706713782895,
+      "rightRelativeDifference": 0.000512869940173116,
+      "sidesRelativeDifference": 0.00010834287303528706
+     }
+    ]
+   }
+  ]
+ }
+}

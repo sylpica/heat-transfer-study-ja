@@ -1,0 +1,44 @@
+{
+  "generatedAtUTC": "2026-11-06T15:14:48.120284+00:00",
+  "sourceCommit": "8d9267ff7816ded35502fabd6c8da7406c94af30",
+  "generatorSHA256": "d5f2feb071f2d95d9e65d0385017f20fa8de0c1338b6dcb4db0a26709e5c23f5",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4"
+  },
+  "releaseApproved": false,
+  "method": "Similarity reduction of the Leveque entrance problem for plane Poiseuille flow (u ~ beta*s near the wall, beta = 6U/H). Constant-Tw constant from the closed-form integral 9^(1/3)*Gamma(4/3), cross-checked by numerical quadrature. Constant-flux phi(0) from DOP853 linear-combination shooting with eta_max refinement. No JS operator reused.",
+  "constantWallTemperature": {
+    "thetaPrime0": 0.5383660549213563,
+    "integralQuadrature": 1.8574722363319862,
+    "integralQuadratureError": 6.642529544983082e-14,
+    "integralClosedForm": 1.8574722363319853,
+    "nusseltPrefactor": 1.2325505815514515,
+    "pipeCrossCheck2C": 1.0767321098427125,
+    "pipeCrossCheckSource": "A Heat Transfer Textbook 6th ed. eq. (7.28), Leveque branch coefficient 1.077 for a circular tube; geometry differs, used only to validate the similarity constant."
+  },
+  "constantWallHeatFlux": {
+    "phi0": 1.536117174500407,
+    "phi0ByEtaMax": [
+      {
+        "etaMax": 5.0,
+        "phi0": 1.5361171648474867
+      },
+      {
+        "etaMax": 6.0,
+        "phi0": 1.5361171745002102
+      },
+      {
+        "etaMax": 7.0,
+        "phi0": 1.5361171745004008
+      },
+      {
+        "etaMax": 8.0,
+        "phi0": 1.536117174500407
+      }
+    ],
+    "nusseltPrefactor": 1.4903996408029596
+  },
+  "definition": "Nu_Dh,x = nusseltPrefactor * Gz_x^(1/3) as Gz_x -> infinity, with Gz_x = Re_Dh*Pr*Dh/x and Dh = 2H. Valid only while the thermal layer is thin compared with H (small x* = 1/Gz_x); the solver is compared at finite x* and approaches the prefactor from above."
+}

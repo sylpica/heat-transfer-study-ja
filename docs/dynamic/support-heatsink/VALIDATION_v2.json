@@ -1,0 +1,200 @@
+{
+  "spreading": {
+    "config": {
+      "length": 0.12,
+      "fins": 1,
+      "thickness": 0.001,
+      "gap": 0.0195,
+      "height": 0.03,
+      "base": 0.003,
+      "solid_k": 167.0,
+      "rho": 1.177,
+      "cp": 1006.0,
+      "fluid_k": 0.0264,
+      "nu": 1.575e-05,
+      "ambient": 300.0,
+      "flow": 0.00072,
+      "power": 10.0,
+      "emissivity": 0.8,
+      "patch_length": 0.03,
+      "patch_width": 0.01
+    },
+    "width": 0.04,
+    "series": [
+      {
+        "totalSourceResistanceKPerW": 0.04762169983463381,
+        "nonuniformSpreadingResistanceKPerW": 0.04387918486457393,
+        "uniformResistanceKPerW": 0.0037425149700598807,
+        "termsPerCoordinate": 80
+      },
+      {
+        "totalSourceResistanceKPerW": 0.04766888736745732,
+        "nonuniformSpreadingResistanceKPerW": 0.04392637239739744,
+        "uniformResistanceKPerW": 0.0037425149700598807,
+        "termsPerCoordinate": 160
+      },
+      {
+        "totalSourceResistanceKPerW": 0.04768082643885203,
+        "nonuniformSpreadingResistanceKPerW": 0.043938311468792145,
+        "uniformResistanceKPerW": 0.0037425149700598807,
+        "termsPerCoordinate": 320
+      },
+      {
+        "totalSourceResistanceKPerW": 0.04768382795373952,
+        "nonuniformSpreadingResistanceKPerW": 0.04394131298367964,
+        "uniformResistanceKPerW": 0.0037425149700598807,
+        "termsPerCoordinate": 640
+      }
+    ],
+    "fv": [
+      {
+        "refinement": 1,
+        "nx": 8,
+        "ny": 8,
+        "nz": 1,
+        "sourceResistanceKPerW": 0.05540470219404283,
+        "powerOutwardW": 10.000000000000002,
+        "relativeEnergyResidual": 1.7763568394002506e-16,
+        "maximumResidualW": 8.881784197001252e-16,
+        "relativeResistanceError": 0.161918087780069
+      },
+      {
+        "refinement": 2,
+        "nx": 16,
+        "ny": 16,
+        "nz": 2,
+        "sourceResistanceKPerW": 0.05168818199383572,
+        "powerOutwardW": 10.000000000000004,
+        "relativeEnergyResidual": 3.552713678800501e-16,
+        "maximumResidualW": 8.881784197001252e-16,
+        "relativeResistanceError": 0.08397719335748421
+      },
+      {
+        "refinement": 4,
+        "nx": 32,
+        "ny": 32,
+        "nz": 4,
+        "sourceResistanceKPerW": 0.04941700522398684,
+        "powerOutwardW": 10.000000000000004,
+        "relativeEnergyResidual": 3.552713678800501e-16,
+        "maximumResidualW": 6.661338147750939e-16,
+        "relativeResistanceError": 0.03634727631197654
+      },
+      {
+        "refinement": 8,
+        "nx": 64,
+        "ny": 64,
+        "nz": 8,
+        "sourceResistanceKPerW": 0.04831904786841091,
+        "powerOutwardW": 9.99999999999996,
+        "relativeEnergyResidual": 4.085620730620576e-15,
+        "maximumResidualW": 1.3322676295501878e-15,
+        "relativeResistanceError": 0.013321495817987694
+      }
+    ],
+    "series320To640RelativeChange": 6.295014393975507e-05
+  },
+  "fins": [
+    {
+      "cells": 8,
+      "analyticEfficiency": 0.8949299712541438,
+      "discreteEfficiency": 0.894133588170866,
+      "relativeHeatError": 0.0008898831292483632,
+      "maximumRelativeCellMeanTemperatureError": 0.000911904180667733,
+      "energyRelativeError": 1.0103291444563344e-14
+    },
+    {
+      "cells": 16,
+      "analyticEfficiency": 0.8949299712541438,
+      "discreteEfficiency": 0.8947307113566855,
+      "relativeHeatError": 0.0002226541783811768,
+      "maximumRelativeCellMeanTemperatureError": 0.00023135229672082146,
+      "energyRelativeError": 3.028964620415989e-14
+    },
+    {
+      "cells": 32,
+      "analyticEfficiency": 0.8949299712541438,
+      "discreteEfficiency": 0.8948801460105376,
+      "relativeHeatError": 5.567501950612922e-05,
+      "maximumRelativeCellMeanTemperatureError": 5.826357476692579e-05,
+      "energyRelativeError": 1.4812665920756006e-13
+    },
+    {
+      "cells": 64,
+      "analyticEfficiency": 0.8949299712541438,
+      "discreteEfficiency": 0.8949175143000087,
+      "relativeHeatError": 1.3919473629474343e-05,
+      "maximumRelativeCellMeanTemperatureError": 1.4619286557504552e-05,
+      "energyRelativeError": 1.4756424970064075e-12
+    }
+  ],
+  "actualFinBlockLimit": [
+    {
+      "refinement": 1,
+      "finCells": 4,
+      "analyticEfficiency": 0.8956899888529082,
+      "relativeHeatError": 0.003519992836313768,
+      "maximumAxialTemperatureVariationK": 1.0658141036401503e-14,
+      "usingActualPrototypeFinConductionBlock": true
+    },
+    {
+      "refinement": 2,
+      "finCells": 8,
+      "analyticEfficiency": 0.8956899888529082,
+      "relativeHeatError": 0.0008828731259072908,
+      "maximumAxialTemperatureVariationK": 6.039613253960852e-14,
+      "usingActualPrototypeFinConductionBlock": true
+    },
+    {
+      "refinement": 4,
+      "finCells": 16,
+      "analyticEfficiency": 0.8956899888529082,
+      "relativeHeatError": 0.0002208987593743661,
+      "maximumAxialTemperatureVariationK": 1.5987211554602254e-13,
+      "usingActualPrototypeFinConductionBlock": true
+    }
+  ],
+  "flow": {
+    "gapsM": [
+      0.0025,
+      0.003,
+      0.0035
+    ],
+    "pressureDropPa": 7.698334280635746,
+    "flowsM3PerS": [
+      0.0001325869584679353,
+      0.00022778401115092271,
+      0.00035962903038114203
+    ],
+    "continuousFlowsM3PerS": [
+      0.00013252154187488028,
+      0.0002277620786146728,
+      0.000359716379510447
+    ],
+    "relativeMobilityErrors": [
+      0.007254994187489094,
+      0.006854974931364666,
+      0.006513559525483714
+    ],
+    "relativeFlowAllocationErrors": [
+      0.0004936298818254414,
+      9.62958205479314e-05,
+      -0.00024282777843986914
+    ],
+    "fixedFlowToPressureRoundTripRelativeError": 0.0,
+    "conservativeVelocityTransferMaximumRelativeError": 3.0147793445274574e-16,
+    "zeroFlowRejected": true,
+    "zeroFlowReason": "Zero/reversed flow: this forced-flow reference must not be used as natural convection"
+  },
+  "radiation": {
+    "grayTwoPlateRelativeError": 4.3917436980051813e-16,
+    "grayTwoPlateEnergyDifferenceW": 0.0,
+    "blackCavityOpeningRelativeError": 2.0884650737796372e-15,
+    "blackCavityEnergyDifferenceW": 3.5724895264266365e-14,
+    "viewClosure": 5.218048215738236e-15,
+    "viewReciprocityMaximumLengthM": 4.336808689942018e-19
+  },
+  "releaseApproved": false,
+  "independentFullConjugateCFDComparison": false,
+  "generatorSHA256": "00153ef8dc2e28ca355f5d3792d247cde5229653cf58a9310f33a495906ea5e2"
+}

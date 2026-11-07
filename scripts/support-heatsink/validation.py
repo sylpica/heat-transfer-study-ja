@@ -4,7 +4,8 @@ from dataclasses import replace
 import json,hashlib
 import numpy as np
 from scipy.sparse.linalg import spsolve
-from prototype import (Conditions,Matrix,base_conduction,patch_source,rectangle_mobility,
+from scipy.sparse import diags
+from prototype import (Conditions,Matrix,base_conduction,patch_source,rectangle_mobility,build,
     allocate_flow,view_factors,radiosity_operator,SIGMA)
 
 ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'docs/dynamic/support-heatsink'
@@ -94,17 +95,37 @@ def flow_checks(c):
         zeroFlowRejected=bool(zero),zeroFlowReason=zero)
 
 
+def actual_fin_block_limit(c,r):
+    """Actual prototype conduction block, fixed root and uniform h on broad
+    faces; end faces made adiabatic in this analytical single-fin limit."""
+    s=build(c,r,hydraulic_refinement=2);ids=s['fins'][0];flat=ids.ravel()
+    block=s['K'][flat][:,flat];off=block-diags(block.diagonal())
+    graph=off-diags(np.asarray(off.sum(axis=1)).ravel())
+    nx=ids.shape[1];n=ids.shape[0];dx=c.length/nx;dz=c.height/n
+    side=np.full(flat.size,2*c.h_reference*dx*dz)
+    root=2*c.solid_k*c.thickness*dx/dz;side[:nx]+=root
+    K=graph+diags(side);b=np.zeros(flat.size);b[:nx]=root*20
+    th=spsolve(K,b).reshape(ids.shape);q=float((root*(20-th[0])).sum())
+    m=np.sqrt(2*c.h_reference/(c.solid_k*c.thickness));eta=np.tanh(m*c.height)/(m*c.height)
+    return dict(refinement=r,finCells=n,analyticEfficiency=eta,
+        relativeHeatError=abs(q/(2*c.h_reference*c.length*c.height*20)/eta-1),
+        maximumAxialTemperatureVariationK=float(np.ptp(th,axis=1).max()),
+        usingActualPrototypeFinConductionBlock=True)
+
+
 def main():
     c=Conditions();slab=replace(c,fins=1,gap=.0195,patch_width=.01)
     series=[spreading_series(slab,n) for n in [80,160,320,640]]
-    fv=[spreading_fv(slab,r) for r in [1,2,4]]
+    fv=[spreading_fv(slab,r) for r in [1,2,4,8]]
     for f in fv:f['relativeResistanceError']=f['sourceResistanceKPerW']/series[-1]['totalSourceResistanceKPerW']-1
     data=dict(spreading=dict(config=slab.__dict__,width=slab.width,series=series,fv=fv,
                  series320To640RelativeChange=abs(series[-1]['totalSourceResistanceKPerW']/series[-2]['totalSourceResistanceKPerW']-1)),
-        fins=[single_fin(c,n) for n in [8,16,32,64]],flow=flow_checks(c),radiation=radiation_checks(),
+        fins=[single_fin(c,n) for n in [8,16,32,64]],
+        actualFinBlockLimit=[actual_fin_block_limit(c,r) for r in [1,2,4]],
+        flow=flow_checks(c),radiation=radiation_checks(),
         releaseApproved=False,independentFullConjugateCFDComparison=False)
     data['generatorSHA256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
-    with (OUT/'VALIDATION.json').open('x') as f:json.dump(data,f,indent=2);f.write('\n')
+    with (OUT/'VALIDATION_v2.json').open('x') as f:json.dump(data,f,indent=2);f.write('\n')
     print(json.dumps(data,indent=2))
 
 if __name__=='__main__':main()

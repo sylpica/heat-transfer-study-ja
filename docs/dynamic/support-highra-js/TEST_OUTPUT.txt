@@ -1,0 +1,41 @@
+Sequential full Node at code a0522b9:
+﹣ private legacy Japanese drafts remain labeled unverified in a local pack (0.70411ms) # SKIP
+﹣ reviewed local sections retain original page locations, both languages, and figure descriptions (0.102194ms) # SKIP
+﹣ 18 reviewed Japanese questions have complete rationale and valid source pages (0.123005ms) # SKIP
+﹣ chapter 8 opening retains both languages, eight equations, dimensional annotations, and the original figure (0.05997ms) # SKIP
+﹣ vertical natural convection retains source caveats, mean-value overbars, all figures and ten question rationales (0.041332ms) # SKIP
+✔ SVGs, comparison plots, formulas and user-data escape (17.537798ms)
+ℹ tests 1511
+ℹ suites 0
+ℹ pass 1506
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 5
+ℹ todo 0
+ℹ duration_ms 117357.044316
+
+New support tests in full run:
+✔ high-Ra support does not change either production admission gate or the original cavity source (62.129195ms)
+✔ high-Ra support verifies original multigrid on an actual saved RHS while keeping the original grid gate (183.017147ms)
+✔ high-Ra acceptance keeps successful tails, cold rejection and nonmonotone local extrema distinct (5.101892ms)
+
+Independent Python:
+test_acceptance_pack_keeps_definitions_and_thresholds (__main__.ComparisonPackTests.test_acceptance_pack_keeps_definitions_and_thresholds) ... ok
+test_actual_js_against_dct_budgets (__main__.ComparisonPackTests.test_actual_js_against_dct_budgets) ... ok
+test_local_peak_nonmonotonicity_remains_with_multigrid (__main__.ComparisonPackTests.test_local_peak_nonmonotonicity_remains_with_multigrid) ... ok
+test_original_js_failure_atomicity_and_no_false_cold_success (__main__.ComparisonPackTests.test_original_js_failure_atomicity_and_no_false_cold_success) ... ok
+test_packet_hashes_shapes_and_time_step_definitions (__main__.ComparisonPackTests.test_packet_hashes_shapes_and_time_step_definitions) ... ok
+test_projection_expectations_with_independent_full_rhs_dct (__main__.ComparisonPackTests.test_projection_expectations_with_independent_full_rhs_dct) ... ok
+test_replay_saved_cold_failure_with_smaller_timesteps (__main__.ComparisonPackTests.test_replay_saved_cold_failure_with_smaller_timesteps) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.877s
+
+OK
+
+Public build:
+
+> build:public
+> node scripts/build-public-site.mjs
+
+公開配信物：許諾済みの原本PDF、アプリ・独自ガイド・問題・用語・書籍の目次情報。翻訳・原図・抽出本文は含めていません。

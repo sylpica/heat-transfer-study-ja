@@ -1,0 +1,68 @@
+{
+  "recordedAtUTC": "2026-11-07T12:12:48.727087+00:00",
+  "testedCodeCommit": "a0522b9",
+  "subsequentChanges": "documentation and execution records only",
+  "environment": {
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "threads": 1
+  },
+  "node": {
+    "total": 1511,
+    "passed": 1506,
+    "failed": 0,
+    "skipped": 5,
+    "cancelled": 0,
+    "durationMs": 117357.044316,
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs"
+  },
+  "independentPython": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "relatedNode": {
+    "total": 2,
+    "passed": 2,
+    "failed": 0
+  },
+  "publicBuild": "passed",
+  "excludedPathsExist": {
+    "dist/dynamic/dev": false,
+    "dist/scripts/support-highra-js": false,
+    "dist/docs/dynamic/support-highra-js": false
+  },
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheDeclaration": "const CACHE_NAME='heat-study-ja-app-4a24eb30c8fdd98c';",
+  "sourceAndEvidenceSHA256": {
+    "docs/dynamic/support-highra-js/ACCEPTANCE_PACK.json": "e27de00dd7a2fa21841e433f0c20651c83f59cb9957ff207d1c3044eb91c74b8",
+    "docs/dynamic/support-highra-js/JS_RA1000000_N128_warm_tail.json.gz": "affc6887569fb3d8d3a4055036107f8796765fd52e88b013066bb7bf60820987",
+    "docs/dynamic/support-highra-js/JS_RA1000000_N192_tail.json.gz": "4d852a7fbfdecff1f92f41504c87143d9f75391241575d56a4b9c3238e9967c8",
+    "docs/dynamic/support-highra-js/JS_RA100000_N128_tail.json.gz": "a7dc4892d1682fed5c7b413d7fb9cdc1bfea940b755227f9c8dedf4851a0669e",
+    "docs/dynamic/support-highra-js/JS_RA10000_N64_tail.json.gz": "a36e26c54603669b22a5546e599f06341b3aeb626d2003e66b7e34aa011c0641",
+    "docs/dynamic/support-highra-js/JS_RESULTS.json": "e4f405ce17df28d5521203b8f1ff22a3f148bf3e75a745225005bd997cd2de59",
+    "docs/dynamic/support-highra-js/JS_WARM_RESULTS.json": "543dadb293c6d64c80baeda94c0755bf07e41f3687acb6344f6345473042fadc",
+    "docs/dynamic/support-highra-js/PACK.json": "87ada046611596dbec62951d151bfff14fde0623149bfadc923a8909742af6cb",
+    "docs/dynamic/support-highra-js/RA1000000_N128_pre_failure.json.gz": "b8f1aa74f4475479f4881892b74611ee817ef96ce7dc4f2bf715670b4bed260c",
+    "docs/dynamic/support-highra-js/RA1000000_N128_warm_comparison.json.gz": "805ac2cda26191c1f7b4abf96aca315aff9c1a600207f55258f7872ed1985ccd",
+    "docs/dynamic/support-highra-js/RA1000000_N192_comparison.json.gz": "70829e99d36b2dab084351723f1c122e9cdafe46fa24f9101db31269a51e835f",
+    "docs/dynamic/support-highra-js/RA100000_N128_comparison.json.gz": "9512e3ea29ee0190162e8de5f36b1ae5f86243e438314a0f94df6825ddf7a9c0",
+    "docs/dynamic/support-highra-js/RA10000_N64_comparison.json.gz": "ad5ad4232b20d4ec93b3d065e5ec7d274d2dfd2c51ab168a59bab1f0f34d96a2",
+    "docs/dynamic/support-highra-js/WARM_RUN_PACK.json": "bbfbcc7cb395bd58f38b8b6d32e1db434ad9f956ecac3e84da0d142afe84e9cf",
+    "dynamic/dev/cavity.mjs": "0ed223dfa2e8f36735f15fed92380e514f08a26ddfda7227f9f8ae283cc9373e",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "dynamic/dev/thermal-wall-cavity.mjs": "1e884c200d9e58b139e1637f884d2d1f589c62726fef0d5b5c82bd134b0acf23",
+    "scripts/support-highra-js/prepare_pack.py": "c0c6cd65f8497bbbbabf69ac2557d47d699d9d263545db7dcd249abb447b8879",
+    "scripts/support-highra-js/supplement.py": "5536f8fd11bbf35ad4c975a7b3eb3c0b4b0091253360703c79d8e7494b7cb5e0",
+    "scripts/support-highra-js/test_pack.py": "f61f4cdad47abe96d325f8c942f150095fcdf7cec291a619a766e1854e21eb4f",
+    "scripts/support-highra-js/validate_existing.mjs": "fe533830d52c891750047517ab87629923a4b5ba5bdb942f9fde02129d99e4db",
+    "tests/support-highra-js-method.test.mjs": "d51986855ab257e03080bcbd97236c52357b037e8939afb76f7152dedd23c23d"
+  },
+  "newBrowserOrDeviceTest": false,
+  "newRemoteCIClaim": false,
+  "fullJsColdToSteadyVerified": false,
+  "mainlineOrMuseBranchWritten": false,
+  "releaseApproved": false
+}

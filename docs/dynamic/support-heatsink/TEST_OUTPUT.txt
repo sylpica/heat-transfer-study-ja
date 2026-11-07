@@ -1,0 +1,42 @@
+Code 58eb34e, full Node sequential run:
+﹣ private legacy Japanese drafts remain labeled unverified in a local pack (0.199571ms) # SKIP
+﹣ reviewed local sections retain original page locations, both languages, and figure descriptions (0.257187ms) # SKIP
+﹣ 18 reviewed Japanese questions have complete rationale and valid source pages (0.230728ms) # SKIP
+﹣ chapter 8 opening retains both languages, eight equations, dimensional annotations, and the original figure (0.069775ms) # SKIP
+﹣ vertical natural convection retains source caveats, mean-value overbars, all figures and ten question rationales (0.043346ms) # SKIP
+✔ SVGs, comparison plots, formulas and user-data escape (19.958068ms)
+ℹ tests 1509
+ℹ suites 0
+ℹ pass 1504
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 5
+ℹ todo 0
+ℹ duration_ms 113729.064026
+
+New support tests in full run:
+✔ support heat-sink reference retains energy/grid limits, original failures and field provenance (4.62157ms)
+✔ same-geometry prescribed-h comparator is the actual existing learning solver equilibrium (2.87523ms)
+
+Independent Python:
+test_field_and_code_provenance (__main__.ReferenceChecks.test_field_and_code_provenance) ... ok
+test_final_archived_full_field_really_satisfies_the_assembled_system (__main__.ReferenceChecks.test_final_archived_full_field_really_satisfies_the_assembled_system) ... ok
+test_gray_and_black_radiation_analytic_limits (__main__.ReferenceChecks.test_gray_and_black_radiation_analytic_limits) ... ok
+test_grid_objectives_and_failed_initial_evidence_are_retained (__main__.ReferenceChecks.test_grid_objectives_and_failed_initial_evidence_are_retained) ... ok
+test_hydraulics_against_continuum_and_conservative_transfer (__main__.ReferenceChecks.test_hydraulics_against_continuum_and_conservative_transfer) ... ok
+test_no_source_uniform_temperature_and_zero_radiation_linear_limit (__main__.ReferenceChecks.test_no_source_uniform_temperature_and_zero_radiation_linear_limit) ... ok
+test_single_fin_efficiency_and_actual_two_dimensional_block_limit (__main__.ReferenceChecks.test_single_fin_efficiency_and_actual_two_dimensional_block_limit) ... ok
+test_spreading_fv_against_independent_cosine_solution (__main__.ReferenceChecks.test_spreading_fv_against_independent_cosine_solution) ... ok
+test_stopped_flow_is_not_misrepresented_as_natural_convection (__main__.ReferenceChecks.test_stopped_flow_is_not_misrepresented_as_natural_convection) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.859s
+
+OK
+
+Public build:
+
+> build:public
+> node scripts/build-public-site.mjs
+
+公開配信物：許諾済みの原本PDF、アプリ・独自ガイド・問題・用語・書籍の目次情報。翻訳・原図・抽出本文は含めていません。

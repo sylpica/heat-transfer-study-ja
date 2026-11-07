@@ -1,0 +1,65 @@
+{
+  "recordedAtUTC": "2026-11-07T11:34:14.118996+00:00",
+  "testedCodeCommit": "58eb34e",
+  "scope": "Single-thread support reference only; subsequent edits are documentation/results",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "node": "v24.19.0",
+    "blas": "OPENBLAS_NUM_THREADS=1"
+  },
+  "node": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "total": 1509,
+    "passCount": 1504,
+    "fail": 0,
+    "skip": 5,
+    "cancelled": 0,
+    "durationMs": 113729.064026
+  },
+  "independentPython": {
+    "total": 9,
+    "passCount": 9,
+    "fail": 0
+  },
+  "relatedNode": {
+    "total": 2,
+    "passCount": 2,
+    "fail": 0
+  },
+  "publicBuild": "passed",
+  "excludedPathsExist": {
+    "dist/dynamic/dev": false,
+    "dist/scripts/support-heatsink": false,
+    "dist/docs/dynamic/support-heatsink": false
+  },
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheDeclaration": "const CACHE_NAME='heat-study-ja-app-4a24eb30c8fdd98c';",
+  "sourceAndEvidenceSHA256": {
+    "docs/dynamic/support-heatsink/FIELD_r1_epsilon0p8.npz": "ce151dab03960635bb3b52acb4d5b780ff84945b56213e33719cfaa20786e7e3",
+    "docs/dynamic/support-heatsink/FIELD_r2_epsilon0p8.npz": "154909ea94873bbb202f675cfa85758e402789911c1583e8bdbc6b3488093307",
+    "docs/dynamic/support-heatsink/FIELD_r4_epsilon0p0.npz": "158fbe74938d23c9103f3beab0f4bf7f11e223608dc41d3f3ea332323ed76e9a",
+    "docs/dynamic/support-heatsink/FIELD_r4_epsilon0p8.npz": "0859dc7a439dfaf67f36cb7b561f4e984d7e492e28488794bd9f398333c5a3ac",
+    "docs/dynamic/support-heatsink/FIELD_v2_r1_epsilon0p8.npz": "14e9aab821e4bc34e8dc9a3cf6cd273658a6139c7204ecd79c8585480cc16147",
+    "docs/dynamic/support-heatsink/FIELD_v2_r2_epsilon0p8.npz": "59d5f682c3ed3973c20af9182981706b2564aea5b51f4d08987962030afe5f60",
+    "docs/dynamic/support-heatsink/FIELD_v2_r4_epsilon0p0.npz": "7dc4f6dc6990bbc90741d58630299ea4ec23f56393afa0c3d0555a2f8a246ac5",
+    "docs/dynamic/support-heatsink/FIELD_v2_r4_epsilon0p8.npz": "25834da1f93754c3a0e119d662b16c56757771331af0624089827c3bfe2bcece",
+    "docs/dynamic/support-heatsink/LEARNING_MODEL.json": "194e09a25be0f52e6acf8987b12172c8891b4e57d146997c17d3138b889edfdf",
+    "docs/dynamic/support-heatsink/REFERENCE.json": "b43ab728d3ddf6f1213754b59b3b7981516196e0671ceb302f379e0786440f26",
+    "docs/dynamic/support-heatsink/REFERENCE_v2.json": "a444a4298861eca1a0cf8b0de2e424fa9fa9c2bcaa0e70e5613bf4a6ce985378",
+    "docs/dynamic/support-heatsink/VALIDATION.json": "83fdfce0b8f85228bbafb0655c08b1eb2d45a935905647510efda15acaca2e94",
+    "docs/dynamic/support-heatsink/VALIDATION_v2.json": "e249fb94c08954941a5428553fec9f9318333f8401602d4368a8c7e00cd76309",
+    "dynamic/dev/heat-sink.mjs": "d79f1ab288550695aaf7ef02a5caa64a467c50d9ac23365257afe943343e9f5b",
+    "scripts/support-heatsink/learning_model.mjs": "deb6b926b7484151eb6164a49a3035e206375bc9ca4455c77fa19e3de1afca0d",
+    "scripts/support-heatsink/prototype.py": "00dc4ae37b494fa33f3efe464a56e0c7aa59380f69fce6b4801358c4ed85fbf9",
+    "scripts/support-heatsink/run_reference.py": "a91baca05facbe88cacd30c65a9c827830e972137c19db4a6cd08c3c857e152e",
+    "scripts/support-heatsink/test_reference.py": "4fdcfddabe8f49682effb85da79a0dc0b6189473e5f8ac118a73eaf0a7a8c783",
+    "scripts/support-heatsink/validation.py": "00153ef8dc2e28ca355f5d3792d247cde5229653cf58a9310f33a495906ea5e2",
+    "tests/support-heatsink-performance.test.mjs": "bfd6980a227fc3713514a1f2f72a9ddcfb4381ebf2aefd82890deee641b9ecc1"
+  },
+  "browserTestsThisSupport": "not run; no UI/worker changes",
+  "newRemoteCI": "not claimed",
+  "mainlineOrMuseBranchWritten": false,
+  "releaseApproved": false
+}

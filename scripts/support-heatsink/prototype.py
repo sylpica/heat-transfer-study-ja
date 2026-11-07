@@ -61,17 +61,18 @@ def hydraulic_profile(s,H,ny,nz):
     return psi,float(psi.sum()*dy*dz),float(abs(K@psi.ravel()-rhs).max())
 
 
-def allocate_flow(gaps,H,L,mu,ny,nz,*,flow=None,pressure=None):
+def allocate_flow(gaps,H,L,mu,ny,nz,*,flow=None,pressure=None,profile_refinement=1):
     """Parallel long channels, common inlet/outlet pressure; no manifold loss."""
     if (flow is None)==(pressure is None):raise ValueError('Specify flow OR pressure difference')
     if min(H,L,mu)<=0:raise ValueError('Positive dimensions and viscosity required')
     if (flow if flow is not None else pressure)<=0:
         raise ValueError('Zero/reversed flow: this forced-flow reference must not be used as natural convection')
-    profiles=[hydraulic_profile(s,H,ny,nz) for s in gaps]
+    if profile_refinement not in [1,2]:raise ValueError('Velocity subgrid refinement must be 1 or 2')
+    profiles=[hydraulic_profile(s,H,ny*profile_refinement,nz*profile_refinement) for s in gaps]
     mobilities=np.array([p[1]/(mu*L) for p in profiles])
     dp=flow/mobilities.sum() if flow is not None else pressure
     rates=dp*mobilities
-    velocities=[dp/(mu*L)*p[0] for p in profiles]
+    velocities=[dp/(mu*L)*p[0].reshape(nz,profile_refinement,ny,profile_refinement).mean(axis=(1,3)) for p in profiles]
     return dict(pressurePa=float(dp),flowM3PerS=float(rates.sum()),channelFlows=rates,
         velocities=velocities,mobilities=mobilities,maximumPoissonResidual=max(p[2] for p in profiles))
 
@@ -124,7 +125,7 @@ def radiosity_operator(F,lens,epsilon):
     return R
 
 
-def build(c=Conditions(),refinement=1):
+def build(c=Conditions(),refinement=1,hydraulic_refinement=1):
     r=refinement
     if not isinstance(r,int) or not 1<=r<=8:raise ValueError('Refinement is an integer 1..8')
     if c.flow<=0:raise ValueError('Natural convection needs its own buoyant/open-flow model; no forced zero-flow continuation')
@@ -152,7 +153,7 @@ def build(c=Conditions(),refinement=1):
         # Exactly the same small end-face area and prescribed h as the learning
         # model. These two edge faces are NOT part of the Graetz fluid solution.
         for i in [0,nx-1]:m.add(fins[j,:,i],fins[j,:,i],c.h_reference*c.thickness*dz)
-    hydro=allocate_flow([c.gap]*ng,c.height,c.length,c.rho*c.nu,nyg,nzf,flow=c.flow)
+    hydro=allocate_flow([c.gap]*ng,c.height,c.length,c.rho*c.nu,nyg,nzf,flow=c.flow,profile_refinement=hydraulic_refinement)
     for j in range(ng):
         ids=fluid[j];u=hydro['velocities'][j]
         m.edge(ids[:,:-1,:],ids[:,1:,:],c.fluid_k*dx*dz/dy)
@@ -186,7 +187,7 @@ def build(c=Conditions(),refinement=1):
                 elif ia[0]>=0 or ib[0]>=0:
                     ii=ia if ia[0]>=0 else ib
                     rad.add(ii,ii,g);ambient_links.append((ii.copy(),g))
-    return dict(c=c,r=r,K=m.matrix(),R=rad.matrix(),b=b,base=base,fins=fins,fluid=fluid,
+    return dict(c=c,r=r,hydraulic_refinement=hydraulic_refinement,K=m.matrix(),R=rad.matrix(),b=b,base=base,fins=fins,fluid=fluid,
         hydro=hydro,xe=xe,ye=ye,gapy=gapy,finy=finy,dx=dx,dy=dy,dz=dz,source=source,patch=patch,
         ambient_links=ambient_links,radiationClosure=max_closure,radiationReciprocity=max_reciprocity)
 
@@ -238,7 +239,7 @@ def measure(system,theta,history):
     base_mean=c.ambient+float((tb*volumes).sum()/(c.width*c.length*c.base))
     dh=4*c.gap*c.height/(c.gap+2*c.height);U=c.flow/((c.fins+1)*c.gap*c.height)
     analytic=rectangle_mobility(c.gap,c.height)
-    return dict(refinement=system['r'],unknowns=len(theta),nx=base.shape[2],nyBase=base.shape[1],nzBase=base.shape[0],
+    return dict(refinement=system['r'],hydraulicRefinement=system['hydraulic_refinement'],unknowns=len(theta),nx=base.shape[2],nyBase=base.shape[1],nzBase=base.shape[0],
         nyFluid=fluid.shape[2],nzFin=fins.shape[1],nonlinearHistory=history,
         sourceAverageTemperatureK=source_temp,maximumBaseCellTemperatureK=float(c.ambient+tb.max()),
         sourceFaceMaximumTemperatureK=float(c.ambient+surface[weights>0].max()),baseVolumeMeanTemperatureK=base_mean,

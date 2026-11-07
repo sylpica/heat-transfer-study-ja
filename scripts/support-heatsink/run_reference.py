@@ -26,13 +26,13 @@ def learning_reference(c,n):
         continuumFinAdmittanceWPerK=float(c.solid_k*Ac*m*np.tanh(m*c.height)))
 
 def main():
-    target=OUT/'REFERENCE.json'
+    target=OUT/'REFERENCE_v2.json'
     if target.exists():raise FileExistsError('Protect earlier results; use a new version name')
     c=Conditions();cases=[]
     for r,epsilon in [(1,.8),(2,.8),(4,.8),(4,0.)]:
-        t=time.monotonic();system=build(replace(c,emissivity=epsilon),r);theta,history=solve(system);row=measure(system,theta,history)
+        t=time.monotonic();system=build(replace(c,emissivity=epsilon),r,hydraulic_refinement=2);theta,history=solve(system);row=measure(system,theta,history)
         row.update(emissivity=epsilon,elapsedSeconds=time.monotonic()-t)
-        fname=f'FIELD_r{r}_epsilon{str(epsilon).replace(".","p")}.npz';path=OUT/fname
+        fname=f'FIELD_v2_r{r}_epsilon{str(epsilon).replace(".","p")}.npz';path=OUT/fname
         with path.open('xb') as f:
             np.savez_compressed(f,theta=theta,base=system['base'],fins=system['fins'],fluid=system['fluid'],xEdges=system['xe'],yEdges=system['ye'],patchArea=system['patch'])
         row.update(field=fname,fieldSHA256=hashlib.sha256(path.read_bytes()).hexdigest());cases.append(row)

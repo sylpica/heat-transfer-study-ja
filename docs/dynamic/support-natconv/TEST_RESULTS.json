@@ -1,0 +1,120 @@
+{
+  "recordedAtAsiaTokyo": "2026-11-07T16:48:55.365814+09:00",
+  "baseCommit": "ca8fc25af5a2f19f4869eb9a83a8cef6e4417d15",
+  "supportSourceCommitBeforeFinalCheckpoint": "17e7e9f59c7f1a75dbc277ed0a9c478b0c959886",
+  "testedSourceFilesSHA256": {
+    "scripts/support-natconv/derivative-projection-v1.py": "f2c1efbb9dde94726f5dd49e3d854166d6c0c80caab63d3d941e32688833bea9",
+    "scripts/support-natconv/build_report.py": "0f49d6c7cc6ff0366ca586bc9a763694972b114279eb4f1461d0add6f83ac75d",
+    "scripts/support-natconv/followthrough.py": "1b54f472b5d46bcaa1b8fca5dbde0b1e3f7f2ebe7e100c69e4d6f272deeecdef",
+    "scripts/support-natconv/stage-projection-v2.py": "71b31bbd84d1ecf67a2698b6a520ce15a0e1a2f768b53281a582597121750fb3",
+    "scripts/support-natconv/prototype.py": "de31a1c215a814379cf5fb2b4ac97224fb51bd47c83c449aed8ac57c52d89c4d",
+    "scripts/support-natconv/test_prototype.py": "133e540e299af251dafcf67c7d2472acfd1c93db4ab804136c3d0813da3e0232",
+    "scripts/support-natconv/current-probe.mjs": "764ed6453ccaad2a11eef8372801514e7d92280cadc0b6b0a07ff6504d77d1d2",
+    "tests/dynamic-support-natconv.test.mjs": "1bfdfb4214e322486b34c5391b94937c81a6cc3f3ee984e579d74c1145271239"
+  },
+  "node": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "version": "v24.19.0",
+    "tests": 1503,
+    "pass": 1498,
+    "fail": 0,
+    "skip": 5,
+    "durationMs": 114600.473375,
+    "logSHA256": "0647a78e888cd660ad4b3dd83a3c7d1c86e59eb3f8bf0ca91abfde908881fd92",
+    "skips": [
+      "﹣ private legacy Japanese drafts remain labeled unverified in a local pack (0.264509ms) # SKIP",
+      "﹣ reviewed local sections retain original page locations, both languages, and figure descriptions (0.322206ms) # SKIP",
+      "﹣ 18 reviewed Japanese questions have complete rationale and valid source pages (0.28558ms) # SKIP",
+      "﹣ chapter 8 opening retains both languages, eight equations, dimensional annotations, and the original figure (0.063757ms) # SKIP",
+      "﹣ vertical natural convection retains source caveats, mean-value overbars, all figures and ten question rationales (0.04003ms) # SKIP"
+    ]
+  },
+  "python": {
+    "command": "python3 scripts/support-natconv/test_prototype.py",
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "logSHA256": "6b3d20a91a1150c66f9403e04e316ba40d519cabac7a76aa621f6c88f512d694",
+    "independentNumericalRows": [
+      {
+        "independentTimeRows": [
+          {
+            "dt": 0.0002,
+            "temperatureError": 2.0539940293384795e-05,
+            "velocityError": 0.0009079260575406839,
+            "heatError": 1.5319429981681953e-06,
+            "balance": 6.071532165918825e-18
+          },
+          {
+            "dt": 0.0001,
+            "temperatureError": 5.037469207325174e-06,
+            "velocityError": 0.0002222699160791819,
+            "heatError": 3.7694702203702746e-07,
+            "balance": 8.673617379884035e-19
+          },
+          {
+            "dt": 5e-05,
+            "temperatureError": 1.247411894778061e-06,
+            "velocityError": 5.498816955962216e-05,
+            "heatError": 9.349240066673647e-08,
+            "balance": 1.3877787807814457e-17
+          },
+          {
+            "dt": 2.5e-05,
+            "temperatureError": 3.10372999634545e-07,
+            "velocityError": 1.367522932310683e-05,
+            "heatError": 2.3280709429696067e-08,
+            "balance": 3.469446951953614e-18
+          },
+          {
+            "dt": 1.25e-05,
+            "temperatureError": 7.74091509225805e-08,
+            "velocityError": 3.409868164813701e-06,
+            "heatError": 5.808669312906689e-09,
+            "balance": -2.6020852139652106e-18
+          }
+        ],
+        "selfRefinement": 1.6351503484557384e-14
+      },
+      {
+        "independentRhsRa": 10000,
+        "maximumAbsoluteDifferencesThermalUVHeat": [
+          1.4210854715202004e-14,
+          3.183231456205249e-12,
+          3.410605131648481e-12,
+          0.0
+        ]
+      },
+      {
+        "independentRhsRa": 100000,
+        "maximumAbsoluteDifferencesThermalUVHeat": [
+          1.4210854715202004e-14,
+          2.9103830456733704e-11,
+          3.2741809263825417e-11,
+          0.0
+        ]
+      },
+      {
+        "independentRhsRa": 1000000,
+        "maximumAbsoluteDifferencesThermalUVHeat": [
+          1.4210854715202004e-14,
+          1.7462298274040222e-10,
+          2.764863893389702e-10,
+          0.0
+        ]
+      }
+    ]
+  },
+  "initialPythonTestFailure": "Artificial velocity was projected down, so a Pe rejection was not triggered. Replaced artificial setup with the actual saved rejected-step precursor; no threshold or production code changed.",
+  "publicBuild": {
+    "passed": true,
+    "supportAndDevExcluded": true,
+    "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cache": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "productionSourcesAndDependenciesChanged": false,
+  "mainlineOrIntegrationBranchPushed": false,
+  "newBrowserOrWorkerPortVerified": false,
+  "ownSupportCIClaimed": false,
+  "releaseApproved": false
+}

@@ -1,0 +1,1214 @@
+{
+  "generatedAtUTC": "2026-11-07T07:43:53.002315+00:00",
+  "criteria": "PLAN.md, initial commit e7a3143; additions preserve original errors and budgets",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "threads": 1
+  },
+  "referenceSource": {
+    "paper": "de Vahl Davis1983 TableV, Pr=.71; velocities normalized by alpha/L",
+    "ownerPackSHA256": "22029fe4045039c60b4459b4120a66efe408dd96135a454ab2d80c4cb6cd1c6d",
+    "Nu0CrossCheckURL": "https://www.frontiersin.org/journals/mechanical-engineering/articles/10.3389/fmech.2018.00015/full",
+    "primaryHostedTextURL": "https://www.academia.edu/32025749/NATURAL_CONVECTION_OF_AIR_IN_A_SQUARE_CAVITY_A_BENCH_MARK_NUMERICAL_SOLUTION",
+    "newPrimaryPageImageRead": false,
+    "Ra1e5Positions": "Newly read from hosted TableV text; not claimed supplied/verified by original pack",
+    "Ra1e6VPosition": ".038 is owner-pack rounded value; hosted TableV text .0379 retained as source precision note",
+    "rawThirdPartyTablesRedistributed": false
+  },
+  "coldStartSeries": [
+    {
+      "file": "RA1000000_N128_DT1_stagev2.json",
+      "ra": 1000000,
+      "grid": 128,
+      "coldStart": true,
+      "steady": false,
+      "failure": "central cell Peclet >2: 2.0000927450303725",
+      "last": {
+        "time": 0.0035498624250204646,
+        "steps": 701,
+        "Nu0": 5.897531349492978,
+        "NuMidplane": 8.302535740126876e-05,
+        "NuVolume": 3.0150109753451346,
+        "NuCold": 5.8975313494929775,
+        "NuSectionSpread": 5.909849931354423,
+        "NuLocalMaximum": 9.83941683737146,
+        "uMaximum": 51.19800651398221,
+        "uMaximumPosition": 0.90234375,
+        "vMaximum": 233.73866121956206,
+        "vMaximumPosition": 0.04296875,
+        "divergence": 7.73070496506989e-12,
+        "pressureSolveResidualMax": 3.637978807091713e-12,
+        "pressureSolveRhsMax": 150.5357009648111,
+        "maximumProjectionRelativeResidual": 3.6055866812974565e-14,
+        "currentCellPe": 1.9988220666803307,
+        "maximumObservedStagePe": 2.0000927450303725,
+        "temperatureMin": 0.006830157352747591,
+        "temperatureMax": 0.9931698426472525,
+        "energyErrorJ": 1.734723475976807e-18,
+        "cumulativeBoundaryHeatJ": [
+          0.03481621943672294,
+          -0.03481621943672294
+        ]
+      },
+      "elapsedSeconds": 1.4243906630435959,
+      "errors": {
+        "Nu0": {
+          "computed": 5.897531349492978,
+          "reference": 8.817,
+          "signedDifference": -2.9194686505070218,
+          "signedRelativePercent": -33.11181411485791
+        },
+        "NuVolume": {
+          "computed": 3.0150109753451346,
+          "reference": 8.8,
+          "signedDifference": -5.784989024654866,
+          "signedRelativePercent": -65.73851164380528
+        },
+        "NuMidplane": {
+          "computed": 8.302535740126876e-05,
+          "reference": 8.799,
+          "signedDifference": -8.798916974642598,
+          "signedRelativePercent": -99.99905642280486
+        },
+        "NuLocalMaximum": {
+          "computed": 9.83941683737146,
+          "reference": 17.925,
+          "signedDifference": -8.085583162628541,
+          "signedRelativePercent": -45.10785585845769
+        },
+        "uMaximum": {
+          "computed": 51.19800651398221,
+          "reference": 64.63,
+          "signedDifference": -13.431993486017788,
+          "signedRelativePercent": -20.782908070582994
+        },
+        "vMaximum": {
+          "computed": 233.73866121956206,
+          "reference": 219.36,
+          "signedDifference": 14.378661219562048,
+          "signedRelativePercent": 6.554823677772625
+        },
+        "uMaximumPosition": {
+          "computed": 0.90234375,
+          "reference": 0.85,
+          "signedDifference": 0.05234375000000002,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.04296875,
+          "reference": 0.038,
+          "signedDifference": 0.004968750000000001,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": false,
+        "NuVolume": false,
+        "NuMidplane": false,
+        "NuLocalMaximum": false,
+        "uMaximum": false,
+        "vMaximum": false,
+        "uMaximumPosition": false,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": false,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": false,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": false
+    },
+    {
+      "file": "RA1000000_N192_DT1_stagev3.json",
+      "ra": 1000000,
+      "grid": 192,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.275,
+        "steps": 117481,
+        "Nu0": 8.852661159604214,
+        "NuMidplane": 8.85266103335123,
+        "NuVolume": 8.852661087379415,
+        "NuCold": 8.852661159604219,
+        "NuSectionSpread": 1.262529885082131e-07,
+        "NuLocalMaximum": 17.750825114318175,
+        "uMaximum": 64.90533747394937,
+        "uMaximumPosition": 0.8515625,
+        "vMaximum": 220.56940272387646,
+        "vMaximumPosition": 0.0390625,
+        "divergence": 1.106315039578476e-11,
+        "pressureSolveResidualMax": 3.1549086260129755e-12,
+        "pressureSolveRhsMax": 72.25799625512542,
+        "maximumProjectionRelativeResidual": 7.941726288501327e-14,
+        "currentCellPe": 1.150004016636695,
+        "maximumObservedStagePe": 1.5917539785284038,
+        "temperatureMin": 0.0025471128283292136,
+        "temperatureMax": 0.997452887171671,
+        "energyErrorJ": -8.635067969306773e-17,
+        "cumulativeBoundaryHeatJ": [
+          2.407286647293608,
+          -2.407286647293608
+        ]
+      },
+      "elapsedSeconds": 525.7071306569851,
+      "errors": {
+        "Nu0": {
+          "computed": 8.852661159604214,
+          "reference": 8.817,
+          "signedDifference": 0.035661159604213566,
+          "signedRelativePercent": 0.40445910858810663
+        },
+        "NuVolume": {
+          "computed": 8.852661087379415,
+          "reference": 8.8,
+          "signedDifference": 0.05266108737941444,
+          "signedRelativePercent": 0.5984214474933358
+        },
+        "NuMidplane": {
+          "computed": 8.85266103335123,
+          "reference": 8.799,
+          "signedDifference": 0.05366103335123107,
+          "signedRelativePercent": 0.6098537714652963
+        },
+        "NuLocalMaximum": {
+          "computed": 17.750825114318175,
+          "reference": 17.925,
+          "signedDifference": -0.1741748856818255,
+          "signedRelativePercent": -0.9716869494104663
+        },
+        "uMaximum": {
+          "computed": 64.90533747394937,
+          "reference": 64.63,
+          "signedDifference": 0.2753374739493779,
+          "signedRelativePercent": 0.4260211572789441
+        },
+        "vMaximum": {
+          "computed": 220.56940272387646,
+          "reference": 219.36,
+          "signedDifference": 1.209402723876451,
+          "signedRelativePercent": 0.5513323868875153
+        },
+        "uMaximumPosition": {
+          "computed": 0.8515625,
+          "reference": 0.85,
+          "signedDifference": 0.0015625000000000222,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.0390625,
+          "reference": 0.038,
+          "signedDifference": 0.001062500000000001,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": true,
+        "NuVolume": true,
+        "NuMidplane": true,
+        "NuLocalMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": true
+    },
+    {
+      "file": "RA1000000_N64_DT1_stagev2.json",
+      "ra": 1000000,
+      "grid": 64,
+      "coldStart": true,
+      "steady": false,
+      "failure": "central cell Peclet >2: 2.007662299976939",
+      "last": {
+        "time": 0.0016729199561718656,
+        "steps": 82,
+        "Nu0": 7.170739330523617,
+        "NuMidplane": 2.626156236917865e-12,
+        "NuVolume": 1.150062684631132,
+        "NuCold": 7.170739330523617,
+        "NuSectionSpread": 7.17073933052099,
+        "NuLocalMaximum": 10.578885870221782,
+        "uMaximum": 17.09303556095928,
+        "uMaximumPosition": 0.9140625,
+        "vMaximum": 127.19105630809864,
+        "vMaximumPosition": 0.0234375,
+        "divergence": 2.0463630789890885e-12,
+        "pressureSolveResidualMax": 1.4779288903810084e-12,
+        "pressureSolveRhsMax": 307.30321500735863,
+        "maximumProjectionRelativeResidual": 6.6440521616810065e-15,
+        "currentCellPe": 1.995860309558091,
+        "maximumObservedStagePe": 2.007662299976939,
+        "temperatureMin": 0.03243164278027007,
+        "temperatureMax": 0.9675683572197299,
+        "energyErrorJ": -5.637851296924623e-18,
+        "cumulativeBoundaryHeatJ": [
+          0.022955340865054567,
+          -0.022955340865054567
+        ]
+      },
+      "elapsedSeconds": 0.06593252799939364,
+      "errors": {
+        "Nu0": {
+          "computed": 7.170739330523617,
+          "reference": 8.817,
+          "signedDifference": -1.6462606694763835,
+          "signedRelativePercent": -18.671437784693023
+        },
+        "NuVolume": {
+          "computed": 1.150062684631132,
+          "reference": 8.8,
+          "signedDifference": -7.649937315368868,
+          "signedRelativePercent": -86.93110585646441
+        },
+        "NuMidplane": {
+          "computed": 2.626156236917865e-12,
+          "reference": 8.799,
+          "signedDifference": -8.798999999997374,
+          "signedRelativePercent": -99.99999999997016
+        },
+        "NuLocalMaximum": {
+          "computed": 10.578885870221782,
+          "reference": 17.925,
+          "signedDifference": -7.346114129778218,
+          "signedRelativePercent": -40.982505605457284
+        },
+        "uMaximum": {
+          "computed": 17.09303556095928,
+          "reference": 64.63,
+          "signedDifference": -47.536964439040716,
+          "signedRelativePercent": -73.5524747625572
+        },
+        "vMaximum": {
+          "computed": 127.19105630809864,
+          "reference": 219.36,
+          "signedDifference": -92.16894369190138,
+          "signedRelativePercent": -42.01720627821908
+        },
+        "uMaximumPosition": {
+          "computed": 0.9140625,
+          "reference": 0.85,
+          "signedDifference": 0.06406250000000002,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.0234375,
+          "reference": 0.038,
+          "signedDifference": -0.014562499999999999,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": false,
+        "NuVolume": false,
+        "NuMidplane": false,
+        "NuLocalMaximum": false,
+        "uMaximum": false,
+        "vMaximum": false,
+        "uMaximumPosition": false,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": false,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": false,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": false
+    },
+    {
+      "file": "RA100000_N128_DT1_stagev2.json",
+      "ra": 100000,
+      "grid": 128,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.37500000000000006,
+        "steps": 51210,
+        "Nu0": 4.531632341090627,
+        "NuMidplane": 4.531632478679955,
+        "NuVolume": 4.5316324158283505,
+        "NuCold": 4.531632341090628,
+        "NuSectionSpread": 1.375893283750429e-07,
+        "NuLocalMaximum": 7.7674665228088315,
+        "uMaximum": 34.756244757377054,
+        "uMaximumPosition": 0.85546875,
+        "vMaximum": 68.66751654588741,
+        "vMaximumPosition": 0.06640625,
+        "divergence": 3.097966327914037e-12,
+        "pressureSolveResidualMax": 3.62383734131555e-13,
+        "pressureSolveRhsMax": 11.816566776250212,
+        "maximumProjectionRelativeResidual": 7.112659192954605e-14,
+        "currentCellPe": 0.5364649730147457,
+        "maximumObservedStagePe": 0.7054228933698965,
+        "temperatureMin": 0.0028411563682062923,
+        "temperatureMax": 0.9971588436317936,
+        "energyErrorJ": 5.551115123125783e-17,
+        "cumulativeBoundaryHeatJ": [
+          1.6863074330576369,
+          -1.6863074330576369
+        ]
+      },
+      "elapsedSeconds": 101.66191998298746,
+      "errors": {
+        "Nu0": {
+          "computed": 4.531632341090627,
+          "reference": 4.509,
+          "signedDifference": 0.022632341090626618,
+          "signedRelativePercent": 0.5019370390469513
+        },
+        "NuVolume": {
+          "computed": 4.5316324158283505,
+          "reference": 4.519,
+          "signedDifference": 0.012632415828350396,
+          "signedRelativePercent": 0.279540071439488
+        },
+        "NuMidplane": {
+          "computed": 4.531632478679955,
+          "reference": 4.519,
+          "signedDifference": 0.012632478679955206,
+          "signedRelativePercent": 0.2795414622694281
+        },
+        "NuLocalMaximum": {
+          "computed": 7.7674665228088315,
+          "reference": 7.717,
+          "signedDifference": 0.050466522808831904,
+          "signedRelativePercent": 0.653965567044601
+        },
+        "uMaximum": {
+          "computed": 34.756244757377054,
+          "reference": 34.73,
+          "signedDifference": 0.026244757377057226,
+          "signedRelativePercent": 0.07556797401975235
+        },
+        "vMaximum": {
+          "computed": 68.66751654588741,
+          "reference": 68.59,
+          "signedDifference": 0.07751654588740564,
+          "signedRelativePercent": 0.11301435469805998
+        },
+        "uMaximumPosition": {
+          "computed": 0.85546875,
+          "reference": 0.855,
+          "signedDifference": 0.00046875000000001776,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.06640625,
+          "reference": 0.066,
+          "signedDifference": 0.0004062499999999969,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": true,
+        "NuVolume": true,
+        "NuMidplane": true,
+        "NuLocalMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": true
+    },
+    {
+      "file": "RA100000_N64_DT1_stagev2.json",
+      "ra": 100000,
+      "grid": 64,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.37500000000000006,
+        "steps": 16585,
+        "Nu0": 4.561496148947847,
+        "NuMidplane": 4.561496287865412,
+        "NuVolume": 4.5614962246055,
+        "NuCold": 4.561496148947848,
+        "NuSectionSpread": 1.3891756545092449e-07,
+        "NuLocalMaximum": 7.908012616425239,
+        "uMaximum": 34.79129675900461,
+        "uMaximumPosition": 0.8515625,
+        "vMaximum": 68.50035589027294,
+        "vMaximumPosition": 0.0703125,
+        "divergence": 1.2789769243681803e-12,
+        "pressureSolveResidualMax": 2.4849913793367762e-14,
+        "pressureSolveRhsMax": 2.1968026266468144,
+        "maximumProjectionRelativeResidual": 2.5481440925124515e-14,
+        "currentCellPe": 1.0713288869934572,
+        "maximumObservedStagePe": 1.4078490207707104,
+        "temperatureMin": 0.005666103379518832,
+        "temperatureMax": 0.9943338966204811,
+        "energyErrorJ": 2.7755575615628914e-17,
+        "cumulativeBoundaryHeatJ": [
+          1.6969048663811168,
+          -1.6969048663811168
+        ]
+      },
+      "elapsedSeconds": 12.856462820025627,
+      "errors": {
+        "Nu0": {
+          "computed": 4.561496148947847,
+          "reference": 4.509,
+          "signedDifference": 0.0524961489478466,
+          "signedRelativePercent": 1.1642525825647843
+        },
+        "NuVolume": {
+          "computed": 4.5614962246055,
+          "reference": 4.519,
+          "signedDifference": 0.04249622460550029,
+          "signedRelativePercent": 0.9403900111861097
+        },
+        "NuMidplane": {
+          "computed": 4.561496287865412,
+          "reference": 4.519,
+          "signedDifference": 0.04249628786541226,
+          "signedRelativePercent": 0.9403914110513778
+        },
+        "NuLocalMaximum": {
+          "computed": 7.908012616425239,
+          "reference": 7.717,
+          "signedDifference": 0.19101261642523948,
+          "signedRelativePercent": 2.4752185619442812
+        },
+        "uMaximum": {
+          "computed": 34.79129675900461,
+          "reference": 34.73,
+          "signedDifference": 0.06129675900461251,
+          "signedRelativePercent": 0.17649513102393488
+        },
+        "vMaximum": {
+          "computed": 68.50035589027294,
+          "reference": 68.59,
+          "signedDifference": -0.08964410972706105,
+          "signedRelativePercent": -0.13069559662787222
+        },
+        "uMaximumPosition": {
+          "computed": 0.8515625,
+          "reference": 0.855,
+          "signedDifference": -0.0034374999999999822,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.0703125,
+          "reference": 0.066,
+          "signedDifference": 0.004312499999999997,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": false,
+        "NuVolume": true,
+        "NuMidplane": true,
+        "NuLocalMaximum": false,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": false
+    },
+    {
+      "file": "RA10000_N32_DT1_stagev2.json",
+      "ra": 10000,
+      "grid": 32,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.7000000000000001,
+        "steps": 5978,
+        "Nu0": 2.26796010165245,
+        "NuMidplane": 2.2679601016733977,
+        "NuVolume": 2.2679601016634736,
+        "NuCold": 2.267960101652445,
+        "NuSectionSpread": 2.0952573009935804e-11,
+        "NuLocalMaximum": 3.610693379735409,
+        "uMaximum": 16.177468817338553,
+        "uMaximumPosition": 0.828125,
+        "vMaximum": 19.62607163492445,
+        "vMaximumPosition": 0.109375,
+        "divergence": 1.4299672557172016e-13,
+        "pressureSolveResidualMax": 2.4896751327219135e-14,
+        "pressureSolveRhsMax": 4.725931743347141,
+        "maximumProjectionRelativeResidual": 1.369466133209495e-14,
+        "currentCellPe": 0.6153481824462531,
+        "maximumObservedStagePe": 0.7215364118655164,
+        "temperatureMin": 0.009104749802845497,
+        "temperatureMax": 0.9908952501971544,
+        "energyErrorJ": -4.440892098500626e-16,
+        "cumulativeBoundaryHeatJ": [
+          1.5993910472768247,
+          -1.5993910472768245
+        ]
+      },
+      "elapsedSeconds": 2.8248062870115973,
+      "errors": {
+        "Nu0": {
+          "computed": 2.26796010165245,
+          "reference": 2.238,
+          "signedDifference": 0.02996010165245,
+          "signedRelativePercent": 1.3386998057395072
+        },
+        "NuVolume": {
+          "computed": 2.2679601016634736,
+          "reference": 2.243,
+          "signedDifference": 0.024960101663473733,
+          "signedRelativePercent": 1.1127998958303076
+        },
+        "NuMidplane": {
+          "computed": 2.2679601016733977,
+          "reference": 2.243,
+          "signedDifference": 0.024960101673397794,
+          "signedRelativePercent": 1.1127998962727537
+        },
+        "NuLocalMaximum": {
+          "computed": 3.610693379735409,
+          "reference": 3.528,
+          "signedDifference": 0.0826933797354088,
+          "signedRelativePercent": 2.3439166591669114
+        },
+        "uMaximum": {
+          "computed": 16.177468817338553,
+          "reference": 16.178,
+          "signedDifference": -0.0005311826614473603,
+          "signedRelativePercent": -0.0032833642072405134
+        },
+        "vMaximum": {
+          "computed": 19.62607163492445,
+          "reference": 19.617,
+          "signedDifference": 0.009071634924449512,
+          "signedRelativePercent": 0.04624374228705541
+        },
+        "uMaximumPosition": {
+          "computed": 0.828125,
+          "reference": 0.823,
+          "signedDifference": 0.005125000000000046,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.109375,
+          "reference": 0.119,
+          "signedDifference": -0.009624999999999995,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": false,
+        "NuVolume": false,
+        "NuMidplane": false,
+        "NuLocalMaximum": false,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": false
+    },
+    {
+      "file": "RA10000_N64_DT1_stagev2.json",
+      "ra": 10000,
+      "grid": 64,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.7000000000000001,
+        "steps": 23898,
+        "Nu0": 2.25063197334316,
+        "NuMidplane": 2.250631973362501,
+        "NuVolume": 2.250631973353318,
+        "NuCold": 2.2506319733431495,
+        "NuSectionSpread": 1.935163140842633e-11,
+        "NuLocalMaximum": 3.5507389091934556,
+        "uMaximum": 16.18043063980575,
+        "uMaximumPosition": 0.8203125,
+        "vMaximum": 19.638804964387894,
+        "vMaximumPosition": 0.1171875,
+        "divergence": 4.050093593832571e-13,
+        "pressureSolveResidualMax": 4.3520742565306136e-14,
+        "pressureSolveRhsMax": 2.368039563428802,
+        "maximumProjectionRelativeResidual": 3.86782260034483e-14,
+        "currentCellPe": 0.3075538245099624,
+        "maximumObservedStagePe": 0.36229669779423096,
+        "temperatureMin": 0.004566109611793187,
+        "temperatureMax": 0.9954338903882066,
+        "energyErrorJ": 8.326672684688674e-17,
+        "cumulativeBoundaryHeatJ": [
+          1.588152294823189,
+          -1.5881522948231894
+        ]
+      },
+      "elapsedSeconds": 18.038001745997462,
+      "errors": {
+        "Nu0": {
+          "computed": 2.25063197334316,
+          "reference": 2.238,
+          "signedDifference": 0.01263197334316013,
+          "signedRelativePercent": 0.5644313379428167
+        },
+        "NuVolume": {
+          "computed": 2.250631973353318,
+          "reference": 2.243,
+          "signedDifference": 0.007631973353318333,
+          "signedRelativePercent": 0.3402573942629772
+        },
+        "NuMidplane": {
+          "computed": 2.250631973362501,
+          "reference": 2.243,
+          "signedDifference": 0.00763197336250121,
+          "signedRelativePercent": 0.3402573946723608
+        },
+        "NuLocalMaximum": {
+          "computed": 3.5507389091934556,
+          "reference": 3.528,
+          "signedDifference": 0.02273890919345556,
+          "signedRelativePercent": 0.6445269045764146
+        },
+        "uMaximum": {
+          "computed": 16.18043063980575,
+          "reference": 16.178,
+          "signedDifference": 0.0024306398057483136,
+          "signedRelativePercent": 0.015024352860359969
+        },
+        "vMaximum": {
+          "computed": 19.638804964387894,
+          "reference": 19.617,
+          "signedDifference": 0.021804964387893477,
+          "signedRelativePercent": 0.11115340973590904
+        },
+        "uMaximumPosition": {
+          "computed": 0.8203125,
+          "reference": 0.823,
+          "signedDifference": -0.002687499999999954,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.1171875,
+          "reference": 0.119,
+          "signedDifference": -0.0018124999999999947,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": true,
+        "NuVolume": true,
+        "NuMidplane": true,
+        "NuLocalMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": true
+    }
+  ],
+  "fineColdStartCases": [
+    {
+      "file": "RA1000000_N192_DT1_stagev3.json",
+      "ra": 1000000,
+      "grid": 192,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.275,
+        "steps": 117481,
+        "Nu0": 8.852661159604214,
+        "NuMidplane": 8.85266103335123,
+        "NuVolume": 8.852661087379415,
+        "NuCold": 8.852661159604219,
+        "NuSectionSpread": 1.262529885082131e-07,
+        "NuLocalMaximum": 17.750825114318175,
+        "uMaximum": 64.90533747394937,
+        "uMaximumPosition": 0.8515625,
+        "vMaximum": 220.56940272387646,
+        "vMaximumPosition": 0.0390625,
+        "divergence": 1.106315039578476e-11,
+        "pressureSolveResidualMax": 3.1549086260129755e-12,
+        "pressureSolveRhsMax": 72.25799625512542,
+        "maximumProjectionRelativeResidual": 7.941726288501327e-14,
+        "currentCellPe": 1.150004016636695,
+        "maximumObservedStagePe": 1.5917539785284038,
+        "temperatureMin": 0.0025471128283292136,
+        "temperatureMax": 0.997452887171671,
+        "energyErrorJ": -8.635067969306773e-17,
+        "cumulativeBoundaryHeatJ": [
+          2.407286647293608,
+          -2.407286647293608
+        ]
+      },
+      "elapsedSeconds": 525.7071306569851,
+      "errors": {
+        "Nu0": {
+          "computed": 8.852661159604214,
+          "reference": 8.817,
+          "signedDifference": 0.035661159604213566,
+          "signedRelativePercent": 0.40445910858810663
+        },
+        "NuVolume": {
+          "computed": 8.852661087379415,
+          "reference": 8.8,
+          "signedDifference": 0.05266108737941444,
+          "signedRelativePercent": 0.5984214474933358
+        },
+        "NuMidplane": {
+          "computed": 8.85266103335123,
+          "reference": 8.799,
+          "signedDifference": 0.05366103335123107,
+          "signedRelativePercent": 0.6098537714652963
+        },
+        "NuLocalMaximum": {
+          "computed": 17.750825114318175,
+          "reference": 17.925,
+          "signedDifference": -0.1741748856818255,
+          "signedRelativePercent": -0.9716869494104663
+        },
+        "uMaximum": {
+          "computed": 64.90533747394937,
+          "reference": 64.63,
+          "signedDifference": 0.2753374739493779,
+          "signedRelativePercent": 0.4260211572789441
+        },
+        "vMaximum": {
+          "computed": 220.56940272387646,
+          "reference": 219.36,
+          "signedDifference": 1.209402723876451,
+          "signedRelativePercent": 0.5513323868875153
+        },
+        "uMaximumPosition": {
+          "computed": 0.8515625,
+          "reference": 0.85,
+          "signedDifference": 0.0015625000000000222,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.0390625,
+          "reference": 0.038,
+          "signedDifference": 0.001062500000000001,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": true,
+        "NuVolume": true,
+        "NuMidplane": true,
+        "NuLocalMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": true
+    },
+    {
+      "file": "RA100000_N128_DT1_stagev2.json",
+      "ra": 100000,
+      "grid": 128,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.37500000000000006,
+        "steps": 51210,
+        "Nu0": 4.531632341090627,
+        "NuMidplane": 4.531632478679955,
+        "NuVolume": 4.5316324158283505,
+        "NuCold": 4.531632341090628,
+        "NuSectionSpread": 1.375893283750429e-07,
+        "NuLocalMaximum": 7.7674665228088315,
+        "uMaximum": 34.756244757377054,
+        "uMaximumPosition": 0.85546875,
+        "vMaximum": 68.66751654588741,
+        "vMaximumPosition": 0.06640625,
+        "divergence": 3.097966327914037e-12,
+        "pressureSolveResidualMax": 3.62383734131555e-13,
+        "pressureSolveRhsMax": 11.816566776250212,
+        "maximumProjectionRelativeResidual": 7.112659192954605e-14,
+        "currentCellPe": 0.5364649730147457,
+        "maximumObservedStagePe": 0.7054228933698965,
+        "temperatureMin": 0.0028411563682062923,
+        "temperatureMax": 0.9971588436317936,
+        "energyErrorJ": 5.551115123125783e-17,
+        "cumulativeBoundaryHeatJ": [
+          1.6863074330576369,
+          -1.6863074330576369
+        ]
+      },
+      "elapsedSeconds": 101.66191998298746,
+      "errors": {
+        "Nu0": {
+          "computed": 4.531632341090627,
+          "reference": 4.509,
+          "signedDifference": 0.022632341090626618,
+          "signedRelativePercent": 0.5019370390469513
+        },
+        "NuVolume": {
+          "computed": 4.5316324158283505,
+          "reference": 4.519,
+          "signedDifference": 0.012632415828350396,
+          "signedRelativePercent": 0.279540071439488
+        },
+        "NuMidplane": {
+          "computed": 4.531632478679955,
+          "reference": 4.519,
+          "signedDifference": 0.012632478679955206,
+          "signedRelativePercent": 0.2795414622694281
+        },
+        "NuLocalMaximum": {
+          "computed": 7.7674665228088315,
+          "reference": 7.717,
+          "signedDifference": 0.050466522808831904,
+          "signedRelativePercent": 0.653965567044601
+        },
+        "uMaximum": {
+          "computed": 34.756244757377054,
+          "reference": 34.73,
+          "signedDifference": 0.026244757377057226,
+          "signedRelativePercent": 0.07556797401975235
+        },
+        "vMaximum": {
+          "computed": 68.66751654588741,
+          "reference": 68.59,
+          "signedDifference": 0.07751654588740564,
+          "signedRelativePercent": 0.11301435469805998
+        },
+        "uMaximumPosition": {
+          "computed": 0.85546875,
+          "reference": 0.855,
+          "signedDifference": 0.00046875000000001776,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.06640625,
+          "reference": 0.066,
+          "signedDifference": 0.0004062499999999969,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": true,
+        "NuVolume": true,
+        "NuMidplane": true,
+        "NuLocalMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": true
+    },
+    {
+      "file": "RA10000_N64_DT1_stagev2.json",
+      "ra": 10000,
+      "grid": 64,
+      "coldStart": true,
+      "steady": true,
+      "failure": null,
+      "last": {
+        "time": 0.7000000000000001,
+        "steps": 23898,
+        "Nu0": 2.25063197334316,
+        "NuMidplane": 2.250631973362501,
+        "NuVolume": 2.250631973353318,
+        "NuCold": 2.2506319733431495,
+        "NuSectionSpread": 1.935163140842633e-11,
+        "NuLocalMaximum": 3.5507389091934556,
+        "uMaximum": 16.18043063980575,
+        "uMaximumPosition": 0.8203125,
+        "vMaximum": 19.638804964387894,
+        "vMaximumPosition": 0.1171875,
+        "divergence": 4.050093593832571e-13,
+        "pressureSolveResidualMax": 4.3520742565306136e-14,
+        "pressureSolveRhsMax": 2.368039563428802,
+        "maximumProjectionRelativeResidual": 3.86782260034483e-14,
+        "currentCellPe": 0.3075538245099624,
+        "maximumObservedStagePe": 0.36229669779423096,
+        "temperatureMin": 0.004566109611793187,
+        "temperatureMax": 0.9954338903882066,
+        "energyErrorJ": 8.326672684688674e-17,
+        "cumulativeBoundaryHeatJ": [
+          1.588152294823189,
+          -1.5881522948231894
+        ]
+      },
+      "elapsedSeconds": 18.038001745997462,
+      "errors": {
+        "Nu0": {
+          "computed": 2.25063197334316,
+          "reference": 2.238,
+          "signedDifference": 0.01263197334316013,
+          "signedRelativePercent": 0.5644313379428167
+        },
+        "NuVolume": {
+          "computed": 2.250631973353318,
+          "reference": 2.243,
+          "signedDifference": 0.007631973353318333,
+          "signedRelativePercent": 0.3402573942629772
+        },
+        "NuMidplane": {
+          "computed": 2.250631973362501,
+          "reference": 2.243,
+          "signedDifference": 0.00763197336250121,
+          "signedRelativePercent": 0.3402573946723608
+        },
+        "NuLocalMaximum": {
+          "computed": 3.5507389091934556,
+          "reference": 3.528,
+          "signedDifference": 0.02273890919345556,
+          "signedRelativePercent": 0.6445269045764146
+        },
+        "uMaximum": {
+          "computed": 16.18043063980575,
+          "reference": 16.178,
+          "signedDifference": 0.0024306398057483136,
+          "signedRelativePercent": 0.015024352860359969
+        },
+        "vMaximum": {
+          "computed": 19.638804964387894,
+          "reference": 19.617,
+          "signedDifference": 0.021804964387893477,
+          "signedRelativePercent": 0.11115340973590904
+        },
+        "uMaximumPosition": {
+          "computed": 0.8203125,
+          "reference": 0.823,
+          "signedDifference": -0.002687499999999954,
+          "signedRelativePercent": null
+        },
+        "vMaximumPosition": {
+          "computed": 0.1171875,
+          "reference": 0.119,
+          "signedDifference": -0.0018124999999999947,
+          "signedRelativePercent": null
+        }
+      },
+      "checks": {
+        "Nu0": true,
+        "NuVolume": true,
+        "NuMidplane": true,
+        "NuLocalMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true,
+        "twoConsecutiveSteadyIntervals": true,
+        "divergenceBelow1eMinus9": true,
+        "centralStagePecletAtMost2": true,
+        "retainedTemperatureBounds": true,
+        "absoluteHeatBalanceBelow1eMinus10J": true,
+        "actualPressureRelativeResidualBelow1eMinus10": true
+      },
+      "allKnownBenchmarksAndIntegrityPassed": true
+    }
+  ],
+  "allSelectedFineColdStartChecksPassed": true,
+  "warmCoarseRa1e6": {
+    "ra": 1000000,
+    "grid": 128,
+    "coldStart": false,
+    "steady": true,
+    "last": {
+      "time": 0.17500000000000002,
+      "steps": 49623,
+      "Nu0": 8.886861288582027,
+      "NuMidplane": 8.886861085054454,
+      "NuVolume": 8.886861173360309,
+      "NuCold": 8.886861288582029,
+      "NuSectionSpread": 2.0352757523767195e-07,
+      "NuLocalMaximum": 18.023767681374892,
+      "uMaximum": 64.98587740705797,
+      "uMaximumPosition": 0.84765625,
+      "vMaximum": 220.55627734067386,
+      "vMaximumPosition": 0.03515625,
+      "divergence": 6.707523425575346e-12,
+      "pressureSolveResidualMax": 5.968558980384842e-13,
+      "pressureSolveRhsMax": 23.222048466301885,
+      "maximumProjectionRelativeResidual": 4.7302784192690164e-14,
+      "currentCellPe": 1.7305031846565182,
+      "maximumObservedStagePe": 1.7341070318287994,
+      "temperatureMin": 0.0038133568857819486,
+      "temperatureMax": 0.9961866431142181,
+      "energyErrorJ": 2.7755575615628914e-17,
+      "cumulativeBoundaryHeatJ": [
+        1.5550948021636044,
+        -1.5550948021636044
+      ],
+      "change": {
+        "temperature": 1.1423990586845179e-08,
+        "relativeVelocity": 6.326740160275307e-08,
+        "relativeNu": 6.910006604682748e-08
+      }
+    },
+    "errors": {
+      "Nu0": {
+        "computed": 8.886861288582027,
+        "reference": 8.817,
+        "signedDifference": 0.06986128858202711,
+        "signedRelativePercent": 0.7923476078260938
+      },
+      "NuVolume": {
+        "computed": 8.886861173360309,
+        "reference": 8.8,
+        "signedDifference": 0.08686117336030819,
+        "signedRelativePercent": 0.9870587881853243
+      },
+      "NuMidplane": {
+        "computed": 8.886861085054454,
+        "reference": 8.799,
+        "signedDifference": 0.08786108505445434,
+        "signedRelativePercent": 0.9985348909473224
+      },
+      "NuLocalMaximum": {
+        "computed": 18.023767681374892,
+        "reference": 17.925,
+        "signedDifference": 0.09876768137489123,
+        "signedRelativePercent": 0.5510051959547679
+      },
+      "uMaximum": {
+        "computed": 64.98587740705797,
+        "reference": 64.63,
+        "signedDifference": 0.35587740705797444,
+        "signedRelativePercent": 0.5506381046850972
+      },
+      "vMaximum": {
+        "computed": 220.55627734067386,
+        "reference": 219.36,
+        "signedDifference": 1.196277340673845,
+        "signedRelativePercent": 0.5453488970978526
+      },
+      "uMaximumPosition": {
+        "computed": 0.84765625,
+        "reference": 0.85,
+        "signedDifference": -0.002343749999999978,
+        "signedRelativePercent": null
+      },
+      "vMaximumPosition": {
+        "computed": 0.03515625,
+        "reference": 0.038,
+        "signedDifference": -0.002843749999999999,
+        "signedRelativePercent": null
+      }
+    },
+    "checks": {
+      "Nu0": true,
+      "NuVolume": true,
+      "NuMidplane": true,
+      "NuLocalMaximum": true,
+      "uMaximum": true,
+      "vMaximum": true,
+      "uMaximumPosition": true,
+      "vMaximumPosition": true,
+      "twoConsecutiveSteadyIntervals": true,
+      "divergenceBelow1eMinus9": true,
+      "centralStagePecletAtMost2": true,
+      "retainedTemperatureBounds": true,
+      "absoluteHeatBalanceBelow1eMinus10J": true,
+      "actualPressureRelativeResidualBelow1eMinus10": true
+    },
+    "allKnownBenchmarksAndIntegrityPassed": true
+  },
+  "steadyTailTimeSensitivity": [
+    {
+      "ra": 10000,
+      "grid": 64,
+      "duration": 0.02,
+      "maximumTemperatureDifference": 1.0103029524088925e-14,
+      "maximumVelocityDifference": 8.348877145181177e-14,
+      "NuVolumeDifference": 1.7763568394002505e-14,
+      "Nu0Difference": 2.7533531010703882e-14
+    },
+    {
+      "ra": 100000,
+      "grid": 128,
+      "duration": 0.02,
+      "maximumTemperatureDifference": 2.55351295663786e-15,
+      "maximumVelocityDifference": 3.375077994860476e-13,
+      "NuVolumeDifference": 8.881784197001252e-15,
+      "Nu0Difference": 7.993605777301127e-15
+    },
+    {
+      "ra": 1000000,
+      "grid": 192,
+      "duration": 0.02,
+      "maximumTemperatureDifference": 2.6756374893466273e-14,
+      "maximumVelocityDifference": 8.683276320198274e-12,
+      "NuVolumeDifference": -1.4921397450962104e-13,
+      "Nu0Difference": 5.5067062021407764e-14
+    }
+  ],
+  "sourceAndOwnFieldSHA256": {
+    "docs/dynamic/support-natconv/RA100000_N128_DT1_stagev2_tail0.5.npz": "9b272bb3b09c9571332cd74409d5d3c6b6ec5bf98866f93969d5146fa3e0817f",
+    "docs/dynamic/support-natconv/RA1000000_N128_WARM_FROM192.npz": "f76763aa681a2f75e0fb972ae8cb382281ead150bbfce175b24ec6cec8f97dc8",
+    "docs/dynamic/support-natconv/RA10000_N32_DT1_v1.npz": "91bf64a01bd9b7d3021fda5b3bd785b0887f362ef68bd25cad1f93b6480a2d99",
+    "docs/dynamic/support-natconv/RA1000000_N192_DT1_stagev3_tail0.5.npz": "af435114bce5f9e45c072d67edfc73417beb04fbcc87a3ba7f8ba9d60da4a125",
+    "docs/dynamic/support-natconv/RA100000_N128_DT1_stagev2.npz": "19b825117924eb0cf3e56de09c25333ee95f01fc77e966ee922b7ed4c4934bf5",
+    "docs/dynamic/support-natconv/RA1000000_N192_DT1_stagev3_tail1.0.npz": "bd875ce47fbaa52598cb8d2c993946c82e4fd12cf3fe1d3fbc2e9923bbf054aa",
+    "docs/dynamic/support-natconv/RA100000_N64_DT1_stagev2.npz": "4f0d99993eecd383f4fedc4a310c4f6bafc1ead611b6bf20c738ee7a3671634b",
+    "docs/dynamic/support-natconv/RA10000_N64_DT1_stagev2_tail0.5.npz": "02ad86f643cd5073834cbb5fcc8b79fb8ba37587b1b94578eb76cef16a5b1202",
+    "docs/dynamic/support-natconv/RA10000_N64_DT1_stagev2.npz": "4c10dac53ff59071ab11dc2008bbc031761d52f033bf4b6d29a3cb2ab8df1b16",
+    "docs/dynamic/support-natconv/RA10000_N64_DT1_stagev2_tail1.0.npz": "9b0b11405e8a1f32e336e1e8e2d910c419cdb3d58aff28f28c56cef238f643b2",
+    "docs/dynamic/support-natconv/RA100000_N128_DT1_stagev2_tail1.0.npz": "dbcf38f89464e294aa9629ed391df8b777dcdaee26ce4db7499119235f8a8ee5",
+    "docs/dynamic/support-natconv/RA10000_N32_DT1_stagev2.npz": "25a85e81e0a8de949f3f5df4c050dc7093d8aca8f7e98e85dac443d7375f6a3e",
+    "docs/dynamic/support-natconv/RA1000000_N128_DT1_stagev2.npz": "5115faad40804f9627e933d2e811f10c78cda8e9d13dacad929083543a05ef80",
+    "docs/dynamic/support-natconv/RA1000000_N192_DT1_stagev3.npz": "81d2bb5f19b6063e5572dbdaa30b0b8bb0331f6bfebba998577173a09d5f42a9",
+    "docs/dynamic/support-natconv/RA1000000_N64_DT1_stagev2.npz": "6f8b516a6dbe8b0f2df6402b544b0b29fb53d89e33ddac7536ba38d32ff4fb3f",
+    "scripts/support-natconv/prototype.py": "de31a1c215a814379cf5fb2b4ac97224fb51bd47c83c449aed8ac57c52d89c4d",
+    "scripts/support-natconv/followthrough.py": "1b54f472b5d46bcaa1b8fca5dbde0b1e3f7f2ebe7e100c69e4d6f272deeecdef",
+    "scripts/support-natconv/build_report.py": "0f49d6c7cc6ff0366ca586bc9a763694972b114279eb4f1461d0add6f83ac75d"
+  },
+  "wholeRaContinuumApproved": false,
+  "productionGateChanged": false,
+  "browserOrWorkerPortVerified": false,
+  "releaseApproved": false
+}

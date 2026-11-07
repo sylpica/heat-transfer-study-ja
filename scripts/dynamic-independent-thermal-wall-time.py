@@ -7,7 +7,7 @@ import os
 for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[key]='1'
 from pathlib import Path
 from datetime import datetime,timezone
-import hashlib,json,math,subprocess
+import argparse,hashlib,json,math,subprocess
 import numpy as np
 from scipy.linalg import expm,lu_factor,lu_solve
 from scipy.integrate import solve_ivp
@@ -51,7 +51,7 @@ def nonlinear(c):
     initial=np.zeros(heat+4);initial[:N]=np.array(c['initial'])-c['coldTemperature'];initial[N]=c['wallInitialTemperature']-c['coldTemperature'];return rhs,initial,(u0,v0,heat)
 
 def main():
-    out=ROOT/'docs/dynamic/THERMAL_WALL_TIME_REFERENCE_20261107_v1.json';assert not out.exists(),'Protect saved result.'
+    parser=argparse.ArgumentParser();parser.add_argument('--tag',default='v1');args=parser.parse_args();assert args.tag.isalnum();out=ROOT/f'docs/dynamic/THERMAL_WALL_TIME_REFERENCE_20261107_{args.tag}.json';assert not out.exists(),'Protect saved result.'
     own=json.loads(subprocess.check_output(['node','scripts/dynamic-thermal-wall-time-cases.mjs'],cwd=ROOT,text=True));runs=[]
     for entry in own['runs']:
         c=entry['config'];nx,ny,dx,dy,D,rhoCp,C,k=geometry(c);N=nx*ny

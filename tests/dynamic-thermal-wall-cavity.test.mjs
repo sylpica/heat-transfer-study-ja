@@ -15,3 +15,11 @@ test('joint buoyancy step is finite, divergence-free and separately heat-balance
  const accepted=m.snapshot();for(const mutate of [s=>s.time=-1,s=>s.wallTemperature+=1,s=>s.cumulativeComponentJ[2]+=1,s=>s.pressureStageMeanPa=s.pressureStageMeanPa.map(x=>x+1),s=>s.u[0]=1,s=>s.signature='other']){const bad=structuredClone(accepted);mutate(bad);assert.throws(()=>m.restore(bad));assert.deepEqual(m.snapshot(),accepted);}assert.throws(()=>m.step(2*m.safeDt));assert.deepEqual(m.snapshot(),accepted);
  for(const extra of [{lidVelocity:1},{source:1},{width:2},{gravityBeta:.1},{wallCapacityJPerK:0},{beta:0}])assert.throws(()=>createThermalWallCavity({...base,wallInitialTemperature:301,...extra}));
 });
+
+test('thermostated wall exactly controls its temperature through actual changing heat and central exceeds no unchecked cell Pe',()=>{
+ const m=createThermalWallCavity({...base,wallMode:'isothermal-thermostat',scalarScheme:'central',wallInitialTemperature:301}),first=m.step(.01);assert.equal(first.wallTemperature,301);assert.equal(first.wallTemperatureRateKPerS,0);assert.equal(first.storageChangeJ.wall,0);assert.equal(first.cumulativeComponentJ[0],first.cumulativeComponentJ[2]);assert.equal(first.cumulativeCompensationJ[0],first.cumulativeCompensationJ[2]);assert.ok(first.instantaneousPowersW.wallExternalInput<.16);assert.ok(balanced(first));const second=m.step(.01);m.restore(first);assert.deepEqual(m.step(.01),second);assert.throws(()=>createThermalWallCavity({...base,wallMode:'isothermal-thermostat',wallInputW:1}));assert.throws(()=>createThermalWallCavity({...base,wallMode:'bad'}));
+ const moving=createThermalWallCavity({...base,gravityBeta:.071,scalarScheme:'central',wallInitialTemperature:301}),before=moving.snapshot(),bad=structuredClone(before),n=base.nx,psi=(i,j)=>i===3&&j===3?1:0;
+ for(let j=0;j<n;j++)for(let i=1;i<n;i++)bad.u[j*(n+1)+i]=(psi(i,j+1)-psi(i,j))*n;
+ for(let j=1;j<n;j++)for(let i=0;i<n;i++)bad.v[j*n+i]=-(psi(i+1,j)-psi(i,j))*n;
+ assert.throws(()=>moving.restore(bad),/セルPe/);assert.deepEqual(moving.snapshot(),before);const large=createThermalWallCavity({...base,nx:64,ny:64}),z=large.step(large.safeDt/2);assert.equal(z.temperature.length,4096);assert.ok(z.offsetTemperature.every(t=>t===0));assert.ok([...z.u,...z.v,...z.pressureStageMeanPa].every(x=>x===0));
+});

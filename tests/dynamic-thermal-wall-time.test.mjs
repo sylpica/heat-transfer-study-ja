@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {execFileSync} from 'node:child_process';
-const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/THERMAL_WALL_TIME_REFERENCE_20261107_v1.json',import.meta.url)));
+const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/THERMAL_WALL_TIME_REFERENCE_20261107_v2.json',import.meta.url)));
 test('joint thermal-wall SSPRK2 converges in every fluid/wall temperature, velocity and heat component to independent physical exponential and projected nonlinear ODE',()=>{
  const own=JSON.parse(execFileSync(process.execPath,['scripts/dynamic-thermal-wall-time-cases.mjs'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:8*1024*1024}));assert.deepEqual(own.sourceFilesSHA256,ref.sourceFilesSHA256);
  for(let k=0;k<own.runs.length;k++){

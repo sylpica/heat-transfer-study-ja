@@ -5,13 +5,13 @@ No finite-volume cell mean is treated as a point value.
 """
 from pathlib import Path
 from datetime import datetime,timezone
-import hashlib,json,math,subprocess
+import argparse,hashlib,json,math,subprocess
 import mpmath as mp
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    out=ROOT/'docs/dynamic/THERMAL_WALL_SPATIAL_REFERENCE_20261107_v1.json';assert not out.exists(),'Protect saved result.'
+    parser=argparse.ArgumentParser();parser.add_argument('--tag',default='v1');args=parser.parse_args();assert args.tag.isalnum();out=ROOT/f'docs/dynamic/THERMAL_WALL_SPATIAL_REFERENCE_20261107_{args.tag}.json';assert not out.exists(),'Protect saved result.'
     mp.mp.dps=80;mu=mp.findroot(lambda x:x*mp.tan(x)-10,(mp.mpf('1.3'),mp.mpf('1.5')));own=json.loads(subprocess.check_output(['node','scripts/dynamic-thermal-wall-spatial-cases.mjs'],cwd=ROOT,text=True));assert abs(own['driverMu']-float(mu))<1e-14;rows=[]
     for entry in own['cases']:
         c=entry['config'];s=entry['snapshot'];nx=c['nx'];L=c['width'];H=c['height'];D=c['depth'];rhoCp=c['rho']*c['cp'];alpha=c['alpha'];k=rhoCp*alpha;lam=alpha*float(mu)**2/L**2;decay=mp.exp(-mp.mpf(alpha)*mu**2*20/(L*L));cell=[]

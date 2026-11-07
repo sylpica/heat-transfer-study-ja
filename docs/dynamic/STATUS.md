@@ -722,3 +722,6 @@ gpu-diffusion.htmlを専用非同期Workerへ接続し、実backend/精度/adapt
 
 
 次のPhase3強制対流はHEATED_PIPE_WIP_20261107.mdへ事前保存。円管の軸対称環帯体積/流量/円周壁熱で別の指定発達流＋受動温度を作り、独自quartic導出Nu_D=48/11と別時間指数/空間系列へ照合する。平行平板の幾何/140/17やフェイリスの定常平行平板とは混同しない。未実装/未検証・非公開allowlistのまま計画を記録。
+
+
+円管の別軸対称コアを試作。環帯面積/体積/行面積平均Poiseuille・円周壁入力・r0の面積0・保持θ/4熱/SSPRK2を実装。新4Nodeで解析質量流量/円周総熱・軸の有限性・q0一様exact・q±反対称・微小qと時刻/保持Nu・完全復元/不正履歴/未知物理拒否が成功（work/heated-pipe-core-node-20261107.log）。独立時間指数/連続quartic空間/Worker/GUIは未検証、未承認devのまま次へ進む。

@@ -1,0 +1,24 @@
+{
+  "recordedAtUTC": "2026-11-06T14:27:19.638492+00:00",
+  "evaluationSourceCommit": "2c3694e972dc73c4d83f3f977da2805ba46ad9b4",
+  "evaluationFile": "CFD_MARCHI_RE100_20261106_v1.json",
+  "sourceDisagreementResolved": "reference solution accuracy; original transcription preserved",
+  "rootReadMarchiOriginalPages": true,
+  "rootReadOriginalGhiaPaper": false,
+  "receivedGhiaOriginalRecheck": "Fairis via owner",
+  "originalGhiaFineVGatePassed": false,
+  "originalFailedResultChanged": false,
+  "additionalMarchiAll28ProfileGatePassed": true,
+  "profileMaximumErrorGridOrders": {
+    "u": [
+      1.9149891851716532,
+      2.069572102267292
+    ],
+    "v": [
+      1.9376630603032166,
+      2.0387470282445244
+    ]
+  },
+  "wholeFieldContinuousAccuracyClaimed": false,
+  "releaseApproved": false
+}

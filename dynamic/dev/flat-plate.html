@@ -1,0 +1,27 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>平板上の温度境界層・開発検証</title><link rel="stylesheet" href="flat-plate.css"></head><body><main>
+<h1>平板上の温度境界層</h1><p class="notice">開発用・公開承認前。定常Blasius速度場の中で温度の時間変化を計算する、層流境界層近似のモデルです。</p>
+<p>下辺の板と温度の異なる空気が左から流れます。板の近くで温度が変わり、その熱が下流へ運ばれる様子を観察できます。流速は定常に与え、温度だけが時間発展します。図と説明はアプリ作成です。</p>
+<form id="settings" novalidate><fieldset><legend>条件A：長さ100 mmの板、入口・初期300 K（26.85 ℃）</legend>
+<label>指定外流速度 [m/s]<input id="speed" type="number" value="1.575" min="1.575" max="15.75" step="any" required></label>
+<label>板−入口の温度差 [K]<input id="difference" type="number" value="20" min="-30" max="30" step="any" required></label>
+<label>格子<select id="grid"><option value="32x16">32×16</option><option value="64x32" selected>64×32</option><option value="128x64">128×64</option><option value="256x128">256×128（重い）</option><option value="512x128">512×128（非常に重い）</option><option value="512x256">512×256（非常に重い）</option></select></label>
+<button id="apply" type="submit">初期状態から計算</button><button id="compare" type="button">現在の条件をBへ固定</button><button id="uncompare" type="button" disabled>比較を解除</button></fieldset></form>
+<p class="model-notes">正の温度差は板からの加熱、負は冷却。計算上端は外側の相似座標η=12となる高さに自動設定します。板の厚さや実物の上壁ではありません。換算幅は10 mm。条件の適用・比較の開始と解除では時刻0から計算し直します。</p>
+<section aria-label="時間操作"><label>1コマの物理時間 [s]<input id="interval" type="number" value="0.01" min="0" max="0.2" step="any"></label><label>時間刻み上限 [s]（空欄は安定上限の1/4）<input id="dt" type="number" min="0" step="any"></label>
+<div class="buttons"><button id="run">再生</button><button id="pause">一時停止・計算取消</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button></div>
+<p>物理時刻 <output id="clock">0.000000 s</output>。実時間との同速再生を保証しません。精細格子は長い計算になるため、進捗表示と取消を利用してください。</p><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p><progress id="progress" max="1" value="0" aria-label="計算の進捗"></progress></section>
+<section aria-label="計算した温度と指定定常流"><label>色で表示する量<select id="quantity"><option value="temperature">セル平均温度 [K]</option><option value="speed">再構成した速さ [m/s]</option></select></label><label><input id="arrows" type="checkbox" checked>流速の矢印</label><label><input id="exaggerate" type="checkbox" checked>境界層を見やすく縦に拡大</label>
+<p id="legend"></p><p id="view-error" role="alert" hidden></p>
+<div class="fields"><figure><canvas id="field-a" role="img" aria-describedby="caption-a" width="800" height="300" tabindex="0" aria-label="条件Aの平板上の温度。クリックまたは矢印キーで測定セルを移動"></canvas><figcaption id="caption-a"></figcaption></figure><figure id="panel-b" hidden><canvas id="field-b" role="img" aria-describedby="caption-b" width="800" height="300" tabindex="0" aria-label="条件Bの平板上の温度。クリックまたは矢印キーで測定セルを移動"></canvas><figcaption id="caption-b"></figcaption></figure></div><pre id="readout"></pre>
+<p>色は実セル平均温度、または面流量から再構成した速さです。流速矢印は同じ面流量に基づき、太い板矢印は実際の板熱流の符号を表します。小さすぎる矢印は省略します。破線は遠方温度の計算上端です。縦拡大の実倍率と軸の実寸を明示し、A/Bで同じ物理縮尺を使います。同じ領域内割合を選び、実座標は各条件に表示します。</p></section>
+<section aria-label="板からの熱流束"><canvas id="heat-graph" width="800" height="200" role="img" aria-label="板区間の平均熱流束。流体へ正"></canvas><p>点は各板区間の平均q″ [W/m²]、線は位置の目安です。先端x=0の特異な点熱流を有限の最大値で置き換えた図ではありません。Aは実線、Bは破線です。</p></section>
+<section aria-label="時間履歴"><label>保存コマ<input id="history" type="range" min="0" max="0" value="0"></label><canvas id="graph" width="800" height="200" role="img" aria-label="瞬間の板平均Nuの実計算履歴"></canvas><p id="memory-note"></p><p>保存した温度・時計・全積算熱へ戻します。履歴はメモリー内だけで、容量に合わせて古いコマを除きます。初期状態は別に保持します。精細格子のA/Bで保持容量を超える場合は格子を減らしてください。</p></section>
+<details id="diagnostics"><summary>物性・流量・板熱・流出・蓄熱・刻み</summary><pre id="diagnostic-values"></pre><p>熱量の基準は入口300 K。板と上端伝導は流体への入力、右端と上端の移流は流出を正に数えます。入口の基準相対エンタルピーが0でも、入口質量流量が0という意味ではありません。熱収支の一致だけで省略した物理の妥当性を承認しません。</p></details>
+<details id="theory"><summary>モデルの式・適用範囲・数値誤差</summary>
+<p>一様外流U∞・零圧力勾配のBlasius境界層を定常に与えます。η=y√(U∞/(νx))、流れ関数ψ=√(νU∞x)f(η)、f‴+ff″/2=0、板でf=f′=0、外側でf′→1。格子頂点のψ差から面流量を得るため、離散質量収支を確認できます。圧力場や非定常運動量を解いたものではありません。</p>
+<p>温度は ∂tT+u∂xT+v∂yT=α∂²yT、α=k/(ρcₚ)。風上移流・中央y伝導・半セル固定温度・SSPRK2です。入口と上端は300 K、板は300＋温度差K、右端は移流流出。上端から出る移流熱も集計します。軸方向熱伝導、浮力、粘性加熱、温度による物性変化、流れへの温度フィードバック、固体内部、一般形状、乱流、3Dは解きません。</p>
+<p>物性は300 K付近の空気の参考値ρ=1.177 kg/m³、cₚ=1006 J/(kg K)、ν=1.575×10⁻⁵ m²/s、k=.0264 W/(m K)を固定します（原書付録A.6、印刷755/PDF769を参照した既存値）。幅10 mmに一様な2D場の熱を集計し、側壁を設けません。Re_L=10⁴〜10⁵、Pr=.6〜2、温度差10%以内の開発範囲です。小温度差だけで浮力無視や全物性一定の精度を保証するものではありません。</p>
+<p>Nu_Lは、その瞬間の板平均q″をk(Tw−T∞)/Lで割った比で、定常相関ではありません。温度差0では未定義です。板温を瞬時に変えた初期Nuは半セル近似の格子依存値であり、物理的な有限初期ピークと扱いません。格子・刻みの比較は同じ物理条件と正の時刻で行ってください。</p>
+<p>安定上限は温度を発散させないための条件で、精度の保証とは別です。空欄の自動刻みはA/Bの小さい安定上限の1/4を使います。既定空気64×32・.01秒では独立行列指数との差を検査しました。別の連続温度相似参照ではPr=.71/1と選んだ精細格子を照合しています。元256×128の全板平均Nu目標は未達のまま記録し、追加精細格子の達成と分けています。全入力範囲の工学的精度を認定したものではありません。</p>
+<p>このページは開発用です。既存アプリの回答・メモ・設定を変更/送信しません。実験の自動同期や永続保存はなく、再読み込みで一時履歴を失います。専用画面のオフライン、実機、支援技術、専門家校閲、実公開URLでの利用は未確認です。</p></details>
+</main><script type="module" src="flat-plate-ui.mjs"></script></body></html>

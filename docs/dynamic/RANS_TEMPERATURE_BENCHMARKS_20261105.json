@@ -1,0 +1,244 @@
+{
+  "generatedAtUTC": "2026-11-05T12:47:53.244Z",
+  "node": "v24.19.0",
+  "sourceSHA256": {
+    "model": "89fcba7417142f1bc9cade41ac86f115e37ea7cdfad3d9b6a289f0e2ce6dffe8",
+    "profile": "88d991039ff911c62a81b355cb093538379dae6dd4ffe4155b2cc1a45fa05b12",
+    "referenceGenerator": "7f7a5eeece5945ffa430566a93d78df5ad3c0900a23fbbc4b8464ec423a1df37",
+    "reference": "e35f962649a098075c87aca05ecbf5d000fb3a769cb23eabd6b4f7d6db707ec7"
+  },
+  "scope": "Passive mean temperature with prescribed steady Cess mean U and Pr_t=1. Spatial study refines both grid and dt against an independently refined continuous Galerkin solution; temporal study fixes one grid and compares Euler against an independent Fourier-symbol matrix exponential. This verifies numerical equations, not thermal DNS or turbulent closure physics.",
+  "criteria": {
+    "finestSpatialRmsK": 0.04,
+    "finestSpatialMaxK": 0.08,
+    "minimumCoupledOrder": 0.8,
+    "temporalOrderRange": [
+      0.9,
+      1.15
+    ],
+    "energyAbsJ": 1e-9
+  },
+  "spatial": [
+    {
+      "caseId": "MKM180",
+      "reTau": 178.12,
+      "grids": [
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.004110608716757719,
+          "safeDt": 0.04110608716757719,
+          "steps": 49,
+          "rmsK": 0.03320896698247907,
+          "maxK": 0.053500548334625364,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 8.110002549784308e-11,
+          "minK": 298.7966886438418,
+          "maxKAbsolute": 301.2033113561582,
+          "omittedMeanHeatingEstimateK": 6.73799017921228e-7,
+          "advectionCfl": 0.043783302025838335
+        },
+        {
+          "nx": 64,
+          "ny": 32,
+          "dt": 0.001766244212986622,
+          "safeDt": 0.01766244212986622,
+          "steps": 114,
+          "rmsK": 0.017151429025137218,
+          "maxK": 0.027560428543324633,
+          "energyErrorJ": -1.3145728949837123e-16,
+          "energyRoundoffBudgetJ": 1.1838064005519674e-10,
+          "minK": 298.76884025200724,
+          "maxKAbsolute": 301.23115974799276,
+          "omittedMeanHeatingEstimateK": 6.73799017921228e-7,
+          "advectionCfl": 0.013505618845734629
+        },
+        {
+          "nx": 128,
+          "ny": 64,
+          "dt": 0.0006837451843838153,
+          "safeDt": 0.006837451843838153,
+          "steps": 293,
+          "rmsK": 0.008789956595539071,
+          "maxK": 0.014046024841093185,
+          "energyErrorJ": 1.1995477666726375e-15,
+          "energyRoundoffBudgetJ": 1.8367180589048627e-10,
+          "minK": 298.7582903803715,
+          "maxKAbsolute": 301.2417096196285,
+          "omittedMeanHeatingEstimateK": 6.73799017921228e-7,
+          "advectionCfl": 0.022587299772414558
+        }
+      ],
+      "observedCoupledRefinementOrders": [
+        0.9532440621531458,
+        0.964400837543602
+      ],
+      "passed": true
+    },
+    {
+      "caseId": "MKM395",
+      "reTau": 392.24,
+      "grids": [
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.001721430330338461,
+          "safeDt": 0.01721430330338461,
+          "steps": 117,
+          "rmsK": 0.07897769976984437,
+          "maxK": 0.12727108494232198,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 1.197913658274467e-10,
+          "minK": 298.8760199150843,
+          "maxKAbsolute": 301.1239800849157,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.012468785500014479
+        },
+        {
+          "nx": 64,
+          "ny": 32,
+          "dt": 0.0007514350993924388,
+          "safeDt": 0.007514350993924388,
+          "steps": 267,
+          "rmsK": 0.041825007472867,
+          "maxK": 0.06643157926612275,
+          "energyErrorJ": 4.469547842944622e-15,
+          "energyRoundoffBudgetJ": 1.7579193980105645e-10,
+          "minK": 298.81438770224867,
+          "maxKAbsolute": 301.18561229775133,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.009402495982054579
+        },
+        {
+          "nx": 128,
+          "ny": 64,
+          "dt": 0.0002963314175556785,
+          "safeDt": 0.0029633141755567847,
+          "steps": 675,
+          "rmsK": 0.021580331523230835,
+          "maxK": 0.0341142706384403,
+          "energyErrorJ": -2.957789013713353e-16,
+          "energyRoundoffBudgetJ": 2.7352977298933167e-10,
+          "minK": 298.79252621514354,
+          "maxKAbsolute": 301.20747378485646,
+          "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+          "advectionCfl": 0.04336435015938847
+        }
+      ],
+      "observedCoupledRefinementOrders": [
+        0.9170795518024119,
+        0.9546487699393299
+      ],
+      "passed": true
+    },
+    {
+      "caseId": "MKM590",
+      "reTau": 587.19,
+      "grids": [
+        {
+          "nx": 32,
+          "ny": 16,
+          "dt": 0.0011057469665183763,
+          "safeDt": 0.011057469665183763,
+          "steps": 181,
+          "rmsK": 0.11939926693664382,
+          "maxK": 0.19192356465316607,
+          "energyErrorJ": 5.258291579934849e-16,
+          "energyRoundoffBudgetJ": 1.4652365984423946e-10,
+          "minK": 298.9562427530089,
+          "maxKAbsolute": 301.0437572469911,
+          "omittedMeanHeatingEstimateK": 0.000029111280612059467,
+          "advectionCfl": 0.06016903172457072
+        },
+        {
+          "nx": 64,
+          "ny": 32,
+          "dt": 0.0004856724137305484,
+          "safeDt": 0.004856724137305484,
+          "steps": 412,
+          "rmsK": 0.06448279416894301,
+          "maxK": 0.10211293615191153,
+          "energyErrorJ": -1.3145728949837123e-16,
+          "energyRoundoffBudgetJ": 2.1591404495978406e-10,
+          "minK": 298.8710624523206,
+          "maxKAbsolute": 301.1289375476794,
+          "omittedMeanHeatingEstimateK": 0.000029111280612059467,
+          "advectionCfl": 0.04849894906836048
+        },
+        {
+          "nx": 128,
+          "ny": 64,
+          "dt": 0.00019327013815116564,
+          "safeDt": 0.0019327013815116562,
+          "steps": 1035,
+          "rmsK": 0.033601824756457566,
+          "maxK": 0.052768963842822814,
+          "energyErrorJ": 2.6291457899674246e-16,
+          "energyRoundoffBudgetJ": 3.3629034711416505e-10,
+          "minK": 298.8435019678596,
+          "maxKAbsolute": 301.1564980321404,
+          "omittedMeanHeatingEstimateK": 0.000029111280612059467,
+          "advectionCfl": 0.03961605748416978
+        }
+      ],
+      "observedCoupledRefinementOrders": [
+        0.8888078138582258,
+        0.9403746790055433
+      ],
+      "passed": true
+    }
+  ],
+  "temporal": [
+    {
+      "nx": 32,
+      "ny": 16,
+      "dt": 0.008607151651692305,
+      "safeDt": 0.01721430330338461,
+      "steps": 24,
+      "rmsK": 0.02443315742235552,
+      "maxK": 0.037934868215870665,
+      "energyErrorJ": 5.258291579934849e-16,
+      "energyRoundoffBudgetJ": 5.980092333633559e-11,
+      "minK": 298.8592013487231,
+      "maxKAbsolute": 301.1407986512769,
+      "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+      "advectionCfl": 0.08080815980446183
+    },
+    {
+      "nx": 32,
+      "ny": 16,
+      "dt": 0.004303575825846152,
+      "safeDt": 0.01721430330338461,
+      "steps": 47,
+      "rmsK": 0.01209936031498961,
+      "maxK": 0.018814057814040552,
+      "energyErrorJ": 5.258291579934849e-16,
+      "energyRoundoffBudgetJ": 7.963672354934662e-11,
+      "minK": 298.86975043106725,
+      "maxKAbsolute": 301.13024956893275,
+      "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+      "advectionCfl": 0.08080815980446625
+    },
+    {
+      "nx": 32,
+      "ny": 16,
+      "dt": 0.002151787912923076,
+      "safeDt": 0.01721430330338461,
+      "steps": 93,
+      "rmsK": 0.006041612461166303,
+      "maxK": 0.009400421890859434,
+      "energyErrorJ": 5.258291579934849e-16,
+      "energyRoundoffBudgetJ": 1.079000435133332e-10,
+      "minK": 298.87496802446066,
+      "maxKAbsolute": 301.12503197553934,
+      "omittedMeanHeatingEstimateK": 0.000008197974468663268,
+      "advectionCfl": 0.08080815980444972
+    }
+  ],
+  "temporalOrders": [
+    1.0139095355255936,
+    1.001925224635424
+  ],
+  "passed": true,
+  "releaseApproved": false
+}

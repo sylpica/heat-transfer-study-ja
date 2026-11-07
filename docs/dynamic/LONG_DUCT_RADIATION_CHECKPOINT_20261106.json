@@ -1,0 +1,69 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T22:20:01.020652+00:00",
+  "baseSourceCommit": "5faaa2241424aebf9798117393b1a634f3590276",
+  "sourceTreeDirty": true,
+  "operationPolicy": "Root only; all local commands/browsers/Node files sequential. BLAS threads fixed to 1. No agents resumed. Existing CI job concurrency configuration unchanged; one sequential test step added.",
+  "sourceFilesSHA256": {
+    "dynamic/dev/long-duct-radiation.mjs": "bfeefa68cf98fe0d4bba347c2eeca254cd05b4e39ea8dcc2ffb635d127107b5e",
+    "scripts/dynamic-long-duct-reference.py": "0c28eba7e237c854cc33125611f3f2c8899379aa70219bc658a239e9ddd008db",
+    "tests/dynamic-long-duct-radiation.test.mjs": "3d51b63ff7c82f9b0bbd2e297d602eaa1083df557488dea10335b7d61ca776f9",
+    "tests/dynamic-long-duct-browser.mjs": "9cd5cb718c7e355ae07f9f610a068bf4d9a826279dfd07479b7e69edd98cf1f9",
+    "docs/dynamic/LONG_DUCT_RADIATION_REFERENCE_20261106.json": "ee57e44d9135308c83697e18c35608bf24bbc34cce14b373650fe1362dde1a81"
+  },
+  "node": {
+    "tests": 1322,
+    "pass": 1317,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "newRelatedTests": 7,
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "providedStripViewFactor": 0.20000000000000004,
+      "transientHotK": 538.3258924580701,
+      "independentTransientErrorK": 0.0003928617986730387,
+      "energyErrorJ": 5.820766091346741e-11,
+      "invalidAtomic": true,
+      "actualRewind": true,
+      "finiteLengthEndEffects": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "providedStripViewFactor": 0.20000000000000004,
+      "transientHotK": 538.3258924580701,
+      "independentTransientErrorK": 0.0003928617986730387,
+      "energyErrorJ": 5.820766091346741e-11,
+      "invalidAtomic": true,
+      "actualRewind": true,
+      "finiteLengthEndEffects": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-fcf92666638c0ebb",
+  "developmentModulesExcluded": true,
+  "previousCommitCI": {
+    "commit": "5faaa2241424aebf9798117393b1a634f3590276",
+    "run": 42118295655,
+    "chromium": "failure in existing fin-learning term-panel assertion; investigate next",
+    "webkit": "success",
+    "numerical": "success",
+    "highOrderMMS": "success",
+    "CFD": "in_progress when checked",
+    "notThisUncommittedSourcesCI": true
+  },
+  "dedicatedUIImplemented": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

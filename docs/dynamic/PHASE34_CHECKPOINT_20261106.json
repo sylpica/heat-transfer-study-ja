@@ -1,0 +1,24 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T21:31:33.397311+00:00",
+  "baseSourceCommit": "968efbf228e6b7dbe278b56ed92b6f4ec0f00e98",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "scripts/dynamic-graetz-reference.py": "98bb35e503510199431caaa145c4b125e02341f7e15078fa41d5325c4a116cc8",
+    "tests/dynamic-graetz-reference.test.mjs": "6955873b4fcea1650fd6bbccf18e600941f374b646b95abab1089a30d06357f5",
+    "dynamic/dev/heated-channel.mjs": "f776853840f410f680a936d0b2883b2817be103f6318af2c526aaacf44f753e1",
+    "dynamic/dev/cut-cell-geometry.mjs": "1d2979be3cf665c4730f1e7ed78aa63b61ad0c9f60ca3d41d771001e84c68e76",
+    "docs/dynamic/GRAETZ_CONTINUOUS_REFERENCE_20261106.json": "81647ba0ffdf5d9355fec1dd0dc7a1e3848e913356678a27932308a78142dbbf"
+  },
+  "node": {
+    "tests": 1299,
+    "pass": 1294,
+    "skip": 5,
+    "fail": 0
+  },
+  "scope": "Current full Node: supplied references, heated channel, continuous stationary Graetz with four grids and convex cut-cell geometry. Future cut-cell flux diagnostics excluded.",
+  "failedHypothesisPreserved": "GRAETZ_HYPOTHESIS_FAILURE_20261106.txt and productionVerification.originalUnsupportedHypothesis; no claim of uniform full-field order",
+  "absoluteBudgetsChanged": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

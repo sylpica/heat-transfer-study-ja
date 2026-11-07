@@ -1,0 +1,98 @@
+{
+  "recordedAtUTC": "2026-11-07T00:37:43.698834+00:00",
+  "presetAndCriteriaCommit": "77c6dd1",
+  "sourceFilesSHA256": {
+    "dynamic/dev/heated-pipe.mjs": "f1c7e67ce03611f54da12843692c1677026d32fca16f556c4ae0f92f3e38dcff",
+    "dynamic/dev/heated-pipe-worker.mjs": "0b496e5de93ba3088327a68daa290ef29023f03d6473af03b950e10e948cd549",
+    "dynamic/dev/heated-pipe-ui.mjs": "268d28138da18d17b6067935584d31a6ddab8c67cd13f7efb3d06556f76e8300",
+    "dynamic/dev/heated-pipe-ui-config.mjs": "7727f02eb17b1c28627f677649a0a248e64e3b43c83d2cbe47517b5aa06bc704",
+    "dynamic/dev/heated-pipe-view.mjs": "71d24dc45bff7b23677e46ec96e093c7947c7652aa41bf7854ea8f22769d36e4",
+    "dynamic/dev/heated-pipe.html": "5f2e529b333ccb0b4c347c1c0224f9bcff0b00a71a16ecf7075eea8b09233769",
+    "tests/dynamic-heated-pipe-ui-browser.mjs": "83cdd65c17b60c2b23478d689523ec2ed2c15b7fb0a240a094d08d5e4531726a",
+    ".github/workflows/dynamic-simulation.yml": "1738789a3f350cfcbc4db9ac2860678d02a65f6e85f1fd1f9495790d20f8fcf7"
+  },
+  "browserResults": [
+    {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerCpuAndIndependentAirReference": true,
+      "actualRewindAndReplay": true,
+      "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+      "axisAndAnnularCentroidAreDistinct": true,
+      "oppositeHeatDifferentGridComparison": true,
+      "colorModesAndInvalidDisplayKeepPhysics": true,
+      "realProgressCancelRollback": true,
+      "largeCells": 8192,
+      "uniformAndTinyHeat": true,
+      "keyboardAndPointer": true,
+      "mobileDarkLight": true,
+      "devicePixelRatio": 2,
+      "localStorageUnchanged": true,
+      "generalPipeCFDVerified": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerCpuAndIndependentAirReference": true,
+      "actualRewindAndReplay": true,
+      "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+      "axisAndAnnularCentroidAreDistinct": true,
+      "oppositeHeatDifferentGridComparison": true,
+      "colorModesAndInvalidDisplayKeepPhysics": true,
+      "realProgressCancelRollback": true,
+      "largeCells": 8192,
+      "uniformAndTinyHeat": true,
+      "keyboardAndPointer": true,
+      "mobileDarkLight": true,
+      "devicePixelRatio": 2,
+      "localStorageUnchanged": true,
+      "generalPipeCFDVerified": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  ],
+  "logs": [
+    "work/heated-pipe-ui-chromium-final-20261107.log",
+    "work/heated-pipe-ui-webkit-retest-20261107.log"
+  ],
+  "node": {
+    "total": 1468,
+    "pass": 1463,
+    "skip": 5,
+    "fail": 0,
+    "durationMs": 112599.117572,
+    "log": "work/heated-pipe-full-node-20261107.log",
+    "sequential": true
+  },
+  "publicBuild": {
+    "passed": true,
+    "log": "work/heated-pipe-public-build-20261107.log",
+    "devPresent": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cache": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "initialTestFailures": [
+    {
+      "log": "work/heated-pipe-ui-chromium-20261107.log",
+      "cause": "Missing await parentheses before string.split in the new browser test; corrected the test code."
+    },
+    {
+      "log": "work/heated-pipe-ui-webkit-20261107.log",
+      "cause": "Exact drawn-axis click quantized slightly inside r=.00994 mm; first annulus was correct. Test clicks two display units outside the axis to exercise exact endpoint clamp. Exact axis/centroid checks retained."
+    }
+  ],
+  "screenshotsActuallyViewed": [
+    "work/heated-pipe-ui-webkit-field-dark-20261107.png",
+    "work/heated-pipe-ui-webkit-settings-dark-20261107.png"
+  ],
+  "remoteLatestCIAllJobsPassed": false,
+  "productTimeToSteadyVerified": false,
+  "generalPipeCFDVerified": false,
+  "realDeviceVerified": false,
+  "offlineVerified": false,
+  "releaseApproved": false
+}

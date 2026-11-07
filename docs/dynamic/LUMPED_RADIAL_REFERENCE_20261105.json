@@ -1,0 +1,322 @@
+{
+  "generatedAtUTC": "2026-11-05T07:31:13.413847+00:00",
+  "sourceCommit": "5a3e0edac4ef960c7678f75c72c4c1ce4f1f68fe",
+  "generatorTreeDirty": true,
+  "generatorSHA256": "12ef824135284b75421b45b35f4e9bf4c863831068dcb2dd1ddb25f5b7675bff",
+  "environment": {
+    "python": "3.12.14",
+    "scipy": "1.17.0",
+    "numpy": "2.3.5"
+  },
+  "method": "Independent continuous Robin sphere/cylinder eigenfunctions, exact volume averages, 128 vs 64 modes. Exact uniform-temperature exponential is compared as an approximation, not used to create the PDE reference.",
+  "scope": "No generation, constant properties and fixed prescribed convective h on a full sphere or an adiabatic-ended cylinder. Error normalized by initial temperature excess, not a relative error against a vanishing late temperature excess. Bi<=0.1 is an applicability guideline, not an all-times accuracy guarantee.",
+  "cases": [
+    {
+      "geometry": "sphere",
+      "dimension": 3,
+      "BiLc": 0.01,
+      "BiRadius": 0.03,
+      "rootCount": 128,
+      "samples": [
+        {
+          "Fo": 0.1,
+          "continuousVolumeMeanExcessFraction": 0.9910802276509247,
+          "lumpedExcessFraction": 0.9910403787728836,
+          "errorNormalizedByInitialExcess": -3.984887804109327e-05,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 0.5,
+          "continuousVolumeMeanExcessFraction": 0.956240057140201,
+          "lumpedExcessFraction": 0.9559974818330998,
+          "errorNormalizedByInitialExcess": -0.00024257530710114494,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 1,
+          "continuousVolumeMeanExcessFraction": 0.9144090970388764,
+          "lumpedExcessFraction": 0.9139311852712282,
+          "errorNormalizedByInitialExcess": -0.0004779117676482203,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 2,
+          "continuousVolumeMeanExcessFraction": 0.8361568454619641,
+          "lumpedExcessFraction": 0.835270211411272,
+          "errorNormalizedByInitialExcess": -0.0008866340506921144,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 5,
+          "continuousVolumeMeanExcessFraction": 0.6393363309880816,
+          "lumpedExcessFraction": 0.6376281516217733,
+          "errorNormalizedByInitialExcess": -0.0017081793663082934,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 10,
+          "continuousVolumeMeanExcessFraction": 0.40875722524539443,
+          "lumpedExcessFraction": 0.40656965974059917,
+          "errorNormalizedByInitialExcess": -0.0021875655047952636,
+          "series64vs128Difference": 0.0
+        }
+      ]
+    },
+    {
+      "geometry": "sphere",
+      "dimension": 3,
+      "BiLc": 0.05,
+      "BiRadius": 0.15000000000000002,
+      "rootCount": 128,
+      "samples": [
+        {
+          "Fo": 0.1,
+          "continuousVolumeMeanExcessFraction": 0.9569469999695996,
+          "lumpedExcessFraction": 0.9559974818330998,
+          "errorNormalizedByInitialExcess": -0.000949518136499794,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 0.5,
+          "continuousVolumeMeanExcessFraction": 0.8035278412810807,
+          "lumpedExcessFraction": 0.798516218759377,
+          "errorNormalizedByInitialExcess": -0.005011622521703729,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 1,
+          "continuousVolumeMeanExcessFraction": 0.6459009437729091,
+          "lumpedExcessFraction": 0.6376281516217732,
+          "errorNormalizedByInitialExcess": -0.008272792151135855,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 2,
+          "continuousVolumeMeanExcessFraction": 0.41734566949760515,
+          "lumpedExcessFraction": 0.40656965974059905,
+          "errorNormalizedByInitialExcess": -0.0107760097570061,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 5,
+          "continuousVolumeMeanExcessFraction": 0.11258638859477306,
+          "lumpedExcessFraction": 0.10539922456186429,
+          "errorNormalizedByInitialExcess": -0.007187164032908769,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 10,
+          "continuousVolumeMeanExcessFraction": 0.012680484585405742,
+          "lumpedExcessFraction": 0.011108996538242297,
+          "errorNormalizedByInitialExcess": -0.0015714880471634444,
+          "series64vs128Difference": 0.0
+        }
+      ]
+    },
+    {
+      "geometry": "sphere",
+      "dimension": 3,
+      "BiLc": 0.1,
+      "BiRadius": 0.30000000000000004,
+      "rootCount": 128,
+      "samples": [
+        {
+          "Fo": 0.1,
+          "continuousVolumeMeanExcessFraction": 0.9175111390658299,
+          "lumpedExcessFraction": 0.9139311852712282,
+          "errorNormalizedByInitialExcess": -0.0035799537946017423,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 0.5,
+          "continuousVolumeMeanExcessFraction": 0.6535069336136585,
+          "lumpedExcessFraction": 0.6376281516217732,
+          "errorNormalizedByInitialExcess": -0.015878781991885305,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 1,
+          "continuousVolumeMeanExcessFraction": 0.42770294243798623,
+          "lumpedExcessFraction": 0.40656965974059905,
+          "errorNormalizedByInitialExcess": -0.02113328269738718,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 2,
+          "continuousVolumeMeanExcessFraction": 0.1832003781796479,
+          "lumpedExcessFraction": 0.1652988882215865,
+          "errorNormalizedByInitialExcess": -0.0179014899580614,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 5,
+          "continuousVolumeMeanExcessFraction": 0.014397223586478757,
+          "lumpedExcessFraction": 0.011108996538242297,
+          "errorNormalizedByInitialExcess": -0.0032882270482364594,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 10,
+          "continuousVolumeMeanExcessFraction": 0.00020758663461409638,
+          "lumpedExcessFraction": 0.00012340980408667932,
+          "errorNormalizedByInitialExcess": -8.417683052741706e-05,
+          "series64vs128Difference": 0.0
+        }
+      ]
+    },
+    {
+      "geometry": "cylinder",
+      "dimension": 2,
+      "BiLc": 0.01,
+      "BiRadius": 0.02,
+      "rootCount": 128,
+      "samples": [
+        {
+          "Fo": 0.1,
+          "continuousVolumeMeanExcessFraction": 0.9960212830774803,
+          "lumpedExcessFraction": 0.9960079893439915,
+          "errorNormalizedByInitialExcess": -1.3293733488795034e-05,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 0.5,
+          "continuousVolumeMeanExcessFraction": 0.980288248161137,
+          "lumpedExcessFraction": 0.9801986733067553,
+          "errorNormalizedByInitialExcess": -8.957485438176871e-05,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 1,
+          "continuousVolumeMeanExcessFraction": 0.9609730083163406,
+          "lumpedExcessFraction": 0.9607894391523232,
+          "errorNormalizedByInitialExcess": -0.0001835691640174053,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 2,
+          "continuousVolumeMeanExcessFraction": 0.9234767798313013,
+          "lumpedExcessFraction": 0.9231163463866358,
+          "errorNormalizedByInitialExcess": -0.00036043344466551996,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 5,
+          "continuousVolumeMeanExcessFraction": 0.8195403695607186,
+          "lumpedExcessFraction": 0.8187307530779818,
+          "errorNormalizedByInitialExcess": -0.000809616482736808,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 10,
+          "continuousVolumeMeanExcessFraction": 0.6716519864270815,
+          "lumpedExcessFraction": 0.6703200460356393,
+          "errorNormalizedByInitialExcess": -0.0013319403914421324,
+          "series64vs128Difference": 0.0
+        }
+      ]
+    },
+    {
+      "geometry": "cylinder",
+      "dimension": 2,
+      "BiLc": 0.05,
+      "BiRadius": 0.1,
+      "rootCount": 128,
+      "samples": [
+        {
+          "Fo": 0.1,
+          "continuousVolumeMeanExcessFraction": 0.9805224636838633,
+          "lumpedExcessFraction": 0.9801986733067553,
+          "errorNormalizedByInitialExcess": -0.00032379037710805747,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 0.5,
+          "continuousVolumeMeanExcessFraction": 0.9068806674994383,
+          "lumpedExcessFraction": 0.9048374180359595,
+          "errorNormalizedByInitialExcess": -0.00204324946347878,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 1,
+          "continuousVolumeMeanExcessFraction": 0.8225994257834597,
+          "lumpedExcessFraction": 0.8187307530779818,
+          "errorNormalizedByInitialExcess": -0.0038686727054778602,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 2,
+          "continuousVolumeMeanExcessFraction": 0.6768072770294685,
+          "lumpedExcessFraction": 0.6703200460356393,
+          "errorNormalizedByInitialExcess": -0.006487230993829196,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 5,
+          "continuousVolumeMeanExcessFraction": 0.37695965596861036,
+          "lumpedExcessFraction": 0.36787944117144233,
+          "errorNormalizedByInitialExcess": -0.00908021479716803,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 10,
+          "continuousVolumeMeanExcessFraction": 0.1421274487904489,
+          "lumpedExcessFraction": 0.1353352832366127,
+          "errorNormalizedByInitialExcess": -0.006792165553836188,
+          "series64vs128Difference": 0.0
+        }
+      ]
+    },
+    {
+      "geometry": "cylinder",
+      "dimension": 2,
+      "BiLc": 0.1,
+      "BiRadius": 0.2,
+      "rootCount": 128,
+      "samples": [
+        {
+          "Fo": 0.1,
+          "continuousVolumeMeanExcessFraction": 0.9620435053447364,
+          "lumpedExcessFraction": 0.9607894391523232,
+          "errorNormalizedByInitialExcess": -0.0012540661924131946,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 0.5,
+          "continuousVolumeMeanExcessFraction": 0.826033308281965,
+          "lumpedExcessFraction": 0.8187307530779818,
+          "errorNormalizedByInitialExcess": -0.007302555203983152,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 1,
+          "continuousVolumeMeanExcessFraction": 0.6828708270371321,
+          "lumpedExcessFraction": 0.6703200460356393,
+          "errorNormalizedByInitialExcess": -0.012550781001492761,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 2,
+          "continuousVolumeMeanExcessFraction": 0.4666818926582459,
+          "lumpedExcessFraction": 0.44932896411722156,
+          "errorNormalizedByInitialExcess": -0.017352928541024326,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 5,
+          "continuousVolumeMeanExcessFraction": 0.14895947178591906,
+          "lumpedExcessFraction": 0.1353352832366127,
+          "errorNormalizedByInitialExcess": -0.01362418854930636,
+          "series64vs128Difference": 0.0
+        },
+        {
+          "Fo": 10,
+          "continuousVolumeMeanExcessFraction": 0.022206498193803673,
+          "lumpedExcessFraction": 0.01831563888873418,
+          "errorNormalizedByInitialExcess": -0.003890859305069494,
+          "series64vs128Difference": 0.0
+        }
+      ]
+    }
+  ],
+  "expertApproved": false
+}

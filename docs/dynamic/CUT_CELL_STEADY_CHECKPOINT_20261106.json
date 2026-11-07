@@ -1,0 +1,90 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T22:03:58.879858+00:00",
+  "baseSourceCommit": "a429133077ae018f51665ce7d92627dda08ad0a4",
+  "sourceTreeDirty": true,
+  "operationPolicy": "Root only; no agents; commands, engines and Node files sequential; local BLAS threads fixed to 1. Existing CI workflow settings unchanged.",
+  "sourceFilesSHA256": {
+    "dynamic/dev/cut-cell-steady.mjs": "373a97255c3eb0e6f1d9ceae11a5aed4afce4f4ae6bf32d181fcb23458289088",
+    "scripts/dynamic-cut-cell-steady-reference.py": "e909f8de30be0543e7a3bac755f9868f15f1c37746515b8d61ec7d0589873613",
+    "tests/dynamic-cut-cell-steady.test.mjs": "a50ebd495c03a499ce0311651271c1eb63990131d1ba1de91339853279e35845",
+    "tests/dynamic-cut-cell-browser.mjs": "8fc2ebe27bc25bbb56cc4a4ea7fc475cbe2aa5bcc5848af8d657fed1aa911c5f",
+    "docs/dynamic/CUT_CELL_STEADY_REFERENCE_20261106.json": "999122f57780ee98987520998e7daa9004b98066960eda830816bc2f4ead01d4"
+  },
+  "node": {
+    "tests": 1315,
+    "pass": 1310,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "relatedNewNodeTests": 6,
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "affineFluxPatch": {
+        "twoPointMaximumFaceErrorW": 0.1666553474278421,
+        "correctedMaximumFaceErrorW": 8.022922604045135e-14,
+        "correctedCellImbalanceW": 1.2323475573339238e-13,
+        "temperaturePDEImplemented": false
+      },
+      "steadySolve": {
+        "maximumAffineTemperatureErrorK": 5.684341886080802e-14,
+        "maximumCellResidualW": 2.1371793224034263e-15,
+        "positiveOffDiagonalCount": 32,
+        "transientImplemented": false,
+        "releaseApproved": false
+      },
+      "geometryAloneSolvesHeatEquation": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "affineFluxPatch": {
+        "twoPointMaximumFaceErrorW": 0.16665534742784208,
+        "correctedMaximumFaceErrorW": 8.022749131697537e-14,
+        "correctedCellImbalanceW": 1.2323475573339238e-13,
+        "temperaturePDEImplemented": false
+      },
+      "steadySolve": {
+        "maximumAffineTemperatureErrorK": 5.684341886080802e-14,
+        "maximumCellResidualW": 7.979727989493313e-16,
+        "positiveOffDiagonalCount": 32,
+        "transientImplemented": false,
+        "releaseApproved": false
+      },
+      "geometryAloneSolvesHeatEquation": false,
+      "passed": true
+    }
+  },
+  "browsersRunSequentially": true,
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-fcf92666638c0ebb",
+  "developmentModulesExcluded": true,
+  "limitations": [
+    "Maximum 256 active convex cells; steady constant k and all-Dirichlet only",
+    "Corrected operator violates a discrete maximum principle; transient connection held",
+    "No general second-order accuracy, real-device, external expert or release approval"
+  ],
+  "releaseApproved": false,
+  "mainPublished": false
+}

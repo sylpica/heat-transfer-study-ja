@@ -1,0 +1,1465 @@
+{
+  "generatedAtUTC": "2026-11-06T14:24:16.332Z",
+  "sourceCommit": "2c3694e972dc73c4d83f3f977da2805ba46ad9b4",
+  "generatorSHA256": "0a875bc3e8de630caafc114373ebeace13a3342c1c4205a63b747f190f20fa38",
+  "parserSHA256": "80107ab0f9590650c673cdd5bed2b14e8c83bb98967af2dd17e495a8ea84df57",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux"
+  },
+  "criteriaDeclaredAtCommit": "a8c18aa",
+  "source": {
+    "doi": "10.1115/1.4052149",
+    "title": "Lid-Driven Square Cavity Flow: A Benchmark Solution With an 8192 × 8192 Grid",
+    "pdfSHA256": "0cb5ceb694c6e22512f528502055dfed47d4125e501ac2702e7db212cbbaf95e",
+    "pdfPages": [
+      7,
+      8
+    ],
+    "tables": [
+      12,
+      13
+    ],
+    "column": "Tc(Uc), extrapolated convergent estimate; uncertainty parentheses refer to last two digits, not confidence intervals invented here",
+    "rawTableRedistributed": false,
+    "rootReadOriginalPageImages": true
+  },
+  "existingGhiaComparison": {
+    "referencePackSHA256": "22029fe4045039c60b4459b4120a66efe408dd96135a454ab2d80c4cb6cd1c6d",
+    "originalDataAndFailedGatesChanged": false,
+    "additionalSourceReferenceDifferences": {
+      "u": {
+        "interiorPoints": 15,
+        "maximumAbsoluteDifference": 0.004934517847000025,
+        "worstCoordinate": 0.8515625,
+        "originalGhiaPrintedCoordinate": 0.8516,
+        "ghiaPrintedValueAtWorst": 0.23151,
+        "marchiAtWorst": 0.23644451784700002
+      },
+      "v": {
+        "interiorPoints": 15,
+        "maximumAbsoluteDifference": 0.009262505929999998,
+        "worstCoordinate": 0.859375,
+        "originalGhiaPrintedCoordinate": 0.8594,
+        "ghiaPrintedValueAtWorst": -0.22445,
+        "marchiAtWorst": -0.23371250593
+      }
+    }
+  },
+  "coordinateHandling": "Marchi exact binary fractions are used directly. Original four-decimal Ghia comparison files are preserved; no new reference is evaluated at a rounded coordinate.",
+  "scope": {
+    "additionalReference": true,
+    "all28InteriorPointsPerComponent": true,
+    "twoPhysicalWallEndpointsSeparatelyChecked": true,
+    "maximumAbsoluteDifferenceBudget": 0.005,
+    "onlyMAC64AssignedFineObjective": true,
+    "newMomentumModelOrParameters": false,
+    "generalCFDAccuracyVerified": false
+  },
+  "cases": [
+    {
+      "method": "MAC",
+      "gridIntervals": 16,
+      "sourceFile": "docs/dynamic/CFD_FINE_LID_N16_20261106_v1.json",
+      "sha256": "08c68920ee420f08f679b650c5a1ce61c7d8a9dfddfa8712d4a4203c57d8e1a0",
+      "sourceCommit": "ced5b912f24258ba1b8383058f1c1770f524d0ba",
+      "steadyTimeS": 40,
+      "u": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.022093095163221,
+          "rms": 0.01155905973776361,
+          "worstCoordinate": 0.96875,
+          "computedAtWorst": 0.769515752266779,
+          "referenceAtWorst": 0.79160884743,
+          "referenceUncertaintyAtWorst": 1.1e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0546875,
+            "value": -0.03619503078834784
+          },
+          {
+            "coordinate": 0.0625,
+            "value": -0.04068119510134399
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": -0.04516735941434014
+          },
+          {
+            "coordinate": 0.1015625,
+            "value": -0.06252183390181082
+          },
+          {
+            "coordinate": 0.125,
+            "value": -0.07420977854725751
+          },
+          {
+            "coordinate": 0.171875,
+            "value": -0.0970675824161455
+          },
+          {
+            "coordinate": 0.1875,
+            "value": -0.10434146009110457
+          },
+          {
+            "coordinate": 0.25,
+            "value": -0.1327226016069124
+          },
+          {
+            "coordinate": 0.28125,
+            "value": -0.1465559877728021
+          },
+          {
+            "coordinate": 0.3125,
+            "value": -0.15892020858643535
+          },
+          {
+            "coordinate": 0.375,
+            "value": -0.18032784724388962
+          },
+          {
+            "coordinate": 0.4375,
+            "value": -0.19241661854559078
+          },
+          {
+            "coordinate": 0.453125,
+            "value": -0.19393929527453083
+          },
+          {
+            "coordinate": 0.5,
+            "value": -0.18972172747682697
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.16760938781403173
+          },
+          {
+            "coordinate": 0.6171875,
+            "value": -0.1309323079816519
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.12416397974957571
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.060597299883581965
+          },
+          {
+            "coordinate": 0.734375,
+            "value": -0.0009347677300700387
+          },
+          {
+            "coordinate": 0.75,
+            "value": 0.022234397485752826
+          },
+          {
+            "coordinate": 0.8125,
+            "value": 0.13348855615661753
+          },
+          {
+            "coordinate": 0.8515625,
+            "value": 0.22518377077937682
+          },
+          {
+            "coordinate": 0.875,
+            "value": 0.3055219299299977
+          },
+          {
+            "coordinate": 0.9375,
+            "value": 0.591077613865469
+          },
+          {
+            "coordinate": 0.953125,
+            "value": 0.680296683066124
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": 0.7249062176664516
+          },
+          {
+            "coordinate": 0.96875,
+            "value": 0.769515752266779
+          },
+          {
+            "coordinate": 0.9765625,
+            "value": 0.8271368142000843
+          }
+        ],
+        "boundaryValues": [
+          0,
+          1
+        ]
+      },
+      "v": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.02667728823844251,
+          "rms": 0.013770688655695496,
+          "worstCoordinate": 0.75,
+          "computedAtWorst": -0.2011500412215575,
+          "referenceAtWorst": -0.22782732946,
+          "referenceUncertaintyAtWorst": 1.5e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0625,
+            "value": 0.08349020645890973
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": 0.09148062071466626
+          },
+          {
+            "coordinate": 0.078125,
+            "value": 0.09947103497042278
+          },
+          {
+            "coordinate": 0.09375,
+            "value": 0.11545186348193583
+          },
+          {
+            "coordinate": 0.125,
+            "value": 0.13256570124211603
+          },
+          {
+            "coordinate": 0.15625,
+            "value": 0.14967953900229622
+          },
+          {
+            "coordinate": 0.1875,
+            "value": 0.15634009908654015
+          },
+          {
+            "coordinate": 0.2265625,
+            "value": 0.16278777706928155
+          },
+          {
+            "coordinate": 0.234375,
+            "value": 0.16257489496777897
+          },
+          {
+            "coordinate": 0.25,
+            "value": 0.16214913076477389
+          },
+          {
+            "coordinate": 0.3125,
+            "value": 0.1542955448511388
+          },
+          {
+            "coordinate": 0.375,
+            "value": 0.13435787505489205
+          },
+          {
+            "coordinate": 0.4375,
+            "value": 0.10223363192788112
+          },
+          {
+            "coordinate": 0.5,
+            "value": 0.05734727129209899
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.00011761782632177531
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.06777025052894672
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.13909401090079315
+          },
+          {
+            "coordinate": 0.75,
+            "value": -0.2011500412215575
+          },
+          {
+            "coordinate": 0.8046875,
+            "value": -0.23186142980467167
+          },
+          {
+            "coordinate": 0.8125,
+            "value": -0.23322597822220467
+          },
+          {
+            "coordinate": 0.859375,
+            "value": -0.22479772535461548
+          },
+          {
+            "coordinate": 0.875,
+            "value": -0.21091127881689437
+          },
+          {
+            "coordinate": 0.90625,
+            "value": -0.18313838574145205
+          },
+          {
+            "coordinate": 0.9375,
+            "value": -0.12392187537515742
+          },
+          {
+            "coordinate": 0.9453125,
+            "value": -0.10911774778358377
+          },
+          {
+            "coordinate": 0.953125,
+            "value": -0.09431362019201012
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": -0.07950949260043645
+          },
+          {
+            "coordinate": 0.96875,
+            "value": -0.0647053650088628
+          }
+        ],
+        "boundaryValues": [
+          0,
+          0
+        ]
+      },
+      "vAtExactDiagnosticCoordinate": {
+        "coordinate": 0.859375,
+        "computed": -0.22479772535461548,
+        "differenceFromMarchi": 0.008914780575384529
+      },
+      "fineObjectiveApplies": false,
+      "checks": {
+        "allInteriorU": false,
+        "allInteriorV": false,
+        "physicalWallValues": true
+      },
+      "originalGhiaGateResultPreserved": {
+        "fullU": false,
+        "fullV": false,
+        "legacyFourPoint": false
+      }
+    },
+    {
+      "method": "MAC",
+      "gridIntervals": 32,
+      "sourceFile": "docs/dynamic/CFD_FINE_LID_N32_20261106_v1.json",
+      "sha256": "07c9eac10776a40effc9cca1d6e133d972e8d32cae299d5a75009960926131c6",
+      "sourceCommit": "ced5b912f24258ba1b8383058f1c1770f524d0ba",
+      "steadyTimeS": 40,
+      "u": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.005858512718942999,
+          "rms": 0.0029674669173062225,
+          "worstCoordinate": 0.953125,
+          "computedAtWorst": 0.685324329211057,
+          "referenceAtWorst": 0.69118284193,
+          "referenceUncertaintyAtWorst": 1.8e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0546875,
+            "value": -0.03703852771420327
+          },
+          {
+            "coordinate": 0.0625,
+            "value": -0.041686602087056344
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": -0.04633467645990942
+          },
+          {
+            "coordinate": 0.1015625,
+            "value": -0.06391228663479884
+          },
+          {
+            "coordinate": 0.125,
+            "value": -0.07642359803539048
+          },
+          {
+            "coordinate": 0.171875,
+            "value": -0.10056293119847518
+          },
+          {
+            "coordinate": 0.1875,
+            "value": -0.10841424928570181
+          },
+          {
+            "coordinate": 0.25,
+            "value": -0.13947477378185238
+          },
+          {
+            "coordinate": 0.28125,
+            "value": -0.15455527600580382
+          },
+          {
+            "coordinate": 0.3125,
+            "value": -0.16894614458897983
+          },
+          {
+            "coordinate": 0.375,
+            "value": -0.19346793417852626
+          },
+          {
+            "coordinate": 0.4375,
+            "value": -0.2073245969724043
+          },
+          {
+            "coordinate": 0.453125,
+            "value": -0.20893051213093028
+          },
+          {
+            "coordinate": 0.5,
+            "value": -0.2039447659924467
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.17842631390959526
+          },
+          {
+            "coordinate": 0.6171875,
+            "value": -0.137231339468362
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.1297908230954092
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.06090746869515669
+          },
+          {
+            "coordinate": 0.734375,
+            "value": 0.001676986265257746
+          },
+          {
+            "coordinate": 0.75,
+            "value": 0.025724513985569648
+          },
+          {
+            "coordinate": 0.8125,
+            "value": 0.13787083630967986
+          },
+          {
+            "coordinate": 0.8515625,
+            "value": 0.2333394174879565
+          },
+          {
+            "coordinate": 0.875,
+            "value": 0.30855039059087813
+          },
+          {
+            "coordinate": 0.9375,
+            "value": 0.5953987365391257
+          },
+          {
+            "coordinate": 0.953125,
+            "value": 0.685324329211057
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": 0.737566228822496
+          },
+          {
+            "coordinate": 0.96875,
+            "value": 0.7898081284339351
+          },
+          {
+            "coordinate": 0.9765625,
+            "value": 0.8420500280453741
+          }
+        ],
+        "boundaryValues": [
+          0,
+          1
+        ]
+      },
+      "v": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.0069638110456574365,
+          "rms": 0.003613279225024245,
+          "worstCoordinate": 0.75,
+          "computedAtWorst": -0.22086351841434257,
+          "referenceAtWorst": -0.22782732946,
+          "referenceUncertaintyAtWorst": 1.5e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0625,
+            "value": 0.0917088413585228
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": 0.10051154705417492
+          },
+          {
+            "coordinate": 0.078125,
+            "value": 0.10931425274982703
+          },
+          {
+            "coordinate": 0.09375,
+            "value": 0.12239283488937727
+          },
+          {
+            "coordinate": 0.125,
+            "value": 0.14471685032453097
+          },
+          {
+            "coordinate": 0.15625,
+            "value": 0.16002172261893444
+          },
+          {
+            "coordinate": 0.1875,
+            "value": 0.16950508620948154
+          },
+          {
+            "coordinate": 0.2265625,
+            "value": 0.17475484516622414
+          },
+          {
+            "coordinate": 0.234375,
+            "value": 0.1753634566212226
+          },
+          {
+            "coordinate": 0.25,
+            "value": 0.17467703963707207
+          },
+          {
+            "coordinate": 0.3125,
+            "value": 0.1651635902417361
+          },
+          {
+            "coordinate": 0.375,
+            "value": 0.14264778390289787
+          },
+          {
+            "coordinate": 0.4375,
+            "value": 0.10691726367175833
+          },
+          {
+            "coordinate": 0.5,
+            "value": 0.057296440810512286
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.005960097308801053
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.07996492892122377
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.1568119893450559
+          },
+          {
+            "coordinate": 0.75,
+            "value": -0.22086351841434257
+          },
+          {
+            "coordinate": 0.8046875,
+            "value": -0.24831645039759417
+          },
+          {
+            "coordinate": 0.8125,
+            "value": -0.24845754018697985
+          },
+          {
+            "coordinate": 0.859375,
+            "value": -0.2328972738546939
+          },
+          {
+            "coordinate": 0.875,
+            "value": -0.2164894414828375
+          },
+          {
+            "coordinate": 0.90625,
+            "value": -0.17615083471613566
+          },
+          {
+            "coordinate": 0.9375,
+            "value": -0.12298526379821187
+          },
+          {
+            "coordinate": 0.9453125,
+            "value": -0.10836786553667269
+          },
+          {
+            "coordinate": 0.953125,
+            "value": -0.09375046727513349
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": -0.07799113766716459
+          },
+          {
+            "coordinate": 0.96875,
+            "value": -0.06223180805919567
+          }
+        ],
+        "boundaryValues": [
+          0,
+          0
+        ]
+      },
+      "vAtExactDiagnosticCoordinate": {
+        "coordinate": 0.859375,
+        "computed": -0.2328972738546939,
+        "differenceFromMarchi": 0.0008152320753061215
+      },
+      "fineObjectiveApplies": false,
+      "checks": {
+        "allInteriorU": false,
+        "allInteriorV": false,
+        "physicalWallValues": true
+      },
+      "originalGhiaGateResultPreserved": {
+        "fullU": true,
+        "fullV": false,
+        "legacyFourPoint": true
+      }
+    },
+    {
+      "method": "MAC",
+      "gridIntervals": 64,
+      "sourceFile": "docs/dynamic/CFD_FINE_LID_N64_20261106_v1.json",
+      "sha256": "c7d2bacd785184f26c2d50c5172517c500e802c1d3c19b3c61afb8004d1597b6",
+      "sourceCommit": "28fc2d5de373a28022dfa454033559b67238356b",
+      "steadyTimeS": 40,
+      "u": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.0013956743472180733,
+          "rms": 0.0007235364547418932,
+          "worstCoordinate": 0.453125,
+          "computedAtWorst": -0.21258232501178193,
+          "referenceAtWorst": -0.213977999359,
+          "referenceUncertaintyAtWorst": 9.8e-11
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0546875,
+            "value": -0.03724065815689272
+          },
+          {
+            "coordinate": 0.0625,
+            "value": -0.04193182059742715
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": -0.046622983037961585
+          },
+          {
+            "coordinate": 0.1015625,
+            "value": -0.06435057982829905
+          },
+          {
+            "coordinate": 0.125,
+            "value": -0.07699725650078088
+          },
+          {
+            "coordinate": 0.171875,
+            "value": -0.10148556955600732
+          },
+          {
+            "coordinate": 0.1875,
+            "value": -0.10952236548867067
+          },
+          {
+            "coordinate": 0.25,
+            "value": -0.14137310221334654
+          },
+          {
+            "coordinate": 0.28125,
+            "value": -0.15692875223345998
+          },
+          {
+            "coordinate": 0.3125,
+            "value": -0.17181881849601532
+          },
+          {
+            "coordinate": 0.375,
+            "value": -0.19725284779801927
+          },
+          {
+            "coordinate": 0.4375,
+            "value": -0.21157044603134179
+          },
+          {
+            "coordinate": 0.453125,
+            "value": -0.21258232501178193
+          },
+          {
+            "coordinate": 0.5,
+            "value": -0.20785702710193835
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.18117535598509754
+          },
+          {
+            "coordinate": 0.6171875,
+            "value": -0.1385454735613873
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.13090090466471518
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.060422034771538874
+          },
+          {
+            "coordinate": 0.734375,
+            "value": 0.0036785697939120685
+          },
+          {
+            "coordinate": 0.75,
+            "value": 0.027335130564040997
+          },
+          {
+            "coordinate": 0.8125,
+            "value": 0.13981337915885575
+          },
+          {
+            "coordinate": 0.8515625,
+            "value": 0.23521239659112
+          },
+          {
+            "coordinate": 0.875,
+            "value": 0.31013348328688223
+          },
+          {
+            "coordinate": 0.9375,
+            "value": 0.5970435494182307
+          },
+          {
+            "coordinate": 0.953125,
+            "value": 0.6907472617896803
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": 0.739573032364234
+          },
+          {
+            "coordinate": 0.96875,
+            "value": 0.7912194092014989
+          },
+          {
+            "coordinate": 0.9765625,
+            "value": 0.8428657860387638
+          }
+        ],
+        "boundaryValues": [
+          0,
+          1
+        ]
+      },
+      "v": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.001694817616259947,
+          "rms": 0.0008610387737042726,
+          "worstCoordinate": 0.75,
+          "computedAtWorst": -0.22613251184374006,
+          "referenceAtWorst": -0.22782732946,
+          "referenceUncertaintyAtWorst": 1.5e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0625,
+            "value": 0.09407176445536608
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": 0.10310446610992711
+          },
+          {
+            "coordinate": 0.078125,
+            "value": 0.11092326035947059
+          },
+          {
+            "coordinate": 0.09375,
+            "value": 0.12543652807722694
+          },
+          {
+            "coordinate": 0.125,
+            "value": 0.14816788339320716
+          },
+          {
+            "coordinate": 0.15625,
+            "value": 0.16366822407667786
+          },
+          {
+            "coordinate": 0.1875,
+            "value": 0.17319302550242846
+          },
+          {
+            "coordinate": 0.2265625,
+            "value": 0.17835800972473698
+          },
+          {
+            "coordinate": 0.234375,
+            "value": 0.17844682660655017
+          },
+          {
+            "coordinate": 0.25,
+            "value": 0.17815418190434779
+          },
+          {
+            "coordinate": 0.3125,
+            "value": 0.16817835076238602
+          },
+          {
+            "coordinate": 0.375,
+            "value": 0.14497979264477578
+          },
+          {
+            "coordinate": 0.4375,
+            "value": 0.10831130135236718
+          },
+          {
+            "coordinate": 0.5,
+            "value": 0.057457317791656776
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.007335295017935127
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.08308121007689072
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.16149982428255683
+          },
+          {
+            "coordinate": 0.75,
+            "value": -0.22613251184374006
+          },
+          {
+            "coordinate": 0.8046875,
+            "value": -0.25266345079289815
+          },
+          {
+            "coordinate": 0.8125,
+            "value": -0.2525031272410808
+          },
+          {
+            "coordinate": 0.859375,
+            "value": -0.2330298995576266
+          },
+          {
+            "coordinate": 0.875,
+            "value": -0.2181902625510194
+          },
+          {
+            "coordinate": 0.90625,
+            "value": -0.17693937920834035
+          },
+          {
+            "coordinate": 0.9375,
+            "value": -0.12325475788185318
+          },
+          {
+            "coordinate": 0.9453125,
+            "value": -0.10865104995402183
+          },
+          {
+            "coordinate": 0.953125,
+            "value": -0.093313844250441
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": -0.07797663854686016
+          },
+          {
+            "coordinate": 0.96875,
+            "value": -0.06228819802052918
+          }
+        ],
+        "boundaryValues": [
+          0,
+          0
+        ]
+      },
+      "vAtExactDiagnosticCoordinate": {
+        "coordinate": 0.859375,
+        "computed": -0.2330298995576266,
+        "differenceFromMarchi": 0.0006826063723734122
+      },
+      "fineObjectiveApplies": true,
+      "checks": {
+        "allInteriorU": true,
+        "allInteriorV": true,
+        "physicalWallValues": true
+      },
+      "originalGhiaGateResultPreserved": {
+        "fullU": true,
+        "fullV": false,
+        "legacyFourPoint": true
+      }
+    },
+    {
+      "method": "vorticity",
+      "gridIntervals": 64,
+      "sourceFile": "docs/dynamic/GHIA_VORTICITY_N64_20261106_v1.json",
+      "sha256": "f7f48d35f3ac59a94548a9fb9dc5f5e3b7d13e32d8f0ed55ff38317301cfbd47",
+      "sourceCommit": "63643d194331b01f5149a29b858e289c9e783c84",
+      "steadyTimeS": 40,
+      "u": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.003236959140486939,
+          "rms": 0.001947178361746541,
+          "worstCoordinate": 0.875,
+          "computedAtWorst": 0.30732014460951307,
+          "referenceAtWorst": 0.31055710375,
+          "referenceUncertaintyAtWorst": 1.8e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0546875,
+            "value": -0.036536059019989076
+          },
+          {
+            "coordinate": 0.0625,
+            "value": -0.04126945134289701
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": -0.045801238402243136
+          },
+          {
+            "coordinate": 0.1015625,
+            "value": -0.06331880105979848
+          },
+          {
+            "coordinate": 0.125,
+            "value": -0.07586192231257144
+          },
+          {
+            "coordinate": 0.171875,
+            "value": -0.10008719409925215
+          },
+          {
+            "coordinate": 0.1875,
+            "value": -0.10805212495112332
+          },
+          {
+            "coordinate": 0.25,
+            "value": -0.13969911022987913
+          },
+          {
+            "coordinate": 0.28125,
+            "value": -0.15521013098472403
+          },
+          {
+            "coordinate": 0.3125,
+            "value": -0.1701008800617878
+          },
+          {
+            "coordinate": 0.375,
+            "value": -0.1956913699659819
+          },
+          {
+            "coordinate": 0.4375,
+            "value": -0.21037772218495454
+          },
+          {
+            "coordinate": 0.453125,
+            "value": -0.21151049608453532
+          },
+          {
+            "coordinate": 0.5,
+            "value": -0.20719420671377153
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.18109493625769435
+          },
+          {
+            "coordinate": 0.6171875,
+            "value": -0.13860105416351987
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.13134216299711587
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.06128048565776023
+          },
+          {
+            "coordinate": 0.734375,
+            "value": 0.002524947541906908
+          },
+          {
+            "coordinate": 0.75,
+            "value": 0.02606826127952644
+          },
+          {
+            "coordinate": 0.8125,
+            "value": 0.13789742640121228
+          },
+          {
+            "coordinate": 0.8515625,
+            "value": 0.2341814492077161
+          },
+          {
+            "coordinate": 0.875,
+            "value": 0.30732014460951307
+          },
+          {
+            "coordinate": 0.9375,
+            "value": 0.5944195004320885
+          },
+          {
+            "coordinate": 0.953125,
+            "value": 0.688578370205136
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": 0.7391249797124673
+          },
+          {
+            "coordinate": 0.96875,
+            "value": 0.7896715892197984
+          },
+          {
+            "coordinate": 0.9765625,
+            "value": 0.8422418102894167
+          }
+        ],
+        "boundaryValues": [
+          0,
+          1
+        ]
+      },
+      "v": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.004273555655781802,
+          "rms": 0.002414026584280455,
+          "worstCoordinate": 0.8046875,
+          "computedAtWorst": -0.24926795849421823,
+          "referenceAtWorst": -0.25354151415000004,
+          "referenceUncertaintyAtWorst": 4.5e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0625,
+            "value": 0.09305763907293726
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": 0.10140374024038991
+          },
+          {
+            "coordinate": 0.078125,
+            "value": 0.10974984140784255
+          },
+          {
+            "coordinate": 0.09375,
+            "value": 0.12413298050110957
+          },
+          {
+            "coordinate": 0.125,
+            "value": 0.14667697746726893
+          },
+          {
+            "coordinate": 0.15625,
+            "value": 0.1620667859465652
+          },
+          {
+            "coordinate": 0.1875,
+            "value": 0.1715389239943722
+          },
+          {
+            "coordinate": 0.2265625,
+            "value": 0.17644978136111744
+          },
+          {
+            "coordinate": 0.234375,
+            "value": 0.17679436256591308
+          },
+          {
+            "coordinate": 0.25,
+            "value": 0.17651961345159084
+          },
+          {
+            "coordinate": 0.3125,
+            "value": 0.16668695089591434
+          },
+          {
+            "coordinate": 0.375,
+            "value": 0.14373254659091073
+          },
+          {
+            "coordinate": 0.4375,
+            "value": 0.10739572673173936
+          },
+          {
+            "coordinate": 0.5,
+            "value": 0.05694470055377909
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.00738888619141953
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.08261664635087795
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.1604189455845315
+          },
+          {
+            "coordinate": 0.75,
+            "value": -0.22430416280792986
+          },
+          {
+            "coordinate": 0.8046875,
+            "value": -0.24926795849421823
+          },
+          {
+            "coordinate": 0.8125,
+            "value": -0.24998103879230016
+          },
+          {
+            "coordinate": 0.859375,
+            "value": -0.23037768366309652
+          },
+          {
+            "coordinate": 0.875,
+            "value": -0.21562618558367297
+          },
+          {
+            "coordinate": 0.90625,
+            "value": -0.1747682038322713
+          },
+          {
+            "coordinate": 0.9375,
+            "value": -0.12171583489022947
+          },
+          {
+            "coordinate": 0.9453125,
+            "value": -0.10693126951655865
+          },
+          {
+            "coordinate": 0.953125,
+            "value": -0.09214670414288784
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": -0.07682796185234524
+          },
+          {
+            "coordinate": 0.96875,
+            "value": -0.061509219561802636
+          }
+        ],
+        "boundaryValues": [
+          0,
+          0
+        ]
+      },
+      "vAtExactDiagnosticCoordinate": {
+        "coordinate": 0.859375,
+        "computed": -0.23037768366309652,
+        "differenceFromMarchi": 0.0033348222669034866
+      },
+      "fineObjectiveApplies": false,
+      "checks": {
+        "allInteriorU": true,
+        "allInteriorV": true,
+        "physicalWallValues": true
+      },
+      "originalGhiaGateResultPreserved": null
+    },
+    {
+      "method": "vorticity",
+      "gridIntervals": 128,
+      "sourceFile": "docs/dynamic/GHIA_VORTICITY_N128_20261106_v1.json",
+      "sha256": "fe0c71910cd92f057de04d63dbfc9d6053fae0000df51b691718fcb2cf8c3a6a",
+      "sourceCommit": "1b2dc18e79e5bab1ddfbc9f803f40b8a38890287",
+      "steadyTimeS": 40,
+      "u": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.000789321312157587,
+          "rms": 0.0004927210074945224,
+          "worstCoordinate": 0.875,
+          "computedAtWorst": 0.3097677824378424,
+          "referenceAtWorst": 0.31055710375,
+          "referenceUncertaintyAtWorst": 1.8e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0546875,
+            "value": -0.0370658490070706
+          },
+          {
+            "coordinate": 0.0625,
+            "value": -0.04180188208079845
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": -0.0464356140822505
+          },
+          {
+            "coordinate": 0.1015625,
+            "value": -0.06414943577655538
+          },
+          {
+            "coordinate": 0.125,
+            "value": -0.07681525974319309
+          },
+          {
+            "coordinate": 0.171875,
+            "value": -0.10132571013759328
+          },
+          {
+            "coordinate": 0.1875,
+            "value": -0.10938275634894001
+          },
+          {
+            "coordinate": 0.25,
+            "value": -0.14138122248502993
+          },
+          {
+            "coordinate": 0.28125,
+            "value": -0.1570483771215001
+          },
+          {
+            "coordinate": 0.3125,
+            "value": -0.17206930278728105
+          },
+          {
+            "coordinate": 0.375,
+            "value": -0.19778622169030635
+          },
+          {
+            "coordinate": 0.4375,
+            "value": -0.2123263055161062
+          },
+          {
+            "coordinate": 0.453125,
+            "value": -0.21337103071156616
+          },
+          {
+            "coordinate": 0.5,
+            "value": -0.20866939117490446
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.18184079662439956
+          },
+          {
+            "coordinate": 0.6171875,
+            "value": -0.13880183783432365
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.13128085066878636
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.060503215167584834
+          },
+          {
+            "coordinate": 0.734375,
+            "value": 0.003748268089023732
+          },
+          {
+            "coordinate": 0.75,
+            "value": 0.027428715328672304
+          },
+          {
+            "coordinate": 0.8125,
+            "value": 0.1398053645421271
+          },
+          {
+            "coordinate": 0.8515625,
+            "value": 0.23571275309153883
+          },
+          {
+            "coordinate": 0.875,
+            "value": 0.3097677824378424
+          },
+          {
+            "coordinate": 0.9375,
+            "value": 0.5967262799769699
+          },
+          {
+            "coordinate": 0.953125,
+            "value": 0.6905502452881946
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": 0.740151735358207
+          },
+          {
+            "coordinate": 0.96875,
+            "value": 0.7911384118039466
+          },
+          {
+            "coordinate": 0.9765625,
+            "value": 0.8431127297178083
+          }
+        ],
+        "boundaryValues": [
+          0,
+          1
+        ]
+      },
+      "v": {
+        "againstAll28InteriorRows": {
+          "pointCount": 28,
+          "maximumAbsoluteDifference": 0.000940509564795966,
+          "rms": 0.000582881965713871,
+          "worstCoordinate": 0.8046875,
+          "computedAtWorst": -0.25260100458520407,
+          "referenceAtWorst": -0.25354151415000004,
+          "referenceUncertaintyAtWorst": 4.5e-10
+        },
+        "ownComputedProfile": [
+          {
+            "coordinate": 0.0625,
+            "value": 0.0943784898897993
+          },
+          {
+            "coordinate": 0.0703125,
+            "value": 0.10313401458060201
+          },
+          {
+            "coordinate": 0.078125,
+            "value": 0.11127995563629955
+          },
+          {
+            "coordinate": 0.09375,
+            "value": 0.1258324519237139
+          },
+          {
+            "coordinate": 0.125,
+            "value": 0.14861336591477037
+          },
+          {
+            "coordinate": 0.15625,
+            "value": 0.16413221189104887
+          },
+          {
+            "coordinate": 0.1875,
+            "value": 0.17365386384454284
+          },
+          {
+            "coordinate": 0.2265625,
+            "value": 0.1786708612160406
+          },
+          {
+            "coordinate": 0.234375,
+            "value": 0.1788788135367052
+          },
+          {
+            "coordinate": 0.25,
+            "value": 0.17857256972469715
+          },
+          {
+            "coordinate": 0.3125,
+            "value": 0.16852845115908277
+          },
+          {
+            "coordinate": 0.375,
+            "value": 0.14523569472043762
+          },
+          {
+            "coordinate": 0.4375,
+            "value": 0.10843285740663378
+          },
+          {
+            "coordinate": 0.5,
+            "value": 0.057387650115058975
+          },
+          {
+            "coordinate": 0.5625,
+            "value": -0.0076625119688591425
+          },
+          {
+            "coordinate": 0.625,
+            "value": -0.08371080656570484
+          },
+          {
+            "coordinate": 0.6875,
+            "value": -0.16237103905190597
+          },
+          {
+            "coordinate": 0.75,
+            "value": -0.2269567024365826
+          },
+          {
+            "coordinate": 0.8046875,
+            "value": -0.25260100458520407
+          },
+          {
+            "coordinate": 0.8125,
+            "value": -0.25283291381802453
+          },
+          {
+            "coordinate": 0.859375,
+            "value": -0.23288987502898895
+          },
+          {
+            "coordinate": 0.875,
+            "value": -0.21793538718306593
+          },
+          {
+            "coordinate": 0.90625,
+            "value": -0.1765697241423636
+          },
+          {
+            "coordinate": 0.9375,
+            "value": -0.12292468049576483
+          },
+          {
+            "coordinate": 0.9453125,
+            "value": -0.10816608386343254
+          },
+          {
+            "coordinate": 0.953125,
+            "value": -0.09304659752902948
+          },
+          {
+            "coordinate": 0.9609375,
+            "value": -0.0776600163914066
+          },
+          {
+            "coordinate": 0.96875,
+            "value": -0.06210097888391596
+          }
+        ],
+        "boundaryValues": [
+          0,
+          0
+        ]
+      },
+      "vAtExactDiagnosticCoordinate": {
+        "coordinate": 0.859375,
+        "computed": -0.23288987502898895,
+        "differenceFromMarchi": 0.0008226309010110622
+      },
+      "fineObjectiveApplies": false,
+      "checks": {
+        "allInteriorU": true,
+        "allInteriorV": true,
+        "physicalWallValues": true
+      },
+      "originalGhiaGateResultPreserved": null
+    }
+  ],
+  "allAdditionalFineObjectivesPassed": true,
+  "releaseApproved": false
+}

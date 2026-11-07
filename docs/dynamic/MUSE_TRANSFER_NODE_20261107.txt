@@ -1,0 +1,22 @@
+Exact excerpt of the completed local Node log (not the complete raw log).
+Tested implementation commit: c52f2a7234c2b196aabda1ea4d062a720e7a521b
+Command: node --test --test-concurrency=1 tests/*.test.mjs
+Raw log workspace path: work/muse-transfer-full-node-20261107.log
+Raw log SHA256: b8be0d2f70d3d3117f52a037bf04f72d6ef614d6727ef1c8acc24b41ba6014a5
+
+Skipped cases (verbatim):
+﹣ private legacy Japanese drafts remain labeled unverified in a local pack (0.236816ms) # SKIP
+﹣ reviewed local sections retain original page locations, both languages, and figure descriptions (0.103957ms) # SKIP
+﹣ 18 reviewed Japanese questions have complete rationale and valid source pages (0.189416ms) # SKIP
+﹣ chapter 8 opening retains both languages, eight equations, dimensional annotations, and the original figure (0.12639ms) # SKIP
+﹣ vertical natural convection retains source caveats, mean-value overbars, all figures and ten question rationales (0.0593ms) # SKIP
+
+Final report (verbatim):
+ℹ tests 1501
+ℹ suites 0
+ℹ pass 1496
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 5
+ℹ todo 0
+ℹ duration_ms 117675.933195

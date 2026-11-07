@@ -1,0 +1,434 @@
+{
+  "generatedAtUTC": "2026-11-06T03:36:14.288753+00:00",
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatorSHA256": "e7f244d9c31a94d623eb90da49ba6887cbcd0b8f654695ca71ffebcdfa90e7b3",
+  "providedPackSHA256": "3688be6cb043ed9b90b52c19adcc293c34704a42542d6554bd5cd746885c4fcb",
+  "providedPackHashCheckedThisRun": true,
+  "sourceBeforeEdits": "383ecea652559c9a1b81e8094c8590cfc1c4830a",
+  "geometryCases": [
+    {
+      "id": "square",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "viewFactors": [
+        [
+          0.0,
+          0.2928932188134525,
+          0.41421356237309503,
+          0.2928932188134525
+        ],
+        [
+          0.2928932188134525,
+          0.0,
+          0.2928932188134525,
+          0.41421356237309503
+        ],
+        [
+          0.41421356237309503,
+          0.2928932188134525,
+          0.0,
+          0.2928932188134525
+        ],
+        [
+          0.2928932188134525,
+          0.41421356237309503,
+          0.2928932188134525,
+          0.0
+        ]
+      ],
+      "referenceArithmetic": "mpmath 80 digits on exact Float64 coordinates",
+      "independentIntegralOrder": 128,
+      "integralRefinementMaxDifference": 8.881784197001252e-16,
+      "integralVsStringsMaxDifference": 7.216449660063518e-16
+    },
+    {
+      "id": "provided-T5-01",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2.4
+        ],
+        [
+          0,
+          2.4
+        ]
+      ],
+      "viewFactors": [
+        [
+          0.0,
+          0.4,
+          0.2,
+          0.4
+        ],
+        [
+          0.16666666666666669,
+          0.0,
+          0.16666666666666669,
+          0.6666666666666666
+        ],
+        [
+          0.2,
+          0.4,
+          0.0,
+          0.4
+        ],
+        [
+          0.16666666666666669,
+          0.6666666666666666,
+          0.16666666666666669,
+          0.0
+        ]
+      ],
+      "referenceArithmetic": "mpmath 80 digits on exact Float64 coordinates",
+      "independentIntegralOrder": 128,
+      "integralRefinementMaxDifference": 3.219646771412954e-15,
+      "integralVsStringsMaxDifference": 2.4424906541753444e-15
+    },
+    {
+      "id": "equilateral",
+      "outline": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0.5,
+          0.8660254037844386
+        ]
+      ],
+      "viewFactors": [
+        [
+          0.0,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.0,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.0
+        ]
+      ],
+      "referenceArithmetic": "mpmath 80 digits on exact Float64 coordinates",
+      "independentIntegralOrder": 128,
+      "integralRefinementMaxDifference": 1.1657341758564144e-15,
+      "integralVsStringsMaxDifference": 8.326672684688674e-16
+    },
+    {
+      "id": "regular-pentagon",
+      "outline": [
+        [
+          0.9746040434678596,
+          -0.34513855170826024
+        ],
+        [
+          0.43466591058177156,
+          0.2282996359856337
+        ],
+        [
+          -0.2775562734898694,
+          -0.10800989847093456
+        ],
+        [
+          -0.17779565790173985,
+          -0.8892988091996417
+        ],
+        [
+          0.5960819773419779,
+          -1.0358523766067969
+        ]
+      ],
+      "viewFactors": [
+        [
+          0.0,
+          0.1909830056250525,
+          0.30901699437494734,
+          0.3090169943749474,
+          0.19098300562505272
+        ],
+        [
+          0.19098300562505252,
+          0.0,
+          0.19098300562505252,
+          0.3090169943749474,
+          0.30901699437494756
+        ],
+        [
+          0.3090169943749474,
+          0.19098300562505252,
+          0.0,
+          0.19098300562505258,
+          0.3090169943749475
+        ],
+        [
+          0.30901699437494745,
+          0.30901699437494734,
+          0.19098300562505258,
+          0.0,
+          0.1909830056250526
+        ],
+        [
+          0.1909830056250527,
+          0.3090169943749474,
+          0.3090169943749474,
+          0.19098300562505252,
+          0.0
+        ]
+      ],
+      "referenceArithmetic": "mpmath 80 digits on exact Float64 coordinates",
+      "independentIntegralOrder": 128,
+      "integralRefinementMaxDifference": 6.661338147750939e-16,
+      "integralVsStringsMaxDifference": 5.828670879282072e-16
+    },
+    {
+      "id": "regular-octagon",
+      "outline": [
+        [
+          0.9187274443875952,
+          -0.15008769507335495
+        ],
+        [
+          0.5425074148696383,
+          0.19836319277201303
+        ],
+        [
+          0.03008769507335496,
+          0.1787274443875953
+        ],
+        [
+          -0.318363192772013,
+          -0.19749258513036172
+        ],
+        [
+          -0.2987274443875953,
+          -0.709912304926645
+        ],
+        [
+          0.0774925851303617,
+          -1.058363192772013
+        ],
+        [
+          0.589912304926645,
+          -1.0387274443875953
+        ],
+        [
+          0.9383631927720131,
+          -0.6625074148696384
+        ]
+      ],
+      "viewFactors": [
+        [
+          0.0,
+          0.07612046748871329,
+          0.14065228383602602,
+          0.18377106498543178,
+          0.19891236737965798,
+          0.18377106498543178,
+          0.140652283836026,
+          0.07612046748871318
+        ],
+        [
+          0.07612046748871329,
+          0.0,
+          0.07612046748871322,
+          0.140652283836026,
+          0.18377106498543175,
+          0.198912367379658,
+          0.18377106498543178,
+          0.140652283836026
+        ],
+        [
+          0.140652283836026,
+          0.07612046748871322,
+          0.0,
+          0.07612046748871328,
+          0.140652283836026,
+          0.18377106498543178,
+          0.198912367379658,
+          0.18377106498543178
+        ],
+        [
+          0.18377106498543178,
+          0.140652283836026,
+          0.07612046748871328,
+          0.0,
+          0.07612046748871322,
+          0.14065228383602596,
+          0.18377106498543172,
+          0.19891236737965806
+        ],
+        [
+          0.198912367379658,
+          0.18377106498543175,
+          0.140652283836026,
+          0.07612046748871323,
+          0.0,
+          0.07612046748871323,
+          0.14065228383602596,
+          0.18377106498543183
+        ],
+        [
+          0.18377106498543175,
+          0.198912367379658,
+          0.18377106498543175,
+          0.14065228383602596,
+          0.07612046748871322,
+          0.0,
+          0.07612046748871323,
+          0.14065228383602607
+        ],
+        [
+          0.140652283836026,
+          0.18377106498543178,
+          0.198912367379658,
+          0.18377106498543172,
+          0.14065228383602593,
+          0.07612046748871323,
+          0.0,
+          0.07612046748871334
+        ],
+        [
+          0.07612046748871315,
+          0.14065228383602596,
+          0.18377106498543175,
+          0.198912367379658,
+          0.18377106498543178,
+          0.14065228383602604,
+          0.07612046748871333,
+          0.0
+        ]
+      ],
+      "referenceArithmetic": "mpmath 80 digits on exact Float64 coordinates",
+      "independentIntegralOrder": 128,
+      "integralRefinementMaxDifference": 2.914335439641036e-16,
+      "integralVsStringsMaxDifference": 2.498001805406602e-16
+    }
+  ],
+  "transient": {
+    "outline": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0.5,
+        0.8660254037844386
+      ]
+    ],
+    "emissivity": 0.8,
+    "capacityPerLengthJPerMK": 500,
+    "initialK": [
+      600,
+      300,
+      300
+    ],
+    "maxTemperatureK": 700,
+    "timeS": [
+      0,
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8
+    ],
+    "hotWallTemperatureK": [
+      600.0,
+      597.5182019076495,
+      595.0824388374135,
+      590.3437388372255,
+      581.3636183949924,
+      565.1575059902843,
+      538.3254995962715
+    ],
+    "eachColdWallTemperatureK": [
+      300.0,
+      301.24089904617523,
+      302.45878058129324,
+      304.82813058138726,
+      309.3181908025038,
+      317.42124700485783,
+      330.83725020186426
+    ],
+    "reference": "Independent scalar reduction of symmetric gray radiosity plus total energy, DOP853; no production time integrator or dense radiosity solve.",
+    "referenceToleranceRefinementMaxDifferenceK": 8.645884008728899e-10
+  },
+  "providedCases": {
+    "T5-01": {
+      "source": "AHTT 6th ed., Table 10.2 case 1; Example 10.9",
+      "kind": "provided printed value and own geometry evaluation",
+      "stripWidthM": 1,
+      "separationM": 2.4,
+      "printedViewFactor": 0.2,
+      "formulaValue": 0.2
+    },
+    "T5-04": {
+      "source": "AHTT 6th ed., Problem 10.14 and section 10.3",
+      "kind": "crossed-string identity verified by independent angular kernel quadrature"
+    },
+    "T5-08-Example10.9a": {
+      "source": "AHTT 6th ed., section 10.4 Example 10.9; original PDF589/590, printed575/576 viewed as images by root",
+      "comparisonScope": "Initial instantaneous exchange with black 250 K virtual side walls. Later finite-capacity evolution is not the prescribed-temperature example.",
+      "providedRoundedPairPowerWPerM": 46.5,
+      "primaryPrintedPairPowerWPerM": 46.53,
+      "primaryPrintedRadiositiesWPerM2": [
+        612.1,
+        379.5
+      ],
+      "modernNodalRadiositiesWPerM2": [
+        612.6563517161435,
+        379.5153994379894
+      ],
+      "modernFormulaPairPowerWPerM": 46.62819045563082,
+      "printedRoundedSystemSolutionWPerM2": [
+        612.7332657200811,
+        379.5233265720081
+      ],
+      "printedRoundedSystemPairPowerWPerM": 46.64198782961461,
+      "primaryPrintedRadiosityResidualAgainstPrintedSystemWPerM2": [
+        -0.6299999999999955,
+        0.40000000000009095
+      ],
+      "solverIssueStatus": "closed_no_solver_error",
+      "status": "Closed as a solver-correct comparison: printed 46.53 W/m versus modern formula 46.62819046 W/m. Preserve the separate original intermediate-arithmetic discrepancy; decimal rounding alone has not been demonstrated. See EXAMPLE_10_9_DISPOSITION_20261106.md."
+    }
+  },
+  "releaseApproved": false,
+  "scope": "Infinitely long convex straight-wall duct; diffuse gray opaque isothermal faces; nonparticipating medium. No finite end walls, arbitrary 3D/concave/obstructed view factors, or expert approval."
+}

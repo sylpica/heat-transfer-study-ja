@@ -1,0 +1,212 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-06T05:09:11.134155+00:00",
+  "baseSourceCommit": "be6ab5f4d4707a5bac879c358fa50310d898c8bc",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/triangle-linear-flux-recovery.mjs": "adcb52c69c2bc230b9e4f5f39d88fc158121e315bb288765f9a2dc8d28b6beef",
+    "dynamic/dev/convex-triangle-mesh.mjs": "077ab5c764446f5b3cd978aeb01d431eaa0f1e5232547be0603eb357ec1c69ed",
+    "scripts/dynamic-triangle-linear-flux-reference.py": "e461d8c6c41d4910a005bd8ab552c0cb6c213b1143fb2353697301b209a7861d",
+    "scripts/dynamic-triangle-linear-reference.py": "f658b1ffde3f12513470c2f864b9d20cdb552d0d27b6ca1919d736e676552752",
+    "tests/dynamic-triangle-linear-flux.test.mjs": "767c69ce2cf822513ae47259f441b8cc26c7e234f501070e7753c6fede544138",
+    "tests/dynamic-triangle-linear-flux-browser.mjs": "78cef19fa8ffa28d17d418a4e01218794096d50b67aeec6d88e45639e2794628",
+    "tests/dynamic-convex-triangle-mesh.test.mjs": "acebbfc63e7ceeead2e0a20cb15c93ca3b08cdd0d04bafa3d551a6da9c6f014c",
+    "tests/dynamic-triangle-mesh-browser.mjs": "6e35c9bf778b93dc4727958d87e2c4b59e143d92272ce9c7cefc918f6a55f01c",
+    "docs/dynamic/TRIANGLE_LINEAR_FLUX_REFERENCE_20261106.json": "00e4f29e71d7c10fccd9a717e8c59bfaf4cee16b2b818ddcd47124b5ccad65bf"
+  },
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "relatedNodeTests": {
+    "mixedRecovery": 4,
+    "physicalCoordinateRegression": 1
+  },
+  "node": {
+    "tests": 1380,
+    "pass": 1375,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "knownBoundaryPowersPreserved": true,
+      "independentConstrainedOptimum": true,
+      "closedGaugeAndOpenDirichlet": true,
+      "tinyRobinHeatPreserved": true,
+      "readOnlyStateAndRealRestore": true,
+      "cases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 16,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 3.9745984281580604e-13,
+          "maximumElementResidualW": 3.7517905449035993e-13,
+          "iterations": 170
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 16,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.8495205367230483e-12,
+          "maximumElementResidualW": 1.0376768888598065e-13,
+          "iterations": 177
+        },
+        {
+          "kind": "steady-flux-robin",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.021405182655144e-14,
+          "maximumElementResidualW": 1.9909999574944472e-14,
+          "iterations": 0
+        },
+        {
+          "kind": "tiny-robin-source",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.413552067247871e-118,
+          "maximumElementResidualW": 3.062030494725803e-119,
+          "iterations": 35
+        }
+      ],
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "knownBoundaryPowersPreserved": true,
+      "independentConstrainedOptimum": true,
+      "closedGaugeAndOpenDirichlet": true,
+      "tinyRobinHeatPreserved": true,
+      "readOnlyStateAndRealRestore": true,
+      "cases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 16,
+          "closed": false,
+          "maximumIndependentEdgeDifferenceW": 3.9745984281580604e-13,
+          "maximumElementResidualW": 3.7517905449035993e-13,
+          "iterations": 170
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 16,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.8495205367230483e-12,
+          "maximumElementResidualW": 1.0376768888598065e-13,
+          "iterations": 177
+        },
+        {
+          "kind": "steady-flux-robin",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.021405182655144e-14,
+          "maximumElementResidualW": 1.9909999574944472e-14,
+          "iterations": 0
+        },
+        {
+          "kind": "tiny-robin-source",
+          "n": 4,
+          "closed": true,
+          "maximumIndependentEdgeDifferenceW": 1.413552067247871e-118,
+          "maximumElementResidualW": 3.062030494725803e-119,
+          "iterations": 35
+        }
+      ],
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "physicalMappingBrowser": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "linearBoundaryAssemblyOnly": true,
+      "topologicalBoundaryIdentity": true,
+      "unresolvedPhysicalCoordinatesRejected": true,
+      "negativeDynamicBoundaryConductancesRejected": true,
+      "p1Operator": {
+        "affineQuadraticFormWK": 26.100000000000016,
+        "zeroWeightEdges": 40,
+        "unknownGraphConnectedToDirichlet": true,
+        "temperaturePDEImplemented": false
+      },
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "linearBoundaryAssemblyOnly": true,
+      "topologicalBoundaryIdentity": true,
+      "unresolvedPhysicalCoordinatesRejected": true,
+      "negativeDynamicBoundaryConductancesRejected": true,
+      "p1Operator": {
+        "affineQuadraticFormWK": 26.100000000000016,
+        "zeroWeightEdges": 40,
+        "unknownGraphConnectedToDirichlet": true,
+        "temperaturePDEImplemented": false
+      },
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "originalP1UIRegression": {
+    "chromium": true,
+    "webkit": true
+  },
+  "criteriaDeclaredAtCommit": "be6ab5f",
+  "independentChecks": {
+    "knownBoundary": true,
+    "edgeOptimum": true,
+    "localBalance": true,
+    "finestVector": true,
+    "lastVectorOrders": true
+  },
+  "continuousVectorOrders": {
+    "dirichlet-neumann": [
+      1.0721033426997884,
+      1.0215446852510643,
+      1.0056396116313617
+    ],
+    "robin-neumann": [
+      1.0062420810127883,
+      1.0024021043117688,
+      1.0006946649784276
+    ]
+  },
+  "mixedBoundaryEquilibratedFluxImplemented": true,
+  "mixedBoundaryFluxGUIImplemented": false,
+  "physicalCoordinateCollapseRejected": true,
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "generalAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

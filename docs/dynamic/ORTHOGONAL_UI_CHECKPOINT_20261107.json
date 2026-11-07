@@ -1,0 +1,97 @@
+{
+  "recordedAtUTC": "2026-11-07T01:19:23.917225+00:00",
+  "UIPlanCommit": "417a868",
+  "sourceFilesSHA256": {
+    "dynamic/dev/orthogonal-diffusion.mjs": "fdc127602630a706c7d72d5ee650ea73fff32ce1be785df0be6140ce47db5ece",
+    "dynamic/dev/orthogonal-diffusion-worker.mjs": "d028a31fe862401c72e039650c0b9675a55a3bc77362f53485554033f9e22a82",
+    "dynamic/dev/orthogonal-ui.mjs": "34c24a0ce6e35d7a68cd9c9ce4a1c8801a7d9a1c2811c9a162d8e4d79c8c759d",
+    "dynamic/dev/orthogonal-ui-config.mjs": "35e674d93d80650e4e26d3dcc28c834e5772aff513ca3e164d4682a30f0c2cb2",
+    "dynamic/dev/orthogonal-field-view.mjs": "ae8a826a6c94a0443b7b136d16346386a36f755aa3f2174ca5a895879cd1b654",
+    "dynamic/dev/orthogonal-diffusion.html": "a6c6c09ccb628667f14fa0c1d247db9e2b90356248997885e06ec3113e0982db",
+    "tests/dynamic-orthogonal-ui-browser.mjs": "0a59147a19f42c19b52bf500af0a82f0fdcbedb2f62d393b91ab4df16f6ea3b1",
+    "tests/dynamic-orthogonal-ui-config.test.mjs": "1091fc7f0c5a939acae0b60c35842d8321b58ac3a93f8918734d468a17c6654b",
+    ".github/workflows/dynamic-simulation.yml": "0e2ffe7c82e6916c77ba804e46893735a3044c857cc393dccc663baec3de275d"
+  },
+  "browserResults": [
+    {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerFullNodalTrajectoryAndReaction": true,
+      "rewindAndBitmapReplay": true,
+      "concaveOutsideSampleAndTransparentMask": true,
+      "physicalP1Measurement": true,
+      "invalidConditionsAndResourceLimitKeepAcceptedState": true,
+      "differentShapeAndGridComparisonWithCommonPhysicalScale": true,
+      "realProgressCancelRollback": true,
+      "uniformAndTinyHeat": true,
+      "fineLNodes": 225,
+      "keyboardAndPointer": true,
+      "mobileDarkLight": true,
+      "devicePixelRatio": 2,
+      "localStorageUnchanged": true,
+      "singularConcaveCornerFieldVerified": false,
+      "generalFreeShapeApproved": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerFullNodalTrajectoryAndReaction": true,
+      "rewindAndBitmapReplay": true,
+      "concaveOutsideSampleAndTransparentMask": true,
+      "physicalP1Measurement": true,
+      "invalidConditionsAndResourceLimitKeepAcceptedState": true,
+      "differentShapeAndGridComparisonWithCommonPhysicalScale": true,
+      "realProgressCancelRollback": true,
+      "uniformAndTinyHeat": true,
+      "fineLNodes": 225,
+      "keyboardAndPointer": true,
+      "mobileDarkLight": true,
+      "devicePixelRatio": 2,
+      "localStorageUnchanged": true,
+      "singularConcaveCornerFieldVerified": false,
+      "generalFreeShapeApproved": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  ],
+  "browserLogs": [
+    "work/orthogonal-ui-chromium-retest-20261107.log",
+    "work/orthogonal-ui-webkit-20261107.log"
+  ],
+  "node": {
+    "total": 1489,
+    "pass": 1484,
+    "skip": 5,
+    "fail": 0,
+    "durationMs": 109094.840881,
+    "log": "work/orthogonal-ui-full-node-20261107.log",
+    "sequential": true
+  },
+  "publicBuild": {
+    "passed": true,
+    "log": "work/orthogonal-ui-public-build-20261107.log",
+    "devPresent": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cache": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "initialBrowserFailure": {
+    "log": "work/orthogonal-ui-chromium-20261107.log",
+    "reason": "After viewport enlargement, Canvas CSS width could follow the high-density intrinsic raster rather than the parent.",
+    "fix": "Set CSS width100% before deriving CSS-pixel raster dimensions. Keep the original DPR width assertion and tolerance; no physical change."
+  },
+  "screenshotsActuallyViewed": [
+    "work/orthogonal-ui-webkit-field-dark-20261107.png",
+    "work/orthogonal-ui-webkit-settings-dark-20261107.png"
+  ],
+  "oldConvexMeshOperatorCoreAndRendererUnchangedFrom": "2d281e4",
+  "remoteLatestCIAllJobsPassed": false,
+  "singularConcaveCornerFieldVerified": false,
+  "generalFreeShapeApproved": false,
+  "realDeviceVerified": false,
+  "offlineVerified": false,
+  "releaseApproved": false
+}

@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {execFileSync} from 'node:child_process';
+const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/ORTHOGONAL_MESH_REFERENCE_20261107_v1.json',import.meta.url)));
+test('actual orthogonal meshes stay aligned with independent exact-physical Fraction geometry evidence without claiming a temperature solution',()=>{
+ const own=JSON.parse(execFileSync(process.execPath,['scripts/dynamic-orthogonal-mesh-cases.mjs'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:8*1024*1024}));assert.deepEqual(own.sourceFilesSHA256,ref.sourceFilesSHA256);assert.equal(own.cases.length,ref.cases.length);
+ for(let i=0;i<own.cases.length;i++){const actual=own.cases[i],r=ref.cases[i],m=actual.mesh,[a,b='1']=r.physicalPolygonAreaAsFraction.split('/');assert.equal(actual.id,r.id);assert.equal(m.numerics.area,Number(a)/Number(b));assert.equal(m.nodes.length,r.nodes);assert.equal(m.elements.length,r.elements);assert.equal(m.edges.filter(e=>e.boundary).length,r.boundaryEdges);assert.equal(m.scope.temperaturePDEImplemented,false);assert.equal(r.physicalElementSumAreaExactlyEqualsPolygon,true);assert.equal(r.exactInteriorDelaunaySigns,true);}
+ assert.equal(ref.allChecksPassed,true);assert.equal(ref.temperaturePDEVerified,false);assert.equal(ref.stiffnessVerified,false);assert.equal(ref.releaseApproved,false);
+});

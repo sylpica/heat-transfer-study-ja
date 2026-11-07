@@ -1,0 +1,55 @@
+{
+  "checkedAtUTC": "2026-11-06T08:10:52.538Z",
+  "sourceCommit": "fefc0bab4705aae10953c70dcdfa35251eec4585",
+  "runId": 42166693370,
+  "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42166693370",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 127724715527,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127724715781,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127724715858,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127724715868,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127724715936,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "earlierRuns": [
+    {
+      "sourceCommit": "abae261af7a812052fcba46232435a38f0476376",
+      "runId": 42163688856,
+      "conclusion": "cancelled"
+    },
+    {
+      "sourceCommit": "80d0bee5ade840dc4c09417417c05cdeabbdfd14",
+      "runId": 42164925216,
+      "conclusion": "cancelled"
+    }
+  ],
+  "cancellationCauseVerified": false,
+  "scope": "Exact source includes mixed-boundary core/UI, constrained RT0 kernel and physical-coordinate guard; before ccedb90 recovered-flux UI. No transfer of CI result to later HEAD.",
+  "releaseApproved": false,
+  "mainPublished": false
+}

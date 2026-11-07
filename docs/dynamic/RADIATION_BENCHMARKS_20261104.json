@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-04",
+  "scope": "Independently derived ideal enclosure equations; not a geometry solver or expert/real-device approval.",
+  "twoSurface": {
+    "analyticalW": 3594.5243056095646,
+    "numericalW": 3594.524305609565,
+    "absoluteErrorW": 4.547473508864641e-13,
+    "relativeLinearResidual": 0
+  },
+  "timeRefinement": {
+    "reference": "Independent RK4 of the two-body resistance formula, dt=0.0001 s, t=2 s",
+    "referenceHotK": 544.4595478689705,
+    "samples": [
+      {
+        "dt": 0.04,
+        "hotTemperature": 544.4602116093268,
+        "errorK": 0.0006637403563445332,
+        "energyErrorJ": -2.1827872842550278e-11
+      },
+      {
+        "dt": 0.02,
+        "hotTemperature": 544.4597132738289,
+        "errorK": 0.00016540485842142516,
+        "energyErrorJ": 7.275957614183426e-12
+      },
+      {
+        "dt": 0.01,
+        "hotTemperature": 544.4595891540412,
+        "errorK": 0.00004128507066525344,
+        "energyErrorJ": 8.003553375601768e-11
+      }
+    ],
+    "observedOrders": [
+      2.0046173835013708,
+      2.002309531568069
+    ]
+  },
+  "threeBlackFaces": {
+    "temperatureK": [
+      300,
+      400,
+      500
+    ],
+    "outwardW": [
+      -2038.4996036305,
+      -550.026318643,
+      2588.5259222735
+    ],
+    "sumOutwardW": 0,
+    "energyErrorJ": 0
+  },
+  "passed": true
+}

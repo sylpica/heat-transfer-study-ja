@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {createThermalWallCavity} from '../dynamic/dev/thermal-wall-cavity.mjs';import {thermalWallConfig} from '../dynamic/dev/thermal-wall-ui-config.mjs';import {sampleThermalWall,thermalWallFieldData} from '../dynamic/dev/thermal-wall-view.mjs';
+test('wall inspection distinguishes selected MAC location, adjacent FV mean and independent uniform wall, with no initial pressure claim',()=>{
+ const m=createThermalWallCavity(thermalWallConfig()),s=m.snapshot(),p=sampleThermalWall(s,m.mesh,[0,.4]);assert.equal(p.x,0);assert.equal(p.velocity[0],0);assert.equal(p.velocity[1],0);assert.ok(p.cellCenterX>0);assert.equal(p.temperatureK,300);assert.equal(p.wallTemperatureK,310);assert.equal(p.pressureStageMeanPa,null);assert.equal(thermalWallFieldData(s,m.mesh).pressure,null);assert.equal(p.interfaceRowPowerW,s.interfaceHeatW[3]);
+ m.step(m.safeDt/8);const next=m.snapshot(),q=sampleThermalWall(next,m.mesh,[.5,.5]);assert.equal(q.temperatureK,next.temperature[q.index]);assert.equal(q.pressureStageMeanPa,next.pressureStageMeanPa[q.index]);assert.ok(next.pressureStageDiagnostics.length>0);assert.ok(thermalWallFieldData(next,m.mesh).speed.some(x=>x>0));
+ for(const probe of [[0,0],[0,1],[1,0],[1,1],[.4,0],[1,.4]])assert.ok(sampleThermalWall(next,m.mesh,probe).velocity.every(x=>x===0));
+ assert.throws(()=>sampleThermalWall(next,m.mesh,[1.1,0]));assert.throws(()=>sampleThermalWall(next,m.mesh,[0,NaN]));
+});

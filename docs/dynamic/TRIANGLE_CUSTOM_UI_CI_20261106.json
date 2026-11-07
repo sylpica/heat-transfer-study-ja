@@ -1,0 +1,40 @@
+{
+  "checkedAtUTC": "2026-11-06T10:36:17.334Z",
+  "sourceCommit": "1a826c7b6017a3f34dab414da51766237682ffa2",
+  "runId": 42201256604,
+  "jobs": [
+    {
+      "id": 127836811697,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127836811976,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127836812041,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127836812075,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127836812107,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "allFiveJobsSuccessful": true,
+  "scope": "Custom convex linear boundary GUI and vertex selection fix at this SHA; not transferred to the later nonlinear surface transient",
+  "releaseApproved": false
+}

@@ -1,0 +1,34 @@
+// Development geometry prototype. No PDE or general termination guarantee.
+// Split encroached boundary segments at midpoints, then restore local Delaunay.
+import {createConvexTriangleMesh,trianglePhysicalFidelity} from './convex-triangle-mesh.mjs';
+import {orientation2D,inCircle2D,edgeCotangentDyadic} from './planar-predicates.mjs';
+const finite=(x,name,positive=false)=>{if(typeof x!=='number'||!Number.isFinite(x)||(positive&&x<=0))throw Error(`${name}が数値範囲外です。`);return x===0?0:x;};
+function sum(values){let s=0,error=0;for(const v of values){const y=v-error,t=s+y;error=(t-s)-y;s=t;}return finite(s,'面積合計');}
+const key=(a,b)=>a<b?`${a}:${b}`:`${b}:${a}`;
+export function createBoundaryRefinedTriangleMesh(input){
+ const base=createConvexTriangleMesh(input),nodes=structuredClone(base.nodes),triangles=base.elements.map(e=>e.nodes.slice()),boundary=new Map(base.edges.filter(e=>e.boundary).map(e=>[key(...e.nodes),e.outlineEdge])),origin=base.numerics.normalizationOrigin,scale=base.numerics.normalizationScale;let flips=0,splits=0,rounds=0;
+ const originalNodeCount=nodes.length,originalTriangleCount=triangles.length,normalizedSet=new Set(nodes.map(n=>n.normalized.join(','))),physicalSet=new Set(nodes.map(n=>n.point.join(',')));
+ function ccw(t){const s=orientation2D(...t.map(i=>nodes[i].normalized)).sign;if(s===0)throw Error('境界分割で正の要素を解像できません。');return s>0?t:[t[0],t[2],t[1]];}
+ function connectivity(){
+  const map=new Map();triangles.forEach((t,triangle)=>{for(let i=0;i<3;i++){const a=t[i],b=t[(i+1)%3],k=key(a,b);if(!map.has(k))map.set(k,[]);map.get(k).push({triangle,a,b,opposite:t[(i+2)%3]});}});
+  for(const [k,rows]of map)if(rows.length!==(boundary.has(k)?1:2))throw Error('境界分割後の隣接が一致しません。');for(const k of boundary.keys())if(!map.has(k))throw Error('元の境界区間が失われています。');return map;
+ }
+ function delaunay(){
+  const limit=100*triangles.length;let localFlips=0;
+  for(;;){const edges=connectivity();let changed=false;for(const [k,e]of edges){if(boundary.has(k))continue;const first=e[0],other=e[1],[a,b,c,d]=[first.a,first.b,first.opposite,other.opposite].map(i=>nodes[i].normalized);if(inCircle2D(a,b,c,d).sign<=0)continue;if(orientation2D(c,d,a).sign*orientation2D(c,d,b).sign>=0)throw Error('境界分割後の凸なDelaunay交換を解像できません。');if(edges.has(key(first.opposite,other.opposite)))throw Error('境界分割後に重複対角線があります。');triangles[first.triangle]=ccw([first.opposite,other.opposite,first.a]);triangles[other.triangle]=ccw([other.opposite,first.opposite,first.b]);flips++;if(++localFlips>limit)throw Error('境界分割後のDelaunay交換上限です。');changed=true;break;}if(!changed)return edges;}
+ }
+ let edges=delaunay();
+ for(;;){
+  const candidates=[];for(const [k,e]of edges){if(!boundary.has(k))continue;const a=e[0],cot=edgeCotangentDyadic(...[a.a,a.b,a.opposite].map(i=>nodes[i].normalized));if(cot.numerator.n<0n)candidates.push({key:k,face:boundary.get(k),...a});}
+  if(!candidates.length)break;if(++rounds>32)throw Error('境界分割が32段階までに完了しません。この角度の輪郭は未対応です。');if(nodes.length+candidates.length>600||triangles.length+candidates.length>1024)throw Error('正の境界係数を得るための分割が600節点/1024要素を超えます。初期分割数を下げてください。');
+  const replace=new Map();for(const e of candidates){if(replace.has(e.triangle))throw Error('1要素に複数の負の境界角があります。');const a=nodes[e.a].normalized,b=nodes[e.b].normalized,position=a.map((x,k)=>finite(x/2+b[k]/2,'境界中点')),point=position.map((x,k)=>finite(origin[k]+x*scale,'物理境界中点'));if(normalizedSet.has(position.join(','))||physicalSet.has(point.join(',')))throw Error('境界中点を物理座標/正規化座標で区別できません。原点/分割を変更してください。');const id=nodes.length;nodes.push({id,stableId:`boundary-refinement:${e.face}:${rounds}:${e.a}:${e.b}`,normalized:position,point,boundary:true});normalizedSet.add(position.join(','));physicalSet.add(point.join(','));boundary.delete(e.key);boundary.set(key(e.a,id),e.face);boundary.set(key(id,e.b),e.face);replace.set(e.triangle,[ccw([e.a,id,e.opposite]),ccw([id,e.b,e.opposite])]);splits++;}
+  const next=[];triangles.forEach((t,i)=>next.push(...(replace.get(i)??[t])));triangles.splice(0,triangles.length,...next);edges=delaunay();
+ }
+ const elements=triangles.map((t,id)=>{const [a,b,c]=t.map(i=>nodes[i].normalized),twice=finite((b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]),'分割要素の面積',true),area=finite(twice/2*scale*scale,'物理要素面積',true),sides=[Math.hypot(a[0]-b[0],a[1]-b[1]),Math.hypot(b[0]-c[0],b[1]-c[1]),Math.hypot(c[0]-a[0],c[1]-a[1])],quality=finite(2*Math.sqrt(3)*twice/sides.reduce((s,x)=>s+x*x,0),'要素品質',true);if(orientation2D(...t.map(i=>nodes[i].point)).sign<=0)throw Error('境界分割後の物理要素を解像できません。');return {id,nodes:t.slice(),area,normalizedTwiceArea:twice,quality};}),area=sum(elements.map(t=>t.area)),areaResidual=finite(area-base.numerics.referencePolygonArea,'境界分割による面積差');if(Math.abs(areaResidual)>4096*Number.EPSILON*base.numerics.referencePolygonArea)throw Error('境界分割後の面積が元の輪郭に一致しません。');
+ const count=base.outline.map(()=>0),output=[];let negativeBoundary=0;
+ for(const [k,rows]of edges){const a=rows[0],isBoundary=boundary.has(k);if(isBoundary){count[boundary.get(k)]++;if(edgeCotangentDyadic(...[a.a,a.b,a.opposite].map(i=>nodes[i].normalized)).numerator.n<0n)negativeBoundary++;}output.push({nodes:[a.a,a.b],triangles:rows.map(v=>v.triangle),oppositeNodes:rows.map(v=>v.opposite),boundary:isBoundary,outlineEdge:isBoundary?boundary.get(k):null,exactlyCocircular:rows.length===2?inCircle2D(...triangles[a.triangle].map(i=>nodes[i].normalized),nodes[rows[1].opposite].normalized).sign===0:false});}
+ if(negativeBoundary||nodes.length-output.length+elements.length!==1)throw Error('境界分割後の係数/円板位相を検証できません。');
+ const maximumLineResidual=Math.max(...nodes.filter(n=>n.boundary).map(n=>Math.min(...base.outline.map((a,i)=>{const b=base.outline[(i+1)%base.outline.length],u=a.map((x,k)=>(x-origin[k])/scale),v=b.map((x,k)=>(x-origin[k])/scale);return Math.abs((v[0]-u[0])*(n.normalized[1]-u[1])-(v[1]-u[1])*(n.normalized[0]-u[0]))/Math.hypot(v[0]-u[0],v[1]-u[1]);}))));
+ if(maximumLineResidual>4096*Number.EPSILON)throw Error('分割境界が元の輪郭線から丸め予算を超えて離れています。');
+ return {...base,generator:'convex-boundary-refined-delaunay-development-v1',nodes,elements,edges:output,numerics:{...base.numerics,area,areaResidual,minimumTriangleQuality:Math.min(...elements.map(e=>e.quality)),boundaryRefinement:{rounds,splits,additionalFlips:flips,originalNodeCount,originalTriangleCount,boundarySegmentCountByOutlineEdge:count,negativeBoundaryConductanceCount:0},maximumNormalizedBoundaryLineResidual:maximumLineResidual,...trianglePhysicalFidelity(nodes,elements,origin,scale)},scope:{...base.scope,allBoundaryCotangentsNonnegative:true,temperaturePDEImplemented:false,generalTerminationProved:false,generalAccuracyVerified:false},releaseApproved:false};
+}

@@ -1,0 +1,135 @@
+{
+  "generatedAtUTC": "2026-11-04T16:58:16.225Z",
+  "sourceCommit": "a49ceb6257fda6b31b68b95e6aa607a7e5d1e70e",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7d6da6a6bc8dcff86c5e72de670c572ff4a7d643f10564df6701fd8277a78e4b",
+    "dynamic/dev/manufactured-cavity.mjs": "0428e9e4ff6cf72d93b7beb6949fdce6ee78403c00eb6d72dfa42778f589f81d",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-cavity-time-benchmarks.mjs": "d80ef05849058ffda893e3deb5370020e2c518260c81ffa6a0e3a4f3530d8331"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "stage": "fixed_grid_temporal_code_verification_only",
+  "releaseApproved": false,
+  "method": "Four fixed-grid runs with dt, dt/2, dt/4, dt/8 to the same physical time. Full-field successive differences, not the spatially contaminated continuum error, estimate first-order temporal self-convergence. Pressure is the latest projection gauge at each run; no claim of higher pressure accuracy.",
+  "n": 32,
+  "end": 0.025,
+  "samples": [
+    {
+      "steps": 256,
+      "dt": 0.00009765625,
+      "time": 0.02500000000000009,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 7.105553328340918e-14,
+      "totalPressureIterations": 2059,
+      "elapsedMs": 1723.369073
+    },
+    {
+      "steps": 512,
+      "dt": 0.000048828125,
+      "time": 0.025000000000000223,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 4.612678088203618e-14,
+      "totalPressureIterations": 4089,
+      "elapsedMs": 3351.1524869999994
+    },
+    {
+      "steps": 1024,
+      "dt": 0.0000244140625,
+      "time": 0.024999999999999623,
+      "divergence": 1.7763568394002505e-14,
+      "energyErrorJ": 2.0852447254403024e-14,
+      "totalPressureIterations": 7524,
+      "elapsedMs": 6240.2106380000005
+    },
+    {
+      "steps": 2048,
+      "dt": 0.00001220703125,
+      "time": 0.024999999999999103,
+      "divergence": 1.4210854715202004e-14,
+      "energyErrorJ": 7.458069912142436e-14,
+      "totalPressureIterations": 14549,
+      "elapsedMs": 12540.061512999999
+    }
+  ],
+  "differences": [
+    {
+      "u": {
+        "rms": 0.0000015319892340657723,
+        "max": 0.0000035089333558779856
+      },
+      "v": {
+        "rms": 0.0000015319892340872427,
+        "max": 0.0000035089333558779856
+      },
+      "pressure": {
+        "rms": 0.00000900722409740496,
+        "max": 0.000028665991696985582
+      },
+      "temperature": {
+        "rms": 0.000003428490390083793,
+        "max": 0.000007334636109135317
+      }
+    },
+    {
+      "u": {
+        "rms": 7.649188392102845e-7,
+        "max": 0.0000017520732571441044
+      },
+      "v": {
+        "rms": 7.649188392070321e-7,
+        "max": 0.0000017520732567000152
+      },
+      "pressure": {
+        "rms": 0.000004500593399529166,
+        "max": 0.000014323930471737967
+      },
+      "temperature": {
+        "rms": 0.000001713604192548047,
+        "max": 0.0000036656794577538676
+      }
+    },
+    {
+      "u": {
+        "rms": 3.8219097226089545e-7,
+        "max": 8.754394800192244e-7
+      },
+      "v": {
+        "rms": 3.8219097227031176e-7,
+        "max": 8.754394804633137e-7
+      },
+      "pressure": {
+        "rms": 0.000002249543100695781,
+        "max": 0.000007159702618442232
+      },
+      "temperature": {
+        "rms": 8.566418370877262e-7,
+        "max": 0.0000018324299730920757
+      }
+    }
+  ],
+  "observedOrders": {
+    "u": [
+      1.002027573249023,
+      1.001012979715477
+    ],
+    "v": [
+      1.002027573275376,
+      1.001012979673798
+    ],
+    "pressure": [
+      1.0009673236313226,
+      1.000483223269163
+    ],
+    "temperature": [
+      1.000539563455268,
+      1.000269871840567
+    ]
+  },
+  "passed": true,
+  "elapsedMs": 23977.687773999998
+}

@@ -1,0 +1,44 @@
+{
+  "checkedAtUTC": "2026-11-06T09:48:57.460Z",
+  "sourceCommit": "ccedb9025b93586a2264bd2a8e87e26d3e878c64",
+  "runId": 42185670153,
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 127785287801,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127785288067,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127785288101,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127785288156,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127785288252,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "scope": "Mixed-boundary RT0 UI at this commit only; not transferred to newer boundary-refined or coordinate-fidelity changes",
+  "latestNumericalCommit": "c4d19cb5cf6ae433065de2c03d6381ba27b15b63",
+  "latestRunId": 42194150336,
+  "latestRunStatusWhenChecked": "in_progress",
+  "releaseApproved": false
+}

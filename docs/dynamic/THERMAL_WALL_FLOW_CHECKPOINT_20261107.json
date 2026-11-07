@@ -1,0 +1,254 @@
+{
+  "recordedAtUTC": "2026-11-07T02:26:08.085325+00:00",
+  "planCommit": "dae3b5d",
+  "actualDriverCommit": "e022a13",
+  "results": [
+    {
+      "grid": 16,
+      "sourceCommit": "e022a1395f72b5c323ba077be730e4cc485c2a7e",
+      "steady": true,
+      "integrityPassed": true,
+      "allFineObjectivesPassed": false,
+      "checks": {
+        "wallNu": false,
+        "localNuMaximum": false,
+        "uMaximum": true,
+        "vMaximum": false,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true
+      },
+      "last": {
+        "timeS": 1,
+        "steps": 4264,
+        "maximumDifferenceFromPrevious": {
+          "intervalS": 0.25,
+          "u": 3.1069502526293036e-09,
+          "v": 3.125703251782852e-09,
+          "temperature": 2.160894241320932e-10,
+          "wall": 0
+        },
+        "wallNu0": 1.1263186929160562,
+        "wallNuDifference": 0.009318692916056248,
+        "localNuMaximum": 1.5415278739746263,
+        "localNuMaximumDifference": 0.036527873974626424,
+        "uMaximum": {
+          "value": 3.6387426523722715,
+          "position": 0.84375
+        },
+        "vMaximum": {
+          "value": 3.71934433292766,
+          "position": 0.15625
+        },
+        "uMaximumValueDifference": -0.010257347627728564,
+        "vMaximumValueDifference": 0.022344332927660027,
+        "uMaximumPositionDifference": 0.030750000000000055,
+        "vMaximumPositionDifference": -0.02174999999999999,
+        "maximumCellPeclet": 0.23245902080797964,
+        "maximumEffectiveRa": 1000,
+        "divergencePerS": 3.526068326209497e-13,
+        "threeEnergyErrorJ": {
+          "fluid": -1.7433970933566911e-16,
+          "wall": 0,
+          "total": -1.3082132188092531e-16
+        },
+        "energyRoundoffBudgetJ": 9.920197588115756e-11,
+        "wallTemperatureExactlyFixed": true,
+        "controllerAndInterfaceIntegralsExactlyEqual": true
+      },
+      "elapsedSecondsThisExecution": 6.518149459
+    },
+    {
+      "grid": 32,
+      "sourceCommit": "e022a1395f72b5c323ba077be730e4cc485c2a7e",
+      "steady": true,
+      "integrityPassed": true,
+      "allFineObjectivesPassed": false,
+      "checks": {
+        "wallNu": false,
+        "localNuMaximum": false,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true
+      },
+      "last": {
+        "timeS": 1,
+        "steps": 14543,
+        "maximumDifferenceFromPrevious": {
+          "intervalS": 0.25,
+          "u": 1.8420660552465051e-09,
+          "v": 1.8736088236437354e-09,
+          "temperature": 1.8926105127547999e-10,
+          "wall": 0
+        },
+        "wallNu0": 1.119942764423814,
+        "wallNuDifference": 0.002942764423814026,
+        "localNuMaximum": 1.515193544410927,
+        "localNuMaximumDifference": 0.010193544410927124,
+        "uMaximum": {
+          "value": 3.6468476777279744,
+          "position": 0.828125
+        },
+        "vMaximum": {
+          "value": 3.7075124701090045,
+          "position": 0.171875
+        },
+        "uMaximumValueDifference": -0.002152322272025664,
+        "vMaximumValueDifference": 0.010512470109004468,
+        "uMaximumPositionDifference": 0.015125000000000055,
+        "vMaximumPositionDifference": -0.0061249999999999916,
+        "maximumCellPeclet": 0.1158597646909068,
+        "maximumEffectiveRa": 1000,
+        "divergencePerS": 1.0302869668521453e-13,
+        "threeEnergyErrorJ": {
+          "fluid": 3.5231149594916467e-16,
+          "wall": 0,
+          "total": 2.471118172665341e-16
+        },
+        "energyRoundoffBudgetJ": 1.8149667415416e-10,
+        "wallTemperatureExactlyFixed": true,
+        "controllerAndInterfaceIntegralsExactlyEqual": true
+      },
+      "elapsedSecondsThisExecution": 81.167633426
+    },
+    {
+      "grid": 64,
+      "sourceCommit": "f9bdfef2a2eecaf1dd44a30cb9c86e9b6f045f8d",
+      "steady": true,
+      "integrityPassed": true,
+      "allFineObjectivesPassed": true,
+      "checks": {
+        "wallNu": true,
+        "localNuMaximum": true,
+        "uMaximum": true,
+        "vMaximum": true,
+        "uMaximumPosition": true,
+        "vMaximumPosition": true
+      },
+      "last": {
+        "timeS": 1,
+        "steps": 58164,
+        "maximumDifferenceFromPrevious": {
+          "intervalS": 0.25,
+          "u": 1.4772552070496658e-09,
+          "v": 1.506176960930361e-09,
+          "temperature": 1.72874714543525e-10,
+          "wall": 0
+        },
+        "wallNu0": 1.1183294126971617,
+        "wallNuDifference": 0.0013294126971616915,
+        "localNuMaximum": 1.5085833185898565,
+        "localNuMaximumDifference": 0.00358331858985661,
+        "uMaximum": {
+          "value": 3.6490767857408035,
+          "position": 0.8203125
+        },
+        "vMaximum": {
+          "value": 3.700380952762935,
+          "position": 0.1796875
+        },
+        "uMaximumValueDifference": 7.678574080349776e-05,
+        "vMaximumValueDifference": 0.003380952762935152,
+        "uMaximumPositionDifference": 0.007312500000000055,
+        "vMaximumPositionDifference": 0.0016875000000000084,
+        "maximumCellPeclet": 0.05786730677391687,
+        "maximumEffectiveRa": 1000,
+        "divergencePerS": 1.1368683772161603e-13,
+        "threeEnergyErrorJ": {
+          "fluid": -1.0802272162706295e-14,
+          "wall": 0,
+          "total": -1.0852081708392778e-14
+        },
+        "energyRoundoffBudgetJ": 3.6125293168188596e-10,
+        "wallTemperatureExactlyFixed": true,
+        "controllerAndInterfaceIntegralsExactlyEqual": true
+      },
+      "elapsedSecondsThisExecution": 1169.3385432419998
+    }
+  ],
+  "sourceFilesSHA256": {
+    "dynamic/dev/thermal-wall-cavity.mjs": "1e884c200d9e58b139e1637f884d2d1f589c62726fef0d5b5c82bd134b0acf23",
+    "dynamic/dev/cavity.mjs": "0ed223dfa2e8f36735f15fed92380e514f08a26ddfda7227f9f8ae283cc9373e",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-thermal-wall-flow-grid.mjs": "25e4f83977a0a87fafbcb49e6bca5bdc5b0a73bfa715c814478b175f97f49e0f",
+    "scripts/dynamic-provided-cfd-check.mjs": "be6370400f8a7cab18e689a6189f1d1e7bf48c5699f8de63c60bbdf7b5f5416c"
+  },
+  "flowGridTestSHA256": "9be83194256259c153d24e080f8f31250cbc25653a8720b84053e98aaa295b22",
+  "NuGridOrder": 1.9825744546171902,
+  "RichardsonExtrapolatedNuNotExactTruth": 1.1177828800275575,
+  "nativeCenterlineExtremaNotContinuousSubgrid": true,
+  "wholeVelocityFieldReferenceNormVerified": false,
+  "localNode": {
+    "total": 1497,
+    "pass": 1492,
+    "skip": 5,
+    "fail": 0,
+    "durationMs": 113199.068386,
+    "log": "work/thermal-wall-flow-full-node-20261107.log",
+    "sequential": true
+  },
+  "publicBuild": {
+    "passed": true,
+    "log": "work/thermal-wall-flow-public-build-20261107.log",
+    "devPresent": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cache": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "earlierCommitCI": {
+    "headSHA": "f9bdfef2a2eecaf1dd44a30cb9c86e9b6f045f8d",
+    "runId": 42326920701,
+    "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42326920701",
+    "event": "pull_request",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 128264315939,
+        "name": "cfd-development-benchmarks",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAtUTC": "2026-11-07T01:59:53Z",
+        "completedAtUTC": "2026-11-07T02:16:17Z"
+      },
+      {
+        "id": 128264316140,
+        "name": "browser (webkit)",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAtUTC": "2026-11-07T01:59:52Z",
+        "completedAtUTC": "2026-11-07T02:06:21Z"
+      },
+      {
+        "id": 128264316234,
+        "name": "browser (chromium)",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAtUTC": "2026-11-07T01:59:53Z",
+        "completedAtUTC": "2026-11-07T02:03:43Z"
+      },
+      {
+        "id": 128264316266,
+        "name": "high-order-manufactured-verification",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAtUTC": "2026-11-07T01:59:52Z",
+        "completedAtUTC": "2026-11-07T02:01:26Z"
+      },
+      {
+        "id": 128264316288,
+        "name": "numerical-and-regression",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAtUTC": "2026-11-07T01:59:53Z",
+        "completedAtUTC": "2026-11-07T02:01:11Z"
+      }
+    ],
+    "includesNewN64FixtureAndTest": false
+  },
+  "limitedThermostatCentralRa1000SpatialBenchmarkVerified": true,
+  "finiteUpwindTimeAndThermalSpaceVerifiedSeparately": true,
+  "finiteCentralTimeReferenceVerified": false,
+  "GUIVerified": false,
+  "generalConjugateCFDApproved": false,
+  "realDeviceVerified": false,
+  "releaseApproved": false
+}

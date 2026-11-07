@@ -1,0 +1,307 @@
+{
+  "recordedAtUTC": "2026-11-04T22:18:57.137890+00:00",
+  "sourceBaseCommit": "9f80b12efb8e1d5edbebc13d8dd60460ccaa5c9f",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "app.js": "4f5cb6cbcd5ec4d34df205025c5bf1d00911cef617c96ec226ec888c21019deb",
+    "lesson-diagrams.mjs": "b89695e292215d606ab5c03cf274e70c4e7d119e51371435882399a6584db073",
+    "dynamic-navigation.mjs": "24a4340348fd67b0c72bfd485bcafdb2a6c5c8c7bc4082f49978ee4ad687954b",
+    "dynamic/radial.mjs": "e118c7fe7a671646814e3659d2f4216259c15d8df8c5005d4bee00877cf6e901",
+    "dynamic/radial-ui.mjs": "7ccc56e006df48f04c56a719a6ea60c76196439a879e26d997437bb7b9f8a05c",
+    "dynamic/radial-view.mjs": "9408fb747e49f93342ba7d0183f7fcc807077467b5619254eced8b9470ff4b39",
+    "dynamic/radial.html": "af555419941fd575f6f77b2a94272eeaa0b0a1cebda49f638e91b342892fdf1b",
+    "dynamic/radial.css": "23024085c5bc853866bccd83da2694611139e3a856e3756e32b3e0f2bd7b6e68",
+    "dynamic/worker.mjs": "1057be25bad2281858b1aa20b172c0fd465852f3f88f909e2ad6daf722bffd32",
+    "dynamic/trace-plot.mjs": "f386f2c52448f16586b2e3dc602482b642a8c3e862a4c8356ba045109848d3a4",
+    "dynamic/navigation-context.mjs": "149491243dbd75ecdd3bc5013ca509c207bba989eb16272b1929b0ca5f4a2b33",
+    "dynamic/channel-ui.mjs": "98037f7c60cad5fb6e419c7b487f3e7f4bbf34634e7c050bdf274be4a505f650",
+    "dynamic/radiation-ui.mjs": "fa0d545b06ef0434ea8bab50eafc27d3c7e35adb9d585f1da6f72a1c34f9792a",
+    "scripts/build-public-site.mjs": "b78e3a5fd9f337ca48b6388d078d1a25b431705af331eee9f14dffd50f889b95",
+    "sw.js": "3e4c2b7c5f1d8b1b0e1907515175ec70d41b043352dc3cd54ba6621e02897699",
+    "tests/dynamic-radial-browser.mjs": "6489b83137c1faa77743a751c81661b78f49d2105d8eeaf482dd9e7e59a8d270",
+    "tests/dynamic-navigation-browser.mjs": "2acb6996c5b14f5800b9764c4db169b72f4ce1aa293a3e02bd8ba3579a664e17",
+    "tests/lesson-diagrams-integration.test.mjs": "f98474000cafdaa9abf7f9c7adbd17b49eba81b98117e062ea2ca31306acf687",
+    ".github/workflows/dynamic-simulation.yml": "859f8f58598f687358a2df2f42fbad8206d10b18fe11f16fe8b761d46bca548c"
+  },
+  "publicFilesSHA256": {
+    "app.js": "4f5cb6cbcd5ec4d34df205025c5bf1d00911cef617c96ec226ec888c21019deb",
+    "lesson-diagrams.mjs": "b89695e292215d606ab5c03cf274e70c4e7d119e51371435882399a6584db073",
+    "dynamic/radial.mjs": "e118c7fe7a671646814e3659d2f4216259c15d8df8c5005d4bee00877cf6e901",
+    "dynamic/radial-ui.mjs": "7ccc56e006df48f04c56a719a6ea60c76196439a879e26d997437bb7b9f8a05c",
+    "dynamic/worker.mjs": "1057be25bad2281858b1aa20b172c0fd465852f3f88f909e2ad6daf722bffd32",
+    "sw.js": "85046f8091510b15ca4d81fd55e652a83e5c16b7cdf5a6aa662a1ce97aefcb87"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)",
+    "playwright": "1.56.1",
+    "webkit": "26.0, build 2215, Debian 13 WPE headless",
+    "webkitLibraries": "Official signed Debian trixie packages extracted under ignored work/ and linked into user-owned Playwright cache. No system package installation/root permission changes. Runtime rendered a probe and the full tests.",
+    "webkitHostValidation": "Local ldconfig does not list the user libraries: PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1 bypasses that host-availability probe only; actual browser execution/assertions are not skipped. CI retains its normal install/host checks."
+  },
+  "node": {
+    "total": 1180,
+    "passed": 1175,
+    "skipped": 5,
+    "failed": 0
+  },
+  "buildPublic": true,
+  "chromium": {
+    "radial": {
+      "engine": "chromium",
+      "radialOneDimensional": true,
+      "independentSphereVolumeMean": true,
+      "independentShellTemperatures": true,
+      "cylinderLengthInvariant": true,
+      "sourceBalance": true,
+      "radiationSign": true,
+      "initialBoundaryFlux": true,
+      "sharedPhysicalRadiusScale": true,
+      "profilePhysicalRadius": true,
+      "rewindExact": true,
+      "invalidConditionsAndDtRejected": true,
+      "invalidColorBoundsDoNotAdvance": true,
+      "workerCancelRollback": true,
+      "keyboardTerms": true,
+      "probeDrag": true,
+      "offline": true,
+      "offlineMethod": "browser_offline",
+      "mobileCells": 32,
+      "pageErrors": 0,
+      "passed": true
+    },
+    "navigation": {
+      "engine": "chromium",
+      "pagesBasePath": true,
+      "readerDeepLinks": true,
+      "lazyDiagramDecodeDuringClick": true,
+      "lessonToExperiment": true,
+      "allFourModelSourceContexts": true,
+      "answeredQuestionToFinConditions": true,
+      "quizHistoryUnchanged": true,
+      "unknownCaseFallback": true,
+      "firstVisitQueryOffline": true,
+      "offlineMethod": "browser_offline",
+      "pageErrors": 0,
+      "passed": true
+    },
+    "thermal": {
+      "engine": "chromium",
+      "learningTutorial": true,
+      "predictionReflection": true,
+      "worker": true,
+      "presets": 4,
+      "termPanel": true,
+      "cancelRollsBack": true,
+      "fin3DMapping": true,
+      "boilingSchematic": true,
+      "rewind": true,
+      "comparison": true,
+      "unstableStepRejected": true,
+      "temperatureDependentHeatCapacity": true,
+      "contoursAndGrid": true,
+      "physicalCrossSections": true,
+      "circleAndFreeDraw": true,
+      "offline": true,
+      "offlineMethod": "browser_offline",
+      "viewports": [
+        390,
+        412,
+        1280
+      ],
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "pageErrors": 0,
+      "passed": true
+    },
+    "radiation": {
+      "engine": "chromium",
+      "model": "closed_diffuse_gray_radiation",
+      "independentTwoSurfaceWatts": true,
+      "threeSurface": true,
+      "fourSurface": true,
+      "comparison": true,
+      "rewind": true,
+      "invalidViewFactorsRejected": true,
+      "invalidStepAtomic": true,
+      "workerLoadFailureHandled": true,
+      "termPanelAndRelatedTerms": true,
+      "offline": true,
+      "offlineMethod": "browser_offline",
+      "viewports": [
+        390,
+        412,
+        1280
+      ],
+      "pageErrors": 0,
+      "passed": true
+    },
+    "channel": {
+      "engine": "chromium",
+      "scope": "1D developed momentum + periodic 2D temperature, not general CFD",
+      "poiseuilleIndependentFormula": true,
+      "heatAndMomentumConserved": true,
+      "thermalTransportDirection": true,
+      "comparison": true,
+      "rewind": true,
+      "zeroDrive": true,
+      "invalidReAndStepRejected": true,
+      "keyboardTerms": true,
+      "mobileDefaultMesh": [
+        32,
+        12
+      ],
+      "offline": true,
+      "offlineMethod": "browser_offline",
+      "pageErrors": 0,
+      "passed": true
+    }
+  },
+  "webkit": {
+    "radial": {
+      "engine": "webkit",
+      "radialOneDimensional": true,
+      "independentSphereVolumeMean": true,
+      "independentShellTemperatures": true,
+      "cylinderLengthInvariant": true,
+      "sourceBalance": true,
+      "radiationSign": true,
+      "initialBoundaryFlux": true,
+      "sharedPhysicalRadiusScale": true,
+      "profilePhysicalRadius": true,
+      "rewindExact": true,
+      "invalidConditionsAndDtRejected": true,
+      "invalidColorBoundsDoNotAdvance": true,
+      "workerCancelRollback": true,
+      "keyboardTerms": true,
+      "probeDrag": true,
+      "offline": true,
+      "offlineMethod": "server_unavailable_SW_fallback",
+      "mobileCells": 32,
+      "pageErrors": 0,
+      "passed": true
+    },
+    "navigation": {
+      "engine": "webkit",
+      "pagesBasePath": true,
+      "readerDeepLinks": true,
+      "lazyDiagramDecodeDuringClick": true,
+      "lessonToExperiment": true,
+      "allFourModelSourceContexts": true,
+      "answeredQuestionToFinConditions": true,
+      "quizHistoryUnchanged": true,
+      "unknownCaseFallback": true,
+      "firstVisitQueryOffline": true,
+      "offlineMethod": "server_unavailable_SW_fallback",
+      "pageErrors": 0,
+      "passed": true
+    },
+    "thermal": {
+      "engine": "webkit",
+      "learningTutorial": true,
+      "predictionReflection": true,
+      "worker": true,
+      "presets": 4,
+      "termPanel": true,
+      "cancelRollsBack": true,
+      "fin3DMapping": true,
+      "boilingSchematic": true,
+      "rewind": true,
+      "comparison": true,
+      "unstableStepRejected": true,
+      "temperatureDependentHeatCapacity": true,
+      "contoursAndGrid": true,
+      "physicalCrossSections": true,
+      "circleAndFreeDraw": true,
+      "offline": true,
+      "offlineMethod": "server_unavailable_SW_fallback",
+      "viewports": [
+        390,
+        412,
+        1280
+      ],
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "pageErrors": 0,
+      "passed": true
+    },
+    "radiation": {
+      "engine": "webkit",
+      "model": "closed_diffuse_gray_radiation",
+      "independentTwoSurfaceWatts": true,
+      "threeSurface": true,
+      "fourSurface": true,
+      "comparison": true,
+      "rewind": true,
+      "invalidViewFactorsRejected": true,
+      "invalidStepAtomic": true,
+      "workerLoadFailureHandled": true,
+      "termPanelAndRelatedTerms": true,
+      "offline": true,
+      "offlineMethod": "server_unavailable_SW_fallback",
+      "viewports": [
+        390,
+        412,
+        1280
+      ],
+      "pageErrors": 0,
+      "passed": true
+    },
+    "channel": {
+      "engine": "webkit",
+      "scope": "1D developed momentum + periodic 2D temperature, not general CFD",
+      "poiseuilleIndependentFormula": true,
+      "heatAndMomentumConserved": true,
+      "thermalTransportDirection": true,
+      "comparison": true,
+      "rewind": true,
+      "zeroDrive": true,
+      "invalidReAndStepRejected": true,
+      "keyboardTerms": true,
+      "mobileDefaultMesh": [
+        32,
+        12
+      ],
+      "offline": true,
+      "offlineMethod": "server_unavailable_SW_fallback",
+      "pageErrors": 0,
+      "passed": true
+    }
+  },
+  "scope": "Final radial/navigation tests include quantized probe and delayed-image layout fix. Existing three Chromium dynamic regressions precede the unrelated reader-image dimension change; all three WebKit regressions include it.",
+  "rootChromiumRegression": {
+    "passed": true,
+    "command": "npm run test:browser:public",
+    "lessonsDisplayed": 76,
+    "checkedProblemsExercised": 444,
+    "scope": "Same exact public source/build hashes recorded in this checkpoint. Completed after the original checkpoint was saved."
+  },
+  "earlierFailure": {
+    "ci": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/41917404491",
+    "source": "9f80b12",
+    "failedJob": "WebKit navigation popup wait",
+    "actualLocalEvidence": "Trusted pointerdown hit the lesson link; pointerup hit the newly decoded lazy SVG at the same coordinates, without scrolling. Reserve the exact width/height of all 76 SVGs; a delayed decode during pointerdown/up now leaves the link within 1 pixel and opens the popup."
+  },
+  "notVerified": [
+    "This changed source on CI until its own jobs finish",
+    "Real iPhone/Android/assistive technologies",
+    "New version at live public URL",
+    "External expert/engineering approval"
+  ],
+  "mainPublished": false,
+  "cleanCIRun": {
+    "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/41924185234",
+    "sourceCommit": "26202e49706405228b7f97b23b4f805acbf1abca",
+    "jobs": {
+      "numerical-and-regression": "success",
+      "browser-chromium": "success",
+      "browser-webkit": "success",
+      "cfd-development-benchmarks": "success"
+    },
+    "scope": "This saved UI source. Does not certify subsequent pressure-sensitivity changes or live publication."
+  }
+}

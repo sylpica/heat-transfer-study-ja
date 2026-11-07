@@ -1,0 +1,69 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T21:49:18.101599+00:00",
+  "baseSourceCommit": "dbf6961bc94f2ad9b8a5f4c8e4f25187d136ea97",
+  "sourceTreeDirty": true,
+  "operationPolicy": "Owner withdrew sub-agent delegation. Running agents interrupted, pending agent instructed not to execute. Root continues sequentially without new delegation.",
+  "sourceFilesSHA256": {
+    "dynamic/dev/cut-cell-flux.mjs": "02d344c55ac211b5483c3964121f6d7d6fef9424a2c524c64cfceeb1f2394946",
+    "tests/dynamic-cut-cell-field-flux.test.mjs": "b2cde58818670145ba303fab290630f46cb14c9213d3566a1fe5d5cf41aa0579",
+    "tests/dynamic-cut-cell-flux.test.mjs": "2f1dd28e64d297c1ad2ce5353daa774330f6d4041963cfe40a7ab554f3490655"
+  },
+  "node": {
+    "tests": 1309,
+    "pass": 1304,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "relatedNodeTests": 10,
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "affineFluxPatch": {
+        "twoPointMaximumFaceErrorW": 0.1666553474278421,
+        "correctedMaximumFaceErrorW": 8.022922604045135e-14,
+        "correctedCellImbalanceW": 1.2323475573339238e-13,
+        "temperaturePDEImplemented": false
+      },
+      "heatEquationSolved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "affineFluxPatch": {
+        "twoPointMaximumFaceErrorW": 0.16665534742784208,
+        "correctedMaximumFaceErrorW": 8.022749131697537e-14,
+        "correctedCellImbalanceW": 1.2323475573339238e-13,
+        "temperaturePDEImplemented": false
+      },
+      "heatEquationSolved": false,
+      "passed": true
+    }
+  },
+  "browsersRunSequentially": true,
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "developmentModulesExcluded": true,
+  "newAPI": "evaluateCutCellFlux numeric data only; no steady or transient PDE solver",
+  "releaseApproved": false,
+  "mainPublished": false
+}

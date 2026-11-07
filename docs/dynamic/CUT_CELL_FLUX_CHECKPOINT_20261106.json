@@ -1,0 +1,81 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T21:40:30.721913+00:00",
+  "baseSourceCommit": "ddaa95abd497ae535b3220fba753d94a3b73d346",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cut-cell-flux.mjs": "37fd1aac843d5a06c173cc95abdfed01924584231dfada74a11e38a9bd54e5d0",
+    "dynamic/dev/cut-cell-geometry.mjs": "1d2979be3cf665c4730f1e7ed78aa63b61ad0c9f60ca3d41d771001e84c68e76",
+    "tests/dynamic-cut-cell-flux.test.mjs": "2f1dd28e64d297c1ad2ce5353daa774330f6d4041963cfe40a7ab554f3490655",
+    "tests/dynamic-cut-cell-browser.mjs": "bced6019c95c60f3b18a8cd12c20692bb7c5ad1a5e405a5bf3c70f4f42f5b43d"
+  },
+  "relatedNodeTests": {
+    "tests": 7,
+    "pass": 7,
+    "fail": 0
+  },
+  "fullNode": {
+    "tests": 1306,
+    "pass": 1301,
+    "skip": 5,
+    "fail": 0
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "affineFluxPatch": {
+        "twoPointMaximumFaceErrorW": 0.1666553474278421,
+        "correctedMaximumFaceErrorW": 8.022922604045135e-14,
+        "correctedCellImbalanceW": 1.2323475573339238e-13,
+        "temperaturePDEImplemented": false
+      },
+      "heatEquationSolved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticRegularPolygons": 40,
+      "maximumAreaError": 5.551115123125783e-17,
+      "maximumPerimeterError": 4.440892098500626e-16,
+      "subnormalArea": 4.74832495e-316,
+      "minPositiveArea": 5e-324,
+      "overflowRejected": true,
+      "concaveRejected": true,
+      "affineFluxPatch": {
+        "twoPointMaximumFaceErrorW": 0.16665534742784208,
+        "correctedMaximumFaceErrorW": 8.022749131697537e-14,
+        "correctedCellImbalanceW": 1.2323475573339238e-13,
+        "temperaturePDEImplemented": false
+      },
+      "heatEquationSolved": false,
+      "passed": true
+    }
+  },
+  "browserScope": "Fresh isolated kernel compatibility in both engines; not application UI/offline/real devices.",
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "cacheName": "heat-study-ja-app-fcf92666638c0ebb",
+  "developmentModulesExcluded": true,
+  "scope": {
+    "affinePatchOnly": true,
+    "temperaturePDEImplemented": false,
+    "symmetryVerified": false,
+    "positivityVerified": false,
+    "cflVerified": false,
+    "secondOrderGeneralAccuracyVerified": false
+  },
+  "currentCI": "pending commit/push",
+  "releaseApproved": false,
+  "mainPublished": false
+}

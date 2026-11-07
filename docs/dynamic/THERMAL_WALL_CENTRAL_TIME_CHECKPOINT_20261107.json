@@ -1,0 +1,78 @@
+{
+  "recordedAtUTC": "2026-11-07T02:34:22.956227+00:00",
+  "parentCommit": "55ab325",
+  "criteriaDeclaredAtCommit": "55ab325",
+  "allCentralNumericalChecksPassed": true,
+  "relatedNode": {
+    "tests": 9,
+    "pass": 9,
+    "fail": 0
+  },
+  "actualWorkerResults": {
+    "chromium": {
+      "engine": "chromium",
+      "actualWorker": true,
+      "independentTimeCases": 5,
+      "centralTimeCases": 3,
+      "actualThermostatControlHeat": true,
+      "maximumFluidAndWallTemperatureDifferenceK": 6.173516542873347e-05,
+      "maximumFaceVelocityDifferenceMPerS": 4.425224595788757e-08,
+      "maximumAllHeatDifferenceJ": 6.044325110452636e-06,
+      "completeRestoreIncludingPressureAndWall": true,
+      "invalidInitAndRestoreRetainState": true,
+      "realProgressCancelRollback": true,
+      "continuousThermalSpatialCases": 3,
+      "maximumThermalSpatialTrajectoryDifferenceK": 0,
+      "maximumGridFluidCells": 1024,
+      "uniformAndMinuteHeatWithoutOneJouleFloor": true,
+      "localStorageUnchanged": true,
+      "flowSpatialAccuracyVerified": false,
+      "GUIVerified": false,
+      "offlineVerified": false,
+      "generalConjugateCFDApproved": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "actualWorker": true,
+      "independentTimeCases": 5,
+      "centralTimeCases": 3,
+      "actualThermostatControlHeat": true,
+      "maximumFluidAndWallTemperatureDifferenceK": 6.173516542873347e-05,
+      "maximumFaceVelocityDifferenceMPerS": 4.425224595788757e-08,
+      "maximumAllHeatDifferenceJ": 6.044325110452636e-06,
+      "completeRestoreIncludingPressureAndWall": true,
+      "invalidInitAndRestoreRetainState": true,
+      "realProgressCancelRollback": true,
+      "continuousThermalSpatialCases": 3,
+      "maximumThermalSpatialTrajectoryDifferenceK": 0,
+      "maximumGridFluidCells": 1024,
+      "uniformAndMinuteHeatWithoutOneJouleFloor": true,
+      "localStorageUnchanged": true,
+      "flowSpatialAccuracyVerified": false,
+      "GUIVerified": false,
+      "offlineVerified": false,
+      "generalConjugateCFDApproved": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "logsSHA256": {
+    "work/thermal-wall-central-node-20261107.log": "10e837a4ee198a4960463cc3cb132a9fb888edd48595e74527147133b26fc51f",
+    "work/thermal-wall-central-worker-chromium-20261107.log": "07ea0a6e93164c9fb4594801911f46ca8b1400868f989f0f448e0608e819cde9",
+    "work/thermal-wall-central-worker-webkit-20261107.log": "bccbe68b1ddf4a85c90cc84d1f45a196883a39ebc654109d287f0bbb9c78faa6",
+    "work/thermal-wall-central-time-20261107.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "initialRunFailure": "numpy bool JSON serialization; no numerical or threshold changes; float aggregate then repeat",
+  "fullNodeLatestBeforeThisAddition": {
+    "commit": "a49eee4",
+    "tests": 1497,
+    "pass": 1492,
+    "skip": 5,
+    "fail": 0
+  },
+  "actualAirPresetVerified": false,
+  "GUIVerified": false,
+  "releaseApproved": false
+}

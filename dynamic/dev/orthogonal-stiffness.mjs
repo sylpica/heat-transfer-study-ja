@@ -1,0 +1,27 @@
+// Development-only constant-k P1 stiffness and positive lumped nodal capacity.
+// Full boundary-to-boundary couplings need not be nonnegative conductances.
+// Only the eliminated-Dirichlet unknown graph is checked for that property.
+import {edgeCotangentDyadic,inCircle2D} from './planar-predicates.mjs';import {dyadicQuotient} from './dyadic-quotient.mjs';
+const finite=(v,name,positive=false)=>{if(typeof v!=='number'||!Number.isFinite(v)||(positive&&v<=0))throw Error(`${name}が数値範囲外です。`);return v===0?0:v;};
+function sum(values){let s=0,e=0;for(const v of values){const y=v-e,t=s+y;e=(t-s)-y;s=t;}return finite(s,'集約値');}
+export function assembleOrthogonalDiffusion(input){
+ if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!['mesh','k','depth','rho','cp'].includes(k)))throw Error('三角形メッシュと一定物性だけを指定してください。');
+ const {mesh:sourceMesh,k,depth,rho,cp}=input,m=structuredClone(sourceMesh);for(const [name,v]of Object.entries({k,depth,rho,cp}))finite(v,name,true);const scale=finite(k*depth/2,'伝導係数kD/2',true),volumetricCapacity=finite(rho*cp,'体積熱容量',true);
+ if(!m||m.kind!=='orthogonal-conforming-delaunay-development-mesh'||!Array.isArray(m.nodes)||!Array.isArray(m.elements)||!Array.isArray(m.edges)||m.nodes.length<4||m.nodes.length>600)throw Error('対応する直交適合三角形メッシュが必要です。');
+ const volumeParts=m.nodes.map(()=>[]),diagonalParts=m.nodes.map(()=>[]),adjacency=m.nodes.map(()=>[]),mass=m.nodes.map(()=>0),volume=m.nodes.map(()=>0),fullMatrix=m.nodes.map(()=>m.nodes.map(()=>0));
+ m.nodes.forEach((node,i)=>{if(!node||node.id!==i||typeof node.boundary!=='boolean'||!Array.isArray(node.normalized)||node.normalized.length!==2||!node.normalized.every(Number.isFinite))throw Error('節点ID/境界/座標が不正です。');});
+ for(const element of m.elements){if(!Array.isArray(element.nodes)||element.nodes.length!==3||new Set(element.nodes).size!==3)throw Error('三角形の節点が不正です。');const part=finite(finite(element.area,'要素面積',true)*depth/3,'分配要素体積',true);for(const id of element.nodes){if(!Number.isSafeInteger(id)||!m.nodes[id])throw Error('未登録の節点です。');volumeParts[id].push(part);}}
+ m.nodes.forEach((node,i)=>{volume[i]=finite(sum(volumeParts[i]),'節点分配体積',true);mass[i]=finite(volume[i]*volumetricCapacity,'lumped節点熱容量',true);});
+ const seen=new Set(),edges=m.edges.map(edge=>{
+  if(!Array.isArray(edge.nodes)||edge.nodes.length!==2||!Array.isArray(edge.oppositeNodes)||edge.oppositeNodes.length!==(edge.boundary?1:2))throw Error('三角形辺の接続が不正です。');
+  const [a,b]=edge.nodes,[c,d]=edge.oppositeNodes;for(const id of [...edge.nodes,...edge.oppositeNodes])if(!Number.isSafeInteger(id)||!m.nodes[id])throw Error('辺の節点が不正です。');if(new Set([...edge.nodes,...edge.oppositeNodes]).size!==2+edge.oppositeNodes.length)throw Error('辺の節点が重複しています。');const key=a<b?`${a}:${b}`:`${b}:${a}`;if(seen.has(key))throw Error('同じ辺が重複しています。');seen.add(key);
+  if(edge.boundary&&(!m.nodes[a].boundary||!m.nodes[b].boundary))throw Error('輪郭辺の節点が境界ではありません。');
+  const points=[a,b,c].map(i=>m.nodes[i].normalized);if(!edge.boundary&&inCircle2D(...points,m.nodes[d].normalized).sign>0)throw Error('内部辺が局所Delaunay条件を満たしません。');
+  const exact=edgeCotangentDyadic(...points,edge.boundary?null:m.nodes[d].normalized);if(!edge.boundary&&exact.numerator.n<0n)throw Error('Dirichlet消去前の内部辺に負の伝導係数があります。');const cotangent=dyadicQuotient(exact.numerator,exact.denominator),G=finite(scale*cotangent,'辺伝導係数[W/K]');if(cotangent!==0&&G===0)throw Error('非ゼロの辺伝導係数が丸めで失われます。');if((!m.nodes[a].boundary||!m.nodes[b].boundary)&&G<0)throw Error('未知節点に接続する伝導係数が負です。');
+  diagonalParts[a].push(G);diagonalParts[b].push(G);fullMatrix[a][b]=-G;fullMatrix[b][a]=-G;if(G>0){adjacency[a].push(b);adjacency[b].push(a);}return {nodes:[a,b],conductanceWPerK:G,boundary:edge.boundary,exactZero:exact.numerator.n===0n,cotangentSum:cotangent};
+ });
+ m.nodes.forEach((node,i)=>fullMatrix[i][i]=finite(sum(diagonalParts[i]),'節点対角係数',true));const unknown=m.nodes.filter(n=>!n.boundary).map(n=>n.id),boundary=m.nodes.filter(n=>n.boundary).map(n=>n.id);if(!unknown.length||!boundary.length)throw Error('未知節点とDirichlet境界が必要です。');
+ const reached=new Set(boundary),queue=[...boundary];for(let at=0;at<queue.length;at++)for(const id of adjacency[queue[at]])if(!reached.has(id)){reached.add(id);queue.push(id);}if(unknown.some(id=>!reached.has(id)))throw Error('正の係数でDirichletへ接続しない未知成分があります。');
+ const matrix=unknown.map(i=>unknown.map(j=>fullMatrix[i][j]));unknown.forEach(id=>finite(fullMatrix[id][id],'未知節点対角係数',true));
+ return {kind:'orthogonal-P1-constant-diffusion-development-operator',mesh:m,k,depth,rho,cp,volume,lumpedCapacityJPerK:mass,edges,diagonalWPerK:fullMatrix.map((row,i)=>row[i]),fullMatrixWPerK:fullMatrix,unknownNodeIds:unknown,boundaryNodeIds:boundary,unknownMatrixWPerK:matrix,diagnostics:{totalVolumeM3:sum(volume),totalCapacityJPerK:sum(mass),negativeBoundaryOnlyEdgeCount:edges.filter(e=>e.conductanceWPerK<0).length,zeroWeightEdgeCount:edges.filter(e=>e.exactZero).length,unknownGraphConnectedToDirichlet:true,positiveLumpedCapacity:true,unknownOffDiagonalNonpositive:matrix.every((row,i)=>row.every((v,j)=>i===j||v<=0)),unknownBoundaryConductancesNonnegative:edges.every(e=>(m.nodes[e.nodes[0]].boundary&&m.nodes[e.nodes[1]].boundary)||e.conductanceWPerK>=0),graphEnergyProofInExactArithmetic:true,numericPositiveDefinitenessVerified:false},scope:{p1NodalTemperaturesNotCellMeans:true,constantProperties:true,temperaturePDEImplemented:false,temporalStabilityVerified:false,generalAccuracyVerified:false},releaseApproved:false};
+}

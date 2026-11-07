@@ -1,0 +1,15 @@
+{
+  "recordedAtUTC": "2026-11-06T19:43:53.835976+00:00",
+  "reference": "CONJUGATE_AIR_TIME_REFERENCE_20261107_v1.json",
+  "referenceSHA256": "a059d238a4a9e1345d526c1870992a3f7e798141765907d6e80a7d29326413ce",
+  "originalWholePlanPassed": false,
+  "originalAutoDtFractionOfSafeDt": 0.25,
+  "originalMaximumTemperatureErrorK": 0.0010577124102324476,
+  "criterionMaximumTemperatureErrorKStrictlyBelow": 0.001,
+  "selectedAutoDtFractionOfSafeDt": 0.125,
+  "selectedMaximumTemperatureErrorK": 0.00025978242651980565,
+  "selectedMaximumAllHeatDifferenceJ": 5.790022067310094e-08,
+  "selectedPolicyMeetsSameCriterion": true,
+  "method": "Select an already measured finer time step from the pre-registered series; no threshold relaxation, no modification of original failed JSON, no new independent measurement count.",
+  "releaseApproved": false
+}

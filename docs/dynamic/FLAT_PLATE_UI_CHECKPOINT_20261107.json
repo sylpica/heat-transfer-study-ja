@@ -1,0 +1,133 @@
+{
+  "recordedAtUTC": "2026-11-06T19:27:29.716647+00:00",
+  "basisCommit": "5499d89fecd6a14fea79c85fd7e3ca774ee41de1",
+  "sourceAndTestsSHA256": {
+    "dynamic/dev/flat-plate.html": "570aadf3fd093f8feda9c52605ebbdafe7729b83756a3d10c2f6be3c2019be2f",
+    "dynamic/dev/flat-plate.css": "c836cdb39079ed904578e87dba454f7ba1403fb78eaf32c7e7c4db229d8d138b",
+    "dynamic/dev/flat-plate-ui.mjs": "68bbf82f2fc3a193cd28d22cc9bffd30bce4cdaab9d559c92ad60a1b11632b31",
+    "dynamic/dev/flat-plate-view.mjs": "b796dedded5eae82708cd6993ac21ea7144d8dc1af55ba73fff49c515ee77dff",
+    "dynamic/dev/flat-plate-ui-config.mjs": "d690535dc768aebd9e0f94ec393167c7962517b07fb57df6652216508cdbe20a",
+    "dynamic/dev/flat-plate-worker.mjs": "bcc3929b022671bb7b8781d5d7f7cdd95fb20f7657d1d550fbd2345e1401d52e",
+    "dynamic/dev/flat-plate-thermal.mjs": "8d7b8a7a03ede7aa8f17b784cc34d23ad61f6d45d9696bfbd6758c648bf354bb",
+    "dynamic/dev/blasius-boundary-flow.mjs": "85970b47f2efecc795b247a9051fae4258e787a02160d302ffcb87352fb9301a",
+    "tests/dynamic-flat-plate-ui-browser.mjs": "647f73c0b48d6f84082e5a39252c205f340dd4135c855eb47cbb264231074c9b",
+    ".github/workflows/dynamic-simulation.yml": "bab3f1b33df3a6b2a205f4f8b4167e6092eb358ca399c6a899c6d622f2f87848"
+  },
+  "node": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "total": 1434,
+    "passed": 1429,
+    "failed": 0,
+    "skipped": 5,
+    "durationMs": 106837.056244,
+    "log": "work/flat-plate-ui-full-node-20261107.log",
+    "logSHA256": "bea205e0a0be48f8b8a9f9c146a3560336de0f4835c96b0b9d49afdce81eab9a"
+  },
+  "browser": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualWorkerCpuAndIndependentAirReference": true,
+        "actualRewindAndReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+        "commonPhysicalScaleAcrossUnequalDomains": true,
+        "heatingCoolingComparison": true,
+        "realProgressCancelRollback": true,
+        "undefinedNu": true,
+        "largeThermalCells": 131072,
+        "microTimeHeatPreserved": true,
+        "memoryPreflightKeepsLiveWorker": true,
+        "keyboardAndPointerCellProbe": true,
+        "mobileDarkLight": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "generalNSVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/flat-plate-ui-chromium-20261107.log",
+      "logSHA256": "85af539a2ae5305e0e9be192e7320344c12b0091593bca20b5bde36256d62c22",
+      "screenshots": {
+        "fullPage": {
+          "path": "work/flat-plate-ui-chromium-mobile-dark-20261107.png",
+          "SHA256": "e7234ec52cdb506892b051ff4696047cf88908a288006cd3b343cb4d7c296ab6",
+          "visuallyInspected": false
+        },
+        "field": {
+          "path": "work/flat-plate-ui-chromium-field-dark-20261107.png",
+          "SHA256": "ebb73472574727fb01e26c2519ea6faf182588ddbd505fe58cac81f908e7df84",
+          "visuallyInspected": false
+        },
+        "settings": {
+          "path": "work/flat-plate-ui-chromium-settings-dark-20261107.png",
+          "SHA256": "0f6ad851b63a7c378282bd5e610a85c6908ecd14a18ef0516f8fe6100a337f1b",
+          "visuallyInspected": false
+        }
+      }
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualWorkerCpuAndIndependentAirReference": true,
+        "actualRewindAndReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedDisplay": true,
+        "commonPhysicalScaleAcrossUnequalDomains": true,
+        "heatingCoolingComparison": true,
+        "realProgressCancelRollback": true,
+        "undefinedNu": true,
+        "largeThermalCells": 131072,
+        "microTimeHeatPreserved": true,
+        "memoryPreflightKeepsLiveWorker": true,
+        "keyboardAndPointerCellProbe": true,
+        "mobileDarkLight": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "generalNSVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/flat-plate-ui-webkit-20261107.log",
+      "logSHA256": "e69ee99bd00718f727952092884eb5df595542908caee4d3e7155dbb0c32597b",
+      "screenshots": {
+        "fullPage": {
+          "path": "work/flat-plate-ui-webkit-mobile-dark-20261107.png",
+          "SHA256": "32ee2ece7449ee26536d184ea6f845d07cf616bc6f72648ea54128a9536cd91c",
+          "visuallyInspected": false
+        },
+        "field": {
+          "path": "work/flat-plate-ui-webkit-field-dark-20261107.png",
+          "SHA256": "aba66b965cb46ea522091226cd0b6209cf070695389126dc89b6219b1e10a359",
+          "visuallyInspected": true
+        },
+        "settings": {
+          "path": "work/flat-plate-ui-webkit-settings-dark-20261107.png",
+          "SHA256": "2f3cb3eaa8616709ec1a42384c195cf9933da483ca384d42a6b02b612b0155a0",
+          "visuallyInspected": true
+        }
+      }
+    }
+  },
+  "independentAirTimeReference": "FLAT_PLATE_AIR_TIME_REFERENCE_20261106_v1.json",
+  "guiAutoDt": "min(safeDt_A,safeDt_B)/4",
+  "guiDefaultAirMaximumTimeErrorK": 0.0004626661,
+  "spatialSummary": "FLAT_PLATE_THERMAL_SPATIAL_SUMMARY_20261107.json",
+  "publicBuild": {
+    "passed": true,
+    "devIncluded": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cacheName": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "original256WholePlateObjectivesPassed": false,
+  "supplementarySelectedTargetsPassed": true,
+  "GUIVerified": true,
+  "realDeviceVerified": false,
+  "dedicatedOfflineVerified": false,
+  "generalNSVerified": false,
+  "mainPublished": false,
+  "allPhase34Complete": false,
+  "releaseApproved": false
+}

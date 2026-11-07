@@ -1,0 +1,178 @@
+{
+  "generatedAtUTC": "2026-11-05T16:30:03.263Z",
+  "config": {
+    "nx": 32,
+    "ny": 32,
+    "pressurePreconditioner": "multigrid",
+    "momentumScheme": "conservative2",
+    "width": 1,
+    "height": 1,
+    "rho": 1,
+    "cp": 1,
+    "nu": 0.71,
+    "alpha": 1,
+    "initial": 300,
+    "leftTemperature": 300.5,
+    "rightTemperature": 299.5,
+    "gravityBeta": 710,
+    "beta": 0.001,
+    "referenceTemperature": 300,
+    "scalarScheme": "central"
+  },
+  "modelSHA256": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+  "samples": [
+    {
+      "time": 0.5,
+      "steps": 5120,
+      "nusselt": 1.119942523695272,
+      "localNusseltMaximum": 1.5151923917146632,
+      "uMaximumNative": {
+        "value": 3.6468544736607735,
+        "position": 0.828125
+      },
+      "vMaximumNative": {
+        "value": 3.7075191904875657,
+        "position": 0.171875
+      },
+      "energyError": 7.175371408153988e-14,
+      "divergence": 1.5015544363450317e-11
+    },
+    {
+      "time": 1,
+      "steps": 10240,
+      "nusselt": 1.119942764425673,
+      "localNusseltMaximum": 1.5151935444228002,
+      "uMaximumNative": {
+        "value": 3.6468476777207255,
+        "position": 0.828125
+      },
+      "vMaximumNative": {
+        "value": 3.7075124701022695,
+        "position": 0.171875
+      },
+      "energyError": 1.0793588245407421e-13,
+      "divergence": 1.9497736758467e-12,
+      "lastIntervalMaxUChange": 7.2731207465537295e-06,
+      "lastIntervalMaxVChange": 7.3076782940439955e-06,
+      "lastIntervalMaxTemperatureChange": 2.3021135575618246e-07,
+      "lastIntervalNusseltChange": 2.4073040094663156e-07
+    },
+    {
+      "time": 2,
+      "steps": 20481,
+      "nusselt": 1.1199427644252182,
+      "localNusseltMaximum": 1.5151935444155242,
+      "uMaximumNative": {
+        "value": 3.6468476777257357,
+        "position": 0.828125
+      },
+      "vMaximumNative": {
+        "value": 3.7075124701071966,
+        "position": 0.171875
+      },
+      "energyError": 7.829292769658064e-14,
+      "divergence": 1.4210854715202004e-14,
+      "lastIntervalMaxUChange": 5.2944315598324465e-12,
+      "lastIntervalMaxVChange": 5.6199489506525424e-12,
+      "lastIntervalMaxTemperatureChange": 1.1937117960769683e-12,
+      "lastIntervalNusseltChange": -4.547473508864641e-13
+    }
+  ],
+  "releaseApproved": false,
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "baseSourceCommit": "15568b94ebd4e68d8b32c6176dcaca858c939e3f",
+  "sourceTreeDirty": true,
+  "reviewScope": "Independent normalization/source/steady-state review of provided benchmark driver. Model, old gates and old driver unchanged. No full-table accuracy approval.",
+  "ownerPackSHA256": "22029fe4045039c60b4459b4120a66efe408dd96135a454ab2d80c4cb6cd1c6d",
+  "sources": [
+    {
+      "name": "openlb",
+      "url": "https://raw.githubusercontent.com/openLB/openLB/ffe45d9722e5dc7317e6e9bd9cfb46812e630a1f/examples/thermal/squareCavity2d/squareCavity2d.cpp",
+      "bytes": 39372,
+      "sha256": "378ef3b10735cb4d6e3d6faa11dcd1fe06c44431fc550178391304854df8474e",
+      "ok": true,
+      "verifiedMeaning": "Exact historical OpenLB commit contains LitNusselt3=1.117, Pr=.71. Secondary implementation reference, not primary table approval."
+    },
+    {
+      "name": "arxiv",
+      "url": "https://arxiv.org/pdf/physics/0305049",
+      "bytes": 411296,
+      "sha256": "f422f19dc4ccad541e05d40843440e3df273cb2bc9dac272576c1b26378a24ab",
+      "ok": true,
+      "verifiedMeaning": "PDF page 7 Table 1 visually read: Ra1e4/1e5/1e6 only; does not confirm Ra1000=1.118."
+    },
+    {
+      "name": "cardinal",
+      "url": "https://cardinal.cels.anl.gov/nekrs/benchmarks/de_vahl_davis.html",
+      "error": "HTTP Error 403: Forbidden",
+      "ok": false
+    }
+  ],
+  "sourceDisagreementResolved": true,
+  "primaryDeVahlTableRead": true,
+  "referenceValuesRetained": {
+    "oldOpenLBSecondaryMeanNu": 1.117,
+    "ownerPackMeanNu": 1.118,
+    "ownerPackLocalNuMaximum": 1.505,
+    "oldMeanBudget": 0.006,
+    "oldGateChanged": false,
+    "definitions": {
+      "oldOpenLBSecondaryMeanNu": "Nu_0: hot-wall mean, x=0",
+      "ownerPackMeanNu": "Nu / Nu_1/2: volume mean / vertical-midplane mean"
+    }
+  },
+  "nativeExtremaInterpretation": "Piecewise-linear interpolation along the centerline attains positive maxima at native staggered nodes or boundaries. Scan native nodes rather than create sub-grid extrema.",
+  "oldDenseMaximumBiasAtTime1": {
+    "uMaximumUnderestimate": 1.8550202404821192e-05,
+    "vMaximumUnderestimate": 0.00017571171974761768,
+    "scope": "Separate run from the archived t1 final-step partition; differences of order 1e-11 between trajectories do not affect the 1e-4 interpolation sampling bias."
+  },
+  "sourceInputsRedistributed": false,
+  "notVerified": [
+    "Ghia Re400/1000 or high Ra outside current model range",
+    "General CFD or thermal turbulence approval",
+    "Direct primary-scan re-reading by the root implementation agent"
+  ],
+  "updatedComparisonArtifact": "PROVIDED_CFD_BENCHMARKS_20261106.json",
+  "updatedComparisonSHA256": "94a8016efdefa8681b0ec4f2d4834539bf84fac4d58ef826b4bd769d6aa06ac7",
+  "resolutionKind": "Different definitions: volume/midplane Nu=1.118 versus hot-wall Nu_0=1.117",
+  "primaryDeVahlTableReadProvenance": {
+    "reader": "Independent Fairis validation line, as reported by owner in this task",
+    "rootAgentDirectRead": false,
+    "primary": "de Vahl Davis (1983), Table V p.256; WHICH NUSSELT NUMBER? pp.262–263",
+    "crossChecksReported": [
+      "Allen & Reis, Oxford OCCAM Preprint 13/34, Table 7",
+      "Barakos & Mitsoulis (1994), Table III"
+    ],
+    "rawScanRedistributed": false
+  },
+  "definitionResolutionReceivedAtUTC": "2026-11-06T03:41:09.804997+00:00",
+  "matchedWallComparisons": [
+    {
+      "time": 0.5,
+      "quantity": "Nu_0",
+      "value": 1.119942523695272,
+      "reference": 1.117,
+      "difference": 0.002942523695272037,
+      "relativeDifference": 0.0026343094854719418
+    },
+    {
+      "time": 1,
+      "quantity": "Nu_0",
+      "value": 1.119942764425673,
+      "reference": 1.117,
+      "difference": 0.0029427644256729835,
+      "relativeDifference": 0.0026345250006025722
+    },
+    {
+      "time": 2,
+      "quantity": "Nu_0",
+      "value": 1.1199427644252182,
+      "reference": 1.117,
+      "difference": 0.002942764425218236,
+      "relativeDifference": 0.0026345250001953424
+    }
+  ],
+  "updatedDriverSHA256AtOriginalRun": "5a34f3361c2e244ed503767868c67b5321f5ba8dd1f12f499a7cf690661a5394",
+  "historicalComparisonScope": "Original comparison artifact retained unchanged; its providedMeanDifference mixed wall and volume/midplane definitions. Use matchedWallComparisons here; old numerical gate remains unchanged."
+}

@@ -1,0 +1,128 @@
+{
+  "recordedAtUTC": "2026-11-06T23:42:24.763527+00:00",
+  "basisCommit": "993cb4e3658114efb1ea4a08f74eea1c147adb11",
+  "sourceAndTestsSHA256": {
+    "dynamic/dev/gpu-diffusion.html": "879deeb62c54f3db546736362391217e8d5ac89b197ca11edc4d27f7fc452b40",
+    "dynamic/dev/gpu-diffusion-ui.mjs": "180173c070f45aadc6811fc75dd7636f6874b78e8dd927b1813751034cdca671",
+    "dynamic/dev/gpu-diffusion-ui-config.mjs": "24c87110e238fdb01a2d3c56ff5873154b324d5c1f1be5aa2f84408a92147368",
+    "dynamic/dev/gpu-diffusion-view.mjs": "6b2d669e4e9399a9fd81c73ca537048dfd741fc8897263644cdc05d1be3e8ef8",
+    "dynamic/dev/adiabatic-diffusion.mjs": "b3823c3367cfe6e333c9d429106a55021f7587166515414e2c087417ff03adb5",
+    "dynamic/dev/adiabatic-diffusion-runtime.mjs": "01759c114eab37ed5b1095f6d505a1bf4020872d7b5748b855a57d2aba90e626",
+    "dynamic/dev/adiabatic-diffusion-worker.mjs": "cfb69b57b6ab324c062f94c612656d787c4709638776a770e1bf2e70bf69d9e8",
+    "tests/dynamic-gpu-ui-browser.mjs": "f68095a701a00d24bfc2030e32f9855228dcab4e87f864afd595111b43437899",
+    "tests/dynamic-gpu-view.test.mjs": "eaf27710c23a4f6134fc4fef26c28ffc12d78f13a0f827eeef2d2beeb7a0869c",
+    ".github/workflows/dynamic-simulation.yml": "8d58cff18723b80a6e6ac79ea45e8459e0a35859a7b32daac4cd226a32257c44"
+  },
+  "node": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "total": 1454,
+    "passed": 1449,
+    "failed": 0,
+    "skipped": 5,
+    "durationMs": 107893.990708,
+    "log": "work/gpu-ui-full-node-20261107.log",
+    "logSHA256": "38a51c27c6320af660f32f730aa17bd3b22a5357cb4daa60cfb64120d550659f"
+  },
+  "browser": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualBackend": "webgpu-software",
+        "actualWorkerCpuAndContinuousMode": true,
+        "actualRewindAndBitReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedBackend": true,
+        "samePhysicsCpuComparisonAndDifferentConditionSeparation": true,
+        "actualProgressCancelRollback": true,
+        "unavailableExplicitGpuKeepsAcceptedState": null,
+        "initialFixedCommonColorScale": true,
+        "keyboardAndPointer": true,
+        "physicalAspect": true,
+        "largeCells": 8192,
+        "uniformZeroHeat": true,
+        "mobileLightDark": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "physicalGPUVerified": false,
+        "performanceVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/gpu-ui-chromium-fixed-20261107.log",
+      "logSHA256": "c99637bc032aafa523a8536f57ba8f43eb9394cb13f9ec89d0e86959be5a7a5b",
+      "screenshots": {
+        "field": {
+          "path": "work/gpu-ui-chromium-field-dark-20261107.png",
+          "SHA256": "61331458fea5d6f8126258d9862f9af065b7bf3b582ea16c10739fd5f62aeefd",
+          "visuallyInspected": true
+        },
+        "settings": {
+          "path": "work/gpu-ui-chromium-settings-dark-20261107.png",
+          "SHA256": "473d3f1e333f8962cb2675284b523760de50aae0cee968cdb1801922d234a61a",
+          "visuallyInspected": false
+        }
+      }
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualBackend": "cpu-device-unavailable",
+        "actualWorkerCpuAndContinuousMode": true,
+        "actualRewindAndBitReplay": true,
+        "pendingAndRejectedInputsKeepAcceptedBackend": true,
+        "samePhysicsCpuComparisonAndDifferentConditionSeparation": true,
+        "actualProgressCancelRollback": true,
+        "unavailableExplicitGpuKeepsAcceptedState": true,
+        "initialFixedCommonColorScale": true,
+        "keyboardAndPointer": true,
+        "physicalAspect": true,
+        "largeCells": 8192,
+        "uniformZeroHeat": true,
+        "mobileLightDark": true,
+        "devicePixelRatio": 2,
+        "localStorageUnchanged": true,
+        "physicalGPUVerified": false,
+        "performanceVerified": false,
+        "offlineVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/gpu-ui-webkit-20261107.log",
+      "logSHA256": "a316020aa24bce5a23931f84416ba75de885db525f19f668435538042bcb01a0",
+      "screenshots": {
+        "field": {
+          "path": "work/gpu-ui-webkit-field-dark-20261107.png",
+          "SHA256": "b78ed4b6d2d5a2b99e658cc9bbf31a3c1844751cd74101b7770c397c5646c198",
+          "visuallyInspected": false
+        },
+        "settings": {
+          "path": "work/gpu-ui-webkit-settings-dark-20261107.png",
+          "SHA256": "295a793725c155c21a6e4f8828b267deb5d6e4d653f3e49f1fdfb7b46096b2a3",
+          "visuallyInspected": true
+        }
+      }
+    }
+  },
+  "initialGUIKeyboardFailure": {
+    "log": "work/gpu-ui-chromium-20261107.log",
+    "logSHA256": "88e94a069a3444777c528f25a396bee403915c40bce21ffa8869cc7b7be22b1b",
+    "cause": "A fixed fractional arrow move could stay in the same coarse cell; changed navigation to one actual neighboring cell, including endpoint probes. Original assertion and timeout retained."
+  },
+  "workerCheckpoint": "GPU_WORKER_CHECKPOINT_20261107.json",
+  "imageCI": "GPU_WORKER_IMAGE_CI_20261107.json",
+  "realDeviceVerified": false,
+  "physicalGPUVerified": false,
+  "performanceVerified": false,
+  "dedicatedOfflineVerified": false,
+  "mainPublished": false,
+  "allPhase34Complete": false,
+  "releaseApproved": false,
+  "publicBuild": {
+    "passed": true,
+    "devIncluded": false,
+    "workerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cacheName": "heat-study-ja-app-4a24eb30c8fdd98c"
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "generatedAtUTC": "2026-11-04T22:46:26.300Z",
+  "sourceCommit": "c76d0a3dbe786711537d9365715bd6fa6e3ed0b1",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "8ff0752aebd2115426449c3d5b936a36169d5a26c25c0ef47fe284dbd01a052e",
+    "dynamic/dev/manufactured-cavity.mjs": "e19855f1139668e86288210aecb562c0eba3da5c9b56d96da8b390b38a780fe0",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-pressure-components.mjs": "d33d72b7be6f9c020e410ad639b39e9f8ef1b918cea59eeb340379b97636708c"
+  },
+  "stage": "one_step_discrete_pressure_component_diagnostic",
+  "releaseApproved": false,
+  "pressureAccuracyApproved": false,
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "method": "Initial exact sampled velocity; normal walls fixed zero. Probe the unchanged momentum/projection code at two viscosities with zero body force, then infer its separate viscous/advection pressure responses by linearity of this one step. Compare against independent continuous derivative responses under the same discrete projection. Continuous pressure amplitude remains 0.1 Pa. This is a truncation diagnostic, not a new physical solution or accuracy approval.",
+  "samples": [
+    {
+      "n": 16,
+      "velocityAmplitude": 0,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.04999999999999996,
+      "oneStepErrorVsOldContinuousRMS": 0.000322727139978188,
+      "oneStepErrorVsEndContinuousRMS": 0.00032322713747819846,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0,
+          "max": 0
+        },
+        "advection": {
+          "rms": 0,
+          "max": 0
+        },
+        "continuousGradientSampling": {
+          "rms": 0.00032272713997819015,
+          "max": 0.0006208881391989579
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 0,
+          "max": 0
+        }
+      },
+      "viscousAdvectionErrorCorrelation": null,
+      "reconstructionClosureMaxPa": 2.7755575615628914e-17,
+      "divergence": 7.125241152303174e-17
+    },
+    {
+      "n": 16,
+      "velocityAmplitude": 0.1,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.04999999999999996,
+      "oneStepErrorVsOldContinuousRMS": 0.003440769877246113,
+      "oneStepErrorVsEndContinuousRMS": 0.0034408966128009867,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0.003230414736148106,
+          "max": 0.008088166747142522
+        },
+        "advection": {
+          "rms": 0.0009719543249217346,
+          "max": 0.00377809096828996
+        },
+        "continuousGradientSampling": {
+          "rms": 0.00032272713997819015,
+          "max": 0.0006208881391989579
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 1.1113379565602777e-13,
+          "max": 3.1922617968600393e-13
+        }
+      },
+      "viscousAdvectionErrorCorrelation": 1.4027982750975879e-11,
+      "reconstructionClosureMaxPa": 1.3991585667838535e-13,
+      "divergence": 9.71445146547012e-16
+    },
+    {
+      "n": 16,
+      "velocityAmplitude": 1,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.04999999999999996,
+      "oneStepErrorVsOldContinuousRMS": 0.10259659440375553,
+      "oneStepErrorVsEndContinuousRMS": 0.10259686361606761,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0.03230414736164997,
+          "max": 0.0808816674709858
+        },
+        "advection": {
+          "rms": 0.0971954324917712,
+          "max": 0.3778090968381598
+        },
+        "continuousGradientSampling": {
+          "rms": 0.00032272713997819015,
+          "max": 0.0006208881391989579
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 9.474258064937722e-13,
+          "max": 2.8828922612046983e-12
+        }
+      },
+      "viscousAdvectionErrorCorrelation": -1.745415896625625e-12,
+      "reconstructionClosureMaxPa": 1.2994050280212832e-12,
+      "divergence": 7.105427357601002e-15
+    },
+    {
+      "n": 32,
+      "velocityAmplitude": 0,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.04999999999999996,
+      "oneStepErrorVsOldContinuousRMS": 8.040945419873966e-05,
+      "oneStepErrorVsEndContinuousRMS": 8.090945169874737e-05,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0,
+          "max": 0
+        },
+        "advection": {
+          "rms": 0,
+          "max": 0
+        },
+        "continuousGradientSampling": {
+          "rms": 8.0409454198743e-05,
+          "max": 0.00015927386328691562
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 0,
+          "max": 0
+        }
+      },
+      "viscousAdvectionErrorCorrelation": null,
+      "reconstructionClosureMaxPa": 4.163336342344337e-17,
+      "divergence": 9.719872476332547e-17
+    },
+    {
+      "n": 32,
+      "velocityAmplitude": 0.1,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.04999999999999996,
+      "oneStepErrorVsOldContinuousRMS": 0.0008696088363614357,
+      "oneStepErrorVsEndContinuousRMS": 0.0008697347600987156,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0.000817380139365088,
+          "max": 0.002284689125863104
+        },
+        "advection": {
+          "rms": 0.00024370400148913482,
+          "max": 0.0009850556527503523
+        },
+        "continuousGradientSampling": {
+          "rms": 8.0409454198743e-05,
+          "max": 0.00015927386328691562
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 1.9515847038040373e-13,
+          "max": 4.763490939662244e-13
+        }
+      },
+      "viscousAdvectionErrorCorrelation": -1.9006507785227514e-12,
+      "reconstructionClosureMaxPa": 6.479192182773374e-14,
+      "divergence": 1.7763568394002505e-15
+    },
+    {
+      "n": 32,
+      "velocityAmplitude": 1,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.04999999999999996,
+      "oneStepErrorVsOldContinuousRMS": 0.025747991958459747,
+      "oneStepErrorVsEndContinuousRMS": 0.025748262215372925,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0.008173801393606888,
+          "max": 0.022846891258906155
+        },
+        "advection": {
+          "rms": 0.024370400149628844,
+          "max": 0.09850556527675103
+        },
+        "continuousGradientSampling": {
+          "rms": 8.0409454198743e-05,
+          "max": 0.00015927386328691562
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 1.9614745982973896e-12,
+          "max": 4.6955531684720464e-12
+        }
+      },
+      "viscousAdvectionErrorCorrelation": -1.4970648703626015e-11,
+      "reconstructionClosureMaxPa": 5.988057272254821e-13,
+      "divergence": 1.7763568394002505e-14
+    },
+    {
+      "n": 64,
+      "velocityAmplitude": 0,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.050000000000000086,
+      "oneStepErrorVsOldContinuousRMS": 2.0085407748257618e-05,
+      "oneStepErrorVsEndContinuousRMS": 2.0585405248266307e-05,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0,
+          "max": 0
+        },
+        "advection": {
+          "rms": 0,
+          "max": 0
+        },
+        "continuousGradientSampling": {
+          "rms": 2.0085407748260925e-05,
+          "max": 4.007409876774504e-05
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 0,
+          "max": 0
+        }
+      },
+      "viscousAdvectionErrorCorrelation": null,
+      "reconstructionClosureMaxPa": 2.7755575615628914e-17,
+      "divergence": 9.668372873139486e-17
+    },
+    {
+      "n": 64,
+      "velocityAmplitude": 0.1,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.050000000000000086,
+      "oneStepErrorVsOldContinuousRMS": 0.0002179953379309055,
+      "oneStepErrorVsEndContinuousRMS": 0.0002181214372628755,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0.0002049604081819369,
+          "max": 0.0006066982530622544
+        },
+        "advection": {
+          "rms": 6.097129201171898e-05,
+          "max": 0.00024884237615681315
+        },
+        "continuousGradientSampling": {
+          "rms": 2.0085407748260925e-05,
+          "max": 4.007409876774504e-05
+        },
+        "timeDerivative": {
+          "rms": 0,
+          "max": 0
+        },
+        "initialDiscreteDivergence": {
+          "rms": 5.326443185964503e-14,
+          "max": 2.3305406173669907e-13
+        }
+      },
+      "viscousAdvectionErrorCorrelation": 6.16265699124927e-11,
+      "reconstructionClosureMaxPa": 3.7182062984086883e-14,
+      "divergence": 3.552713678800501e-15
+    },
+    {
+      "n": 64,
+      "velocityAmplitude": 1,
+      "nu": 1,
+      "dt": 1e-05,
+      "pressureReferenceRMS": 0.050000000000000086,
+      "oneStepErrorVsOldContinuousRMS": 0.006443251698620149,
+      "oneStepErrorVsEndContinuousRMS": 0.006443522224683897,
+      "componentErrorsPa": {
+        "viscous": {
+          "rms": 0.0020496040818831136,
+          "max": 0.006066982530809284
+        },
+        "advection": {
+          "rms": 0.006097129201208232,
+          "max": 0.024884237616433325
+        },
+        "continuousGradientSampling": {
+          "rms": 2.0085407748260925e-05,
+          "max": 4.007409876774504e-05
+        },
+        "timeDerivative": {
+          "rms": 5.567283903060637e-18,
+          "max": 2.521690108932722e-17
+        },
+        "initialDiscreteDivergence": {
+          "rms": 5.308802725675979e-13,
+          "max": 2.3806990529770614e-12
+        }
+      },
+      "viscousAdvectionErrorCorrelation": 4.8228651329427375e-11,
+      "reconstructionClosureMaxPa": 4.2942732703110664e-13,
+      "divergence": 2.842170943040401e-14
+    }
+  ],
+  "passed": true,
+  "elapsedMs": 1456.549325,
+  "note": "The component vectors can reinforce or cancel. RMS values must not be added as percentages. These first-step consistency errors do not decompose the later nonlinear trajectory exactly."
+}

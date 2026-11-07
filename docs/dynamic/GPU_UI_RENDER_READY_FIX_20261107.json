@@ -1,0 +1,55 @@
+{
+  "checkedAtUTC": "2026-11-07T00:06:30.794Z",
+  "sourceCommit": "22b20122e6afffa9ae86d56a05a76bf948092cb9",
+  "runId": 42314359204,
+  "jobs": [
+    {
+      "id": 128223314695,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success",
+      "failedSteps": []
+    },
+    {
+      "id": 128223315054,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success",
+      "failedSteps": []
+    },
+    {
+      "id": 128223315074,
+      "name": "cfd-development-benchmarks",
+      "status": "in_progress",
+      "conclusion": null,
+      "failedSteps": []
+    },
+    {
+      "id": 128223315146,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success",
+      "failedSteps": []
+    },
+    {
+      "id": 128223315198,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "failure",
+      "failedSteps": [
+        "Exercise isolated CPU or software-GPU fields, same-physics comparison and accepted backend retention"
+      ]
+    }
+  ],
+  "failure": {
+    "engine": "webkit",
+    "jobId": 128223315198,
+    "test": "tests/dynamic-gpu-ui-browser.mjs",
+    "expected": "CPU.*取得不可",
+    "actual": "",
+    "cause": "The status-ready event and initially enabled markup could be observed before the scheduled RAF render populated backend-summary.",
+    "fix": "Disable startup actions in HTML. Wait for the ready state and the actual render frames before the unchanged backend assertion; no timeout extension or physics/gate change."
+  },
+  "remoteFixVerified": false,
+  "localFixRetestedBothEngines": true
+}

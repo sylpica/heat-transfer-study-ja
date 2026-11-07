@@ -1,0 +1,34 @@
+✔ continuous steady Graetz reference separates the velocity-weighted invariant, refined spectral solution, and inlet corner from the quartic limit (2.816443ms)
+✖ the actual inlet/wall-flux finite volumes reach a steady thermal entrance and converge to the independent continuous Graetz field (2430.705734ms)
+ℹ {"results":[{"nx":16,"ny":8,"temperatureRmsK":0.06670397221092646,"wallRmsK":0.09287290938888854,"bulkRmsK":0.02639219905686474,"outletNusseltRelativeError":0.016487468796437366,"outletNusselt":9.9844515958648,"referenceOutletNusselt":9.822503377918467,"maxSteadyChangeK":0,"netExternalPowerW":2.749189764728044e-14,"steps":660},{"nx":32,"ny":16,"temperatureRmsK":0.014653503679942751,"wallRmsK":0.03165419235641256,"bulkRmsK":0.01319609952807177,"outletNusseltRelativeError":0.004483733546943425,"outletNusselt":9.832618891934503,"referenceOutletNusselt":9.788728840052427,"maxSteadyChangeK":0,"netExternalPowerW":5.524747326290935e-14,"steps":1480},{"nx":64,"ny":32,"temperatureRmsK":0.00863644865527241,"wallRmsK":0.020287659404980042,"bulkRmsK":0.006598049763177905,"outletNusseltRelativeError":0.0013352232834775712,"outletNusselt":9.785311201255391,"referenceOutletNusselt":9.7722630481013,"maxSteadyChangeK":0,"netExternalPowerW":1.3340717419652037e-13,"steps":3540}],"observedCombinedGridOrders":[2.1865270192712036,0.7627355599052813],"scope":"Continuous stationary thermal entrance; not the quartic fully developed profile or an unsteady reference. Cell-average wall/bulk ratios, not pointwise Nu averages."}
+ℹ tests 2
+ℹ suites 0
+ℹ pass 1
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2511.279657
+
+✖ failing tests:
+
+test at tests/dynamic-graetz-reference.test.mjs:10:1
+✖ the actual inlet/wall-flux finite volumes reach a steady thermal entrance and converge to the independent continuous Graetz field (2430.705734ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(orders.every(p=>p>.8))
+  
+      at TestContext.<anonymous> (file:///workspace/heat-transfer-study-ja/tests/dynamic-graetz-reference.test.mjs:15:128)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

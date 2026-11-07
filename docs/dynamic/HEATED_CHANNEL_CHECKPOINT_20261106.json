@@ -1,0 +1,103 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T16:48:50.357518+00:00",
+  "baseSourceCommit": "8a720373177adf8261140d431001328d1eb6b18e",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/heated-channel.mjs": "f776853840f410f680a936d0b2883b2817be103f6318af2c526aaacf44f753e1",
+    "dynamic/dev/heated-channel-ui.mjs": "d06dc5f276195c618eb82f802407e53ab7b65af1e3ccad3038b9637d53212da0",
+    "dynamic/dev/heated-channel-view.mjs": "58060a880dee38fb464970322297e055b4fb1723605499e117c3fd109cecf575",
+    "dynamic/dev/heated-channel-worker.mjs": "7f7c8aa848b0b2d7ee153c4bbda3f2ce0d66baf34524892740aaa9dec2b5d063",
+    "dynamic/dev/heated-channel.html": "216ac3821c02ad79dea5c0fbac0885a735dfe1f69258e6d81e0cd10c192eb8b6",
+    "scripts/dynamic-heated-channel-reference.py": "6886f99169eb5549cf0890d8b7496f9c4c361c6f6253e9f7c9ff6c11647a1538",
+    "tests/dynamic-heated-channel.test.mjs": "1dbb8961636aebbbfa423d6edd46d0ca598bd8371b23cb04b8cf63e38badf03c",
+    "tests/dynamic-heated-channel-view.test.mjs": "7fc3a823aa939cf5686fde2abf42df215d9e0f317fb81c77f7164b38070a80b9",
+    "tests/dynamic-heated-channel-browser.mjs": "7484c49ea2b9a520f7a55c4e66cc59933167a18d4c355945a63d290f6f0c3d0c",
+    ".github/workflows/dynamic-simulation.yml": "9aa01783d1cf7f7a2d420d83105a78a91d43ed7d7fb3b720124ab6e31a6b7669"
+  },
+  "scope": "Development-only passive Graetz-type temperature transport, prescribed steady plane Poiseuille, inlet temperature, convective outlet, equal wall flux. Axial conduction/momentum evolution/viscous heating/out-of-plane side walls omitted.",
+  "node": {
+    "tests": 1287,
+    "pass": 1282,
+    "skip": 5,
+    "fail": 0,
+    "scope": "Heat sink, supplied textbook and CFD, heated-channel core/view; later cut-cell additions excluded."
+  },
+  "relatedNewHeatedNodeTests": 9,
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerMatchesKernel": true,
+      "inletOutletWallEnergyAccounting": true,
+      "measuredBulkAndReconstructedWall": true,
+      "initialNuGridDependenceExplicit": true,
+      "abHeatingCoolingSigns": true,
+      "rewindActualField": true,
+      "keyboardProbe": true,
+      "invalidDtAtomic": true,
+      "zeroFluxUndefinedNu": true,
+      "cancelRollbackAndRetry": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerMatchesKernel": true,
+      "inletOutletWallEnergyAccounting": true,
+      "measuredBulkAndReconstructedWall": true,
+      "initialNuGridDependenceExplicit": true,
+      "abHeatingCoolingSigns": true,
+      "rewindActualField": true,
+      "keyboardProbe": true,
+      "invalidDtAtomic": true,
+      "zeroFluxUndefinedNu": true,
+      "cancelRollbackAndRetry": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    }
+  },
+  "browserScope": "Two fresh development-page scripts; actual Worker, A/B heat/cool, zero-flux undefined Nu, rollback/replay, expanded theory, width/themes/storage. Not the previous public 24-script matrix.",
+  "browserEnvironment": {
+    "node": "v24.19.0",
+    "playwright": "1.56.1",
+    "chromium": "/usr/bin/chromium 154",
+    "webkit": "26.0 build 2215 with local libraries",
+    "webkitHostProbeSkippedLocally": true,
+    "realDevice": false
+  },
+  "screenshot": {
+    "path": "screenshots/heated-channel-mobile-20261106.png",
+    "sha256": "49e974bf8d03a9ea900c771b0cafaf10c0ef02389de6b9920b870518ae201b74",
+    "viewedByRoot": true
+  },
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "cacheName": "heat-study-ja-app-fcf92666638c0ebb",
+  "developmentModulesExcluded": true,
+  "knownErrorsRetained": [
+    "First-order half-dx inlet boundary shift",
+    "Product of row means bulk quadrature error",
+    "Initial nonzero-flux Nu=4ny from half-cell reconstruction",
+    "Pe/L conditions do not bound all omitted axial-conduction effects"
+  ],
+  "independentReview": "AI sub-agent checked conservative boundaries/restore/known cumulative powers, temperature translation and transverse reflection; not external expert approval.",
+  "currentCI": "pending follow-up commit/push",
+  "releaseApproved": false,
+  "mainPublished": false,
+  "notVerified": [
+    "General 2D entrance momentum and pressure-velocity CFD",
+    "Conjugate solid-fluid/general geometries/3D",
+    "Continuous transient thermal entrance accuracy for arbitrary inputs",
+    "Real devices/assistive technology",
+    "Development page offline",
+    "Expert approval",
+    "All Phase 3/4 and all 72 requirements",
+    "Main/public URL publication"
+  ]
+}

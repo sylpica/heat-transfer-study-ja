@@ -1,3 +1,4 @@
+import {readerSectionFromHash,dynamicLinkForSection,dynamicLinkForQuestion} from './dynamic-navigation.mjs';
 import { createEmptyState, validateLearningData, normalizeLearningData, mergeLearningData, calculateHeatTransfer, calculateLumpedCooling, calculateSimulationModel, chapterKey, normalizedText, searchEntries, searchSnippet, searchRanges, localDay, validDay, shiftMonth, nextReviewDays, planMinutes, validateQuestion, safeLocalFigurePath, speechChunks, questionFingerprint, quizChoiceOrder, quizResumeIssue, recordStudyActivity, fieldProgress, studyDuration, isCurrentQuestionAnswer } from './study-core.mjs';
 import { FIN_DEFAULTS, finFieldNames, renderFinFields, renderFinSteps, renderFinDiagram, finTemperatureGraph } from './fin-efficiency.mjs';
 import { EXCHANGER_DEFAULTS, exchangerFieldNames, renderExchangerFields, renderExchangerSteps, renderExchangerDiagram, exchangerEffectivenessGraph } from './heat-exchanger.mjs';
@@ -21,7 +22,7 @@ import {validateDeepLessons,deepLessonForSection} from './original-deep-lessons.
 import {renderTransientFields,renderTransientSteps,transientGraph,transientFieldNames} from './transient-ui.mjs';
 import {matchTerms,renderTermLinks,renderTermSheet,renderTermExample,renderTermLearningLinks,linkTermTextNodes} from './term-links.mjs';
 import {renderSimulationDiagram} from './sim-diagrams.mjs';
-import {lessonDiagramPath} from './lesson-diagrams.mjs';
+import {lessonDiagramPath,lessonDiagramSize} from './lesson-diagrams.mjs';
 const CORE_DATA_FILES = ['./data/book.json', './data/questions.json', './data/glossary.json', './data/content-manifest.json', './data/original-notes.json', './data/original-deep-lessons.json'];
 const LEGACY_STORAGE_KEY = 'heat-study-ja:v1';
 const PROFILES_KEY = 'heat-study-ja:profiles:v1';
@@ -369,9 +370,9 @@ async function startApp() {
       }).catch(()=>{setPdfCacheStatus('unsupported');showStatus('オフライン保存の準備に失敗しました。ネット接続中に再読み込みしてください。');});
     } else setPdfCacheStatus('unsupported');
     window.addEventListener('hashchange', () => {
-      const next=routeFromHash(),guideTarget=guideTargetFromHash();if(next===ui.route&&guideTarget===ui.guideTarget)return;
+      const next=routeFromHash(),guideTarget=guideTargetFromHash(),readerTarget=readerSectionFromHash(location.hash,allSections().map(s=>s.id));if(next===ui.route&&guideTarget===ui.guideTarget&&(!readerTarget||readerTarget===ui.readerSection))return;
       flushLearningTime();if(ui.route==='reader'){captureReaderPosition();stopSpeech(false);}persistQuiz();
-      ui.route=next;ui.guideTarget=guideTarget;if(guideTarget)ui.guideQuery='';render();window.scrollTo({top:0,behavior:'instant'});focusPageHeading();
+      if(readerTarget)ui.readerSection=readerTarget;ui.route=next;ui.guideTarget=guideTarget;if(guideTarget)ui.guideQuery='';render();window.scrollTo({top:0,behavior:'instant'});focusPageHeading();
       if(next==='reader')setTimeout(()=>restoreReaderPosition(state.readerPositions[ui.readerSection]),100);
       if(next==='guide'&&guideTarget)setTimeout(()=>focusGuideSection(guideTarget),0);
     });
@@ -399,6 +400,7 @@ async function startApp() {
     window.addEventListener('pagehide',()=>{flushLearningTime(true);if(ui.route==='reader'){clearTimeout(saveReaderPosition.timer);state.readerPositions[ui.readerSection]=readerPosition();}persistQuiz();saveState();});
     setInterval(()=>flushLearningTime(true),5000);
     systemDark?.addEventListener?.('change', () => { if (state.settings.theme === 'system') render(); });
+    const initialReaderTarget=readerSectionFromHash(location.hash,allSections().map(s=>s.id));if(initialReaderTarget)ui.readerSection=initialReaderTarget;
     render();
     if(ui.route==='reader')setTimeout(()=>restoreReaderPosition(state.readerPositions[ui.readerSection]),100);
     if(ui.route==='guide'&&ui.guideTarget)setTimeout(()=>focusGuideSection(ui.guideTarget),0);
@@ -654,6 +656,7 @@ function renderReader() {
   const pdfHref=`./book/AHTTv600.pdf#page=${Number.isInteger(pdfPage)&&pdfPage>=1&&pdfPage<=810?pdfPage:1}`;
   const pdfLink=`<a class="button primary" href="${pdfHref}" target="_blank" rel="noopener" aria-label="原本PDFを開く · PDF p.${Number.isInteger(pdfPage)?pdfPage:1} ↗（別タブ）">原本PDFを開く · PDF p.${Number.isInteger(pdfPage)?pdfPage:1} ↗</a>`;
   const blocks = available ? section[contentLanguage === 'en' ? 'blocksEn' : 'blocks'].map((block,index) => `<div class="source-block" id="reader-block-${escapeHTML(block.id || `${section.id}-b${index}`)}" data-block-id="${escapeHTML(block.id || `${section.id}-b${index}`)}" data-book-page="${escapeHTML(block.bookPage || '')}"><small class="block-source">${escapeHTML(blockSourceLabel(block))}</small>${renderBookBlock(block,contentLanguage)}</div>`).join('') : `<div class="not-translated"><span class="large-status">${draftLabel}</span><h2>${draftHeading}</h2><p>${draftDescription}</p><div class="source-reference">原本：${escapeHTML(section.sourceTitle || section.title)}<br>書籍 p.${section.bookStart ?? '台帳未記録'}–${section.bookEnd ?? '未確認'} · PDF p.${section.pdfStart ?? '台帳未記録'}–${section.pdfEnd ?? '未確認'}</div><div class="button-row">${pdfLink}<a class="button secondary" href="#settings">教材の進捗を見る</a></div></div>`;
+  const dynamicExperiment=dynamicLinkForSection(section.id);
   const sectionBookmarks = state.bookmarks.filter(bookmark => bookmark.sectionId === section.id);
   const editingNote=state.notes.find(n=>n.id===ui.noteEditId&&n.sectionId===section.id);
   const prevNext = allSections(); const index = prevNext.findIndex(item => item.id === section.id);
@@ -689,6 +692,7 @@ function renderReader() {
         </section>` : ''}
         ${deepLesson ? renderDeepLesson(deepLesson) : ''}
         ${renderLessonDiagram(section.id)}
+        ${dynamicExperiment?`<aside class="notice-card" aria-label="関連する動的実験"><div><strong>数値計算で現象を観察</strong><p>アプリ作成の代表条件を使う別の実験です。原本の翻訳や例題の数値を再現するものではありません。</p><a class="text-link" href="${escapeHTML(dynamicExperiment.href)}" target="_blank" rel="noopener">${escapeHTML(dynamicExperiment.label)}（別タブ）→</a></div></aside>`:''}
         ${independentChapterGuide ? `<aside class="notice-card" aria-label="独立作成の章別補助講座"><span class="notice-icon" aria-hidden="true">i</span><div><strong>この章の日本語補助講座</strong><p>原本の翻訳・節本文ではありません。伝熱・物質移動の考え方を独立した例と式で説明します。</p><a class="text-link" href="#guide/${escapeHTML(independentChapterGuide.id)}"> ${escapeHTML(independentChapterGuide.title)} を開く →</a></div></aside>` : ''}
         ${available ? `<div class="book-content" lang="${contentLanguage}">${blocks}</div>` : blocks}
           <p class="small-note">原本PDFを読んだ後の読了・しおり・メモは自分で記録してください。PDFビューアー内の位置は自動取得できません。</p>
@@ -1055,7 +1059,7 @@ const SIM_META = {
 };
 const SIM_ICONS = {transient:'◷',conduction:'▥',convection:'↝',radiation:'☼',resistance:'▤',fin:'⊥',exchanger:'⇄',slab:'▭',enclosure:'◎',cylinder:'○',halfspace:'◒',flatplate:'⇉',pipe:'⇒',crossflow:'⊕',natural:'↑',laminarpipe:'→',condensation:'≋',diffusion:'⇌',nucleate:'∴',chf:'△'};
 function renderSimTabs(mode) {
-  return `<div class="sim-tabs" role="tablist" aria-label="熱移動の種類">${Object.entries(SIM_META).map(([key,item])=>`<button type="button" role="tab" id="sim-tab-${key}" aria-controls="sim-panel" aria-selected="${mode===key}" tabindex="${mode===key?0:-1}" class="sim-tab ${mode===key?'selected':''}" data-sim-mode="${key}"><span aria-hidden="true">${SIM_ICONS[key]||'●'}</span>${item.title}</button>`).join('')}</div>`;
+  return `<p><a class="text-link" href="./dynamic/index.html">動的実験室：温度分布を再生・比較する →</a></p><div class="sim-tabs" role="tablist" aria-label="熱移動の種類">${Object.entries(SIM_META).map(([key,item])=>`<button type="button" role="tab" id="sim-tab-${key}" aria-controls="sim-panel" aria-selected="${mode===key}" tabindex="${mode===key?0:-1}" class="sim-tab ${mode===key?'selected':''}" data-sim-mode="${key}"><span aria-hidden="true">${SIM_ICONS[key]||'●'}</span>${item.title}</button>`).join('')}</div>`;
 }
 // WAI-ARIA tabs pattern: arrow keys move between simulator tabs (with
 // automatic activation, matching the click behaviour), Home/End jump.
@@ -1166,7 +1170,7 @@ function figureSizeAttributes(figure) {
 function renderLessonDiagram(sectionId) {
   const src=lessonDiagramPath(sectionId);
   if(!src)return '';
-  return `<figure class="lesson-diagram"><img src="${escapeHTML(src)}" alt="第${escapeHTML(sectionId)}節のアプリ作成の独自図解" loading="lazy"/><figcaption><a class="figure-zoom text-link" href="${escapeHTML(src)}" target="_blank" rel="noopener noreferrer">図を別のタブで拡大する ↗</a><span>アプリ作成の独自図解です。原本の図版の転載・トレースではありません。図の適用条件と数値は図の中に明記しています。</span></figcaption></figure>`;
+  return `<figure class="lesson-diagram"><img src="${escapeHTML(src)}" alt="第${escapeHTML(sectionId)}節のアプリ作成の独自図解" ${figureSizeAttributes(lessonDiagramSize(sectionId)||{})} loading="lazy"/><figcaption><a class="figure-zoom text-link" href="${escapeHTML(src)}" target="_blank" rel="noopener noreferrer">図を別のタブで拡大する ↗</a><span>アプリ作成の独自図解です。原本の図版の転載・トレースではありません。図の適用条件と数値は図の中に明記しています。</span></figcaption></figure>`;
 }
 function renderSimulationSteps(mode,result) {
   const v=result.values,n=value=>Number(value).toLocaleString('ja-JP',{maximumSignificantDigits:7});
@@ -1358,6 +1362,7 @@ function renderQuestionFigure(figure) {
 }
 
 function renderAnswerFeedback(question, answer, existingNote, choiceOrder) {
+  const dynamicExperiment=dynamicLinkForQuestion(question,questionFingerprint(question));
   const correct = answer.correct;
   const sourceSection=getSection(question.source.section);
   const guideId=question.source.guideId;
@@ -1365,7 +1370,7 @@ function renderAnswerFeedback(question, answer, existingNote, choiceOrder) {
   const reasons = choiceOrder.map((index,position) => `<li class="${index === question.answer ? 'is-correct' : ''}"><strong>${String.fromCharCode(65 + position)} ${index === question.answer ? '正解' : '誤答'}</strong><p>${linkedQuizText(question.distractors[index],4)}</p></li>`).join('');
   return `<section class="answer-feedback ${correct ? 'feedback-correct' : 'feedback-wrong'}" id="answer-feedback" tabindex="-1" aria-live="polite"><div class="feedback-title"><span class="feedback-symbol">${correct ? '✓' : '!'}</span><div><strong>${correct ? '正解です' : '今回は不正解です'}</strong><small>自信度：${confidenceLabel(answer.confidence)} · ${formatTime(answer.at)}</small></div></div>
     <div class="explanation-block"><h3>何を問う問題だった？</h3><p>${linkedQuizText(question.prompt,5)}</p><h3>正解へ至る考え方</h3><p>${linkedQuizText(question.explanation,6)}</p></div>
-    ${question.beginnerPitfall ? `<aside class="notice-card"><p><strong>間違えやすい点：</strong> ${linkedQuizText(question.beginnerPitfall,4)}</p></aside>` : ''}${question.solutionSteps?.length?`<details class="solution-steps" open><summary>式と計算を順に確認する</summary><ol>${question.solutionSteps.map(step=>`<li>${linkedQuizText(step,4)}</li>`).join('')}</ol></details>`:''}<details class="distractor-details" open><summary>4つの選択肢を確認する</summary><ol>${reasons}</ol></details><div class="answer-source"><strong>関連する出典</strong>${sourceAction}</div>
+    ${question.beginnerPitfall ? `<aside class="notice-card"><p><strong>間違えやすい点：</strong> ${linkedQuizText(question.beginnerPitfall,4)}</p></aside>` : ''}${question.solutionSteps?.length?`<details class="solution-steps" open><summary>式と計算を順に確認する</summary><ol>${question.solutionSteps.map(step=>`<li>${linkedQuizText(step,4)}</li>`).join('')}</ol></details>`:''}<details class="distractor-details" open><summary>4つの選択肢を確認する</summary><ol>${reasons}</ol></details><div class="answer-source"><strong>関連する出典</strong>${sourceAction}</div>${dynamicExperiment?`<p><a class="text-link" href="${escapeHTML(dynamicExperiment.href)}" target="_blank" rel="noopener">${escapeHTML(dynamicExperiment.label)}（別タブ）→</a></p>`:''}
     <form class="mistake-note-form" id="mistake-note-form"><p class="eyebrow">間違いノート</p><h3>次に同じ問題を解くときのために</h3><div class="form-two"><label>間違えた理由（任意）<textarea name="reason" rows="2" maxlength="500" placeholder="例：分母にある量を見落とした">${escapeHTML(existingNote.reason || '')}</textarea></label><label>自分向けの覚え方（任意）<textarea name="memory" rows="2" maxlength="500" placeholder="例：厚さが増えると熱の通り道が長くなる">${escapeHTML(existingNote.memory || '')}</textarea></label></div><label>次に注意すること（任意）<textarea name="nextTime" rows="2" maxlength="500" placeholder="例：式を書いてから選択肢を見る">${escapeHTML(existingNote.nextTime || '')}</textarea></label><button type="submit" class="button secondary">間違いノートを保存</button>${existingNote.updatedAt ? `<small>保存済み · ${formatDate(existingNote.updatedAt.slice(0,10))}</small>` : ''}</form></section>`;
 }
 function confidenceLabel(value) { return ({ high: '自信あり', medium: '少し迷う', low: '自信が低い', unsure: '迷った' })[value] || '未記録'; }

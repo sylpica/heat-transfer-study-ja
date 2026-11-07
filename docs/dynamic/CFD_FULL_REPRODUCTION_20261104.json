@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-04",
+  "sourceCommit": "7001ecfd96911693581ceb42554f759734c900e1",
+  "stage": "development_only_not_public",
+  "sourceNotes": "CFD_DEVELOPMENT.md; equations independently implemented; numerical reference values are public transcriptions, not an expert approval.",
+  "lid": [
+    {
+      "n": 16,
+      "time": 29.99999999999883,
+      "samples": [
+        {
+          "y": 0.2813,
+          "u": -0.1465757468750856
+        },
+        {
+          "y": 0.5,
+          "u": -0.18972172226658704
+        },
+        {
+          "y": 0.6172,
+          "u": -0.13092149270926415
+        },
+        {
+          "y": 0.8516,
+          "u": 0.22531228909718293
+        }
+      ],
+      "divergence": 2.7882696151948494e-11,
+      "energyError": -1.7408297026122455e-13,
+      "pressureResidual": 1.1992205855151957e-08,
+      "pressureRhsNorm": 152.43426998343918,
+      "steps": 2400
+    },
+    {
+      "n": 32,
+      "time": 30,
+      "samples": [
+        {
+          "y": 0.2813,
+          "u": -0.1545790002844859
+        },
+        {
+          "y": 0.5,
+          "u": -0.20394476175866955
+        },
+        {
+          "y": 0.6172,
+          "u": -0.13721944864229285
+        },
+        {
+          "y": 0.8516,
+          "u": 0.23343932188275068
+        }
+      ],
+      "divergence": 8.343492563511745e-11,
+      "energyError": 1.4210854715202004e-14,
+      "pressureResidual": 8.487911845524399e-08,
+      "pressureRhsNorm": 1036.2856947805165,
+      "steps": 4800
+    }
+  ],
+  "natural": [
+    {
+      "n": 16,
+      "time": 0.9999999999999599,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1263186929272706,
+      "divergence": 2.835527368461044e-10,
+      "energyError": -7.092104681304825e-14,
+      "pressureResidual": 2.2913508879949076e-06,
+      "pressureRhsNorm": 25711.12045039669,
+      "steps": 2560
+    },
+    {
+      "n": 32,
+      "time": 1,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1199427644339721,
+      "divergence": 3.3627345352726934e-10,
+      "energyError": 8.201217482900437e-13,
+      "pressureResidual": 7.327227450541839e-06,
+      "pressureRhsNorm": 74159.565166494,
+      "steps": 10240
+    },
+    {
+      "n": 48,
+      "time": 1,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.118748501478649,
+      "divergence": 1.531130777721046e-11,
+      "energyError": 7.095311992253409e-13,
+      "pressureResidual": 1.053600168723241e-06,
+      "pressureRhsNorm": 136549.0632146394,
+      "steps": 23040
+    }
+  ],
+  "halfTimeStep": {
+    "n": 32,
+    "time": 30,
+    "centerU": -0.2039447617003824
+  },
+  "naturalThreeGrid": {
+    "observedOrder": 1.9809900211533282,
+    "extrapolatedNusselt": 1.11777970146854,
+    "monotone": true,
+    "decreasingDifference": true,
+    "scope": "Nonuniform-grid leading-error fit of one wall-average quantity, not a whole-field accuracy or asymptotic-range proof."
+  },
+  "acceptance": {
+    "lidMaxNormalizedVelocityError": 0.002040999715514108,
+    "lidBudget": 0.005,
+    "naturalReference": 1.117,
+    "naturalBudget": 0.006,
+    "naturalError": 0.0029427644339721226,
+    "massBudget": 1e-08,
+    "thermalEnergyBudget": 1e-08,
+    "gridImproves": true
+  },
+  "passed": true,
+  "elapsedMs": 714018.8127240001,
+  "timingScope": "cloud CPU, possible concurrent verification workloads; not a phone or GPU performance claim",
+  "verification": {
+    "runId": 41846561947,
+    "jobId": 126631480323,
+    "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/41846561947",
+    "event": "push",
+    "artifactDownload": "403 Forbidden in this environment; numeric JSON retrieved from the successful job log.",
+    "scope": "Development-only rectangular cavity cases. No whole-field/primary-paper/expert/general-geometry approval."
+  }
+}

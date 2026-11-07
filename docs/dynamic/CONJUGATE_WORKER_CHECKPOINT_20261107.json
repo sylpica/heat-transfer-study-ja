@@ -1,0 +1,79 @@
+{
+  "recordedAtUTC": "2026-11-06T19:41:52.337482+00:00",
+  "basisCommit": "475129dc1c8b2b07937bcd4ffaba84b529357d4e",
+  "sourceAndTestsSHA256": {
+    "dynamic/dev/conjugate-channel.mjs": "e341b96901fe9c968161b35445f3212f4b49466df71c2c39789366fc367a10f4",
+    "dynamic/dev/conjugate-channel-worker.mjs": "3f7bc77fa03d9f30c49cc78416147029405a0744697b5605e81371a7997554a3",
+    "tests/dynamic-conjugate-worker-browser.mjs": "ce1e84d594e73bd7505b0c2af22828856fcf8d2c2e1dad298cd5f4cefb53313b"
+  },
+  "focusedNode": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "log": "work/conjugate-core-time-spatial-node-20261107.log"
+  },
+  "browser": {
+    "chromium": {
+      "result": {
+        "engine": "chromium",
+        "developmentOnly": true,
+        "actualWorker": true,
+        "maximumDifferenceFromIndependentExponentialK": 3.8572174265283365e-05,
+        "maximumAllHeatDifferenceJ": 2.1320467938679144e-05,
+        "regionalHeatBalances": true,
+        "completeRestore": true,
+        "invalidInitAndRestoreKeepWorker": true,
+        "realProgressCancelRollback": true,
+        "coolingSymmetryMaximumDifferenceK": 0,
+        "manufacturedCases": 8,
+        "maximumManufacturedFixedPointRateKPerS": 1.8326318240724505e-12,
+        "maximumManufacturedOneStepDriftK": 0,
+        "largeCells": 12288,
+        "tinyHeatPreserved": true,
+        "localStorageUnchanged": true,
+        "GUIVerified": false,
+        "offlineVerified": false,
+        "generalMomentumCouplingVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/conjugate-worker-chromium-20261107.log",
+      "logSHA256": "90247f0541accf4c78d46a23a1613868100e5e578f98c71047d8922651d1416d"
+    },
+    "webkit": {
+      "result": {
+        "engine": "webkit",
+        "developmentOnly": true,
+        "actualWorker": true,
+        "maximumDifferenceFromIndependentExponentialK": 3.8572174265283365e-05,
+        "maximumAllHeatDifferenceJ": 2.1320467938679144e-05,
+        "regionalHeatBalances": true,
+        "completeRestore": true,
+        "invalidInitAndRestoreKeepWorker": true,
+        "realProgressCancelRollback": true,
+        "coolingSymmetryMaximumDifferenceK": 0,
+        "manufacturedCases": 8,
+        "maximumManufacturedFixedPointRateKPerS": 1.8326318240724505e-12,
+        "maximumManufacturedOneStepDriftK": 0,
+        "largeCells": 12288,
+        "tinyHeatPreserved": true,
+        "localStorageUnchanged": true,
+        "GUIVerified": false,
+        "offlineVerified": false,
+        "generalMomentumCouplingVerified": false,
+        "releaseApproved": false,
+        "passed": true
+      },
+      "log": "work/conjugate-worker-webkit-20261107.log",
+      "logSHA256": "fa35fa4b8292c74a5ea01b5c12e45bfbcd8fe0440b6693d89a34f46e67945b75"
+    }
+  },
+  "independentTime": "CONJUGATE_TIME_REFERENCE_20261107_v1.json",
+  "independentSpatial": "CONJUGATE_SPATIAL_REFERENCE_20261107_v1.json",
+  "GUIVerified": false,
+  "offlineVerified": false,
+  "realDeviceVerified": false,
+  "generalMomentumCouplingVerified": false,
+  "releaseApproved": false
+}

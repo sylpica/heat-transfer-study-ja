@@ -1,0 +1,59 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T22:55:41.999337+00:00",
+  "baseSourceCommit": "e313e2e5e29278ca2d1ee05020477df996b2779e",
+  "sourceTreeDirty": true,
+  "operationPolicy": "Root only, no agents; each local command/browser/Node file sequential.",
+  "sourceFilesSHA256": {
+    "dynamic/dev/planar-predicates.mjs": "ab4959b22bb9952ae5750d6fda05ac3a9c1b95cd8dfedcea54440b9f477eae45",
+    "dynamic/dev/convex-triangle-mesh.mjs": "c6a538e17a3d2ddc566596b0f79476c6f67c3573a6abeef1ef4b8fb7b5287601",
+    "scripts/dynamic-triangle-mesh-reference.py": "4cec37665ec2c812d9f38d315a154b8097d47128a926affebe07030240881071",
+    "tests/dynamic-planar-predicates.test.mjs": "062bf8021fcbbe8a5aba202fc2fdc0a8e4420e062e7f619ae534c2e51f74aa58",
+    "tests/dynamic-convex-triangle-mesh.test.mjs": "334b27beb551a855f05cf4d90b1a3b2dccb152b3c5f42e1d01fbe5fcc6f408d0",
+    "tests/dynamic-triangle-mesh-browser.mjs": "08a4534d76cccc85139895c94edada5a1f3922e73f6de3f2f1926ac5d68f5ca2",
+    "docs/dynamic/TRIANGLE_MESH_REFERENCE_20261106.json": "a248301517adc4161bba0ac78e3e0ac84ee8de5c903256db4cb801906fdda855"
+  },
+  "relatedNodeTests": 6,
+  "node": {
+    "tests": 1331,
+    "pass": 1326,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "analyticMeshes": 12,
+      "maximumAreaError": 1.1102230246251565e-16,
+      "subnormalAndOverflowSigns": true,
+      "exactCocircularTie": true,
+      "temperaturePDEImplemented": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "developmentModulesExcluded": true,
+  "stiffnessAssembled": false,
+  "temperaturePDEImplemented": false,
+  "monotonicityVerified": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

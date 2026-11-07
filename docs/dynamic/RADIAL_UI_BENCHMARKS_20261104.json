@@ -1,0 +1,203 @@
+{
+  "generatedAtUTC": "2026-11-04T21:55:17.024Z",
+  "sourceCommit": "9f80b12efb8e1d5edbebc13d8dd60460ccaa5c9f",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/radial.mjs": "e118c7fe7a671646814e3659d2f4216259c15d8df8c5005d4bee00877cf6e901",
+    "scripts/dynamic-radial-benchmarks.mjs": "5381feaba31bd8e23d98a71736401f0343a078b98244f560f8e17ed3c987aa4d",
+    "scripts/dynamic-radial-reference.py": "e4aafea5f87032436d277c2b0eaceeb4a3b0db437d3a27cbd0a0c8de5ea5b867",
+    "docs/dynamic/RADIAL_CONTINUOUS_REFERENCE_20261104.json": "16098608a8442cb1d3bcdcefb6c9e5d95e6f738f32ea3600b65f6a5548f5a0d8"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "stage": "radial_development_code_verification_only",
+  "releaseApproved": false,
+  "reference": "Continuous eigenfunction series evaluated and shell-averaged independently with SciPy; J0 first root also checked using 50-digit mpmath. Exact volume-average series separately checks all shell references.",
+  "spatialNorm": "Volume-weighted RMS of shell-average temperature errors; maximum shell error separately retained. dt follows the explicit stability limit as n changes, so this is not isolated spatial order.",
+  "geometries": {
+    "sphere": {
+      "rows": [
+        {
+          "n": 16,
+          "time": 1,
+          "steps": 99,
+          "dtMax": 0.010190524649479876,
+          "temperatureRMSK": 0.044230716293688126,
+          "temperatureMaxErrorK": 0.06250861843142275,
+          "energyErrorJ": -5.684341886080802e-14,
+          "elapsedMs": 2.753768000000001
+        },
+        {
+          "n": 32,
+          "time": 1,
+          "steps": 389,
+          "dtMax": 0.0025764719729699796,
+          "temperatureRMSK": 0.011279984431985855,
+          "temperatureMaxErrorK": 0.016302446587758368,
+          "energyErrorJ": 1.1368683772161603e-13,
+          "elapsedMs": 5.578934000000004
+        },
+        {
+          "n": 64,
+          "time": 1,
+          "steps": 1545,
+          "dtMax": 0.0006476154133432011,
+          "temperatureRMSK": 0.0028488265733225444,
+          "temperatureMaxErrorK": 0.0041935346227433,
+          "energyErrorJ": -5.684341886080802e-14,
+          "elapsedMs": 23.729789000000004
+        }
+      ],
+      "combinedGridAndTimeOrders": [
+        1.9712835295197604,
+        1.9853253734306513
+      ],
+      "fixedGridTimeRefinement": {
+        "n": 32,
+        "baseSteps": 389,
+        "time": 1,
+        "steps": [
+          389,
+          778,
+          1556,
+          3112
+        ],
+        "successiveDifferenceRMSK": [
+          0.015775350823421207,
+          0.007885144765806698,
+          0.003941940038062513
+        ],
+        "observedOrders": [
+          1.0004629419832405,
+          1.000231410826505
+        ]
+      },
+      "convection": {
+        "Bi_hR_over_k": 0.5,
+        "rows": [
+          {
+            "n": 16,
+            "temperatureRMSK": 0.0041262170338367396,
+            "surfaceErrorK": -0.043094218767805614,
+            "energyErrorJ": -3.907985046680551e-13
+          },
+          {
+            "n": 32,
+            "temperatureRMSK": 0.001030520221877389,
+            "surfaceErrorK": -0.01078722597065962,
+            "energyErrorJ": 2.3447910280083306e-13
+          },
+          {
+            "n": 64,
+            "temperatureRMSK": 0.0002575674298745884,
+            "surfaceErrorK": -0.0026976624263284066,
+            "energyErrorJ": 2.984279490192421e-13
+          }
+        ],
+        "volumeOrders": [
+          2.0014468920380146,
+          2.0003507378743355
+        ],
+        "surfaceOrders": [
+          1.9981704290816806,
+          1.9995421787462047
+        ]
+      }
+    },
+    "cylinder": {
+      "rows": [
+        {
+          "n": 16,
+          "time": 1,
+          "steps": 98,
+          "dtMax": 0.010305851063829786,
+          "temperatureRMSK": 0.03709631565803687,
+          "temperatureMaxErrorK": 0.09840759071545335,
+          "energyErrorJ": 1.1368683772161603e-12,
+          "elapsedMs": 0.7764200000000017
+        },
+        {
+          "n": 32,
+          "time": 1,
+          "steps": 387,
+          "dtMax": 0.00259046052631579,
+          "temperatureRMSK": 0.009277022100015658,
+          "temperatureMaxErrorK": 0.02470268021437505,
+          "energyErrorJ": 2.2737367544323206e-13,
+          "elapsedMs": 2.817514999999986
+        },
+        {
+          "n": 64,
+          "time": 1,
+          "steps": 1541,
+          "dtMax": 0.0006493373691099476,
+          "temperatureRMSK": 0.0023206111511942557,
+          "temperatureMaxErrorK": 0.006186759504089423,
+          "energyErrorJ": -3.410605131648481e-12,
+          "elapsedMs": 21.34466500000002
+        }
+      ],
+      "combinedGridAndTimeOrders": [
+        1.9995422245647998,
+        1.999156977829649
+      ],
+      "fixedGridTimeRefinement": {
+        "n": 32,
+        "baseSteps": 387,
+        "time": 1,
+        "steps": [
+          387,
+          774,
+          1548,
+          3096
+        ],
+        "successiveDifferenceRMSK": [
+          0.011565866688642559,
+          0.005783057190030413,
+          0.0028915568439537003
+        ],
+        "observedOrders": [
+          0.9999691039708396,
+          0.9999859055848627
+        ]
+      },
+      "convection": {
+        "Bi_hR_over_k": 0.5,
+        "rows": [
+          {
+            "n": 16,
+            "temperatureRMSK": 0.010640649910001182,
+            "surfaceErrorK": -0.047942059927265746,
+            "energyErrorJ": 1.9326762412674725e-12
+          },
+          {
+            "n": 32,
+            "temperatureRMSK": 0.002648044579976638,
+            "surfaceErrorK": -0.01200772239019443,
+            "energyErrorJ": 6.252776074688882e-13
+          },
+          {
+            "n": 64,
+            "temperatureRMSK": 0.0006612576353155002,
+            "surfaceErrorK": -0.0030033243837124246,
+            "energyErrorJ": -4.490630090003833e-12
+          }
+        ],
+        "volumeOrders": [
+          2.0065869551974145,
+          2.001643029459072
+        ],
+        "surfaceOrders": [
+          1.9973293702229433,
+          1.9993303170543202
+        ]
+      }
+    }
+  },
+  "passed": true,
+  "elapsedMs": 205.59499,
+  "timingScope": "cloud CPU, not real-device performance or engineering approval"
+}

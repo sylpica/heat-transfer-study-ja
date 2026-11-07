@@ -1,0 +1,2 @@
+import {installWorkerRuntime} from '../worker-runtime.mjs';import {createLongDuctRadiation} from './long-duct-radiation.mjs';
+installWorkerRuntime(data=>{if(data.kind!=='long-duct-radiation')throw Error('長い凸ダクトの等温灰色壁だけを扱います。');const model=createLongDuctRadiation(data.config);return {step:model.step,restore:model.restore,snapshot:model.snapshot,safeDt:model.safeDt,mesh:model.geometry,get time(){return model.time;}};});

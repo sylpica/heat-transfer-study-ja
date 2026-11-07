@@ -1,0 +1,207 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-05T22:26:48.730584+00:00",
+  "baseSourceCommit": "fb7b3aa66ceacd3a2fd805f41d7da7f8d69dae68",
+  "sourceTreeDirty": true,
+  "operationPolicy": "Root only. No subagents. Each local test and browser engine ran sequentially.",
+  "sourceFilesSHA256": {
+    "dynamic/term-panel.mjs": "ed3f7b6dad5078c71943918897b1942f972bdffad235a3edf416c5015fec71b0",
+    "tests/dynamic-term-panel-focus-browser.mjs": "34e05f314f96d43c9a3108817028da294a2045ad4ba742503eddb8784ec1fd96",
+    ".github/workflows/dynamic-simulation.yml": "0eff2749115fbd45bec89614acd40579651dd43243f9f68d9a1b485b7615f890"
+  },
+  "originalFailure": {
+    "sourceCommit": "5faaa2241424aebf9798117393b1a634f3590276",
+    "run": 42118295655,
+    "job": 127563668533,
+    "assertion": "'フィン効率' !== 'フィン有効度'",
+    "newDeterministicTestBeforeFix": {
+      "expectedFocus": "second",
+      "actualFocus": "first",
+      "failed": true
+    },
+    "notTimeoutIncreaseOrRemovedAssertion": true
+  },
+  "node": {
+    "tests": 1322,
+    "pass": 1317,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "focus": {
+      "chromium": {
+        "engine": "chromium",
+        "delayedClosePreservesNextTermFocus": true,
+        "reopenedDialogKeepsModalFocus": true,
+        "explicitFallbackRestoresOrigin": true,
+        "enterSpaceEscape": true,
+        "localStorageUnchanged": true,
+        "passed": true
+      },
+      "webkit": {
+        "engine": "webkit",
+        "delayedClosePreservesNextTermFocus": true,
+        "reopenedDialogKeepsModalFocus": true,
+        "explicitFallbackRestoresOrigin": true,
+        "enterSpaceEscape": true,
+        "localStorageUnchanged": true,
+        "passed": true
+      }
+    },
+    "fin": {
+      "chromium": {
+        "engine": "chromium",
+        "tutorial": true,
+        "lockedPrediction": true,
+        "independentTransientFinReference": true,
+        "powerEfficiencyEffectivenessDistinct": true,
+        "nearSteadyStorageChecked": true,
+        "twentyCalculatedFrames": true,
+        "physicalCommonShapeScale": true,
+        "prescribedBaseFaceTemperature": true,
+        "rotationPreservesPhysicalState": true,
+        "realRewind": true,
+        "predictionBeforeAdvance": true,
+        "predictionDisabledAtRequestStart": true,
+        "correctTermIdentitiesAndFocus": true,
+        "mobileCells": [
+          32,
+          16
+        ],
+        "viewports": [
+          390,
+          412,
+          1280
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "offlineFirstQuery": true,
+        "offlineMethod": "browser_offline",
+        "localStorageUnchanged": true,
+        "passed": true
+      },
+      "webkit": {
+        "engine": "webkit",
+        "tutorial": true,
+        "lockedPrediction": true,
+        "independentTransientFinReference": true,
+        "powerEfficiencyEffectivenessDistinct": true,
+        "nearSteadyStorageChecked": true,
+        "twentyCalculatedFrames": true,
+        "physicalCommonShapeScale": true,
+        "prescribedBaseFaceTemperature": true,
+        "rotationPreservesPhysicalState": true,
+        "realRewind": true,
+        "predictionBeforeAdvance": true,
+        "predictionDisabledAtRequestStart": true,
+        "correctTermIdentitiesAndFocus": true,
+        "mobileCells": [
+          32,
+          16
+        ],
+        "viewports": [
+          390,
+          412,
+          1280
+        ],
+        "themes": [
+          "light",
+          "dark"
+        ],
+        "offlineFirstQuery": true,
+        "offlineMethod": "server_unavailable_SW_fallback",
+        "localStorageUnchanged": true,
+        "passed": true
+      }
+    },
+    "radiation": {
+      "chromium": {
+        "engine": "chromium",
+        "model": "closed_diffuse_gray_radiation",
+        "independentTwoSurfaceWatts": true,
+        "threeSurface": true,
+        "fourSurface": true,
+        "comparison": true,
+        "rewind": true,
+        "invalidViewFactorsRejected": true,
+        "invalidStepAtomic": true,
+        "workerLoadFailureHandled": true,
+        "termPanelAndRelatedTerms": true,
+        "offline": true,
+        "offlineMethod": "browser_offline",
+        "viewports": [
+          390,
+          412,
+          1280
+        ],
+        "pageErrors": 0,
+        "passed": true
+      },
+      "webkit": {
+        "engine": "webkit",
+        "model": "closed_diffuse_gray_radiation",
+        "independentTwoSurfaceWatts": true,
+        "threeSurface": true,
+        "fourSurface": true,
+        "comparison": true,
+        "rewind": true,
+        "invalidViewFactorsRejected": true,
+        "invalidStepAtomic": true,
+        "workerLoadFailureHandled": true,
+        "termPanelAndRelatedTerms": true,
+        "offline": true,
+        "offlineMethod": "server_unavailable_SW_fallback",
+        "viewports": [
+          390,
+          412,
+          1280
+        ],
+        "pageErrors": 0,
+        "passed": true
+      }
+    },
+    "cache": {
+      "chromium": {
+        "engine": "chromium",
+        "oldSourceCommit": "13b0d1e32909a4037e587826250cab5f52dde336",
+        "oldCacheName": "heat-study-ja-app-87093db19a009183",
+        "pdfCacheName": "heat-study-ja-pdf-d318176a9cac997d",
+        "newCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+        "newWorkerRuntimeCachedByteForByte": true,
+        "selfContainedWorkerCachedByteForByte": true,
+        "pdfCacheRetained": true,
+        "localStorageRetained": true,
+        "offlineWorkerAfterUpdate": true,
+        "offlineMethod": "browser_offline",
+        "realDevice": false,
+        "passed": true
+      },
+      "webkit": {
+        "engine": "webkit",
+        "oldSourceCommit": "13b0d1e32909a4037e587826250cab5f52dde336",
+        "oldCacheName": "heat-study-ja-app-87093db19a009183",
+        "pdfCacheName": "heat-study-ja-pdf-d318176a9cac997d",
+        "newCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+        "newWorkerRuntimeCachedByteForByte": true,
+        "selfContainedWorkerCachedByteForByte": true,
+        "pdfCacheRetained": true,
+        "localStorageRetained": true,
+        "offlineWorkerAfterUpdate": true,
+        "offlineMethod": "server_unavailable_SW_fallback",
+        "realDevice": false,
+        "passed": true
+      }
+    }
+  },
+  "browserTestsRun": 8,
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "developmentModulesExcluded": true,
+  "realDevice": false,
+  "latestSourceCIPendingPush": true,
+  "mainPublished": false
+}

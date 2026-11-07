@@ -1,0 +1,3 @@
+@import url('./cavity.css');
+#profile-u,#profile-v{width:100%}#view-error{border:2px solid #d04d39;padding:.7rem}#postprocess-warning{border:2px solid #ba7300;padding:.7rem}
+#field-a,#field-b{max-width:min(100%,640px)}

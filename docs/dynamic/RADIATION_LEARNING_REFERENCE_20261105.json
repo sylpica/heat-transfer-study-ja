@@ -1,0 +1,27 @@
+{
+  "generatedAtUTC": "2026-11-05T05:29:31.773970+00:00",
+  "sourceCommit": "f8f74b5e3fc7e07977a31b8041cb80723dfb26df",
+  "generatorTreeDirty": true,
+  "generatorSHA256": "8a8e349a39dc3d4e74663cd3db6b92856bb95e18742254a22b37fe114edd3ca4",
+  "environment": {
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "method": "Continuous equal-area gray two-plate resistance formula; scalar ODE using independent energy elimination, DOP853, repeated with a different step limit/tolerance.",
+  "timeS": 20.0,
+  "temperatureK": [
+    400.01394451658314,
+    329.71802774170845
+  ],
+  "initialOutwardPowerW": 1264.2381400032268,
+  "outwardPowerW": [
+    407.8184860837212,
+    -407.8184860837212
+  ],
+  "weightedMeanK": 353.15,
+  "energyReferenceK": 273.15,
+  "initialSensibleEnergyJ": 48000.0,
+  "repeatTemperatureDifferenceK": 5.684341886080802e-14,
+  "expertApproved": false,
+  "passed": true
+}

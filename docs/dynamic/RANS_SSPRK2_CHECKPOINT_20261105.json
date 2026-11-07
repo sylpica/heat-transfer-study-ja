@@ -1,0 +1,113 @@
+{
+  "generatedAtUTC": "2026-11-05T13:15:15.513516+00:00",
+  "baseSourceCommit": "3c7ef796a5e4b2fee9e15ca6235900c300596729",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cess-profile.mjs": "88d991039ff911c62a81b355cb093538379dae6dd4ffe4155b2cc1a45fa05b12",
+    "dynamic/dev/rans-channel.mjs": "d0943b58622019e6fd3b5b5f9b15e8ba78837586c0939eeb75df5923a0ad23f9",
+    "dynamic/dev/rans-ui.mjs": "0af82ed3cc7c728590a08019462342d36cfd6c2764166cbc57402f939c5a8584",
+    "dynamic/dev/rans-view.mjs": "cf42568aa2f5df62d72a02383158dde7bb2c2b51d90952f74850ffe3130cc53f",
+    "dynamic/dev/rans-worker.mjs": "e1fd2fcc5dc5930aa67921ccecec13c4a3a7d76a905b1d2645d0ec0a4de8e764",
+    "dynamic/dev/rans.html": "5eddae75553206d19fe7495f3fc66564c01409cf1790bd9298b384e3b3165d45",
+    "dynamic/dev/cavity.css": "b31bba636dfe88ea292c63f87d579c5e44124ad1962100f54032ba784016829e",
+    "dynamic/actor.mjs": "a47193c1f28278729506a392d373f24ecc3fa836dd94e9bea6df68a836d8e5b0",
+    "dynamic/experiment.mjs": "a888e61747d02eb55eea2d9782bf9597181bb8959c07746c9e58c5855f244bb4",
+    "dynamic/worker-runtime.mjs": "4a45869d90b22bcea712ba808239f44f43c473d4fd1ad8d4817a590b307e3104",
+    "scripts/dynamic-rans-temperature-reference.py": "7f7a5eeece5945ffa430566a93d78df5ad3c0900a23fbbc4b8464ec423a1df37",
+    "scripts/dynamic-rans-temperature-benchmarks.mjs": "f0f6d6c17c43da62a2f6fcb11c161bc0a50f7c9bf2f5929dd36c1732f2c34b56",
+    "tests/dynamic-rans-channel.test.mjs": "fd45fe4a65e238300240ec41704f837c3cf9bc803ea9a32966742fbdc6617c7f",
+    "tests/dynamic-rans-reference.test.mjs": "36c3baedc6e7dd99afcff53971525f872af55d8bfbcc5a2e661b56acfec2b28f",
+    "tests/dynamic-rans-worker-runtime.test.mjs": "7125cec85c11d563db530e156f93276279ba24c6ed7b80c6e62ef791dc3b4463",
+    "tests/dynamic-rans-browser.mjs": "334a2da55ead81d8b73f894ca8fa63707a92a28577b7213c215d4d2665fec2d5",
+    ".github/workflows/dynamic-simulation.yml": "f6f516628d575574817795fbd361594a644d9bb5fd09c725401d86e253f4532d",
+    "tests/dynamic-rans-ssprk2.test.mjs": "bcfe4f433bdfc45f20e1ab9d01b2cfcb17a6757a779d6c85cf51921f5ab4c65b",
+    "tests/dynamic-rans-independent-review.test.mjs": "abbdbcd1d8337ed0834af587ca6ce33d50da10c52d96d7e8f60feea3453a1e13"
+  },
+  "node": {
+    "tests": 1262,
+    "passCount": 1257,
+    "fail": 0,
+    "skipped": 5,
+    "environment": "Node v24.19.0",
+    "scope": "SSPRK2 and independent numerical review; later heat-sink/provided-benchmark additions are separate."
+  },
+  "newBrowserScripts": 2,
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorkerMatchesIndependentNodeRun": true,
+      "temperatureAndMeanVelocity": true,
+      "omittedHeatingExplicit": true,
+      "steadyRANSNotInstantaneousEddies": true,
+      "abOppositeFlows": true,
+      "rewindActualField": true,
+      "keyboardProbe": true,
+      "invalidDtAtomic": true,
+      "cancelRollbackAndRetry": true,
+      "ssprk2WorkerMatchesKernel": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorkerMatchesIndependentNodeRun": true,
+      "temperatureAndMeanVelocity": true,
+      "omittedHeatingExplicit": true,
+      "steadyRANSNotInstantaneousEddies": true,
+      "abOppositeFlows": true,
+      "rewindActualField": true,
+      "keyboardProbe": true,
+      "invalidDtAtomic": true,
+      "cancelRollbackAndRetry": true,
+      "ssprk2WorkerMatchesKernel": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "passed": true
+    }
+  },
+  "browserEnvironment": {
+    "playwright": "1.56.1",
+    "chromium": "/usr/bin/chromium 154",
+    "webkit": "26.0 build 2215, local runtime libraries",
+    "webkitHostProbeSkippedLocally": true,
+    "realDevice": false
+  },
+  "visualInspection": "Actual final WebKit 390px/dark SSPRK2 screenshot viewed. Units, identical 1D mean-flow interpretation, two-stage setting and diagnostics inspected. Not a real-device or external-expert check.",
+  "screenshot": {
+    "path": "screenshots/rans-ssprk2-mobile-20261105.png",
+    "sha256": "ca60aba85f879009a21d5a9862b57a195b0379c789a80e8d0e553e5e6a5007fb"
+  },
+  "buildPublic": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "cacheName": "heat-study-ja-app-fcf92666638c0ebb",
+  "developmentModulesExcluded": true,
+  "previousPublicMatrix": {
+    "sourceCommit": "791264614516bfcf09d3244865f69eb797bc1383",
+    "publicScripts": 24,
+    "scope": "Not rerun here; two new development RANS browser scripts ran freshly."
+  },
+  "priorCI": {
+    "sourceCommit": "0193944dd6457e7ef43cbeb161cff28c1bb3fc1f",
+    "runId": 42022963870,
+    "allFiveJobsSucceeded": true
+  },
+  "currentCI": "pending commit/push",
+  "notVerified": [
+    "instantaneous turbulence or unsteady momentum",
+    "thermal closure against thermal DNS",
+    "general CFD / high-order moving-wall approval",
+    "development UI offline",
+    "real devices and assistive technology",
+    "external expert review",
+    "all 72 requirements",
+    "main/public URL publication"
+  ],
+  "releaseApproved": false,
+  "mainPublished": false,
+  "independentNumericalReview": "AI sub-agent review and two new invariant/similarity tests, rerun by root; not external expert approval."
+}

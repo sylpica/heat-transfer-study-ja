@@ -1,0 +1,162 @@
+{
+  "generatedAtUTC": "2026-11-06T09:00:45.232879+00:00",
+  "sourceCommit": "1ff34f1aef1f1a8437982fb56368be126f78a5ed",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/triangle-linear-transient.mjs": "009c96a52848d35da849e7986d5367d37505c7de850e1de726a32119683a8dd1",
+    "dynamic/dev/triangle-boundaries.mjs": "a9e1cdbd1d71e7e92abf640b13ec230c1a84aa2e4951d24bcd7d127e3aa6b6aa",
+    "dynamic/dev/triangle-linear-flux-recovery.mjs": "93b79553c8df076b11af0898f4d422c36f43e99cd06b14f5c036bc001148ce41",
+    "scripts/dynamic-boundary-refined-transient-reference.py": "8ad4750e205e1a1a815e6f2f4ab85608e1f0b783d723c5bd1c86e27628fc0ae5",
+    "scripts/dynamic-boundary-refined-flux-reference.py": "afb97b13e0a42ab153a856778be0c3a4db453bebf24f8cb3839f70fc445c96f5",
+    "tests/dynamic-boundary-refined-transient.test.mjs": "bc5c288c6d0c0425b43179a1cd08f0aa5d1e88581c224d77b690b571f73863d1",
+    "tests/dynamic-boundary-refined-flux.test.mjs": "60727ca357e0f44c444be2509113eb3a6fad3212d1525e2fdc68685814067e66",
+    "tests/dynamic-boundary-refined-transient-browser.mjs": "048db2900172acd0cde1a5d311ccc542ee8539a49f38c9aa0ec10da6dc591a5e",
+    "docs/dynamic/BOUNDARY_REFINED_TRANSIENT_REFERENCE_20261106.json": "dd73c6b424e42350b8e0553eadcb1bbbe85c0fc64d67c7d88a0d28852d524110",
+    "docs/dynamic/BOUNDARY_REFINED_FLUX_REFERENCE_20261106.json": "dc4554f86aca63231ac939edb7b6404e9762dc442456a9500a10d23e5963c661"
+  },
+  "criteriaDeclaredAtCommit": {
+    "temperature": "76569d1",
+    "flux": "1ff34f1"
+  },
+  "node": {
+    "tests": 1394,
+    "pass": 1389,
+    "skipped": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "relatedNode": {
+    "temperature": 5,
+    "flux": 4
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "boundaryRefinementExplicit": true,
+      "continuousCases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 8,
+          "independentTimeErrorK": 5.327492104356679e-06,
+          "energyErrorJ": 1.1095835361629725e-10
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 8,
+          "independentTimeErrorK": 8.764423853335757e-09,
+          "energyErrorJ": -1.6370904631912708e-11
+        }
+      ],
+      "fluxCases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 8,
+          "maximumIndependentEdgeDifferenceW": 2.5979218776228663e-13,
+          "maximumElementResidualW": 3.2085445411667024e-13
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 8,
+          "maximumIndependentEdgeDifferenceW": 5.861283680630436e-14,
+          "maximumElementResidualW": 6.018102682858739e-14
+        },
+        {
+          "kind": "steady-flux-robin",
+          "n": 4,
+          "maximumIndependentEdgeDifferenceW": 5.415806691999592e-15,
+          "maximumElementResidualW": 8.536209933351911e-15
+        },
+        {
+          "kind": "tiny-robin-source",
+          "n": 4,
+          "maximumIndependentEdgeDifferenceW": 7.90615060953824e-120,
+          "maximumElementResidualW": 1.9873673441759533e-119
+        }
+      ],
+      "affineTimeErrorK": 9.203574748539722e-06,
+      "realRestore": true,
+      "invalidStepRejected": true,
+      "cancelOnActualProgress": true,
+      "rollbackRetryMaximumDifferenceK": 0,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "kernelCompatibilityOnly": true,
+      "actualWorker": true,
+      "boundaryRefinementExplicit": true,
+      "continuousCases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 8,
+          "independentTimeErrorK": 5.327492104356679e-06,
+          "energyErrorJ": 1.1095835361629725e-10
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 8,
+          "independentTimeErrorK": 8.764423853335757e-09,
+          "energyErrorJ": -1.5916157281026244e-11
+        }
+      ],
+      "fluxCases": [
+        {
+          "kind": "dirichlet-neumann",
+          "n": 8,
+          "maximumIndependentEdgeDifferenceW": 2.609024107869118e-13,
+          "maximumElementResidualW": 3.241851231905457e-13
+        },
+        {
+          "kind": "robin-neumann",
+          "n": 8,
+          "maximumIndependentEdgeDifferenceW": 5.861283680630436e-14,
+          "maximumElementResidualW": 6.017408793468348e-14
+        },
+        {
+          "kind": "steady-flux-robin",
+          "n": 4,
+          "maximumIndependentEdgeDifferenceW": 5.412337245047638e-15,
+          "maximumElementResidualW": 8.539679380303865e-15
+        },
+        {
+          "kind": "tiny-robin-source",
+          "n": 4,
+          "maximumIndependentEdgeDifferenceW": 7.906128536777967e-120,
+          "maximumElementResidualW": 1.9873738977625675e-119
+        }
+      ],
+      "affineTimeErrorK": 9.203574748539722e-06,
+      "realRestore": true,
+      "invalidStepRejected": true,
+      "cancelOnActualProgress": true,
+      "rollbackRetryMaximumDifferenceK": 0,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "legacyRegressionBothEngines": [
+    "tests/dynamic-triangle-linear-browser.mjs",
+    "tests/dynamic-triangle-linear-ui-browser.mjs"
+  ],
+  "publicBuild": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "geometryAndScope": "Explicit boundaryRefinement:true only; legacy default/false unchanged. Rotated 2:1 rectangle plus six affine Neumann patch shapes. Resource caps and unsupported negative coefficients reject.",
+  "generalAccuracyVerified": false,
+  "dedicatedGUIImplemented": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

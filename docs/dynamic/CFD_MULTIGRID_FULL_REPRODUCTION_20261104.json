@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-04",
+  "sourceCommit": "e1e93d1f0fe2e34b7c771ae863e65f747cfa3fdc",
+  "stage": "development_only_not_public",
+  "pressurePreconditioner": "multigrid",
+  "sourceNotes": "CFD_DEVELOPMENT.md; equations independently implemented; numerical reference values are public transcriptions, not an expert approval.",
+  "lid": [
+    {
+      "n": 16,
+      "time": 29.99999999999883,
+      "samples": [
+        {
+          "y": 0.2813,
+          "u": -0.14657574687321037
+        },
+        {
+          "y": 0.5,
+          "u": -0.189721722266181
+        },
+        {
+          "y": 0.6172,
+          "u": -0.13092149271001013
+        },
+        {
+          "y": 0.8516,
+          "u": 0.22531228909579476
+        }
+      ],
+      "divergence": 3.729017095110976e-12,
+      "energyError": 3.979039320256561e-13,
+      "pressureResidual": 1.3834929756844395e-09,
+      "pressureRhsNorm": 152.43426998369418,
+      "totalPressureIterations": 8467,
+      "steps": 2400
+    },
+    {
+      "n": 32,
+      "time": 30,
+      "samples": [
+        {
+          "y": 0.2813,
+          "u": -0.15457900028371352
+        },
+        {
+          "y": 0.5,
+          "u": -0.20394476175992335
+        },
+        {
+          "y": 0.6172,
+          "u": -0.13721944864355012
+        },
+        {
+          "y": 0.8516,
+          "u": 0.23343932188207292
+        }
+      ],
+      "divergence": 3.643974011424689e-11,
+      "energyError": 9.805489753489383e-13,
+      "pressureResidual": 7.598075807153954e-08,
+      "pressureRhsNorm": 1036.2856947789694,
+      "totalPressureIterations": 13822,
+      "steps": 4800
+    }
+  ],
+  "natural": [
+    {
+      "n": 16,
+      "time": 0.9999999999999599,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1263186929080575,
+      "divergence": 3.205435916697752e-12,
+      "energyError": -8.633094239485279e-14,
+      "pressureResidual": 5.1488050499920077e-08,
+      "pressureRhsNorm": 25711.120450385257,
+      "totalPressureIterations": 7333,
+      "steps": 2560
+    },
+    {
+      "n": 32,
+      "time": 1,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1199427644285151,
+      "divergence": 2.165490009531368e-12,
+      "energyError": 1.1423084700366505e-13,
+      "pressureResidual": 1.506357592604283e-07,
+      "pressureRhsNorm": 74159.56516665706,
+      "totalPressureIterations": 26838,
+      "steps": 10240
+    },
+    {
+      "n": 48,
+      "time": 1,
+      "rayleigh": 1000,
+      "prandtl": 0.71,
+      "nusselt": 1.1187485014608,
+      "divergence": 2.6274982189988805e-11,
+      "energyError": 1.3102654763634734e-12,
+      "pressureResidual": 1.1352674474867524e-05,
+      "pressureRhsNorm": 136549.06321463812,
+      "totalPressureIterations": 56755,
+      "steps": 23040
+    }
+  ],
+  "halfTimeStep": {
+    "n": 32,
+    "time": 30,
+    "centerU": -0.20394476170070278
+  },
+  "naturalThreeGrid": {
+    "observedOrder": 1.980990000242362,
+    "extrapolatedNusselt": 1.117779701425761,
+    "monotone": true,
+    "decreasingDifference": true,
+    "scope": "Nonuniform-grid leading-error fit of one wall-average quantity, not a whole-field accuracy or asymptotic-range proof."
+  },
+  "acceptance": {
+    "lidMaxNormalizedVelocityError": 0.00204099971628649,
+    "lidBudget": 0.005,
+    "naturalReference": 1.117,
+    "naturalBudget": 0.006,
+    "naturalError": 0.0029427644285151544,
+    "massBudget": 1e-08,
+    "thermalEnergyBudget": 1e-08,
+    "gridImproves": true
+  },
+  "passed": true,
+  "elapsedMs": 177019.058462,
+  "timingScope": "cloud CPU, possible concurrent verification workloads; not a phone or GPU performance claim",
+  "sourceTreeDirty": true,
+  "verificationScope": "Local uncommitted multigrid batch after e1e93d1; exact source hashes captured after the completed run with those files unchanged. Not a clean e1e93d1 run or a publication approval.",
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "abbdc29e85fa2e0cc129bb45948784884e121953b78771e046925ebe6b5f3aea",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-cavity-benchmarks.mjs": "2dcc69111facc082d3c92bb262d5ffe715580a65d96d6b5ca741cc8dfb9029c9"
+  },
+  "releaseApproved": false
+}

@@ -1,0 +1,42 @@
+{
+  "checkedAtUTC": "2026-11-06T04:38:12.041Z",
+  "sourceCommit": "95c90e2373faec5ca8c0e8fd37120e3be3902544",
+  "runId": 42161597835,
+  "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42161597835",
+  "jobs": [
+    {
+      "id": 127708318236,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127708318355,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127708318386,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127708318389,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 127708318496,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "conclusion": "success",
+  "scope": "Exact RT0 display source, before mixed-boundary assembly/transients. Not evidence for later HEAD or a public release.",
+  "releaseApproved": false,
+  "mainPublished": false
+}

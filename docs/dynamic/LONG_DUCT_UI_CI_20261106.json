@@ -1,0 +1,90 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "sourceCommit": "e313e2e5e29278ca2d1ee05020477df996b2779e",
+  "runId": 42123385324,
+  "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42123385324",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 127581242821,
+      "name": "browser (webkit)",
+      "status": "completed",
+      "conclusion": "success",
+      "selectedSteps": [
+        {
+          "name": "Check fin power, efficiency, effectiveness and first offline query",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Keep focus on the next term after a delayed modal close event",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify development-only convex long-duct view factors and nonlinear thermal response",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Exercise development-only geometry-derived radiation with the actual worker and wall diagram",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 127581243317,
+      "name": "numerical-and-regression",
+      "status": "completed",
+      "conclusion": "success",
+      "selectedSteps": []
+    },
+    {
+      "id": 127581243400,
+      "name": "high-order-manufactured-verification",
+      "status": "completed",
+      "conclusion": "success",
+      "selectedSteps": []
+    },
+    {
+      "id": 127581243434,
+      "name": "cfd-development-benchmarks",
+      "status": "completed",
+      "conclusion": "success",
+      "selectedSteps": []
+    },
+    {
+      "id": 127581243447,
+      "name": "browser (chromium)",
+      "status": "completed",
+      "conclusion": "success",
+      "selectedSteps": [
+        {
+          "name": "Check fin power, efficiency, effectiveness and first offline query",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Keep focus on the next term after a delayed modal close event",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify development-only convex long-duct view factors and nonlinear thermal response",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Exercise development-only geometry-derived radiation with the actual worker and wall diagram",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "scope": "Exact saved long-duct UI and focus repair source. Subsequent triangle mesh/stiffness/transient changes have separate local tests and CI; this result is not transferred to them.",
+  "realDevice": false,
+  "expertReviewed": false,
+  "mainPublished": false
+}

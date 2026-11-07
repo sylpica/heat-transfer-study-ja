@@ -1,0 +1,121 @@
+{
+  "generatedAtUTC": "2026-11-06T10:35:01.476223+00:00",
+  "baseSourceCommit": "d2867bd38c13ae928551f6e4b1d8c254645a62ff",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/triangle-surface-boundaries.mjs": "87fbf9bda879f7e688c8e9c717b0e580475857e19b873463100044aae3f3d9f8",
+    "dynamic/dev/triangle-surface-transient.mjs": "b135a6387a9a3a07ecc1272d635348dde177b5fcadd3869b982e705f927168b4",
+    "dynamic/dev/triangle-surface-worker.mjs": "7d7778d21a69714cd9a5853b887106fd29747525d55215f892e12fb2be974e4e",
+    "scripts/dynamic-triangle-surface-reference.py": "d6ed83aeda23b8cb817cf194a91932b2f8a46983c7bf589cd8095716428731b3",
+    "tests/dynamic-triangle-surface-boundaries.test.mjs": "11efc9808adbae1453d0e445c79ea132fdaf6b062bf049b7bccaf9ac2f47b46b",
+    "tests/dynamic-triangle-surface-transient.test.mjs": "2e05e383ec8b0241b0b3c47986039ef0fe45ac36ebd693b31ad9c50b599d4ad3",
+    "tests/dynamic-triangle-surface-browser.mjs": "7ffd5eec684a7c6c9ce2cc73f7f0b9dbdb0cd3effb7a4d28741efaab6d0c92eb",
+    "docs/dynamic/TRIANGLE_SURFACE_REFERENCE_20261106.json": "d88604fd2e382e046289f63159a3184075198c7f9504cba9849cc3ddd1ae1cdf"
+  },
+  "criteriaDeclaredAtCommit": "b108cb1",
+  "relatedNode": {
+    "surfaceAssembly": 3,
+    "nonlinearTransientAndRestore": 4
+  },
+  "node": {
+    "tests": 1412,
+    "pass": 1407,
+    "skipped": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorker": true,
+      "cases": [
+        {
+          "kind": "rectangle",
+          "n": 4,
+          "maximumTemperatureDifferenceK": 1.4583784917476805e-06,
+          "convectionOutwardW": -5.98062979930645,
+          "radiationOutwardW": 4.837905048528359
+        },
+        {
+          "kind": "pentagon",
+          "n": 4,
+          "maximumTemperatureDifferenceK": 1.3030854972839734e-07,
+          "convectionOutwardW": -8.46980726810532,
+          "radiationOutwardW": 3.958854058287576
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 8,
+          "maximumTemperatureDifferenceK": 1.1368683772161603e-13,
+          "convectionOutwardW": 22.491567515551463,
+          "radiationOutwardW": 11.279513695569918
+        }
+      ],
+      "separateConvectionAndRadiationSigns": true,
+      "fullRestore": true,
+      "invalidInitKeepsAcceptedWorker": true,
+      "cancelOnActualProgress": true,
+      "rollbackRetryDifferenceK": 0,
+      "tinyRadiationPreserved": true,
+      "localStorageUnchanged": true,
+      "generalContinuousTransientAccuracyVerified": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorker": true,
+      "cases": [
+        {
+          "kind": "rectangle",
+          "n": 4,
+          "maximumTemperatureDifferenceK": 1.4583784917476805e-06,
+          "convectionOutwardW": -5.98062979930645,
+          "radiationOutwardW": 4.83790504852836
+        },
+        {
+          "kind": "pentagon",
+          "n": 4,
+          "maximumTemperatureDifferenceK": 1.3030854972839734e-07,
+          "convectionOutwardW": -8.46980726810532,
+          "radiationOutwardW": 3.958854058287576
+        },
+        {
+          "kind": "continuous-steady-linear",
+          "n": 8,
+          "maximumTemperatureDifferenceK": 1.1368683772161603e-13,
+          "convectionOutwardW": 22.491567515551463,
+          "radiationOutwardW": 11.27951369556992
+        }
+      ],
+      "separateConvectionAndRadiationSigns": true,
+      "fullRestore": true,
+      "invalidInitKeepsAcceptedWorker": true,
+      "cancelOnActualProgress": true,
+      "rollbackRetryDifferenceK": 0,
+      "tinyRadiationPreserved": true,
+      "localStorageUnchanged": true,
+      "generalContinuousTransientAccuracyVerified": false,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "linearCoreUnchanged": true,
+  "operationPolicy": "Root only; no subagents; all commands, engines and Node files sequential",
+  "guiImplemented": false,
+  "equilibratedFluxImplemented": false,
+  "generalContinuousTransientAccuracyVerified": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

@@ -1,0 +1,146 @@
+{
+  "generatedAtUTC": "2026-11-05T07:15:42.091Z",
+  "sourceCommit": "7311d23e4a69cac23c8198eb42cf21c6569795b0",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/surface-exchange.mjs": "4c51b8ae3f93bf2e29858f5c1beaa1930b40f4c930c6be2ec34f3acab4087327",
+    "dynamic/thermal.mjs": "09bf85cb8d00f3fa521eda1d6888f55006900921e0c9e2fd2632a931cb601895",
+    "dynamic/radial.mjs": "19dd8488b62fd6259183cafdeca2b9d31a1dba1c9ae8aa1d71c757ce5e636ff4",
+    "scripts/dynamic-surface-exchange-benchmarks.mjs": "5e97e5f050d79b59436397659b31a819609fa03acd624a5460e69bd79e9b43c6",
+    "scripts/dynamic-surface-exchange-reference.py": "092a26a7fadc354ee4aeeaa49eacf1bd61da31ffbc175c31f7a76e6a03492e2c",
+    "docs/dynamic/SURFACE_EXCHANGE_REFERENCE_20261105.json": "e11a90c56207b669b96e706c7448e4f63e8915f8d853b81259d35e3e82edc080"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "slab": [
+    {
+      "n": 8,
+      "temperatureMaxDriftK": 0,
+      "fluxMaxErrorWPerM2": 1.7280399333685637e-11,
+      "energyErrorJ": -4.547473508864642e-17
+    },
+    {
+      "n": 16,
+      "temperatureMaxDriftK": 0,
+      "fluxMaxErrorWPerM2": 4.001776687800884e-11,
+      "energyErrorJ": -1.1368683772161605e-17
+    },
+    {
+      "n": 32,
+      "temperatureMaxDriftK": 0,
+      "fluxMaxErrorWPerM2": 8.549250196665525e-11,
+      "energyErrorJ": 4.4527344774299626e-17
+    }
+  ],
+  "radial": [
+    {
+      "geometry": "sphere",
+      "rows": [
+        {
+          "n": 8,
+          "steps": 1257,
+          "volumeWeightedRMSErrorK": 0.0104005066387554,
+          "surfaceErrorK": 0,
+          "outwardFluxErrorWPerM2": -1.5016876631079867e-12,
+          "componentResidualW": 9.094947017729282e-13,
+          "energyErrorJ": -4.52283904772699e-11
+        },
+        {
+          "n": 16,
+          "steps": 4907,
+          "volumeWeightedRMSErrorK": 0.0026031532985352516,
+          "surfaceErrorK": -2.2737367544323206e-13,
+          "outwardFluxErrorWPerM2": -6.413092279444754e-12,
+          "componentResidualW": 3.637978807091713e-12,
+          "energyErrorJ": -2.1886391136927141e-10
+        },
+        {
+          "n": 32,
+          "steps": 19407,
+          "volumeWeightedRMSErrorK": 0.0006509782075435718,
+          "surfaceErrorK": -1.2505552149377763e-12,
+          "outwardFluxErrorWPerM2": -2.630917705914726e-11,
+          "componentResidualW": -1.8189894035458565e-12,
+          "energyErrorJ": -1.0100124794680532e-9
+        }
+      ],
+      "steadySpatialOrders": [
+        1.9983216289026176,
+        1.9995791209446085
+      ]
+    },
+    {
+      "geometry": "cylinder",
+      "rows": [
+        {
+          "n": 8,
+          "steps": 1227,
+          "volumeWeightedRMSErrorK": 0.011718749999143796,
+          "surfaceErrorK": -1.1368683772161603e-13,
+          "outwardFluxErrorWPerM2": -3.170796958329447e-12,
+          "componentResidualW": 4.547473508864641e-13,
+          "energyErrorJ": -1.2744687249988118e-11
+        },
+        {
+          "n": 16,
+          "steps": 4852,
+          "volumeWeightedRMSErrorK": 0.00292968749641509,
+          "surfaceErrorK": -4.547473508864641e-13,
+          "outwardFluxErrorWPerM2": -1.2228440482431324e-11,
+          "componentResidualW": 8.185452315956354e-12,
+          "energyErrorJ": -9.45806852975517e-11
+        },
+        {
+          "n": 32,
+          "steps": 19302,
+          "volumeWeightedRMSErrorK": 0.0007324218600138211,
+          "surfaceErrorK": -2.3874235921539366e-12,
+          "outwardFluxErrorWPerM2": -5.036904227040395e-11,
+          "componentResidualW": 0,
+          "energyErrorJ": -5.589871690525605e-10
+        }
+      ],
+      "steadySpatialOrders": [
+        2.0000000016599455,
+        2.0000000277538175
+      ]
+    }
+  ],
+  "time": [
+    {
+      "dtS": 2,
+      "temperatureK": 361.11801167000283,
+      "errorK": -0.8608049358930998,
+      "energyErrorJ": -2.0372681319713593e-10
+    },
+    {
+      "dtS": 1,
+      "temperatureK": 361.55032652984215,
+      "errorK": -0.42849007605377665,
+      "energyErrorJ": 8.731149137020111e-11
+    },
+    {
+      "dtS": 0.5,
+      "temperatureK": 361.76504586481377,
+      "errorK": -0.21377074108215766,
+      "energyErrorJ": 8.731149137020111e-11
+    },
+    {
+      "dtS": 0.25,
+      "temperatureK": 361.8720493393844,
+      "errorK": -0.10676726651155377,
+      "energyErrorJ": -4.656612873077393e-10
+    }
+  ],
+  "expertApproved": false,
+  "timeOrders": [
+    1.0064245588778522,
+    1.0031973874027633,
+    1.0015950012825547
+  ],
+  "passed": true,
+  "elapsedMs": 389.5886
+}

@@ -1,0 +1,102 @@
+{
+  "recordedAtAsiaTokyo": "2026-11-07T15:08:54.345135+09:00",
+  "purpose": "Owner-directed transfer of main development to Muse; no new implementation after receipt",
+  "testedImplementationCommit": "c52f2a7234c2b196aabda1ea4d062a720e7a521b",
+  "localNode": {
+    "command": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "nodeVersion": "v24.19.0",
+    "host": "Linux managed cloud",
+    "concurrency": 1,
+    "tests": 1501,
+    "pass": 1496,
+    "fail": 0,
+    "skipped": 5,
+    "cancelled": 0,
+    "durationMs": 117675.933195,
+    "rawWorkspaceLog": "work/muse-transfer-full-node-20261107.log",
+    "rawLogSHA256": "b8be0d2f70d3d3117f52a037bf04f72d6ef614d6727ef1c8acc24b41ba6014a5",
+    "exactSummaryAndSkippedExcerpt": "MUSE_TRANSFER_NODE_20261107.txt",
+    "skippedCases": [
+      "﹣ private legacy Japanese drafts remain labeled unverified in a local pack (0.236816ms) # SKIP",
+      "﹣ reviewed local sections retain original page locations, both languages, and figure descriptions (0.103957ms) # SKIP",
+      "﹣ 18 reviewed Japanese questions have complete rationale and valid source pages (0.189416ms) # SKIP",
+      "﹣ chapter 8 opening retains both languages, eight equations, dimensional annotations, and the original figure (0.12639ms) # SKIP",
+      "﹣ vertical natural convection retains source caveats, mean-value overbars, all figures and ten question rationales (0.0593ms) # SKIP"
+    ]
+  },
+  "ci": {
+    "runId": 42330789373,
+    "url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42330789373",
+    "headSha": "c52f2a7234c2b196aabda1ea4d062a720e7a521b",
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 128276628922,
+        "name": "high-order-manufactured-verification",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42330789373/job/128276628922",
+        "started_at": "2026-11-07T02:45:38Z",
+        "completed_at": "2026-11-07T02:47:22Z"
+      },
+      {
+        "id": 128276629127,
+        "name": "browser (chromium)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42330789373/job/128276629127",
+        "started_at": "2026-11-07T02:45:38Z",
+        "completed_at": "2026-11-07T02:49:04Z"
+      },
+      {
+        "id": 128276629171,
+        "name": "numerical-and-regression",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42330789373/job/128276629171",
+        "started_at": "2026-11-07T02:45:38Z",
+        "completed_at": "2026-11-07T02:47:16Z"
+      },
+      {
+        "id": 128276629177,
+        "name": "browser (webkit)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42330789373/job/128276629177",
+        "started_at": "2026-11-07T02:45:38Z",
+        "completed_at": "2026-11-07T02:51:04Z"
+      },
+      {
+        "id": 128276629257,
+        "name": "cfd-development-benchmarks",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42330789373/job/128276629257",
+        "started_at": "2026-11-07T02:45:38Z",
+        "completed_at": "2026-11-07T03:00:49Z"
+      }
+    ]
+  },
+  "publicBuild": {
+    "testedTree": "c52f2a7",
+    "passed": true,
+    "sourceCheckpoint": "THERMAL_WALL_UI_CHECKPOINT_20261107.json",
+    "developmentAbsent": true,
+    "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+    "cache": "heat-study-ja-app-4a24eb30c8fdd98c"
+  },
+  "workingTreeAtTransferReceipt": "clean, including untracked nonignored files",
+  "privateMaterialsWorkingTree": "clean",
+  "unfinishedImplementationOrCalculation": false,
+  "handoffCommitsAfterTestedCommit": "documentation and evidence only; verify git diff before push",
+  "newImplementationAfterTransfer": false,
+  "mainMergedOrPublished": false,
+  "branchesDeletedOrRewritten": false,
+  "MuseBranchesMergedByCodex": false,
+  "overallPhase3And4Complete": false,
+  "externalExpertReviewed": false,
+  "realDeviceVerified": false,
+  "futureCodexScope": "Only individually requested verification/reference calculation/investigation/response; no autonomous mainline restart on continue"
+}

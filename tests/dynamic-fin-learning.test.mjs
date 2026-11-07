@@ -1,0 +1,24 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {createHash} from 'node:crypto';
+import {createThermal} from '../dynamic/thermal.mjs';import {FinJourney,finLearningConfigs,FIN_INITIAL_POSE,steadyFinPrediction} from '../dynamic/fin-learning.mjs';
+const reference=JSON.parse(readFileSync(new URL('../docs/dynamic/FIN_LEARNING_REFERENCE_20261105.json',import.meta.url))),setup=(path='tutorial',n=48)=>{const configs=finLearningConfigs(n),models=configs.map(createThermal),journey=new FinJourney(path);journey.prepare({configs,snapshots:models.map(m=>m.snapshot())});return {configs,models,journey};},run=models=>{for(const model of models)for(let i=1;i<=20;i++){const end=i*30;while(model.time<end)model.step(Math.min(model.safeDt,end-model.time),false);}return models.map(m=>m.snapshot());};
+test('fin tutorial separates total side power, efficiency and effectiveness after rotating the view and actually rewinding',()=>{
+ const {models,journey}=setup(),initial=models.map(m=>m.snapshot());journey.locate(FIN_INITIAL_POSE);assert.equal(journey.canRun,false);journey.locate({yaw:.8,pitch:.4});assert.equal(journey.canRun,true);assert.deepEqual(models.map(m=>m.snapshot()),initial);journey.observe(run(models));const {long,short}=journey.result;assert.ok(long.sidePowerW>short.sidePowerW);assert.ok(long.efficiency<short.efficiency);assert.ok(long.effectiveness>short.effectiveness);assert.equal(long.bareBasePowerW,.15);assert.ok(Math.abs(long.efficiency-long.sidePowerW/6)<1e-12);assert.ok(Math.abs(short.efficiency-short.sidePowerW/3)<1e-12);assert.equal(journey.complete,false);models.forEach((m,i)=>m.restore(initial[i]));journey.rewind(models.map(m=>m.snapshot()));assert.equal(journey.complete,true);assert.deepEqual(models.map(m=>m.snapshot()),initial);
+});
+test('fin prediction locks before heating without changing physical state or grading the guess',()=>{
+ const {models,journey}=setup('prediction'),before=models.map(m=>m.snapshot());assert.throws(()=>journey.predict(undefined,0));assert.throws(()=>journey.predict('tradeoff',1));journey.predict('both',0);assert.deepEqual(models.map(m=>m.snapshot()),before);assert.throws(()=>journey.predict('tradeoff',0));journey.observe(run(models));assert.equal(journey.prediction,'both');assert.equal(journey.result.observed,'tradeoff');assert.equal(journey.complete,true);
+});
+test('fin powers and complete cell averages match an independent high-precision continuous finite-time solution',()=>{
+ assert.equal(createHash('sha256').update(readFileSync(new URL('../scripts/dynamic-fin-learning-reference.py',import.meta.url))).digest('hex'),reference.generatorSHA256);
+ for(const n of [32,48]){const {models,journey}=setup('prediction',n);journey.predict('equal',0);const states=run(models);journey.observe(states);for(let i=0;i<2;i++){
+  const exact=reference.cases[i],cells=exact.samples.find(r=>r.n===states[i].temperature.length).temperatureCellAverageK,observed=i?journey.result.short:journey.result.long,rms=Math.sqrt(states[i].temperature.reduce((sum,t,k)=>sum+(t-cells[k])**2,0)/cells.length);
+  assert.ok(rms<(n===32?.01:.003));assert.ok(Math.abs(observed.basePowerW-exact.basePowerW)<.003);assert.ok(Math.abs(observed.sidePowerW-exact.sidePowerW)<.003);assert.ok(Math.abs(observed.efficiency-exact.efficiency)<.0005);assert.ok(Math.abs(observed.effectiveness-exact.effectiveness)<.01);assert.ok(Math.abs(states[i].energyError)<1e-7);
+ }}
+});
+test('incompatible fins, heating before a prediction, wrong time and nonsteady storage cannot become results',()=>{
+ const {configs,models,journey}=setup(),bad=structuredClone(configs);bad[0].distributedConvection.h=30;assert.throws(()=>journey.prepare({configs:bad,snapshots:models.map(m=>m.snapshot())}));assert.equal(journey.prepared,false);
+ const early=setup('prediction');early.models.forEach(m=>m.step(.0001));early.journey.observe(early.models.map(m=>m.snapshot()));assert.match(early.journey.reason,/確定前/);
+ const late=setup('prediction');late.journey.predict('tradeoff',0);const states=run(late.models);assert.throws(()=>late.journey.observe(states.map(s=>({...s,lastPower:1}))),/定常/);assert.equal(late.journey.result,null);late.journey.observe(states.map(s=>({...s,time:601})));assert.match(late.journey.reason,/600秒/);assert.equal(late.journey.result,null);assert.throws(()=>new FinJourney('unknown'));
+});
+test('displayed analytic steady fin values match the separately differentiated and integrated high-precision solution',()=>{
+ for(const [i,config]of finLearningConfigs().entries()){const actual=steadyFinPrediction(config),exact=reference.cases[i];assert.ok(Math.abs(actual.powerW-exact.steadyBasePowerW)<1e-10);assert.ok(Math.abs(actual.mPerM-exact.mPerM)<1e-12);assert.ok(Math.abs(actual.crossSectionBi-.0003125)<1e-16);assert.ok(actual.efficiency>0&&actual.efficiency<=1);assert.ok(actual.effectiveness>1);}
+});

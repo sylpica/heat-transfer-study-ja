@@ -1,0 +1,81 @@
+{
+  "recordedClientDate": "2026-11-06 Asia/Tokyo",
+  "generatedAtUTC": "2026-11-06T03:57:10.681687+00:00",
+  "baseSourceCommit": "7a1639de017638588e55097540f54b9000af83ba",
+  "sourceTreeDirty": true,
+  "sourceFilesSHA256": {
+    "dynamic/dev/convex-outline-draft.mjs": "1c6e939e37842493c88eaa5f411896c0ba856032da202b8eeff2fd18c8283e3c",
+    "dynamic/dev/convex-outline-editor.mjs": "a24a39fef196e7ed86ed0d8d5ff89f749d778e7541e0498f85f1637d3a4c30e5",
+    "dynamic/dev/triangle-diffusion.html": "89ab5d3ef04fe0ee992a1343a68599c58eab4f122342793820bd7e6851c96e85",
+    "dynamic/dev/triangle-diffusion-ui.mjs": "0a83ff6e39c2c298cde66dba9f525927ff956b4d0270433906748fb8842c8c4f",
+    "tests/dynamic-convex-outline-draft.test.mjs": "dfc09ec1f4af64c6f3f89a1f619fa962c402ca527444a4b78bb084d2720927f7",
+    "tests/dynamic-triangle-ui-browser.mjs": "cf8b9b341a3a35dcc90331d675d67262cd6e031e9a2fa656c6887ce4b108c4ab",
+    "tests/dynamic-triangle-editor-browser.mjs": "fe23c2dbda2cfc27ffaa79e3445b42222d63bcecbb319d36162fb57a491e4af8"
+  },
+  "operationPolicy": "Root only; no subagents; commands, engines and Node files sequential",
+  "relatedNodeTests": 3,
+  "node": {
+    "tests": 1356,
+    "pass": 1351,
+    "skip": 5,
+    "fail": 0,
+    "testConcurrency": 1
+  },
+  "browserResults": {
+    "chromium": {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "draftSeparateFromAcceptedTemperature": true,
+      "keyboardFocusPreserved": true,
+      "duplicateMoveRejectedAtomically": true,
+      "vertexInsertionAndRemoval": true,
+      "realPointerDrag": true,
+      "fixedDragCoordinates": true,
+      "customWorkerTemperatureMatchesCPU": true,
+      "comparisonBPreserved": true,
+      "analyticReferenceNotInvented": true,
+      "editingCancelsActualProgressWithoutPublishingPartialState": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    "webkit": {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "draftSeparateFromAcceptedTemperature": true,
+      "keyboardFocusPreserved": true,
+      "duplicateMoveRejectedAtomically": true,
+      "vertexInsertionAndRemoval": true,
+      "realPointerDrag": true,
+      "fixedDragCoordinates": true,
+      "customWorkerTemperatureMatchesCPU": true,
+      "comparisonBPreserved": true,
+      "analyticReferenceNotInvented": true,
+      "editingCancelsActualProgressWithoutPublishingPartialState": true,
+      "mobileLightDark": true,
+      "localStorageUnchanged": true,
+      "offlineVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  },
+  "existingP1UIRegression": {
+    "chromium": true,
+    "webkit": true
+  },
+  "publicBuild": true,
+  "developmentModulesExcluded": true,
+  "publicWorkerSHA256": "b55d6a055c88f59e10d5127b59cb7cac13b85eb9476f2bb6e02e6b50d0ab3f52",
+  "publicCacheName": "heat-study-ja-app-4a24eb30c8fdd98c",
+  "vertexEditorImplemented": true,
+  "strictConvexOnly": true,
+  "generalFreehandImplemented": false,
+  "equilibratedConservativeFluxImplemented": false,
+  "offlineVerified": false,
+  "realDevice": false,
+  "expertReviewed": false,
+  "releaseApproved": false,
+  "mainPublished": false
+}

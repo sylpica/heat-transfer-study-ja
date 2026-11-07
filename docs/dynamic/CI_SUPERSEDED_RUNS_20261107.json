@@ -1,0 +1,44 @@
+{
+  "recordedAtUTC": "2026-11-06T19:57:44.166273+00:00",
+  "retainedHead": "6f99414ad409a6990b6007417897cf107468a159",
+  "workflow": "dynamic-simulation.yml",
+  "branch": "codex/dynamic-heat-simulation",
+  "reason": "Retain latest-head verification; cancel only superseded in-progress/queued runs on this owned branch. Logs remain available; cancelled runs are not passes. Latest push/PR duplication will be serialized by branch/repository concurrency key.",
+  "actions": [
+    {
+      "runId": 42283694924,
+      "headSha": "72c249c1f2e11e2cfcf466c25e1108dc35a2279f",
+      "event": "pull_request",
+      "cancelExitCode": 0,
+      "result": "\u2713 Request to cancel workflow 42283694924 submitted."
+    },
+    {
+      "runId": 42283683442,
+      "headSha": "72c249c1f2e11e2cfcf466c25e1108dc35a2279f",
+      "event": "push",
+      "cancelExitCode": 0,
+      "result": "\u2713 Request to cancel workflow 42283683442 submitted."
+    },
+    {
+      "runId": 42282212640,
+      "headSha": "22c38b187913a7f26f855d99f3f1e25620990c45",
+      "event": "pull_request",
+      "cancelExitCode": 0,
+      "result": "\u2713 Request to cancel workflow 42282212640 submitted."
+    },
+    {
+      "runId": 42282201226,
+      "headSha": "22c38b187913a7f26f855d99f3f1e25620990c45",
+      "event": "push",
+      "cancelExitCode": 0,
+      "result": "\u2713 Request to cancel workflow 42282201226 submitted."
+    },
+    {
+      "runId": 42281902467,
+      "headSha": "f79ec7e2ac696001cb03e951a4456fde7231664b",
+      "event": "push",
+      "cancelExitCode": 0,
+      "result": "\u2713 Request to cancel workflow 42281902467 submitted."
+    }
+  ]
+}

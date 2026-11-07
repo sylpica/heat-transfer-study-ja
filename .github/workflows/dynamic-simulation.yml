@@ -1,0 +1,376 @@
+name: Dynamic simulation verification
+on:
+  push:
+    branches: [codex/dynamic-heat-simulation]
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/lib/de-vahl-reference.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+  pull_request:
+    branches: [main]
+    paths: ['app.js', 'lesson-diagrams.mjs', 'dynamic-navigation.mjs', 'dynamic/**', 'tests/dynamic*', 'scripts/dynamic*', 'scripts/lib/wall-closure-shadow.mjs', 'scripts/lib/de-vahl-reference.mjs', 'scripts/build-public-site.mjs', 'scripts/public-worker-bundle.mjs', 'package.json', 'package-lock.json', 'sw.js', '.github/workflows/dynamic-simulation.yml']
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.repo.full_name || github.repository }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  numerical-and-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm test
+      - run: node scripts/dynamic-benchmarks.mjs
+      - run: node scripts/dynamic-radiation-benchmarks.mjs
+      - run: node scripts/dynamic-heat-capacity-benchmarks.mjs
+      - run: node scripts/dynamic-channel-benchmarks.mjs
+      - run: node scripts/dynamic-multigrid-benchmarks.mjs
+      - run: node scripts/dynamic-cavity-time-benchmarks.mjs
+      - run: node scripts/dynamic-radial-benchmarks.mjs
+      - run: node scripts/dynamic-lumped-benchmarks.mjs
+      - run: node scripts/dynamic-surface-exchange-benchmarks.mjs
+      - run: node scripts/dynamic-learning-samples-benchmarks.mjs
+      - run: npm run build:public
+  browser:
+    runs-on: ubuntu-24.04
+    container: mcr.microsoft.com/playwright:v1.56.1-noble
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: [chromium, webkit]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trust only this mounted Actions checkout inside the browser container
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Verify the pinned image contains the exact npm browser revision
+        run: node scripts/dynamic-playwright-environment.mjs --engine=${{ matrix.engine }}
+      - run: npm run build:public
+      - run: node tests/dynamic-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - run: node tests/dynamic-radiation-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check radiation learning without confusing transient and equilibrium temperatures
+        run: node tests/dynamic-radiation-learning-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - run: node tests/dynamic-channel-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check developed-channel learning against an independent thermal-harmonic reference
+        run: node tests/dynamic-channel-learning-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - run: node tests/dynamic-navigation-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - run: node tests/dynamic-radial-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check radial tutorial and committed predictions against continuous references
+        run: node tests/dynamic-radial-learning-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check fin power, efficiency, effectiveness and first offline query
+        run: node tests/dynamic-fin-learning-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Keep focus on the next term after a delayed modal close event
+        run: node tests/dynamic-term-panel-focus-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check shared-surface convection and radiation without mixing signed components
+        run: node tests/dynamic-surface-exchange-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check the explicit small-Bi alternative against the full radial model
+        run: node tests/dynamic-lumped-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify the isolated software GPU diffusion shader or unavailable-device CPU alternative
+        run: node tests/dynamic-gpu-diffusion-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify async diffusion Worker restoration, cancellation and explicit GPU or identical CPU policy
+        run: node tests/dynamic-gpu-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise isolated CPU or software-GPU fields, same-physics comparison and accepted backend retention
+        run: node tests/dynamic-gpu-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise the development-only cavity UI in an isolated allowlisted server
+        run: node tests/dynamic-cavity-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise the unchanged MAC lid boundary, undefined corners, full Worker fields and actual rollback
+        run: node tests/dynamic-lid-cavity-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Check the isolated steady Blasius flow stage without claiming temperature transport
+        run: node tests/dynamic-blasius-flow-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify passive flat-plate temperature Worker against independent time reference and actual rollback
+        run: node tests/dynamic-flat-plate-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise isolated flat-plate temperature fields, independent air reference, retained conditions and true rollback
+        run: node tests/dynamic-flat-plate-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify annular circular-pipe temperature Worker, independent references and actual rollback
+        run: node tests/dynamic-heated-pipe-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise annular air pipe fields, true heat histories, accepted conditions and rollback
+        run: node tests/dynamic-heated-pipe-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify constant-wall-temperature circular-pipe Worker and exact state restoration
+        run: node tests/dynamic-pipe-wall-temperature-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise fixed-wall air pipe, local resulting wall heat, accepted state and rollback
+        run: node tests/dynamic-pipe-wall-temperature-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify orthogonal concave P1 Worker, independent trajectories and real rollback
+        run: node tests/dynamic-orthogonal-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise concave orthogonal P1 fields, undefined exterior, accepted conditions and true rollback
+        run: node tests/dynamic-orthogonal-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify joint finite-capacity wall and projected buoyancy Worker with full pressure and heat restoration
+        run: node tests/dynamic-thermal-wall-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise actual finite-capacity and thermostated wall UI, stage pressure and complete rollback
+        run: node tests/dynamic-thermal-wall-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify solid-wall and prescribed-flow temperature coupling against independent time and manufactured references
+        run: node tests/dynamic-conjugate-worker-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise actual solid-fluid storage and contact heat UI with retained physical state
+        run: node tests/dynamic-conjugate-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise the development-only steady RANS and passive-temperature UI
+        run: node tests/dynamic-rans-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise the development-only finite-capacity base and identical fins
+        run: node tests/dynamic-heat-sink-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise development-only inlet outlet and equal-wall-flux thermal transport
+        run: node tests/dynamic-heated-channel-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify isolated convex cut-cell geometry and exact-sign fallback in both engines
+        run: node tests/dynamic-cut-cell-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify isolated convex meshes, geometry predicates and P1 diffusion coefficients
+        run: node tests/dynamic-triangle-mesh-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify boundary midpoint refinement geometry and nonnegative P1 couplings
+        run: node tests/dynamic-boundary-refined-mesh-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify the development P1 transient worker, independent time reference and actual cancel rollback
+        run: node tests/dynamic-triangle-transient-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify unpublished mixed-linear-boundary P1 worker against independent time references
+        run: node tests/dynamic-triangle-linear-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify explicitly refined mixed-boundary P1 fields, constrained flux, restore and cancel rollback
+        run: node tests/dynamic-boundary-refined-transient-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify convex custom boundary combinations against independent physical-coordinate affine exponentials
+        run: node tests/dynamic-triangle-custom-linear-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify custom convex RT0 known boundary powers and independent constrained edge optima
+        run: node tests/dynamic-triangle-custom-flux-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify unpublished nonlinear P1 surface Worker against independent ODE and continuous steady references
+        run: node tests/dynamic-triangle-surface-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify nonlinear surface RT0 against high-precision known heat and closed-system constrained optima
+        run: node tests/dynamic-triangle-surface-flux-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise the restricted square mixed-boundary UI with actual P1 fields and signed heat
+        run: node tests/dynamic-triangle-linear-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise rotated rectangular mixed boundaries with explicit geometry refinement and retained A/B state
+        run: node tests/dynamic-triangle-linear-rectangle-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise convex outline editing, per-face linear boundary drafts and preserved physical state
+        run: node tests/dynamic-triangle-custom-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise nodal convection-radiation surface drafts, mixed A/B factories and read-only RT0 display
+        run: node tests/dynamic-triangle-surface-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify mixed-boundary RT0 keeps prescribed boundary heat and closed-system compatibility
+        run: node tests/dynamic-triangle-linear-flux-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify read-only RT0 recovery against the independent constrained edge optimum
+        run: node tests/dynamic-triangle-flux-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise actual P1 nodal temperature interpolation, grid comparison and probe controls
+        run: node tests/dynamic-triangle-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify convex vertex editing rejects invalid drafts and cancels in-flight work atomically
+        run: node tests/dynamic-triangle-editor-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Verify development-only convex long-duct view factors and nonlinear thermal response
+        run: node tests/dynamic-long-duct-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Exercise development-only geometry-derived radiation with the actual worker and wall diagram
+        run: node tests/dynamic-long-duct-ui-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+      - name: Fetch the exact previous worker/cache source without changing the checkout
+        run: git fetch --no-tags --depth=1 origin 13b0d1e32909a4037e587826250cab5f52dde336
+      - name: Verify cache migration and offline calculation after the worker refactor
+        run: node tests/dynamic-cache-update-browser.mjs
+        env:
+          BROWSER_ENGINE: ${{ matrix.engine }}
+          BROWSER_EXECUTABLE: ''
+  high-order-manufactured-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Verify the experimental stencil on smooth whole-field manufactured data only
+        run: node scripts/dynamic-manufactured-benchmarks.mjs --full --multigrid --high-order | tee dynamic-high-order-manufactured.json
+      - name: Verify first-order time refinement with the experimental stencil
+        run: node scripts/dynamic-cavity-time-benchmarks.mjs --full --high-order | tee dynamic-high-order-time.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dynamic-high-order-${{ github.sha }}-${{ github.run_id }}
+          path: |
+            dynamic-high-order-manufactured.json
+            dynamic-high-order-time.json
+          retention-days: 30
+  cfd-development-benchmarks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - name: Reproduce restricted cavity benchmarks (does not publish the model)
+        run: node scripts/dynamic-cavity-benchmarks.mjs --full | tee dynamic-cfd-results.json
+      - name: Verify full manufactured velocity, pressure and temperature fields
+        run: node scripts/dynamic-manufactured-benchmarks.mjs --full | tee dynamic-manufactured-results.json
+      - name: Reproduce the same cavity and whole-field equations with multigrid
+        run: |
+          node scripts/dynamic-cavity-benchmarks.mjs --full --multigrid | tee dynamic-cfd-multigrid-results.json
+          node scripts/dynamic-manufactured-benchmarks.mjs --full --multigrid | tee dynamic-manufactured-multigrid-results.json
+      - name: Separate pressure sensitivity without changing its reference amplitude
+        run: node scripts/dynamic-pressure-sensitivity.mjs | tee dynamic-pressure-sensitivity-results.json
+      - name: Reproduce the one-step pressure component diagnostic
+        run: node scripts/dynamic-pressure-components.mjs | tee dynamic-pressure-components-results.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dynamic-cfd-${{ github.sha }}-${{ github.run_id }}
+          path: |
+            dynamic-cfd-results.json
+            dynamic-manufactured-results.json
+            dynamic-cfd-multigrid-results.json
+            dynamic-manufactured-multigrid-results.json
+            dynamic-pressure-sensitivity-results.json
+            dynamic-pressure-components-results.json
+          retention-days: 30

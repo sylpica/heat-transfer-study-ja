@@ -1,0 +1,9 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {buildTriangleExperiment,triangleReferenceAt} from '../dynamic/dev/triangle-ui-config.mjs';import {createTriangleDiffusion} from '../dynamic/dev/triangle-diffusion.mjs';
+const values=extra=>({shape:'rectangle',width:.4,height:.2,angleRadians:.37,hotC:76.85,wallC:26.85,k:15,rho:1000,cp:1000,depth:.03,source:0,initialMode:'sine',subdivisions:16,mobile:false,...extra});
+test('UI rectangle reference preserves SI conversion, actual nodal initial data and continuous heat/decay while automatic grids respect topology limits',()=>{
+ const input=values(),before=structuredClone(input),{config,info}=buildTriangleExperiment(input),m=createTriangleDiffusion(config),s=m.snapshot(),exact=triangleReferenceAt(info,20,[.53,.47]),decay=Math.exp(-15/1e6*Math.PI**2*(1/.4**2+1/.2**2)*20);assert.equal(s.temperature[0],350);assert.ok(Math.abs(exact.temperature-(300+50*decay))<1e-12);assert.ok(Math.abs(exact.heatJ-1e6*.03*50*4*.4*.2/Math.PI**2*decay)<1e-8);assert.deepEqual(input,before);assert.equal(buildTriangleExperiment(values({subdivisions:'auto',mobile:true})).config.subdivisions,8);assert.equal(buildTriangleExperiment(values({subdivisions:'auto',mobile:false})).config.subdivisions,16);
+});
+test('nonreference cases and invalid UI conditions never advertise a fabricated continuous solution',()=>{
+ for(const shape of ['triangle','pentagon']){const built=buildTriangleExperiment(values({shape,initialMode:'uniform',subdivisions:8}));assert.equal(triangleReferenceAt(built.info,20,[.53,.47]),null);assert.ok(createTriangleDiffusion(built.config).snapshot().temperature.every(Number.isFinite));}
+ assert.equal(buildTriangleExperiment(values({source:1})).info.reference,null);for(const extra of [{width:0},{wallC:-300},{source:NaN},{shape:'triangle',initialMode:'sine'},{shape:'pentagon',initialMode:'uniform',subdivisions:16},{k:0}])assert.throws(()=>buildTriangleExperiment(values(extra)));
+});

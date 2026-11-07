@@ -1,0 +1,72 @@
+{
+  "generatedAtUTC": "2026-11-05T11:05:23.359Z",
+  "sourceCommit": "7e0c145b1f3b7a761fd84ec6a7e248d36f852939",
+  "sourceTreeDirty": false,
+  "sourceFilesSHA256": {
+    "dynamic/dev/cavity.mjs": "7329033a976fa27683163d715ee0f40e32848a4bfe123989266642534fb0c8b5",
+    "dynamic/dev/mac-momentum.mjs": "78cb4efc78d3ab7eeaa207a990cfb316bcd3ead924c8f705a03bd9b04d5b580b",
+    "dynamic/dev/poisson-multigrid.mjs": "da83ac9e621ad37713f1d6cf44c34eef57093ed313e00913334af1c679126209",
+    "scripts/dynamic-wall-closure-study.mjs": "0cada10fcef4e044de0a711f288d4f7b58f4802145642603399950ef124b6c80"
+  },
+  "transformedSourcesSHA256": {
+    "momentum": "44c7c582539228f01be042df2d2a6f5dd0359d60c45949d44c59b9056a6b5736",
+    "cavity": "a33eaf81effae569fa1e9a93e667268ece9bae6a85db25fce42996afe78ee7b5"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "scope": "Controlled diagnostic of existing second-order, polynomial4 and a stencil-support-defined wall-local second-order shadow. No production registration or parameter fit. Same nominal dt at a given mesh; pointwise mixing is not a proof of global momentum conservation.",
+  "smoke": false,
+  "variant": "wall-advection-study",
+  "componentIsolation": {
+    "advectionSecondOrder": true,
+    "viscositySecondOrder": false
+  },
+  "baselineComparisonFile": "WALL_CLOSURE_STUDY_20261105.json",
+  "physicsGateEvaluated": true,
+  "threshold": 0.005,
+  "referenceY": [
+    0.2813,
+    0.5,
+    0.6172,
+    0.8516
+  ],
+  "referenceU": [
+    -0.15662,
+    -0.20581,
+    -0.13641,
+    0.23151
+  ],
+  "cases": [
+    {
+      "n": 32,
+      "scheme": "wall-advection-study",
+      "time": 30,
+      "steps": 15360,
+      "nominalDt": 0.001953125,
+      "clippedSteps": 0,
+      "samples": [
+        -0.1571293087791885,
+        -0.20754709062673676,
+        -0.13769866409004536,
+        0.23833728577854985
+      ],
+      "maxReferenceError": 0.006827285778549852,
+      "lidGatePassed": false,
+      "lastSecondMaxVelocityChange": 1.7918811878736562e-08,
+      "divergence": 5.004885395010206e-13,
+      "normalizedDivergence": 5.004885395010206e-13,
+      "energyErrorJ": 6.039613253960852e-14,
+      "pressureResidual": 1.5977708192905711e-09,
+      "totalPressureIterations": 37011,
+      "elapsedMs": 66578.86253299999
+    }
+  ],
+  "releaseApproved": false,
+  "numericalGatesPassed": true,
+  "variantPhysicalGatePassed": false,
+  "passed": false,
+  "elapsedMs": 66610.569691
+}

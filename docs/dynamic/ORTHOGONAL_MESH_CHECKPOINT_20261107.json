@@ -1,0 +1,39 @@
+{
+  "recordedAtUTC": "2026-11-07T00:56:51.243101+00:00",
+  "criteriaDeclaredAtCommit": "6649c89",
+  "sourceFilesSHA256": {
+    "dynamic/dev/orthogonal-triangle-mesh.mjs": "15e77ffeb63d1b31ee3c97560e184bad3b8aaa7f45de954de79a2fab57f8a0b0",
+    "scripts/dynamic-orthogonal-mesh-cases.mjs": "b03303d1f377e28f0fe92730bdd11bf4a5da70952223674bf913701ada55e31e",
+    "scripts/dynamic-independent-orthogonal-mesh.py": "bbea9bfcdd176c0ff53deea240c42554b3bac240368d74ab15b817fcf41031ad",
+    "tests/dynamic-orthogonal-triangle-mesh.test.mjs": "9e417e292d831bde5ad9a470f024f27c09468b2bed302e5264c1c9605e75ec4c",
+    "tests/dynamic-orthogonal-mesh-reference.test.mjs": "f9517d53b518785e93ab85aa2cc35ba7b8a86bb1d74eb694909195c9e08add5e"
+  },
+  "independentReference": "ORTHOGONAL_MESH_REFERENCE_20261107_v1.json",
+  "independentCaseCount": 30,
+  "relatedNode": {
+    "total": 9,
+    "pass": 9,
+    "skip": 0,
+    "fail": 0,
+    "log": "work/orthogonal-mesh-related-node-20261107.log"
+  },
+  "initialNodeFailure": {
+    "log": "work/orthogonal-mesh-node-20261107.log",
+    "reason": "The test expected offset1e15/length4/n8 to collapse, but spacing .5 is exactly representable at ulp .125. Product acceptance was correct.",
+    "resolution": "Keep it accepted; use actual collapse offset1e15/length.5/n8 and quantization length1.25/n8. Strict coordinate fidelity budget unchanged."
+  },
+  "resourceLimitCase": "stair/n8 exceeds1024elements and is correctly rejected; n1/2/4 accepted",
+  "lastFullNodeRunBeforeThisGeometry": {
+    "sourceCommit": "2d281e4",
+    "total": 1477,
+    "pass": 1472,
+    "skip": 5,
+    "fail": 0
+  },
+  "stiffnessVerified": false,
+  "temperaturePDEVerified": false,
+  "temporalStabilityVerified": false,
+  "GUIVerified": false,
+  "generalFreeShapeApproved": false,
+  "releaseApproved": false
+}

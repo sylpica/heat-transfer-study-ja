@@ -1,0 +1,69 @@
+{
+  "recordedAtUTC": "2026-11-07T00:27:41.573049+00:00",
+  "numericalBaseCommit": "c68faf7",
+  "sourceFilesSHA256": {
+    "dynamic/dev/heated-pipe.mjs": "f1c7e67ce03611f54da12843692c1677026d32fca16f556c4ae0f92f3e38dcff",
+    "dynamic/dev/heated-pipe-worker.mjs": "0b496e5de93ba3088327a68daa290ef29023f03d6473af03b950e10e948cd549",
+    "tests/dynamic-heated-pipe-worker-browser.mjs": "f8fa5e285bb109904d9ecafe8103248e223612af6f96bc19b6fb909c7c50db1a",
+    "dynamic/worker-runtime.mjs": "4a45869d90b22bcea712ba808239f44f43c473d4fd1ad8d4817a590b307e3104"
+  },
+  "results": [
+    {
+      "engine": "chromium",
+      "developmentOnly": true,
+      "actualWorker": true,
+      "maximumDifferenceFromIndependentExponentialK": 7.71628276272085e-06,
+      "maximumAllHeatDifferenceJ": 1.4021944801309583e-05,
+      "annularHeatBalance": true,
+      "completeRestore": true,
+      "invalidInitAndRestoreKeepWorker": true,
+      "realProgressCancelRollback": true,
+      "coolingSymmetryMaximumDifferenceK": 0,
+      "manufacturedCases": 4,
+      "maximumManufacturedFixedPointRateKPerS": 5.019889080194218e-12,
+      "maximumManufacturedOneStepDriftK": 0,
+      "largeCells": 8192,
+      "tinyHeatPreserved": true,
+      "localStorageUnchanged": true,
+      "GUIVerified": false,
+      "offlineVerified": false,
+      "generalPipeCFDVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "developmentOnly": true,
+      "actualWorker": true,
+      "maximumDifferenceFromIndependentExponentialK": 7.71628276272085e-06,
+      "maximumAllHeatDifferenceJ": 1.4021944801309583e-05,
+      "annularHeatBalance": true,
+      "completeRestore": true,
+      "invalidInitAndRestoreKeepWorker": true,
+      "realProgressCancelRollback": true,
+      "coolingSymmetryMaximumDifferenceK": 0,
+      "manufacturedCases": 4,
+      "maximumManufacturedFixedPointRateKPerS": 5.019889080194218e-12,
+      "maximumManufacturedOneStepDriftK": 0,
+      "largeCells": 8192,
+      "tinyHeatPreserved": true,
+      "localStorageUnchanged": true,
+      "GUIVerified": false,
+      "offlineVerified": false,
+      "generalPipeCFDVerified": false,
+      "releaseApproved": false,
+      "passed": true
+    }
+  ],
+  "logs": [
+    "work/heated-pipe-worker-chromium-retest-20261107.log",
+    "work/heated-pipe-worker-webkit-20261107.log"
+  ],
+  "initialTestFailure": {
+    "log": "work/heated-pipe-worker-chromium-20261107.log",
+    "reason": "Test reused the coupled-model error substring 収支, but the pipe correctly rejects with 円管の全外部熱と蓄熱が一致しません。",
+    "resolution": "Require the exact pipe error text; corrupted heat, rejection and accepted-state assertions are unchanged. No production numerical change."
+  },
+  "GUIVerified": false,
+  "releaseApproved": false
+}

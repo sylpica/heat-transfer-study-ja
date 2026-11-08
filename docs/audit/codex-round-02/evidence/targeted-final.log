@@ -1,0 +1,12 @@
+✔ a definition identical to its visible brief contributes no repeated paragraph (0.823136ms)
+✔ all shipped brief/meaning pairs preserve the full definition without equality duplicates (12.480203ms)
+✔ inconsistent session detail is identified without changing legacy snapshots (3.337019ms)
+✔ review labels and peer counts cannot conceal absent or stale question evidence (1.474288ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 95.000569

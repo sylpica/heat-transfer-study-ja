@@ -1,0 +1,27 @@
+{
+  "sourceNote_fields": 0,
+  "source_types": {
+    "undefined": 17,
+    "supplement": 487
+  },
+  "reviewStatus": {
+    "needs_review": 504
+  },
+  "subject_fields": 51,
+  "chapters": {
+    "supplement": 32,
+    "ch9": 135,
+    "ch1": 44,
+    "ch2": 46,
+    "ch3": 36,
+    "ch4": 45,
+    "ch5": 68,
+    "ch6": 77,
+    "ch7": 60,
+    "ch8": 62,
+    "ch10": 53,
+    "ch11": 93
+  },
+  "field_changes_question_fingerprint": false,
+  "limits": "Default route target scan is not a WCAG certification. Session totals are rendered directly in calendar, not exclusively recomputed from attempts."
+}

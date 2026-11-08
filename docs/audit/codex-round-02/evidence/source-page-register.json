@@ -1,0 +1,92 @@
+{
+  "pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a",
+  "pages": [
+    {
+      "pdf_page": 136,
+      "render_sha256": "864dc77281fed58b11703188dbbea24bce21e81321dde85f880b25d7f4b9de58",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 139,
+      "render_sha256": "18f98c3a5bb6798df77b625a0db442570e493a909e80377ae26705b17c51f74e",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 410,
+      "render_sha256": "329c8c42f9ad51dd0568ac17edab4d6c8f7024310025ffe635eca2c0b2c4606e",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 438,
+      "render_sha256": "93f503dd849ac2cc3a64847afecce764c732866ac9fcb8fc2bb0440f444f20af",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 439,
+      "render_sha256": "0f42e186f49743ac67ef45cd514a8cf155cf7beef341993d9259a2f2e5a856af",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 440,
+      "render_sha256": "ede795e3d3f4f4e8e8f4530d84a8d45061af7ce762fafbd15dc0bf2dd0b5d808",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 441,
+      "render_sha256": "80c93362e0eae546ac4577591238868b9faf12f985aad3f6bc3450996ebba6e4",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 453,
+      "render_sha256": "9f23f4a94936eee2d746e63297a7e041a047d8449719854001a05d7fa526deef",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 516,
+      "render_sha256": "cf4445daa68e5d99d010cad5b590da00d705bbfbbcbd1256d022496fa5b2252a",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 524,
+      "render_sha256": "c8360aed4eb42294c6642ebde83a2b27483bc9379c6760355d2c72aada8be345",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 574,
+      "render_sha256": "2d36059abd92b44faebcd7bacf49838d48b7846086c533d7ddfbf969cc9c4214",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 575,
+      "render_sha256": "6463049399fc365ed7a3b66a96b6fe9da60093e53b5b50ba24bcfe6d7b13d542",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 576,
+      "render_sha256": "607e7171fdf40f895d0c50b37172f368c6d9cb01f838d2e652ff1a37d59c138d",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 584,
+      "render_sha256": "576c71e10e9867b4164ccdc30ac6881e41924ed45f1c2df4dc10b96d339f3590",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 588,
+      "render_sha256": "34ce58a8fc342d6e08e077a9249d5cedbd946159f8b234dfd0dc4919a821411a",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 589,
+      "render_sha256": "6b61f82903dfa257274f4cb9366e1d894f007e9fdc923faeed184b0cb1b7d470",
+      "render_dpi": 115
+    },
+    {
+      "pdf_page": 651,
+      "render_sha256": "a36601831898c5520e15d4c0b6ca1b3884f1f9790e209f5efcb271988e167f3c",
+      "render_dpi": 115
+    }
+  ],
+  "images_distributed": false,
+  "regenerate": "pdftoppm -f PAGE -l PAGE -r 115 -png -singlefile book/AHTTv600.pdf /tmp/source-PAGE"
+}

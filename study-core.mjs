@@ -299,6 +299,15 @@ export function recordStudyActivity(records,context,from,to,pageId) {
 export function isCurrentQuestionAnswer(question,answer) {
   return Boolean(question&&answer&&(answer.questionRevision??'initial')===(question.revision??'initial'));
 }
+
+// Keep historical session snapshots intact. An imported/older summary can
+// disagree with its optional answer details; report that distinction rather
+// than silently rewriting history or treating the stored count as verified.
+export function sessionSummaryMismatch(session) {
+  if (!Array.isArray(session?.answers)) return false;
+  return session.total !== session.answers.length
+    || session.correct !== session.answers.filter(answer => answer.correct === true).length;
+}
 export function fieldProgress(questions,attempts) {
   const byId=new Map(questions.map(q=>[q.id,q])),latest=new Map();
   for(const a of attempts)if(byId.has(a.questionId)&&(!latest.has(a.questionId)||instant(a.at)>=instant(latest.get(a.questionId).at)))latest.set(a.questionId,a);

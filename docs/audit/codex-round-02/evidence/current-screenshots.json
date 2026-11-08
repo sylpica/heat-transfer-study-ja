@@ -1,0 +1,59 @@
+{
+  "scope": "Six current Chromium viewports; separate from restored round1 history",
+  "rows": [
+    {
+      "name": "reader-8-4-375-light",
+      "width": 375,
+      "theme": "light",
+      "route": "#reader/8.4",
+      "sha256": "e09895879de980862d32818b1162bc69819a11741dec49335b3bd2afa01627b9",
+      "bytes": 97196,
+      "pageerrors": []
+    },
+    {
+      "name": "reader-10-3-1280-dark",
+      "width": 1280,
+      "theme": "dark",
+      "route": "#reader/10.3",
+      "sha256": "62ce0b2a6e8b6068b27efd9da3b6798343a5e2f3c57c580c9c2b131039df5422",
+      "bytes": 196476,
+      "pageerrors": []
+    },
+    {
+      "name": "glossary-375-dark",
+      "width": 375,
+      "theme": "dark",
+      "route": "#term-fin-efficiency",
+      "sha256": "6f985442aa0e81db0ac327f7f3a2fbcdbdcd6b843d02340b2a4ffb5dc2337a55",
+      "bytes": 76900,
+      "pageerrors": []
+    },
+    {
+      "name": "glossary-1280-light",
+      "width": 1280,
+      "theme": "light",
+      "route": "#term-fin-efficiency",
+      "sha256": "3d22af388af6d85c388df14dc8206d47c7c80d968e45e66364a1354852d70bfb",
+      "bytes": 128111,
+      "pageerrors": []
+    },
+    {
+      "name": "calendar-375-light",
+      "width": 375,
+      "theme": "light",
+      "route": "#calendar",
+      "sha256": "382c855d0de37bc203d6a50fcd6ed2b2d922e205be894e742a2e0428ac3f1ab0",
+      "bytes": 72013,
+      "pageerrors": []
+    },
+    {
+      "name": "calendar-1280-dark",
+      "width": 1280,
+      "theme": "dark",
+      "route": "#calendar",
+      "sha256": "53590e2ca912acaeef4b7a1a35420ee3c4791d62428cded3c5e86b12710c0c66",
+      "bytes": 114981,
+      "pageerrors": []
+    }
+  ]
+}

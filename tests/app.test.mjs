@@ -243,7 +243,8 @@ test('book source links open the cited public PDF page even when translated text
   h.api.state.settings.contentLanguage='en';
   const englishGlossary=h.api.renderGlossary();
   assert.match(englishGlossary,/id="term-term" lang="ja"><div class="term-heading"><h2 lang="en">heat<\/h2>/);
-  assert.match(englishGlossary,/<p lang="ja">温度による移動<\/p>/);
+  assert.match(englishGlossary,/<p class="term-brief" lang="ja">温度による移動<\/p>/);
+  assert.equal((englishGlossary.match(/温度による移動/g)||[]).length,1,'keep the Japanese definition exactly once when English meaning is unavailable');
   assert.equal(h.api.sourcePdfPage({pdfPages:'21'}, {pdfStart:17}),21);
   assert.equal(h.api.sourcePdfPage({pdfPages:'9999'},null),null);
   assert.equal(h.api.sourcePdfPage({pdfPages:'invalid'}, {pdfStart:17}),null);

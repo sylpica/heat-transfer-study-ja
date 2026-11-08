@@ -1,0 +1,31 @@
+{
+  "method": "Previous tables remain historical records, not newly rerun full scientific approval. Current changes and unperformed checks are recorded in traceability-delta.csv and REPORT.md. No solver or release-approval code changed in this round.",
+  "tables": [
+    {
+      "path": "docs/audit/codex-round-01/requirements.csv",
+      "sha256": "a9fb1367a02eb4df95b518a053ecdb2db16a204166788491ef9d8ac4cd54fd54"
+    },
+    {
+      "path": "docs/audit/codex-round-01/model-criteria.csv",
+      "sha256": "cea80d825a69b7385b5e21287d4319beaac6d7fcc837f90cf15dcd1aabe24454"
+    },
+    {
+      "path": "docs/audit/codex-round-01/public-model-criteria.csv",
+      "sha256": "a76b0dbf8c82f6b8a6a9a0acbe2f3b0c492d6406c9086cbcb7c7d0b4ea82b1c1"
+    }
+  ],
+  "inherited_p3": [
+    "R1-P3-02 answer-position observation",
+    "R1-P3-05 hosted Actions evidence for snapshot",
+    "R1-P3-06 non-public English extraction noise",
+    "R1-P3-19 mutable action tags"
+  ],
+  "partial_content_work": [
+    "R1-P3-17 section titles in alt fixed previously; detailed image-content descriptions not done"
+  ],
+  "other_unapproved": [
+    "forced-flow pressure-field accuracy, 6.84% at grid64 in prior record; not independently repeated this round",
+    "high-Ra/long-duct public promotion not performed",
+    "Muse four omitted screenshots not available"
+  ]
+}

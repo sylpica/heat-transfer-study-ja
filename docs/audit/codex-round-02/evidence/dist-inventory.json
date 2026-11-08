@@ -1,0 +1,1298 @@
+{
+  "total": 258,
+  "dynamic": 51,
+  "sections": 76,
+  "development_files": [],
+  "files": [
+    {
+      "path": ".public-site-build",
+      "bytes": 64,
+      "sha256": "6eba2e87f27b9723f7b16f313ab68d79651fd89cd44d8feab8dc84c57238047c"
+    },
+    {
+      "path": "app.js",
+      "bytes": 284022,
+      "sha256": "d09bcf3e786a4e972bc970c22ec064699c532699fded8a2976baff5c45f79815"
+    },
+    {
+      "path": "assets/icon-192.png",
+      "bytes": 7836,
+      "sha256": "25f09280685a039f1681dac961fc119ffed1157bf8f7794c5760855fa21eeeb9"
+    },
+    {
+      "path": "assets/icon-512.png",
+      "bytes": 21324,
+      "sha256": "4e580b8647ef222afacc8c4e8a30b00c567e216d85fbc91fba2e876ac3d837d9"
+    },
+    {
+      "path": "assets/icon.svg",
+      "bytes": 657,
+      "sha256": "18f1bd435dc1e34602436d77628fd07b1ef220b59bb62d7dcbf7dd6da69e0616"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-1-1-heat-rate-flux-integrals.svg",
+      "bytes": 7639,
+      "sha256": "26d28e167d2b1e209504d9f0870ff52ac06fa93559d2e27eabce884e2b991f10"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-1-2-energy-balance-vs-heat-equation.svg",
+      "bytes": 9371,
+      "sha256": "653bdde0553117e647126ee8cf0cc5bdbd7acd36740746b0fb3a66d33b93e6e9"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-1-3-three-modes-comparison.svg",
+      "bytes": 5018,
+      "sha256": "4add5317d735dddc4cceb9c27ded69c8077537b3c9b6a30e13464a85ea101f82"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-1-4-roadmap-series-resistance.svg",
+      "bytes": 4930,
+      "sha256": "c984b98335dd86e70429d0d9ad59ba49f79d868b8af2bc341ff62eca2e56c6cb"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-1-5-problem-solving-uncertainty.svg",
+      "bytes": 4563,
+      "sha256": "4241ddcb1a008fafe1058704709cc65ef6901e3edb42b1ce5cdc2f194e0f7d3c"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-10-1-radiosity-irradiation-balance.svg",
+      "bytes": 6993,
+      "sha256": "6072e4591d5748446bf337dfb729503e62c8619a1b9e212e177ac5370a6bb917"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-10-2-kirchhoff-spectral-bands.svg",
+      "bytes": 5819,
+      "sha256": "38498db01b1fdb798c015860aac20af223137f3ee8d8a6791e5b5b7d1a52dcb6"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-10-3-view-factor-reciprocity.svg",
+      "bytes": 4676,
+      "sha256": "1a7831d37b8f46e5860a6cd847c0e2573360cbc5492f98f44a90c3fb77a77943"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-10-4-gray-surface-radiation-network.svg",
+      "bytes": 5923,
+      "sha256": "cf07fae090004d0c740f185179d6e4d00ac3006acdaf1c184cae80b5abf7154b"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-10-5-gas-radiation-beer-hottel.svg",
+      "bytes": 6954,
+      "sha256": "eed8fbe8b711f504da606adb4a70cf1c2d77e30840b134a5bef549ca760fdead"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-10-6-solar-roof-balance.svg",
+      "bytes": 5964,
+      "sha256": "3f87dae6600ab0a68f91593c95ab20f7b7b67692e03800b4d9acc02d0416e64d"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-1-introduction-flux-timescale.svg",
+      "bytes": 7780,
+      "sha256": "f180c7cc13daad2fa83db6276872e81c511eb4fae387aeda5747ac46791dbce2"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-10-transport-properties-kinetic-theory.svg",
+      "bytes": 7425,
+      "sha256": "9201eb2f6810e37645b6481b918aea9ac5f584f40d6b9dfa5a81f30134d8d09d"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-11-multicomponent-chemical-potential.svg",
+      "bytes": 6992,
+      "sha256": "c7523621d0ae02ac509d81fa3767934f831abaf837be1785a40f464b3c9ac08c"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-2-air-composition-flux-decomposition.svg",
+      "bytes": 6907,
+      "sha256": "679b14bdfd3db41511029d590daf8cfa957dce39625f38fdb1365f50db79fb75"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-3-fick-molar-diffusion-comparison.svg",
+      "bytes": 7247,
+      "sha256": "253a8ef28c99953ab3b77fce2384eeda6bbe23e28c507ba5d5e232c721b3a910"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-4-species-balance-raoult-henry.svg",
+      "bytes": 7076,
+      "sha256": "5ff513b7ac96e76ea5e4d4d6a9dafeb07ae346d33a39aa352aa3907c8f97dd4b"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-5-stationary-medium-log-profile.svg",
+      "bytes": 6593,
+      "sha256": "98e515c62df381bf7b495ab3f4115edda310dd57f294a226379180feae5aef91"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-6-naphthalene-sublimation-analogy.svg",
+      "bytes": 6601,
+      "sha256": "7e7d6f3c3f2da3b1093b42d23588e75cd048d58dad0860f92ac72b109dc94d57"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-7-coffee-cup-wet-bulb.svg",
+      "bytes": 7069,
+      "sha256": "a42335d86963e7e1793ee9e9853ff35ae06c1eca77db5975080ee2089e3d226a"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-8-blowing-factor-reverse-osmosis.svg",
+      "bytes": 7840,
+      "sha256": "9ad5d17698fcb71984ecdf1a6126d9f6ebcad264952bf64e63eb7f5efaaf01af"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-11-9-high-rate-heat-coefficient.svg",
+      "bytes": 8225,
+      "sha256": "cb5a3cf51c35624c37b73e050ccf897c9c30ce95504c1d2d3d1205a1b4c52783"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-2-1-heat-equation-control-volume.svg",
+      "bytes": 5773,
+      "sha256": "1ddb26186c1698e123fa73662df334d9d8219bc6b76d88e77a28f2821a04066e"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-2-2-slab-method-linear-profile.svg",
+      "bytes": 4662,
+      "sha256": "a849c344a61bd6666e93054f5f1791f95f200e26990036fcdf546b1c4bdea551"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-2-3-series-parallel-thermal-resistance.svg",
+      "bytes": 6437,
+      "sha256": "e5d8c921a2145952f06635022339b54348735c3dd1371544133881fc5180f1ba"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-2-4-cylindrical-wall-resistance.svg",
+      "bytes": 6926,
+      "sha256": "1b144dd6643383bbb6380f125852b80f451a829ad2f786bcd272043f34ee3c60"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-2-5-composite-wall-summary.svg",
+      "bytes": 5364,
+      "sha256": "fad0a18ba1d8b1ed52c502866212f3054662ee9cd8311dcace4d496ba2a9beac"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-3-1-hx-configurations-balance.svg",
+      "bytes": 5071,
+      "sha256": "d9e92d1cf1c364375bedb52def5bf7f08c04624520a6e622ea981d58e8c9cefb"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-3-2-counterflow-lmtd.svg",
+      "bytes": 6912,
+      "sha256": "ed387ab08a118f19df5cde00aa50692e821c6324be604ebcc665c9af76964ebf"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-3-3-ntu-isothermal-heat-exchanger.svg",
+      "bytes": 5641,
+      "sha256": "38978a22727e707e3726db6aaf1eebe52ff111fed1c6475e265a942656284f65"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-3-4-required-heat-transfer-area.svg",
+      "bytes": 5349,
+      "sha256": "22c03c868f35eebe3ca17ecdf83e458ee84ad7d1b0e5ed16ce315b612fe024bb"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-4-1-well-posed-boundary-conditions.svg",
+      "bytes": 5645,
+      "sha256": "0db9818129fde2fdfef08a43ce24adad2b77fb589c1e150b6fcc25013bce4c6a"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-4-2-uniform-generation-plane-wall.svg",
+      "bytes": 5404,
+      "sha256": "9f23c0ff6e7a80064588b1498d5ed284d1da646b6a9109108fb511cdec36024f"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-4-3-bi-fo-similarity-scaling.svg",
+      "bytes": 6672,
+      "sha256": "64273ea1b825c03cd7a2ac3fa4535e7f190c08f5d9a3be5b1df481e2deecee1d"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-4-4-shape-factor-scaling.svg",
+      "bytes": 4778,
+      "sha256": "c276d45364ae6871c5e08071a65a7ce3140f245258962974449b1db3b8bf6879"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-4-5-adiabatic-fin-efficiency-effectiveness.svg",
+      "bytes": 7654,
+      "sha256": "2af8737612e30bca0d57feb3b02bc68e5e6c32733614c901a994b0e58f89f666"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-1-time-scales-model-selection.svg",
+      "bytes": 8520,
+      "sha256": "cf238cc13960dd866ded3581a53c7d84d6744c67ef7554a49b42fe336221d037"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-2-lumped-capacitance-exponential-cooling.svg",
+      "bytes": 7377,
+      "sha256": "99b40bd327d332a19f88556fea12afd565fb6ed38f9677a9ada2b9986abc3796"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-3-transient-slab-cooling.svg",
+      "bytes": 7000,
+      "sha256": "a116dd499a2d753a25754e38fdee83918ef722a416e25c296eb3d28abe767910"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-4-response-chart-profile-reading.svg",
+      "bytes": 9195,
+      "sha256": "c2ff279dccbc232d00748be49f852a68d8b3f0622178304cb9b7bc0e235d5cc3"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-5-one-term-eigenvalue-series.svg",
+      "bytes": 9685,
+      "sha256": "7031d0696880e5c486de620a8d904f0eafe0b0d272625c26c814d48a95763875"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-6-semi-infinite-error-function.svg",
+      "bytes": 10623,
+      "sha256": "418f919e10526cb30b2e431619e285b3449b8d95007fc11b963fa59ea5df2b62"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-7-steady-2d-square-series.svg",
+      "bytes": 8207,
+      "sha256": "e56e4a38bb63cc4a0fc7648ca70d2ed51ef61b47f075c35330130eeb6cc18750"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-5-8-product-solution-square-bar.svg",
+      "bytes": 7877,
+      "sha256": "64131123bbbf86bf4fa0fe6447230e4ffb707bd153567ec6c3da3c151fe6260c"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-1-velocity-thermal-boundary-layers.svg",
+      "bytes": 7341,
+      "sha256": "daa23826ab1e42cd7fc52542591d65cd52b653971a29e78ce17f92dddea0f5f3"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-2-blasius-similarity-friction.svg",
+      "bytes": 5289,
+      "sha256": "303d979f3310c8e07a4a181df1d41c656a1bffe4d9157e4c4e19633a80f55281"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-3-energy-equation-integral-balance.svg",
+      "bytes": 4831,
+      "sha256": "1a59e9a2ea0eaf69b3586250e60807d08b7e386fe5eaea23a2c7ac429abadf83"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-4-prandtl-thickness-ratio.svg",
+      "bytes": 5272,
+      "sha256": "42f5b8e38b4b0eb8af3f97f3b18505107e4aa6ea43bbdefbf3b325c482800743"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-5-laminar-local-average-nusselt.svg",
+      "bytes": 4860,
+      "sha256": "026ec6eea0ea356ba1ba7f5cf813c2471a8380c3493696f6af4cf254f6e870c0"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-6-reynolds-colburn-analogy.svg",
+      "bytes": 4644,
+      "sha256": "cc296494f38aa1c7a4ea3ffe16b1d9a8ed6cb3eb9a49c1f6dc418eda7a406bdb"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-7-turbulent-wall-units-log-law.svg",
+      "bytes": 5180,
+      "sha256": "c1618a025b2a733cb8eee22beb1a2526aebb5f12c3496cbddf992ab6e5a0a3bb"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-8-turbulent-gas-liquid-correlations.svg",
+      "bytes": 5127,
+      "sha256": "5c63eff7f43d4b6a3258330766416d4637ab28f8d14e276d0514c15d80a962f1"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-6-9-transition-mixed-average.svg",
+      "bytes": 5223,
+      "sha256": "e75ef47014475363149e0a80dc35a393fb475ea812636e4c487dd08a2c01b0af"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-7-1-rectangular-duct-hydraulic-diameter.svg",
+      "bytes": 5253,
+      "sha256": "28fc826fdc14d0785112ea9f292a9409f4e051bec53fc42247a8769c8fedc2ed"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-7-2-laminar-pipe-entrance-lengths.svg",
+      "bytes": 5611,
+      "sha256": "aceadbd0c8528aa6e27ee3c1f526b5620cf9e104b4a1552a41579ee400b52887"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-7-3-turbulent-pipe-correlations-friction.svg",
+      "bytes": 5127,
+      "sha256": "acb115aa00d39c5549e017129bc4bcf05be33b929c90419cae1f53f7190b01b1"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-7-4-constant-wall-temperature-ntu.svg",
+      "bytes": 5104,
+      "sha256": "dcdbeca582c611d0cc5e31f6bdfe10da9fe0bb0a690490f4f96ba9a9e7ced412"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-7-5-square-duct-nusselt-friction.svg",
+      "bytes": 5247,
+      "sha256": "8ecd8506b2658b2a3f8ebe42b93b80a46a56521b7c15535a0095e4bf6af829b4"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-7-6-cylinder-crossflow-churchill-bernstein.svg",
+      "bytes": 5297,
+      "sha256": "897317e3711a9cde39edd1c94ec392a35c1bb0ecfd6b1f2069d19632561b6a6e"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-7-7-correlation-uncertainty-residuals.svg",
+      "bytes": 5196,
+      "sha256": "5ff409259dd28b372a599da69048aafc5c02eb094c0af1e261ae21b1c8b9b385"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-8-1-driving-forces-richardson.svg",
+      "bytes": 6516,
+      "sha256": "a498e05b314ddac6bab65ec5b37a6998488dbc0e46f6bf71187639a80cb378d9"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-8-2-film-velocity-profile.svg",
+      "bytes": 7550,
+      "sha256": "180e3b8a1d886d9fc9d9096f434421570706dcb08329cfc37f8ecfeb6c8edc5d"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-8-3-vertical-plate-boundary-layer.svg",
+      "bytes": 7734,
+      "sha256": "c363a8375a1076f39cfc51c8ae7b9c54325d16355c361d41fa12ee0a657719bc"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-8-4-natural-convection-orientation.svg",
+      "bytes": 5971,
+      "sha256": "1b15c876dbeba5b5528ecc0484c9f6d91d3d4926d237f012a753c2aa45714d4f"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-8-5-film-condensation-liquid-film.svg",
+      "bytes": 8176,
+      "sha256": "d7ff9ec5d9455cd92aba89359f1954a77b4bab4ed9d3b8438478a1462f0ce3ad"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-1-pool-boiling-curve-regimes.svg",
+      "bytes": 6610,
+      "sha256": "e95b5663fe1130f3215c2ac3f9ad7d0b2e5f2398cceb3bfe839597f29a6b76d9"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-10-dropwise-droplet-cycle.svg",
+      "bytes": 5539,
+      "sha256": "6d37e32a1f2ccf40f3c99374ef3c7e4ec56f1b1d25ec891c0422b823d7b6afb0"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-11-heat-pipe-capillary-budget.svg",
+      "bytes": 6531,
+      "sha256": "78b70c6787ecf2a4aad52c7796be966c03312fc97630ecb581c04806e8151ae2"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-2-spherical-bubble-laplace-pressure.svg",
+      "bytes": 6993,
+      "sha256": "eb217f9317aa84173edd4d7b8592ff1ab320329e49216e123bbe7d1eb389001d"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-3-critical-heat-flux-liquid-vapor-counterflow.svg",
+      "bytes": 6911,
+      "sha256": "1b583901d245b653459e2f67d329ff5c4c35ab6fca82d92185b8f3fc49658bf3"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-4-film-boiling-vapor-layer-resistance.svg",
+      "bytes": 7372,
+      "sha256": "0045fccc0a7f4411de26868a859620094ed1d9cde02f2a78dff63a3a292984cb"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-5-minimum-heat-flux-berenson.svg",
+      "bytes": 6382,
+      "sha256": "1ad0e324ae3484b6f242f4563578d9d75068b7ac663d33acc5cdb1a17b9e4147"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-6-transition-wetting-fraction.svg",
+      "bytes": 16340,
+      "sha256": "267929b066b81dc6575525d2a8758dc7dec654ead2b1f2fc6cda97e7182bd9dc"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-7-surface-effects-chf.svg",
+      "bytes": 5622,
+      "sha256": "807fd7751d6827efbc02af3487be36ba662950e91a2adf190c84176d05bf656c"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-8-kandlikar-two-branches.svg",
+      "bytes": 6035,
+      "sha256": "e088ca011e2645c0a7b0d3d476cac9cb9aff3dfec84a5c0aa8bc8c91a95071ff"
+    },
+    {
+      "path": "assets/lesson-diagrams/section-9-9-shear-film-stopping-condition.svg",
+      "bytes": 5685,
+      "sha256": "0d8eadc60746c4ed91b5f3935d8f6d46025c88c9409b9119ce0c8e37f4717bef"
+    },
+    {
+      "path": "binary-gas-diffusion.mjs",
+      "bytes": 12246,
+      "sha256": "970a1774be2e89e1f2f687810b64a1e8cc0cf0b2d79f5d1c9541c5f2740db121"
+    },
+    {
+      "path": "book/AHTTv600.pdf",
+      "bytes": 32472182,
+      "sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a"
+    },
+    {
+      "path": "chapter-curriculum.mjs",
+      "bytes": 2931,
+      "sha256": "fe33c64c296dcd2a83dea7cc37b51d0c15344e5de124224bebb3188c51cb69cc"
+    },
+    {
+      "path": "cylinder-crossflow.mjs",
+      "bytes": 14232,
+      "sha256": "f93c68ca2e20692e72135933e097da68a068bd58b37e2b6d8f552ed79147654a"
+    },
+    {
+      "path": "cylindrical-insulation.mjs",
+      "bytes": 14329,
+      "sha256": "94668b63fd7e676ae7c0cd6fcd87ed3e604f6d06012906f03e1d36c514fe8363"
+    },
+    {
+      "path": "data/appendix-references/appendix-a.json",
+      "bytes": 22880,
+      "sha256": "82633d38f789e50da204136d88440d39b3184d618059b4cc2ce4fe27bbe4f100"
+    },
+    {
+      "path": "data/appendix-references/appendix-b.json",
+      "bytes": 866,
+      "sha256": "7a60b05c451007970438ad65fb726da01ebccca2bbc682bb97a3960f80277ded"
+    },
+    {
+      "path": "data/book.json",
+      "bytes": 97983,
+      "sha256": "61280fdc986675ae3c572f33c3fd878aaecb94a260737c5ad85f350fdae566b4"
+    },
+    {
+      "path": "data/chapter-problems/chapter-01.json",
+      "bytes": 47256,
+      "sha256": "00787efbb859282f1eccf2b969cd2ee5f5ecb3228405761ec655b8959fc66796"
+    },
+    {
+      "path": "data/chapter-problems/chapter-02.json",
+      "bytes": 42584,
+      "sha256": "46fa1483e6a5462dcbf8361192e99fe0e61828b773af22d858f0e0c7bb6f1017"
+    },
+    {
+      "path": "data/chapter-problems/chapter-03.json",
+      "bytes": 35455,
+      "sha256": "2427ad4c35df365c7c3835adf53c39839a10a1fdee08b07e1917d258d3f4b913"
+    },
+    {
+      "path": "data/chapter-problems/chapter-04.json",
+      "bytes": 35094,
+      "sha256": "df1cd3f91ee5d322682cea565163eb513cba409203c4cffb01e5cc38683f81e5"
+    },
+    {
+      "path": "data/chapter-problems/chapter-05.json",
+      "bytes": 58336,
+      "sha256": "a4585b0ca3dff085189b56afdc8173b4e3b2815b1e2c8e8b239cb099a13b0d96"
+    },
+    {
+      "path": "data/chapter-problems/chapter-06.json",
+      "bytes": 57063,
+      "sha256": "29a98809209f1b2d3d70298b1025410a89c685718db0b53821cbc973fd33a10d"
+    },
+    {
+      "path": "data/chapter-problems/chapter-07.json",
+      "bytes": 60090,
+      "sha256": "0f2e052a93d628eeb22ca9347a1cf3f31e8cccd72741b8b4ca01cf06f0f29a01"
+    },
+    {
+      "path": "data/chapter-problems/chapter-08.json",
+      "bytes": 53304,
+      "sha256": "ba848495f1d293fbc570f1c285f8c38831355293f9f6087140f9bb7d42e896f2"
+    },
+    {
+      "path": "data/chapter-problems/chapter-09.json",
+      "bytes": 61956,
+      "sha256": "255afb4935ab5b75f47133fe51259d74359a9cb3d9bd79c7a052e8934458278b"
+    },
+    {
+      "path": "data/chapter-problems/chapter-10.json",
+      "bytes": 55542,
+      "sha256": "c92942ad5fb15475a168d9e7597c76cadbbbb9dda33a18400ea2bdc4bfbded6a"
+    },
+    {
+      "path": "data/chapter-problems/chapter-11.json",
+      "bytes": 94421,
+      "sha256": "64ee51d9c4b309a90b799e78aba93ab5e9e89b559a9c81f4ab5a217b3fa23981"
+    },
+    {
+      "path": "data/content-manifest.json",
+      "bytes": 2701,
+      "sha256": "ba09cd179e461ecab1cebade765b111c084d5b83b086665ab3ac44046cd1b1e7"
+    },
+    {
+      "path": "data/glossary.json",
+      "bytes": 913181,
+      "sha256": "f11b3b8a305a7b345ae7cf3da511ed943752c31d750f62c0ac49bba34d602d03"
+    },
+    {
+      "path": "data/original-deep-lessons.json",
+      "bytes": 868286,
+      "sha256": "6d11f93365ea6f26999336b4e8706a08effb7ee47fcdd80d3184a30879ae1984"
+    },
+    {
+      "path": "data/original-notes.json",
+      "bytes": 110854,
+      "sha256": "95776c9261fba1e12153d0f304b7c10be93ec098f37bd14d35209c53edb65af4"
+    },
+    {
+      "path": "data/questions.json",
+      "bytes": 1882680,
+      "sha256": "ce50bff1761d3fa51b0c184f3ad98299a229191f1e728ed54cb5d44c42f25dcf"
+    },
+    {
+      "path": "data/sections/1-1-ja.json",
+      "bytes": 10118,
+      "sha256": "824cb48273a50602e9cb5e4c1d370ab1c382e9cd04336ac6129d56e7438e7ead"
+    },
+    {
+      "path": "data/sections/1-2-ja.json",
+      "bytes": 11651,
+      "sha256": "e3014ca52aea2a51118f4834776f53d9ee6621862fae741a87f98cbe755ee930"
+    },
+    {
+      "path": "data/sections/1-3-ja.json",
+      "bytes": 65460,
+      "sha256": "d1d848ab0af9b5568328408011061626d281ecd430baea61f4eb23a37350a9c2"
+    },
+    {
+      "path": "data/sections/1-4-ja.json",
+      "bytes": 2075,
+      "sha256": "b70d270ff07248887666ab37306dd7234f32a0da36a1cf25bcf1b5f0a3a768d7"
+    },
+    {
+      "path": "data/sections/1-5-ja.json",
+      "bytes": 3729,
+      "sha256": "a392b99ed77e41a32c706d45e6a58950bddafe50884effd2008835e4908ef30d"
+    },
+    {
+      "path": "data/sections/10-1-ja.json",
+      "bytes": 18646,
+      "sha256": "b13d7bf0f8f5797fe902633269e1ca83d03c098e15e4317f2246246e9948ce10"
+    },
+    {
+      "path": "data/sections/10-2-ja.json",
+      "bytes": 10719,
+      "sha256": "fa06ae1b72b011ea3e5dc5cb61524709a9cd859462350670aa4d235e0b4fd347"
+    },
+    {
+      "path": "data/sections/10-3-ja.json",
+      "bytes": 17851,
+      "sha256": "967b1e79a03dc17f01be12440b986d07771891524be71d2ad348e64501000abd"
+    },
+    {
+      "path": "data/sections/10-4-ja.json",
+      "bytes": 31842,
+      "sha256": "1a7221d8fda5192415310961489219a6141793c4bd264ccb5de42d0f0bc61003"
+    },
+    {
+      "path": "data/sections/10-5-ja.json",
+      "bytes": 27794,
+      "sha256": "faed6f47eccd434cffa393ecc9d624346f8504584ddb387d9e102106a29c2627"
+    },
+    {
+      "path": "data/sections/10-6-ja.json",
+      "bytes": 25309,
+      "sha256": "71e90a57a70bb25ddc18987ef57a1fa4fd919d3dc2a8fb63bb4e5e116ebe4a5c"
+    },
+    {
+      "path": "data/sections/11-1-ja.json",
+      "bytes": 7242,
+      "sha256": "9b45a2a505838427160d321d7121c8e36cba7f23c51925f5ccbe03d2f201238e"
+    },
+    {
+      "path": "data/sections/11-10-ja.json",
+      "bytes": 36508,
+      "sha256": "8315ab9e546d9c938756c965ba4baf9cbac303d78eae459fe75aef28273d37dc"
+    },
+    {
+      "path": "data/sections/11-11-ja.json",
+      "bytes": 22079,
+      "sha256": "c8265e2451506db6975e59ffb2988ea5b467e76d3e8200b64d949274ad7c0a37"
+    },
+    {
+      "path": "data/sections/11-2-ja.json",
+      "bytes": 18978,
+      "sha256": "9d9c1b469c6d4d9b13eeb4d917fde5fd98f2a5a49eb656921b3ab4df79a35a99"
+    },
+    {
+      "path": "data/sections/11-3-ja.json",
+      "bytes": 15312,
+      "sha256": "5d481131b21d146daecd2b1105009f933e385063b8bd394fd4b927824548c77b"
+    },
+    {
+      "path": "data/sections/11-4-ja.json",
+      "bytes": 21181,
+      "sha256": "d1aac4af98b79c79546ac4e117fb47aee0419479dae13fc3f74fcb22e37deedd"
+    },
+    {
+      "path": "data/sections/11-5-ja.json",
+      "bytes": 17655,
+      "sha256": "a6d79cc883caae907bc6e0da9472abeb7945fb1915afff45b8dc6051f250b6aa"
+    },
+    {
+      "path": "data/sections/11-6-ja.json",
+      "bytes": 15889,
+      "sha256": "7f562e4154b1e8dc28724742931b536b005907d693fe99cd06ee6a7f8be74349"
+    },
+    {
+      "path": "data/sections/11-7-ja.json",
+      "bytes": 18278,
+      "sha256": "f9ad37861bdf5d5247cf2dcc41a7402049440d1cffddb3cb80578dfacbc35445"
+    },
+    {
+      "path": "data/sections/11-8-ja.json",
+      "bytes": 13967,
+      "sha256": "e7bdc7e798c21b8e1dd5c86438c03e09cb0f7c814e7b8c1544a857be0740c721"
+    },
+    {
+      "path": "data/sections/11-9-ja.json",
+      "bytes": 24610,
+      "sha256": "f7e7644a48212b229cb8767caaf968820d614c239261b9737d83341b8ab26580"
+    },
+    {
+      "path": "data/sections/2-1-ja.json",
+      "bytes": 18712,
+      "sha256": "061eeb4011d7258752c3c31b4bce7cad148bff3078066e5b236bcbf2e148b349"
+    },
+    {
+      "path": "data/sections/2-2-ja.json",
+      "bytes": 15174,
+      "sha256": "8e56c17bdd5666d35bdece5e9c850938c32801238641cd34cb226cdd4dee0ccb"
+    },
+    {
+      "path": "data/sections/2-3-ja.json",
+      "bytes": 35721,
+      "sha256": "a8fe70b40493618102c248b7e05243fd2045da9a628cc0df01774ca50397cd62"
+    },
+    {
+      "path": "data/sections/2-4-ja.json",
+      "bytes": 16527,
+      "sha256": "55c56cdc0b5945edb16e0403540bf15742c92a7da530d4c190cd08e3c1307334"
+    },
+    {
+      "path": "data/sections/2-5-ja.json",
+      "bytes": 2248,
+      "sha256": "0274efbe88764a57fdf72509e04b97023fd6369985f960fca9ba6c5fabd52e23"
+    },
+    {
+      "path": "data/sections/3-1-ja.json",
+      "bytes": 11285,
+      "sha256": "9723be7e83fe7f07b5e26ce547735954044cd49b87def7b47ddfa722aa424507"
+    },
+    {
+      "path": "data/sections/3-2-ja.json",
+      "bytes": 24765,
+      "sha256": "a5cc7afbb07f42bc003f9f8d8b7e7bc45c9e53717947e6503bbe3717200965ee"
+    },
+    {
+      "path": "data/sections/3-3-ja.json",
+      "bytes": 14485,
+      "sha256": "ff173939783462a9004f2dda572fedb677cd95de473d50fa4fb3fd9b94b68135"
+    },
+    {
+      "path": "data/sections/3-4-ja.json",
+      "bytes": 8315,
+      "sha256": "92387fa1ed7e0ac5d87464de10fcf4fe73a91a2d22ae0aee26034f93450cac0e"
+    },
+    {
+      "path": "data/sections/4-1-ja.json",
+      "bytes": 6425,
+      "sha256": "0682ee0c8621bae132b92b714f2a12331d85c5e232cc4402c469bb03b8c7d04e"
+    },
+    {
+      "path": "data/sections/4-2-ja.json",
+      "bytes": 17860,
+      "sha256": "c566c7f498a6cfa5f3206f07b0c0de79920cff8321a4b117b680acab20f73ea4"
+    },
+    {
+      "path": "data/sections/4-3-ja.json",
+      "bytes": 21999,
+      "sha256": "2ae6547b47c1ee05dfbaeabb12ef92ab0d1f389b10539765f084286d497a8020"
+    },
+    {
+      "path": "data/sections/4-4-ja.json",
+      "bytes": 9380,
+      "sha256": "6c10a2c6dbecf9e0ec963b62ab1920bdd4319a2d9482930a4ff79dde4653b298"
+    },
+    {
+      "path": "data/sections/4-5-ja.json",
+      "bytes": 41410,
+      "sha256": "4ad80cf4ab88433b9c28bd4853cfd6c50e8dafb7e9effab8c55e3c3247dae9a2"
+    },
+    {
+      "path": "data/sections/5-1-ja.json",
+      "bytes": 4627,
+      "sha256": "105e987beb283a8e84b160811e546cb5ed08490cdd58b5a189e5d3cca8da6681"
+    },
+    {
+      "path": "data/sections/5-2-ja.json",
+      "bytes": 20002,
+      "sha256": "3b862fa06fecb3eae843a1194a0c3706c88fae6709e618d3cc46fac8e7184cab"
+    },
+    {
+      "path": "data/sections/5-3-ja.json",
+      "bytes": 12481,
+      "sha256": "d1d65aa662d0f8406d9e84b36b02a27a85fb1a94aa4f8a7d7045072521dde285"
+    },
+    {
+      "path": "data/sections/5-4-ja.json",
+      "bytes": 14134,
+      "sha256": "7d7f55ca9befc71f73b1b6ec47671dbf67f1617f160128be33feadf61d13f7ec"
+    },
+    {
+      "path": "data/sections/5-5-ja.json",
+      "bytes": 10788,
+      "sha256": "9e39c3ee543c3fe254f23d3c64e073e91215d61dbe33e8362123178277631d06"
+    },
+    {
+      "path": "data/sections/5-6-ja.json",
+      "bytes": 33210,
+      "sha256": "77a8be8c49c2032ee7622498f4457b4ee3c1c9ce3b9b22c6799e7f4abdd2feb8"
+    },
+    {
+      "path": "data/sections/5-7-ja.json",
+      "bytes": 22811,
+      "sha256": "f1e5f0df74e4dfeb85cd005b9d081af21da075b9fa82fd4bc2213b900520400e"
+    },
+    {
+      "path": "data/sections/5-8-ja.json",
+      "bytes": 8016,
+      "sha256": "8d0eeb0bde7caeecf37c467fa111829be885f25b19d64adcc519363622ae5df0"
+    },
+    {
+      "path": "data/sections/6-1-ja.json",
+      "bytes": 16152,
+      "sha256": "51f336da0a3a31f33a629cd41afe59ff1c1b0a9d3367fe241acfd38fff20adc5"
+    },
+    {
+      "path": "data/sections/6-2-ja.json",
+      "bytes": 31718,
+      "sha256": "8a6b4218f1c21bfea861d60744581f2a54f862705f72ed1f7e106fcfb01a154b"
+    },
+    {
+      "path": "data/sections/6-3-ja.json",
+      "bytes": 10675,
+      "sha256": "122a11e5019ee560a33bc6fb43511b68b8d0fc2d73948e77f14a014afb35efc5"
+    },
+    {
+      "path": "data/sections/6-4-ja.json",
+      "bytes": 8887,
+      "sha256": "d29be18d6b5161831d7888133d5a4edf09645d01c73eba40ae2c37556b831728"
+    },
+    {
+      "path": "data/sections/6-5-ja.json",
+      "bytes": 23303,
+      "sha256": "16597562651ebcdb9766a239b8ba22d0e94f05ed31797530e5b3c332df7480d5"
+    },
+    {
+      "path": "data/sections/6-6-ja.json",
+      "bytes": 5635,
+      "sha256": "9adccd90fe11293db275700fb44dbc0f2db814f1ab2604faf64bf1b0afe61aab"
+    },
+    {
+      "path": "data/sections/6-7-ja.json",
+      "bytes": 20667,
+      "sha256": "92d83643256fc53b494c3e7500eb51f934771434991b7a20bfba10d2a7ee03f9"
+    },
+    {
+      "path": "data/sections/6-8-ja.json",
+      "bytes": 12859,
+      "sha256": "32dbabb6eed57e117f1bc4ab19855b5c0d6ab220efbad266f1570f7d6475fc0a"
+    },
+    {
+      "path": "data/sections/6-9-ja.json",
+      "bytes": 17823,
+      "sha256": "c13e719651d0b293e51883078d934d323796273a00ff6f2f1d997b3335cb6bd0"
+    },
+    {
+      "path": "data/sections/7-1-ja.json",
+      "bytes": 4463,
+      "sha256": "39d57e5aff140e14ad3795721dd56a14965b5975450a2958ce2e1c30703ec19e"
+    },
+    {
+      "path": "data/sections/7-2-ja.json",
+      "bytes": 27065,
+      "sha256": "a31f3122a8e379a127a48b733d30d9d4bb278bddbf450e942ac2dbfbf7b26c3e"
+    },
+    {
+      "path": "data/sections/7-3-ja.json",
+      "bytes": 34259,
+      "sha256": "2d83fca480a89ef5720d7e0ebd5342ac379c3138989bc52ca1eec7fe99c08c06"
+    },
+    {
+      "path": "data/sections/7-4-ja.json",
+      "bytes": 5664,
+      "sha256": "3106349adf6e5f9e4d7b630c4c144cbdd67d01e5e366b08cf1529f955b763096"
+    },
+    {
+      "path": "data/sections/7-5-ja.json",
+      "bytes": 11133,
+      "sha256": "c83e1e16b993d96cf7fd9557d913e12436bbcb9efddc5c52b1053d715a4f7766"
+    },
+    {
+      "path": "data/sections/7-6-ja.json",
+      "bytes": 15354,
+      "sha256": "b1eff9137ff9c1329873001598fce3c12157788560c6bc072968e1342d1fff90"
+    },
+    {
+      "path": "data/sections/7-7-ja.json",
+      "bytes": 4996,
+      "sha256": "bf09f4a294aca1b3212e472bd48d42d8fd40efc59bc5ad4da74d41c71edbce13"
+    },
+    {
+      "path": "data/sections/8-1-ja.json",
+      "bytes": 2207,
+      "sha256": "6c30b706b0f0a46d5699e941872342557517977f8629a8839bf974f0b7822589"
+    },
+    {
+      "path": "data/sections/8-2-ja.json",
+      "bytes": 7740,
+      "sha256": "14647acea239e3894f6a923f5c6fa2a4a96fac732b59c354479ad15f6aced0b7"
+    },
+    {
+      "path": "data/sections/8-3-ja.json",
+      "bytes": 26433,
+      "sha256": "79ea9139e164ca63383c3d517cc7031030ca2a5b6448937baed2afb083bc7640"
+    },
+    {
+      "path": "data/sections/8-4-ja.json",
+      "bytes": 24307,
+      "sha256": "150477b0b8cea7e49cbe01240c135896e6545caf454d75f7d56a3ae61af79462"
+    },
+    {
+      "path": "data/sections/8-5-ja.json",
+      "bytes": 26601,
+      "sha256": "c3aacc8664a377385543ad4c6887114a5057804979d0d3f1b887d26cfa8d3337"
+    },
+    {
+      "path": "data/sections/9-1-ja.json",
+      "bytes": 13799,
+      "sha256": "625cd2f0dfff32454f18020de1cafd5359f5299b3d34e020984bacb74137094e"
+    },
+    {
+      "path": "data/sections/9-10-ja.json",
+      "bytes": 7619,
+      "sha256": "27f6e3bb9b3267cc5bc46c89bb441268d4e3af4ca030ea31f07fb2f0f2f6f8b1"
+    },
+    {
+      "path": "data/sections/9-11-ja.json",
+      "bytes": 8531,
+      "sha256": "c3773404fd370755dcb1e2cd829ea42258b75ca16f71d8cdc23747bf438d3958"
+    },
+    {
+      "path": "data/sections/9-2-ja.json",
+      "bytes": 16729,
+      "sha256": "f76d2d99e120492feb3dc9485f3d7aeb87e1599ab15184ff522d436b0070ccf5"
+    },
+    {
+      "path": "data/sections/9-3-ja.json",
+      "bytes": 28625,
+      "sha256": "236da8fe7f7185848eb02b8cc816b892a2efa6c62192fa15f446c7705f6f36b0"
+    },
+    {
+      "path": "data/sections/9-4-ja.json",
+      "bytes": 6100,
+      "sha256": "55212f784d37b03f654956899d058d1fdf47c6d9ce95a3f45426cf150a5198c4"
+    },
+    {
+      "path": "data/sections/9-5-ja.json",
+      "bytes": 2873,
+      "sha256": "cbde018714d3ba13a8ebbde1e4d75ede9d7e54a901cff9fc8db9e3906c6a4f79"
+    },
+    {
+      "path": "data/sections/9-6-ja.json",
+      "bytes": 5471,
+      "sha256": "43bdc2aa2ce6104cbb655ad9adc8e2bd1ab77ddffc407519f8631351cfd7a1e8"
+    },
+    {
+      "path": "data/sections/9-7-ja.json",
+      "bytes": 11780,
+      "sha256": "df504b3660822e41f088b8a7db99db8eba6ac4f623d9a9009e6b9951f679893d"
+    },
+    {
+      "path": "data/sections/9-8-ja.json",
+      "bytes": 17757,
+      "sha256": "336aad8eae411a53fb4d70458d169cbf4960464425f7b1afc1d6e4d0a634918b"
+    },
+    {
+      "path": "data/sections/9-9-ja.json",
+      "bytes": 2929,
+      "sha256": "caa35cae52271454bad185e46000bf78a4c5244498d5731f4506a61011951757"
+    },
+    {
+      "path": "dynamic/actor.mjs",
+      "bytes": 1504,
+      "sha256": "a47193c1f28278729506a392d373f24ecc3fa836dd94e9bea6df68a836d8e5b0"
+    },
+    {
+      "path": "dynamic/boiling.mjs",
+      "bytes": 1851,
+      "sha256": "4eb8aa185c1f681ab29e6e635c6011dfe9107c14bcc327c307435b6079fcdbdc"
+    },
+    {
+      "path": "dynamic/channel-learning-ui.mjs",
+      "bytes": 5365,
+      "sha256": "0b4cafd7b038a72544cf42c94aa90dc69c6558037b78c32bbafe0d16ab9ddf9a"
+    },
+    {
+      "path": "dynamic/channel-learning.mjs",
+      "bytes": 5735,
+      "sha256": "785300f9f2a0de2d16d83fe85a8b3394ebd2b9eed444cc39101fd7a0ef1710d7"
+    },
+    {
+      "path": "dynamic/channel-ui.mjs",
+      "bytes": 15250,
+      "sha256": "a7a3df8ef2ad97c05082bffa31d9bc55e8ee5c9a9a89a281a922905230dea1f9"
+    },
+    {
+      "path": "dynamic/channel.html",
+      "bytes": 16003,
+      "sha256": "75331bc20c79b33d0759853d249d0fb47ffb7e76fc0129f77423a67a35d64b3d"
+    },
+    {
+      "path": "dynamic/developed-channel.mjs",
+      "bytes": 6718,
+      "sha256": "357326dfb119cba71a13c6e5528e8d6a61346060414d2eef19029947b0ba788e"
+    },
+    {
+      "path": "dynamic/experiment.mjs",
+      "bytes": 7135,
+      "sha256": "a888e61747d02eb55eea2d9782bf9597181bb8959c07746c9e58c5855f244bb4"
+    },
+    {
+      "path": "dynamic/field-analysis.mjs",
+      "bytes": 2511,
+      "sha256": "6f8464ffcf7ae1eec40e3f75cfbcbdc150482893bf1c28a391542451f6e45bdb"
+    },
+    {
+      "path": "dynamic/field-frame.mjs",
+      "bytes": 1170,
+      "sha256": "bcd8a9150c5e6ad8c32b5f87c9e7004365cf4dffca2bffbd4f19a36d39a4de37"
+    },
+    {
+      "path": "dynamic/field-plots.mjs",
+      "bytes": 3075,
+      "sha256": "06061b7e2975c8ee9ea7f6ff5c5ca5dc2fed4edf03bcea3d7870372348aaec44"
+    },
+    {
+      "path": "dynamic/fin-learning-ui.mjs",
+      "bytes": 10531,
+      "sha256": "48881fb403684f93b2f8fdaa1861a428b64d73bcb42bb8cde1ba4188704bb565"
+    },
+    {
+      "path": "dynamic/fin-learning.css",
+      "bytes": 617,
+      "sha256": "b2c790e0ac7049ebb613523b36d064c5dac7ec3bf6618f3a167bdb472eaa6e6a"
+    },
+    {
+      "path": "dynamic/fin-learning.html",
+      "bytes": 8810,
+      "sha256": "49bc196755c35c259e4ab9f74c506929d5cad443efbe5dd741604fb32dfcd3fe"
+    },
+    {
+      "path": "dynamic/fin-learning.mjs",
+      "bytes": 6779,
+      "sha256": "00c2bc6aa49fded90fb4083400f277000d70f0f61553e7abdfbd547789aa9ddc"
+    },
+    {
+      "path": "dynamic/fin-view.mjs",
+      "bytes": 3221,
+      "sha256": "cb5d3c603f969479e40cb849dd79bac922774ee5cf1c687e93ef7acaca760b6c"
+    },
+    {
+      "path": "dynamic/geometry.mjs",
+      "bytes": 3639,
+      "sha256": "8ff5b1038150553db51f5dbb16ae333f6ffbaea1985a8c86aef268fa4d16ce36"
+    },
+    {
+      "path": "dynamic/index.html",
+      "bytes": 25238,
+      "sha256": "64128ce1343d70fdade7efc5c45a20c07a1aa6fd26e25cb3bbec60c9caec7653"
+    },
+    {
+      "path": "dynamic/lab-guide.mjs",
+      "bytes": 3106,
+      "sha256": "02cbe832777f512ebde5d3dc004c9a93ac01db504a9ce8f41c4769f6b543b657"
+    },
+    {
+      "path": "dynamic/lab.css",
+      "bytes": 6322,
+      "sha256": "90849809ef49a489276abaad640502c3932c01b34212c0a310d89d0f2af4c2b7"
+    },
+    {
+      "path": "dynamic/lab.mjs",
+      "bytes": 29346,
+      "sha256": "34968c1485cde66c836ea61413bf92391609c3a4474177a544b2944e7c143442"
+    },
+    {
+      "path": "dynamic/learning-path.mjs",
+      "bytes": 3282,
+      "sha256": "ccc645f966190d999e6da0fb275f1a90685e4e4ef7e2a7defe5ad8a903a23439"
+    },
+    {
+      "path": "dynamic/learning-ui.mjs",
+      "bytes": 4998,
+      "sha256": "759aa44b502886df3efe3010d70547c772757b6e7720ae7f834f03cdb88dada8"
+    },
+    {
+      "path": "dynamic/lumped-radial.mjs",
+      "bytes": 5360,
+      "sha256": "4896543a21a67e2a6a41feea335a1203d179252a2facef556a735ff5eefce4e5"
+    },
+    {
+      "path": "dynamic/model-manuals.mjs",
+      "bytes": 247770,
+      "sha256": "0362a49bcb8d40424d94a8ea9ca4597076c028bb6874a07d6d3f2c8ba97cc1d0"
+    },
+    {
+      "path": "dynamic/model-tutorials.mjs",
+      "bytes": 16952,
+      "sha256": "6e63365b2cb21dedf0fede47b5f59bd35fc3fda35cf39cc0df278399c2386354"
+    },
+    {
+      "path": "dynamic/navigation-context.mjs",
+      "bytes": 1430,
+      "sha256": "fbdd783e67d334723cd3ee3de91aaebf992d00949e4741c806f1cb0362d3a82c"
+    },
+    {
+      "path": "dynamic/presets.mjs",
+      "bytes": 1533,
+      "sha256": "b2b2e606d57426cec6c11caf958a32361c595055b061cad59850aa30212cd28b"
+    },
+    {
+      "path": "dynamic/properties.mjs",
+      "bytes": 2882,
+      "sha256": "47873b1a9a06832c8fbc93ac976849a343760faf253125cfe4e72e6c4553d90b"
+    },
+    {
+      "path": "dynamic/radial-analysis.mjs",
+      "bytes": 1786,
+      "sha256": "f820846690224a5c2a45019926cd80f60e2a50dbaf3370ab1797574713e85bdc"
+    },
+    {
+      "path": "dynamic/radial-learning-ui.mjs",
+      "bytes": 5200,
+      "sha256": "e5476e983c63de67ec3340f311bcdbebad0090dfc3c91ecd615b535f152f7878"
+    },
+    {
+      "path": "dynamic/radial-learning.mjs",
+      "bytes": 4080,
+      "sha256": "809b1fdba5d1e9561bfd293981f2ca5744a4528f7718ceb01c2944b50a107b5e"
+    },
+    {
+      "path": "dynamic/radial-ui.mjs",
+      "bytes": 17075,
+      "sha256": "bd96375fa102ee536ffe4c29fc0f26dc4398f81a4667195f52d42b344ccbc835"
+    },
+    {
+      "path": "dynamic/radial-view.mjs",
+      "bytes": 2836,
+      "sha256": "e3e56b452b9289a6c6ac8d4e4dfba12790d7178a699a7c472f9fe8a6bc26366d"
+    },
+    {
+      "path": "dynamic/radial.css",
+      "bytes": 215,
+      "sha256": "23024085c5bc853866bccd83da2694611139e3a856e3756e32b3e0f2bd7b6e68"
+    },
+    {
+      "path": "dynamic/radial.html",
+      "bytes": 20368,
+      "sha256": "04c2acc37d3d8ea0c85e8661fb7c07d40c436d894caff9b16287a219e7b40d45"
+    },
+    {
+      "path": "dynamic/radial.mjs",
+      "bytes": 7565,
+      "sha256": "f9b0b48b43dd1bacd89ea7305ab9d15d61ea7bd4f3c93452c035efc477257ea5"
+    },
+    {
+      "path": "dynamic/radiation-learning-ui.mjs",
+      "bytes": 5305,
+      "sha256": "2df25c79ab5c665e45cd30c0a5f27cad039197072050731d8a9ae59fd2a7b535"
+    },
+    {
+      "path": "dynamic/radiation-learning.mjs",
+      "bytes": 3276,
+      "sha256": "45c4b2a84731cb8577eb28e8a25ca31077ab39293af191c11fbb379d25027125"
+    },
+    {
+      "path": "dynamic/radiation-network.mjs",
+      "bytes": 6912,
+      "sha256": "fac3b84fa5532ae22b086609ff4d0c9abaa74327108a0c52e92c616de024f8ce"
+    },
+    {
+      "path": "dynamic/radiation-ui.mjs",
+      "bytes": 14182,
+      "sha256": "e654526e990ed92444ef891f93c15e98ac2289051605c35afc79dc1c7cc7c85d"
+    },
+    {
+      "path": "dynamic/radiation.css",
+      "bytes": 685,
+      "sha256": "a3531edb8d587d2959af20eadabe6c11d13aff3d44ab33fdf47d2f021bc91875"
+    },
+    {
+      "path": "dynamic/radiation.html",
+      "bytes": 13142,
+      "sha256": "48faf04907efc10616353ee22d53d0b390d5581c655fa98db087f0d68772e8a8"
+    },
+    {
+      "path": "dynamic/sim-guide.mjs",
+      "bytes": 7992,
+      "sha256": "9bb492a427c42f3c188505ef2c02234128fcde47210b3cd59a3a5870a256a3fa"
+    },
+    {
+      "path": "dynamic/surface-exchange-report.mjs",
+      "bytes": 1068,
+      "sha256": "0dfff94cef0e70b9689ef6e719e30824dde750b8f6e813f8902aa1895dde8b9c"
+    },
+    {
+      "path": "dynamic/surface-exchange.mjs",
+      "bytes": 3647,
+      "sha256": "4c51b8ae3f93bf2e29858f5c1beaa1930b40f4c930c6be2ec34f3acab4087327"
+    },
+    {
+      "path": "dynamic/term-panel.mjs",
+      "bytes": 2893,
+      "sha256": "ed3f7b6dad5078c71943918897b1942f972bdffad235a3edf416c5015fec71b0"
+    },
+    {
+      "path": "dynamic/thermal.mjs",
+      "bytes": 13684,
+      "sha256": "721efe4cc7233365b43c641d69a1f13267ce88b8391274657c09461c679f9033"
+    },
+    {
+      "path": "dynamic/trace-plot.mjs",
+      "bytes": 2259,
+      "sha256": "51664fb384c43618aa9f4db4a76c6a0a1311c1286fc4d344675d2a3dac9e63b8"
+    },
+    {
+      "path": "dynamic/worker-runtime.mjs",
+      "bytes": 2365,
+      "sha256": "4a45869d90b22bcea712ba808239f44f43c473d4fd1ad8d4817a590b307e3104"
+    },
+    {
+      "path": "dynamic/worker.mjs",
+      "bytes": 66725,
+      "sha256": "87ad9302da8b64c96c9639016c7eb1608febb128fe21e1195fd949e396434978"
+    },
+    {
+      "path": "dynamic-navigation.mjs",
+      "bytes": 13293,
+      "sha256": "0587939faca99ed11bdf88a1a12b5952879567e08009821f8ff33dbf763d10e1"
+    },
+    {
+      "path": "fin-efficiency.mjs",
+      "bytes": 10619,
+      "sha256": "1d50639f7c580bd9dc0949f9ffd61a4b8942e59dd6adf18cf9d1385742d3e474"
+    },
+    {
+      "path": "flashcards.mjs",
+      "bytes": 5118,
+      "sha256": "d5966fbe47132be07dd8560cfc4675b45b34fcfa8b31c868319698229ca99840"
+    },
+    {
+      "path": "forced-convection-flat-plate.mjs",
+      "bytes": 12262,
+      "sha256": "d32988b613c70220267abbd5b55cfb3ed3ca4efca29d088f3ad41f005f7e2662"
+    },
+    {
+      "path": "guide.mjs",
+      "bytes": 78051,
+      "sha256": "783fdcbcdc7f356b497468158c7dad001c185a1ee5dfca0e7de0f2fefc94afab"
+    },
+    {
+      "path": "heat-exchanger.mjs",
+      "bytes": 11903,
+      "sha256": "076fdf846ab0226a32448b2bf6df27b34fcd4c8858ab4efcb63f38b804eb8e86"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1328,
+      "sha256": "cea97e9a847a6e0db554b91e435369fba9a1d4ac6f75c8b9a92bbfc8f9f94d2e"
+    },
+    {
+      "path": "laminar-film-condensation.mjs",
+      "bytes": 12311,
+      "sha256": "0d1cdcd691c6e595aafab4237d77abeab94188f936d2d11132d145842eeecf51"
+    },
+    {
+      "path": "laminar-pipe-convection.mjs",
+      "bytes": 12995,
+      "sha256": "fcccf7d50aba9b127b74075a8c3a83d0dae1ee44301a7c1fcc03b6b15b0a48f3"
+    },
+    {
+      "path": "lesson-diagrams.mjs",
+      "bytes": 7359,
+      "sha256": "b89695e292215d606ab5c03cf274e70c4e7d119e51371435882399a6584db073"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 669,
+      "sha256": "3441c893552dc621cc93a9cd32767b20143622c79f6267f2e28313a72f3987ea"
+    },
+    {
+      "path": "natural-convection-vertical.mjs",
+      "bytes": 12984,
+      "sha256": "bb469359453b65a099b44bd610da6cb1b33e9c386c3319299c027da5b00d51e6"
+    },
+    {
+      "path": "original-deep-lessons.mjs",
+      "bytes": 3680,
+      "sha256": "9b21248f4fd293cf4d927a783dcdac3075593077050b7ce2e262d4c8eaf52831"
+    },
+    {
+      "path": "original-notes.mjs",
+      "bytes": 3054,
+      "sha256": "6a86db7996ea628ccd10aaaed9aed632b40eee9b6a9b37c30b9a731dd9c54f9b"
+    },
+    {
+      "path": "pool-boiling-chf.mjs",
+      "bytes": 9385,
+      "sha256": "c63b0b36682497df8f0ec42173026c30248c9f232fb34a70740d1a722e812ae1"
+    },
+    {
+      "path": "pool-boiling-nucleate.mjs",
+      "bytes": 13406,
+      "sha256": "c22923ca36bb8110880b6644068f38d3ea1c7e62f24cdf2dbbf257d36de0f66d"
+    },
+    {
+      "path": "radiation-enclosure.mjs",
+      "bytes": 11982,
+      "sha256": "d704698bfb831925b25298f43b092e6554e690231ea7b0958f666b475ca92b6f"
+    },
+    {
+      "path": "semi-infinite-solid.mjs",
+      "bytes": 14244,
+      "sha256": "40ea25919b4f053e6052e8f718cdb44a985f96a0ef4245bc53fb5ab5d219e4a0"
+    },
+    {
+      "path": "sim-diagrams.mjs",
+      "bytes": 6143,
+      "sha256": "0cd04fafaa2a89c171ebdecabdd4b2989e83835a1fbdf3e633c679669a74b32f"
+    },
+    {
+      "path": "study-core.mjs",
+      "bytes": 36435,
+      "sha256": "676e7f642b3e9c04a6358cdda27ddc19002e99cc4989b4f1471be15c50b1b769"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 76067,
+      "sha256": "5fd9c7f3da5d0d78987a431103bbf6106e9d1c76c7f51d6db4df57184119331b"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 16277,
+      "sha256": "f38aa4663ec62b5b46aac5dc2adb29be85c6330e07e33a588ea4840a1c57a646"
+    },
+    {
+      "path": "term-links.mjs",
+      "bytes": 15234,
+      "sha256": "e384004c545b49b07aaa57ed1f8bd4ea22d27decf8c3702c3f833f051404698d"
+    },
+    {
+      "path": "transient-slab.mjs",
+      "bytes": 11339,
+      "sha256": "917121456a13295eb5c115561d612a79f588e307538d7e9add27be2ad5c66af9"
+    },
+    {
+      "path": "transient-ui.mjs",
+      "bytes": 5400,
+      "sha256": "a27760c18ec5de9ee8007b127426523da85dd2836f4955829b4640827d2760fe"
+    },
+    {
+      "path": "turbulent-pipe-convection.mjs",
+      "bytes": 13725,
+      "sha256": "59c3a4aab29574002d282318f2d4a903e56c9d04fd88b7ab7b9a212fd411b986"
+    }
+  ]
+}

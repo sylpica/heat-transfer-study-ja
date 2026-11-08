@@ -36,10 +36,12 @@
     },
     {
       "type": "formula",
-      "expression": "NuD = [0.715 + 0.263/(R′)^(1/4)]·NuD,Bromley の形の曲率補正（原書の配置はテキスト層で一部曖昧）",
+      "expression": "NuD = [(0.715 + 0.263/R′)·(R′)^(1/4)]·NuD,Bromley",
       "number": "9.32",
       "alt": "ウェストウォーター・ブリーンの曲率補正です",
-      "explanation": "（訳注：式(9.32)の分数配置はテキスト層で曖昧であり、R′ による補正因子の趣旨で再構成した。）"
+      "explanation": "円柱の膜沸騰に対するBreen–Westwaterの曲率補正。R′ < 1.86で用い、それ以外ではBromleyの式を直接用いる。原典PDF p.516（書籍p.502）の画像で、0.263はR′で割り、括弧全体に(R′)^(1/4)を掛けることを照合した。",
+      "bookPage": 502,
+      "pdfPage": 516
     }
   ],
   "status": "complete"

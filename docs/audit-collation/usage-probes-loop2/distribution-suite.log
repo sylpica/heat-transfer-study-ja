@@ -1,0 +1,25 @@
+
+> test:browser:distribution
+> node tests/browser-distribution.mjs
+
+chromium: 全76詳細講義の目標・本文・例題・参照・未校閲表示を確認。
+問題バンク検証 1/444
+問題バンク検証 51/444
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('[data-action="discard-quiz"]')
+    - locator resolved to <button type="button" class="text-button" data-action="discard-quiz">この中断セットを破棄</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - performing click action
+
+    at /home/hatch/workspace/dev/heat-collation2/tests/browser-distribution.mjs:731:58
+
+Node.js v24.22.1

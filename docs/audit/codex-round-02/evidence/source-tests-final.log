@@ -1,0 +1,16 @@
+✔ translated liquid-metal tube-bank geometry multiplies the whole Nu term and places C under the root (15.432789ms)
+✔ uniform-flux natural convection retains Pr and distinguishes printed mean coefficient from independent derivation (5.247469ms)
+✔ natural-convection integral balances agree and thickness grows as x to the one-quarter power (7.059915ms)
+✔ film-boiling curvature and jet CHF retain the distinct powers and geometric factor (4.365046ms)
+✔ crossflow effectiveness stays bounded and multiple shell passes exponentiate the entire ratio (2.407675ms)
+✔ view-factor table retains positive perpendicular-strip and cylinder-strip factors (4.522388ms)
+✔ the completed perpendicular-rectangle table agrees with independent view-factor integration (35.963669ms)
+✔ gray-body transfer reciprocity and insulated third-wall resistance are evaluable (6.938796ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.683045

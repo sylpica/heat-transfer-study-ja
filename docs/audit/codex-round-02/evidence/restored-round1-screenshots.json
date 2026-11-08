@@ -1,0 +1,44 @@
+[
+  {
+    "path": "docs/audit/codex-round-01/evidence/screenshots/dark-375-glossary.png",
+    "source_commit": "4acb81dd05925440762f7f671dfd7953a7ccb259",
+    "bytes": 60728,
+    "sha256": "5de01b5a47cf065280698a4b1dbb3bfd42617c064be8b2bf80ce9b293a9fd1a6",
+    "role": "round1 historical screenshot, not round2 current UI"
+  },
+  {
+    "path": "docs/audit/codex-round-01/evidence/screenshots/dark-375-lab.png",
+    "source_commit": "4acb81dd05925440762f7f671dfd7953a7ccb259",
+    "bytes": 76207,
+    "sha256": "63470a2b6f87335c71e275f441617e74394540075aae9bc97818055abdb48a4c",
+    "role": "round1 historical screenshot, not round2 current UI"
+  },
+  {
+    "path": "docs/audit/codex-round-01/evidence/screenshots/dark-375-simulator.png",
+    "source_commit": "4acb81dd05925440762f7f671dfd7953a7ccb259",
+    "bytes": 58237,
+    "sha256": "6c1c8184048b44ed85abcb4537f6910cb59a917fa8a671d9caaeb57e26b67d00",
+    "role": "round1 historical screenshot, not round2 current UI"
+  },
+  {
+    "path": "docs/audit/codex-round-01/evidence/screenshots/light-375-glossary.png",
+    "source_commit": "4acb81dd05925440762f7f671dfd7953a7ccb259",
+    "bytes": 60514,
+    "sha256": "a0b009a41b615cdabebe54519e6a8053c5c067c42ed585ba6055f92381c1d6da",
+    "role": "round1 historical screenshot, not round2 current UI"
+  },
+  {
+    "path": "docs/audit/codex-round-01/evidence/screenshots/light-375-lab.png",
+    "source_commit": "4acb81dd05925440762f7f671dfd7953a7ccb259",
+    "bytes": 74961,
+    "sha256": "2dde7b9a506713b418ed4fdc92db00e8a632f9977bd7eec7447c1c7f182c5007",
+    "role": "round1 historical screenshot, not round2 current UI"
+  },
+  {
+    "path": "docs/audit/codex-round-01/evidence/screenshots/light-375-simulator.png",
+    "source_commit": "4acb81dd05925440762f7f671dfd7953a7ccb259",
+    "bytes": 57533,
+    "sha256": "0b4aa7a067c6607133ac814bf2f46c98c441edab85c710ba6431095435412ac6",
+    "role": "round1 historical screenshot, not round2 current UI"
+  }
+]

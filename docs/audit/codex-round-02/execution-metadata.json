@@ -1,0 +1,24 @@
+{
+  "round": 2,
+  "auditor": "Codex",
+  "baseline_branch": "audit/muse-round-02",
+  "baseline_sha": "c5b445ebca14e03ae817ede390a6e2487ceb29b8",
+  "baseline_tree": "5bc086f5d2d63d91066d87f0ad39d8589527a124",
+  "work_branch": "audit/codex-round-02",
+  "directive_sha256": "22205d584a28857f87c1dd9fabdfbce0c65007c038dca42837278894f424d5cf",
+  "requested_model": "GPT-6.1 Sol",
+  "requested_reasoning": "極高",
+  "runtime_model_control": "no setting tool used; user states configured",
+  "independence": "Round2 permits reading Muse results. Claims independently checked by current data, own calculations, original PDF images and browser reproduction. No Muse process impersonated.",
+  "baseline_exceptions": [
+    "Remote deployment workflow is the older integration-loop1 artifact; no hosted deployment run or local b162a68 comparison claimed.",
+    "Muse four missing screenshots unavailable; Codex six old screenshots restored exactly from 4acb81d."
+  ],
+  "expert_review": "not an acquisition task per A3; honest not-done labels retained",
+  "github_write_api_calls": 0,
+  "git_pushes_planned": 1,
+  "converged": false,
+  "formal_app_complete": false,
+  "next_auditor": "Muse after safe integration and A5 exhaustive use",
+  "fix_commit": "b6e2b9380d4b17fb7f4ef4dde5ce4fadaca65603"
+}

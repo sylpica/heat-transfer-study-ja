@@ -1,0 +1,13 @@
+{
+  "validationError": "",
+  "sessionRow": "14:42　学習セッション\n99問 · 正解 99問",
+  "dayStats": "0\n回答数\n0\n正解",
+  "normalized": {
+    "id": "synthetic-mismatch",
+    "date": "2026-11-08",
+    "startedAt": "2026-11-08T14:42:21.600Z",
+    "total": 99,
+    "correct": 99,
+    "answers": []
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "baseline_sha": "c5b445ebca14e03ae817ede390a6e2487ceb29b8",
+  "work_branch": "audit/codex-round-02",
+  "tested_source_identity": "fix_commit plus evidence/dist-inventory.json; remaining changes after fix_commit are audit documents and screenshots only",
+  "node_baseline": {
+    "command": "npm test",
+    "exit_code": 0,
+    "total": 1785,
+    "pass": 1780,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 5,
+    "log": "evidence/node-baseline.log"
+  },
+  "node_final": {
+    "command": "npm test",
+    "exit_code": 0,
+    "total": 1797,
+    "pass": 1792,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 5,
+    "duration_ms": 238578.766931,
+    "skip_reason": "private local pack absent; five conditional tests, not counted as success",
+    "log": "evidence/node-verified.log"
+  },
+  "targeted_final": {
+    "command": "node --test tests/app.test.mjs tests/audit-round02.test.mjs tests/audit-round02-source-formulas.test.mjs",
+    "exit_code": 0,
+    "total": 42,
+    "pass": 42,
+    "fail": 0,
+    "skipped": 0,
+    "log": "evidence/targeted-final-verified.log"
+  },
+  "source_science": {
+    "command": "node --test tests/audit-round02-source-formulas.test.mjs",
+    "exit_code": 0,
+    "tests": 8,
+    "log": "evidence/source-tests-final.log",
+    "scope": "actual translated arithmetic, integral conservation, geometric numerical integration and radiosity elimination; not all 76 sections"
+  },
+  "build": {
+    "command": "npm run build:public",
+    "exit_code": 0,
+    "files": 258,
+    "japanese_sections": 76,
+    "dynamic_files": 51,
+    "development_only_files": 0,
+    "log": "evidence/build-final.log",
+    "inventory": "evidence/dist-inventory.json"
+  },
+  "distribution_browser": {
+    "command": "BROWSER_ENGINE=chromium BROWSER_EXECUTABLE=/usr/bin/chromium node tests/browser-distribution.mjs",
+    "exit_code": 0,
+    "completed": true,
+    "problem_contexts_logged": 444,
+    "pdf_offline_range_statuses": [
+      206,
+      416
+    ],
+    "log": "evidence/browser-frozen.log"
+  },
+  "round2_browser": {
+    "command": "BROWSER_ENGINE=chromium BROWSER_EXECUTABLE=/usr/bin/chromium node tests/audit-round02-browser.mjs",
+    "exit_code": 0,
+    "completed": true,
+    "log": "evidence/ui-source-final.log",
+    "checks": [
+      "equal glossary definition dedupe",
+      "504 honest review labels",
+      "flashcard back",
+      "printed vs derived 8.44b visible",
+      "99/99 imported snapshot preserved and labelled inconsistent",
+      "192/512 PNG dimensions",
+      "offline icon fetch 200/200"
+    ]
+  },
+  "source_ui": {
+    "command": "node docs/audit/codex-round-02/scripts/source-ui-sweep.mjs",
+    "exit_code": 0,
+    "conditions": 54,
+    "widths": [
+      320,
+      375,
+      1280
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "overflow": 0,
+    "pageerrors": 0,
+    "evidence": "evidence/source-ui-sweep.json"
+  },
+  "touch_targets": {
+    "command": "node docs/audit/codex-round-02/scripts/probe-ui.mjs",
+    "exit_code": 0,
+    "routes": 13,
+    "widths": [
+      320,
+      375,
+      1280
+    ],
+    "nonexempt_collision_candidates": 0,
+    "evidence": "evidence/ui-baseline.json",
+    "limitation": "not a complete WCAG conformance or all-state check"
+  },
+  "webkit": {
+    "command": "PLAYWRIGHT_BROWSERS_PATH=/workspace/work/playwright-browsers BROWSER_ENGINE=webkit node tests/audit-round02-browser.mjs",
+    "exit_code": 1,
+    "completed": false,
+    "reason": "missing GTK4/graphene/woff2dec/harfbuzz-icu/hyphen/manette/GLESv2 shared libraries",
+    "log": "evidence/webkit-attempt.log"
+  },
+  "manual_generation": {
+    "command": "node scripts/generate-model-manuals.mjs",
+    "exit_code": 0,
+    "manuals": 15,
+    "items_each": 16,
+    "total_items": 240,
+    "output_bytes": 130708,
+    "tracked_output_diff": false,
+    "log": "evidence/manual-generation.log"
+  },
+  "coverage": {
+    "command": "node scripts/audit-question-coverage.mjs",
+    "exit_code": 0,
+    "total": 751,
+    "peer_id_claims": 422,
+    "own_current_content_workings": 41,
+    "own_in_peer_complement": 40,
+    "peer_complement": 329,
+    "peer_complement_without_this_round_own_workings": 289,
+    "id_union": 462,
+    "invalid_receipts": 0,
+    "unknown_peer_ids": 0,
+    "strict_exit_code": 1,
+    "strict_interpretation": "optional accounting diagnostic for this receipt format, not an additional release requirement; other mapped substantive evidence is accepted",
+    "ledger": "question-coverage.json"
+  },
+  "prior_failed_attempts": [
+    {
+      "log": "evidence/source-tests.log",
+      "result": "test arithmetic interpreter handling variables/functions and implicit multiplication failed during construction; fixed before source-tests-final"
+    },
+    {
+      "log": "evidence/node-frozen.log",
+      "result": "one old test required the duplicate bare meaning paragraph; replaced by stronger single-occurrence and language assertion; superseded by node-verified"
+    }
+  ],
+  "public_site": {
+    "evidence": "evidence/public-source-observation.json",
+    "observed_sections": [
+      "3.3",
+      "10.3"
+    ],
+    "http_status": 200,
+    "old_scientific_errors_still_present": true,
+    "deployed_in_this_round": false
+  },
+  "unperformed": [
+    "WebKit product execution",
+    "Firefox",
+    "iPhone Safari device",
+    "Android Chrome device",
+    "assistive-technology operation",
+    "real-device PWA installation",
+    "hosted deployment workflow",
+    "actual GPU performance",
+    "Muse A5 use testing after integration"
+  ],
+  "converged": false,
+  "formal_app_complete": false,
+  "next_auditor": "Muse",
+  "github_write_api_calls": 0,
+  "git_pushes_planned": 1,
+  "fix_commit": "b6e2b9380d4b17fb7f4ef4dde5ce4fadaca65603",
+  "independent_question_replay": {
+    "command": "python docs/audit/codex-round-02/scripts/independent-40.py",
+    "exit_code": 0,
+    "questions": 40,
+    "log": "evidence/independent-40-replay.log",
+    "method": "SI work and frozen semantic hashes; re-run of own independent derivations, not another independent author"
+  },
+  "current_screenshots": {
+    "command": "node docs/audit/codex-round-02/scripts/capture-current-ui.mjs",
+    "exit_code": 0,
+    "screenshots": 6,
+    "evidence": "evidence/current-screenshots.json",
+    "visually_inspected": 6,
+    "role": "current Chromium reader/glossary/calendar at 375/1280 light/dark; not comprehensive UI certification"
+  }
+}

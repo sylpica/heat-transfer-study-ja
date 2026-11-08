@@ -1,0 +1,103 @@
+{
+  "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a",
+  "cases": [
+    {
+      "item": "Table3.1 crossflow first row",
+      "parameters": {
+        "R": 0.5,
+        "NTU": 2
+      },
+      "before": 1.0568175707601437,
+      "after": 0.7274479677705769,
+      "anchor": "effectiveness cannot exceed 1; actual PDF139 grouping"
+    },
+    {
+      "item": "Table3.1 N shells",
+      "parameters": {
+        "R": 0.5,
+        "epsilon_p": 0.5,
+        "N": 2
+      },
+      "before": 0.6,
+      "after": 0.7142857142857143,
+      "anchor": "whole temperature ratio propagates through N shells"
+    },
+    {
+      "item": "Table10.2 perpendicular strips",
+      "parameters": {
+        "h_over_w": 1
+      },
+      "before": 0,
+      "after": 0.29289321881345254,
+      "anchor": "crossed-string geometry; F in (0,1)"
+    },
+    {
+      "item": "Table10.2 cylinder-strip",
+      "parameters": {
+        "r": 0.1,
+        "a": 0,
+        "b": 1,
+        "c": 1
+      },
+      "before": -0.07853981633974483,
+      "after": 0.07853981633974483,
+      "anchor": "positive integral r*c/(c^2+x^2)/(b-a)"
+    },
+    {
+      "item": "8.44a",
+      "parameters": {
+        "Pr": 7,
+        "Ra_star": 1000000.0
+      },
+      "before": 3.992660039246057,
+      "after": 5.8922605292903825,
+      "anchor": "source PDF453 numerator Pr"
+    },
+    {
+      "item": "8.44b printed versus independently derived",
+      "parameters": {
+        "Pr": 7,
+        "Ra_star": 1000000.0
+      },
+      "printed": 11.223353389124537,
+      "derived_mean_wall_temperature": 7.070712635148459,
+      "anchor": "Keep the source coefficient discrepancy explicit, not silently merged."
+    },
+    {
+      "item": "Table10.3 perpendicular equal rectangles",
+      "after": 0.20004377607540316,
+      "anchor": "independent double midpoint integration in tests; reciprocity uses width-weighted areas"
+    },
+    {
+      "item": "10.35 insulated third wall",
+      "parameters": {
+        "eb1": 100,
+        "eb2": 0,
+        "A1": 1,
+        "A2": 1,
+        "eps1": 0.5,
+        "eps2": 0.5,
+        "F12": 0.2,
+        "F13": 0.8,
+        "F23": 0.8
+      },
+      "after": 27.272727272727273,
+      "anchor": "independent radiosity node elimination"
+    },
+    {
+      "item": "8.20/8.22/8.23 natural-convection balances",
+      "parameters": {
+        "Pr": 0.7,
+        "G_per_m3": 1000000000.0
+      },
+      "old_C1": 0.04152542372881356,
+      "correct_C1": 0.14121037463976943,
+      "momentum_d_delta4_dx": 8.093294460641401e-07,
+      "energy_d_delta4_dx": 8.093294460641401e-07,
+      "delta4_at_x_0_1": 8.093294460641402e-08,
+      "delta4_at_x_0_2": 1.6186588921282804e-07,
+      "anchor": "PDF438-440 plus independent polynomial integral and conservation-balance equality; not a DNS validation"
+    }
+  ],
+  "limits": "Only listed elements and parameter cases, not all 76 sections. No source page images redistributed."
+}

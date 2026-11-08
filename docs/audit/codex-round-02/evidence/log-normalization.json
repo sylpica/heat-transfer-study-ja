@@ -1,0 +1,14 @@
+[
+  {
+    "path": "evidence/node-frozen.log",
+    "original_sha256": "38ca5e7a56fa83587190071085d78760137feaab1f3329893098c6f84d21d1a7",
+    "stored_sha256": "590503340dd37a93111aca07d856ae1d62217469d9743d7ff8962c0b6a0f6305",
+    "normalization": "LF and trailing whitespace only; all failure/output lines retained; original local capture retained in /workspace/work/round02-evidence"
+  },
+  {
+    "path": "evidence/webkit-attempt.log",
+    "original_sha256": "c76e3dafe258c83710005e0bae7050ca3a88a30b9d68300b841af13301efdd2e",
+    "stored_sha256": "bee65a730aff8e3aeaaea16a7e997c1c730c325094e80f61c7b3ba1456b8f9fb",
+    "normalization": "LF and trailing whitespace only; all failure/output lines retained; original local capture retained in /workspace/work/round02-evidence"
+  }
+]

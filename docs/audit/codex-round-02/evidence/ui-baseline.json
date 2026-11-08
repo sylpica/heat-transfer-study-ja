@@ -1,0 +1,43 @@
+{
+  "dedupe": {
+    "brief": "フィン全面を基部温度に保った理想放熱量に対する、実際のフィン放熱量の比。",
+    "meaning": "フィン全面を基部温度に保った理想放熱量に対する、実際のフィン放熱量の比。"
+  },
+  "targetCandidates": [],
+  "errors": [],
+  "manifest": {
+    "url": "http://127.0.0.1:33573/manifest.json",
+    "errors": [],
+    "data": "{\n  \"name\": \"熱移動を学ぶ\",\n  \"short_name\": \"熱移動\",\n  \"lang\": \"ja\",\n  \"start_url\": \".\",\n  \"display\": \"standalone\",\n  \"icons\": [\n    { \"src\": \"assets/icon.svg\", \"sizes\": \"any\", \"type\": \"image/svg+xml\", \"purpose\": \"any\" }\n  ],\n  \"background_color\": \"#f7f5ef\",\n  \"theme_color\": \"#f7f5ef\",\n  \"description\": \"熱移動の読書・演習・復習を支える日本語学習アプリ\"\n}\n",
+    "parsed": {
+      "scope": "http://127.0.0.1:33573/"
+    },
+    "manifest": {
+      "backgroundColor": "rgba(247,245,239,1)",
+      "description": "熱移動の読書・演習・復習を支える日本語学習アプリ",
+      "display": "kStandalone",
+      "icons": [
+        {
+          "url": "http://127.0.0.1:33573/assets/icon.svg",
+          "sizes": "0x0",
+          "type": "image/svg+xml"
+        }
+      ],
+      "id": "http://127.0.0.1:33573/",
+      "name": "熱移動を学ぶ",
+      "orientation": "DEFAULT",
+      "preferRelatedApplications": false,
+      "scope": "http://127.0.0.1:33573/",
+      "startUrl": "http://127.0.0.1:33573/",
+      "themeColor": "rgba(247,245,239,1)"
+    }
+  },
+  "installability": {
+    "installabilityErrors": [
+      {
+        "errorId": "in-incognito",
+        "errorArguments": []
+      }
+    ]
+  }
+}

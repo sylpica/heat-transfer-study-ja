@@ -1,0 +1,41 @@
+✔ translated liquid-metal tube-bank geometry multiplies the whole Nu term and places C under the root (8.948577ms)
+✖ uniform-flux natural convection retains Pr and distinguishes printed mean coefficient from independent derivation (3.279113ms)
+✔ film-boiling curvature and jet CHF retain the distinct powers and geometric factor (3.403036ms)
+✔ crossflow effectiveness stays bounded and multiple shell passes exponentiate the entire ratio (1.398055ms)
+✖ view-factor table retains positive perpendicular-strip and cylinder-strip factors (1.282404ms)
+✔ the completed perpendicular-rectangle table agrees with independent view-factor integration (6.210113ms)
+✔ gray-body transfer reciprocity and insulated third-wall resistance are evaluable (1.262635ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 5
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 86.149364
+
+✖ failing tests:
+
+test at tests/audit-round02-source-formulas.test.mjs:28:1
+✖ uniform-flux natural convection retains Pr and distinguishes printed mean coefficient from independent derivation (3.279113ms)
+  SyntaxError: Invalid or unexpected token
+      at Function (<anonymous>)
+      at value (file:///workspace/work/codex-round-02/tests/audit-round02-source-formulas.test.mjs:18:10)
+      at TestContext.<anonymous> (file:///workspace/work/codex-round-02/tests/audit-round02-source-formulas.test.mjs:31:9)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/audit-round02-source-formulas.test.mjs:49:1
+✖ view-factor table retains positive perpendicular-strip and cylinder-strip factors (1.282404ms)
+  AssertionError [ERR_ASSERTION]: t
+      at value (file:///workspace/work/codex-round-02/tests/audit-round02-source-formulas.test.mjs:17:60)
+      at TestContext.<anonymous> (file:///workspace/work/codex-round-02/tests/audit-round02-source-formulas.test.mjs:53:18)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

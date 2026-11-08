@@ -2,6 +2,13 @@
 const escapeText=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const ambiguous=new Set(['熱','W','J','K','℃','m','s','比','流れ','密度','傾き']);
 const latin=/[A-Za-z0-9_]/;
+
+// The lead is already displayed immediately above this block. Equality
+// leaves no additional text; retaining it would repeat the full definition.
+export function withoutRepeatedLead(text, lead) {
+  if (typeof text !== 'string' || typeof lead !== 'string' || !lead || !text.startsWith(lead)) return text;
+  return text.slice(lead.length).replace(/^[\s　]+/, '');
+}
 // Japanese labels have no word boundaries, so a label that is merely the head
 // of a longer, different compound must not be linked: 比熱 inside 比熱比
 // (specific-heat ratio, a distinct quantity) or 対流 inside 対流圏

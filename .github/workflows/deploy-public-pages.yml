@@ -2,6 +2,11 @@ name: Deploy approved public app to Pages
 
 on:
   workflow_dispatch:
+    inputs:
+      approved_commit:
+        description: Full 40-character SHA of the public source approved for deployment
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -19,14 +24,20 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Check out app development branch
+      - name: Require an immutable approved source
+        env:
+          APPROVED_COMMIT: ${{ inputs.approved_commit }}
+        run: '[[ "$APPROVED_COMMIT" =~ ^[0-9a-f]{40}$ ]]'
+      - name: Check out approved public source
         uses: actions/checkout@v4
         with:
-          ref: codex/quality-audit-local-pack
+          ref: ${{ inputs.approved_commit }}
       - name: Set up Node.js for build and tests
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Install locked build and test dependencies
+        run: npm ci
       - name: Run app tests
         run: npm test
       - name: Build allowlisted public distribution

@@ -221,7 +221,10 @@ export function mergeLearningData(current, incoming) {
   out.sessions.sort((x,y)=>instant(x.finishedAt??x.startedAt)-instant(y.finishedAt??y.startedAt));
   out.questionBookmarks=[...new Set([...a.questionBookmarks,...b.questionBookmarks])];
   out.termBookmarks=[...new Set([...a.termBookmarks,...b.termBookmarks])];
-  out.flashcards={...a.flashcards,...b.flashcards};
+  // Legacy exports have no flashcard preferences. Normalizing them supplies
+  // defaults for replacement, but those defaults must not erase a current
+  // deck's position or shuffled order during an additive import.
+  out.flashcards={...a.flashcards,...(record(incoming.flashcards)?incoming.flashcards:{})};
   for(const k of ['mistakeNotes','readerPositions','reviews']) out[k]=mergeMap(a[k],b[k]);
   out.readSections={...a.readSections}; for(const [k,v] of Object.entries(b.readSections)) out.readSections[k]=Boolean(a.readSections[k]||v);
   out.questionReports={...a.questionReports}; for(const [k,v] of Object.entries(b.questionReports)) out.questionReports[k]=mergeRows(a.questionReports[k]||[],v);

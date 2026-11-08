@@ -44,7 +44,11 @@ let contentManifest;
 let originalNotes;
 let deepLessons;
 let speechRun = 0;
-function routeFromHash() { return location.hash.slice(1).split('/')[0] || 'home'; }
+function termTargetFromHash() {
+  const match = /^#term-([a-z0-9][a-z0-9_-]*)$/i.exec(location.hash);
+  return match && (glossary || []).some(term => term.id === match[1]) ? match[1] : '';
+}
+function routeFromHash() { return /^#term-[a-z0-9][a-z0-9_-]*$/i.test(location.hash) ? 'glossary' : location.hash.slice(1).split('/')[0] || 'home'; }
 function guideTargetFromHash() { const id=location.hash.slice(1).split('/')[1]; return GUIDE_SECTIONS.some(section=>section.id===id)?id:''; }
 const activityPageId=makeId();
 let activityTick=Date.now(),lastInteractionAt=activityTick,activityWasVisible=document.visibilityState!=='hidden'&&(!document.hasFocus||document.hasFocus());
@@ -530,13 +534,29 @@ function openAppendixReferences(appendixId) {
   render();
   setTimeout(() => document.getElementById('appendix-references')?.scrollIntoView({ block: 'start' }), 60);
 }
-function setRoute(route) {
+function openGlossaryTerm(id, {deepLink=false} = {}) {
+  if (!(glossary || []).some(term => term.id === id)) return;
+  ui.glossaryQuery = '';
+  ui.expandedTerms.add(id);
+  // A term link must reveal its dictionary row even when a filtered or
+  // empty flashcard deck was saved. Keep the deck's order and position.
+  state.flashcards.mode = 'list';
+  persistQuiz();
+  saveState();
+  setRoute('glossary', deepLink ? `#term-${id}` : '#glossary');
+  requestAnimationFrame(() => {
+    const row = document.getElementById(`term-${id}`);
+    row?.scrollIntoView({block:'center'});
+    row?.querySelector('[data-term-toggle]')?.focus({preventScroll:true});
+  });
+}
+function setRoute(route, hash = `#${route}`) {
   flushLearningTime();
   if(ui.route==='reader'&&route!=='reader')captureReaderPosition();
   if(ui.route==='reader'&&route!=='reader')stopSpeech(false);
   ui.route = route;
   ui.guideTarget = '';
-  if (location.hash !== `#${route}`) location.hash = route;
+  if (location.hash !== hash) location.hash = hash;
   render();
   window.scrollTo({ top: 0, behavior: 'instant' });
   focusPageHeading();
@@ -629,6 +649,8 @@ async function startApp() {
       }).catch(()=>{setPdfCacheStatus('unsupported');showStatus('オフライン保存の準備に失敗しました。ネット接続中に再読み込みしてください。');});
     } else setPdfCacheStatus('unsupported');
     window.addEventListener('hashchange', () => {
+      const termTarget = termTargetFromHash();
+      if (termTarget) { openGlossaryTerm(termTarget, {deepLink:true}); return; }
       const next=routeFromHash(),guideTarget=guideTargetFromHash(),readerTarget=readerSectionFromHash(location.hash,allSections().map(s=>s.id));if(next===ui.route&&guideTarget===ui.guideTarget&&(!readerTarget||readerTarget===ui.readerSection))return;
       flushLearningTime();if(ui.route==='reader'){captureReaderPosition();stopSpeech(false);}persistQuiz();
       if(readerTarget)ui.readerSection=readerTarget;ui.route=next;ui.guideTarget=guideTarget;if(guideTarget)ui.guideQuery='';render();window.scrollTo({top:0,behavior:'instant'});focusPageHeading();
@@ -660,7 +682,9 @@ async function startApp() {
     setInterval(()=>flushLearningTime(true),5000);
     systemDark?.addEventListener?.('change', () => { if (state.settings.theme === 'system') render(); });
     const initialReaderTarget=readerSectionFromHash(location.hash,allSections().map(s=>s.id));if(initialReaderTarget)ui.readerSection=initialReaderTarget;
-    render();
+    const initialTermTarget = termTargetFromHash();
+    if (initialTermTarget) openGlossaryTerm(initialTermTarget, {deepLink:true});
+    else render();
     if(ui.route==='reader')setTimeout(()=>restoreReaderPosition(state.readerPositions[ui.readerSection]),100);
     if(ui.route==='guide'&&ui.guideTarget)setTimeout(()=>focusGuideSection(ui.guideTarget),0);
   } catch (error) {
@@ -1184,7 +1208,7 @@ function renderGlossary() {
     <div class="glossary-mode-row"><div class="language-toggle" role="group" aria-label="用語集の表示方法"><button type="button" class="${mode === 'list' ? 'selected' : ''}" data-action="glossary-mode" data-mode="list" aria-pressed="${mode === 'list'}">通常表示</button><button type="button" class="${mode === 'cards' ? 'selected' : ''}" data-action="glossary-mode" data-mode="cards" aria-pressed="${mode === 'cards'}">単語帳</button></div></div>
     ${mode === 'cards' ? renderFlashcards(language) : `<div class="glossary-search surface-card"><label for="glossary-query">用語を探す</label><input id="glossary-query" type="search" value="${escapeHTML(query)}" placeholder="用語や英語名を入力"/></div>
     <div class="glossary-grid">${termCards}</div>`}
-    <div class="notice-card"><span class="notice-icon">i</span><p>用語集は全${allSections().length}節の収録教材（独自日本語ノート・発展教材）をもとに作成しています。原書の翻訳本文は未収録です。</p></div>`;
+    <div class="notice-card"><span class="notice-icon">i</span><p>用語集は全${allSections().length}節の収録教材（独自日本語ノート・発展教材）をもとに独立作成しています。原書の日本語訳は「読む」に収録しています。翻訳・用語集とも専門家校閲は未実施です。</p></div>`;
 }
 
 function currentFlashcardDeck() {
@@ -1944,7 +1968,7 @@ function onClick(event) {
   const termClose=event.target.closest('[data-close-term]');
   if(termClose){event.preventDefault();closeTermSheet();return;}
   const detail=event.target.closest('[data-term-detail]');
-  if(detail){event.preventDefault();const id=detail.dataset.termDetail;closeTermSheet();ui.glossaryQuery='';ui.expandedTerms.add(id);setRoute('glossary');setTimeout(()=>document.getElementById('term-'+id)?.scrollIntoView({block:'center'}),90);return;}
+  if(detail){event.preventDefault();const id=detail.dataset.termDetail;closeTermSheet();openGlossaryTerm(id);return;}
   if(ui.termId&&event.target.closest('[data-term-backdrop]')&&!event.target.closest('.term-sheet')){event.preventDefault();closeTermSheet();return;}
   const languageButton = event.target.closest('[data-language]');
   if (languageButton) {
@@ -2000,7 +2024,7 @@ function onClick(event) {
   const short = event.target.closest('[data-short-session]'); if (short) { event.preventDefault(); startQuickSession(Number(short.dataset.shortSession)); return; }
   const startQuestion = event.target.closest('[data-start-question]'); if (startQuestion) { event.preventDefault(); startQuiz({ mode: 'single', questionId: startQuestion.dataset.startQuestion, count: 1 }); return; }
   const startIds = event.target.closest('[data-start-ids]'); if (startIds) { event.preventDefault(); try { startQuiz({ mode: 'wrong', questionIds: JSON.parse(startIds.dataset.startIds), count: 8 }); } catch { showStatus('問題セットを読み込めませんでした。'); } return; }
-  const target = event.target.closest('[data-search-target]'); if (target) { event.preventDefault(); try { const item=JSON.parse(target.dataset.searchTarget); if (item.section) ui.readerSection=item.section; if (item.language && ['ja','en'].includes(item.language)) { state.settings.contentLanguage=item.language; saveState(); } if (item.question) { startQuiz({ mode:'single', questionId:item.question, count:1 }); return; } if(item.guideId&&GUIDE_SECTIONS.some(g=>g.id===item.guideId)){location.hash='#guide/'+item.guideId;return;} if (item.term) { ui.glossaryQuery=''; ui.expandedTerms.add(item.term); setRoute('glossary'); setTimeout(()=>document.getElementById(`term-${item.term}`)?.scrollIntoView({behavior:'smooth',block:'center'}),80); return; } if (item.chapterExtras) { ui.extrasFocus={chapter:item.chapterExtras,entryId:item.entryId}; openChapterExtras(item.chapterExtras); return; } if(item.route==='reader'&&item.section){openReader(item.section,{...item,query:ui.search.query});return;} if (item.route) setRoute(item.route); } catch { showStatus('検索先を開けませんでした。'); } return; }
+  const target = event.target.closest('[data-search-target]'); if (target) { event.preventDefault(); try { const item=JSON.parse(target.dataset.searchTarget); if (item.section) ui.readerSection=item.section; if (item.language && ['ja','en'].includes(item.language)) { state.settings.contentLanguage=item.language; saveState(); } if (item.question) { startQuiz({ mode:'single', questionId:item.question, count:1 }); return; } if(item.guideId&&GUIDE_SECTIONS.some(g=>g.id===item.guideId)){location.hash='#guide/'+item.guideId;return;} if (item.term) { openGlossaryTerm(item.term); return; } if (item.chapterExtras) { ui.extrasFocus={chapter:item.chapterExtras,entryId:item.entryId}; openChapterExtras(item.chapterExtras); return; } if(item.route==='reader'&&item.section){openReader(item.section,{...item,query:ui.search.query});return;} if (item.route) setRoute(item.route); } catch { showStatus('検索先を開けませんでした。'); } return; }
   const termBookmarkToggle = event.target.closest('[data-term-bookmark]'); if (termBookmarkToggle) { const id=termBookmarkToggle.dataset.termBookmark; state.termBookmarks = state.termBookmarks.includes(id) ? state.termBookmarks.filter(item=>item!==id) : [...state.termBookmarks,id]; const saved=saveState(); render(); if(state.flashcards.mode==='cards')root.querySelector('.flash-card [data-term-bookmark]')?.focus(); showStatus(saved?(state.termBookmarks.includes(id) ? '用語をブックマークしました。' : '用語ブックマークを外しました。'):'用語ブックマークを端末に保存できませんでした。JSONを書き出してください。'); return; }
   const bookmarkToggle = event.target.closest('[data-question-bookmark]'); if (bookmarkToggle) { const id=bookmarkToggle.dataset.questionBookmark; state.questionBookmarks = state.questionBookmarks.includes(id) ? state.questionBookmarks.filter(item=>item!==id) : [...state.questionBookmarks,id]; const saved=saveState(); render(); showStatus(saved?(state.questionBookmarks.includes(id) ? '問題をブックマークしました。' : '問題ブックマークを外しました。'):'問題ブックマークを端末に保存できませんでした。JSONを書き出してください。'); return; }
   const deleteBookmark = event.target.closest('[data-delete-bookmark]'); if (deleteBookmark) { state.bookmarks=state.bookmarks.filter(item=>item.id!==deleteBookmark.dataset.deleteBookmark); saveState(); render(); return; }

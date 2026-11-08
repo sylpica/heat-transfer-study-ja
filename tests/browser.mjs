@@ -99,7 +99,10 @@ try {
   assert.deepEqual(errors,[]);check('ブラウザー実行時エラーなし');
   const publicContext=await browser.newContext({serviceWorkers:'block'}),publicPage=await publicContext.newPage();publicPage.setDefaultTimeout(60000);await publicPage.route('**/data/local-content-manifest.json',route=>route.fulfill({status:404,body:''}));await publicPage.goto(base);await publicPage.locator('.app-shell').waitFor();assert.match(await publicPage.locator('.app-footer').innerText(),/全76節に収録/);await publicContext.close();check('ローカル教材がなくても収録済み教材（全76節）で起動');
   const timeContext=await browser.newContext({viewport:{width:390,height:844},colorScheme:'dark',timezoneId:'Asia/Tokyo'}),timePage=await timeContext.newPage();timePage.setDefaultTimeout(60000);timePage.setDefaultNavigationTimeout(60000);timePage.on('pageerror',error=>errors.push(error.message));
-  await timePage.clock.install({time:new Date('2026-10-20T03:00:00Z')});await timePage.goto(`${base}/#reader`);await timePage.locator('.reader-title').waitFor();
+  await timePage.clock.install({time:new Date('2026-10-20T03:00:00Z')});
+  // Freeze before app startup so real navigation time cannot shift the 5 s
+  // persistence interval relative to the exact 10 s measurement below.
+  await timePage.clock.pauseAt(new Date('2026-10-20T03:00:01Z'));await timePage.goto(`${base}/#reader`);await timePage.locator('.reader-title').waitFor();
   await timePage.locator('.reader-toc details').filter({has:timePage.locator('[data-section="8.2"]')}).locator('summary').click();await timePage.locator('.reader-toc [data-section="8.2"]').click();
   await timePage.locator('.reader-title').waitFor();assert.match(await timePage.locator('.reader-title').innerText(),/8\.2/);assert.equal(await timePage.locator('.formula-block').count(),7);assert.equal(await timePage.locator('.footnote').count(),1);
   await timePage.clock.runFor(10000);const timeStore=()=>timePage.evaluate(()=>JSON.parse(localStorage.getItem('heat-study-ja:v1')));let timed=await timeStore();assert.ok(timed.activities.some(a=>a.kind==='reading'&&a.sectionId==='8.2'&&a.seconds>=9));

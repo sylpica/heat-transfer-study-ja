@@ -1,0 +1,23 @@
+[
+  {
+    "branch": "feiris/mainline-integration",
+    "runs": [],
+    "total_count": 0
+  },
+  {
+    "branch": "codex/dynamic-heat-simulation",
+    "runs": [
+      {
+        "id": 42345717378,
+        "head_sha": "ca8fc25af5a2f19f4869eb9a83a8cef6e4417d15",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/sylpica/heat-transfer-study-ja/actions/runs/42345717378",
+        "created_at": "2026-11-07T06:09:10Z",
+        "updated_at": "2026-11-07T06:24:34Z"
+      }
+    ],
+    "total_count": 1
+  }
+]

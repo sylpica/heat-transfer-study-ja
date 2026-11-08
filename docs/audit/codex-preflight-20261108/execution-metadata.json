@@ -1,0 +1,45 @@
+{
+  "record_type": "preflight-only",
+  "round": 0,
+  "auditor": "Codex",
+  "s0": null,
+  "candidate_sha": "ed35d8c1a96b9e5f0f76b343a5c3c9e88d3b1c5d",
+  "branch": "audit/codex-preflight-20261108",
+  "branch_base_sha": "73b31c0f1eebf27f1e01ba7de7f42b9c537ccf2f",
+  "observed_utc": "2026-11-08T09:59:17.835703+00:00",
+  "gates": {
+    "G1": "未確認",
+    "G2": "未確認",
+    "G3": "一部・未検証",
+    "G4": "未確認"
+  },
+  "converged": false,
+  "application_complete": false,
+  "node_suite_executed": false,
+  "public_build_executed": false,
+  "browser_tests_executed": false,
+  "muse_exhaustive_use_test_executed": false,
+  "muse_exhaustive_use_test_reason": "開始ゲート前・監査ループ未開始。CodexはMuseとしての実施を代行したと主張しない。",
+  "next_owner": "Muse/統合担当",
+  "instruction_source": "このチャットの第0〜38章および追記A1〜A6",
+  "canonical_instruction_sha256": null,
+  "canonical_instruction_status": "固定ファイルのバイト列とMuse側の照合値が未指定。チャットの装飾・改行を推測して同一ハッシュを主張しない。",
+  "independence_disclosure": [
+    "PR #18とPR #1の説明・状態を開始ゲート確認のため参照（過去Codexの検証値・既知制限を含む）。本監査の結論へ転用していない。",
+    "ブランチ名、HEAD、履歴の到達関係、変更ファイル名、統合ツリーの構造、package.jsonとCI設定を参照。",
+    "Muse監査報告本文、Muse修正パッチ、過去のFINAL_INTEGRATION_AUDIT等の監査本文は未参照。"
+  ],
+  "remote_writes": {
+    "github_write_api_calls": 0,
+    "git_push_commands_planned": 1,
+    "git_push_verified": "別途コミット・リモート到達確認で確定する"
+  },
+  "required_addenda": [
+    "A1.1〜A1.11",
+    "A2.1〜A2.2",
+    "A3",
+    "A4",
+    "A5.1〜A5.4",
+    "A6.1〜A6.2"
+  ]
+}

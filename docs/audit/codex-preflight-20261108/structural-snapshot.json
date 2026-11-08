@@ -1,0 +1,12 @@
+{
+  "candidate_sha": "ed35d8c1a96b9e5f0f76b343a5c3c9e88d3b1c5d",
+  "japanese_section_path_count": 76,
+  "manifest_entry_count": 76,
+  "radial_analysis_path_exists": true,
+  "radial_analysis_string_in_build_script": true,
+  "dist_tracked_file_count": 0,
+  "fe92408_resolvable_in_fetched_heads": false,
+  "semantic_translation_audit_performed": false,
+  "build_performed": false,
+  "tests_performed": false
+}

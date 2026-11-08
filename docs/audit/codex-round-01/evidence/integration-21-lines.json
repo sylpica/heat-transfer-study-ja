@@ -1,0 +1,133 @@
+{
+  "development_record": "docs/dynamic/MAINLINE_INTEGRATION_WAVE67_20261108.md",
+  "documented_lines": 21,
+  "rows": [
+    {
+      "line": "feiris/heatsink-coupled-js",
+      "documented_head": "c940d4b",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/heatsink-coupled-gui",
+      "documented_head": "6ddbd98",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/phase57-inventory",
+      "documented_head": "c57f2b0",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/linkage-expand",
+      "documented_head": "615d2ec",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/case-intake-expand",
+      "documented_head": "28f933b",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/conjugate-model-js",
+      "documented_head": "221cb53",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/conjugate-gui",
+      "documented_head": "2858b8e",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/manuals-inapp",
+      "documented_head": "1e087e4",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/model-tutorials",
+      "documented_head": "a888ba2",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/sim-guide-popups",
+      "documented_head": "7d92bea",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/chapter-problems-translation",
+      "documented_head": "0a6ffbc",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/chapter-problems-inapp",
+      "documented_head": "2f11b4a",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/chapter-problems-search",
+      "documented_head": "b78cc5c",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/glossary-flashcards",
+      "documented_head": "3750695",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/appendix-references",
+      "documented_head": "c373243",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/guide-review",
+      "documented_head": "717075f",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/browser-test-modernize",
+      "documented_head": "846be9c",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/solver-settings",
+      "documented_head": "6ebf281",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/highra-cavity-js",
+      "documented_head": "479326c",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/fingap-flow-js",
+      "documented_head": "3ca3710",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    },
+    {
+      "line": "feiris/fingap-flow-gui",
+      "documented_head": "9bd0c8d",
+      "resolved_commit": null,
+      "ancestor_of_remote_S0": null
+    }
+  ],
+  "limits": "Muse local S0 histories may not be present in the remote snapshot. Null is unverified, not evidence of lost implementation."
+}

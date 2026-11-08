@@ -1,0 +1,8 @@
+ID,重大度,対象,根本原因,修正SHA,検証,判定
+C1-01,P1,app.js,用語アンカーを未対応ルートへ分類、カード保存時に対象行なし,8da12ad1bdc202b8b4f494711e1f20717647d02e,navigation-final.log; dynamic-sim-guide-final.log,Codex修正・検証済、Muse照合待ち
+C1-02,P2,study-core.mjs,旧JSONへ補った既定値が追加取り込みで既存の単語帳設定を上書き,8da12ad1bdc202b8b4f494711e1f20717647d02e,node-final.log / flashcards regressions,Codex修正・検証済、Muse照合待ち
+C1-03,P2,app.js; tests/browser-distribution.mjs,翻訳公開前の文言が残存,8da12ad1bdc202b8b4f494711e1f20717647d02e + 32d6957191e76e845af97c58f51383631252f461,navigation-final.log; log-only assertions unchanged,Codex修正・検証済、Muse照合待ち
+C1-04,P1,.github/workflows/deploy-public-pages.yml,公開元が旧枝固定、依存導入なし,8da12ad1bdc202b8b4f494711e1f20717647d02e,YAML parse; lockfile build; hosted deployment not executed,Codex修正・検証済、Muse照合待ち（ホステッド公開実行は未実施）
+C1-05,P2,tests/dynamic-sim-guide-browser.mjs,初期空白document待ちと目的URL到達の混同,8da12ad1bdc202b8b4f494711e1f20717647d02e,dynamic-sim-guide-final.log,Codex修正・検証済、Muse照合待ち
+C1-06,P2,styles.css,min-width410pxで図内の右ラベルがスマホ幅外へ,8da12ad1bdc202b8b4f494711e1f20717647d02e,navigation-final.log / SVG bbox 10 cases; screenshots,Codex修正・検証済、Muse照合待ち
+C1-07,P2,tests/browser.mjs,実時計進行で5秒保存周期の位相が仮想10秒計測からずれる,8da12ad1bdc202b8b4f494711e1f20717647d02e,browser-legacy-final.log / unchanged 10s and 90s assertions,Codex修正・検証済、Muse照合待ち

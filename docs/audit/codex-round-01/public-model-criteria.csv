@@ -1,0 +1,49 @@
+公開経路のモデル,実装,基準,判定,根拠/未検証
+矩形伝導,dynamic/thermal.mjs,支配方程式,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+矩形伝導,dynamic/thermal.mjs,数値計算,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+矩形伝導,dynamic/thermal.mjs,動的可視化,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+矩形伝導,dynamic/thermal.mjs,操作,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+矩形伝導,dynamic/thermal.mjs,日本語説明,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+矩形伝導,dynamic/thermal.mjs,独立検証,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+矩形伝導,dynamic/thermal.mjs,回帰テスト,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+矩形伝導,dynamic/thermal.mjs,実ブラウザー,一部,全Node再実行・tests/dynamic-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,支配方程式,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,数値計算,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,動的可視化,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,操作,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,日本語説明,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,独立検証,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,回帰テスト,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+フィン近似（矩形基盤）,dynamic/thermal.mjs; dynamic/fin-learning-ui.mjs,実ブラウザー,一部,全Node再実行・tests/dynamic-fin-learning-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,支配方程式,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,数値計算,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,動的可視化,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,操作,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,日本語説明,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,独立検証,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,回帰テスト,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+円筒/球径方向,dynamic/radial.mjs,実ブラウザー,一部,全Node再実行・tests/dynamic-radial-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,支配方程式,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,数値計算,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,動的可視化,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,操作,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,日本語説明,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,独立検証,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,回帰テスト,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+集中径方向近似,dynamic/lumped-radial.mjs,実ブラウザー,一部,全Node再実行・tests/dynamic-lumped-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,支配方程式,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,数値計算,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,動的可視化,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,操作,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,日本語説明,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,独立検証,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,回帰テスト,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+指定発達チャネル,dynamic/developed-channel.mjs,実ブラウザー,一部,全Node再実行・tests/dynamic-channel-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,支配方程式,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,数値計算,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,動的可視化,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,操作,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,日本語説明,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,独立検証,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,回帰テスト,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。
+放射ネットワーク,dynamic/radiation-network.mjs,実ブラウザー,一部,全Node再実行・tests/dynamic-radiation-browser.mjs Chromium成功。独立科学検証の全条件・WebKit・実機は未完了。今回の新規公開承認は行わない。

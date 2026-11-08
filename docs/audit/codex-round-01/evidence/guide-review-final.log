@@ -1,0 +1,32 @@
+
+30/30 checks passed
+PASS guide count shows 49
+PASS guide TOC has lab link
+PASS no horizontal overflow @1280 guide
+PASS lab section anchor
+PASS lab section mentions lab tab
+PASS lab -> simulator cross-link
+PASS lab -> reader cross-link
+PASS reader guide covers chapter extras
+PASS reader guide covers section->experiment
+PASS lab screen help link
+PASS lab help link reaches lab section
+PASS ch1 extras counts
+PASS ch1 first problem opens with text
+PASS section 2.1 experiment href
+PASS dynamic lab page opens
+PASS feedback experiment link exists
+PASS feedback experiment href
+PASS no pageerror (desktop)
+PASS no horizontal overflow @375 light guide-lab
+PASS no horizontal overflow @375 light reader extras
+PASS no pageerror (375 light)
+PASS no horizontal overflow @390 light guide-lab
+PASS no horizontal overflow @390 light reader extras
+PASS no pageerror (390 light)
+PASS no horizontal overflow @375 dark guide-lab
+PASS no horizontal overflow @375 dark reader extras
+PASS no pageerror (375 dark)
+PASS no horizontal overflow @1920 dark guide-lab
+PASS no horizontal overflow @1920 dark reader extras
+PASS no pageerror (1920 dark)

@@ -1,0 +1,38 @@
+[
+  {
+    "script": "tests/dynamic-conjugate-cavity-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 20.97953510284424,
+    "log": "dynamic-conjugate-cavity-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-heat-sink-coupled-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 38.467748403549194,
+    "log": "dynamic-heat-sink-coupled-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-fin-gap-flow-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 3.9800992012023926,
+    "log": "dynamic-fin-gap-flow-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-long-duct-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 2.7890126705169678,
+    "log": "dynamic-long-duct-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-long-duct-ui-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 8.572074174880981,
+    "log": "dynamic-long-duct-ui-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-long-duct-editor-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 9.597147703170776,
+    "log": "dynamic-long-duct-editor-browser-final.log"
+  }
+]

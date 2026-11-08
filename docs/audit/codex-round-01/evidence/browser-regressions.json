@@ -1,0 +1,50 @@
+[
+  {
+    "script": "tests/flashcards-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 15.196313619613647,
+    "log": "flashcards-browser.log"
+  },
+  {
+    "script": "tests/dynamic-sim-guide-browser.mjs",
+    "exit_code": 1,
+    "duration_seconds": 22.31989574432373,
+    "log": "dynamic-sim-guide-browser.log"
+  },
+  {
+    "script": "tests/guide-review-browser.mjs",
+    "exit_code": 1,
+    "duration_seconds": 0.48822450637817383,
+    "log": "guide-review-browser.log"
+  },
+  {
+    "script": "tests/dynamic-navigation-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 18.626972198486328,
+    "log": "dynamic-navigation-browser.log"
+  },
+  {
+    "script": "tests/dynamic-graetz-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 4.471728563308716,
+    "log": "dynamic-graetz-browser.log"
+  },
+  {
+    "script": "tests/dynamic-transient-brick-3d-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 5.311905860900879,
+    "log": "dynamic-transient-brick-3d-browser.log"
+  },
+  {
+    "script": "tests/dynamic-box-radiation-3d-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 5.5922346115112305,
+    "log": "dynamic-box-radiation-3d-browser.log"
+  },
+  {
+    "script": "tests/browser.mjs",
+    "exit_code": 1,
+    "duration_seconds": 50.9014618396759,
+    "log": "browser.log"
+  }
+]

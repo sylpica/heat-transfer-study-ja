@@ -1,0 +1,28 @@
+[
+  {
+    "case": "direct-term-deeplink",
+    "id": "surface-tension",
+    "heading": [
+      "学習ホーム"
+    ],
+    "target": 0,
+    "hash": "#term-surface-tension"
+  },
+  {
+    "case": "term-deeplink-with-saved-cards",
+    "heading": [
+      "学習ホーム"
+    ],
+    "target": 0
+  },
+  {
+    "case": "glossary-disclaimer",
+    "notice": [
+      "i用語集は全76節の収録教材（独自日本語ノート・発展教材）をもとに作成しています。原書の翻訳本文は未収録です。"
+    ]
+  },
+  {
+    "case": "page-errors",
+    "errors": []
+  }
+]

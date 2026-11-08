@@ -1,0 +1,1828 @@
+{
+  "browser": "Chromium",
+  "measurements": 182,
+  "overflows": [],
+  "pageerrors": [],
+  "rows": [
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "home",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "reader",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "quiz",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "review",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "search",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "glossary",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "map",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "simulator",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "lab",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "plan",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "calendar",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "settings",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "route": "guide",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "home",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "reader",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "quiz",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "review",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "search",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "glossary",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "map",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "simulator",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "lab",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "plan",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "calendar",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "settings",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 375,
+      "route": "guide",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "home",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "reader",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "quiz",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "review",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "search",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "glossary",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "map",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "simulator",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "lab",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "plan",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "calendar",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "settings",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "route": "guide",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "home",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "reader",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "quiz",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "review",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "search",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "glossary",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "map",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "simulator",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "lab",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "plan",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "calendar",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "settings",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "route": "guide",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "home",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "reader",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "quiz",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "review",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "search",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "glossary",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "map",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "simulator",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "lab",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "plan",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "calendar",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "settings",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "route": "guide",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "home",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "reader",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "quiz",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "review",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "search",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "glossary",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "map",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "simulator",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "lab",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "plan",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "calendar",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "settings",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "route": "guide",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "home",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "reader",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "quiz",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "review",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "search",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "glossary",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "map",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "simulator",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "lab",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "plan",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "calendar",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "settings",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "route": "guide",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "home",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "reader",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "quiz",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "review",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "search",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "glossary",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "map",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "simulator",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "lab",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "plan",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "calendar",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "settings",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "route": "guide",
+      "innerWidth": 320,
+      "scrollWidth": 320,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "home",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "reader",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "quiz",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "review",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "search",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "glossary",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "map",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "simulator",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "lab",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "plan",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "calendar",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "settings",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 375,
+      "route": "guide",
+      "innerWidth": 375,
+      "scrollWidth": 375,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "home",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "reader",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "quiz",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "review",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "search",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "glossary",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "map",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "simulator",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "lab",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "plan",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "calendar",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "settings",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "route": "guide",
+      "innerWidth": 390,
+      "scrollWidth": 390,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "home",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "reader",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "quiz",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "review",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "search",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "glossary",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "map",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "simulator",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "lab",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "plan",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "calendar",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "settings",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "route": "guide",
+      "innerWidth": 430,
+      "scrollWidth": 430,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "home",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "reader",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "quiz",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "review",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "search",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "glossary",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "map",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "simulator",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "lab",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "plan",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "calendar",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "settings",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "route": "guide",
+      "innerWidth": 768,
+      "scrollWidth": 768,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "home",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "reader",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "quiz",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "review",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "search",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "glossary",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "map",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "simulator",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "lab",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "plan",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "calendar",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "settings",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "route": "guide",
+      "innerWidth": 1280,
+      "scrollWidth": 1280,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "home",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "学習ホーム",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "reader",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "読書モード",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "quiz",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "問題演習",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "review",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "復習と間違いノート",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "search",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "横断検索",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "glossary",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "用語集",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "map",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "分野マップ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "simulator",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "簡易シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "lab",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "通常シミュレーター",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "plan",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "学習計画",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "calendar",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "学習カレンダー",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "settings",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "設定とデータ",
+      "offenders": []
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "route": "guide",
+      "innerWidth": 1920,
+      "scrollWidth": 1920,
+      "overflow": false,
+      "heading": "使い方・学習ガイド",
+      "offenders": []
+    }
+  ]
+}

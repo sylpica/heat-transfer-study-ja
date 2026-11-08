@@ -1,0 +1,228 @@
+{
+  "recorded_utc": "2026-11-08T10:36:52.073142+00:00",
+  "functional_fix_commit": "8da12ad1bdc202b8b4f494711e1f20717647d02e",
+  "log_only_followup_commit": "32d6957191e76e845af97c58f51383631252f461",
+  "node_final": {
+    "command": "npm test",
+    "exit_code": 0,
+    "tests": 1784,
+    "pass": 1779,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 5,
+    "todo": 0,
+    "duration_ms": 424265.000814,
+    "node_version": "v24.19.0",
+    "log": "node-final.log"
+  },
+  "build_final": {
+    "command": "npm run build:public",
+    "exit_code": 0,
+    "log": "build-final.log"
+  },
+  "chromium_browser_command_count": 25,
+  "chromium_browser_commands": [
+    {
+      "command": "node tests/flashcards-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "flashcards-browser.log",
+      "initial_failure": false
+    },
+    {
+      "command": "node tests/dynamic-sim-guide-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-sim-guide-final.log",
+      "initial_failure": true
+    },
+    {
+      "command": "node tests/guide-review-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "guide-review-final.log",
+      "initial_failure": true
+    },
+    {
+      "command": "node tests/dynamic-navigation-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-navigation-browser.log",
+      "initial_failure": false
+    },
+    {
+      "command": "node tests/dynamic-graetz-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-graetz-browser.log",
+      "initial_failure": false
+    },
+    {
+      "command": "node tests/dynamic-transient-brick-3d-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-transient-brick-3d-browser.log",
+      "initial_failure": false
+    },
+    {
+      "command": "node tests/dynamic-box-radiation-3d-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-box-radiation-3d-browser.log",
+      "initial_failure": false
+    },
+    {
+      "command": "node tests/browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "browser-legacy-final.log",
+      "initial_failure": true
+    },
+    {
+      "command": "node tests/dynamic-conjugate-cavity-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-conjugate-cavity-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-heat-sink-coupled-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-heat-sink-coupled-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-fin-gap-flow-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-fin-gap-flow-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-long-duct-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-long-duct-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-long-duct-ui-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-long-duct-ui-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-long-duct-editor-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-long-duct-editor-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-radial-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-radial-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-channel-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-channel-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-radiation-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-radiation-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-fin-learning-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-fin-learning-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-lumped-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-lumped-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-channel-learning-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-channel-learning-browser-final.log"
+    },
+    {
+      "command": "node tests/dynamic-radiation-learning-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "dynamic-radiation-learning-browser-final.log"
+    },
+    {
+      "command": "node tests/audit-codex-round01-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "navigation-final.log"
+    },
+    {
+      "command": "node tests/browser-distribution.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "browser-distribution-frozen-final.log"
+    },
+    {
+      "command": "node tests/dynamic-gpu-ui-browser.mjs",
+      "engine": "chromium",
+      "exit_code": 0,
+      "log": "gpu-ui-final.log"
+    }
+  ],
+  "ui_matrix": {
+    "conditions": 182,
+    "horizontal_page_overflow": 0,
+    "pageerrors": 0,
+    "log": "ui-matrix.json",
+    "limits": "13 shell routes, 7 widths, 2 themes; not every dynamic screen"
+  },
+  "independent_default_calculators": {
+    "conditions": 20,
+    "passed": 20,
+    "levels": "separate Python implementation of the same physical models; slab eigenvalues by independent bisection; not independent empirical validation"
+  },
+  "requirements": {
+    "total": 120,
+    "states": {
+      "一部": 108,
+      "未検証": 3,
+      "充足": 5,
+      "外部依存": 4
+    },
+    "counting": "27 application groups, Q1-Q72, 21 addendum rows; no test/question counts added"
+  },
+  "webkit": {
+    "status": "launch failed; not tested",
+    "cause": "missing shared libraries",
+    "log": "browser-webkit-baseline.log"
+  },
+  "skip_reason": "5 private-local-pack conditional tests; not counted as passes",
+  "baseline_browser_limit": "baseline distribution run overlapped a later dist build; not used as strict immutable S0 evidence",
+  "initial_failed_runs": [
+    "browser-chromium-after.log: internal glossary URL compatibility; product fixed while preserving original assertion",
+    "dynamic-sim-guide-browser.log: initial blank tab navigation race; now waits requested URL and expanded target row",
+    "browser.log: elapsed-time storage interval phase; fake clock frozen before app startup",
+    "guide-review-browser.log: missing pinned browser binary; rerun after official browser installation"
+  ],
+  "post_validation_log_only_change": {
+    "file": "tests/browser-distribution.mjs",
+    "description": "Only the trailing console summary was corrected from translation absent to Japanese translation 76 sections. Test body and assertions unchanged. node --check succeeded. Original test stdout is preserved, not rewritten.",
+    "assertions_unchanged_verified": true
+  },
+  "github_ci_latest_commit": "not executed/verified; local results are not GitHub Actions results",
+  "deployed_current_audit_commit": false,
+  "muse_round_or_use_test_done_by_codex": false,
+  "converged": false
+}

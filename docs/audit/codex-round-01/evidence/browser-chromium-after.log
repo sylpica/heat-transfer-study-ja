@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /#glossary$/. Input:
+
+'http://127.0.0.1:37293/#term-thermal-conductivity'
+
+    at file:///workspace/work/codex-round-01/tests/browser-distribution.mjs:222:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'http://127.0.0.1:37293/#term-thermal-conductivity',
+  expected: /#glossary$/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

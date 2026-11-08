@@ -1,0 +1,19 @@
+{
+  "engine": "chromium",
+  "passed": true,
+  "results": [
+    "lab 375x667 light: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab 375x667 dark: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab 390x844 light: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab 390x844 dark: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab 1280x800 light: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab 1280x800 dark: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab 1920x1080 light: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab 1920x1080 dark: 8 steps walked, popup clamped, Esc close, focus restored",
+    "lab: preference on -> guide auto-opens after reload",
+    "lab: term link opens ../index.html#term-thermal-conductivity in a new tab",
+    "lab: outside click closes the guide",
+    "dev-cavity 375x667 light: 5 steps walked, popup clamped, Esc close",
+    "dev-cavity 1280x800 dark: 5 steps walked, popup clamped, Esc close"
+  ]
+}

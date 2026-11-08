@@ -1176,6 +1176,17 @@ function renderSearch() {
     </section>`;
 }
 
+// A term's brief is the first sentence of its meaning for most entries, and
+// the expanded row / flashcard back renders the brief directly above the
+// meaning (and the detail below it). Drop a verbatim repeated lead from the
+// lower block so the same sentence is not shown twice in a row (audit round
+// 2, A5-F01). Returns the text unchanged when there is no verbatim prefix.
+function withoutRepeatedLead(text, lead) {
+  if (typeof text !== 'string' || typeof lead !== 'string' || !lead || text === lead || !text.startsWith(lead)) return text;
+  const rest = text.slice(lead.length).replace(/^[\s　]+/, '');
+  return rest || text;
+}
+
 function renderGlossary() {
   const query = ui.glossaryQuery || '';
   const language = state.settings.contentLanguage === 'en' ? 'en' : 'ja';
@@ -1206,7 +1217,9 @@ function renderGlossary() {
     // term itself), via the shared compiled matcher so all 504 entries stay
     // affordable. Unit and formula lines stay plain, as in the term sheet.
     const linkedBody = (value, limit) => renderTermLinksFast(value, glossaryMatcher(), { limit, excludeId: term.id });
-    return `<article class="term-card term-row surface-card" id="term-${escapeHTML(term.id)}" lang="ja"><div class="term-heading"><h2 lang="${primaryLanguage}">${escapeHTML(primary)}</h2>${secondary?`<span lang="${primaryLanguage==='en'?'ja':'en'}">${escapeHTML(secondary)}</span>`:''}<button type="button" class="icon-button term-bookmark ${bookmarked ? 'is-bookmarked' : ''}" data-term-bookmark="${escapeHTML(term.id)}" aria-label="${bookmarked ? '用語のブックマークを外す' : '用語をブックマーク'}" aria-pressed="${bookmarked}">${bookmarked ? '★' : '☆'}</button><button type="button" class="button secondary term-toggle" data-action="toggle-term" data-term-toggle="${escapeHTML(term.id)}" aria-expanded="${expanded}" aria-controls="term-body-${escapeHTML(term.id)}">${expanded ? '閉じる' : '詳しく見る'}</button></div><p class="term-brief" lang="${summaryLanguage}">${linkedBody(summary, 3)}</p><div class="term-body" id="term-body-${escapeHTML(term.id)}" ${expanded ? '' : 'hidden'}><p lang="${meaningLanguage}">${linkedBody(meaning, 4)}</p>${term.beginner&&term.beginner!==term.meaning&&term.beginner!==term.detail?`<p class="term-beginner">${linkedBody(term.beginner, 4)}</p>`:''}${term.detail&&term.detail!==term.meaning?`<details class="term-full"><summary>詳しい意味と使い方</summary><p>${linkedBody(term.detail, 4)}</p></details>`:''}${term.unit?`<p class="term-unit"><strong>単位：</strong>${escapeHTML(term.unit)}</p>`:''}${term.formula?`<p class="term-formula"><strong>式：</strong>${escapeHTML(term.formula)}</p>`:''}${term.aliases?.length?`<small>別名・表記：${escapeHTML(term.aliases.join('・'))}</small>`:''}${renderTermExample(term, [], glossaryMatcher())}<div class="term-source">${sourceLabel(term.source)}</div>${reviewTag}${sourceLink}${renderTermLearningLinks(term)}${questionLinks}</div></article>`;
+    const meaningBody = withoutRepeatedLead(meaning, summary);
+    const detailBody = term.detail ? withoutRepeatedLead(withoutRepeatedLead(term.detail, meaning), summary) : term.detail;
+    return `<article class="term-card term-row surface-card" id="term-${escapeHTML(term.id)}" lang="ja"><div class="term-heading"><h2 lang="${primaryLanguage}">${escapeHTML(primary)}</h2>${secondary?`<span lang="${primaryLanguage==='en'?'ja':'en'}">${escapeHTML(secondary)}</span>`:''}<button type="button" class="icon-button term-bookmark ${bookmarked ? 'is-bookmarked' : ''}" data-term-bookmark="${escapeHTML(term.id)}" aria-label="${bookmarked ? '用語のブックマークを外す' : '用語をブックマーク'}" aria-pressed="${bookmarked}">${bookmarked ? '★' : '☆'}</button><button type="button" class="button secondary term-toggle" data-action="toggle-term" data-term-toggle="${escapeHTML(term.id)}" aria-expanded="${expanded}" aria-controls="term-body-${escapeHTML(term.id)}">${expanded ? '閉じる' : '詳しく見る'}</button></div><p class="term-brief" lang="${summaryLanguage}">${linkedBody(summary, 3)}</p><div class="term-body" id="term-body-${escapeHTML(term.id)}" ${expanded ? '' : 'hidden'}><p lang="${meaningLanguage}">${linkedBody(meaningBody, 4)}</p>${term.beginner&&term.beginner!==term.meaning&&term.beginner!==term.detail?`<p class="term-beginner">${linkedBody(term.beginner, 4)}</p>`:''}${term.detail&&term.detail!==term.meaning?`<details class="term-full"><summary>詳しい意味と使い方</summary><p>${linkedBody(detailBody, 4)}</p></details>`:''}${term.unit?`<p class="term-unit"><strong>単位：</strong>${escapeHTML(term.unit)}</p>`:''}${term.formula?`<p class="term-formula"><strong>式：</strong>${escapeHTML(term.formula)}</p>`:''}${term.aliases?.length?`<small>別名・表記：${escapeHTML(term.aliases.join('・'))}</small>`:''}${renderTermExample(term, [], glossaryMatcher())}<div class="term-source">${sourceLabel(term.source)}</div>${reviewTag}${sourceLink}${renderTermLearningLinks(term)}${questionLinks}</div></article>`;
   }).join('') || '<div class="empty-state"><p>一致する用語がありません。</p></div>';
   const mode = state.flashcards.mode === 'cards' ? 'cards' : 'list';
   return `${pageHeading('用語集', '用語集', '')}
@@ -1253,11 +1266,13 @@ function renderFlashcards(language) {
   const summary = language === 'en' ? (term.meaningEn || term.brief || term.meaning) : (term.brief || term.meaning);
   const summaryLanguage = language === 'en' && term.meaningEn ? 'en' : 'ja';
   const linkedBody = (value, limit) => renderTermLinksFast(value, glossaryMatcher(), { limit, excludeId: term.id });
+  const meaningBody = withoutRepeatedLead(meaning, summary);
+  const detailBody = term.detail ? withoutRepeatedLead(withoutRepeatedLead(term.detail, meaning), summary) : term.detail;
   const bookmarked = state.termBookmarks.includes(term.id);
   const termChapterList = [...termChapters(term)].sort((a, b) => a - b);
   const meta = `${termChapterList.length ? `第${termChapterList[0]}章 · ` : ''}${escapeHTML(term.category || '')}`;
   const face = prefs.flipped
-    ? `<div class="flash-face flash-back" data-action="flash-flip" role="button" tabindex="0" aria-label="${escapeHTML(primary)}の用語名に戻る"><div class="flash-scroll"><p class="flash-brief" lang="${summaryLanguage}">${linkedBody(summary, 3)}</p><p lang="${meaningLanguage}">${linkedBody(meaning, 4)}</p>${term.beginner && term.beginner !== term.meaning && term.beginner !== term.detail ? `<p class="term-beginner">${linkedBody(term.beginner, 4)}</p>` : ''}${term.detail && term.detail !== term.meaning ? `<details class="term-full"><summary>詳しい意味と使い方</summary><p>${linkedBody(term.detail, 4)}</p></details>` : ''}${term.unit ? `<p class="term-unit"><strong>単位：</strong>${escapeHTML(term.unit)}</p>` : ''}${term.formula ? `<p class="term-formula"><strong>式：</strong>${escapeHTML(term.formula)}</p>` : ''}${term.aliases?.length ? `<small>別名・表記：${escapeHTML(term.aliases.join('・'))}</small>` : ''}${renderTermExample(term, [], glossaryMatcher())}<div class="term-source">${sourceLabel(term.source)}</div></div><p class="flash-flip-hint">押すと表に戻ります</p></div>`
+    ? `<div class="flash-face flash-back" data-action="flash-flip" role="button" tabindex="0" aria-label="${escapeHTML(primary)}の用語名に戻る"><div class="flash-scroll"><p class="flash-brief" lang="${summaryLanguage}">${linkedBody(summary, 3)}</p><p lang="${meaningLanguage}">${linkedBody(meaningBody, 4)}</p>${term.beginner && term.beginner !== term.meaning && term.beginner !== term.detail ? `<p class="term-beginner">${linkedBody(term.beginner, 4)}</p>` : ''}${term.detail && term.detail !== term.meaning ? `<details class="term-full"><summary>詳しい意味と使い方</summary><p>${linkedBody(detailBody, 4)}</p></details>` : ''}${term.unit ? `<p class="term-unit"><strong>単位：</strong>${escapeHTML(term.unit)}</p>` : ''}${term.formula ? `<p class="term-formula"><strong>式：</strong>${escapeHTML(term.formula)}</p>` : ''}${term.aliases?.length ? `<small>別名・表記：${escapeHTML(term.aliases.join('・'))}</small>` : ''}${renderTermExample(term, [], glossaryMatcher())}<div class="term-source">${sourceLabel(term.source)}</div></div><p class="flash-flip-hint">押すと表に戻ります</p></div>`
     : `<div class="flash-face flash-front" data-action="flash-flip" role="button" tabindex="0" aria-label="${escapeHTML(primary)}の説明を表示"><h2 lang="${primaryLanguage}">${escapeHTML(primary)}</h2>${secondary ? `<p class="flash-secondary" lang="${primaryLanguage === 'en' ? 'ja' : 'en'}">${escapeHTML(secondary)}</p>` : ''}<p class="flash-flip-hint">押すと裏返ります</p></div>`;
   return `${controls}
   <div class="flash-stage">
@@ -1585,7 +1600,9 @@ function figureSizeAttributes(figure) {
 function renderLessonDiagram(sectionId) {
   const src=lessonDiagramPath(sectionId);
   if(!src)return '';
-  return `<figure class="lesson-diagram"><img src="${escapeHTML(src)}" alt="第${escapeHTML(sectionId)}節のアプリ作成の独自図解" ${figureSizeAttributes(lessonDiagramSize(sectionId)||{})} loading="lazy"/><figcaption><a class="figure-zoom text-link" href="${escapeHTML(src)}" target="_blank" rel="noopener noreferrer">図を別のタブで拡大する ↗</a><span>アプリ作成の独自図解です。原本の図版の転載・トレースではありません。図の適用条件と数値は図の中に明記しています。</span></figcaption></figure>`;
+  const sectionTitle=allSections().find(section=>section.id===sectionId)?.title;
+  const alt=sectionTitle?`第${sectionId}節「${sectionTitle}」のアプリ作成の独自図解`:`第${sectionId}節のアプリ作成の独自図解`;
+  return `<figure class="lesson-diagram"><img src="${escapeHTML(src)}" alt="${escapeHTML(alt)}" ${figureSizeAttributes(lessonDiagramSize(sectionId)||{})} loading="lazy"/><figcaption><a class="figure-zoom text-link" href="${escapeHTML(src)}" target="_blank" rel="noopener noreferrer">図を別のタブで拡大する ↗</a><span>アプリ作成の独自図解です。原本の図版の転載・トレースではありません。図の適用条件と数値は図の中に明記しています。</span></figcaption></figure>`;
 }
 function renderSimulationSteps(mode,result) {
   const v=result.values,n=value=>Number(value).toLocaleString('ja-JP',{maximumSignificantDigits:7});

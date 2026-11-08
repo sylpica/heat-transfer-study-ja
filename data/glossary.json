@@ -13,7 +13,8 @@
     "beginner": "温度差があるために、ある物体や領域から別の物体や領域へ移るエネルギー。熱は物体に蓄えられた物質ではなく、エネルギーの移動として扱う。",
     "detail": "温度差があるために、ある物体や領域から別の物体や領域へ移るエネルギー。熱は物体に蓄えられた物質ではなく、エネルギーの移動として扱う。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "heat-transfer",
@@ -29,7 +30,8 @@
     "beginner": "温度差などに関わる仕組みによって、熱エネルギーが場所や物質の間を移る現象。書籍は伝導・対流・放射を扱う。",
     "detail": "温度差などに関わる仕組みによって、熱エネルギーが場所や物質の間を移る現象。書籍は伝導・対流・放射を扱う。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "caloric",
@@ -45,7 +47,8 @@
     "beginner": "熱を、熱い物体から冷たい物体へ流れる目に見えない流体（カロリック）として説明した歴史的な考え方。書籍では自然と矛盾する性質が含まれていたと説明している。",
     "detail": "熱を、熱い物体から冷たい物体へ流れる目に見えない流体（カロリック）として説明した歴史的な考え方。書籍では自然と矛盾する性質が含まれていたと説明している。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "temperature-gradient",
@@ -67,7 +70,8 @@
     "related": [
       "熱流束",
       "フーリエの法則"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "convection",
@@ -95,7 +99,8 @@
     "related": [
       "対流熱伝達率",
       "境界層"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "power",
@@ -123,7 +128,8 @@
     "related": [
       "熱移動率",
       "ジュール"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "heat-rate",
@@ -151,7 +157,8 @@
     "related": [
       "熱流束",
       "ワット"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "heat-flux",
@@ -191,7 +198,8 @@
     "related": [
       "熱移動率",
       "温度勾配"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "pool-boiling",
@@ -227,7 +235,8 @@
     "related": [
       "核沸騰",
       "膜沸騰"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "electrical-resistance",
@@ -249,7 +258,8 @@
     "beginner": "電流の流れに対する抵抗を表す量。単位はオーム（Ω）。図9.1の加熱線では、電流 I が0でなければ測定した電圧 E と電流 I から R = E/I を求め、事前の抵抗–温度校正曲線から線温度を読み取る。一般的な定義と単位の説明は補足説明。",
     "detail": "電流の流れに対する抵抗を表す量。単位はオーム（Ω）。図9.1の加熱線では、電流 I が0でなければ測定した電圧 E と電流 I から R = E/I を求め、事前の抵抗–温度校正曲線から線温度を読み取る。一般的な定義と単位の説明は補足説明。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "wall-superheat",
@@ -281,7 +291,8 @@
     "related": [
       "プール沸騰",
       "核沸騰"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "nucleate-boiling",
@@ -307,7 +318,8 @@
     "beginner": "補足説明（アプリ作成）：加熱面の微細な場所から泡が生まれ、成長して離れる沸騰です。泡が離れた場所には液体が入り、熱の運ばれ方が変わります。",
     "detail": "補足説明（アプリ作成）：気泡の発生には壁面過熱だけでなく、表面の微小な穴、濡れ性、圧力や液体物性が関わります。主流が過冷却でも壁面近傍で局所的に起こる場合があります。泡が増えると熱流束は大きくなりえますが、限界熱流束を超えても安全に冷えるという意味ではありません。気泡径を球形界面の平衡式だけから実機予測しません。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "transition-boiling",
@@ -329,7 +341,8 @@
     "beginner": "ピーク熱流束 qmax から最小熱流束 qmin へ向かうプール沸騰の領域。壁面過熱度を独立に増やす曲線では、蒸気の被覆が進むにつれて熱流束が下がる。",
     "detail": "ピーク熱流束 qmax から最小熱流束 qmin へ向かうプール沸騰の領域。壁面過熱度を独立に増やす曲線では、蒸気の被覆が進むにつれて熱流束が下がる。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "film-boiling",
@@ -351,7 +364,8 @@
     "beginner": "安定した蒸気膜が加熱面を覆い、熱が膜を通って伝わる沸騰。最小熱流束 qmin を過ぎた領域では、壁面過熱度を増やすと熱流束は再び増える。",
     "detail": "安定した蒸気膜が加熱面を覆い、熱が膜を通って伝わる沸騰。最小熱流束 qmin を過ぎた領域では、壁面過熱度を増やすと熱流束は再び増える。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "peak-heat-flux",
@@ -379,7 +393,8 @@
     "related": [
       "限界熱流束",
       "核沸騰"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "thermal-energy",
@@ -395,7 +410,8 @@
     "beginner": "温度や物質の状態に関わる内部エネルギーの一部を説明するときに使う言葉。熱（移動）と物体の中にあるエネルギーは区別する。",
     "detail": "温度や物質の状態に関わる内部エネルギーの一部を説明するときに使う言葉。熱（移動）と物体の中にあるエネルギーは区別する。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "thermal-conductivity",
@@ -427,7 +443,8 @@
     "related": [
       "熱流束",
       "フーリエの法則"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "convection-coefficient",
@@ -461,7 +478,8 @@
     "related": [
       "対流",
       "温度境界層"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "emissivity",
@@ -499,7 +517,8 @@
     ],
     "relatedSimulators": [
       "radiation"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "kelvin",
@@ -526,7 +545,8 @@
     "formula": "T[K]=t[℃]+273.15",
     "related": [
       "ケルビン"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "surface-tension",
@@ -558,7 +578,8 @@
     "related": [
       "核沸騰",
       "潜熱"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "thermal-diffusivity",
@@ -596,7 +617,8 @@
     ],
     "relatedSimulators": [
       "transient"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "biot-number",
@@ -626,7 +648,8 @@
     "related": [
       "集中熱容量法",
       "熱伝導率"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "fourier-number",
@@ -656,7 +679,8 @@
     "related": [
       "熱拡散率",
       "非定常状態"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "lumped-capacitance",
@@ -688,7 +712,8 @@
     "related": [
       "ビオ数",
       "冷却時定数"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "thermal-time-constant",
@@ -720,7 +745,8 @@
     "related": [
       "集中熱容量法",
       "熱容量"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "reynolds-number",
@@ -750,7 +776,8 @@
     "related": [
       "層流",
       "乱流"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "prandtl-number",
@@ -780,7 +807,8 @@
     "related": [
       "動粘度",
       "熱拡散率"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "nusselt-number",
@@ -810,7 +838,8 @@
     "related": [
       "対流熱伝達率",
       "温度境界層"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "heat-exchanger-balance",
@@ -838,7 +867,8 @@
     "related": [
       "熱容量流量",
       "熱交換器"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "log-mean-temperature-difference",
@@ -870,7 +900,8 @@
     "related": [
       "熱交換器",
       "総括伝熱係数"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "heat-flux-area",
@@ -896,7 +927,8 @@
     "beginner": "熱移動率Q̇[W]は単位時間当たりのエネルギー移動量。均一な熱流束q″[W/m²]ならQ̇=q″A。蓄熱量[J]や放熱時間[s]と区別する。",
     "detail": "熱移動率Q̇[W]は単位時間当たりのエネルギー移動量。均一な熱流束q″[W/m²]ならQ̇=q″A。蓄熱量[J]や放熱時間[s]と区別する。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "cylindrical-wall-resistance",
@@ -922,7 +954,8 @@
     "beginner": "一方向・定常・一定熱伝導率の円筒壁では R=ln(r₂/r₁)/(2πkℓ) [K/W]。面積が半径によって変わるため、単純な平板R=L/kAとは異なる。",
     "detail": "一方向・定常・一定熱伝導率の円筒壁では R=ln(r₂/r₁)/(2πkℓ) [K/W]。面積が半径によって変わるため、単純な平板R=L/kAとは異なる。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "heat-capacity-rate",
@@ -954,7 +987,8 @@
     "related": [
       "熱交換器有効度",
       "総括伝熱係数"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "fin-efficiency",
@@ -992,7 +1026,8 @@
     "relatedSections": [
       "4.5"
     ],
-    "relatedSimulators": []
+    "relatedSimulators": [],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "semi-infinite-thermal-body",
@@ -1024,7 +1059,8 @@
     "related": [
       "半無限固体",
       "誤差関数"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "local-and-average-nusselt",
@@ -1050,7 +1086,8 @@
     "beginner": "局所Nu_xは位置xでの対流熱伝達率に関わり、平均Nū_Lは全長Lで平均した熱伝達係数と対応する。層流等温平板の代表的な係数はそれぞれ0.332と0.664。",
     "detail": "局所Nu_xは位置xでの対流熱伝達率に関わり、平均Nū_Lは全長Lで平均した熱伝達係数と対応する。層流等温平板の代表的な係数はそれぞれ0.332と0.664。",
     "aliases": [],
-    "category": "既存の原本関連・補足用語"
+    "category": "既存の原本関連・補足用語",
+    "reviewStatus": "needs_review"
   },
   {
     "id": "hydraulic-diameter",
@@ -1082,7 +1119,8 @@
     "related": [
       "レイノルズ数",
       "乱流"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "rayleigh-number",
@@ -1114,7 +1152,8 @@
     "related": [
       "自然対流",
       "グラスホフ数"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "critical-heat-flux",
@@ -1146,7 +1185,8 @@
     "related": [
       "限界熱流束",
       "プール沸騰"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "radiation-view-factor",
@@ -1180,7 +1220,8 @@
     "related": [
       "形態係数",
       "放射率"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "fick-diffusive-flux",
@@ -1211,7 +1252,8 @@
     "formula": "JA=−cDAB∇yA",
     "related": [
       "物質拡散"
-    ]
+    ],
+    "reviewStatus": "needs_review"
   },
   {
     "id": "fourier-law",

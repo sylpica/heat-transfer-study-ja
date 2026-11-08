@@ -4,6 +4,9 @@
   "lang": "ja",
   "start_url": ".",
   "display": "standalone",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
   "background_color": "#f7f5ef",
   "theme_color": "#f7f5ef",
   "description": "熱移動の読書・演習・復習を支える日本語学習アプリ"

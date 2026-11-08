@@ -777,5 +777,5 @@ try {
   assert.equal(await page.locator('#reader-deep-lesson .deep-worked-example li').count(),lessonFor('10.1').workedExample.steps.length);
   assert.deepEqual(errors,[]);
   assert.deepEqual(external,[]);
-  console.log(engine==='webkit'?'WebKitで公開配信物の主要画面・保存・PDFキャッシュのオンライン範囲取得を確認。Playwright WebKitのオフライン通信・再訪は内部エラーのため未検証。':`${engine}で公開配信物：原本PDFとオフラインの範囲取得、訳文・抽出原図なし、ガイド・演習・計算・保存・画面幅・数字キーとEnter・3種類の表示モードを確認。`);
+  console.log(engine==='webkit'?'WebKitで公開配信物の主要画面・保存・PDFキャッシュのオンライン範囲取得を確認。Playwright WebKitのオフライン通信・再訪は内部エラーのため未検証。':`${engine}で公開配信物：原本PDFとオフラインの範囲取得、日本語訳76節・抽出原図なし、ガイド・演習・計算・保存・画面幅・数字キーとEnter・3種類の表示モードを確認。`);
 } finally {await browser?.close();if(server)await new Promise(resolve=>server.close(resolve));}

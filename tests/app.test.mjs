@@ -236,6 +236,8 @@ test('source ranges distinguish book and PDF pages, and figure links reject exte
 test('book source links open the cited public PDF page even when translated text is unavailable',()=>{
   const h=harness();h.api.terms=[{id:'term',ja:'熱',en:'heat',meaning:'温度による移動',availableInApp:false,source:{section:'1.1',bookPages:'3–6',pdfPages:'17–20'}}];
   const glossary=h.api.renderGlossary();
+  assert.match(glossary,/原書の翻訳本文は読書画面に収録しています/);
+  assert.doesNotMatch(glossary,/原書の翻訳本文は未収録です/);
   assert.match(glossary,/アプリ内の日本語訳は未収録/);
   assert.match(glossary,/href="\.\/book\/AHTTv600\.pdf#page=17"/);
   h.api.state.settings.contentLanguage='en';

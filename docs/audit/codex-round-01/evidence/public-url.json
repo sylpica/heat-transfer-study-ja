@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-11-08T10:24:04.920894+00:00",
+  "base": "https://sylpica.github.io/heat-transfer-study-ja/",
+  "resources": [
+    {
+      "path": "",
+      "status": 200,
+      "bytes": 1260,
+      "sha256": "6d87834e1995e1da737dc963343b702ad57484eed87af6250ab997ce9386201b",
+      "etag": "\"6aebe132-4ec\""
+    },
+    {
+      "path": "data/content-manifest.json",
+      "status": 200,
+      "bytes": 2701,
+      "sha256": "ba09cd179e461ecab1cebade765b111c084d5b83b086665ab3ac44046cd1b1e7",
+      "etag": "\"6aebe132-a8d\"",
+      "manifest_entries": 76
+    },
+    {
+      "path": "dynamic/index.html",
+      "status": 404
+    },
+    {
+      "path": "sw.js",
+      "status": 200,
+      "bytes": 10877,
+      "sha256": "915b7a993baddda8cb62b0f48a443541449dd34814a61e293ef29c05af9db590",
+      "etag": "\"6aebe132-2a7d\""
+    }
+  ],
+  "deployed_commit": "not identified; HTTP observations do not prove deployment SHA"
+}

@@ -600,13 +600,13 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .term-unit,.term-formula {overflow-wrap:anywhere;}
 .simulation-figure {margin:12px 0 22px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface-soft);overflow-x:auto;}
 .simulation-figure figcaption {font-size:11px;line-height:1.6;color:var(--muted);margin:8px 0 0;}
-.sim-physical-diagram {display:block;width:100%;min-width:410px;max-height:235px;color:var(--ink);}
+.sim-physical-diagram {display:block;width:100%;min-width:0;max-height:235px;color:var(--ink);}
 .sim-physical-diagram text {fill:var(--ink);font-family:inherit;font-size:13px;font-weight:600;}
 .sim-physical-diagram .diagram-solid {fill:var(--amber-soft);stroke:var(--amber);stroke-width:2;}
 .sim-physical-diagram .diagram-ambient {fill:var(--blue-soft);stroke:var(--blue);stroke-width:2;}
 .sim-physical-diagram .diagram-arrow {fill:none;stroke:var(--accent-strong);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;}
 .sim-physical-diagram .diagram-boundary {fill:none;stroke:var(--blue);stroke-width:3;stroke-dasharray:6 6;}
-@media (max-width:540px) {.term-sheet {padding:23px 18px;max-height:85dvh;}.term-sheet h2{font-size:20px;}.simulation-figure{padding:8px;}.sim-physical-diagram{min-width:410px;}}
+@media (max-width:540px) {.term-sheet {padding:23px 18px;max-height:85dvh;}.term-sheet h2{font-size:20px;}.simulation-figure{padding:8px;}.sim-physical-diagram{min-width:0;}.sim-physical-diagram text{font-size:20px;}}
 
 @media (max-width: 540px) {
   .term-backdrop {align-items:end;justify-items:stretch;padding:0;}

@@ -1,0 +1,202 @@
+[
+  {
+    "mode": "conduction",
+    "quantity": "watts",
+    "js": 5625,
+    "python": 5625.0,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "convection",
+    "quantity": "watts",
+    "js": 1500,
+    "python": 1500,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "radiation",
+    "quantity": "watts",
+    "js": 1164.419064389217,
+    "python": 1164.419064389217,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "resistance",
+    "quantity": "watts",
+    "js": 70.58823529411764,
+    "python": 70.58823529411764,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "transient",
+    "quantity": "temperature",
+    "js": 34.7151776468577,
+    "python": 34.7151776468577,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "fin",
+    "quantity": "watts",
+    "js": 13.345904685587797,
+    "python": 13.345904685587803,
+    "error": 3.9930380470614306e-16,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "exchanger",
+    "quantity": "watts",
+    "js": 8000,
+    "python": 7999.999999999999,
+    "error": 1.1368683772161603e-16,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "slab",
+    "quantity": "centerTemperature",
+    "js": 72.07357355378282,
+    "python": 72.07357355378282,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "enclosure",
+    "quantity": "watts",
+    "js": 1689.7508717461428,
+    "python": 1689.7508717461428,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "cylinder",
+    "quantity": "watts",
+    "js": 9.480775132764668,
+    "python": 9.480775132764668,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "halfspace",
+    "quantity": "temperature",
+    "js": 71.32732588243539,
+    "python": 71.3273258824354,
+    "error": 1.4210854715202004e-14,
+    "error_definition": "absolute K",
+    "budget": 1e-05,
+    "pass": true
+  },
+  {
+    "mode": "flatplate",
+    "quantity": "nuAverage",
+    "js": 183.41069177788864,
+    "python": 183.41069177788864,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "pipe",
+    "quantity": "nu",
+    "js": 230.9267710546264,
+    "python": 230.9267710546264,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "crossflow",
+    "quantity": "nusselt",
+    "js": 52.392193876188735,
+    "python": 52.392193876188735,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "natural",
+    "quantity": "nusselt",
+    "js": 96.37829517604209,
+    "python": 96.37829517604209,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "laminarpipe",
+    "quantity": "nu",
+    "js": 7.519866518284109,
+    "python": 7.519866518284109,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "condensation",
+    "quantity": "h",
+    "js": 17298.468658481124,
+    "python": 17298.468658481124,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "diffusion",
+    "quantity": "fluxA",
+    "js": 0.15602728925547651,
+    "python": 0.15602728925547663,
+    "error": 7.115569525836566e-16,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "nucleate",
+    "quantity": "flux",
+    "js": 140461.9579848127,
+    "python": 140461.9579848127,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  },
+  {
+    "mode": "chf",
+    "quantity": "criticalFlux",
+    "js": 1107944.6408485055,
+    "python": 1107944.6408485055,
+    "error": 0.0,
+    "error_definition": "relative to Python reference",
+    "budget": 1e-11,
+    "pass": true
+  }
+]

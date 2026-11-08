@@ -1,7 +1,7 @@
 # モデル別説明書：長い凸ダクト放射
 
 - 日時：2026-11-07（Asia/Tokyo）
-- 対象モデル：数値核 `dynamic/dev/long-duct-radiation.mjs`（`createLongDuctViewFactors`／`createLongDuctRadiation`）。本線の開発専用画面は `dynamic/dev/long-duct.html`、自由頂点編集 UI はフェイリス側ブランチ `feiris/longduct-vertex-ui`（クローン `~/workspace/dev/heat-longduct-ui`）にあり、本線への統合は後段で行う。数値核の詳細は `docs/dynamic/LONG_DUCT_RADIATION_DEVELOPMENT.md`、本線画面は `docs/dynamic/LONG_DUCT_UI_DEVELOPMENT.md`、頂点編集は同ブランチの `docs/dynamic/LONG_DUCT_VERTEX_UI_20261107.md`。
+- 対象モデル：数値核 `dynamic/dev/long-duct-radiation.mjs`（`createLongDuctViewFactors`／`createLongDuctRadiation`）。本線の開発専用画面は `dynamic/dev/long-duct.html`、自由頂点編集 UI は統合ツリーの `dynamic/dev/long-duct-ui.mjs` に実装済み（開発画面のみ）。数値核の詳細は `docs/dynamic/LONG_DUCT_RADIATION_DEVELOPMENT.md`、本線画面は `docs/dynamic/LONG_DUCT_UI_DEVELOPMENT.md`、頂点編集は同ブランチの `docs/dynamic/LONG_DUCT_VERTEX_UI_20261107.md`。
 - 位置づけ：正本 §21.2 の16項目の説明書。本モデルは開発専用（`releaseApproved:false`、公開 allowlist 外）であり、公開画面の説明書ではない。Phase 3 締め可能性監査（`phase3-closure-audit-20261107.md`、熱放射の残作業 #8）を受けた整備である。
 - 読み分け：項目1〜2・9〜10・13 は初心者向け、それ以外は専門寄りの記述を含む。
 
@@ -85,7 +85,7 @@
 ## 12. モデルの限界
 
 - 凹形状・障害物による遮蔽、有限長・端面、一般 3D は対象外（監査の残作業 #1）。
-- 自由頂点編集はフェイリス側ブランチ `feiris/longduct-vertex-ui` のみにあり、本線画面はプリセット3種＋全幅・全高さのみ（監査の残作業 #6 は同ブランチで対応済み、本線統合は後段）。
+- 自由頂点編集は統合ツリーの開発画面に実装済み（公開ビルドには含まれない）。
 - 開発専用であり、公開ビルドには含まれない。開発画面のオフライン確認と公開候補への登録判断は未完了（監査の残作業 #7）。
 - 気体の放射吸収（参加媒体）、自然対流との連成は解かない。
 

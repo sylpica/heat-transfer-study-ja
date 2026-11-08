@@ -1,0 +1,50 @@
+[
+  {
+    "script": "tests/dynamic-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 10.23693037033081,
+    "log": "dynamic-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-radial-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 4.821793079376221,
+    "log": "dynamic-radial-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-channel-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 7.002274751663208,
+    "log": "dynamic-channel-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-radiation-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 4.5236194133758545,
+    "log": "dynamic-radiation-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-fin-learning-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 8.775158643722534,
+    "log": "dynamic-fin-learning-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-lumped-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 3.418822765350342,
+    "log": "dynamic-lumped-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-channel-learning-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 4.1088690757751465,
+    "log": "dynamic-channel-learning-browser-final.log"
+  },
+  {
+    "script": "tests/dynamic-radiation-learning-browser.mjs",
+    "exit_code": 0,
+    "duration_seconds": 3.2341344356536865,
+    "log": "dynamic-radiation-learning-browser-final.log"
+  }
+]

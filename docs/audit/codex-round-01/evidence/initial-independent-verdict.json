@@ -1,0 +1,42 @@
+{
+  "recorded_utc": "2026-11-08T10:10:56.603145+00:00",
+  "baseline_commit_available": "ed35d8c1a96b9e5f0f76b343a5c3c9e88d3b1c5d",
+  "baseline_tree": "e208afaf6e192660f1f3602ee24f7004f59e28bd",
+  "specified_S0": "dbd42cb3e9ba51c7cf58d0b171800266f04f57d1",
+  "s0_fetch_error": "upload-pack: not our ref",
+  "independent_initial_findings": [
+    {
+      "id": "C1-01",
+      "severity": "P1",
+      "subject": "#term-<id> deep links open 学習ホーム instead of the glossary",
+      "evidence": "probe-baseline.json; app.js routeFromHash treats term-id as an unsupported route",
+      "fix_candidate": "Resolve real term IDs at startup and on hashchange, reveal the compact row even with flashcards saved; unify dialog and search navigation."
+    },
+    {
+      "id": "C1-02",
+      "severity": "P2",
+      "subject": "Legacy JSON merge resets current flashcard position and shuffle",
+      "evidence": "mergeLearningData normalizes incoming legacy JSON to default flashcards and overwrites current prefs",
+      "fix_candidate": "Merge only explicitly supplied flashcard fields, preserving current values absent from legacy imports."
+    },
+    {
+      "id": "C1-03",
+      "severity": "P2",
+      "subject": "Glossary notice incorrectly claims Japanese translation is absent",
+      "evidence": "probe-baseline.json; public build includes all76 translated sections",
+      "fix_candidate": "Describe independent glossary authorship separately from the actual translation inventory, preserve no-expert-review disclosure."
+    },
+    {
+      "id": "C1-04",
+      "severity": "P1",
+      "subject": "Manual Pages deploy workflow selects a different branch and omits npm ci",
+      "evidence": ".github/workflows/deploy-public-pages.yml checkout ref codex/quality-audit-local-pack; clean integrated build requires esbuild",
+      "fix_candidate": "Require explicitly approved immutable source SHA and install lockfile dependencies before tests/build; do not dispatch deployment."
+    }
+  ],
+  "not_defects": [
+    "Flashcard inner details click already has a guard in S0-equivalent code; no change proposed."
+  ],
+  "independence": "No Muse audit findings or correction patches consulted. Prior known PR metadata disclosed in preflight. This initial candidate verdict was saved before product edits.",
+  "status": "provisional independent findings on user-designated mirror; exact-S0 verification pending"
+}

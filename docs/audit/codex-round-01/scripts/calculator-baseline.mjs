@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {runInNewContext} from 'node:vm';
+import {calculateSimulationModel} from '../../../../study-core.mjs';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../../../../',import.meta.url));
+const src=await readFile(root+'app.js','utf8');const from=src.indexOf('simValues:')+10;const end=src.indexOf('\n};',from);
+const inputs=runInNewContext('('+src.slice(from,end).trim()+')');
+const results=Object.entries(inputs).map(([mode,input])=>({mode,input,result:calculateSimulationModel(mode,input)}));
+await writeFile(new URL('../evidence/calculator-baseline.json',import.meta.url),JSON.stringify(results,null,2)+'\n');
+console.log(results.map(x=>({mode:x.mode,error:x.result.error??null,scalarValues:Object.fromEntries(Object.entries(x.result).filter(([k,v])=>typeof v==='number'))})));

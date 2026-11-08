@@ -1,7 +1,7 @@
 # モデル別説明書：風速→熱伝達率 h 推定
 
 - 日時：2026-11-07（Asia/Tokyo）
-- 対象モデル：開発専用モジュール `dynamic/dev/wind-heat-transfer.mjs`（`estimateWindHeatTransfer`、法則識別子 `wind-heat-transfer-correlation-v1`）。フェイリス側ブランチ `feiris/fin-wind-h`（起点 `0fa3965`、コミット `adaa7ff`）の成果物で、本線への統合は未実施。GUI はなく、相関式の評価器とその返却レコードが対象である。
+- 対象モデル：開発専用モジュール `dynamic/dev/wind-heat-transfer.mjs`（`estimateWindHeatTransfer`、法則識別子 `wind-heat-transfer-correlation-v1`）。フェイリス側ブランチ `feiris/fin-wind-h`（起点 `0fa3965`、コミット `adaa7ff`）の成果物で、統合ツリーの `dynamic/dev/` に開発画面（GUI）があり、推定 h のヒートシンク画面への受け渡しも接続済み。相関式の評価器とその返却レコード、および開発画面が対象である。
 - 位置づけ：正本 §21.2 がモデルごとに求める16項目の説明書。相関式・式番号・適用範囲の正は開発文書 `docs/dynamic/WIND_HEAT_TRANSFER_DEVELOPMENT.md` と参照記録 `docs/dynamic/WIND_HEAT_TRANSFER_REFERENCE_20261107.json` であり、本書はそれらと矛盾しない要約と、独立項目として不足していた使用例・誤解・読み方を補う。本モデルは時間発展を解くシミュレーションではなく、定常な相関式の評価であるため、項目5（初期条件）など該当しない項目はその旨を明記する。
 - 読み分け：項目1〜2・9〜10・13 は初心者向け、それ以外は専門寄りの記述を含む。
 
@@ -82,7 +82,7 @@ h は h = Nu·k/L（円柱では L = D）で得る。フィン付き面は `fin-
 
 ## 9. グラフの読み方
 
-- 本モデルには画面・グラフはない（開発専用、GUI 未実施）。結果は返却レコードで読む：`nusselt`、`h`、採用された相関の識別子 `correlation`、観測遷移の勾配 `transitionSlope`、`reynolds`／`prandtl`／`peclet`、`filmTemperatureK`、`warnings`。
+- 公開画面はないが、開発画面（公開ビルドには含まれない）がある。結果は返却レコードで読む：`nusselt`、`h`、採用された相関の識別子 `correlation`、観測遷移の勾配 `transitionSlope`、`reynolds`／`prandtl`／`peclet`、`filmTemperatureK`、`warnings`。
 - `correlation` は「どの式で推定したか」を示す最重要の項目で、値だけを見て式を確認しないと、境界付近での式の切替わり（項目13）に気づけない。
 
 ## 10. 結果の解釈
@@ -102,7 +102,7 @@ h は h = Nu·k/L（円柱では L = D）で得る。フィン付き面は `fin-
 
 ## 12. モデルの限界
 
-- GUI・ブラウザー確認・公開可否は未実施。`releaseApproved:false`、公開 allowlist 外。
+- 公開可否は未実施。GUI とそのブラウザー確認（Chromium）は開発画面で実施済み。`releaseApproved:false`、公開 allowlist 外。
 - 対象外として明示的に扱わないもの：平板の局所 h、一様熱流束平板、非加熱始端、粗さ壁、圧力勾配、管群、球・その他の形状、自然対流との混合対流、放射、物性の温度依存の自動評価。100 m/s 超では圧縮性の確認が必要という警告のみで、圧縮性そのものは解かない。
 - 式(7.66) と式(7.65) の間には Re_D = 4000 の境界で構成式由来の段差（約5.5%、Pr に依らず実モジュールで実測）がある。教科書の構成そのまま であり、境界付近の値はどちらの式でも相関のばらつき内とみなすべきである。
 - 液体の急峻遷移形は式(6.113) からの導出であり、教科書に印刷された完成形ではない（識別子と本書で区別済み）。Pe_D ≦ 0.2 の領域は既存静的モデルが拒否していた範囲を式(7.67) で拡張したもので、この拡張域に既存モデルの対応値は存在しない。

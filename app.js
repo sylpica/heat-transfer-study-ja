@@ -44,7 +44,11 @@ let contentManifest;
 let originalNotes;
 let deepLessons;
 let speechRun = 0;
-function routeFromHash() { return location.hash.slice(1).split('/')[0] || 'home'; }
+function termTargetFromHash() {
+  const match = /^#term-([a-z0-9][a-z0-9_-]*)$/i.exec(location.hash);
+  return match && (glossary || []).some(term => term.id === match[1]) ? match[1] : '';
+}
+function routeFromHash() { return /^#term-[a-z0-9][a-z0-9_-]*$/i.test(location.hash) ? 'glossary' : location.hash.slice(1).split('/')[0] || 'home'; }
 function guideTargetFromHash() { const id=location.hash.slice(1).split('/')[1]; return GUIDE_SECTIONS.some(section=>section.id===id)?id:''; }
 const activityPageId=makeId();
 let activityTick=Date.now(),lastInteractionAt=activityTick,activityWasVisible=document.visibilityState!=='hidden'&&(!document.hasFocus||document.hasFocus());
@@ -530,13 +534,29 @@ function openAppendixReferences(appendixId) {
   render();
   setTimeout(() => document.getElementById('appendix-references')?.scrollIntoView({ block: 'start' }), 60);
 }
-function setRoute(route) {
+function openGlossaryTerm(id, {deepLink=false} = {}) {
+  if (!(glossary || []).some(term => term.id === id)) return;
+  ui.glossaryQuery = '';
+  ui.expandedTerms.add(id);
+  // A term link must reveal its dictionary row even when a filtered or
+  // empty flashcard deck was saved. Keep the deck's order and position.
+  state.flashcards.mode = 'list';
+  persistQuiz();
+  saveState();
+  setRoute('glossary', deepLink ? `#term-${id}` : '#glossary');
+  requestAnimationFrame(() => {
+    const row = document.getElementById(`term-${id}`);
+    row?.scrollIntoView({block:'center'});
+    row?.querySelector('[data-term-toggle]')?.focus({preventScroll:true});
+  });
+}
+function setRoute(route, hash = `#${route}`) {
   flushLearningTime();
   if(ui.route==='reader'&&route!=='reader')captureReaderPosition();
   if(ui.route==='reader'&&route!=='reader')stopSpeech(false);
   ui.route = route;
   ui.guideTarget = '';
-  if (location.hash !== `#${route}`) location.hash = route;
+  if (location.hash !== hash) location.hash = hash;
   render();
   window.scrollTo({ top: 0, behavior: 'instant' });
   focusPageHeading();
@@ -599,8 +619,8 @@ async function startApp() {
         questionBank = [...new Map([...questionBank, ...questions.flat()].map(q => [q.id,q])).values()];
         glossary = [...new Map([...glossary, ...terms.flat()].map(t => [t.id,t])).values()];
         ui.localCacheFiles=['./data/local-content-manifest.json',...(manifest.files||[]),...(manifest.questionFiles||[]),...(manifest.glossaryFiles||[]),...content.flatMap(entry=>entry.blocks.filter(b=>b.src).map(b=>`./${b.src.replace(/^\.\//,'')}`))];
-      } else if (response.status !== 404) ui.contentWarning = 'ローカル教材を読み込めませんでした。収録済みの教材で学習を続けられます。';
-    } catch { ui.contentWarning = '追加のローカル教材を読み込めませんでした。教材ファイルをそろえて再読み込みしてください。学習記録は保持しています。'; }
+      } else if (response.status !== 404 && response.status !== 503 && navigator.onLine) ui.contentWarning = 'ローカル教材を読み込めませんでした。収録済みの教材で学習を続けられます。';
+    } catch { if (navigator.onLine) ui.contentWarning = '追加のローカル教材を読み込めませんでした。教材ファイルをそろえて再読み込みしてください。学習記録は保持しています。'; }
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
       navigator.serviceWorker.addEventListener('message',event=>{
         if(event.data?.type==='CONTENT_CACHE_RESULT'&&!event.data.ok)showStatus('追加教材のオフライン保存が完了しませんでした。ネット接続中に再読み込みしてください。');
@@ -629,6 +649,8 @@ async function startApp() {
       }).catch(()=>{setPdfCacheStatus('unsupported');showStatus('オフライン保存の準備に失敗しました。ネット接続中に再読み込みしてください。');});
     } else setPdfCacheStatus('unsupported');
     window.addEventListener('hashchange', () => {
+      const termTarget = termTargetFromHash();
+      if (termTarget) { openGlossaryTerm(termTarget, {deepLink:true}); return; }
       const next=routeFromHash(),guideTarget=guideTargetFromHash(),readerTarget=readerSectionFromHash(location.hash,allSections().map(s=>s.id));if(next===ui.route&&guideTarget===ui.guideTarget&&(!readerTarget||readerTarget===ui.readerSection))return;
       flushLearningTime();if(ui.route==='reader'){captureReaderPosition();stopSpeech(false);}persistQuiz();
       if(readerTarget)ui.readerSection=readerTarget;ui.route=next;ui.guideTarget=guideTarget;if(guideTarget)ui.guideQuery='';render();window.scrollTo({top:0,behavior:'instant'});focusPageHeading();
@@ -660,7 +682,9 @@ async function startApp() {
     setInterval(()=>flushLearningTime(true),5000);
     systemDark?.addEventListener?.('change', () => { if (state.settings.theme === 'system') render(); });
     const initialReaderTarget=readerSectionFromHash(location.hash,allSections().map(s=>s.id));if(initialReaderTarget)ui.readerSection=initialReaderTarget;
-    render();
+    const initialTermTarget = termTargetFromHash();
+    if (initialTermTarget) openGlossaryTerm(initialTermTarget, {deepLink:true});
+    else render();
     if(ui.route==='reader')setTimeout(()=>restoreReaderPosition(state.readerPositions[ui.readerSection]),100);
     if(ui.route==='guide'&&ui.guideTarget)setTimeout(()=>focusGuideSection(ui.guideTarget),0);
   } catch (error) {
@@ -705,6 +729,7 @@ function render() {
   document.documentElement.style.setProperty('--reader-line-height', String(state.settings.lineHeight || 1.8));
   document.documentElement.dataset.readerWidth = state.settings.width || 'reading';
   const routeView = routeContent();
+  const reportQuestion = ui.reportId ? (questionBank || []).find(q => q.id === ui.reportId) : null;
   root.innerHTML = `
     <div class="app-shell">
       <a href="#main-content" class="skip-link" data-action="skip-content">本文へスキップ</a>
@@ -726,13 +751,18 @@ function render() {
         <main class="main-content" id="main-content" tabindex="-1">${storageIssue ? `<aside class="notice-card storage-warning" role="alert"><p>${escapeHTML(storageIssue)}</p><button type="button" class="button secondary" data-action="export-data">学習データを書き出す</button>${storageConflict ? '<button type="button" class="button secondary" data-action="force-save">このタブの内容で上書き保存する</button><p class="small-note">上書きすると、別のタブで新しく記録された内容は失われます。このタブの変更を残したい場合だけ使ってください。</p>' : ''}${recoveryRaw ? '<button type="button" class="button secondary" data-action="export-recovery">保管した元データを書き出す</button>' : ''}</aside>` : ''}${ui.contentWarning ? `<aside class="notice-card" role="alert"><p>${escapeHTML(ui.contentWarning)}</p></aside>` : ''}${routeView}</main>
       </div>
       <footer class="app-footer"><span>学習データはこのブラウザー内に保存されます。</span><span>教材進捗：原書の日本語訳を全${allSections().length}節に収録（専門家校閲未実施）。独自日本語ノート・発展教材・図解は${originalMaterialSectionCount()}節に収録</span></footer>
-    </div>${ui.pendingQuizStart ? renderQuizStartConfirm() : ''}`;
+    </div>${ui.pendingQuizStart ? renderQuizStartConfirm() : ''}${reportQuestion ? renderReportForm(reportQuestion) : ''}`;
   for(const block of root.querySelectorAll('.guide-body,.simulation-steps'))linkTermTextNodes(block,glossary||[]);
   // Simulator field labels and help text live inside <label> elements; the
   // labels opt-in keeps the control cluster itself unlinked (see
   // linkTermTextNodes). The outputs-only re-render never replaces the
   // input card, so this full-render pass is the one that wires the fields.
   for(const block of root.querySelectorAll('.sim-fields'))linkTermTextNodes(block,glossary||[],{labels:true});
+  // Both render-managed modals live outside .app-shell (the report form is
+  // rendered at shell level for this reason); inert the background while
+  // either is open, mirroring the term sheet (audit A2-UXS-11, R1-P2-08).
+  const shellEl=root.querySelector('.app-shell');
+  if(shellEl){ if(ui.reportId||ui.pendingQuizStart)shellEl.setAttribute('inert',''); else if(!ui.termId)shellEl.removeAttribute('inert'); }
   if(ui.reportId)document.querySelector('.report-modal button')?.focus();
   if(ui.pendingQuizStart)document.querySelector('.quiz-start-modal [data-action="confirm-quiz-start"]')?.focus();
   restoreTransientUi(transientSnapshot);
@@ -1184,7 +1214,7 @@ function renderGlossary() {
     <div class="glossary-mode-row"><div class="language-toggle" role="group" aria-label="用語集の表示方法"><button type="button" class="${mode === 'list' ? 'selected' : ''}" data-action="glossary-mode" data-mode="list" aria-pressed="${mode === 'list'}">通常表示</button><button type="button" class="${mode === 'cards' ? 'selected' : ''}" data-action="glossary-mode" data-mode="cards" aria-pressed="${mode === 'cards'}">単語帳</button></div></div>
     ${mode === 'cards' ? renderFlashcards(language) : `<div class="glossary-search surface-card"><label for="glossary-query">用語を探す</label><input id="glossary-query" type="search" value="${escapeHTML(query)}" placeholder="用語や英語名を入力"/></div>
     <div class="glossary-grid">${termCards}</div>`}
-    <div class="notice-card"><span class="notice-icon">i</span><p>用語集は全${allSections().length}節の収録教材（独自日本語ノート・発展教材）をもとに作成しています。原書の翻訳本文は未収録です。</p></div>`;
+    <div class="notice-card"><span class="notice-icon">i</span><p>用語集は全${allSections().length}節の収録教材（独自日本語ノート・発展教材）をもとに作成しています。原書の翻訳本文は読書画面に収録しています。用語集と収録教材の専門家校閲は未実施です。</p></div>`;
 }
 
 function currentFlashcardDeck() {
@@ -1349,7 +1379,7 @@ function renderPlan() {
         <ol class="suggested-steps"><li><span>1</span><div><strong>${readingSuggestion ? `${state.readSections[readingSuggestion.id] ? '読み返す' : '読む'}：第${readingSuggestion.chapterId.slice(2)}章${readingSuggestion.id}節「${escapeHTML(readingSuggestion.title)}」` : '節の目次を確認してください'}</strong><small>目安 ${planMinutes(plan.minutesPerDay)[0]} 分 · ${readingSuggestion&&sectionIsTranslated(readingSuggestion)?'日本語訳または英語原本':'英語原本PDF'}</small></div><a href="#reader" ${readingSuggestion ? `data-section="${readingSuggestion.id}"` : 'aria-disabled="true"'}>開く</a></li><li><span>2</span><div><strong>関連する問題に挑戦する</strong><small>目安 ${planMinutes(plan.minutesPerDay)[1]} 分 · 回答履歴を記録</small></div><a href="#quiz">始める</a></li><li><span>3</span><div><strong>${todayDue ? `${todayDue}問の復習候補を確認する` : '復習の準備をする'}</strong><small>目安 ${planMinutes(plan.minutesPerDay)[2]} 分 · 自信度も考慮</small></div><a href="#review">確認</a></li></ol>
         <p class="small-note">提案は収録済み教材と回答履歴に基づきます。全文の学習所要時間や、未翻訳範囲の完了日は推定していません。</p>
       </section>
-      <section class="surface-card plan-summary-card"><p class="eyebrow">計画の見通し</p>${plan.active ? `<div class="summary-highlight"><strong>${remaining === null ? '—' : remaining}</strong><span>${remaining === 1 ? '日後まで' : '日間の予定'}</span></div><p>目標日：${formatDate(plan.targetDate)}　·　1日 ${Number(plan.minutesPerDay) || 15} 分</p><p class="muted">目標：${escapeHTML(plan.goal || '未入力')}</p>` : '<div class="empty-state compact"><span class="empty-mark">▦</span><p>計画を保存すると、目標と1日の学習時間がここに表示されます。</p></div>'}</section>
+      <section class="surface-card plan-summary-card"><p class="eyebrow">計画の見通し</p>${plan.active ? `<div class="summary-highlight"><strong>${remaining === null ? '—' : remaining}</strong><span>${remaining === null ? '目標日なし' : remaining === 0 ? '今日が目標日' : remaining === 1 ? '日後まで' : '日間の予定'}</span></div><p>目標日：${formatDate(plan.targetDate)}　·　1日 ${Number(plan.minutesPerDay) || 15} 分</p><p class="muted">目標：${escapeHTML(plan.goal || '未入力')}</p>` : '<div class="empty-state compact"><span class="empty-mark">▦</span><p>計画を保存すると、目標と1日の学習時間がここに表示されます。</p></div>'}</section>
     </div>`;
 }
 
@@ -1792,7 +1822,7 @@ function renderQuiz() {
       ${!answer ? `<button class="button primary answer-submit" type="submit" ${session.selected === null ? 'disabled' : ''}>回答する <span aria-hidden="true">↵</span></button>` : '<button type="button" class="button primary answer-submit" data-action="next-question">次の問題へ →</button>'}</form>
       ${answer ? renderAnswerFeedback(question, answer, note, choiceOrder) : ''}
     </article>
-    ${ui.reportId === question.id ? renderReportForm(question) : ''}`;
+    `;
 }
 
 function modeLabel(mode) { return ({ all: 'すべて', unanswered: '未回答', wrong: '誤答', bookmarked: 'ブックマーク', due: '復習候補', weak: '苦手候補', single: '選択した問題', quick: '短時間学習' })[mode] || '問題演習'; }
@@ -1805,7 +1835,7 @@ function renderQuizSetup() {
        <div class="form-two"><label>分野<select name="field"><option value="all">すべて</option>${[...questionsByField().keys()].map(field => `<option>${escapeHTML(field)}</option>`).join('')}</select></label><label>難易度<select name="difficulty"><option value="all">すべて</option>${[...new Set(questionBank.map(q => q.difficulty))].map(value => `<option>${escapeHTML(value)}</option>`).join('')}</select></label></div>
       <label>問題数<select name="count"><option value="3">3問</option><option value="5" selected>5問</option><option value="${questionBank.length}">すべて（${questionBank.length}問）</option></select></label>
       <button class="button primary" type="submit">この条件で始める →</button>
-      <p class="small-note">候補が少ないときは、条件を広げて問題を選びます。回答数の少なさだけで苦手と判定しません。</p>
+      <p class="small-note">候補が少ないときは、選んだ条件のまま少ない問題数で開始します。回答数の少なさだけで苦手と判定しません。</p>
     </form></section>
     <aside class="surface-card quick-session-card"><p class="eyebrow">短時間学習</p><h2>5分・10分だけ取り組む</h2><p>未回答や復習候補から、短い問題セットを作ります。回答のたびに履歴が保存されます。</p><div class="quick-buttons"><button type="button" class="button secondary" data-short-session="5">5分 · 3問まで</button><button type="button" class="button secondary" data-short-session="10">10分 · 6問まで</button></div><div class="quick-divider"></div><p class="eyebrow">今の復習候補</p><div class="quick-stat"><strong>${due.length}</strong><span>問</span><small>${due.length ? '直近の誤答・自信度・予定日をもとに抽出' : '回答後に候補が表示されます'}</small></div><a class="text-link" href="#review">抽出理由を見る →</a></aside></div>
     <section class="surface-card question-bank-card"><div class="card-heading"><div><p class="eyebrow">収録中の問題</p><h2>${questionBank.length}問</h2></div><div class="card-heading-actions">${statusPill('専門家校閲なし', 'amber')}<button type="button" class="button secondary" data-action="toggle-question-bank" aria-expanded="${ui.bankOpen}" aria-controls="question-bank-panel">${ui.bankOpen ? '問題一覧を閉じる' : '問題一覧を開く'}</button></div></div><div id="question-bank-panel" ${ui.bankOpen ? '' : 'hidden'}><div class="question-bank-list">${questionBank.map((q, bankIndex) => `<button type="button" class="bank-item" data-start-question="${escapeHTML(q.id)}"><span class="bank-item-index">${bankIndex + 1}</span><span><strong>${escapeHTML(q.prompt)}</strong><small>${escapeHTML(q.field)} · ${escapeHTML(q.difficulty)} · ${sourceLabel(q.source)}</small></span><b>→</b></button>`).join('')}</div><p class="small-note">独自の補足問題と書籍を出典に持つ問題は、各問題の出典欄で区別します。英語原本PDFは読書画面から閲覧できます。書籍の日本語訳は読書画面に収録しています。原図は公開版に未収録です。</p></div></section>`;
@@ -1944,7 +1974,7 @@ function onClick(event) {
   const termClose=event.target.closest('[data-close-term]');
   if(termClose){event.preventDefault();closeTermSheet();return;}
   const detail=event.target.closest('[data-term-detail]');
-  if(detail){event.preventDefault();const id=detail.dataset.termDetail;closeTermSheet();ui.glossaryQuery='';ui.expandedTerms.add(id);setRoute('glossary');setTimeout(()=>document.getElementById('term-'+id)?.scrollIntoView({block:'center'}),90);return;}
+  if(detail){event.preventDefault();const id=detail.dataset.termDetail;closeTermSheet();openGlossaryTerm(id);return;}
   if(ui.termId&&event.target.closest('[data-term-backdrop]')&&!event.target.closest('.term-sheet')){event.preventDefault();closeTermSheet();return;}
   const languageButton = event.target.closest('[data-language]');
   if (languageButton) {
@@ -2000,7 +2030,7 @@ function onClick(event) {
   const short = event.target.closest('[data-short-session]'); if (short) { event.preventDefault(); startQuickSession(Number(short.dataset.shortSession)); return; }
   const startQuestion = event.target.closest('[data-start-question]'); if (startQuestion) { event.preventDefault(); startQuiz({ mode: 'single', questionId: startQuestion.dataset.startQuestion, count: 1 }); return; }
   const startIds = event.target.closest('[data-start-ids]'); if (startIds) { event.preventDefault(); try { startQuiz({ mode: 'wrong', questionIds: JSON.parse(startIds.dataset.startIds), count: 8 }); } catch { showStatus('問題セットを読み込めませんでした。'); } return; }
-  const target = event.target.closest('[data-search-target]'); if (target) { event.preventDefault(); try { const item=JSON.parse(target.dataset.searchTarget); if (item.section) ui.readerSection=item.section; if (item.language && ['ja','en'].includes(item.language)) { state.settings.contentLanguage=item.language; saveState(); } if (item.question) { startQuiz({ mode:'single', questionId:item.question, count:1 }); return; } if(item.guideId&&GUIDE_SECTIONS.some(g=>g.id===item.guideId)){location.hash='#guide/'+item.guideId;return;} if (item.term) { ui.glossaryQuery=''; ui.expandedTerms.add(item.term); setRoute('glossary'); setTimeout(()=>document.getElementById(`term-${item.term}`)?.scrollIntoView({behavior:'smooth',block:'center'}),80); return; } if (item.chapterExtras) { ui.extrasFocus={chapter:item.chapterExtras,entryId:item.entryId}; openChapterExtras(item.chapterExtras); return; } if(item.route==='reader'&&item.section){openReader(item.section,{...item,query:ui.search.query});return;} if (item.route) setRoute(item.route); } catch { showStatus('検索先を開けませんでした。'); } return; }
+  const target = event.target.closest('[data-search-target]'); if (target) { event.preventDefault(); try { const item=JSON.parse(target.dataset.searchTarget); if (item.section) ui.readerSection=item.section; if (item.language && ['ja','en'].includes(item.language)) { state.settings.contentLanguage=item.language; saveState(); } if (item.question) { startQuiz({ mode:'single', questionId:item.question, count:1 }); return; } if(item.guideId&&GUIDE_SECTIONS.some(g=>g.id===item.guideId)){location.hash='#guide/'+item.guideId;return;} if (item.term) { openGlossaryTerm(item.term); return; } if (item.chapterExtras) { ui.extrasFocus={chapter:item.chapterExtras,entryId:item.entryId}; openChapterExtras(item.chapterExtras); return; } if(item.route==='reader'&&item.section){openReader(item.section,{...item,query:ui.search.query});return;} if (item.route) setRoute(item.route); } catch { showStatus('検索先を開けませんでした。'); } return; }
   const termBookmarkToggle = event.target.closest('[data-term-bookmark]'); if (termBookmarkToggle) { const id=termBookmarkToggle.dataset.termBookmark; state.termBookmarks = state.termBookmarks.includes(id) ? state.termBookmarks.filter(item=>item!==id) : [...state.termBookmarks,id]; const saved=saveState(); render(); if(state.flashcards.mode==='cards')root.querySelector('.flash-card [data-term-bookmark]')?.focus(); showStatus(saved?(state.termBookmarks.includes(id) ? '用語をブックマークしました。' : '用語ブックマークを外しました。'):'用語ブックマークを端末に保存できませんでした。JSONを書き出してください。'); return; }
   const bookmarkToggle = event.target.closest('[data-question-bookmark]'); if (bookmarkToggle) { const id=bookmarkToggle.dataset.questionBookmark; state.questionBookmarks = state.questionBookmarks.includes(id) ? state.questionBookmarks.filter(item=>item!==id) : [...state.questionBookmarks,id]; const saved=saveState(); render(); showStatus(saved?(state.questionBookmarks.includes(id) ? '問題をブックマークしました。' : '問題ブックマークを外しました。'):'問題ブックマークを端末に保存できませんでした。JSONを書き出してください。'); return; }
   const deleteBookmark = event.target.closest('[data-delete-bookmark]'); if (deleteBookmark) { state.bookmarks=state.bookmarks.filter(item=>item.id!==deleteBookmark.dataset.deleteBookmark); saveState(); render(); return; }

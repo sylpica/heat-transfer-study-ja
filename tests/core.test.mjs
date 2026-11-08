@@ -138,3 +138,23 @@ test('revised question answers never inflate field mastery while historical reco
 
   assert.equal(isCurrentQuestionAnswer({id:'q3'},attempt({questionId:'q3',questionRevision:undefined})),true);
 });
+
+test('import rejects duplicate ids and normalize heals them without double counting (R1-P2-06/R1-P2-07)',()=>{
+  const activity=(id,seconds)=>({id,date:'2026-10-19',kind:'reading',seconds,sectionId:'1.1',updatedAt:'2026-10-19T15:15:00.000Z'});
+  const dupActivities=exported();dupActivities.activities=[activity('t1',600),activity('t1',600)];
+  assert.match(validateLearningData(dupActivities),/学習時間の記録に重複/);
+  const healed=normalizeLearningData(dupActivities);
+  assert.equal(healed.activities.length,1);assert.equal(healed.activities[0].seconds,600);
+  const dupAttempts=exported();dupAttempts.attempts=[attempt(),attempt({questionId:'q2'})];
+  assert.match(validateLearningData(dupAttempts),/回答履歴に重複/);
+  const session=(id)=>({id,date:'2026-10-19',total:1,correct:1,startedAt:'2026-10-19T15:00:00.000Z',answers:[]});
+  const dupSessions=exported();dupSessions.sessions=[session('s1'),session('s1')];
+  assert.match(validateLearningData(dupSessions),/学習セッションに重複/);
+  assert.equal(normalizeLearningData(dupSessions).sessions.length,1);
+  const note=(id)=>({id,text:'メモ',sectionId:'1.1',createdAt:'2026-10-19T15:15:00.000Z'});
+  const dupNotes=exported();dupNotes.notes=[note('n1'),note('n1')];
+  assert.match(validateLearningData(dupNotes),/学習メモに重複/);
+  assert.equal(normalizeLearningData(dupNotes).notes.length,1);
+  const ok=exported();ok.activities=[activity('t1',600),activity('t2',300)];ok.sessions=[session('s1')];ok.notes=[note('n1')];
+  assert.equal(validateLearningData(ok),'');
+});

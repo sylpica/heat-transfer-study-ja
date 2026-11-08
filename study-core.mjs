@@ -148,6 +148,13 @@ export function validateLearningData(data, {stored=false}={}) {
     // locked out of their own record; loading heals duplicates instead.
     const seenAttempts=new Set();
     for (const a of data.attempts) { const k=attemptKey(a); if (seenAttempts.has(k)) return invalid('回答履歴に重複した記録が含まれています。'); seenAttempts.add(k); }
+    // The app never writes two rows with the same id in any of these
+    // collections; a file that does would silently double-count study time
+    // or drop an answer when normalized, so reject it here like the
+    // duplicate-answer check above.
+    const dupId=(rows,label)=>{ const seen=new Set(); for (const r of rows||[]) { if (!r||typeof r.id!=='string'||!r.id) continue; if (seen.has(r.id)) return invalid(`${label}に重複した記録が含まれています。`); seen.add(r.id); } return ''; };
+    const dupError=dupId(data.attempts,'回答履歴')||dupId(data.sessions,'学習セッション')||dupId(data.activities,'学習時間の記録')||dupId(data.notes,'学習メモ')||dupId(data.bookmarks,'本文のしおり');
+    if (dupError) return dupError;
     const tooLong=v=>typeof v==='string'&&v.length>10000;
     if ((Array.isArray(data.notes)&&data.notes.some(n=>tooLong(n.text)||tooLong(n.title)))
       || data.bookmarks.some(b=>tooLong(b.note))
@@ -188,6 +195,13 @@ export function normalizeLearningData(data) {
     if (!prev||instant(b&&b.createdAt)>=instant(prev&&prev.createdAt)) bookmarkById.set(key,b);
   }
   out.bookmarks=[...bookmarkById.values()];
+  // Sessions, activities, and notes are also addressed by id (calendar
+  // totals sum activities, session lists render one row per session), so
+  // heal duplicate ids the same way instead of double-counting them.
+  const dedupeRowsById=rows=>{ const byId=new Map(); for (const r of rows) { const key=r&&r.id?r.id:JSON.stringify(r); const prev=byId.get(key); if (!prev||updated(r)>=updated(prev)) byId.set(key,r); } return [...byId.values()]; };
+  out.sessions=dedupeRowsById(out.sessions);
+  out.activities=dedupeRowsById(out.activities);
+  out.notes=dedupeRowsById(out.notes);
   // Session records embed a snapshot of their answers. Heal duplicate rows
   // inside a snapshot with the same content key as attempts; the session
   // totals are stored separately and are deliberately not recomputed here.
@@ -221,7 +235,10 @@ export function mergeLearningData(current, incoming) {
   out.sessions.sort((x,y)=>instant(x.finishedAt??x.startedAt)-instant(y.finishedAt??y.startedAt));
   out.questionBookmarks=[...new Set([...a.questionBookmarks,...b.questionBookmarks])];
   out.termBookmarks=[...new Set([...a.termBookmarks,...b.termBookmarks])];
-  out.flashcards={...a.flashcards,...b.flashcards};
+  // Legacy exports have no flashcard preferences. Normalizing them supplies
+  // defaults for replacement, but those defaults must not erase a current
+  // deck's position or shuffled order during an additive import.
+  out.flashcards={...a.flashcards,...(record(incoming.flashcards)?incoming.flashcards:{})};
   for(const k of ['mistakeNotes','readerPositions','reviews']) out[k]=mergeMap(a[k],b[k]);
   out.readSections={...a.readSections}; for(const [k,v] of Object.entries(b.readSections)) out.readSections[k]=Boolean(a.readSections[k]||v);
   out.questionReports={...a.questionReports}; for(const [k,v] of Object.entries(b.questionReports)) out.questionReports[k]=mergeRows(a.questionReports[k]||[],v);

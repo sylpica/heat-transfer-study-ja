@@ -92,8 +92,14 @@ try{
     await page.waitForFunction(()=>document.querySelectorAll('.sim-guide-popup .inline-term').length>0,null,{timeout:15000});
     const termId=await page.evaluate(()=>document.querySelector('.sim-guide-popup .inline-term').dataset.termId);
     const [tab]=await Promise.all([context.waitForEvent('page',{timeout:15000}),page.locator('.sim-guide-popup .inline-term').first().click()]);
-    await tab.waitForLoadState('domcontentloaded');
+    // A newly opened noopener page can first report the initial blank
+    // document as loaded. Wait for the requested navigation itself, then
+    // verify the linked dictionary row rather than merely its URL.
+    await tab.waitForURL(url=>url.hash===`#term-${termId}`);
     assert.ok(tab.url().includes(`#term-${termId}`),`lab: term opens glossary entry ${termId} in a new tab (${tab.url()})`);
+    const linkedRow=tab.locator(`[id="term-${termId}"]`);
+    await linkedRow.waitFor();
+    assert.equal(await linkedRow.locator('[data-term-toggle]').getAttribute('aria-expanded'),'true');
     results.push(`lab: term link opens ../index.html#term-${termId} in a new tab`);
     await tab.close();
     await page.locator('.sim-guide-nav button').nth(2).click();

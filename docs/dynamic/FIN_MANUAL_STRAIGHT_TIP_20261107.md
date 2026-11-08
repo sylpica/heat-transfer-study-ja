@@ -1,7 +1,7 @@
 # モデル別説明書：直線フィン（対流先端／断熱先端）
 
 - 日時：2026-11-07（Asia/Tokyo）
-- 対象モデル：開発専用モジュール `dynamic/dev/fin-convective-tip.mjs`（`createStraightFin`、法則識別子 `straight-fin-convective-tip-1d-v1`）。フェイリス側ブランチ `feiris/fin-convective-tip`（起点 `f9bdfef`、コミット `9f7f267`）の成果物で、本線への統合は未実施。GUI・Worker はなく、数値コアとそのスナップショットが対象である。
+- 対象モデル：開発専用モジュール `dynamic/dev/fin-convective-tip.mjs`（`createStraightFin`、法則識別子 `straight-fin-convective-tip-1d-v1`）。フェイリス側ブランチ `feiris/fin-convective-tip`（起点 `f9bdfef`、コミット `9f7f267`）の成果物で、統合ツリーの `dynamic/dev/` に開発画面（GUI）を含む。Worker はなく、数値コアとそのスナップショット、および開発画面が対象である。
 - 位置づけ：正本 §21.2 がモデルごとに求める16項目の説明書。数値・検証値の正は開発文書 `docs/dynamic/FIN_CONVECTIVE_TIP_DEVELOPMENT.md` と参照記録 `docs/dynamic/FIN_CONVECTIVE_TIP_REFERENCE_20261107.json` であり、本書はそれらと矛盾しない要約と、独立項目として不足していた使用例・誤解・読み方を補う。既存の学習モデルは断熱先端のみだったところへ、対流先端と解析解照合を追加したモデルである。
 - 読み分け：項目1〜2・9〜10・13 は初心者向け、それ以外は専門寄りの記述を含む。
 
@@ -74,7 +74,7 @@
 
 ## 9. グラフの読み方
 
-- 本モデルには画面・グラフはない（開発専用、GUI 未実施）。結果はスナップショットの数値配列で読む。
+- 公開画面はないが、開発画面（公開ビルドには含まれない）にはグラフ表示がある。公開側で結果を読む場合はスナップショットの数値配列を使う。
 - `temperature` はセル中心位置 `positions` における代表値の配列である。`tipCellTemperatureK` は最終セルの代表値であり、先端面 x = L の温度ではない。解析的な先端面温度は参照記録に別途ある（正準条件で対流先端 340.239853 K、断熱先端 340.746691 K）。
 - η・ε は過渡中は瞬時損失ベースの診断量であり、定常到達時に古典値と一致する（項目13）。
 
@@ -95,7 +95,7 @@
 
 ## 12. モデルの限界
 
-- GUI・Worker 接続・ブラウザー確認・公開可否は未実施。`releaseApproved:false`、公開 allowlist 外。
+- Worker 接続・公開可否は未実施。GUI とそのブラウザー確認（Chromium）は開発画面で実施済み。`releaseApproved:false`、公開 allowlist 外。
 - 先端だけ別の h、軸方向に変化する h は未対応。変断面フィン、温度依存物性、放射、基部の2D熱拡がり・接触抵抗、複数フィン／フィン間流れは未対応で、入力は原子的に拒否されるか assumptions に明示している。風速→h 推定は別モジュール（`wind-heat-transfer.mjs`）の担当で、本モジュールには含まない。
 - 開発範囲は断面 Bi ≤ 0.1、セル数 4〜256 で、範囲外は推定値を返さず拒否する。
 

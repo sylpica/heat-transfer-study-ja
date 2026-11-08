@@ -115,3 +115,30 @@ test('merge unions term bookmarks from both records', () => {
   const b = { ...createEmptyState(), termBookmarks: ['b', 'c'] };
   assert.deepEqual(mergeLearningData(a, b).termBookmarks, ['a', 'b', 'c']);
 });
+
+test('adding a legacy export preserves the current flashcard position and shuffle', () => {
+  const current = createEmptyState();
+  current.flashcards = {...current.flashcards, mode:'cards', backFirst:true,
+    flipped:true, sort:'kana', order:['heat-rate','temperature'], index:1};
+  current.termBookmarks = ['heat-rate'];
+  const legacy = {...createEmptyState(), format:DATA_FORMAT};
+  delete legacy.flashcards;
+  delete legacy.termBookmarks;
+  assert.equal(validateLearningData(legacy), '');
+  const merged = mergeLearningData(current, legacy);
+  assert.deepEqual(merged.flashcards, current.flashcards);
+  assert.deepEqual(merged.termBookmarks, current.termBookmarks);
+});
+
+test('a partial incoming flashcard preference changes only explicitly supplied fields', () => {
+  const current = createEmptyState();
+  current.flashcards = {...current.flashcards, mode:'cards', index:7, order:['temperature','heat-rate']};
+  const incoming = {...createEmptyState(), format:DATA_FORMAT, flashcards:{backFirst:true}};
+  assert.equal(validateLearningData(incoming), '');
+  const merged = mergeLearningData(current, incoming);
+  assert.deepEqual(merged.flashcards, {...current.flashcards, backFirst:true});
+  assert.equal(validateLearningData({...merged, format:DATA_FORMAT}), '');
+  // Replacement of an old export intentionally starts a default deck.
+  delete incoming.flashcards;
+  assert.deepEqual(normalizeLearningData(incoming).flashcards, createEmptyState().flashcards);
+});

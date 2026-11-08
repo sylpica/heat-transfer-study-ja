@@ -1,0 +1,293 @@
+{
+ "chunk": 3,
+ "results": [
+  {
+   "id": "supp-applied-9-3-v1",
+   "independent_choice_index": 1,
+   "working": "q''_actual=12kW/0.020m²=6.0e5 W/m²。余裕=(1-6.0e5/1.0e6)*100=40%",
+   "computed_or_physical_result": "q''_actual=6.0×10⁵ W/m²、余裕40%",
+   "alternative_choices_review": "60%は余裕でなくCHF比そのもの、20%/80%は計算と不一致で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-heat-conduction-direction-v1",
+   "independent_choice_index": 2,
+   "working": "q_x''=-k dT/dx=-20*(50-30)/0.040=-20*500=-10000 W/m²。高温側(x大)から低温側へ流れるためx正方向成分は負。",
+   "computed_or_physical_result": "-10,000 W/m²",
+   "alternative_choices_review": "符号のみ違う+10000、桁違いの±1000は勾配500K/mと不一致で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-semi-profile-v1",
+   "independent_choice_index": 2,
+   "working": "η=x/(2√(αt))=0.010/(2√(1e-6*100))=0.5。半無限固体・表面温度一定解 T=Ti+(Ts-Ti)erfc(η)=20+60*0.47950012=48.77℃",
+   "computed_or_physical_result": "48.77 ℃",
+   "alternative_choices_review": "20℃は未加熱、80℃は表面のみ、51.23℃はerf/erfc取り違え(20+60*erf相当の補数誤り)で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-fin-effectiveness-v1",
+   "independent_choice_index": 1,
+   "working": "ε_f=Q_fin/(h·Ac·ΔT)=5.166/(25*1.0e-4*60)=5.166/0.15=34.44",
+   "computed_or_physical_result": "34.44倍",
+   "alternative_choices_review": "0.861は逆数系、6.0/68.88は分母の取り違えで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-exchanger-heat-loss-v1",
+   "independent_choice_index": 1,
+   "working": "定常・仕事なしのエネルギー収支:損失=温側喪失-冷側受取=50-46=4 kW",
+   "computed_or_physical_result": "4 kW",
+   "alternative_choices_review": "0は無損失仮定と矛盾、46は冷側受取そのもの、96は和で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-three-mode-convection-v1",
+   "independent_choice_index": 1,
+   "working": "Q=hAΔT=10*0.50*(40-20)=100 W",
+   "computed_or_physical_result": "100 W",
+   "alternative_choices_review": "50/150/200はΔTまたはAの取り違えで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-resistor-parallel-v1",
+   "independent_choice_index": 3,
+   "working": "並列:Q=ΔT(1/R1+1/R2)=60*(10+5)=900 W",
+   "computed_or_physical_result": "900 W",
+   "alternative_choices_review": "直列合成(0.30K/W→200W)や片側のみ(600W等)と区別でき一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-slab-fourier-v1",
+   "independent_choice_index": 2,
+   "working": "Fo=αt/L²=1e-6*100/(0.020²)=1e-4/4e-4=0.250",
+   "computed_or_physical_result": "Fo=0.250",
+   "alternative_choices_review": "L²でなくLで割る等の誤りと区別でき一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-boil-h-v1",
+   "independent_choice_index": 2,
+   "working": "h=q''/ΔT_sat=20000/(120-100)=1000 W/(m²K)",
+   "computed_or_physical_result": "1000 W/(m²·K)",
+   "alternative_choices_review": "100/500/2000は桁・ΔT取り違えで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-radiation-zero-emissivity-v1",
+   "independent_choice_index": 2,
+   "working": "Q̇=εσA(Ts⁴-Tsur⁴)はεに比例しε→0で0に近づく。",
+   "computed_or_physical_result": "正味放射交換→0",
+   "alternative_choices_review": "発散・対流等価・ε無関係はいずれも式の形と矛盾し一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-ntu-eps-ratio-v1",
+   "independent_choice_index": 2,
+   "working": "Qmax=Cmin*ΔTin=300*40=12000W。ε=Q/Qmax=6000/12000=0.50",
+   "computed_or_physical_result": "ε=0.50",
+   "alternative_choices_review": "0.25/0.40/0.75はQmax計算と不一致で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-steady-flux-concept-v1",
+   "independent_choice_index": 1,
+   "working": "発熱なし・一定k・定常1次元ではd²T/dx²=0でTは線形、勾配dT/dxは全域一定。",
+   "computed_or_physical_result": "温度勾配は全域一定",
+   "alternative_choices_review": "比例増加・恒常0・左右逆向きはいずれも線形解と矛盾し一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-outer-h-decrease-v1",
+   "independent_choice_index": 3,
+   "working": "1/(UA)には1/(h_oA_o)項を含み、h_o低下で外側抵抗が増え総抵抗増→UA低下。",
+   "computed_or_physical_result": "UAは低下する",
+   "alternative_choices_review": "抵抗減少・不変・熱流率増加はいずれも抵抗直列の関係と逆で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-bi-number-v1",
+   "independent_choice_index": 2,
+   "working": "Bi=hL/k=40*0.020/8=0.80/8=0.100",
+   "computed_or_physical_result": "Bi=0.100",
+   "alternative_choices_review": "0.020/0.050/0.200は計算と不一致で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-constant-flux-pipe-h-v1",
+   "independent_choice_index": 2,
+   "working": "h=Nu·k/D=4.36*0.60/0.020=130.8 W/(m²K)。定熱流束の発達層流Nu=4.36を用いる。",
+   "computed_or_physical_result": "h≈130.8 W/(m²·K)",
+   "alternative_choices_review": "65.4は半分、109.8/261.6はNu・D取り違えで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-convex-self-factor-v1",
+   "independent_choice_index": 0,
+   "working": "凸面からは自面が直接見えず自己形態係数Fii=0(拡散放射の幾何学的性質)。",
+   "computed_or_physical_result": "Fii=0",
+   "alternative_choices_review": "Fii=1固定・温度比例は形態係数の定義と矛盾し一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch3-initial-condition-necessity-v1",
+   "independent_choice_index": 1,
+   "working": "非定常熱伝導方程式の解には境界条件に加え初期条件T(x,0)の指定が不可欠。",
+   "computed_or_physical_result": "初期温度分布T(x,0)が必要",
+   "alternative_choices_review": "定常境界温度だけでは初期分布は決まらず、色・符号省略も不十分で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-nucleate-laplace-pressure-v1",
+   "independent_choice_index": 2,
+   "working": "Δp=2σ/R=2*0.050/(50e-6)=2000 Pa=2.0 kPa",
+   "computed_or_physical_result": "2.0 kPa",
+   "alternative_choices_review": "0.50/1.0/4.0は係数・半径換算の誤りで一意。球のYoung-Laplace 2σ/Rを問題文が明示。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-chf-surface-tension-scale-v1",
+   "independent_choice_index": 3,
+   "working": "Zuber型CHFはq''∝[σg(ρl-ρv)]^(1/4)でσの1/4乗に比例。16^(1/4)=2倍。",
+   "computed_or_physical_result": "2倍",
+   "alternative_choices_review": "16倍は1乗、4倍は1/2乗、1/2倍は逆向きで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-length-scaling-v1",
+   "independent_choice_index": 1,
+   "working": "Ra_L∝L³よりNu∝L^(3/4)、h=Nu·k/L∝L^(-1/4)。L2倍で2^(-1/4)=0.841→0.84倍。",
+   "computed_or_physical_result": "0.84倍",
+   "alternative_choices_review": "0.50はL^-1、1.68/2.00は増加方向で指数関係と矛盾し一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-local-average-v1",
+   "independent_choice_index": 2,
+   "working": "h_x=Cx^(-1/4)、平均=(1/L)∫Cx^(-1/4)dx=(4/3)CL^(-1/4)=(4/3)h_L=(4/3)*900=1200 W/(m²K)",
+   "computed_or_physical_result": "1.2×10³ W/(m²·K)",
+   "alternative_choices_review": "900は局所値そのもの、680/1800は積分係数(4/3)の誤りで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-film-versus-condensation-v1",
+   "independent_choice_index": 1,
+   "working": "膜沸騰は飽和温度より高温の壁上に蒸気膜、膜状凝縮は飽和温度より低温の壁上に液膜が形成される。",
+   "computed_or_physical_result": "膜沸騰=高温壁上の蒸気膜、膜状凝縮=低温壁上の液膜",
+   "alternative_choices_review": "相と壁温の組合せが逆転・同相の他肢は定義と矛盾し一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-minimum-control-history-v1",
+   "independent_choice_index": 0,
+   "working": "沸騰曲線にはヒステリシスがあり、加熱側CHFと冷却側の膜崩壊(最小膜沸騰点)は別現象。制御方式と履歴の記録が必須。",
+   "computed_or_physical_result": "CHFと膜崩壊を区別し制御方式・履歴を記録",
+   "alternative_choices_review": "加熱=冷却で同一視する他肢はヒステリシスを無視し一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-transition-fourier-consistency-v1",
+   "independent_choice_index": 1,
+   "working": "遷移沸騰の平均熱流束低下は濡れ面積分率の減少によるもので、局所のフーリエ則(k>0)とは矛盾しない。局所伝導と濡れ面積変化を分けて考える。",
+   "computed_or_physical_result": "局所伝導と濡れ面積変化を分離して平均を解釈",
+   "alternative_choices_review": "負のk・全域直線・誤測定とする他肢は平均と局所の混同で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-system-mixture-equilibrium-v1",
+   "independent_choice_index": 1,
+   "working": "二成分混合物では液相・気相組成が異なり沸点範囲と露点が存在するため、単一のTsat(p)では表せない。",
+   "computed_or_physical_result": "液相・気相組成や沸点・露点が異なりうるため",
+   "alternative_choices_review": "全成分同沸点・全圧一定・潜熱ゼロはいずれも混合物相平衡と矛盾し一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-boiling-energy-not-limit-v1",
+   "independent_choice_index": 1,
+   "working": "出口乾き度は全収支のみで決まり、ドライアウト等の限界は局所熱流束・流動様式・管径に依存する。局所条件で管別に評価する。",
+   "computed_or_physical_result": "局所流動と壁面熱流束を調べ管に合う限界評価を行う",
+   "alternative_choices_review": "プールCHF流用・局所同一視・分布無視はいずれも不適切で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-dropwise-area-average-v1",
+   "independent_choice_index": 1,
+   "working": "面積平均=0.30*20000+0.70*4000=6000+2800=8800=8.8e3 W/(m²K)(同温度差のため面積加重がそのまま係数平均)",
+   "computed_or_physical_result": "8.8×10³ W/(m²·K)",
+   "alternative_choices_review": "単純平均12000や逆加重等と区別でき一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-heat-pipe-contact-angle-pressure-v1",
+   "independent_choice_index": 1,
+   "working": "Δp=2σcosθ/r=2*0.030*0.50/(15e-6)=0.030/15e-6=2000 Pa=2.0e3 Pa",
+   "computed_or_physical_result": "2.0×10³ Pa",
+   "alternative_choices_review": "1.0e3はcos二重適用系、4.0e3はcos省略、2.0e-3は単位換算誤りで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-kirchhoff-selective-net-flux-v1",
+   "independent_choice_index": 2,
+   "working": "外向き正:q''=εEb-αG=0.26*1000-0.74*500=260-370=-110 W/m²。Q̇=q''A=-110*0.020=-2.20 W。選択面ではε≠α_incが許される。",
+   "computed_or_physical_result": "q''=-110 W/m²、Q̇=-2.20 W",
+   "alternative_choices_review": "-5500Wは面積換算誤り、+110/+630は符号・Kirchhoff誤用で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-phase-correlation-radiation-coupling-v1",
+   "independent_choice_index": 3,
+   "working": "h_total=40+(3/4)*20=55.0 W/(m²K)。q''=55*300=16500 W/m²=16.5 kW/m²",
+   "computed_or_physical_result": "55.0 W/(m²·K)、16.5 kW/m²",
+   "alternative_choices_review": "45/50/60は補正係数の誤りで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-external-range-selection-v1",
+   "independent_choice_index": 3,
+   "working": "Re_D=ρuD/μ=900*20*0.02/3e-4=1.2e6で条件Re≤1e6を超過。範囲外相関は使わず適合する別相関を探す。",
+   "computed_or_physical_result": "上限外のため別相関を探す",
+   "alternative_choices_review": "高速近似・物性理由での上限免除・管内への流用はいずれも適用条件違反で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-heatpipe-limit-fluid-selection-v1",
+   "independent_choice_index": 3,
+   "working": "性能指数Mは一指標に過ぎず、作動温度範囲・濡れ性・容器材料との適合性(腐食等)を併せて確認する必要がある。",
+   "computed_or_physical_result": "Mに加え作動温度・濡れ・材料適合性を確認",
+   "alternative_choices_review": "M最大で即決・適合性省略・透過率同一視はいずれも不適切で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-correlation-quality-range-v1",
+   "independent_choice_index": 3,
+   "working": "x=0.950は条件0<x≤0.8の範囲外(乾き後領域の可能性)。範囲外として乾き・流動状態を調べ別モデルを探す。",
+   "computed_or_physical_result": "範囲外として別モデルを探す",
+   "alternative_choices_review": "有限値・x≤1・枝の存在を理由に流用する他肢は適用条件違反で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-system-boiling-surface-data-v1",
+   "independent_choice_index": 1,
+   "working": "相関条件はRMS粗さ2-12μmと後退接触角0-40°。測定量の種類と範囲の両方を満たすのはRMS8μm・後退20°のみ。",
+   "computed_or_physical_result": "RMS粗さ8 μm・後退接触角20°",
+   "alternative_choices_review": "80μmは範囲外、最大高さ粗さ・静的/前進接触角は測定量の種類が条件と不一致で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-geometry-thick-layer-v1",
+   "independent_choice_index": 3,
+   "working": "Nu_corr=1.4/ln(1+1.4/5.00)=1.4/ln(1.28)=1.4/0.24686=5.67",
+   "computed_or_physical_result": "5.67",
+   "alternative_choices_review": "未補正5.00そのまま、0.346/13.1は対数・逆数の誤りで一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-corrected-latent-v1",
+   "independent_choice_index": 2,
+   "working": "√Pr=2。係数=0.683-0.228/2=0.569。h_fg'=2.40e6*[1+0.569*0.080]=2.40e6*1.04552=2.51e6 J/kg。注記どおり式の適用練習として計算。",
+   "computed_or_physical_result": "2.51×10⁶ J/kg",
+   "alternative_choices_review": "2.29は符号逆、2.40は補正なし、2.59は係数誤りで一意。",
+   "concerns": ""
+  }
+ ]
+}

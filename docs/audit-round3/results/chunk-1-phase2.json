@@ -1,0 +1,190 @@
+{
+ "chunk": 1,
+ "checks": [
+  {
+   "id": "supp-applied-8-3-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "book-1-2-closed-energy-rate",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-deep-fick-mass-flux-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-deep-rate-vs-state-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-deep-rad-totalpower-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-found-openflow-enthalpy-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-found-slab-nonlinear-limit-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-found-ntu-config-v1",
+   "explanation_check": "ok",
+   "notes": "explanationは正しい。solutionSteps/hintsは汎用テンプレート文で固有の計算はないが誤りは含まない"
+  },
+  {
+   "id": "supp-found-nu-fluid-k-v1",
+   "explanation_check": "ok",
+   "notes": "explanationは正しい。solutionSteps/hintsは汎用テンプレート文だが誤りは含まない"
+  },
+  {
+   "id": "supp-next-combined-surface-loss-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-next-massflow-from-heat-v1",
+   "explanation_check": "ok",
+   "notes": "数値・式は正しい。solutionSteps/hintsは汎用文だが誤りは含まない"
+  },
+  {
+   "id": "supp-next-local-versus-average-v1",
+   "explanation_check": "ok",
+   "notes": "explanationの平均の定義は正しい（温度差一定の扱いの留保付きで記載）。steps/hintsは汎用文だが誤りなし"
+  },
+  {
+   "id": "supp-batch2-outer-base-u-v1",
+   "explanation_check": "ok",
+   "notes": "数値は正しい。solutionStepsでUAを G と表記しているが文脈上UAの意で値は正しい"
+  },
+  {
+   "id": "supp-batch2-f-area-ratio-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-batch2-pipe-h-wall-temperature-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-batch2-reverse-f12-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-batch3-insulated-boundary-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-batch3-laplace-vs-poisson-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-chf-capillary-length-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-natural-beta-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-condensation-film-reynolds-v1",
+   "explanation_check": "ok",
+   "notes": "係数4の定義を明示して計算しており確定論点7の競合定義とも矛盾しない。distractorの6.25は選択肢6.3の丸め前値で整合"
+  },
+  {
+   "id": "supp-film-radiation-kelvin-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-minimum-temperature-insufficient-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-transition-wet-fraction-inverse-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-system-surface-comparison-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-tube-boiling-slip-void-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-forced-condensation-total-mass-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-dropwise-film-model-limit-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-kirchhoff-incident-weight-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-phase-correlation-latent-correction-v1",
+   "explanation_check": "ok",
+   "notes": "式(9.29)相当の項 (0.968-0.163/Pr_v) をそのまま使用しており確定論点3と一致。Ja=0.300、増分458550 J/kg、2.459 MJ/kg 全て再計算と一致"
+  },
+  {
+   "id": "supp-condensation-external-mean-coefficient-v1",
+   "explanation_check": "ok",
+   "notes": "Nu≈331.354、h≈9940.607 を再計算で確認。高速極限 0.64√(2Re)≈70.1 の言及も正しい"
+  },
+  {
+   "id": "supp-heatpipe-limit-evaporator-area-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-tube-correlation-horizontal-factor-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-dropwise-correlation-range-selection-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  },
+  {
+   "id": "supp-natural-geometry-sphere-conduction-v1",
+   "explanation_check": "ok",
+   "notes": "Nu_D=2の導出は確定論点8と一致し独立導出とも一致"
+  },
+  {
+   "id": "supp-condensation-derivation-profile-v1",
+   "explanation_check": "ok",
+   "notes": "速度放物線・温度線形の説明は正しい。Jakob数0.02程度以下という補足は線形温度分布の適用目安として妥当な範囲の記述"
+  },
+  {
+   "id": "supp-condensation-gamma-shape-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・distractors・solutionSteps・hintsの数値・式・符号はフェーズ1の独立計算/判断と一致し、正解キーとも一致"
+  }
+ ]
+}

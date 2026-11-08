@@ -1,0 +1,185 @@
+{
+ "chunk": 6,
+ "checks": [
+  {
+   "id": "supp-applied-10-4-v1",
+   "explanation_check": "ok",
+   "notes": "J=960、q''=560の計算・distractor帰属（960=J、840=εEbのみ、800=Eb-G）すべてフェーズ1と一致。"
+  },
+  {
+   "id": "supp-deep-fick-molar-concentration-v1",
+   "explanation_check": "ok",
+   "notes": "c=40.62→40.6、RT≈2494.34の途中値も正しい。"
+  },
+  {
+   "id": "supp-deep-rad-temperature-fourth-v1",
+   "explanation_check": "ok",
+   "notes": "(600/300)^4=16、自己放出のみという条件付けも正しい。"
+  },
+  {
+   "id": "supp-deep-heat-rate-flux-integral-v1",
+   "explanation_check": "ok",
+   "notes": "無次元化ξによる積分・平均200 W/m2×0.50 m2=100 W、単位注記（200 W/m3×m）も正しい。"
+  },
+  {
+   "id": "supp-found-net-heating-time-v1",
+   "explanation_check": "ok",
+   "notes": "ΔU=10000 J、正味150 W、66.7 s。distractor帰属も妥当。"
+  },
+  {
+   "id": "supp-found-slab-conduction-rate-v1",
+   "explanation_check": "ok",
+   "notes": "q''=800 W/m2、Q=1600 W。符号付き流束の説明も正しい。"
+  },
+  {
+   "id": "supp-found-ntu-def-v1",
+   "explanation_check": "solutionStepsとhintsが定型文（『対象系・境界条件を特定する』等）のみで、この問題固有の代入（UA/Cmin=300/300）を示していない。explanation本文と正解・distractor帰属は正しいため、数値誤りではなく手順提示の不足。",
+   "notes": "フェーズ1独立解（index 1）とアプリ正解キーは一致。"
+  },
+  {
+   "id": "supp-found-re-flat-v1",
+   "explanation_check": "solutionStepsとhintsが定型文のみで、Re=UL/nuへの代入過程を示していない。explanation（6.67e4）とdistractor帰属は正しい。",
+   "notes": "フェーズ1独立解（index 1）とアプリ正解キーは一致。"
+  },
+  {
+   "id": "supp-next-time-energy-out-v1",
+   "explanation_check": "ok",
+   "notes": "数値・式・帰属をフェーズ1と照合し一致。"
+  },
+  {
+   "id": "supp-next-three-series-v1",
+   "explanation_check": "ok",
+   "notes": "数値・式・帰属をフェーズ1と照合し一致。"
+  },
+  {
+   "id": "supp-next-fourier-time-scale-v1",
+   "explanation_check": "solutionStepsが定型文のみで、L^2/alpha=0.0004/1e-6の代入を示していない。explanation本文（400 s、Fo=1の時間尺度という留保）は正しい。",
+   "notes": "フェーズ1独立解（index 2）とアプリ正解キーは一致。"
+  },
+  {
+   "id": "supp-batch2-wall-rpp-v1",
+   "explanation_check": "ok",
+   "notes": "R''=0.010、面積当たりと全抵抗の区別も正しい。"
+  },
+  {
+   "id": "supp-batch2-lmtd-v1",
+   "explanation_check": "ok",
+   "notes": "20/ln2≈28.85→選択肢28.9と整合。算術平均30との対比も正しい。"
+  },
+  {
+   "id": "supp-batch2-bi-scale-h-v1",
+   "explanation_check": "ok",
+   "notes": "h_new=40×0.020/0.040=20。正しい。"
+  },
+  {
+   "id": "supp-batch2-pipe-entry-judgment-v1",
+   "explanation_check": "ok",
+   "notes": "助走域の判断は正しい。補足の原典式(7.24)基準値0.034Re_DPr（壁温一定）は教科書テキストでも確認できた（xet=0.034 ReD Pr for Tw=constant）。"
+  },
+  {
+   "id": "supp-batch3-neumann-right-temperature-v1",
+   "explanation_check": "ok",
+   "notes": "dT/dx=-100 K/m、T(L)=90℃。正しい。"
+  },
+  {
+   "id": "supp-batch3-generated-surface-flux-v1",
+   "explanation_check": "ok",
+   "notes": "q'''L=1000 W/m2/面、両面合計との区別も正しい。"
+  },
+  {
+   "id": "supp-nucleate-latent-rate-v1",
+   "explanation_check": "ok",
+   "notes": "0.0020×2.0e6=4000 W=4.0 kW。顕熱は別という留保も適切。"
+  },
+  {
+   "id": "supp-chf-model-selection-v1",
+   "explanation_check": "ok",
+   "notes": "適用域（幾何・流動・圧力）の確認を求める解説でフェーズ1と一致。"
+  },
+  {
+   "id": "supp-natural-mixed-convection-v1",
+   "explanation_check": "ok",
+   "notes": "Gr/Re2≈1→混合対流、向き確認という解説で一致。hが決まらない旨も正しい。"
+  },
+  {
+   "id": "supp-film-fixed-flux-v1",
+   "explanation_check": "ok",
+   "notes": "0.025×100/5.0e-4=5000。固定膜厚モデルの限界注記も適切。"
+  },
+  {
+   "id": "supp-minimum-effective-h-v1",
+   "explanation_check": "ok",
+   "notes": "20000/200=100。一点の実効値という留保も正しい。"
+  },
+  {
+   "id": "supp-radiation-spectral-kirchhoff-v1",
+   "explanation_check": "ok",
+   "notes": "同波長条件と重みの違いの説明はKirchhoff則の標準的理解と一致。"
+  },
+  {
+   "id": "supp-system-local-pressure-v1",
+   "explanation_check": "ok",
+   "notes": "増分6 kPa、絶対圧96 kPa。distractor帰属も正しい。"
+  },
+  {
+   "id": "supp-tube-boiling-mass-flux-v1",
+   "explanation_check": "ok",
+   "notes": "G=400、流路断面積の注意も正しい。"
+  },
+  {
+   "id": "supp-forced-condensation-complete-then-subcool-v1",
+   "explanation_check": "ok",
+   "notes": "全凝縮30000 W、残り2000 Wで25 K過冷却→75℃。負の乾き度を実量としない注意も物理的に正しい。"
+  },
+  {
+   "id": "supp-dropwise-h-uncertainty-v1",
+   "explanation_check": "ok",
+   "notes": "sqrt(0.10^2+0.05^2)=0.1118≈11%。相関がある場合の共分散への言及も正しい。"
+  },
+  {
+   "id": "supp-heat-pipe-other-limits-v1",
+   "explanation_check": "ok",
+   "notes": "音速・同伴・沸騰等の他限界の列挙は正しい。"
+  },
+  {
+   "id": "supp-kirchhoff-spectral-identifiability-v1",
+   "explanation_check": "ok",
+   "notes": "重み同一→係数行が比例し分離不能、という線形代数の説明は正しい。"
+  },
+  {
+   "id": "supp-phase-correlation-minimum-gravity-v1",
+   "explanation_check": "ok",
+   "notes": "16^(1/4)=2。ただしsolutionSteps第3項『2⁴=16を使う』は逆演算の説明でやや紛らわしい（結果・解説本文は正しい）。"
+  },
+  {
+   "id": "supp-heatpipe-limit-capillary-load-v1",
+   "explanation_check": "ok",
+   "notes": "(4000-800)/125.10=25.58→25.6 W。他限界未評価の留保も適切。"
+  },
+  {
+   "id": "supp-tube-correlation-liquid-only-reynolds-v1",
+   "explanation_check": "ok",
+   "notes": "Re_lo=50000、実液流量基準37500との区別、distractor帰属（(1-x)で割る=6.67e4、半径使用=2.50e4）もすべて検証一致。"
+  },
+  {
+   "id": "supp-dropwise-correlation-effective-coefficient-v1",
+   "explanation_check": "ok",
+   "notes": "q''=656104、h=164026≈1.64e5。微分勾配0.6θ→195773≈1.96e5（distractor）との対比も数値検証一致。"
+  },
+  {
+   "id": "supp-system-boiling-forced-film-v1",
+   "explanation_check": "ok",
+   "notes": "比=8≥4、根号内6.00e8、q''≈66136→66.1 kW/m2。係数2.98（球）との対比も妥当。"
+  },
+  {
+   "id": "supp-natural-geometry-modified-ra-length-v1",
+   "explanation_check": "ok",
+   "notes": "2^4=16、通常Ra（L^3）との固定入力の違いの説明も正しい。"
+  },
+  {
+   "id": "supp-condensation-wavy-regime-v1",
+   "explanation_check": "ok",
+   "notes": "Re_c=50を波状域（目安7〜400）としNusselt式は過小評価傾向、という解説は標準的区分と一致（境界値は流儀差があるが結論は頑健、フェーズ1concerns参照）。"
+  }
+ ]
+}

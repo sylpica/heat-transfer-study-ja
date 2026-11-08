@@ -1,0 +1,37 @@
+
+> test:browser:distribution
+> node tests/browser-distribution.mjs
+
+chromium: 全76詳細講義の目標・本文・例題・参照・未校閲表示を確認。
+問題バンク検証 1/444
+問題バンク検証 51/444
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /home/hatch/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --no-sandbox --user-data-dir=/tmp/playwright_chromiumdev_profile-XD0TLV --remote-debugging-pipe --no-startup-window
+<launched> pid=82462
+[pid=82462][err] [1108/183408.204633:ERROR:dbus/bus.cc:408] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=82462][err] [1108/183408.319458:ERROR:dbus/bus.cc:408] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=82462][err] [1108/183408.319532:ERROR:dbus/bus.cc:408] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[pid=82462][err] [1108/183408.437073:WARNING:net/proxy_resolution/proxy_config_service_linux.cc:100] Proxy authentication parameters ignored, see bug 16709
+[pid=82462][err] [1108/183408.525045:WARNING:net/proxy_resolution/proxy_config_service_linux.cc:100] Proxy authentication parameters ignored, see bug 16709
+[pid=82462][err] [1108/183408.528399:WARNING:device/bluetooth/dbus/bluez_dbus_manager.cc:209] Floss manager service not available, cannot set Floss enable/disable.
+[pid=82462][err] [1108/183408.608333:WARNING:sandbox/policy/linux/sandbox_linux.cc:414] InitializeSandbox() called with multiple threads in process gpu-process.
+[pid=82462][err] [1108/183408.615321:WARNING:net/proxy_resolution/proxy_config_service_linux.cc:100] Proxy authentication parameters ignored, see bug 16709
+Call log:
+  - waiting for locator('[data-action="discard-quiz"]')
+    - locator resolved to <button type="button" class="text-button" data-action="discard-quiz">この中断セットを破棄</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - performing click action
+
+    at /home/hatch/workspace/dev/heat-audit-r3/tests/browser-distribution.mjs:731:58
+
+Node.js v24.22.1

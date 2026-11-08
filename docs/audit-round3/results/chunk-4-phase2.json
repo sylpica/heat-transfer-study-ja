@@ -1,0 +1,185 @@
+{
+ "chunk": 4,
+ "checks": [
+  {
+   "id": "supp-applied-9-9-v1",
+   "explanation_check": "ok",
+   "notes": "explanation・solutionStepsとも Q=mdot*h_fg=0.025*2.2e6=55,000 W=55 kW でフェーズ1と一致。distractorsの誤答理由（潜熱・流量・桁の誤り）も各選択肢と対応する。"
+  },
+  {
+   "id": "supp-deep-heat-symmetric-flux-v1",
+   "explanation_check": "ok",
+   "notes": "q'''L=10,000 W/m2を両面で等分して5,000 W/m2、収支検算（合計10,000）も正しい。"
+  },
+  {
+   "id": "supp-deep-semi-surface-flux-v1",
+   "explanation_check": "ok",
+   "notes": "式 q''=k(Ts-Ti)/sqrt(pi*alpha*t)、sqrt値0.0177245 m、結果+6.77e3 W/m2と符号規約の説明がフェーズ1と一致。"
+  },
+  {
+   "id": "supp-deep-fin-tip-temperature-v1",
+   "explanation_check": "ok",
+   "notes": "theta_tip=47.60 Kと摂氏温度67.60℃の区別を明示しており、distractor 47.60の誤答理由も正確。"
+  },
+  {
+   "id": "supp-deep-exchanger-qmax-v1",
+   "explanation_check": "ok",
+   "notes": "Cmin=2400、ΔT=50 K、Qmax=120 kWで一致。distractor注記『例示された実際の熱移動率48 kW』は問題文に48 kWの実績値の提示はなく選択肢の値を指す表現だが、数値・式の誤りではない。"
+  },
+  {
+   "id": "supp-found-three-mode-radiation-v1",
+   "explanation_check": "ok",
+   "notes": "eps*sigma*A*(320^4-300^4)=54.11 W、4乗差2,385,760,000 K4も正しい。"
+  },
+  {
+   "id": "supp-found-resistor-interface-temperature-v1",
+   "explanation_check": "ok",
+   "notes": "Q=200 W、ΔT1=20 K、界面80℃で一致。"
+  },
+  {
+   "id": "supp-found-slab-solve-v1",
+   "explanation_check": "ok",
+   "notes": "explanationの趣旨（無次元数だけでは温度は決まらず初期・境界条件が必要）はフェーズ1と一致。ただしsolutionStepsは汎用テンプレート文で本問固有の導出を含まない（誤った数値・式はなし）。"
+  },
+  {
+   "id": "supp-found-boil-chf-v1",
+   "explanation_check": "ok",
+   "notes": "explanation（CHFは液体・圧力・表面・流動条件に依存し不明なら判定不可）はフェーズ1と一致。solutionStepsは汎用テンプレート文で固有の内容を含まない（誤りはなし）。"
+  },
+  {
+   "id": "supp-next-inverse-delta-temperature-v1",
+   "explanation_check": "ok",
+   "notes": "R=L/(kA)=0.025 K/W、ΔT=200*0.025=5 Kで一致。"
+  },
+  {
+   "id": "supp-next-ntu-ua-inverse-v1",
+   "explanation_check": "ok",
+   "notes": "NTU=UA/Cmin=600/400=1.50で一致。solutionStepsは汎用テンプレート文（誤りはなし）。"
+  },
+  {
+   "id": "supp-next-parallel-temperature-condition-v1",
+   "explanation_check": "ok",
+   "notes": "並列ではΔT共通・QはRで分配というexplanationはフェーズ1と一致。solutionStepsは汎用テンプレート文（誤りはなし）。"
+  },
+  {
+   "id": "supp-batch2-design-area-v1",
+   "explanation_check": "ok",
+   "notes": "A=12000/(300*0.80*25)=2.00 m2で一致。distractor理由は簡略だが数値・式の誤りなし。"
+  },
+  {
+   "id": "supp-batch2-fo-number-v1",
+   "explanation_check": "ok",
+   "notes": "Fo=2e-4/4e-4=0.50で一致。"
+  },
+  {
+   "id": "supp-batch2-hydraulic-entry-length-v1",
+   "explanation_check": "ok",
+   "notes": "0.05*200*0.020=0.20 mで一致。explanationが併記する原典式(7.12) xe/D≃0.03ReD（壁せん断が発達値の5%以内）および0.05は偏差1.4%基準という記述は教科書本文（ahtt.txt該当箇所）と一致することを確認した。"
+  },
+  {
+   "id": "supp-batch2-grey-surface-limit-v1",
+   "explanation_check": "ok",
+   "notes": "灰色面では反射・多重交換のため黒体式をそのまま使えず放射回路を用いるという説明はフェーズ1と一致。"
+  },
+  {
+   "id": "supp-batch3-generated-center-rise-v1",
+   "explanation_check": "ok",
+   "notes": "ΔT=q'''L^2/(2k)=2.50 K、Lは半厚さという注記も正しい。"
+  },
+  {
+   "id": "supp-nucleate-radius-sensitivity-v1",
+   "explanation_check": "ok",
+   "notes": "R∝1/Δpで1/2倍、実際の離脱径の比例則ではないという留保も適切。"
+  },
+  {
+   "id": "supp-chf-uncertain-bound-v1",
+   "explanation_check": "ok",
+   "notes": "運転0.80>下限0.70のため安全と断定できないという説明・手順はフェーズ1と一致。"
+  },
+  {
+   "id": "supp-natural-signed-heat-v1",
+   "explanation_check": "ok",
+   "notes": "Q=5*0.4*(-10)=-20 W、符号の解釈（流体から面へ）も正しい。"
+  },
+  {
+   "id": "supp-condensation-gas-mixture-v1",
+   "explanation_check": "ok",
+   "notes": "不凝縮ガス蓄積による分圧低下・拡散抵抗の説明はフェーズ1と一致。"
+  },
+  {
+   "id": "supp-film-geometry-limit-v1",
+   "explanation_check": "ok",
+   "notes": "平板固定膜厚モデルでは曲率・周方向変化・流動を表せないという説明はフェーズ1と一致。"
+  },
+  {
+   "id": "supp-radiation-inverse-emissivity-v1",
+   "explanation_check": "ok",
+   "notes": "eps=(J-G)/(Eb-G)=360/600=0.60、J/Ebではない理由も正しい。"
+  },
+  {
+   "id": "supp-transition-measurement-context-v1",
+   "explanation_check": "ok",
+   "notes": "平均の一致から局所・瞬時量は決まらないという説明はフェーズ1と一致。"
+  },
+  {
+   "id": "supp-system-local-saturation-shift-v1",
+   "explanation_check": "ok",
+   "notes": "12.0-0.80=11.2 K、符号の説明も正しい。熱流束の増減まで決まらないという留保も適切。"
+  },
+  {
+   "id": "supp-tube-boiling-pressure-property-derivative-v1",
+   "explanation_check": "ok",
+   "notes": "積の微分 dh/dz=dhf/dz+hfg*dx/dz+x*dhfg/dz から (100+20-2)/2000=0.0590 /m。distractorsの誤答理由（0.0610はx*dhfg項の符号、0.0390はdhf項の符号、0.0500は物性微分を落とした値）も実際にその計算で再現でき正確。"
+  },
+  {
+   "id": "supp-dropwise-total-resistance-gain-v1",
+   "explanation_check": "ok",
+   "notes": "全抵抗0.0500→0.0350 K/W、倍率1.43で一致。"
+  },
+  {
+   "id": "supp-heat-pipe-gravity-assisted-margin-v1",
+   "explanation_check": "ok",
+   "notes": "Δz=-0.20 m、重力項-1600 Pa、余裕2600 Paで一致。毛管条件だけの結果という留保も適切。"
+  },
+  {
+   "id": "supp-kirchhoff-two-illumination-inverse-v1",
+   "explanation_check": "ok",
+   "notes": "和からa+b=1、差からa-b=0.8、a=0.90/b=0.10。行列式0.60≠0の言及も正しい。"
+  },
+  {
+   "id": "supp-phase-correlation-flat-minimum-v1",
+   "explanation_check": "問題文・explanation・solutionStepsは内部的には一貫している（分母804^2、四乗根0.125273、0.09*4*1e6*0.125273=45,098 W/m2=45.1 kW/m2でフェーズ1の提示式どおりの計算と一致）。ただし提示式の分母 (ρl+ρv)^2 は、一般的な教科書形（Lienhard-Dhir/Zuber系の q''min では分母は (ρl+ρv) の平方なし）と異なる形であり、その教科書形で計算すると約240 kW/m2となり選択肢のどれにも一致しない。問題が式を明示して『使う』と指示しているため提示式に従う限り正解は一意だが、式の出典形としては要確認。",
+   "notes": "フェーズ1でも同旨をconcernsに記録済み。確定論点リストの対象外。アプリ側の式表記が意図的な簡略化か転記違いかの判断は親側に委ねる。"
+  },
+  {
+   "id": "supp-heatpipe-limit-merit-v1",
+   "explanation_check": "ok",
+   "notes": "nu_l=1.25e-6 m2/s、M=3.20e10 kg/s3で一致。装置上限ではないという留保も適切。"
+  },
+  {
+   "id": "supp-tube-correlation-convection-number-v1",
+   "explanation_check": "ok",
+   "notes": "3^0.8=2.408、sqrt(0.005)=0.07071、積0.170で一致。"
+  },
+  {
+   "id": "supp-dropwise-correlation-heat-flux-v1",
+   "explanation_check": "ok",
+   "notes": "60^0.8=26.456、5θ+0.3θ^2=24.8、積*1000=656,104 W/m2で一致。"
+  },
+  {
+   "id": "supp-system-boiling-combined-flux-v1",
+   "explanation_check": "ok",
+   "notes": "sqrt(30^2+40^2)=50.0 kW/m2で一致。"
+  },
+  {
+   "id": "supp-natural-geometry-stable-plate-v1",
+   "explanation_check": "ok",
+   "notes": "Nu=14.5689、h=4.3707 W/(m2K)で一致。"
+  },
+  {
+   "id": "supp-condensation-cylinder-mean-v1",
+   "explanation_check": "ok",
+   "notes": "括弧内約4.5e16（独立計算4.47e16）、4乗根約1.45e4、*0.728で約1.06e4→1.1e4 W/(m2K)で一致。distractorsの定数対応（球0.828、垂直板0.943、直径の2倍）も整合する。"
+  }
+ ]
+}

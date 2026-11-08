@@ -1,0 +1,293 @@
+{
+ "chunk": 8,
+ "results": [
+  {
+   "id": "supp-applied-11-6-v1",
+   "independent_choice_index": 0,
+   "working": "Sc=nu/D_AB=1.2e-6/6.0e-10=2000。Sh=k_m*L/D_AB=3.0e-5*0.020/6.0e-10=6.0e-7/6.0e-10=1000。",
+   "computed_or_physical_result": "Sc=2000, Sh=1000",
+   "alternative_choices_review": "ScとShを入れ替えた選択肢1、10分の1の選択肢2、単位混同の選択肢3はいずれも定義式と合わない。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-fick-stefan-ratio-v1",
+   "independent_choice_index": 3,
+   "working": "等モル相互拡散: N_A=(cD/L)(y0-yL)=(cD/L)*0.15。停滞B: N_A=(cD/L)*ln[(1-yL)/(1-y0)]=(cD/L)*ln(0.95/0.80)=(cD/L)*0.17185。比=0.17185/0.15=1.146。",
+   "computed_or_physical_result": "比 約1.15",
+   "alternative_choices_review": "1.00はバルク流寄与を無視した場合、2.00は過大、0.87は逆数。対数平均による補正は約15%増で1.15のみ整合。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-rad-netflux-v1",
+   "independent_choice_index": 3,
+   "working": "大きな黒体囲いに対する灰色面の正味流束 q''=eps*sigma*(Ts^4-Tsur^4)=0.8*5.670374419e-8*(400^4-300^4)=0.8*992.3=793.9 W/m2、外向き正。",
+   "computed_or_physical_result": "q'' 約+7.94e2 W/m2 正味放熱",
+   "alternative_choices_review": "選択肢0は黒体発散度 sigma*Ts^4=1452、選択肢1は照射量 sigma*Tsur^4=459、選択肢2は射度 eps*Eb+(1-eps)G=1253。いずれも正味ではない。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-boundary-energy-balance-v1",
+   "independent_choice_index": 0,
+   "working": "第一法則 DeltaU=Q-W_out=(400-100)W*30s=300*30=9000 J。運動・位置エネルギー無視。",
+   "computed_or_physical_result": "DeltaU=+9000 J",
+   "alternative_choices_review": "15000 Jは仕事を加算した場合、-9000 Jは符号逆、300 Jは時間積分忘れ。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-heatloss-temperature-dependent-v1",
+   "independent_choice_index": 3,
+   "working": "エネルギー収支: 蓄熱率=入力電力-hA(T-Tinf)。Tが上がると損失項が増えるため蓄熱率は時間とともに変化し、最終的に入力=損失で定常温度に近づく。",
+   "computed_or_physical_result": "損失は温度依存で蓄熱率は変化しうる",
+   "alternative_choices_review": "損失を無視・一定とする選択肢0,1は収支と矛盾。定常でも上昇し続けるとする選択肢2は定常の定義と矛盾。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-slab-resistance-value-v1",
+   "independent_choice_index": 1,
+   "working": "平板伝導抵抗 R=L/(kA)=0.20/(4*2.0)=0.20/8=0.025 K/W。",
+   "computed_or_physical_result": "R=0.025 K/W",
+   "alternative_choices_review": "0.010, 0.050, 0.100 は面積・厚さの取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-ntu-qmax-v1",
+   "independent_choice_index": 2,
+   "working": "Qmax=Cmin*(Th,in-Tc,in)=min(400,800)*(100-20)=400*80=32000 W=32 kW。",
+   "computed_or_physical_result": "Qmax=32 kW",
+   "alternative_choices_review": "Cmaxを使えば64 kW、平均や半分では16/24 kWとなり定義と合わない。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-nu-average-v1",
+   "independent_choice_index": 2,
+   "working": "Nu=hL/kf=20*0.50/0.025=10/0.025=400。",
+   "computed_or_physical_result": "Nu=400",
+   "alternative_choices_review": "100,200,800 は桁・長さの取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-open-enthalpy-jump-v1",
+   "independent_choice_index": 2,
+   "working": "定常流れエネルギー式、仕事・KE/PE無視: Qdot=mdot*(h_out-h_in)=0.25*50 kJ/s=12.5 kW 受熱。",
+   "computed_or_physical_result": "受熱率 12.5 kW",
+   "alternative_choices_review": "2.5, 5.0, 25.0 kW は係数取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-cold-outlet-with-loss-v1",
+   "independent_choice_index": 2,
+   "working": "冷側受熱46 kWが与えられているので Cc*(Tout-20)=46000、Tout-20=46000/2000=23 K、Tout=43 C。温側50 kWは損失4 kWを含むため使わない。",
+   "computed_or_physical_result": "冷側出口 43 C",
+   "alternative_choices_review": "23 Cは温度差そのもの、40/50 Cは温側熱量や概算。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-nusselt-invert-h-v1",
+   "independent_choice_index": 1,
+   "working": "h=Nu*kf/L=200*0.025/0.50=5.0/0.50=10 W/(m2 K)。前問の逆演算。",
+   "computed_or_physical_result": "h=10 W/(m2 K)",
+   "alternative_choices_review": "5,20,40 は2倍ずつの取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-g-times-dt-v1",
+   "independent_choice_index": 2,
+   "working": "Qdot=UA*DeltaT=40*15=600 W。",
+   "computed_or_physical_result": "Qdot=600 W",
+   "alternative_choices_review": "400,500,800 W は積の誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-pump-shaft-v1",
+   "independent_choice_index": 2,
+   "working": "水力動力=dP*Vdot=50000*0.0010=50 W。軸動力=50/eta=50/0.50=100 W。",
+   "computed_or_physical_result": "軸動力 100 W",
+   "alternative_choices_review": "50 Wは効率未考慮、25/200 Wは効率の逆・二重適用。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-similarity-condition-v1",
+   "independent_choice_index": 1,
+   "working": "Bi=hL/k: L2倍でBi不変にはhを1/2倍。Fo=alpha*t/L^2: L2倍でFo不変にはtを4倍。k,alpha同じ前提。",
+   "computed_or_physical_result": "h半分、時間4倍",
+   "alternative_choices_review": "他の選択肢はBiかFoの少なくとも一方を変える。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-blackbody-two-surfaces-v1",
+   "independent_choice_index": 2,
+   "working": "Qnet=A1*F12*sigma*(T1^4-T2^4)=1*0.80*5.67e-8*(400^4-300^4)=0.80*992.25=793.8 W。",
+   "computed_or_physical_result": "約793.8 W",
+   "alternative_choices_review": "992.3 WはF12未適用、396.9/198.5 Wは余分な1/2,1/4。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch3-dirichlet-and-robin-v1",
+   "independent_choice_index": 2,
+   "working": "Ts未知・h有限・Tinf既知の対流境界は -k dT/dn = h(Ts-Tinf) のRobin(第3種)条件で固体と連成させる。DirichletでTs=Tinfと固定するのはh無限大の極限のみ。",
+   "computed_or_physical_result": "Robin条件で連成が適切",
+   "alternative_choices_review": "選択肢0は無限大hの誤用、1は断熱の誤用、3は次元も物理も無関係。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch3-generation-thickness-squared-v1",
+   "independent_choice_index": 2,
+   "working": "一様発熱・両面等温平板の中心上昇 DeltaTmax=q'''*L^2/(2k)。L2倍で L^2 により4倍。",
+   "computed_or_physical_result": "4倍",
+   "alternative_choices_review": "2倍は線形、8倍は立方の誤り、3倍は根拠なし。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-nucleate-onset-limit-v1",
+   "independent_choice_index": 2,
+   "working": "泡平衡は DeltaP=2sigma/R を与えるのみ。発泡開始過熱度にはキャビティ径分布・接触角・液体過熱等、CHFには流動・形状・物性群が必要。Rとsigmaだけではどちらも決まらない。",
+   "computed_or_physical_result": "開始温度もCHFも決まらない",
+   "alternative_choices_review": "他の選択肢はいずれも情報不足を無視した過剰決定。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-fick-stagnant-versus-equimolar-v1",
+   "independent_choice_index": 3,
+   "working": "条件は NB=0, NA!=0。Fick: NA=-cD grad yA + yA(NA+NB)=-cD grad yA + yA*NA。バルク流寄与を含める必要があり、等モル NA+NB=0 は前提と矛盾。",
+   "computed_or_physical_result": "NB=0と置きバルク流寄与を含める",
+   "alternative_choices_review": "選択肢0は等モル仮定で条件違反、1はNA=0で条件違反、2はJA=0で拡散を消す誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-latent-rate-v1",
+   "independent_choice_index": 2,
+   "working": "mdot=Qdot/h_fg=2400/2.0e6=1.2e-3 kg/s。有効数字2桁。",
+   "computed_or_physical_result": "1.2e-3 kg/s",
+   "alternative_choices_review": "他の選択肢は10倍ずつの桁ずれ。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-film-thickness-interpretation-v1",
+   "independent_choice_index": 2,
+   "working": "モデル式 q''=kg*DeltaT/delta_g で delta 2倍ならモデル値は1/2。ただし実機の膜厚は不安定性・流動・物性で決まる独立量であり、モデルの仮定をそのまま実機に強制できない。",
+   "computed_or_physical_result": "モデル値は半分、実機膜厚は流動等で決まる",
+   "alternative_choices_review": "選択肢0はモデル計算自体が逆、1は不変で誤り、3はゼロで誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-minimum-branch-definition-v1",
+   "independent_choice_index": 3,
+   "working": "q''min は沸騰曲線の膜沸騰側下限、Leidenfrost点付近で蒸気膜が維持できなくなる値。CHF(核沸騰上限)とは別の点。",
+   "computed_or_physical_result": "膜沸騰側で蒸気膜を維持しにくくなる下限付近",
+   "alternative_choices_review": "選択肢0はゼロを含めた自明な最小で定義ではない、1はCHFと混同、2は面・条件依存性を無視。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-transition-time-average-v1",
+   "independent_choice_index": 1,
+   "working": "時間平均=(10*60+20*180)/30=(600+3600)/30=4200/30=140 kW/m2=1.4e2 kW/m2。",
+   "computed_or_physical_result": "1.4e2 kW/m2",
+   "alternative_choices_review": "単純平均120、重み逆や最大値180/240 は時間重み付けの誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-system-superheat-subcooling-v1",
+   "independent_choice_index": 2,
+   "working": "DeltaTe=Tw-Tsat=130-110=20 K。DeltaTsub=Tsat-Tbulk=110-95=15 K。",
+   "computed_or_physical_result": "DeltaTe=20 K, DeltaTsub=15 K",
+   "alternative_choices_review": "35 KはTw-Tbulk、符号負や入れ替えは定義と合わない。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-boiling-subcooled-budget-v1",
+   "independent_choice_index": 2,
+   "working": "飽和液到達に要する熱=mdot*100kJ/kg=0.020*100000=2000 W。残り1000 Wが蒸発に使われ、蒸気生成=1000/2.0e6=5.0e-4 kg/s。乾き度=5.0e-4/0.020=0.0250。",
+   "computed_or_physical_result": "乾き度 0.0250",
+   "alternative_choices_review": "0.050は全入熱を潜熱に使った場合、0.075/0.100は収支の取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-forced-condensation-film-shear-flow-v1",
+   "independent_choice_index": 2,
+   "working": "第1項=rho_l*(rho_l-rho_v)*g*delta^3/(3mu)=1000*1000*10*(1e-4)^3/(3e-3)=3.333e-3。第2項=rho_l*tau_i*delta^2/(2mu)=1000*0.10*(1e-4)^2/(2e-3)=5.00e-4。合計3.833e-3 kg/(m s)。node/pythonで検算済み。",
+   "computed_or_physical_result": "Gamma=3.83e-3 kg/(m s)",
+   "alternative_choices_review": "3.33e-3は重力項のみ、2.83e-3はせん断符号逆、5.00e-4はせん断項のみ。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-dropwise-contact-angle-evidence-v1",
+   "independent_choice_index": 2,
+   "working": "滴状凝縮性能は静的接触角だけでなく接触角ヒステリシス、液滴離脱・排液、被覆厚さ・熱抵抗、経時劣化等で決まる。静的角のみで同等とは言えない。",
+   "computed_or_physical_result": "履歴差・排液・被覆熱抵抗等も含めて調べる",
+   "alternative_choices_review": "他の選択肢は静的角のみで性能同一を断定する過剰単純化。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-heat-pipe-startup-state-v1",
+   "independent_choice_index": 2,
+   "working": "凍結状態からの起動は融解潜熱を含む過渡熱収支、凍結時の圧力低下・材料適合・再濡れを別途評価する必要がある。定常液体還流モデルの毛管余裕はそのまま使えない。",
+   "computed_or_physical_result": "融解・起動時の熱収支と流体状態を別に評価",
+   "alternative_choices_review": "選択肢0の潜熱ゼロは誤り、1は低温特有の確認を省略、3は固体で液体循環を仮定し不可能。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-phase-correlation-cylinder-h-v1",
+   "independent_choice_index": 0,
+   "working": "Bromley式に代入: 分子 kv^3*rho_v*(rho_l-rho_v)*g*h_fg* =1e-3*0.5*899.5*10*2.45855e6、分母 mu_v*D*DeltaT=4e-5*0.05*300=6e-4。比=1.8429e10、1/4乗=368.4、*0.62=228.4 W/(m2 K)。python検算: hb=228.44。",
+   "computed_or_physical_result": "h_b 約2.28e2 W/(m2 K)",
+   "alternative_choices_review": "114は約1/2、457は約2倍、368は0.62係数未適用の値。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-external-liquid-reynolds-v1",
+   "independent_choice_index": 0,
+   "working": "Re_D=rho_l*u_inf*D/mu_l=900*0.100*0.0200/3.00e-4=1.80/3.00e-4=6000=6.00e3。",
+   "computed_or_physical_result": "Re_D=6.00e3",
+   "alternative_choices_review": "他の選択肢は10倍ずれ又は係数取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-heatpipe-limit-entrainment-v1",
+   "independent_choice_index": 0,
+   "working": "We_c=rho_v*v_v^2*l/sigma より v_v=sqrt(We_c*sigma/(rho_v*l))=sqrt(0.5*0.04/(2*0.001))=sqrt(10)=3.162 m/s。Q=rho_v*A_v*h_fg*v_v=2*5e-5*1e6*3.162=316 W。",
+   "computed_or_physical_result": "Q_ent 約316 W",
+   "alternative_choices_review": "447 WはWeの平方根処理の誤り相当、632 Wは2倍、100 Wは速度取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-correlation-single-phase-reference-v1",
+   "independent_choice_index": 0,
+   "working": "f/8=0.002625。Nu=(f/8)(Re-1000)Pr/[1+12.7*sqrt(f/8)(Pr^(2/3)-1)]=0.002625*49000*4/[1+12.7*0.05123*1.5199]=514.5/1.989=258.7。h=Nu*k/D=258.7*0.2/0.02=2587 W/(m2 K)。python検算済み。",
+   "computed_or_physical_result": "h_lo 約2.59e3 W/(m2 K)",
+   "alternative_choices_review": "桁ずれの259/25900、係数違いの10300 は計算と合わない。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-dropwise-correlation-noncondensable-gas-v1",
+   "independent_choice_index": 0,
+   "working": "非凝縮ガスは界面に蓄積し蒸気分圧を下げ拡散抵抗を加える。純蒸気前提の経験式を全圧ベースで流用できない。分圧と拡散抵抗の評価が必要。",
+   "computed_or_physical_result": "分圧と拡散抵抗を調べ純蒸気式の流用を避ける",
+   "alternative_choices_review": "全圧換算の流用、抵抗無視、面積で補う改善断定はいずれもガス蓄積の物理に反する。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-geometry-cylinder-coefficient-v1",
+   "independent_choice_index": 0,
+   "working": "Ra^(1/4)=15.93。Nu=0.36+0.518*15.93/[1+(0.559/0.8)^(9/16)]^(4/9)=0.36+8.25/1.304=6.686。h=Nu*k/D=6.686*0.028/0.04=4.68 W/(m2 K)。python検算: Nu=6.6859, h=4.680。",
+   "computed_or_physical_result": "h 約4.68 W/(m2 K)",
+   "alternative_choices_review": "6.69はNuそのものに近い値、9.36は2倍、4.43は丸め範囲外。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-geometry-temperature-average-v1",
+   "independent_choice_index": 0,
+   "working": "平均=(1/L)int DeltaT_L*(x/L)^(1/5) dx=DeltaT_L*int_0^1 u^(1/5) du=12*5/6=10.0 K。",
+   "computed_or_physical_result": "平均温度差 10.0 K",
+   "alternative_choices_review": "12.0は下流端値、6.00は中点等の誤り、10.4は積分指数の取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-tube-bank-v1",
+   "independent_choice_index": 2,
+   "working": "h_bank=h_single/n^(1/6)=8000/16^(1/6)。16^(1/6)=2^(2/3)=1.587。8000/1.587=5040、2桁で5.0e3 W/(m2 K)。",
+   "computed_or_physical_result": "約5.0e3 W/(m2 K)",
+   "alternative_choices_review": "4.0e3はa=1/4の場合、8.0e3は補正なし、5.0e2は桁ずれ。一意。",
+   "concerns": ""
+  }
+ ]
+}

@@ -1,0 +1,293 @@
+{
+ "chunk": 6,
+ "results": [
+  {
+   "id": "supp-applied-10-4-v1",
+   "independent_choice_index": 2,
+   "working": "J=0.70*1200+0.30*400=840+120=960; q''=J-G=960-400=560",
+   "computed_or_physical_result": "560 W/m2",
+   "alternative_choices_review": "840はJそのもの、960はJ、800は根拠なし。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-fick-molar-concentration-v1",
+   "independent_choice_index": 2,
+   "working": "c=101325/(8.3144626*300)=101325/2494.3=40.62",
+   "computed_or_physical_result": "40.6 mol/m3",
+   "alternative_choices_review": "他は10倍刻みの桁違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-rad-temperature-fourth-v1",
+   "independent_choice_index": 2,
+   "working": "(600/300)^4=2^4=16",
+   "computed_or_physical_result": "16倍",
+   "alternative_choices_review": "一次2倍・二次4倍・三次8倍はいずれもT^4則に反する。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-heat-rate-flux-integral-v1",
+   "independent_choice_index": 1,
+   "working": "Q=幅*∫0^1(100+200x)dx=0.50*(100+100)=100",
+   "computed_or_physical_result": "100 W",
+   "alternative_choices_review": "50は定数項のみ、150/200は積分・幅の取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-net-heating-time-v1",
+   "independent_choice_index": 1,
+   "working": "必要熱量=2*500*10=10000 J; 正味=200-50=150 W; t=10000/150=66.7",
+   "computed_or_physical_result": "66.7 s",
+   "alternative_choices_review": "50sは損失無視(200W)、100sは出力のみ等。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-slab-conduction-rate-v1",
+   "independent_choice_index": 2,
+   "working": "q=kAΔT/L=4*2*40/0.20=1600",
+   "computed_or_physical_result": "1600 W",
+   "alternative_choices_review": "800は半分、1200/3200は計算違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-ntu-def-v1",
+   "independent_choice_index": 1,
+   "working": "NTU=UA/Cmin=300/300=1.00",
+   "computed_or_physical_result": "1.00",
+   "alternative_choices_review": "定義直接。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-re-flat-v1",
+   "independent_choice_index": 1,
+   "working": "Re=UL/nu=2*0.5/1.5e-5=1/1.5e-5=6.67e4",
+   "computed_or_physical_result": "6.67e4",
+   "alternative_choices_review": "他は桁違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-time-energy-out-v1",
+   "independent_choice_index": 1,
+   "working": "E=90*45=4050",
+   "computed_or_physical_result": "4050 J",
+   "alternative_choices_review": "405は桁落ち、4500/9000は時間違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-three-series-v1",
+   "independent_choice_index": 1,
+   "working": "Rtot=0.10+0.20+0.30=0.60; q=60/0.60=100",
+   "computed_or_physical_result": "100 W",
+   "alternative_choices_review": "60/150/600は抵抗合成違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-fourier-time-scale-v1",
+   "independent_choice_index": 2,
+   "working": "L^2/alpha=0.02^2/1e-6=4e-4/1e-6=400",
+   "computed_or_physical_result": "400 s",
+   "alternative_choices_review": "他は2倍刻みで計算と合わない。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-wall-rpp-v1",
+   "independent_choice_index": 1,
+   "working": "R''=L/k=0.020/2.0=0.010",
+   "computed_or_physical_result": "0.010 m2K/W",
+   "alternative_choices_review": "他は桁違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-lmtd-v1",
+   "independent_choice_index": 2,
+   "working": "LMTD=(40-20)/ln(40/20)=20/ln2=28.85≈28.9",
+   "computed_or_physical_result": "28.9 K",
+   "alternative_choices_review": "算術平均30.0とは異なる。対数平均の定義で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-bi-scale-h-v1",
+   "independent_choice_index": 1,
+   "working": "Bi=hL/k一定、k一定 => h∝1/L。L2倍 => h=40/2=20",
+   "computed_or_physical_result": "20 W/m2K",
+   "alternative_choices_review": "40は不変仮定、80は逆比例取り違え、10は4倍変化。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-pipe-entry-judgment-v1",
+   "independent_choice_index": 2,
+   "working": "熱的助走長約1.0 mに対し評価位置0.5 mは助走域内。十分発達の定数Nu=3.66(等壁温)は発達域でのみ厳密であり、入口域では局所Nuはより大きく変化する。よって発達定数の適用を再検討すべき",
+   "computed_or_physical_result": "助走域のため発達定数をそのまま使わない",
+   "alternative_choices_review": "常時厳密・層流なら助走不要はいずれも助走理論に反する。等壁温では熱流束は一定でない(一定なのは壁温)。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch3-neumann-right-temperature-v1",
+   "independent_choice_index": 1,
+   "working": "定常一次元: q''=k(T_L-T_R)/L => T_R=100-200*0.10/2=100-10=90",
+   "computed_or_physical_result": "90 ℃",
+   "alternative_choices_review": "80はΔT20K、95は5K、100は流束ゼロに対応し矛盾。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch3-generated-surface-flux-v1",
+   "independent_choice_index": 2,
+   "working": "対称半分の収支: q''_surf=q'''*L=20000*0.050=1000（両面で計2000が全発熱と一致）",
+   "computed_or_physical_result": "1000 W/m2",
+   "alternative_choices_review": "500は半分、2000は両面合計を片面と混同。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-nucleate-latent-rate-v1",
+   "independent_choice_index": 3,
+   "working": "Q=mdot*h_fg=0.0020*2.0e6=4000 W=4.0 kW",
+   "computed_or_physical_result": "4.0 kW",
+   "alternative_choices_review": "2/8/1 kWは係数違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-chf-model-selection-v1",
+   "independent_choice_index": 3,
+   "working": "CHF相関は形状・流動・圧力・向きに強く依存。大水平面プール沸騰の理想相関を小曲面強制流へ無検証で転用不可。適用域に合う根拠・実験の確認が必要",
+   "computed_or_physical_result": "別途確認が必要",
+   "alternative_choices_review": "他3肢は無検証の転用・外挿・無視を肯定し不適切。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-mixed-convection-v1",
+   "independent_choice_index": 1,
+   "working": "Gr/Re^2≈1は浮力と慣性力が同程度 => 混合対流領域。向きの確認も必要",
+   "computed_or_physical_result": "混合対流を検討",
+   "alternative_choices_review": "強制のみ・自然のみへの帰着は比≈1と矛盾。h一律も誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-film-fixed-flux-v1",
+   "independent_choice_index": 0,
+   "working": "q''=0.025*(200-100)/0.00050=0.025*100/5e-4=5000",
+   "computed_or_physical_result": "5.0e3 W/m2",
+   "alternative_choices_review": "他は桁違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-minimum-effective-h-v1",
+   "independent_choice_index": 1,
+   "working": "h=2.0e4/200=100=1.0e2",
+   "computed_or_physical_result": "1.0e2 W/m2K",
+   "alternative_choices_review": "他は積・逆数等の誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-radiation-spectral-kirchhoff-v1",
+   "independent_choice_index": 3,
+   "working": "Kirchhoff則の等号 αλ=ελ は同波長・同方向等の条件付き。太陽スペクトル重みと低温熱放射スペクトル重みは異なる帯域なので総量値が異なっても矛盾しない",
+   "computed_or_physical_result": "差だけでは矛盾と言えない",
+   "alternative_choices_review": "常時等しい・全波長0.90・和が1で免除、はいずれも誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-system-local-pressure-v1",
+   "independent_choice_index": 0,
+   "working": "p=90 + 800*10*0.75/1000 =90+6=96 kPa",
+   "computed_or_physical_result": "96 kPa",
+   "alternative_choices_review": "84は符号逆、6は静水圧のみ、690は単位誤り。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-boiling-mass-flux-v1",
+   "independent_choice_index": 0,
+   "working": "G=0.020/5.0e-5=400",
+   "computed_or_physical_result": "4.0e2 kg/m2s",
+   "alternative_choices_review": "他は桁違い・逆数。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-forced-condensation-complete-then-subcool-v1",
+   "independent_choice_index": 0,
+   "working": "入口蒸気=0.75*0.020=0.015 kg/s、全凝縮に30.0 kW必要。32.0 kW除去 => 残り2.0 kWで液過冷却: ΔT=2000/(0.020*4000)=25 K => 100-25=75℃ 全液体",
+   "computed_or_physical_result": "全液体 75.0℃",
+   "alternative_choices_review": "100℃は過冷却分を無視、負の乾き度は物理量でなく状態記述として不適切、正の乾き度は凝縮不足を意味し収支に反する。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-dropwise-h-uncertainty-v1",
+   "independent_choice_index": 0,
+   "working": "無相関一次伝播: sqrt(10%^2+5%^2)=sqrt(125)=11.18%≈11%",
+   "computed_or_physical_result": "11%",
+   "alternative_choices_review": "15%は線形和、10%/5%は片方のみ。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-heat-pipe-other-limits-v1",
+   "independent_choice_index": 0,
+   "working": "ヒートパイプには毛管限界の他に音速・同伴(entrainment)・沸騰・粘性等の限界があり、毛管余裕だけでは全体の輸送可否は決まらない",
+   "computed_or_physical_result": "他の限界も確認",
+   "alternative_choices_review": "他肢は毛管余裕から全限界クリアや沸騰なしを論理なく断定。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-kirchhoff-spectral-identifiability-v1",
+   "independent_choice_index": 1,
+   "working": "スペクトル形不変・強度のみ2倍では重み関数が同一で、得られる方程式は比例関係にあり独立情報が増えない。帯別分離にはスペクトル形を変える測定が必要",
+   "computed_or_physical_result": "独立情報を追加しない",
+   "alternative_choices_review": "二回だから一意・吸収率2倍・透過率ゼロ決めつけはいずれも誤り。一意。",
+   "concerns": "定式上は『重みが同じ』で十分。透過率には触れていないが結論に影響しない。"
+  },
+  {
+   "id": "supp-phase-correlation-minimum-gravity-v1",
+   "independent_choice_index": 2,
+   "working": "q∝g^(1/4); 16^(1/4)=2.00",
+   "computed_or_physical_result": "2.00倍",
+   "alternative_choices_review": "16倍は一次、4倍は1/2乗、0.5は逆数。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-heatpipe-limit-capillary-load-v1",
+   "independent_choice_index": 2,
+   "working": "等号: 4000=800+125.10*Q => Q=(3200)/125.10=25.58≈25.6",
+   "computed_or_physical_result": "25.6 W",
+   "alternative_choices_review": "32.0は重力項を引かない値(4000/125.1)、38.4/2.56は計算違い。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-correlation-liquid-only-reynolds-v1",
+   "independent_choice_index": 2,
+   "working": "Re_lo=GD/mu_l=500*0.0200/2.00e-4=10/2e-4=5.00e4。液単相基準なので乾き度xは使わない定義",
+   "computed_or_physical_result": "5.00e4",
+   "alternative_choices_review": "37500は(1-x)因子、25000/66700は別の流量解釈。定義により一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-dropwise-correlation-effective-coefficient-v1",
+   "independent_choice_index": 2,
+   "working": "60^0.8=26.456; 括弧内=5*4+0.3*16=24.8; q''=1000*26.456*24.8=6.561e5; h=q''/4.00=1.640e5",
+   "computed_or_physical_result": "1.64e5 W/m2K",
+   "alternative_choices_review": "6.56e5はq''そのもの(hと混同)、1.32e5/1.96e5は計算違い。微分勾配でなく割算平均で一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-system-boiling-forced-film-v1",
+   "independent_choice_index": 0,
+   "working": "Fr確認: u^2/(gD)=4/(10*0.05)=8>=4 OK。内側=0.05*2*1.5e6*100*2/0.05=6.0e8; sqrt=24494.9; *2.70=66136 W/m2=66.1 kW/m2",
+   "computed_or_physical_result": "66.1 kW/m2",
+   "alternative_choices_review": "他肢は根号・係数の取り違え。一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-geometry-modified-ra-length-v1",
+   "independent_choice_index": 2,
+   "working": "Ra*∝L^4 (q''固定) => 2^4=16",
+   "computed_or_physical_result": "16.0倍",
+   "alternative_choices_review": "通常Ra(ΔT既知、L^3)と混同した8倍が紛らわしいが、定義式が与えられ一意。",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-wavy-regime-v1",
+   "independent_choice_index": 1,
+   "working": "Re_c=50は波状層流域(概ね7<Re<400)に相当。波紋により膜が薄くなり伝熱促進されるため平滑膜のNusselt理論は過小評価傾向、というのが教科書(Incropera等)の標準的記述",
+   "computed_or_physical_result": "波状域、Nusselt式は過小評価傾向",
+   "alternative_choices_review": "7以下平滑域とする肢・400超乱流とする肢・判断不能とする肢はいずれも標準的区分に反する。一意。",
+   "concerns": "区分の境界値(7, 400)は流儀により30等の別値もあるが、50が波状域という結論は頑健。"
+  }
+ ]
+}

@@ -1,0 +1,301 @@
+{
+ "chunk": 1,
+ "results": [
+  {
+   "id": "supp-applied-8-3-v1",
+   "independent_choice_index": 3,
+   "working": "Ra=gβ|ΔT|L³/(να)=9.81*0.003*10*0.008/(1.5e-5*2.0e-5)=0.0023544/3.0e-10",
+   "computed_or_physical_result": "7.848e6 ≈7.85×10⁶",
+   "alternative_choices_review": "7.85e5は10分の1、2.94e5は別組合せ、1.57e7は2倍でいずれも計算と合わない",
+   "concerns": ""
+  },
+  {
+   "id": "book-1-2-closed-energy-rate",
+   "independent_choice_index": 2,
+   "working": "式(1.1) Q=Wk+dU/dt より dU/dt=Q-Wk=120-30",
+   "computed_or_physical_result": " +90 W",
+   "alternative_choices_review": "150は加算、-90/-150は符号反転で符号約束（Q入正・Wk出正）と矛盾",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-fick-mass-flux-v1",
+   "independent_choice_index": 1,
+   "working": "質量流束 m''=N_A*M_A=0.01219*0.0280",
+   "computed_or_physical_result": "3.4132e-4 kg/(m²·s) ≈+3.41×10⁻⁴",
+   "alternative_choices_review": "1e-5は桁違い、負号はN_A正と矛盾、4.35e-1は割り算相当で次元・桁が合わない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-rate-vs-state-v1",
+   "independent_choice_index": 3,
+   "working": "熱移動率は機構（伝導/対流/放射）と境界条件で決まり、表面温度単独では流束の大きさ・符号は決まらない",
+   "computed_or_physical_result": "温度だけでは定量化できず機構と境界条件が必要",
+   "alternative_choices_review": "面積×温度は次元不一致、高温でも周囲がより高温なら流入しうる、定常でも定常熱流はありうる",
+   "concerns": ""
+  },
+  {
+   "id": "supp-deep-rad-totalpower-v1",
+   "independent_choice_index": 0,
+   "working": "Qdot=q''*A=793.852*0.50",
+   "computed_or_physical_result": "396.926 W",
+   "alternative_choices_review": "793.852は流束のまま、1587は逆数、1253は別量で面積換算になっていない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-openflow-enthalpy-v1",
+   "independent_choice_index": 2,
+   "working": "定常開系・損失なし: Qdot=mdot*cp*ΔT=0.20*4000*10",
+   "computed_or_physical_result": "8000 W",
+   "alternative_choices_review": "2000/4000/16000は係数・ΔTの取り違えで積と合わない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-slab-nonlinear-limit-v1",
+   "independent_choice_index": 3,
+   "working": "熱伝導方程式に発熱項 q''' が入ると d²T/dx²=-q'''/k≠0 となり分布は二次的に曲がる",
+   "computed_or_physical_result": "保存式に発熱項が入り温度分布は曲がりうる",
+   "alternative_choices_review": "勾配一定は発熱なしの場合のみ、厚さは残る、表面温度だけでは流束ゼロは決まらない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-ntu-config-v1",
+   "independent_choice_index": 3,
+   "working": "有効度 ε は NTU, Cr のほか流れ配置（並流/向流/直交等）にも依存し配置ごとの相関式を使う",
+   "computed_or_physical_result": "有効度は流路配置に応じた関係式で求める",
+   "alternative_choices_review": "NTUのみでは一意でない、配置で変わる、Crは消えない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-found-nu-fluid-k-v1",
+   "independent_choice_index": 3,
+   "working": "Nu=hL/k の k は定義上、対流を担う流体の熱伝導率 k_f",
+   "computed_or_physical_result": "境界層を形成する流体側の熱伝導率を使う",
+   "alternative_choices_review": "固体kはBi数側の量、k=0は非物理、和には定義根拠なし",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-combined-surface-loss-v1",
+   "independent_choice_index": 2,
+   "working": "Qconv=hAΔT=10*0.5*20=100 W; Qrad=εσA(320⁴-300⁴)=54.11 W; 合計=154.11 W",
+   "computed_or_physical_result": "約154.1 W",
+   "alternative_choices_review": "54.1は放射のみ、100は対流のみ、200は根拠なし",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-massflow-from-heat-v1",
+   "independent_choice_index": 1,
+   "working": "mdot=Q/(cpΔT)=30000/(4000*15)=30000/60000",
+   "computed_or_physical_result": "0.50 kg/s",
+   "alternative_choices_review": "0.25/1.00/2.00は分母の取り違え",
+   "concerns": ""
+  },
+  {
+   "id": "supp-next-local-versus-average-v1",
+   "independent_choice_index": 3,
+   "working": "面平均は hbar=(1/L)∫h_x dx で定義され、h_xが変化すれば終端局所値 h_L と一般に異なる",
+   "computed_or_physical_result": "分布を平均した値と終端の値は異なる",
+   "alternative_choices_review": "局所値を平均の代用にはできない、平均が0になる根拠なし、積分が必要",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-outer-base-u-v1",
+   "independent_choice_index": 1,
+   "working": "UA不変: Uo=Ui*Ai/Ao=100*0.50/1.00",
+   "computed_or_physical_result": "50 W/(m²K)",
+   "alternative_choices_review": "25/100/200は面積比の向き・値が誤り",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-f-area-ratio-v1",
+   "independent_choice_index": 2,
+   "working": "Q=U*A*F*LMTD、Q,U,LMTD固定で A∝1/F、倍率=1.0/0.80",
+   "computed_or_physical_result": "1.25倍",
+   "alternative_choices_review": "0.80は逆向き、1.00は無変化、1.80は加算的誤り",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-pipe-h-wall-temperature-v1",
+   "independent_choice_index": 2,
+   "working": "h=Nu_D*k_f/D=3.66*0.60/0.020",
+   "computed_or_physical_result": "109.8 W/(m²K)",
+   "alternative_choices_review": "54.9は半分、73.2/219.6はNu取り違え（等熱流束4.36でも87.2で該当なし）等で合わない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch2-reverse-f12-v1",
+   "independent_choice_index": 3,
+   "working": "F12=A2*F21/A1=6*0.25/2",
+   "computed_or_physical_result": "0.750",
+   "alternative_choices_review": "0.125/0.25/0.5は相反則の面積比適用誤り",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch3-insulated-boundary-v1",
+   "independent_choice_index": 0,
+   "working": "断熱は法線流束ゼロ: -k ∂T/∂n=0、k>0より ∂T/∂n=0",
+   "computed_or_physical_result": "法線温度勾配0かつ伝導流束0",
+   "alternative_choices_review": "温度固定（ディリクレ）ではない、周囲温度と等しい保証なし、正の流入は断熱と矛盾",
+   "concerns": ""
+  },
+  {
+   "id": "supp-batch3-laplace-vs-poisson-v1",
+   "independent_choice_index": 2,
+   "working": "定常・一定物性では ∇²T+q'''/k=0（Poisson）、q'''=0で ∇²T=0（Laplace）",
+   "computed_or_physical_result": "Laplace方程式 ∇²T=0 になる",
+   "alternative_choices_review": "∇²T=1は根拠なし、温度場自体が0℃になるわけではない、定常で時間微分は0",
+   "concerns": ""
+  },
+  {
+   "id": "supp-chf-capillary-length-v1",
+   "independent_choice_index": 1,
+   "working": "lc=sqrt(σ/(gΔρ))=sqrt(0.060/(10*1000))=sqrt(6e-6)=2.449e-3 m",
+   "computed_or_physical_result": "2.45 mm",
+   "alternative_choices_review": "0.245/24.5/245 mm は桁（単位換算）誤り",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-beta-v1",
+   "independent_choice_index": 1,
+   "working": "Tf=26.85+273.15=300.00 K、β≈1/Tf=1/300",
+   "computed_or_physical_result": "0.00333 K⁻¹",
+   "alternative_choices_review": "0.0372は℃の逆数相当、0.000333は桁違い、300は逆数でない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-film-reynolds-v1",
+   "independent_choice_index": 2,
+   "working": "Re_f=4*mdot/(b*μ)=4*5.0e-4/(0.40*2.0e-4)=0.002/8.0e-5",
+   "computed_or_physical_result": "25",
+   "alternative_choices_review": "6.3は係数4なし相当、13/50は係数取り違え。なお係数4の競合定義は確定論点7として既知だが本問は定義を明示している",
+   "concerns": ""
+  },
+  {
+   "id": "supp-film-radiation-kelvin-v1",
+   "independent_choice_index": 3,
+   "working": "q''=εσ(Tw⁴-Tsur⁴)=0.80*5.67e-8*(400⁴-300⁴)=0.80*5.67e-8*1.75e10",
+   "computed_or_physical_result": "793.8 ≈7.9×10² W/m²",
+   "alternative_choices_review": "9.9e2はε=1（黒体）の値、1.2e3/4.5は計算と合わない。温度はK使用が必須",
+   "concerns": ""
+  },
+  {
+   "id": "supp-minimum-temperature-insufficient-v1",
+   "independent_choice_index": 1,
+   "working": "q''_min のみでは Tw は決まらず、飽和温度・物性・圧力・沸騰曲線上の位置（Leidenfrost点等）が必要",
+   "computed_or_physical_result": "q''だけでは不足し圧力や温度関係等を確認する",
+   "alternative_choices_review": "数値を℃へ読み替えるのは次元誤り、Tsatと一致する根拠なし、流体によらない一定値ではない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-transition-wet-fraction-inverse-v1",
+   "independent_choice_index": 2,
+   "working": "150=f*300+(1-f)*50 → 100=250f",
+   "computed_or_physical_result": "f=0.40",
+   "alternative_choices_review": "0.20/0.50/0.60を代入すると平均は100/175/200となり150に合わない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-system-surface-comparison-v1",
+   "independent_choice_index": 3,
+   "working": "粗さ・圧力・流速が同時に変わった交絡実験では差を粗さ単独に帰属できない",
+   "computed_or_physical_result": "複数条件が変わったと記録し粗さ単独の効果は分けて調べる",
+   "alternative_choices_review": "他2案は交絡を無視しており因果帰属として誤り",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-boiling-slip-void-v1",
+   "independent_choice_index": 3,
+   "working": "α=1/[1+((1-x)/x)(ρv/ρl)S]=1/[1+9*0.01*2]=1/1.18",
+   "computed_or_physical_result": "0.847",
+   "alternative_choices_review": "0.100はxそのもの、0.917はSなし（1/1.09）、0.957は密度比逆等で式と合わない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-forced-condensation-total-mass-v1",
+   "independent_choice_index": 3,
+   "working": "閉じた管内定常流では全質量保存。相変化は相間の移行であり全流量は不変、エネルギーの壁への流出は質量損失ではない",
+   "computed_or_physical_result": "蒸気は減り液体が増え合計は保存される",
+   "alternative_choices_review": "密度差やエネルギー流出で全質量が増減するという他案は質量保存に反する",
+   "concerns": ""
+  },
+  {
+   "id": "supp-dropwise-film-model-limit-v1",
+   "independent_choice_index": 3,
+   "working": "滴状凝縮は液滴分布・離脱・被覆率等が支配的で連続膜モデルの適用範囲外。適合モデル/測定が必要",
+   "computed_or_physical_result": "液滴分布と面条件に適合するモデル・測定を別に探す",
+   "alternative_choices_review": "無根拠な10倍、全液滴同一膜厚、界面抵抗ゼロはいずれも根拠なし",
+   "concerns": ""
+  },
+  {
+   "id": "supp-kirchhoff-incident-weight-v1",
+   "independent_choice_index": 0,
+   "working": "α_inc=Σα_band*G_band割合=0.90*0.80+0.10*0.20=0.72+0.02",
+   "computed_or_physical_result": "0.74",
+   "alternative_choices_review": "0.50は単純平均、0.26は補数、1.00は全吸収で重み付け計算と合わない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-phase-correlation-latent-correction-v1",
+   "independent_choice_index": 1,
+   "working": "Ja=cpvΔT/hfg=2000*300/2.0e6=0.300; 係数=0.968-0.163/0.800=0.76425; hfg*=2.00*[1+0.76425*0.300]=2.00*1.229275",
+   "computed_or_physical_result": "2.459 MJ/kg",
+   "alternative_choices_review": "2.000は補正なし、2.240/2.600は係数・Ja取り違え。式の形は確定論点3と一致",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-external-mean-coefficient-v1",
+   "independent_choice_index": 1,
+   "working": "sqrt(1+B)=sqrt(1907.5735)=43.68; Nu=0.64*sqrt(6000*(1+43.68))=0.64*sqrt(268056)=0.64*517.7=331.4; h=Nu*k/D=331.4*0.600/0.0200",
+   "computed_or_physical_result": "h≈9.94×10³ W/(m²·K)",
+   "alternative_choices_review": "1.99e4は約2倍、2.10e3/3.31e2は桁・根の取り違えで計算と合わない",
+   "concerns": ""
+  },
+  {
+   "id": "supp-heatpipe-limit-evaporator-area-v1",
+   "independent_choice_index": 1,
+   "working": "Qdot=q''_lim*A_evap=1.00e5*5.00e-4",
+   "computed_or_physical_result": "50.0 W",
+   "alternative_choices_review": "10.0は蒸気断面積Avを使った誤り、100/500は面積取り違え",
+   "concerns": ""
+  },
+  {
+   "id": "supp-tube-correlation-horizontal-factor-v1",
+   "independent_choice_index": 1,
+   "working": "Fr=G²/(ρl²gD)=2500/(640000*10*0.02)=0.01953<0.04; fo=(25*0.01953)^0.3=(0.4883)^0.3",
+   "computed_or_physical_result": "0.806",
+   "alternative_choices_review": "1.00はFr≥0.04側の値、0.488は25Frそのもの、0.699は指数取り違え",
+   "concerns": ""
+  },
+  {
+   "id": "supp-dropwise-correlation-range-selection-v1",
+   "independent_choice_index": 1,
+   "working": "適用範囲: 純蒸気・短い鉛直面・約1kPa〜大気圧・接触角約90°・ΔT主に8K未満。全て満たすのは純蒸気20kPa/短い面/90°/4Kのみ",
+   "computed_or_physical_result": "短い鉛直面・純蒸気20kPa・接触角約90°・ΔT=4K",
+   "alternative_choices_review": "空気混合は純蒸気条件違反、長い面は形状違反、200kPaは大気圧を大きく超え範囲外",
+   "concerns": ""
+  },
+  {
+   "id": "supp-natural-geometry-sphere-conduction-v1",
+   "independent_choice_index": 1,
+   "working": "h=Q/(AΔT)=4πkR/(4πR²)=k/R; Nu=hD/k=(k/R)(2R)/k",
+   "computed_or_physical_result": "Nu_D=2.00",
+   "alternative_choices_review": "1.00は半径基準の取り違え、0は伝導がある以上誤り、0.360は無関係な値。確定論点8と一致",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-derivation-profile-v1",
+   "independent_choice_index": 0,
+   "working": "Nusselt解析: 運動量式で重力と粘性が釣り合い放物線型速度分布 u∝(δy-y²/2); エネルギー式は対流項を落とし伝導のみで線形温度分布",
+   "computed_or_physical_result": "速度は放物線分布、温度は線形分布",
+   "alternative_choices_review": "逆の組合せ・両線形・一様速度はいずれも積分結果と異なる",
+   "concerns": ""
+  },
+  {
+   "id": "supp-condensation-gamma-shape-v1",
+   "independent_choice_index": 1,
+   "working": "Γ=∫ρu dy は局所の放物線速度分布の積分形に由来し普遍的。形状差は重力の接線成分 g(x) とそれで決まる δ(x) の変化として現れる",
+   "computed_or_physical_result": "放物線型速度分布が形状に依らず、形状差はδ(x)とg(x)に現れる",
+   "alternative_choices_review": "δ自体は位置・形状で変わる、gの大きさ一定が理由ではない、温度線形性は速度積分の普遍性の理由ではない",
+   "concerns": ""
+  }
+ ]
+}

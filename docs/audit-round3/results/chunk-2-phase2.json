@@ -1,0 +1,185 @@
+{
+ "chunk": 2,
+ "checks": [
+  {
+   "id": "supp-applied-8-5-v1",
+   "explanation_check": "ok",
+   "notes": "explanation/steps: 0.20mm=0.00020m、kΔT=9.0、q''=45000 W/m2でフェーズ1と一致。distractorsの換算誤り対応（0.002m→4500、0.001m→9000、半分の膜厚→90000）も数値的に正しい。"
+  },
+  {
+   "id": "supp-deep-heat-generation-center-v1",
+   "explanation_check": "ok",
+   "notes": "T(x)=Ts+q'''x(L-x)/(2k)、Tmax=Ts+q'''L^2/(8k)=30+0.8=30.8℃で正しい。distractors（分母2倍→30.4、寄与2倍→31.6）も対応が正しい。"
+  },
+  {
+   "id": "supp-deep-semi-similarity-v1",
+   "explanation_check": "ok",
+   "notes": "√(αt)=0.010m、η=0.50、erf(η)への接続も正しい。distractorsの分母4・2落とし・逆数の対応も正しい。"
+  },
+  {
+   "id": "supp-deep-fin-base-heat-v1",
+   "explanation_check": "ok",
+   "notes": "q_b=kAc·m·ΔT·tanh(mL)=8.4853×0.608859=5.166W、検算 hPLΔT=6.000W（理想上限）も正しい。distractor[3]=無限長フィン値8.485Wの対応も正しい。"
+  },
+  {
+   "id": "supp-deep-exchanger-cold-outlet-v1",
+   "explanation_check": "distractor[0]（25℃）の誤答理由が不整合・判読困難：文面は『温側の温度低下20Kを冷側の温度上昇として用いていませんが、この値はエネルギー収支と合いません』で、その誤りを犯せば出口は40℃になり25℃にはならない。25℃は上昇5K（Q=16kW）に相当し、記された誤答原因から導けない。",
+   "notes": "explanation/solutionSteps/hints本体は正しい（Q=48000W、ΔTc=15K、出口35℃、フェーズ1と一致）。誤りはdistractor[0]の理由文のみ。"
+  },
+  {
+   "id": "supp-found-three-mode-conduction-v1",
+   "explanation_check": "ok",
+   "notes": "Q=kAΔT/L=200W、単位の検算も正しい。distractorsは定性的記述だが数値・式の誤りなし。"
+  },
+  {
+   "id": "supp-found-resistor-series-v1",
+   "explanation_check": "distractor[2]（300W）の誤答理由が数値と不整合：『小さい抵抗だけを過剰に使用』では 60/0.10=600W（選択肢3）になり300Wにはならない。300W=60/0.20 は大きい方の抵抗R2のみを使った値。distractor[3]が正しくR1のみ=600Wと述べていることとも矛盾する。",
+   "notes": "explanation/steps（Rtot=0.30、Q=200W）は正しくフェーズ1と一致。誤りはdistractor[2]の理由文のみ。"
+  },
+  {
+   "id": "supp-found-slab-biot-v1",
+   "explanation_check": "distractor[0]（0.050）の誤答理由が数値と不整合：『Lをさらに半分』（L=0.010m）では Bi=50×0.010/5=0.100 となり0.050にはならない。0.050には L=0.005m（半厚さの1/4）が必要で、記された理由は選択肢1（0.100）の値に対応する。",
+   "notes": "explanationの Bi=hL/k=50×0.020/5=0.20 は正しくフェーズ1と一致。solutionSteps/hintsは汎用テンプレートで具体計算を含まないが、誤った数値・式は含まない。誤りはdistractor[0]の理由文のみ。"
+  },
+  {
+   "id": "supp-found-boil-flux-v1",
+   "explanation_check": "ok",
+   "notes": "q''=200/0.010=20000 W/m2=20 kW/m2で正しい。distractor[1]（面積2倍→10）・[3]（10倍）対応も正しい。なおsolutionSteps/hintsは汎用テンプレートだが誤った内容は含まない。"
+  },
+  {
+   "id": "supp-next-slab-flux-unit-v1",
+   "explanation_check": "ok",
+   "notes": "q''=kΔT/L=400 W/m2。distractor[0]（厚さ1m→40）、[2]（A=0.5m2で総量200Wとの混同）の対応も数値的に成立する。"
+  },
+  {
+   "id": "supp-next-exchanger-qmax-feasibility-v1",
+   "explanation_check": "ok",
+   "notes": "Qmax=CminΔTin=400×60=24kW、30kW超過の結論はフェーズ1と一致。distractorsの反論も正しい。"
+  },
+  {
+   "id": "supp-next-pr-layer-thickness-v1",
+   "explanation_check": "ok",
+   "notes": "Pr=ν/α大で温度境界層が薄まる説明は正しい。distractorsの反論も妥当。"
+  },
+  {
+   "id": "supp-batch2-fouling-loss-v1",
+   "explanation_check": "ok",
+   "notes": "Rnew=0.060 K/W、Q=30/0.060=500W。distractor[0]（R=0.10→300W）対応も正しい。"
+  },
+  {
+   "id": "supp-batch2-flow-tradeoff-v1",
+   "explanation_check": "ok",
+   "notes": "圧力損失・ポンプ仕事の増加を併記した説明は物理的に正しい。"
+  },
+  {
+   "id": "supp-batch2-local-wall-flux-v1",
+   "explanation_check": "ok",
+   "notes": "q''=109.8×10=1098 W/m2。distractorsのΔT=1K/5K/20K対応も全て正しい。"
+  },
+  {
+   "id": "supp-batch2-closed-view-sum-v1",
+   "explanation_check": "ok",
+   "notes": "和則 F13=1-0-0.25=0.75。distractor[1]（F12二重差引→0.50）の対応も成立する。"
+  },
+  {
+   "id": "supp-batch3-pure-neumann-unique-v1",
+   "explanation_check": "ok",
+   "notes": "T+Cの自由度と基準条件の必要性は正しい。k(T)非線形では定数加算がそのまま成立しない旨の限定注記も正しく、問題文の線形・k一定条件と矛盾しない。"
+  },
+  {
+   "id": "supp-batch3-variable-k-equation-v1",
+   "explanation_check": "ok",
+   "notes": "∇·(k∇T)+q'''=0 の一般形は正しく、k一定への置換の不適切さの指摘も正しい。"
+  },
+  {
+   "id": "supp-chf-ideal-correlation-v1",
+   "explanation_check": "explanation末尾の補足パーセントが不正確：『C=0.131を使うと約1.05 MW/m2と約14%低くなる』— 値1.05 MW/m2（実計算1.048）自体は正しいが、低くなる割合は (1-0.131/0.149)=12.1% であり約14%ではない。14%は逆向きの基準（0.149が0.131より約13.7%大きい）に対応する百分率基準の取り違え。",
+   "notes": "本体の計算（√ρv=0.8、625^{1/4}=5、q''=1.192e6≈1.19 MW/m2）とC=0.149（Lienhard-Dhir）の採用はフェーズ1および確定論点9と整合し、指摘対象外。本指摘は補足パーセントのみ。"
+  },
+  {
+   "id": "supp-natural-rayleigh-v1",
+   "explanation_check": "ok",
+   "notes": "分子4.0e-4・分母2.0e-10・Ra=2.0e6、単位相殺の記述も正しい。distractorsの1/100・1/10・10倍対応も正しい。"
+  },
+  {
+   "id": "supp-condensation-supercooling-scale-v1",
+   "explanation_check": "ok",
+   "notes": "hbar倍率1/2、q''倍率8の導出は正しい。実条件での膜流量・物性確認の注記も妥当。"
+  },
+  {
+   "id": "supp-film-radiation-coupling-v1",
+   "explanation_check": "ok",
+   "notes": "放射による膜厚・蒸発量変化と連成確認の説明はフェーズ1の結論と整合。distractorsの反論も正しい。"
+  },
+  {
+   "id": "supp-minimum-negative-slope-feedback-v1",
+   "explanation_check": "ok",
+   "notes": "dq''/dT<0でP-Aq''が増え増幅方向になる符号解析は正しい。単純モデル限定の注記も適切。"
+  },
+  {
+   "id": "supp-transition-average-slope-v1",
+   "explanation_check": "ok",
+   "notes": "積の微分 0.80+0.12-1.80=-0.88 kW/(m2·K)。distractors（第三項落とし+0.92、第三項のみ-1.8、符号反転+2.7）の対応も全て数値的に正しい。"
+  },
+  {
+   "id": "supp-system-small-gravity-limit-v1",
+   "explanation_check": "ok",
+   "notes": "浮力による泡・蒸気排出機構への依存と外挿不可の説明は正しい。"
+  },
+  {
+   "id": "supp-tube-boiling-equilibrium-quality-v1",
+   "explanation_check": "ok",
+   "notes": "x_eq<0=過冷却側の指標、実クオリティは0〜1という説明は正しい。非平衡の壁近傍気泡への注記も正しい。"
+  },
+  {
+   "id": "supp-forced-condensation-opposing-shear-v1",
+   "explanation_check": "ok",
+   "notes": "逆向きせん断が排液を妨げる旨と運動量収支再評価の説明はフェーズ1と整合。"
+  },
+  {
+   "id": "supp-heat-pipe-latent-circulation-v1",
+   "explanation_check": "ok",
+   "notes": "mdot=150/1.5e6=1.0e-4 kg/s=0.10 g/s、循環量としての解釈注記も正しい。distractor[3]（掛け算→2.25e8≈2.3e8）の対応も正しい。"
+  },
+  {
+   "id": "supp-kirchhoff-emission-weight-v1",
+   "explanation_check": "ok",
+   "notes": "ε=0.60×0.25+0.20×0.75=0.30、E=300 W/m2。distractors（重みなし和0.80、単純平均0.40、重み逆転0.50）の対応も全て正しい。自己放出のみで反射を含まない注記も正しい。"
+  },
+  {
+   "id": "supp-phase-correlation-diameter-scaling-v1",
+   "explanation_check": "ok",
+   "notes": "h_b∝D^{-1/4}、Nu_D∝D^{3/4}経由でも同じ指数になる説明は正しい。16^{-1/4}=0.500倍でフェーズ1と一致。"
+  },
+  {
+   "id": "supp-condensation-external-high-speed-limit-v1",
+   "explanation_check": "ok",
+   "notes": "0.64×√40000=128。distractors（0.64未乗算→200、2を根号外→181、2落とし→90.5）の対応も全て数値的に正しい。"
+  },
+  {
+   "id": "supp-heatpipe-limit-combined-v1",
+   "explanation_check": "ok",
+   "notes": "min(80,120,60,100)=60W、安全保証ではない旨の注記も適切。"
+  },
+  {
+   "id": "supp-tube-correlation-orientation-placement-v1",
+   "explanation_check": "ok",
+   "notes": "教科書式(9.50a)(9.50b)で実地確認：f_oはCo項のみに掛かりFはBoi項。solutionStepsの『低Frでf_o<1ならCo側の項が減る』も式(9.52) f_o=(25Fr_lo)^0.3（Fr_lo<0.04）と整合する。"
+  },
+  {
+   "id": "supp-system-boiling-surface-factor-v1",
+   "explanation_check": "ok",
+   "notes": "倍率1.042×(8/9)^3×8^0.125≈0.949066、q''max≈474533 W/m2≈4.75e5でフェーズ1の独立計算と一致。distractor[1]（rに8e-6を代入→約8.44e4）、[2]（接触角項落とし→約6.76e5）の対応も再計算で確認し正しい。適用範囲内の確認も正しい。"
+  },
+  {
+   "id": "supp-natural-geometry-plate-length-v1",
+   "explanation_check": "ok",
+   "notes": "L*=A/P=0.0250m、Ra・Nuで同じL*を使う注記も正しい。"
+  },
+  {
+   "id": "supp-condensation-film-thickness-v1",
+   "explanation_check": "ok",
+   "notes": "分子4.8e-3、分母約1.96e13、比2.45e-16、4乗根1.25e-4m≈0.13mmでフェーズ1の独立計算と一致。δ∝x^{1/4}の注記も正しい。"
+  }
+ ]
+}

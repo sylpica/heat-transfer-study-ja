@@ -1,0 +1,185 @@
+{
+ "chunk": 8,
+ "checks": [
+  {
+   "id": "supp-applied-11-6-v1",
+   "explanation_check": "ok",
+   "notes": "Sc=2000、Sh=1000の式・数値とも独立計算と一致。distractorsの誤り説明も妥当。"
+  },
+  {
+   "id": "supp-deep-fick-stefan-ratio-v1",
+   "explanation_check": "ok",
+   "notes": "対数式 ln(0.95/0.80)/0.15≈1.146 の導出・hintsの両モデル式とも正しい。"
+  },
+  {
+   "id": "supp-deep-rad-netflux-v1",
+   "explanation_check": "ok",
+   "notes": "q''=+793.852 W/m2、四乗差1.75e10 K4、射度・照射量との区別も正しい。確定論点にも抵触なし。"
+  },
+  {
+   "id": "supp-deep-boundary-energy-balance-v1",
+   "explanation_check": "ok",
+   "notes": "Qin=12000 J、Wout=3000 J、ΔU=+9000 J とも正しい。"
+  },
+  {
+   "id": "supp-found-heatloss-temperature-dependent-v1",
+   "explanation_check": "ok",
+   "notes": "mc dT/dt=P-hA(T-Tinf) の収支説明がフェーズ1の結論と一致。"
+  },
+  {
+   "id": "supp-found-slab-resistance-value-v1",
+   "explanation_check": "ok",
+   "notes": "R=0.025 K/W、付記の40 K→1600 Wの検算も正しい。"
+  },
+  {
+   "id": "supp-found-ntu-qmax-v1",
+   "explanation_check": "ok",
+   "notes": "解説の Cmin×80 K=32000 W は正しい。solutionSteps/hintsは汎用文で具体的数値を含まないが誤りはない。"
+  },
+  {
+   "id": "supp-found-nu-average-v1",
+   "explanation_check": "ok",
+   "notes": "解説 Nu=400 は正しい。solutionSteps/hintsは汎用文で誤りはない。"
+  },
+  {
+   "id": "supp-next-open-enthalpy-jump-v1",
+   "explanation_check": "ok",
+   "notes": "Q=0.25×50=12.5 kW、単位処理も正しい。"
+  },
+  {
+   "id": "supp-next-cold-outlet-with-loss-v1",
+   "explanation_check": "ok",
+   "notes": "20+46000/2000=43 ℃、損失4 kWの扱いも正しい。solutionSteps/hintsは汎用文で誤りはない。"
+  },
+  {
+   "id": "supp-next-nusselt-invert-h-v1",
+   "explanation_check": "ok",
+   "notes": "h=200×0.025/0.50=10 の式・値とも正しい。solutionSteps/hintsは汎用文で誤りはない。"
+  },
+  {
+   "id": "supp-batch2-g-times-dt-v1",
+   "explanation_check": "ok",
+   "notes": "40×15=600 W、UAへの面積二重掛け注意も正しい。"
+  },
+  {
+   "id": "supp-batch2-pump-shaft-v1",
+   "explanation_check": "ok",
+   "notes": "水力50 W、軸動力100 W の説明・distractorsとも正しい。"
+  },
+  {
+   "id": "supp-batch2-similarity-condition-v1",
+   "explanation_check": "ok",
+   "notes": "Bi維持にh半分、Fo維持にt4倍の説明が正しい。"
+  },
+  {
+   "id": "supp-batch2-blackbody-two-surfaces-v1",
+   "explanation_check": "ok",
+   "notes": "四乗差を17.5e9と置いた計算 793.8 W が正しい。"
+  },
+  {
+   "id": "supp-batch3-dirichlet-and-robin-v1",
+   "explanation_check": "ok",
+   "notes": "Robin条件 -k∂T/∂n=h(Ts-Tinf) の記述が正しい。"
+  },
+  {
+   "id": "supp-batch3-generation-thickness-squared-v1",
+   "explanation_check": "ok",
+   "notes": "ΔT=q'''L^2/(2k) による4倍の説明が正しい。"
+  },
+  {
+   "id": "supp-nucleate-onset-limit-v1",
+   "explanation_check": "ok",
+   "notes": "2σ/Rまでしか決まらないとする解説がフェーズ1と一致。"
+  },
+  {
+   "id": "supp-fick-stagnant-versus-equimolar-v1",
+   "explanation_check": "ok",
+   "notes": "NB=0とNA+NB≠0の区別、JBの打消しの説明も正しい。"
+  },
+  {
+   "id": "supp-condensation-latent-rate-v1",
+   "explanation_check": "ok",
+   "notes": "2400/2.0e6=1.2e-3 kg/s、適用条件の注記も妥当。"
+  },
+  {
+   "id": "supp-film-thickness-interpretation-v1",
+   "explanation_check": "ok",
+   "notes": "モデル値1/2と実機膜厚の区別がフェーズ1と一致。"
+  },
+  {
+   "id": "supp-minimum-branch-definition-v1",
+   "explanation_check": "ok",
+   "notes": "膜沸騰枝下限としCHFと区別する解説が正しい。"
+  },
+  {
+   "id": "supp-transition-time-average-v1",
+   "explanation_check": "ok",
+   "notes": "積分4200 kJ/m2÷30 s=140 kW/m2 の steps が正しい。"
+  },
+  {
+   "id": "supp-system-superheat-subcooling-v1",
+   "explanation_check": "ok",
+   "notes": "20 K/15 K、35 Kとの区別も正しい。"
+  },
+  {
+   "id": "supp-tube-boiling-subcooled-budget-v1",
+   "explanation_check": "ok",
+   "notes": "顕熱2000 W、残り1000 W、x=0.0250 の収支が正しい。"
+  },
+  {
+   "id": "supp-forced-condensation-film-shear-flow-v1",
+   "explanation_check": "ok",
+   "notes": "重力項0.0033333、せん断項0.0005000、合計0.0038333 とも独立計算と一致。distractorsの符号説明も正しい。"
+  },
+  {
+   "id": "supp-dropwise-contact-angle-evidence-v1",
+   "explanation_check": "ok",
+   "notes": "履歴差・被覆熱抵抗を挙げる解説がフェーズ1と一致。"
+  },
+  {
+   "id": "supp-heat-pipe-startup-state-v1",
+   "explanation_check": "ok",
+   "notes": "凍結起動を定常モデルと別に評価する解説が正しい。"
+  },
+  {
+   "id": "supp-phase-correlation-cylinder-h-v1",
+   "explanation_check": "ok",
+   "notes": "hb≈228.437、別式検算 νv=8.00e-5、NuD≈114.218 も再計算と一致（114.218×2.00=228.44）。distractorsの係数落とし368等の対応も正しい。"
+  },
+  {
+   "id": "supp-condensation-external-liquid-reynolds-v1",
+   "explanation_check": "ok",
+   "notes": "Re=6000、分子1.80の steps も正しい。"
+  },
+  {
+   "id": "supp-heatpipe-limit-entrainment-v1",
+   "explanation_check": "ok",
+   "notes": "v=sqrt(10)≈3.16228、Q≈316.228 W とも一致。distractorsのWe=1→447 W等の対応も正しい。"
+  },
+  {
+   "id": "supp-tube-correlation-single-phase-reference-v1",
+   "explanation_check": "ok",
+   "notes": "Nu≈258.681、h≈2586.814 とも再計算と一致。distractor『Prを4倍に重ねた』は概ね4倍値1.03e4への説明として許容範囲（厳密には分母も変わるが誤答の原因表示であり解説本体の誤りではない）。"
+  },
+  {
+   "id": "supp-dropwise-correlation-noncondensable-gas-v1",
+   "explanation_check": "ok",
+   "notes": "分圧低下と拡散抵抗の解説が正しい。"
+  },
+  {
+   "id": "supp-natural-geometry-cylinder-coefficient-v1",
+   "explanation_check": "ok",
+   "notes": "Nu≈6.6858506、h≈4.680095 とも再計算と一致。distractorsの0.36落とし→4.43等の対応も正しい。"
+  },
+  {
+   "id": "supp-natural-geometry-temperature-average-v1",
+   "explanation_check": "ok",
+   "notes": "積分5/6×12=10.0 K、中点10.447 K・約4.5%大の付記も再計算と一致。"
+  },
+  {
+   "id": "supp-condensation-tube-bank-v1",
+   "explanation_check": "ok",
+   "notes": "16^(1/6)≈1.59、5.04e3→5.0e3 が正しい。Nusseltのa=1/4と後続研究のa=1/6の区別も問題文指定と整合。"
+  }
+ ]
+}

@@ -1,0 +1,185 @@
+{
+ "chunk": 3,
+ "checks": [
+  {
+   "id": "supp-applied-9-3-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-deep-heat-conduction-direction-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-deep-semi-profile-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-deep-fin-effectiveness-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-deep-exchanger-heat-loss-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-found-three-mode-convection-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-found-resistor-parallel-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-found-slab-fourier-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanationのFo=0.0001/0.0004=0.25は正しい。solutionSteps/hintsは汎用文で具体的数値を含まないが誤りはない。"
+  },
+  {
+   "id": "supp-found-boil-h-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanationのh=20000/20=1000は正しい。solutionStepsは汎用文だが誤りはない。"
+  },
+  {
+   "id": "supp-next-radiation-zero-emissivity-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-next-ntu-eps-ratio-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-next-steady-flux-concept-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-batch2-outer-h-decrease-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-batch2-bi-number-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-batch2-constant-flux-pipe-h-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-batch2-convex-self-factor-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-batch3-initial-condition-necessity-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-nucleate-laplace-pressure-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-chf-surface-tension-scale-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-natural-length-scaling-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-condensation-local-average-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-film-versus-condensation-v1",
+   "explanation_check": "issue: distractors[3]の文中に置換文字「���」が含まれ文字化けしており、誤答理由の文が読めない（内容自体の物理はexplanation・solutionStepsとも正しく、膜沸騰=高温壁上の蒸気膜／膜状凝縮=低温壁上の液膜でフェーズ1結論と一致）。",
+   "notes": "explanation・solutionSteps・hintsは整合。テキスト破損のみの軽微な問題。"
+  },
+  {
+   "id": "supp-minimum-control-history-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-transition-fourier-consistency-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-system-mixture-equilibrium-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-tube-boiling-energy-not-limit-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-dropwise-area-average-v1",
+   "explanation_check": "issue: distractors[3]の説明「二領域の面積割合を逆にし、14800を丸めた」の数値が誤り。面積割合を逆にすると0.70×20000+0.30×4000=15200であり14800にはならない（15200の2桁丸めが選択肢1.5×10⁴に対応する）。explanation・solutionStepsの8800=8.8×10³自体は正しくフェーズ1結論と一致。",
+   "notes": "正解側の計算・解説は正しい。誤答説明内の数値のみ不整合の軽微な問題。"
+  },
+  {
+   "id": "supp-heat-pipe-contact-angle-pressure-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-kirchhoff-selective-net-flux-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解と一致。E=260、吸収370、反射130、J=390、J−G=−110の検算も全て整合。"
+  },
+  {
+   "id": "supp-phase-correlation-radiation-coupling-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-condensation-external-range-selection-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-heatpipe-limit-fluid-selection-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-tube-correlation-quality-range-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-system-boiling-surface-data-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-natural-geometry-thick-layer-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解はフェーズ1独立解と一致。explanation・solutionSteps・hints・distractorsの数値・式・物理は独立計算と整合。"
+  },
+  {
+   "id": "supp-condensation-corrected-latent-v1",
+   "explanation_check": "ok",
+   "notes": "保存済み正解と一致。式(0.683−0.228/√Pr)への代入とJaが通常目安を超える旨の注記も問題文と整合（確定論点の式(9.29)とは別の実用形として問題文が明示）。"
+  }
+ ]
+}

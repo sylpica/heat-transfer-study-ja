@@ -1,0 +1,185 @@
+{
+ "chunk": 7,
+ "checks": [
+  {
+   "id": "supp-applied-11-3-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-deep-fick-equimolar-flux-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-deep-rad-radiosity-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-deep-variable-rate-integral-v1",
+   "explanation_check": "ok",
+   "notes": "平均50W×10s=500Jで整合。解説の『台形の面積』は0始まり直線では三角形と等価で実質問題なし（ヒントは三角形と明記）"
+  },
+  {
+   "id": "supp-found-closed-system-firstlaw-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-found-slab-conduction-midpoint-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-found-ntu-thermal-v1",
+   "explanation_check": "ok",
+   "notes": "解説のNTU=1, ε=0.63212, Qmax=12000W, Q≈7585Wは再計算と一致。ただしsolutionStepsは汎用文のみで個別計算過程を示していない（数値誤りではない）"
+  },
+  {
+   "id": "supp-found-pr-fluid-v1",
+   "explanation_check": "ok",
+   "notes": "解説Pr=1.5/2.0=0.75で整合。solutionStepsは汎用文のみ（数値誤りではない）"
+  },
+  {
+   "id": "supp-next-signed-net-flux-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-next-parallel-extra-branch-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-next-dimensionless-centre-temperature-v1",
+   "explanation_check": "ok",
+   "notes": "解説20+0.40×80=52℃で整合。solutionStepsは汎用文のみ（数値誤りではない）"
+  },
+  {
+   "id": "supp-batch2-tube-ratio-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-batch2-max-heat-check-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-batch2-fo-scale-t-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-batch2-view-reciprocity-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-batch3-left-boundary-outward-flux-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-batch3-generated-total-power-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-nucleate-effective-h-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-fick-frame-total-flux-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-natural-length-definition-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-film-area-resistance-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-minimum-instant-storage-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-transition-area-average-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-system-clapeyron-increment-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-tube-boiling-latent-quality-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-forced-condensation-coolant-balance-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-dropwise-distribution-not-mean-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-heat-pipe-pore-tradeoff-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-kirchhoff-steady-versus-equilibrium-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-phase-correlation-wire-geometry-v1",
+   "explanation_check": "ok",
+   "notes": "48^(1/4)×0.515≈1.35556, ×45.0≈61.0 kW/m²で解説・distractor説明（係数落としで118）とも一致"
+  },
+  {
+   "id": "supp-heatpipe-limit-mach-v1",
+   "explanation_check": "ok",
+   "notes": "ṁ=2e-4, v=1.00, Ma=0.00250で解説と一致"
+  },
+  {
+   "id": "supp-tube-correlation-branch-choice-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-dropwise-correlation-coating-balance-v1",
+   "explanation_check": "ok",
+   "notes": "収支式θ+R″q″(θ)=4を独立に解くとθ≈3.04665, q″≈476677 W/m²となり解説の値と一致することを確認"
+  },
+  {
+   "id": "supp-system-boiling-forced-film-range-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-natural-geometry-cylinder-range-v1",
+   "explanation_check": "ok",
+   "notes": "保存された正解インデックスはフェーズ1の独立解と一致し、explanation・solutionSteps・hints・distractorsの数値・式・符号は再計算/物理判断と整合"
+  },
+  {
+   "id": "supp-condensation-reynolds-definition-v1",
+   "explanation_check": "ok",
+   "notes": "4×300=1200で整合。解説中の波状化≈7・遷移≈400の目安もΓ/μ定義基準として4Γ/μ定義の≈30/≈1600と対応し矛盾なし（確定論点7の範囲）"
+  }
+ ]
+}

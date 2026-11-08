@@ -11,3 +11,14 @@ textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:6px;b
 #velocity-graph{height:200px}
 
 #learning{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}#learning>label{max-width:260px}#learning h2{font-size:1.15rem}#learning fieldset{border:1px solid var(--line);border-radius:8px;margin:12px 0;min-width:0}#learning fieldset label{display:flex;flex-direction:row;align-items:center;gap:8px;min-height:44px}#learning input[type=radio]{width:22px;height:22px;flex-shrink:0}#learning-result{border-top:1px solid var(--line);padding-top:8px}#learning p{overflow-wrap:anywhere}
+
+#model-manual h4{font-size:1rem;margin:14px 0 6px}#model-manual p,#model-manual li,#model-manual code{overflow-wrap:anywhere}#model-manual .field-table{margin:10px 0}#model-manual .field-table th,#model-manual .field-table td{white-space:normal;text-align:left}
+
+.sim-guide-bar{display:flex;justify-content:flex-end;margin:6px 0}
+.sim-guide-toggle[aria-pressed="true"]{background:var(--accent);color:var(--panel);border-color:var(--accent)}
+.sim-guide-popup{position:fixed;z-index:1000;width:min(320px,calc(100vw - 16px));max-height:calc(100vh - 16px);overflow:auto;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 32px rgb(0 0 0/.28);padding:14px}
+.sim-guide-count{font-size:.8rem;color:var(--muted)}
+.sim-guide-popup h3{margin:2px 0 6px;font-size:1rem}
+.sim-guide-text{margin:0 0 10px;overflow-wrap:anywhere}
+.sim-guide-nav{display:flex;gap:8px;justify-content:flex-end}
+.sim-guide-target{outline:3px solid var(--accent);outline-offset:2px}

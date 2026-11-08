@@ -1,0 +1,33 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>フィン間流れ（発達チャンネル流れ）の開発検証</title><link rel="stylesheet" href="cavity.css"><style>fieldset{min-width:0}select{max-width:calc(100vw - 4rem)}</style></head><body><main>
+<h1>フィン間流れ（発達チャンネル流れ）の開発検証</h1><p class="notice">開発用・公開承認前。ヒートシンクのフィン間流路1本を平行平板流路と理想化し、発達した Poiseuille 速度分布のもとで熱入口（Graetz）問題だけを解く限定モデルです。公開ビルドに含めません。</p>
+<p>流路の隙間・長さ・幅と駆動条件（流速・流量・圧力差）を与えると、出口バルク温度・平均 Nusselt 数・圧力損失を計算します。速度場は解かず、発達分布を所与とします。図と説明はアプリ作成です。</p>
+<form id="settings"><fieldset><legend>条件：フィン間流路</legend>
+<label>プリセット<select id="preset"></select></label>
+<label>フィン間隔（隙間）s [mm]<input id="gap" type="number" value="10" step="any" required></label>
+<label>フィン高さ（流路幅）W [mm]<input id="fheight" type="number" value="10" step="any" required></label>
+<label>流路長さ L [mm]<input id="length" type="number" value="30000" step="any" required></label>
+<label>流体の密度 ρ [kg/m³]<input id="frho" type="number" value="1.177" step="any" required></label>
+<label>流体の比熱 cp [J/(kg K)]<input id="fcp" type="number" value="1006" step="any" required></label>
+<label>流体の熱伝導率 k [W/(m K)]<input id="fk" type="number" value="0.0264" step="any" required></label>
+<label>流体の動粘度 ν [10⁻⁶ m²/s]<input id="fnu" type="number" value="15.75" step="any" required></label>
+<label>入口温度 [K]<input id="inlet" type="number" value="300" step="any" required></label>
+<label>駆動条件<select id="drivetype"><option value="mean-velocity">平均流速</option><option value="volume-flow">体積流量</option><option value="mass-flow">質量流量</option><option value="pressure-difference">圧力差</option></select></label>
+<label><span id="drivevaluelabel">平均流速 [m/s]</span><input id="drivevalue" type="number" value="0.5" step="any" required></label>
+<label>壁条件<select id="boundarytype"><option value="wall-heat-flux">一定熱流束（両フィン面）</option><option value="wall-temperature">一定壁温（両フィン面）</option></select></label>
+<label><span id="boundaryvaluelabel">両フィン面の熱流束 q″ [W/m²]</span><input id="boundaryvalue" type="number" value="50" step="any" required></label>
+<label>格子 nx（流れ方向）<input id="nx" type="number" value="400" min="4" max="2048" step="1" required></label>
+<label>格子 ny（横断方向）<input id="ny" type="number" value="128" min="4" max="256" step="1" required></label>
+<label>格子拡大率 dxGrowth<input id="dxgrowth" type="number" value="1.03" step="any" required></label>
+<button id="apply" type="submit">この条件で計算</button></fieldset></form>
+<p id="summary">発達極限・一定熱流束の検証条件：隙間10 mm・幅10 mm・長さ30 m、平均流速0.5 m/s、両面熱流束50 W/m²、格子400×128で計算します。</p>
+<section aria-label="計算結果"><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p>
+<pre id="readout"></pre>
+<figure><canvas id="profiles" width="800" height="300" role="img" aria-label="流れ方向のバルク温度・壁温度と局所Nusselt数のグラフ"></canvas></figure>
+</section>
+<details id="diagnostics"><summary>格子・定義・収支の診断</summary><pre id="diagnostic-values"></pre></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>隣接2フィンの間の流路1本を、全隙間 s・流れ方向長さ L・幅（フィン高さ）W の平行平板流路と理想化します（W≫s を前提）。速度は発達した平面 Poiseuille 分布 u=6U z(1−z)（原書式(7.62)）を既知とし、軸方向熱伝導を省いた熱入口の Graetz 問題だけを既存の基盤ソルバーで解きます。水力直径は無限幅理想化の Dh=2s で一貫させ、圧力損失は発達層流の解析則 Δp=12μUL/s²（Darcy f·Re_Dh=96）のみです。圧力差駆動はこの発達摩擦則の逆算であり、入口損失を含む実圧損の予測ではありません。平均 Nusselt 数は局所 Nu の流れ方向長さ平均（基盤ソルバーの定義）で、全体熱量／LMTD から定義する h とは異なるため、総熱移動率と出口バルク温度も併記します。適用範囲は層流の目安 Re_Dh≤2300 と、軸方向熱伝導省略の前提 Pe_Dh≥100 で、範囲外は理由を表示して受理しません。</p>
+<p>検証の要約（詳細は docs/dynamic/FINGAP_FLOW_JS_20261107.md）：受理基準 A1〜A8 を実装前に固定して全件合格。発達極限の出口局所 Nu は、一定熱流束で 8.235294（独立検算値・解析値 140/17 と一致）、一定壁温で 7.540486（教科書印刷値 7.541、第1モード厳密値との差 0.00285%）。圧力損失は解析式 12μUL/s² と相対差 10⁻¹⁶ 級で一致します。</p>
+<p>解かないもの：速度の入口発達（圧力連成の運動量解法）、有限幅の側壁・先端・底面を含む3次元フィン配列（有限幅の水力直径だけを代入する「補正」は名乗りません）、フィン内伝導との共役・フィン効率、入口／出口／分岐の局所圧力損失、複数流路の流量配分とファン作動点、バイパス流、乱流、物性の温度依存、浮力・混合対流。これらの条件へ発達値 8.235／7.541 を無条件に当てはめないでください。</p>
+<p>この開発ページは結果をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="fin-gap-flow-ui.mjs"></script></body></html>

@@ -43,7 +43,8 @@ export function calculateSimulationModel(mode, values) {
 export const DATA_FORMAT = 'heat-study-ja-learning-data';
 export function createEmptyState() {
   return { schemaVersion: 1, settings: { theme: 'system', contentLanguage: 'ja', fontScale: 1, lineHeight: 1.8, width: 'reading' },
-    lastSection: '1.1', readerPositions: {}, readSections: {}, bookmarks: [], questionBookmarks: [], attempts: [],
+    lastSection: '1.1', readerPositions: {}, readSections: {}, bookmarks: [], questionBookmarks: [], termBookmarks: [], attempts: [],
+    flashcards: { mode: 'list', backFirst: false, sort: 'default', scope: 'all', chapter: 'all', category: 'all', order: null, index: 0, flipped: false },
     mistakeNotes: {}, questionReports: {}, notes: [], reviews: {}, completedReviews: {}, sessions: [],
     plan: { active: false, goal: '', targetDate: '', minutesPerDay: 15 }, simComparisons: {}, activities: [], quizDraft: null };
 }
@@ -99,6 +100,19 @@ function dedupeAttempts(rows) {
   }
   return out;
 }
+// Flashcard preferences are learner settings, like the display settings:
+// every field is optional in stored/imported data (older records predate
+// them) but a present field must hold a value the app itself could write.
+const flashcardPrefsOK = v => record(v)
+  && optional(v,'mode',x=>['list','cards'].includes(x))
+  && optional(v,'backFirst',x=>typeof x==='boolean')
+  && optional(v,'flipped',x=>typeof x==='boolean')
+  && optional(v,'sort',x=>['default','kana','section'].includes(x))
+  && optional(v,'scope',x=>['all','bookmarks'].includes(x))
+  && optional(v,'chapter',x=>text(x)&&x.length<=8)
+  && optional(v,'category',x=>text(x)&&x.length<=200)
+  && optional(v,'order',x=>x===null||(Array.isArray(x)&&x.length<=20000&&x.every(text)))
+  && optional(v,'index',x=>Number.isInteger(x)&&x>=0);
 export function validateLearningData(data, {stored=false}={}) {
   const invalid = message => `${message}現在の記録は変更していません。`;
   if (!record(data) || data.schemaVersion!==1 || (!stored && data.format!==DATA_FORMAT)) return invalid('対応する学習データ形式ではありません。');
@@ -109,6 +123,8 @@ export function validateLearningData(data, {stored=false}={}) {
   if (!data.attempts.every(attemptOK)) return invalid('回答履歴の日時・選択肢・自信度を確認してください。');
   if (!data.bookmarks.every(b=>record(b)&&text(b.id)&&text(b.sectionId)&&text(b.note)&&time(b.createdAt)&&optional(b,'position',v=>finite(v)&&v>=0)&&optional(b,'blockId',text)&&optional(b,'language',v=>['ja','en'].includes(v)))) return invalid('しおりの形式が正しくありません。');
   if (!data.questionBookmarks.every(text)) return invalid('問題ブックマークの形式が正しくありません。');
+  if (!optional(data,'termBookmarks',v=>Array.isArray(v)&&v.length<=20000&&v.every(text))) return invalid('用語ブックマークの形式が正しくありません。');
+  if (!optional(data,'flashcards',flashcardPrefsOK)) return invalid('単語帳の設定の形式が正しくありません。');
   if (!data.sessions.every(s=>record(s)&&validDay(s.date)&&Number.isInteger(s.total)&&s.total>=0&&Number.isInteger(s.correct)&&s.correct>=0&&s.correct<=s.total&&time(s.startedAt)&&optional(s,'finishedAt',time)&&optional(s,'activeSeconds',v=>finite(v)&&v>=0)&&optional(s,'answers',v=>Array.isArray(v)&&v.every(attemptOK)))) return invalid('学習セッションの形式が正しくありません。');
   const s=data.settings;
   if (!optional(s,'theme',v=>['system','light','dark'].includes(v)) || !optional(s,'contentLanguage',v=>['ja','en'].includes(v)) || !optional(s,'fontScale',v=>finite(v)&&v>=0.7&&v<=2) || !optional(s,'lineHeight',v=>finite(v)&&v>=1.2&&v<=3) || !optional(s,'width',v=>['reading','wide'].includes(v))) return invalid('表示設定の値が正しくありません。');
@@ -177,6 +193,12 @@ export function normalizeLearningData(data) {
   // totals are stored separately and are deliberately not recomputed here.
   for (const s of out.sessions) if (s&&Array.isArray(s.answers)) s.answers=dedupeAttempts(s.answers);
   out.questionBookmarks=[...new Set(out.questionBookmarks)];
+  out.termBookmarks=[...new Set(Array.isArray(out.termBookmarks)?out.termBookmarks:[])];
+  // Flashcard preferences merge over the defaults so a record written by an
+  // older build (or a partial import) still yields a complete settings set.
+  out.flashcards={...createEmptyState().flashcards,...(record(out.flashcards)?out.flashcards:{})};
+  if(out.flashcards.order!==null&&!Array.isArray(out.flashcards.order))out.flashcards.order=null;
+  if(!Number.isInteger(out.flashcards.index)||out.flashcards.index<0)out.flashcards.index=0;
   out.sessions.sort((a,b)=>instant(a.finishedAt??a.startedAt)-instant(b.finishedAt??b.startedAt));
   return out;
 }
@@ -198,6 +220,8 @@ export function mergeLearningData(current, incoming) {
   out.attempts=dedupeAttempts(out.attempts);
   out.sessions.sort((x,y)=>instant(x.finishedAt??x.startedAt)-instant(y.finishedAt??y.startedAt));
   out.questionBookmarks=[...new Set([...a.questionBookmarks,...b.questionBookmarks])];
+  out.termBookmarks=[...new Set([...a.termBookmarks,...b.termBookmarks])];
+  out.flashcards={...a.flashcards,...b.flashcards};
   for(const k of ['mistakeNotes','readerPositions','reviews']) out[k]=mergeMap(a[k],b[k]);
   out.readSections={...a.readSections}; for(const [k,v] of Object.entries(b.readSections)) out.readSections[k]=Boolean(a.readSections[k]||v);
   out.questionReports={...a.questionReports}; for(const [k,v] of Object.entries(b.questionReports)) out.questionReports[k]=mergeRows(a.questionReports[k]||[],v);

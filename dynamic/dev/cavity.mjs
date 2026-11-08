@@ -1,15 +1,15 @@
 import {createNeumannMultigrid} from './poisson-multigrid.mjs';
 import {createMacMomentumStencil} from './mac-momentum.mjs';
 // Development-only staggered finite-volume projection solver. Not distributed.
-const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),maxAbs=a=>Math.max(...a.map(Math.abs));
+const dot=(a,b)=>{let s=0;for(let i=0;i<a.length;i++)s+=a[i]*b[i];return s;},maxAbs=a=>{let m=0;for(let i=0;i<a.length;i++){const v=Math.abs(a[i]);if(v>m)m=v;}return m;},maxDeviation=(a,ref)=>{let m=0;for(let i=0;i<a.length;i++){const v=Math.abs(a[i]-ref);if(v>m)m=v;}return m;},allFinite=a=>{for(let i=0;i<a.length;i++)if(!Number.isFinite(a[i]))return false;return true;};
 export function projectFaces(us,vs,{nx,ny,dx,dy,rho=1,dt,tolerance=1e-10,maxIterations=2000,pressure,preconditioner}){
- if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<2||ny<2||![dx,dy,rho,dt].every(x=>Number.isFinite(x)&&x>0)||us.length!==(nx+1)*ny||vs.length!==nx*(ny+1)||[...us,...vs].some(x=>!Number.isFinite(x)))throw Error('投影法の格子・速度・刻みが不正です。');
+ if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<2||ny<2||![dx,dy,rho,dt].every(x=>Number.isFinite(x)&&x>0)||us.length!==(nx+1)*ny||vs.length!==nx*(ny+1)||!allFinite(us)||!allFinite(vs))throw Error('投影法の格子・速度・刻みが不正です。');
  const N=nx*ny,U=(i,j)=>j*(nx+1)+i,V=(i,j)=>j*nx+i,diagonal=new Float64Array(N),rhs=new Float64Array(N),p=pressure?Float64Array.from(pressure,x=>x/rho):new Float64Array(N);
  for(let j=0;j<ny;j++)if(Math.abs(us[U(0,j)])>1e-12||Math.abs(us[U(nx,j)])>1e-12)throw Error('閉境界の法線速度がゼロではありません。');for(let i=0;i<nx;i++)if(Math.abs(vs[V(i,0)])>1e-12||Math.abs(vs[V(i,ny)])>1e-12)throw Error('閉境界の法線速度がゼロではありません。');
  if(preconditioner&&(preconditioner.size!==N||typeof preconditioner.apply!=='function'))throw Error('圧力の前処理が格子と一致しません。');
  if(pressure&&(pressure.length!==N||pressure.some(x=>!Number.isFinite(x))||p.some(x=>!Number.isFinite(x))))throw Error('圧力場のセル数/値が不正です。');if(!Number.isFinite(tolerance)||tolerance<=0||!Number.isInteger(maxIterations)||maxIterations<1)throw Error('圧力反復の許容値/上限が不正です。');
  function apply(x){const y=new Float64Array(N);for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const n=j*nx+i;if(i)y[n]+=(x[n]-x[n-1])/dx**2;if(i+1<nx)y[n]+=(x[n]-x[n+1])/dx**2;if(j)y[n]+=(x[n]-x[n-nx])/dy**2;if(j+1<ny)y[n]+=(x[n]-x[n+nx])/dy**2;}return y;}
- function zeroMean(x){const mean=x.reduce((a,b)=>a+b,0)/N;for(let i=0;i<N;i++)x[i]-=mean;return x;}
+ function zeroMean(x){let mean=0;for(let i=0;i<N;i++)mean+=x[i];mean/=N;for(let i=0;i<N;i++)x[i]-=mean;return x;}
  const condition=r=>{const z=preconditioner?Float64Array.from(preconditioner.apply(r)):Float64Array.from(r,(x,i)=>x/diagonal[i]);if(z.length!==N||z.some(x=>!Number.isFinite(x)))throw Error('圧力前処理の出力が不正です。');return zeroMean(z);};
  for(let j=0;j<ny;j++)for(let i=0;i<nx;i++){const n=j*nx+i;rhs[n]=-1/dt*((us[U(i+1,j)]-us[U(i,j)])/dx+(vs[V(i,j+1)]-vs[V(i,j)])/dy);diagonal[n]=(Number(i>0)+Number(i+1<nx))/dx**2+(Number(j>0)+Number(j+1<ny))/dy**2;}
  if(rhs.some(x=>!Number.isFinite(x))||diagonal.some(x=>!Number.isFinite(x)||x<=0))throw Error('圧力方程式が浮動小数点の範囲を超えています。');zeroMean(rhs);zeroMean(p);const rhsNorm=Math.sqrt(dot(rhs,rhs)),Ap=apply(p);let r=Float64Array.from(rhs,(b,i)=>b-Ap[i]),residualNorm=Math.sqrt(dot(r,r)),iterations=0;
@@ -29,7 +29,7 @@ export function createCavity(c,verification=null){
  c=structuredClone(c);
  if(verification&&['velocity','temperature','pressure','bodyForce','heatSource'].some(key=>typeof verification[key]!=='function'))throw Error('製造解検証には全ての場・外力・発熱関数が必要です。');
  if(verification){if(verification.id!==undefined&&(typeof verification.id!=='string'||!verification.id||verification.id.length>512))throw Error('製造解の識別子が不正です。');if(verification.parameters&&['rho','cp','nu','alpha','width','height','leftTemperature','rightTemperature'].some(key=>verification.parameters[key]!==undefined&&verification.parameters[key]!==c[key]))throw Error('製造解の物性/領域/境界が計算条件と一致しません。');verification={...verification,id:verification.id??('anonymous:'+(globalThis.crypto?.randomUUID?.()??`${Date.now()}-${Math.random()}`))};}
- const {nx,ny}=c;if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<4||ny<4||nx>96||ny>96)throw Error('キャビティ格子は4〜96です。');
+ const {nx,ny}=c;if(!Number.isInteger(nx)||!Number.isInteger(ny)||nx<4||ny<4||nx>256||ny>256)throw Error('キャビティ格子は4〜256です。');
  for(const key of ['width','height','rho','cp','nu','alpha','initial'])if(!Number.isFinite(c[key])||c[key]<=0)throw Error(`${key}は正の有限値です。`);
  if(c.pressurePreconditioner&&!['jacobi','multigrid'].includes(c.pressurePreconditioner))throw Error('圧力前処理の指定が不正です。');
  if(c.outline||c.regions?.length)throw Error('この開発用CFDは障害物のない矩形だけです。自由形状は未対応です。');if(c.scalarScheme&&!['central','upwind'].includes(c.scalarScheme))throw Error('温度の移流法が不正です。');
@@ -43,7 +43,7 @@ export function createCavity(c,verification=null){
  const hot=c.leftTemperature??null,cold=c.rightTemperature??null;for(const T of [hot,cold])if(T!==null&&(!Number.isFinite(T)||T<=0))throw Error('壁温は正のKです。');
  if(gb&&(!Number.isFinite(c.beta)||c.beta<=0))throw Error('Boussinesq監視に正のβを指定してください。');if(Math.abs(lid)*L/nu>100)throw Error('開発用の移動壁キャビティはRe≤100の検証に限定しています。');
  if(gb&&Math.max(Math.abs((hot??Tref)-Tref),Math.abs((cold??Tref)-Tref),Math.abs(c.initial-Tref))*Math.abs(c.beta??0)>0.1)throw Error('指定条件はBoussinesq近似の監視範囲を超えます。');
- const Ra=hot!==null&&cold!==null?Math.abs(gb*(hot-cold)*H**3/(nu*alpha)):0;if(!Number.isFinite(Ra)||Ra>1000*(1+1e-12))throw Error('開発用自然対流はRa≤1000の検証に限定しています。');
+ const Ra=hot!==null&&cold!==null?Math.abs(gb*(hot-cold)*H**3/(nu*alpha)):0;if(!Number.isFinite(Ra)||Ra>1e6*(1+1e-12))throw Error('開発用自然対流はRa≤1000000の検証に限定しています。');
  let u=new Float64Array((nx+1)*ny),v=new Float64Array(nx*(ny+1)),T=new Float64Array(nx*ny).fill(c.initial),pressure=Array(nx*ny).fill(0),time=0,steps=0,netInput=0,lastDt=0,lastPower=0,totalPressureIterations=0,projection=null;
  const U=(i,j)=>j*(nx+1)+i,V=(i,j)=>j*nx+i,k=rho*cp*alpha,cellCapacity=rho*cp*dx*dy*depth;
  if(verification){
@@ -90,8 +90,8 @@ export function createCavity(c,verification=null){
    if(i===0&&hot!==null){const q=2*k*dy/dx*(hot-T[n])*depth;P[n]+=q;external+=q;}
    if(i===nx-1&&cold!==null){const q=2*k*dy/dx*(cold-T[n])*depth;P[n]+=q;external+=q;}
   }
-  const next=Float64Array.from(T,(t,n)=>t+dt*P[n]/cellCapacity);if([...projected.u,...projected.v,...next].some(x=>!Number.isFinite(x))||next.some(x=>x<=0))throw Error('CFDに非有限値/無効温度が生じたため停止しました。');
-  if(gb&&maxAbs(next.map(t=>t-Tref))*c.beta>.1+1e-12)throw Error('更新温度がBoussinesq近似の範囲を超えるため停止しました。');
+  const next=Float64Array.from(T,(t,n)=>t+dt*P[n]/cellCapacity);if(!allFinite(projected.u)||!allFinite(projected.v)||!allFinite(next)||next.some(x=>x<=0))throw Error('CFDに非有限値/無効温度が生じたため停止しました。');
+  if(gb&&maxDeviation(next,Tref)*c.beta>.1+1e-12)throw Error('更新温度がBoussinesq近似の範囲を超えるため停止しました。');
   const nextInput=netInput+external*dt,nextTime=time+dt,nextEnergy=cellCapacity*next.reduce((s,t)=>s+t-273.15,0);if(![nextInput,nextTime,nextEnergy].every(Number.isFinite)||nextTime<=time)throw Error('CFDの時間・エネルギーが数値範囲を超えています。');
   u=projected.u;v=projected.v;pressure=projected.pressure;projection=projected;T=next;netInput=nextInput;time=nextTime;lastDt=dt;lastPower=external;steps++;totalPressureIterations+=projected.iterations;return returnState?snapshot():undefined;
  }
@@ -100,7 +100,7 @@ export function createCavity(c,verification=null){
   for(const [key,size]of [['u',u.length],['v',v.length],['temperature',T.length],['pressure',pressure.length]])if(!Array.isArray(s[key])||s[key].length!==size||s[key].some(x=>typeof x!=='number'||!Number.isFinite(x)))throw Error('CFD復元の場の寸法/値が不正です。');
   if(s.temperature.some(x=>x<=0)||![s.time,s.lastDt,s.lastPower,s.netInput,s.pressureResidual,s.pressureRhsNorm].every(Number.isFinite)||s.time<0||s.lastDt<0||s.pressureResidual<0||s.pressureRhsNorm<0||![s.steps,s.totalPressureIterations,s.pressureIterations].every(x=>Number.isSafeInteger(x)&&x>=0)||s.totalPressureIterations<s.pressureIterations)throw Error('CFD復元の温度・時間・反復情報が不正です。');
   const uu=Float64Array.from(s.u),vv=Float64Array.from(s.v),tt=Float64Array.from(s.temperature),pp=[...s.pressure];for(let j=0;j<ny;j++)if(uu[U(0,j)]!==0||uu[U(nx,j)]!==0)throw Error('閉壁の法線速度が0ではありません。');for(let i=0;i<nx;i++)if(vv[V(i,0)]!==0||vv[V(i,ny)]!==0)throw Error('閉壁の法線速度が0ではありません。');
-  if(gb&&maxAbs(tt.map(t=>t-Tref))*c.beta>.1+1e-12)throw Error('復元温度がBoussinesq近似の範囲を超えます。');checkContinuity(uu,vv);
+  if(gb&&maxDeviation(tt,Tref)*c.beta>.1+1e-12)throw Error('復元温度がBoussinesq近似の範囲を超えます。');checkContinuity(uu,vv);
   const mean=pp.reduce((a,b)=>a+b,0)/pp.length,energy=cellCapacity*tt.reduce((sum,t)=>sum+t-273.15,0),nextDt=timestep(uu,vv);if(![mean,energy,energy-initialEnergy-s.netInput,nextDt].every(Number.isFinite)||nextDt<=0||Math.abs(mean)>1e-10*Math.max(1,maxAbs(pp)))throw Error('復元の圧力ゲージ・顕熱・時間尺度が不正です。');
   u=uu;v=vv;T=tt;pressure=pp;time=s.time;steps=s.steps;lastDt=s.lastDt;lastPower=s.lastPower;netInput=s.netInput;totalPressureIterations=s.totalPressureIterations;projection={iterations:s.pressureIterations,residual:s.pressureResidual,rhsNorm:s.pressureRhsNorm,divergence:divergence()};return snapshot();
  }

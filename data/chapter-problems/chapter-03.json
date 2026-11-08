@@ -1,0 +1,713 @@
+{
+  "chapterId": "chapter-03",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 3 (Heat exchanger design): Problems and References — Japanese translation",
+  "bookPages": "130–138",
+  "pdfPages": "144–152",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 44,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-3-1",
+        "number": "3.1",
+        "text": "熱交換器の文脈における「混合（mixed）」の意味を説明せよ。両方の流れが混合する直交流熱交換器はありうるか。議論せよ。",
+        "bookPage": 130,
+        "endBookPage": 130,
+        "pdfPage": 144,
+        "endPdfPage": 144
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-2",
+        "number": "3.2",
+        "text": "厚い球殻を通る1次元熱伝導について、Q = kΔT·A(r̄)/(r_o − r_i)（ただし A(r̄) = 4π r̄²）となるような適切な平均半径 r̄ を求めよ（例3.1と比較せよ）。",
+        "formulaBlocks": [
+          {
+            "expression": "Q = kΔT·A(r̄)/(r_o − r_i), A(r̄) = 4π r̄²"
+          }
+        ],
+        "bookPage": 130,
+        "endBookPage": 130,
+        "pdfPage": 144,
+        "endPdfPage": 144
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-3",
+        "number": "3.3",
+        "text": "問題2.14を、LMTDを使ってやり直せ。",
+        "hint": "試行錯誤による解法が必要である。",
+        "bookPage": 130,
+        "endBookPage": 130,
+        "pdfPage": 144,
+        "endPdfPage": 144
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-4",
+        "number": "3.4",
+        "text": "比熱0.80 kJ/kg·K の流体2.4 kg/s が、向流熱交換器に0 °Cで入り、比熱0.96 kJ/kg·K の流体2 kg/s（700 °Cで入る）によって400 °Cまで加熱される。他のすべての条件が変わらない場合、低温流体を500 °Cまで加熱するには、熱伝達のための表面積を87.5%増やさなければならないことを示せ。",
+        "bookPage": 130,
+        "endBookPage": 130,
+        "pdfPage": 144,
+        "endPdfPage": 144
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-5",
+        "number": "3.5",
+        "text": "両流体とも非混合の直交流熱交換器を使って、1.0 kg/s で流れる水（c_p = 4.18 kJ/kg·K）を40 °Cから80 °Cまで加熱する。高温のエンジンオイル（c_p = 1.9 kJ/kg·K）2.6 kg/s が100 °Cで入る。熱伝達面積が20 m² のとき、総括熱伝達率はいくらか。（温度効率法と LMTD 法のどちらも使える。図の精度のチェックとして、両方を使うのが賢明である。）",
+        "bookPage": 130,
+        "endBookPage": 130,
+        "pdfPage": 144,
+        "endPdfPage": 144
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-6",
+        "number": "3.6",
+        "text": "1 atmの、油分を含まない飽和蒸気が、管パスあたり長さ20 ft の管30本を持つ2管パスのシェル凝縮器のシェルパスに入る。管は3/4 in.、スケジュール160の鋼管（呼び径）である。水が60 °Fで各管に体積流量0.01 ft³/s（管あたり）で入る。凝縮熱伝達率は2000 Btu/h·ft²·°F、管内の水については h = 1380 Btu/h·ft²·°F である。水の出口温度と凝縮の質量流量を見積もれ。",
+        "answerHint": "凝縮量 ṁ_c ≃ 8393 lbm/h",
+        "bookPage": 130,
+        "endBookPage": 131,
+        "pdfPage": 144,
+        "endPdfPage": 145
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-7",
+        "number": "3.7",
+        "text": "向流熱交換器が、3000 kg/h の水銀を150 °Fから128 °Fまで冷やさなければならない。冷却材は70 °Fで供給される100 kg/h の水である。U が300 W/m²·K であれば、必要な面積と水の出口温度を求めて設計を完成させよ。",
+        "answerHint": "A = 0.147 m²",
+        "bookPage": 131,
+        "endBookPage": 131,
+        "pdfPage": 145,
+        "endPdfPage": 145
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-8",
+        "number": "3.8",
+        "text": "自動車のエアコンの凝縮器は、車外の空気へ熱を放出して冷媒を凝縮させる。ある凝縮器は、外気温度35 °C、65 km/h のときに18 kW を放出する。冷媒温度は凝縮の間65 °Cで一定であり、空気は熱交換器の管を横切って流れる間に6 °C上昇する。熱交換器は図3.6bに示すフィン付き管型で、U ≃ 200 W/m²·K である。U ∼（空気速度）^0.7 であり、質量流量は速度に直接比例して増えるとき、15 km/hから65 km/hの間の空気速度の関数として、凝縮器からの熱伝達の減少率（%）をプロットせよ。",
+        "figureRefs": [
+          "Fig. 3.6b"
+        ],
+        "bookPage": 131,
+        "endBookPage": 131,
+        "pdfPage": 145,
+        "endPdfPage": 145
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-9",
+        "number": "3.9",
+        "text": "式（3.21）を導け。",
+        "bookPage": 131,
+        "endBookPage": 131,
+        "pdfPage": 145,
+        "endPdfPage": 145
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-10",
+        "number": "3.10",
+        "text": "並行流と向流の両熱交換器について、任意の C_min/C_max の値に対する、温度効率の NTU 無限大の極限を導け。常識、温度効率の定義、熱力学第一法則を使え。式（3.20）と式（3.21）は結果の確認のためだけに参照せよ。",
+        "bookPage": 131,
+        "endBookPage": 131,
+        "pdfPage": 145,
+        "endPdfPage": 145
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-11",
+        "number": "3.11",
+        "text": "図3.9に描かれた熱交換器について、ε = （NTU, C_min/C_max）の方程式を導け。",
+        "figureRefs": [
+          "Fig. 3.9"
+        ],
+        "bookPage": 131,
+        "endBookPage": 131,
+        "pdfPage": 145,
+        "endPdfPage": 145
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-12",
+        "number": "3.12",
+        "text": "1パスの熱交換器が、シェル側で1 atmの蒸気を凝縮させ、管側で水を10 °Cから30 °Cまで、U = 2500 W/m²·K で加熱する。管は薄肉で、直径5 cm、長さ2 mである。",
+        "items": [
+          "（a）上司は、この交換器を向流にすべきか並行流にすべきか知りたがっている。どう助言するか。",
+          "（b）LMTD を評価せよ。",
+          "（c）水の質量流量を評価せよ。",
+          "（d）ε を評価せよ。"
+        ],
+        "answerHint": "ε ≃ 0.222",
+        "bookPage": 131,
+        "endBookPage": 131,
+        "pdfPage": 145,
+        "endPdfPage": 145
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-13",
+        "number": "3.13",
+        "text": "2 kg/s、27 °Cの空気と、1.5 kg/s、60 °Cの水の流れが、それぞれ熱交換器に入る。A = 12 m²、U = 185 W/m²·K のとき、次の場合の出口温度を評価せよ。",
+        "items": [
+          "（a）並行流の場合",
+          "（b）向流の場合",
+          "（c）直交流で、一方の流れが混合する場合",
+          "（d）直交流で、どちらの流れも混合しない場合"
+        ],
+        "answerHint": "（b）高温流体出口温度 ≃ 54.0 °C／（d）高温流体出口温度 = 53.65 °C",
+        "bookPage": 131,
+        "endBookPage": 132,
+        "pdfPage": 145,
+        "endPdfPage": 146
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-14",
+        "number": "3.14",
+        "text": "0.25 kg/s、0 °Cの空気が直交流熱交換器に入る。空気は、50 °Cの空気0.14 kg/s によって20 °Cまで温められなければならない。流れは非混合である。設計プロセスの最初のステップとして、U を A に対してプロットし、表2.2を参照して、交換器の面積のおおよその範囲を特定せよ。",
+        "bookPage": 132,
+        "endBookPage": 132,
+        "pdfPage": 146,
+        "endPdfPage": 146
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-15",
+        "number": "3.15",
+        "text": "ある2シェルパス、4管パスの熱交換器が、シェル側の10 °Cの河川水20 kg/s を使って、管側のプロセス水8 kg/s を80 °Cから25 °Cまで冷やす。冷却材は川へ何度で戻されるか。U が800 W/m²·K であれば、交換器はどれだけ大きくなければならないか。",
+        "bookPage": 132,
+        "endBookPage": 132,
+        "pdfPage": 146,
+        "endPdfPage": 146
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-16",
+        "number": "3.16",
+        "text": "ある直交流熱交換器は、一方の側だけ流体が混合して動作する。新品のとき、U = 2000 W/m²·K、T_c,in = 25 °C、T_c,out = 80 °C、T_h,in = 160 °C、T_h,out = 70 °C である。6か月の運転の後、工場長は、高温流体が90 °Cまでしか冷やされず、全熱伝達が30%減少していると報告する。使用6か月後の汚れ抵抗はいくらか。（汚れによって低温側の流量は減らないものとする。）",
+        "bookPage": 132,
+        "endBookPage": 132,
+        "pdfPage": 146,
+        "endPdfPage": 146
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-17",
+        "number": "3.17",
+        "text": "15 °Cの水が、1シェルパス、2管パスの熱交換器に供給され、10 kg/s の液体アンモニアを120 °Cから40 °Cまで冷やす。水が管内を流れるとき、U は1500 W/m²·K 程度になると見込まれる。A が90 m² でなければならないとして、水の正しい流量を選べ。",
+        "bookPage": 132,
+        "endBookPage": 132,
+        "pdfPage": 146,
+        "endPdfPage": 146
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-18",
+        "number": "3.18",
+        "text": "例3.5の熱交換器が、2シェルパス、4管パスで、高温流体が管内を移動する交換器だったとする。",
+        "items": [
+          "（a）この場合の出口温度はいくらになるか。",
+          "（b）高温流体を例と同じ温度で出したい場合、面積はいくらか。"
+        ],
+        "answerHint": "（a）低温流体出口温度 = 76.85 °C",
+        "bookPage": 132,
+        "endBookPage": 132,
+        "pdfPage": 146,
+        "endPdfPage": 146
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-19",
+        "number": "3.19",
+        "text": "入口温度が与えられた向流交換器について、U の30%の減少が許容できる最大である場合、許容できる最大の汚れ抵抗を U_new の関数としてプロットせよ。",
+        "bookPage": 132,
+        "endBookPage": 132,
+        "pdfPage": 146,
+        "endPdfPage": 146
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-20",
+        "number": "3.20",
+        "text": "0.8 kg/s の水が、2シェルパス、4管パスの熱交換器の管に17 °Cで入り、37 °Cで出る。それは、シェルに250 °Cで入る0.5 kg/s の空気を、U = 432 W/m²·K で冷やす。次を求めよ。",
+        "items": [
+          "（a）空気の出口温度",
+          "（b）熱交換器の面積",
+          "（c）しばらくした後、管に R_f = 0.0005 m²·K/W の汚れが付いた場合の出口温度"
+        ],
+        "answerHint": "（c）空気出口温度 = 135.7 °C",
+        "bookPage": 132,
+        "endBookPage": 133,
+        "pdfPage": 146,
+        "endPdfPage": 147
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-21",
+        "number": "3.21",
+        "text": "質量で60%のグリセリンと水の混合物78 kg/min を、108 °Cから50 °Cまで、7 °Cで利用できる冷却水を使って冷やさなければならない。U = 637 W/m²·K として、1シェルパス、2管パスの熱交換器を設計せよ。水はどちらの側を通すべきか。行った設計判断を説明し、面積、水の出口温度、その他の関連する特徴を報告せよ。",
+        "bookPage": 133,
+        "endBookPage": 133,
+        "pdfPage": 147,
+        "endPdfPage": 147
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-22",
+        "number": "3.22",
+        "text": "質量で40%のグリセリン、60%の水の混合物が、滑らかな内径0.113 m の管に30 °Cで入る。管は50 °Cに保たれ、混合物の質量流量は8 kg/s である。管内の熱伝達率は1600 W/m²·K である。管内の位置の関数として液体温度をプロットせよ。",
+        "bookPage": 133,
+        "endBookPage": 133,
+        "pdfPage": 147,
+        "endPdfPage": 147
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-23",
+        "number": "3.23",
+        "text": "図3.16と図3.17のすべての温度効率曲線が、NTU → 0 のとき同じ傾きを持つのはなぜか、物理的に説明せよ。式（3.20）と式（3.21）からこの傾きを求め、この極限における Q の近似式を与えよ。",
+        "figureRefs": [
+          "Fig. 3.16",
+          "Fig. 3.17"
+        ],
+        "bookPage": 133,
+        "endBookPage": 133,
+        "pdfPage": 147,
+        "endPdfPage": 147
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-24",
+        "number": "3.24",
+        "text": "空気を150 °Cから60 °Cまで冷やしたいが、特注の熱交換器は買えない。保管場所に、中古の直交流交換器（両流体とも非混合）を見つけた。それは以前、7 °Cの水320 kg/min を使って、NH_3 蒸気136 kg/min を200 °Cから100 °Cまで冷やすのに使われ、U は以前480 W/m²·K だった。U がほぼ変わらないものとして、同じ水の供給で、この交換器でどれだけの空気を冷やすことができるか。（実際には、新しい空気流量が分かってから第6章と第7章の方法で U を修正しなければならないが、それは現在の範囲を超えている。）",
+        "bookPage": 133,
+        "endBookPage": 133,
+        "pdfPage": 147,
+        "endPdfPage": 147
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-25",
+        "number": "3.25",
+        "text": "1管パス、1シェルパス、並行流のプロセス熱交換器が、シェル側に250 °Cで入る5 kg/s の気体アンモニアを冷やし、管内の4.8 kg/s の水を沸騰させる。水は27 °Cの過冷却状態で入り、100 °Cに達すると沸騰する。U は沸騰が始まる前が480 W/m²·K、その後が964 W/m²·K である。交換器の面積は45 m² で、水の h_fg は2.257 × 10⁶ J/kg である。出口における水のクオリティ x（熱力学を思い出せ）を求めよ。",
+        "bookPage": 133,
+        "endBookPage": 133,
+        "pdfPage": 147,
+        "endPdfPage": 147
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-26",
+        "number": "3.26",
+        "text": "0.72 kg/s の過熱蒸気が直交流熱交換器に240 °Cで入り、120 °Cで出る。それは、17 °Cで入る0.6 kg/s の水を加熱する。U = 612 W/m²·K である。両流体非混合の交換器の代わりに一方の流体が非混合の交換器を使った場合、面積は何パーセント違うか。",
+        "answerHint": "−1.8%",
+        "bookPage": 133,
+        "endBookPage": 134,
+        "pdfPage": 147,
+        "endPdfPage": 148
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-27",
+        "number": "3.27",
+        "text": "同じ入口・出口温度の条件について、図3.14(c)と図3.14(d)の F の値を比較せよ。F が高い方が自動的により望ましい交換器か。議論せよ。",
+        "figureRefs": [
+          "Fig. 3.14"
+        ],
+        "bookPage": 134,
+        "endBookPage": 134,
+        "pdfPage": 148,
+        "endPdfPage": 148
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-28",
+        "number": "3.28",
+        "text": "並行流と向流の熱交換器について、同じ NTU と C_min/C_max における ε の値を比較せよ。ε が高い方が自動的により望ましい交換器か。望ましさのさまざまな基準について議論し、詳しく述べよ。",
+        "bookPage": 134,
+        "endBookPage": 134,
+        "pdfPage": 148,
+        "endPdfPage": 148
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-29",
+        "number": "3.29",
+        "text": "プロセスの不可逆率は、エントロピー生成率に、そのプロセスがアクセスできる最低の絶対シンク温度を掛けたものに等しい。例3.4の熱交換器について不可逆率（すなわち、失われる仕事、つまりエクセルギー破壊率）を計算せよ。同じ端部温度を与えたとき、異なる配置で不可逆性を減らすことができるか。",
+        "sourceNote": {
+          "ja": "原文の設問文は「Could a different configuration would reduce the irreversibility」と文法的に乱れているが、翻訳は文意に従った。",
+          "en": "The book's sentence 'Could a different configuration would reduce the irreversibility' is grammatically garbled; the translation follows the evident meaning."
+        },
+        "answerHint": "314 kW",
+        "bookPage": 134,
+        "endBookPage": 134,
+        "pdfPage": 148,
+        "endPdfPage": 148
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-30",
+        "number": "3.30",
+        "text": "水が0 °Cで入り（C_H2O = 460 W/K)、油が90 °Cで入る（C_oil = 920 W/K)、U = 742 W/m²·K、A = 10 m² の、きわめて長い向流熱交換器における位置の関数として、T_oil と T_H2O をプロットせよ。この設計を批評せよ。",
+        "bookPage": 134,
+        "endBookPage": 134,
+        "pdfPage": 148,
+        "endPdfPage": 148
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-31",
+        "number": "3.31",
+        "text": "液体アンモニア2 kg/s が、2シェルパス、4管パスの熱交換器のシェル側で、10 °Cの水3 kg/s によって100 °Cから30 °Cまで冷やされる。交換器が新しいとき、U = 750 W/m²·K である。管の汚れ係数の増加の関数として、アンモニアの出口温度をプロットせよ。",
+        "bookPage": 134,
+        "endBookPage": 134,
+        "pdfPage": 148,
+        "endPdfPage": 148
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-32",
+        "number": "3.32",
+        "text": "フレオン12が冷媒として禁止される前、1シェルパス、2管パスの熱交換器が、シェル側で0.403 kg/s のメタノールを47 °Cから7 °Cまで冷やしていた。冷却材は管に−33 °Cで入る2.2 kg/s のフレオン12で、U = 538 W/m²·K だった。同僚は、この配置は冷媒の無駄だと言った。彼女は、冷媒流量を0.8 kg/s まで下げてもほぼ同じ結果が得られると考えた。この流量から生じる新しいメタノール出口温度を計算し、彼女の提案を評価せよ。",
+        "bookPage": 134,
+        "endBookPage": 134,
+        "pdfPage": 148,
+        "endPdfPage": 148
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-33",
+        "number": "3.33",
+        "text": "ある2シェルパス、4管パスの熱交換器における熱伝達率を決める要因は、U が（ṁ_shell)^0.6 として増えるようなものである。交換器は、7 °Cの水4.4 kg/s を使って、2 kg/s の空気を200 °Cから40 °Cまで冷やし、この状況では U = 312 W/m²·K である。空気流量を2倍にしたら、交換器を出る空気の温度はいくらになるか。",
+        "answerHint": "空気出口温度 = 61 °C",
+        "bookPage": 134,
+        "endBookPage": 135,
+        "pdfPage": 148,
+        "endPdfPage": 149
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-34",
+        "number": "3.34",
+        "text": "1.4 kg/s の水が、2シェルパス、4管パスの熱交換器の管に7 °Cで入る。シェル側で0.6 kg/s の液体アンモニアを100 °Cから30 °Cまで冷やすものとし、U = 573 W/m²·K である。",
+        "items": [
+          "（a）熱交換器はどれだけ大きくなければならないか。",
+          "（b）数か月後、管に0.0015 m²·K/W の汚れ係数が生じると予想されるが、それでもアンモニアを30 °Cで供給したい場合、どれだけ大きくなければならないか。",
+          "（c）汚れに対応できる大きさにした場合、新品のとき、アンモニアを何度まで冷やすか。",
+          "（d）新しく大型化した交換器では、水は何度で出るか。"
+        ],
+        "answerHint": "（d）水の出口温度 = 49.9 °C",
+        "bookPage": 135,
+        "endBookPage": 135,
+        "pdfPage": 149,
+        "endPdfPage": 149
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-35",
+        "number": "3.35",
+        "text": "式（3.21）は、C_min/C_max → 1 のとき扱いにくい。この極限で ε が式（3.23）で与えられることを示せ。図3.16と比較せよ。",
+        "figureRefs": [
+          "Fig. 3.16"
+        ],
+        "bookPage": 135,
+        "endBookPage": 135,
+        "pdfPage": 149,
+        "endPdfPage": 149
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-36",
+        "number": "3.36",
+        "text": "並行流熱交換器の両方の C が156 W/K に等しく、U = 327 W/m²·K、A = 2 m² である。高温流体は140 °Cで入り、90 °Cで出る。低温流体は40 °Cで入る。両方の C が半分になったら、高温流体の出口温度はいくらになるか。",
+        "bookPage": 135,
+        "endBookPage": 135,
+        "pdfPage": 149,
+        "endPdfPage": 149
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-37",
+        "number": "3.37",
+        "text": "面積1.68 ft²、一方の流体が混合する直交流熱交換器が、大気圧の蒸気を凝縮させ（h = 2000 Btu/h·ft²·°F)、他方の側でメタノールを沸騰させる（T_sat = 170 °F、h = 1500 Btu/h·ft²·°F)。（金属の抵抗を無視して）U、F、LMTD、Q を評価せよ。NTU と ε は評価できるか。",
+        "answerHint": "Q = 60,470 Btu/h",
+        "bookPage": 135,
+        "endBookPage": 135,
+        "pdfPage": 149,
+        "endPdfPage": 149
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-38",
+        "number": "3.38",
+        "text": "どちらの流体も混合しない直交流交換器の温度効率は、R. M. Drake による次の公式で近似される［3.8］。ここで R ≡ C_min/C_max である。既知の極限の場合の厳密な結果に、これはどれほどよく対応するか。結果をグラフで示せ。",
+        "formulaBlocks": [
+          {
+            "expression": "ε ≃ 1 − exp{[exp(−NTU^0.78 R) − 1]/(NTU^0.22 R)}"
+          }
+        ],
+        "bookPage": 135,
+        "endBookPage": 135,
+        "pdfPage": 149,
+        "endPdfPage": 149
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-39",
+        "number": "3.39",
+        "text": "40 °Cの蒸気10⁶ kg/h を、17 °Cの水を使って凝縮させる、2管パス、1シェルパスの凝縮器に必要な面積を計算せよ。U = 4700 W/m²·K、水の許容できる最大温度上昇は10 °C、h_fg = 2406 kJ/kg とする。",
+        "answerHint": "A = 8,112 m²",
+        "bookPage": 135,
+        "endBookPage": 136,
+        "pdfPage": 149,
+        "endPdfPage": 150
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-40",
+        "number": "3.40",
+        "text": "ある技術者が、車のラジエーターから180 °Fの水1 gal/min を、どちらの流れも混合しない小型の直交流熱交換器へ分流して、キャンプに行ったときに髭剃り用に40 °Fの水を140 °Fに温めたいと考えている。毎分1パイントのお湯を作るとして、U = 720 W/m²·K のとき、交換器の面積と、戻ってくるラジエーター冷却液の温度はいくらか。",
+        "bookPage": 136,
+        "endBookPage": 136,
+        "pdfPage": 150,
+        "endPdfPage": 150
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-41",
+        "number": "3.41",
+        "text": "鉛の散弾を作るために、溶融した鉛の液滴が高い塔の頂上からシャワーのように落とされる。液滴は空気中を落下し、集められる塔の底に達する前に凝固する。冷たい空気が塔の底から導入され、暖かい空気が頂上から流れ出る。ある塔では、直径2.8 mm の液滴5,000 kg/h が、その融解温度600 Kで放出される。凝固の潜熱は23.1 kJ/kg である。液滴は塔の中で6,700 滴/m³ の密度を持つ。空気は底から20 °Cで、質量流量2,400 kg/h で入る。塔の内径は0.6 mで、壁は断熱されている。",
+        "items": [
+          "（a）塔の高さに沿った散弾と空気の温度分布を定性的にスケッチせよ。",
+          "（b）散弾を60 °Cの温度で取り出したい場合、塔の頂上を出る空気の温度はいくらになるか。",
+          "（c）鉛がちょうど凝固し終えた地点の空気温度を求めよ。",
+          "（d）望みどおり機能するために塔がなければならない高さを求めよ。空気と液滴の間の熱伝達率は h = 170 W/m²·K である。"
+        ],
+        "bookPage": 136,
+        "endBookPage": 136,
+        "pdfPage": 150,
+        "endPdfPage": 150
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-42",
+        "number": "3.42",
+        "text": "一定圧力で温度 T_i から T_o へ持っていかれた流体の単位質量あたりのエントロピー変化は、s_o − s_i = c_p ln(T_o/T_i)（J/K·kg）である。",
+        "items": [
+          "（a）向流熱交換器を取り囲む検査体積に熱力学第二法則を適用し、エントロピー生成率 Ṡ_gen（W/K）を求めよ。",
+          "（b）Ṡ_gen/C_min を、ε、熱容量率の比、T_h,i/T_c,i の関数として書け。",
+          "（c）ε と T_h,i/T_c,i の値が固定されれば、C_min = C_max（バランスした向流）のときに Ṡ_gen/C_min が最小化されることを示せ。"
+        ],
+        "bookPage": 136,
+        "endBookPage": 136,
+        "pdfPage": 150,
+        "endPdfPage": 150
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-43",
+        "number": "3.43",
+        "text": "動力サイクルにおけるエントロピー生成は、カルノー効率に対する効率を低下させる。熱交換器はこの損失に寄与する。問題3.42で見たように、バランスした向流熱交換器はエントロピー生成の抑制に役立つ。バランスした交換器のエントロピー生成を見てみよう。",
+        "items": [
+          "（a）ΔT = T_h − T_c ≪ T_c（ケルビン）とする。交換器の小さな面積 dA = P dx（P は周長）におけるエントロピー生成率が、与えられた関係になることを示せ。",
+          "（b）全エントロピー生成率が与えられた関係になることを示せ。",
+          "（c）固定された熱負荷 Q を伝えなければならない場合、エントロピー生成をどうすれば減らせるか。コストと汚れの考慮が答えにどう影響するか議論せよ。"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "dṠ_gen = dQ(1/T_c − 1/T_h) ≃ (UPΔT²/T_c²) dx",
+            "part": "（a）"
+          },
+          {
+            "expression": "Ṡ_gen ≃ QΔT/(T_h,in T_c,in)",
+            "part": "（b）"
+          }
+        ],
+        "bookPage": 136,
+        "endBookPage": 137,
+        "pdfPage": 150,
+        "endPdfPage": 151
+      },
+      {
+        "type": "problem",
+        "id": "problem-3-44",
+        "number": "3.44",
+        "text": "100 °Cの水が、30本の銅管の束に流れる。管は外径28.6 mm、長さ3 m、壁厚0.9 mm である。20 °Cの空気が、管に対して垂直に束へ流れる。水の質量流量は17 kg/s、空気は25 kg/s である。",
+        "items": [
+          "（a）h_water = 7200 W/m²·K、h_air = 110 W/m²·K のとき、水の出口温度を求めよ。",
+          "（b）熱の除去を改善するため、管の外側にアルミニウムのフィンが取り付けられる（図3.6bを見よ）。フィンと管を合わせた表面積は今や81 m² である。フィンが熱の除去を改善する理由を言葉で説明せよ。フィンの伝導抵抗が小さく、h_air が変わらない場合、水の新しい出口温度はいくらか。"
+        ],
+        "hint": "問題3.38を見よ。",
+        "figureRefs": [
+          "Fig. 3.6b"
+        ],
+        "bookPage": 137,
+        "endBookPage": 137,
+        "pdfPage": 151,
+        "endPdfPage": 151
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 13,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-3-1",
+        "number": "3.1",
+        "authors": "Tubular Exchanger Manufacturer's Association",
+        "originalTitle": "Standards of Tubular Exchanger Manufacturer's Association",
+        "titleJa": "管型熱交換器製造業者協会規格",
+        "publication": "New York, 4th and 6th ed., 1959 and 1978",
+        "bookPage": 137,
+        "pdfPage": 151
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-2",
+        "number": "3.2",
+        "authors": "R. A. Bowman, A. C. Mueller, and W. M. Nagle",
+        "originalTitle": "Mean temperature difference in design",
+        "titleJa": "設計における平均温度差",
+        "publication": "Trans. ASME, 62(4):283–294, May 1940",
+        "doi": "10.1115/1.4021450",
+        "bookPage": 137,
+        "pdfPage": 151
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-3",
+        "number": "3.3",
+        "authors": "R. K. Shah and D. P. Sekulić",
+        "originalTitle": "Fundamentals of Heat Exchanger Design",
+        "titleJa": "熱交換器設計の基礎",
+        "publication": "John Wiley & Sons, Inc., Hoboken, NJ, 2003",
+        "bookPage": 137,
+        "pdfPage": 151
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-4",
+        "number": "3.4",
+        "authors": "W. Roetzel and F. J. L. Nicole",
+        "originalTitle": "Mean temperature difference for heat exchanger design—a general approximate explicit equation",
+        "titleJa": "熱交換器設計のための平均温度差―一般的な近似陽方程式",
+        "publication": "J. Heat Transfer, 97(1):5–8, February 1975",
+        "doi": "10.1115/1.3450288",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-5",
+        "number": "3.5",
+        "authors": "K. Gardner and J. Taborek",
+        "originalTitle": "Mean temperature difference: A reappraisal",
+        "titleJa": "平均温度差：再評価",
+        "publication": "AIChE J., 23(6):770–786, November 1977",
+        "doi": "10.1002/aic.690230602",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-6",
+        "number": "3.6",
+        "authors": "N. Shamsundar",
+        "originalTitle": "A property of the log-mean temperature-difference correction factor",
+        "titleJa": "対数平均温度差補正係数の一性質",
+        "publication": "Mechanical Engineering News, 19(3):14–15, 1982",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-7",
+        "number": "3.7",
+        "authors": "W. M. Kays and A. L. London",
+        "originalTitle": "Compact Heat Exchangers",
+        "titleJa": "コンパクト熱交換器",
+        "publication": "McGraw-Hill Book Company, New York, 3rd ed., 1984",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-8",
+        "number": "3.8",
+        "authors": "A. Triboix",
+        "originalTitle": "Exact and approximate formulas for cross flow heat exchangers with unmixed fluids",
+        "titleJa": "非混合流体を持つ直交流熱交換器の厳密式と近似式",
+        "publication": "Int. Comm. Heat Mass Transfer, 36(2):121–124, February 2009",
+        "doi": "10.1016/j.icheatmasstransfer.2008.10.012",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-9",
+        "number": "3.9",
+        "authors": "J. Taborek",
+        "originalTitle": "Evolution of heat exchanger design techniques",
+        "titleJa": "熱交換器設計技術の進化",
+        "publication": "Heat Transfer Engineering, 1(1):15–29, 1979",
+        "doi": "10.1080/01457637908939546",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-10",
+        "number": "3.10",
+        "authors": "E. Fried and I. E. Idelchik",
+        "originalTitle": "Flow Resistance: A Design Guide for Engineers",
+        "titleJa": "流れの抵抗：技術者のための設計ガイド",
+        "publication": "Hemisphere Publishing Corp., New York, 1989",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-11",
+        "number": "3.11",
+        "authors": "A. P. Fraas",
+        "originalTitle": "Heat Exchanger Design",
+        "titleJa": "熱交換器設計",
+        "publication": "John Wiley & Sons, Inc., New York, 2nd ed., 1989",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-12",
+        "number": "3.12",
+        "authors": "G. F. Hewitt, editor",
+        "originalTitle": "Heat Exchanger Design Handbook 2008",
+        "titleJa": "熱交換器設計ハンドブック2008",
+        "publication": "Begell House, New York, 2008",
+        "bookPage": 138,
+        "pdfPage": 152
+      },
+      {
+        "type": "reference",
+        "id": "reference-3-13",
+        "number": "3.13",
+        "authors": "F. A. Kulacki, editor",
+        "originalTitle": "Handbook of Thermal Science and Engineering",
+        "titleJa": "熱科学・熱工学ハンドブック",
+        "publication": "Springer, Cham, Switzerland, 2018. Part II",
+        "bookPage": 138,
+        "pdfPage": 152
+      }
+    ]
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "chapterId": "chapter-01",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 1 (Introduction): Problems and References — Japanese translation",
+  "bookPages": "36–48",
+  "pdfPages": "50–62",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 46,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-1-1",
+        "number": "1.1",
+        "text": "珍しい複合壁が、モミ（厚さ5 cm）、アルミニウム（厚さ1 cm）、鉛（厚さ1 cm）、コルクボード（厚さ6 cm）の層を順に重ねてできている。モミの外表面の温度は60 °C、コルクボードの外表面の温度は10 °Cである。壁の一方の側から他方の側まで進むにつれて、位置の関数として温度をプロットせよ。温度分布から、この壁の後続の解析で使えそうな単純化の仮定が示唆されるか。",
+        "hint": "例1.2と表A.1、表A.2を見よ。",
+        "bookPage": 36,
+        "endBookPage": 37,
+        "pdfPage": 50,
+        "endPdfPage": 51
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-2",
+        "number": "1.2",
+        "text": "式（1.16）がニュートンの冷却法則、式（1.15）と整合することを確かめよ。",
+        "bookPage": 37,
+        "endBookPage": 37,
+        "pdfPage": 51,
+        "endPdfPage": 51
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-3",
+        "number": "1.3",
+        "text": "厚さ1 cmの平板内の熱流束は q = 5000 W/m² で、冷たい側の温度は T = −40 °Cである。平板が次の各材料でできている場合について、反対側の熱い側へ向かう温度上昇を表にまとめよ。",
+        "items": [
+          "純銀",
+          "純アルミニウム",
+          "軟鋼（炭素0.5%）",
+          "氷",
+          "トウヒ",
+          "断熱材（85%マグネシア）",
+          "シリカエアロゲル"
+        ],
+        "continuation": "どの場合が非現実的か、その理由とともに示せ。",
+        "answerHint": "銀：ΔT = 0.117 °C",
+        "bookPage": 37,
+        "endBookPage": 37,
+        "pdfPage": 51,
+        "endPdfPage": 51
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-4",
+        "number": "1.4",
+        "text": "熱伝導方程式、式（1.14）が示すように、非定常伝導では温度は熱拡散率 α に依存するのに、定常伝導問題は k だけで解ける（例1.1のように）のはなぜか、言葉で説明せよ。",
+        "bookPage": 37,
+        "endBookPage": 37,
+        "pdfPage": 51,
+        "endPdfPage": 51
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-5",
+        "number": "1.5",
+        "text": "断面積1 cm²、長さ1 mの純銅の棒が、200 °Cの熱源と0 °Cの熱源を結んでいる。系はすでに定常状態に達している。次のもののエントロピー変化率はいくらか。",
+        "items": [
+          "（a）熱い熱源",
+          "（b）冷たい熱源",
+          "（c）棒",
+          "（d）全宇宙"
+        ],
+        "continuation": "答えが熱力学第二法則を満たすかどうか説明せよ。",
+        "answerHint": "（d）+0.0121 W/K",
+        "bookPage": 37,
+        "endBookPage": 37,
+        "pdfPage": 51,
+        "endPdfPage": 51
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-6",
+        "number": "1.6",
+        "text": "27 °Cと−43 °Cの2つの熱エネルギー貯蔵体が、厚さ10 cm、断面積930 cm²の材料の平板で隔てられている。平板の熱伝導率は0.14 W/m·Kである。系は定常状態で運転されている。この過程によるエントロピー変化率を、次のそれぞれについて求めよ。",
+        "items": [
+          "（a）高温の貯蔵体",
+          "（b）低温の貯蔵体",
+          "（c）平板",
+          "（d）全宇宙",
+          "（e）答えは熱力学第二法則を満たすか"
+        ],
+        "bookPage": 37,
+        "endBookPage": 38,
+        "pdfPage": 51,
+        "endPdfPage": 52
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-7",
+        "number": "1.7",
+        "text": "問題1.6の熱エネルギー貯蔵体を突然断熱壁に置き換えた場合を考える。",
+        "items": [
+          "（a）平板の最終平衡温度を求めよ。",
+          "（b）この過程での平板のエントロピー変化はいくらか。",
+          "（c）この場合、答えは熱力学第二法則を満たすか。説明せよ。"
+        ],
+        "continuation": "平板の密度は26 lb/ft³、比熱は0.65 Btu/lb·°Fである。熱力学の講義で学んだように、固体の比エントロピーは s − s_ref = c ln(T/T_ref) である。",
+        "answerHint": "（b）30.81 J/K",
+        "bookPage": 38,
+        "endBookPage": 38,
+        "pdfPage": 52,
+        "endPdfPage": 52
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-8",
+        "number": "1.8",
+        "text": "直径2.5 cmの銅球が、一様な初期温度40 °Cにある。この球を0 °Cのゆっくり流れる空気流の中に吊るす。空気流は平均対流熱伝達率 h = 15 W/m²·K を生じる。熱放射は無視できる。銅は熱伝導率が高く熱伝達率が低いため、球内の温度勾配は小さく、冷却過程の間、球の温度は本質的に一様である（すなわち Bi ≪ 1）。球と周囲空気の間の瞬時エネルギー収支を書け。この簡単な1階微分方程式を解き、40 °Cから0 °Cまでの範囲で温度を時間の関数としてプロットせよ。また Bi ≪ 1 であることを確認せよ。",
+        "bookPage": 38,
+        "endBookPage": 38,
+        "pdfPage": 52,
+        "endPdfPage": 52
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-9",
+        "number": "1.9",
+        "text": "問題1.8を解いた後、球が40 °Cから0 °Cまで冷える間の全熱伝達量（J）を求めよ。また、冷却過程による宇宙の正味エントロピー増加［式（1.24）］を球の温度の関数としてプロットせよ（ΔS 対 T（K））。",
+        "answerHint": "全熱伝達量 = 1125 J",
+        "bookPage": 38,
+        "endBookPage": 38,
+        "pdfPage": 52,
+        "endPdfPage": 52
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-10",
+        "number": "1.10",
+        "text": "高さ30 cmの切頭円錐がポルトランドセメントで作られている。頂部の直径は15 cm、底部の直径は7.5 cmである。下面は6 °Cに、上面は40 °Cに保たれる。側面は断熱されている。1次元熱伝達を仮定し、上面から下面への熱伝達率をワットで計算せよ。そのためには、定常状態では熱伝達率 Q はどの断面でも同じでなければならないことに注意せよ。フーリエの法則を局所的に書き、上面から下面まで積分して、この未知数 Q と既知の端部温度の間の関係を得よ。",
+        "answerHint": "|Q| = 0.70 W",
+        "bookPage": 38,
+        "endBookPage": 38,
+        "pdfPage": 52,
+        "endPdfPage": 52
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-11",
+        "number": "1.11",
+        "text": "給湯器には初期温度75 °Cの水100 kgが入っており、室内は20 °Cである。その表面積は1.3 m² である。加熱が切れているとき、水が3 °C/hより速く冷えないようにする断熱材を選び、断熱材の最小厚さを指定せよ。（この問題は、鋼製ケーシング内の温度降下と対流境界層内の温度降下を無視すれば大幅に単純化されることに注意せよ。これらは妥当な近似か。理由も述べよ。）",
+        "bookPage": 38,
+        "endBookPage": 39,
+        "pdfPage": 52,
+        "endPdfPage": 53
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-12",
+        "number": "1.12",
+        "text": "互いに向き合う2枚の壁は薄く、きわめて大きく広がり、熱伝導率が高く、向き合う面は放射に対して黒体である（図1.17）。両者は真空で隔てられている。板の外側は、図に示すように（放射なしの）対流を受ける。左側の板の温度に対する方程式を立て、反復法で解け。次に右側の板の温度を求めよ。図1.17の条件は次のとおりである：左板の外側は T_∞ = 100 °C の流体から h = 50 W/m²·K の対流を受け、右板の外側は T_∞ = 20 °C の流体から h = 20 W/m²·K の対流を受ける。",
+        "figure": {
+          "figureNumber": "1.17",
+          "caption": "図1.17 問題1.12の配置",
+          "alt": "真空を隔てて向き合う2枚の薄い黒体板の配置図。左板の外側は100 °Cの流体から h = 50 W/m²·K の対流を受け、右板の外側は20 °Cの流体から h = 20 W/m²·K の対流を受ける。",
+          "bookPage": 39,
+          "pdfPage": 53
+        },
+        "figureRefs": [
+          "Fig. 1.17"
+        ],
+        "answerHint": "右側の板の温度 = 42.5 °C",
+        "bookPage": 39,
+        "endBookPage": 39,
+        "pdfPage": 53,
+        "endPdfPage": 53
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-13",
+        "number": "1.13",
+        "text": "次の量について、SI単位系から英国単位系への換算係数を導け。",
+        "items": [
+          "熱拡散率 α",
+          "熱流束 q",
+          "密度 ρ",
+          "ステファン–ボルツマン定数 σ",
+          "形態係数 F_1–2",
+          "モルエントロピー",
+          "単位質量あたりの比熱 c"
+        ],
+        "continuation": "いずれの場合も、基本次元 J、m、kg、s、°C から始めよ。可能なら付録Bで答えを確認せよ。",
+        "answerHint": "1 m²/s = 10.764 ft²/s",
+        "bookPage": 39,
+        "endBookPage": 39,
+        "pdfPage": 53,
+        "endPdfPage": 53
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-14",
+        "number": "1.14",
+        "text": "無限で平行な黒色不透明板3枚が、図1.18に示すように放射によって熱交換している。T_2 を求めよ。図1.18では、板1が100 °C、板3が0 °Cに保たれている。",
+        "figure": {
+          "figureNumber": "1.18",
+          "caption": "図1.18 問題1.14の配置",
+          "alt": "平行に並ぶ3枚の黒色不透明板（1、2、3）の配置図。板1は100 °C、板3は0 °Cに保たれ、熱流束 q が左から右へ流れる。中央の板2の温度 T_2 が求める量である。",
+          "bookPage": 40,
+          "pdfPage": 54
+        },
+        "figureRefs": [
+          "Fig. 1.18"
+        ],
+        "bookPage": 39,
+        "endBookPage": 39,
+        "pdfPage": 53,
+        "endPdfPage": 53
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-15",
+        "number": "1.15",
+        "text": "無限で平行な黒色不透明板4枚が、図1.19に示すように放射によって熱を伝え合っている。T_2 と T_3 を求めよ。図1.19では、板1が100 °C、板4が0 °Cに保たれている。",
+        "figure": {
+          "figureNumber": "1.19",
+          "caption": "図1.19 問題1.15の配置",
+          "alt": "平行に並ぶ4枚の黒色不透明板（1、2、3、4）の配置図。板1は100 °C、板4は0 °Cに保たれ、熱流束 q が左から右へ流れる。板2と板3の温度が求める量である。",
+          "bookPage": 40,
+          "pdfPage": 54
+        },
+        "figureRefs": [
+          "Fig. 1.19"
+        ],
+        "answerHint": "T_2 = 75.53 °C",
+        "bookPage": 39,
+        "endBookPage": 40,
+        "pdfPage": 53,
+        "endPdfPage": 54
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-16",
+        "number": "1.16",
+        "text": "大きな黒色の水平板2枚が、距離 L を隔てて向かい合っている。上の板は制御可能な温度 T_h で暖かく、下の板は指定された温度 T_c で冷たい。両者の間には気体がある。気体は、上側が暖かく（密度が小さく）下側が冷たい（密度が大きい）ため静止している。Θ ≡ T_h/T_c と置き、板の間を通る放射熱流束と伝導熱流束の比 q_rad/q_cond = fn(N, Θ) の式を書け。ここで N は、σ、k、L、T_c を含む無次元数であり、それを特定すること。",
+        "items": [
+          "（a）q_rad/q_cond = 0.8、1、1.2 に対して（希望すれば他の値についても）、N を Θ の関数としてプロットせよ。",
+          "（b）L = 10 cm、T_c = 100 K で、気体が平均 k = 0.1 W/m·K の水素である系について、伝導熱流束と放射熱流束が等しくなる T_h の値を求めよ。"
+        ],
+        "bookPage": 40,
+        "endBookPage": 40,
+        "pdfPage": 54,
+        "endPdfPage": 54
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-17",
+        "number": "1.17",
+        "text": "直径2 cmの黒色化された銅球が一様に200 °Cにあり、20 °Cに保たれた大きな真空の黒色チャンバー内に導入される。",
+        "items": [
+          "（a）集中熱容量を仮定して、球の T(t) を表す微分方程式を書け。",
+          "（b）放射熱流束を温度差で割って「放射熱伝達率」を求めよ。次に、ビオ数に類似した、集中容量解が妥当かどうかを示す無次元数を特定せよ。",
+          "（c）この場合に集中容量解が妥当であることを示せ。",
+          "（d）微分方程式を積分し、球の温度応答をプロットせよ。"
+        ],
+        "bookPage": 40,
+        "endBookPage": 41,
+        "pdfPage": 54,
+        "endPdfPage": 55
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-18",
+        "number": "1.18",
+        "text": "小さな計測パッケージが宇宙船から放出される。それは直径4 cmのアルミニウムの固体球で近似できる。球は当初303 Kにあり、加圧された水素の部品を含んでいて、それは30 Kで凝縮して故障する。外宇宙を0 Kと近似すれば、計測パッケージはどれくらいの時間、正常に機能するか。この問題に集中容量法を使うのは正当か。",
+        "hint": "問題1.17の指示を見よ。",
+        "answerHint": "時間 = 41日",
+        "bookPage": 41,
+        "endBookPage": 41,
+        "pdfPage": 55,
+        "endPdfPage": 55
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-19",
+        "number": "1.19",
+        "text": "図1.20に示す壁を通る熱伝導を考える。q と壁の右側面の温度を計算せよ。図1.20の条件は次のとおりである：壁の厚さは0.5 m、k = 2 W/m·K、左面は100 °Cに保たれ、右面は T_∞ = 0 °C の流体へ h = 3 W/m²·K で対流する。",
+        "figure": {
+          "figureNumber": "1.20",
+          "caption": "図1.20 問題1.19の配置",
+          "alt": "厚さ0.5 m、熱伝導率 k = 2 W/m·K の平面壁の配置図。左面は100 °Cに保たれ、右面は0 °Cの流体へ h = 3 W/m²·K で対流により熱を失う。",
+          "bookPage": 41,
+          "pdfPage": 55
+        },
+        "figureRefs": [
+          "Fig. 1.20"
+        ],
+        "bookPage": 41,
+        "endBookPage": 41,
+        "pdfPage": 55,
+        "endPdfPage": 55
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-20",
+        "number": "1.20",
+        "text": "第1章を通して、均一な平面壁内の定常温度分布は直線であると仮定してきた。これを証明するために、熱伝導方程式を定常流に適した形に単純化せよ。次にそれを2回積分し、x = 0 と x = 壁の厚さ L における既知の外側温度 T_left と T_right を用いて2つの定数を消去せよ。",
+        "bookPage": 41,
+        "endBookPage": 42,
+        "pdfPage": 55,
+        "endPdfPage": 56
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-21",
+        "number": "1.21",
+        "text": "ある平面壁の熱伝導率は、壁の温度 T（°C）に次のように依存する：k = A + BT、ここで A と B は定数である。壁の両側の温度は T_1 と T_2 で、その厚さは L である。フーリエの法則を積分することにより、q の式を導け。積分を不要にするには、k をどの温度で評価すべきか。",
+        "sourceNote": {
+          "ja": "原文は「on either side if the wall」と印刷されているが、文意からは of の誤植とみられるため、翻訳は文意に従った。",
+          "en": "The book prints 'on either side if the wall', apparently a misprint for 'of'."
+        },
+        "bookPage": 42,
+        "endBookPage": 42,
+        "pdfPage": 56,
+        "endPdfPage": 56
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-22",
+        "number": "1.22",
+        "text": "図1.21に示す壁の k を求めよ。それは何でできている可能性があるか。図1.21の条件は次のとおりである：壁の厚さは0.08 m、左面は T_∞ = 100 °C の流体から h = 200 W/m²·K の対流を受け、左面と右面にはそれぞれ20 °C、0 °Cと記された温度の点が示されている。",
+        "figure": {
+          "figureNumber": "1.21",
+          "caption": "図1.21 問題1.22の配置",
+          "alt": "厚さ0.08 mの壁の配置図。左面は100 °Cの流体から h = 200 W/m²·K の対流を受ける。左面の下部には20 °C、右面の下部には0 °Cと記された点が示されている（原図ではいずれも T_∞ と表記）。",
+          "bookPage": 42,
+          "pdfPage": 56
+        },
+        "figureRefs": [
+          "Fig. 1.21"
+        ],
+        "bookPage": 42,
+        "endBookPage": 42,
+        "pdfPage": 56,
+        "endPdfPage": 56
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-23",
+        "number": "1.23",
+        "text": "図1.22に示す壁の T_i、T_j、T_r を求めよ。図1.22の壁は4層からなり、厚さと熱伝導率は左から順に2 cm（k = 2 W/m·K）、6 cm（k = 1 W/m·K）、4 cm（k = 5 W/m·K）、4 cm（k = 4 W/m·K）である。左表面は100 °C、第1層と第2層の界面が T_i、第2層と第3層の界面は25 °C、第3層と第4層の界面が T_j、右表面が T_r である。",
+        "figure": {
+          "figureNumber": "1.22",
+          "caption": "図1.22 問題1.23の配置",
+          "alt": "4層の複合壁の配置図。左から厚さ2 cm（k = 2 W/m·K）、6 cm（k = 1 W/m·K）、4 cm（k = 5 W/m·K）、4 cm（k = 4 W/m·K）の層が並ぶ。左表面は100 °C、第2層と第3層の界面は25 °Cであり、界面温度 T_i、T_j と右表面温度 T_r が求める量である。",
+          "bookPage": 43,
+          "pdfPage": 57
+        },
+        "figureRefs": [
+          "Fig. 1.22"
+        ],
+        "answerHint": "T_j = 16.44 °C",
+        "bookPage": 42,
+        "endBookPage": 42,
+        "pdfPage": 56,
+        "endPdfPage": 56
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-24",
+        "number": "1.24",
+        "text": "ソーダのアルミ缶が冷蔵庫から取り出され、テーブルの上に置かれる。平均熱伝達率 h が13.5 W/m²·K であれば、飲料が15 °Cになるまでの時間を見積もれ。缶の大きさや、その他与えられていない情報には妥当な値を用いよ。缶内の液体は、温度による密度変化の結果として循環するので、内部の温度勾配は小さいままである。熱放射は実効値の h に含まれているものとし（2.3節で議論されるように）、湿度は低いとせよ。",
+        "bookPage": 42,
+        "endBookPage": 42,
+        "pdfPage": 56,
+        "endPdfPage": 56
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-25",
+        "number": "1.25",
+        "text": "27 °Cの大きな黒色壁が、表面が127 °Cの第2の壁と向き合っている。壁の間の隙間は真空である。第2の壁の厚さが0.1 m、熱伝導率が17.5 W/m·K であれば、その壁の背面の温度はいくらか。定常状態を仮定せよ。",
+        "bookPage": 42,
+        "endBookPage": 42,
+        "pdfPage": 56,
+        "endPdfPage": 56
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-26",
+        "number": "1.26",
+        "text": "直径1 cm、炭素1%の鋼球が当初200 °Cにあり、20 °Cの空気中で自然対流により冷却される。この場合、平均熱伝達率 h は温度に独立ではない。代わりに、ΔT = (T_sphere − T_air) °C として h = 3.51(ΔT)^(1/4) W/m²·K である。T_sphere を t の関数としてプロットせよ。集中容量の仮定を確かめよ。",
+        "bookPage": 42,
+        "endBookPage": 43,
+        "pdfPage": 56,
+        "endPdfPage": 57
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-27",
+        "number": "1.27",
+        "text": "直径3 cmの黒色球形ヒーターが1100 °Cに保たれている。それは真空の空間を通して、周囲のニクロムVの球殻へ放射する。球殻の内径は9 cm、厚さは0.3 cmである。内側は黒体で、外側は25 °Cに保たれている。次を求めよ。",
+        "items": [
+          "（a）球殻の内壁の温度",
+          "（b）熱伝達率 Q"
+        ],
+        "continuation": "球殻内の伝導は平面壁としてモデル化せよ。反復解が必要である。",
+        "answerHint": "Q = 568 W",
+        "bookPage": 43,
+        "endBookPage": 43,
+        "pdfPage": 57,
+        "endPdfPage": 57
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-28",
+        "number": "1.28",
+        "text": "太陽は、ある湖の表面に650 W/m² を放射している。このエネルギーのすべてが水の蒸発に使われたとしたら（水の h_fg は2,450,000 J/kg）、湖はどの速度（mm/h）で蒸発するか。表面に届く太陽エネルギーが分配されうる他の方法を、思いつく限り議論せよ。650 W/m² の多くが蒸発に使われると思うか。",
+        "bookPage": 43,
+        "endBookPage": 43,
+        "pdfPage": 57,
+        "endPdfPage": 57
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-29",
+        "number": "1.29",
+        "text": "k = k_o(1 + aT²)（T は °Cで表され、k_o = 0.15 W/m·K、a = 10⁻⁴ °C⁻²）である新しいプラスチックで、厚さ0.005 mのピクニック用カップを作ることが提案されている。カップの内側が T = 100 °C（沸騰水の場合のように）で、外側が T = 0 °Cであるという極端な場合の熱的挙動に関心がある。カップを通る熱流束 q を求め、カップ壁内の位置に対して T をプロットせよ。この薄い壁は速やかに定常状態に達したと仮定せよ。",
+        "hint": "プロットを作るには、x(T) を求めよ。",
+        "bookPage": 43,
+        "endBookPage": 44,
+        "pdfPage": 57,
+        "endPdfPage": 58
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-30",
+        "number": "1.30",
+        "text": "ダイヤモンドIIbの円盤状ウェーハが、きわめて高強度のレーザーの標的である。円盤は直径5 mm、深さ1 mmである。平らな側は、1マイクロ秒の間、10¹⁰ W/m² のエネルギーで間欠的にパルス照射される。その後、次のパルスまで、同じ側から自然対流で冷える。h = 10 W/m²·K、T_∞ = 30 °C のとき、パルスの間隔が50 sの場合と100 sの場合について、T_disk を時間の関数としてプロットせよ。なお、この過程が延々と繰り返されてきたと仮定し、各パルスの前に円盤が到達する温度を決めなければならない。",
+        "bookPage": 44,
+        "endBookPage": 44,
+        "pdfPage": 58,
+        "endPdfPage": 58
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-31",
+        "number": "1.31",
+        "text": "旧式の白熱60 W電球は、直径約0.06 mの球である。その定常表面温度は25 °Cの室内で115 °Cであり、外側の h は8.2 W/m²·K である。",
+        "items": [
+          "（a）ガラスから室内へのピーク放射の波長が近赤外の波長であることを示せ。",
+          "（b）ガラス表面からの熱損失を計算せよ（ε_glass = 0.94 とせよ）。",
+          "（c）フィラメントからガラスを通しての直接放射によって伝わるべき熱伝達は、どれだけ残るか。（そのエネルギーの大部分は可視スペクトルにはない。これらの電球はきわめて非効率だった。）"
+        ],
+        "bookPage": 44,
+        "endBookPage": 44,
+        "pdfPage": 58,
+        "endPdfPage": 58
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-32",
+        "number": "1.32",
+        "text": "問題1.31の電球は、どれだけのエントロピーを生成するか。",
+        "bookPage": 44,
+        "endBookPage": 44,
+        "pdfPage": 58,
+        "endPdfPage": 58
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-33",
+        "number": "1.33",
+        "text": "20 °Cの空気が薄い金属板の一方の側を流れ（h = 10.6 W/m²·K）、87 °Cのメタノールがもう一方の側を流れる（h = 141 W/m²·K）。金属は電気抵抗ヒーターとして機能し、1000 W/m² を放出する。次を計算せよ。",
+        "items": [
+          "（a）ヒーターの温度",
+          "（b）メタノールからヒーターへの熱伝達",
+          "（c）ヒーターから空気への熱伝達"
+        ],
+        "answerHint": "（b）−270 W/m²",
+        "bookPage": 44,
+        "endBookPage": 44,
+        "pdfPage": 58,
+        "endPdfPage": 58
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-34",
+        "number": "1.34",
+        "text": "平面状の黒色ヒーターの一方の側が、20 °Cの空気（h = 14.6 W/m²·K）と、80 °Cの平行な黒色壁への放射とによって同時に冷やされる。ヒーターのもう一方の側は完全に断熱されている。ヒーターが9000 W/m² を供給するとき、その温度はいくらか。",
+        "bookPage": 44,
+        "endBookPage": 44,
+        "pdfPage": 58,
+        "endPdfPage": 58
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-35",
+        "number": "1.35",
+        "text": "250 mL（8.3 oz）のアルミ飲料缶が、3 °Cの冷蔵庫から取り出され、湿度の低い25 °Cの室内（h = 7.3 W/m²·K）に置かれる。直径53.3 mm、高さ112 mmの缶は、断熱面の上に置かれる。12 °Cに達するまでにどれだけ時間がかかるか。この缶の放射率はきわめて低いものとし、熱放射は無視できるとせよ。その他の近似についても議論せよ。",
+        "bookPage": 44,
+        "endBookPage": 45,
+        "pdfPage": 58,
+        "endPdfPage": 59
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-36",
+        "number": "1.36",
+        "text": "薄いシート状の抵抗ヒーターが、真空の空洞の両側にある厚さ3 cmの鋳鉄の平板と平行に走っている。8000 W/m² を放出するヒーターも鋳鉄も、ほぼ黒体である。鋳鉄平板の外側表面は10 °Cに保たれている。ヒーターの温度と平板内側の温度を求めよ。",
+        "answerHint": "ヒーターの温度 = 254 °C",
+        "bookPage": 45,
+        "endBookPage": 45,
+        "pdfPage": 59,
+        "endPdfPage": 59
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-37",
+        "number": "1.37",
+        "text": "1200 °Cの黒色壁が、厚さ5 mmのタイプ316ステンレス鋼の平行平板の左側へ放射する。平板の右側は対流で冷やされ、0 °Cを超えてはならない。熱流束を求めよ。望ましい右側温度を実現する対流過程を提案できるか。冷却材と配置について、いくつかの可能性を議論せよ。（当然ながら、まだ詳細設計はできない！）",
+        "bookPage": 45,
+        "endBookPage": 45,
+        "pdfPage": 59,
+        "endPdfPage": 59
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-38",
+        "number": "1.38",
+        "text": "冷却器が、厚さ2 cmの氷の層の下面を−10 °Cに保っている。上面は15 °Cの空気にさらされている。上面がちょうど融解の瀬戸際にあるとき、h はいくらか。融解を進行させるには、h を上げなければならないか、下げなければならないか。",
+        "bookPage": 45,
+        "endBookPage": 45,
+        "pdfPage": 59,
+        "endPdfPage": 59
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-39",
+        "number": "1.39",
+        "text": "黒色放射体の単色放射能が可視波長域で最大になるのは、最低で何度か。図10.2を見て、この物体を見る場合と太陽を見る場合で、見え方がどう違うか述べよ。（答えを確認するために太陽を直接見てはならない。目に有害である。）",
+        "bookPage": 45,
+        "endBookPage": 45,
+        "pdfPage": 59,
+        "endPdfPage": 59
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-40",
+        "number": "1.40",
+        "text": "長さ L の平板上を流れる流体の層流に対する局所熱伝達率は、h(x) = F/x^(1/2) である。ここで x は平板の前縁からの距離、F は流体物性と流速に依存する定数である。平均熱伝達率は h(x = L) と比べてどうか。",
+        "bookPage": 45,
+        "endBookPage": 45,
+        "pdfPage": 59,
+        "endPdfPage": 59
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-41",
+        "number": "1.41",
+        "text": "物体は当初、周囲よりも高い温度にある。多くの種類の対流過程が物体を周囲と平衡に至らせることを見てきた。宇宙のエントロピーの正味増加が最も小さくなるようにそれを行う過程の特徴を述べよ。",
+        "bookPage": 45,
+        "endBookPage": 45,
+        "pdfPage": 59,
+        "endPdfPage": 59
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-42",
+        "number": "1.42",
+        "text": "250 °Cの円柱状の銅ビレット（直径4 cm、長さ8 cm）が、25 °Cの空気中で冷やされる。熱伝達率は5 W/m²·K である。これを集中容量冷却として扱えるか。10分後のビレットの温度はいくらか。",
+        "bookPage": 45,
+        "endBookPage": 46,
+        "pdfPage": 59,
+        "endPdfPage": 60
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-43",
+        "number": "1.43",
+        "text": "太陽の直径はおよそ1,391,000 kmであり、5772 Kの黒体であるかのようにエネルギーを放射している。それがエネルギーを放射する率を求めよ。既知の値と比較せよ。太陽は1年間にどれだけのエネルギーを放射するか。",
+        "answerHint": "1.21 × 10³⁴ J/年",
+        "bookPage": 46,
+        "endBookPage": 46,
+        "pdfPage": 60,
+        "endPdfPage": 60
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-44",
+        "number": "1.44",
+        "text": "300 Kの室温の物体と5772 Kの太陽は、それぞれ熱エネルギーを放射する。しかしプランクの法則、式（1.30）が示すように、重要になる波長はまったく異なる。",
+        "items": [
+          "（a）これらの各温度について、ウィーンの法則、式（1.29）から λ_max をマイクロメートルで求めよ。",
+          "（b）表計算ソフトか他のソフトウェアを使い、T = 300 K については波長0から50 µmまで、T = 5772 K については波長0から5 µmまで、式（1.30）をプロットせよ。",
+          "（c）数値積分により、これらの曲線の各々の下の全面積を求め、ステファン–ボルツマン法則、式（1.28）の値と比較せよ。違いがあれば説明せよ。",
+          "（d）各曲線の下の面積の約1/4が λ_max の左側にあること（言い換えれば、放射エネルギーの3/4は λ_max より大きい波長にあること）を示せ。",
+          "（e）300 Kの表面が放射するエネルギーのうち、4 µm未満の波長で運ばれる割合はいくらか。5772 Kの表面が放射するエネルギーのうち、4 µmを超える波長にある割合はいくらか。"
+        ],
+        "answerHint": "5772 K：1%",
+        "bookPage": 46,
+        "endBookPage": 46,
+        "pdfPage": 60,
+        "endPdfPage": 60
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-45",
+        "number": "1.45",
+        "text": "1800 °Cの溶融金属の入ったるつぼが、鋳造工場の床に置かれている。鋳造工は、室内への熱損失を減らすため、それを金属板で覆う。溶融物と金属板の間の伝達係数 F が0.4、金属板の上面と室内の間の伝達係数が0.8であるとき、覆われていない溶融物と室内の間の伝達係数がもともと0.8だったとすれば、金属板によって室内への熱損失は何パーセント減るか。",
+        "answerHint": "66.7%",
+        "bookPage": 46,
+        "endBookPage": 46,
+        "pdfPage": 60,
+        "endPdfPage": 60
+      },
+      {
+        "type": "problem",
+        "id": "problem-1-46",
+        "number": "1.46",
+        "text": "プランクの法則、式（1.30）をすべての波長にわたって積分すると、ステファン–ボルツマン法則、式（1.28）が得られる。この積分を実行し、ステファン–ボルツマン定数を他の基本物理定数を用いて表せ。",
+        "hint": "積分は、ゼータ関数とガンマ関数の間のこの美しい関係を使うことで、リーマンのゼータ関数 ζ(s) を用いて書くことができる。s が正の整数のとき、Γ(s) = (s − 1)! はちょうど階乗である。さらに、ζ(s) のいくつかの値は π の冪を用いて知られており、調べることができる。",
+        "formulaBlocks": [
+          {
+            "expression": "ζ(s)Γ(s) = ∫_0^∞ t^(s−1)/(e^t − 1) dt （s > 1）"
+          }
+        ],
+        "bookPage": 46,
+        "endBookPage": 47,
+        "pdfPage": 60,
+        "endPdfPage": 61
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 22,
+    "preambleBlocks": [
+      {
+        "type": "subheading",
+        "id": "references-preamble-heading",
+        "text": "歴史的文献と発展的テキストの文献案内"
+      },
+      {
+        "type": "paragraph",
+        "id": "references-preamble-1",
+        "text": "［1.1–1.4］を除いて、第1章で導入した考え方については特定の引用を含めない。これらは入門的な熱力学や物理学の本に共通のものだからである。参考文献［1.1、1.5–1.10］は、この分野に強く影響を与えてきたいくつかのテキストである。残りは、本書を超えた内容の、比較的発展的なテキストやハンドブックである。"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-1-1",
+        "number": "1.1",
+        "authors": "J. Fourier",
+        "originalTitle": "The Analytical Theory of Heat",
+        "titleJa": "熱の解析的理論",
+        "publication": "Dover Publications, Inc., New York, 1955",
+        "noteJa": "フーリエの1822年のモノグラフの復刻。",
+        "noteEn": "Reprint of Fourier's 1822 monograph.",
+        "url": "https://archive.org/details/analyticaltheory00fourrich",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-2",
+        "number": "1.2",
+        "authors": "Société Montyon et Franklin",
+        "originalTitle": "Portraits et Histoire des Hommes Utiles, Collection de Cinquante Portraits",
+        "titleJa": "有用な人々の肖像と歴史：50点の肖像画コレクション",
+        "publication": "1839-1840",
+        "noteJa": "フーリエのエッチングは次のURLからダウンロードできる。",
+        "noteEn": "Etching of Fourier may be downloaded here.",
+        "url": "http://web.mit.edu/lienhard/www/fourier.tif",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-3",
+        "number": "1.3",
+        "authors": "A. G. Ostrogorsky",
+        "originalTitle": "Simple explicit equations for transient heat conduction in finite solids",
+        "titleJa": "有限な固体における非定常熱伝導の単純な陽的方程式",
+        "publication": "Journal of Heat Transfer, 131(1):011303, January 2009",
+        "doi": "10.1115/1.2977540",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-4",
+        "number": "1.4",
+        "authors": "O. Lummer and E. Pringsheim",
+        "originalTitle": "1. Die Vertheilung der Energie im Spectrum des schwarzen Körpers und des blanken Platins; 2. Temperaturbestimmung fester glühender Körper",
+        "titleJa": "1. 黒体および白金ブランクのスペクトルにおけるエネルギー分布；2. 灼熱した固体物体の温度決定",
+        "publication": "Verhandlungen der Deutschen Physikalischen Gesellschaft, 1:215–235, November 1899",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-5",
+        "number": "1.5",
+        "authors": "L. M. K. Boelter, V. H. Cherry, H. A. Johnson, and R. C. Martinelli",
+        "originalTitle": "Heat Transfer Notes",
+        "titleJa": "熱伝達ノート",
+        "publication": "McGraw-Hill Book Company, New York, 1965",
+        "noteJa": "もともと1932年から1941年にかけてカリフォルニア大学バークレー校の講義ノートとして発行された。",
+        "noteEn": "Originally issued as class notes at the University of California at Berkeley between 1932 and 1941.",
+        "url": "https://babel.hathitrust.org/cgi/pt?id=mdp.39015000967375",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-6",
+        "number": "1.6",
+        "authors": "M. Jakob",
+        "originalTitle": "Heat Transfer",
+        "titleJa": "熱伝達",
+        "publication": "John Wiley & Sons, New York, 1949",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-7",
+        "number": "1.7",
+        "authors": "H. S. Carslaw and J. C. Jaeger",
+        "originalTitle": "Conduction of Heat in Solids",
+        "titleJa": "固体内の熱伝導",
+        "publication": "Oxford University Press, New York, 2nd ed., 1959",
+        "noteJa": "きわめて包括的。",
+        "noteEn": "Very comprehensive.",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-8",
+        "number": "1.8",
+        "authors": "H. Schlichting and K. Gersten",
+        "originalTitle": "Boundary-Layer Theory",
+        "titleJa": "境界層理論",
+        "publication": "Springer-Verlag, Berlin, 9th ed., 2017",
+        "noteJa": "シュリヒティングの20世紀の古典を包括的かつ現代的に更新したもの。",
+        "noteEn": "Comprehensive & modern update of Schlichting's 20th century classic.",
+        "bookPage": 47,
+        "pdfPage": 61
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-9",
+        "number": "1.9",
+        "authors": "R. B. Bird, W. E. Stewart, and E. N. Lightfoot",
+        "originalTitle": "Transport Phenomena",
+        "titleJa": "輸送現象",
+        "publication": "John Wiley & Sons, Inc., New York, 2nd ed., 2002",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-10",
+        "number": "1.10",
+        "authors": "W. M. Kays and A. L. London",
+        "originalTitle": "Compact Heat Exchangers",
+        "titleJa": "コンパクト熱交換器",
+        "publication": "McGraw-Hill Book Company, New York, 3rd ed., 1984",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-11",
+        "number": "1.11",
+        "authors": "W. M. Kays, M. E. Crawford, and B. Weigand",
+        "originalTitle": "Convective Heat and Mass Transfer",
+        "titleJa": "対流熱・物質伝達",
+        "publication": "McGraw-Hill Book Company, New York, 4th ed., 2005",
+        "noteJa": "境界層と内部流を詳細に扱う。",
+        "noteEn": "Detailed coverage of boundary layers and internal flows.",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-12",
+        "number": "1.12",
+        "authors": "F. M. White",
+        "originalTitle": "Viscous Fluid Flow",
+        "titleJa": "粘性流体の流れ",
+        "publication": "McGraw-Hill, Inc., New York, 3rd ed., 2005",
+        "noteJa": "境界層と内部流の基本結果の見事な展開。",
+        "noteEn": "Excellent development of fundamental results for boundary layers and internal flows.",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-13",
+        "number": "1.13",
+        "authors": "A. Bejan",
+        "originalTitle": "Convection Heat Transfer",
+        "titleJa": "対流熱伝達",
+        "publication": "John Wiley & Sons, New York, 4th ed., 2013",
+        "noteJa": "この本はスケーリングの議論をうまく活用している。",
+        "noteEn": "This book makes good use of scaling arguments.",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-14",
+        "number": "1.14",
+        "authors": "J. R. Howell, M. P. Mengüç, and R. Siegel",
+        "originalTitle": "Thermal Radiation Heat Transfer",
+        "titleJa": "熱放射伝達",
+        "publication": "CRC Press (Taylor and Francis), Boca Raton, FL, 6th ed., 2015",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-15",
+        "number": "1.15",
+        "authors": "J. G. Collier and J. R. Thome",
+        "originalTitle": "Convective Boiling and Condensation",
+        "titleJa": "対流沸騰と凝縮",
+        "publication": "Oxford University Press, Oxford, 3rd ed., 1996",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-16",
+        "number": "1.16",
+        "authors": "J. R. Thome, editor",
+        "originalTitle": "Encyclopedia of Two-Phase Heat Transfer and Flow I: Fundamentals and Methods",
+        "titleJa": "二相熱伝達と流れの百科事典 I：基礎と方法",
+        "publication": "World Scientific, Singapore, 2015",
+        "doi": "10.1142/9310",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-17",
+        "number": "1.17",
+        "authors": "R. K. Shah and D. P. Sekulić",
+        "originalTitle": "Fundamentals of Heat Exchanger Design",
+        "titleJa": "熱交換器設計の基礎",
+        "publication": "John Wiley & Sons, Inc., Hoboken, NJ, 2003",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-18",
+        "number": "1.18",
+        "authors": "A. F. Mills",
+        "originalTitle": "Mass Transfer",
+        "titleJa": "物質伝達",
+        "publication": "Prentice-Hall, Inc., Upper Saddle River, 2001",
+        "noteJa": "機械工学者の視点からの物質伝達で、対流物質伝達を強く扱う。",
+        "noteEn": "Mass transfer from a mechanical engineer's perspective with strong coverage of convective mass transfer.",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-19",
+        "number": "1.19",
+        "authors": "D. S. Wilkinson",
+        "originalTitle": "Mass Transfer in Solids and Fluids",
+        "titleJa": "固体と流体における物質伝達",
+        "publication": "Cambridge University Press, Cambridge, 2000",
+        "noteJa": "材料科学に重点を置き、モデリングを重視した物質伝達の体系的な展開。",
+        "noteEn": "A systematic development of mass transfer with a materials science focus and an emphasis on modeling.",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-20",
+        "number": "1.20",
+        "authors": "G. Chen",
+        "originalTitle": "Nanoscale Energy Transport and Conversion",
+        "titleJa": "ナノスケールのエネルギー輸送と変換",
+        "publication": "Oxford University Press, New York, 2005",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-21",
+        "number": "1.21",
+        "authors": "F. A. Kulacki, editor",
+        "originalTitle": "Handbook of Thermal Science and Engineering",
+        "titleJa": "熱科学・熱工学ハンドブック",
+        "publication": "Springer, Cham, Switzerland, 2018",
+        "bookPage": 48,
+        "pdfPage": 62
+      },
+      {
+        "type": "reference",
+        "id": "reference-1-22",
+        "number": "1.22",
+        "authors": "L. R. Glicksman and J. H. Lienhard V",
+        "originalTitle": "Modeling and Approximation in Heat Transfer",
+        "titleJa": "熱伝達におけるモデリングと近似",
+        "publication": "Cambridge University Press, New York, 2016",
+        "noteJa": "基本的な物理原理を使って、複雑な過程の単純なモデルを構築する。MITの熱伝達の博士資格試験のアプローチに沿っている。",
+        "noteEn": "Uses basic physical principles to develop simple models of complex processes. Follows the approach of MIT's doctoral qualifying exams in heat transfer.",
+        "bookPage": 48,
+        "pdfPage": 62
+      }
+    ]
+  }
+}

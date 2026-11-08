@@ -1,0 +1,1314 @@
+{
+  "chapterId": "chapter-06",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 6 (Laminar and turbulent boundary layers): Problems and References — Japanese translation",
+  "bookPages": "337–350",
+  "pdfPages": "351–364",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 51,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-6-1",
+        "number": "6.1",
+        "text": "式（6.11a）と式（6.12）から式（6.13）が従うことを確かめよ。",
+        "bookPage": 337,
+        "endBookPage": 337,
+        "pdfPage": 351,
+        "endPdfPage": 351
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-2",
+        "number": "6.2",
+        "text": "解析能力のある学生は（あるいは担当教員の助けを借りて）、式（6.16）と式（6.20）の間の代数を完成させるべきである。",
+        "bookPage": 337,
+        "endBookPage": 337,
+        "pdfPage": 351,
+        "endPdfPage": 351
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-3",
+        "number": "6.3",
+        "text": "境界条件（6.20）の下で、コンピュータを使って式（6.18）を解け。そのためには η = 0 における3つの境界条件すべてが必要だが、1つは現在 η = ∞ にある。この困難を回避する方法は3つある。",
+        "items": [
+          "η = 0 における f′（df/dη）の値を推測することから始める。例えば f′ = 1 とする。η が大きい（例えば6や10）とき、f′ は定数へ漸近的に近づく。その定数が1より大きければ、より小さい f′ の推測に戻り（あるいはその逆）、定数が1に収束するまで続ける。（逐次的な推測を自動化する手段はいくつも工夫できる。）",
+          "f′ の正しい値は η = 0 でおよそ0.33206である。ずるをしてここから始めてもよいが、それでは何がおもしろいのか。",
+          "η = ∞ における df/dη = 1 の条件を原点へ写し戻す巧妙な方法が存在する。（担当教員に相談せよ。）"
+        ],
+        "bookPage": 337,
+        "endBookPage": 337,
+        "pdfPage": 351,
+        "endPdfPage": 351
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-4",
+        "number": "6.4",
+        "text": "ブラジウス解（表6.1）が式（6.25）を満たすことを確かめよ。そのためには、必要な数値積分および／または図形積分を実行せよ。",
+        "hint": "任意の x において、y/δ = η/4.92 である。",
+        "bookPage": 337,
+        "endBookPage": 337,
+        "pdfPage": 351,
+        "endPdfPage": 351
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-5",
+        "number": "6.5",
+        "text": "式（6.30）を確かめよ。",
+        "bookPage": 337,
+        "endBookPage": 337,
+        "pdfPage": 351,
+        "endPdfPage": 351
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-6",
+        "number": "6.6",
+        "text": "積分法で与えられる速度分布を使って τ_w を計算し、結果を式（6.32）と比較せよ。",
+        "bookPage": 337,
+        "endBookPage": 337,
+        "pdfPage": 351,
+        "endPdfPage": 351
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-7",
+        "number": "6.7",
+        "text": "層流境界層の速度分布を、きわめて単純な式 u/u_∞ = y/δ で近似し、運動量積分法を使って δ と C_f を計算せよ。それぞれどれほど正確か。",
+        "answerHint": "C_f は約13%低い",
+        "bookPage": 337,
+        "endBookPage": 337,
+        "pdfPage": 351,
+        "endPdfPage": 351
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-8",
+        "number": "6.8",
+        "text": "40 °Cの水が平板上を流れるある流れでは、δ と x をメートルで測って δ = 0.005√x である。単一のグラフに、適切に拡大した y スケールで、次を縮尺どおりプロットせよ。",
+        "items": [
+          "水の流れの δ と δ_t",
+          "同じ温度と速度の空気流の δ と δ_t"
+        ],
+        "bookPage": 337,
+        "endBookPage": 338,
+        "pdfPage": 351,
+        "endPdfPage": 352
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-9",
+        "number": "6.9",
+        "text": "一定の厚さ δ_0 の液体の膜が、垂直な板を流れ下る。液体は終端速度に達しているので、流れは粘性せん断応力と重さが釣り合った定常状態にある。このような流れの境界層方程式は式（6.13）と同じだが、重力も含めなければならない。したがって次のようになる。ここで x は下向きに増え、y は壁に垂直である。周囲空気中の静水圧勾配は無視できるとせよ。次を行え。",
+        "items": [
+          "方程式を単純化してこの状況を記述せよ。",
+          "膜に対する空気の抗力を無視して、方程式の境界条件を書け。",
+          "δ_0 を知っているものとして、膜内の速度分布を求めよ（第8章と比較せよ）。"
+        ],
+        "continuation": "この解は、多くの熱・物質伝達過程の研究の出発点である。",
+        "formulaBlocks": [
+          {
+            "expression": "u ∂u/∂x + v ∂u/∂y = −(1/ρ) dp/dx + g + ν ∂²u/∂y²"
+          }
+        ],
+        "bookPage": 338,
+        "endBookPage": 338,
+        "pdfPage": 352,
+        "endPdfPage": 352
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-10",
+        "number": "6.10",
+        "text": "式（6.63）から出発して、等温の平板上の層流境界層に対する Nu_L が、Pr の全範囲にわたって次の式で与えられることを示せ。",
+        "formulaBlocks": [
+          {
+            "expression": "Nu_L = 0.677 Re_L^(1/2) Pr^(1/3)/[1 + (0.0468/Pr)^(2/3)]^(1/4)",
+            "part": "式（6.121）"
+          }
+        ],
+        "bookPage": 338,
+        "endBookPage": 338,
+        "pdfPage": 352,
+        "endPdfPage": 352
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-11",
+        "number": "6.11",
+        "text": "積分法を使って、一様熱流束の板上の層流境界層に対する Nu_x を予測せよ。液体金属以外のすべての流体に有効になるものとせよ。結果を式（6.71）と比較せよ。あなたの結果は、板の前縁でどのような温度差を与えるか。",
+        "bookPage": 338,
+        "endBookPage": 338,
+        "pdfPage": 352,
+        "endPdfPage": 352
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-12",
+        "number": "6.12",
+        "text": "（a）式（6.119）から式（6.120）が従うことを確かめよ。（b）式（6.120）に類似した、液体に対する方程式を導け。",
+        "bookPage": 338,
+        "endBookPage": 338,
+        "pdfPage": 352,
+        "endPdfPage": 352
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-13",
+        "number": "6.13",
+        "text": "一様な速度 U の流体が、距離 d 離れた2枚の平行板の間の流路に入る。各板上に層流境界層が成長する。",
+        "items": [
+          "（a）2つの境界層が最初に接触するのは、入口からおよそどの距離か。",
+          "（b）流れが層流のままである場合、境界層が出会ったはるか後方で、板の間の速度分布を定性的にスケッチせよ。流路に沿って質量流量は一定であることに注意せよ。"
+        ],
+        "answerHint": "（a）x/d ≊ 0.01(Ud/ν)",
+        "bookPage": 338,
+        "endBookPage": 339,
+        "pdfPage": 352,
+        "endPdfPage": 353
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-14",
+        "number": "6.14",
+        "text": "積分の微分に対するライプニッツの規則の助けを借りて式（6.24）の微分を実行し、その前の方程式が結果として得られることを示せ。",
+        "bookPage": 339,
+        "endBookPage": 339,
+        "pdfPage": 353,
+        "endPdfPage": 353
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-15",
+        "number": "6.15",
+        "text": "23 °Cの液体が、57 °Cに保たれた滑らかで鋭い前縁を持つ平らな表面（長さ12 cm）の上を2 m/s で流れる。後縁における h を計算せよ。",
+        "items": [
+          "（a）流体が水の場合",
+          "（b）流体がグリセリンの場合",
+          "（c）2つの場合の抗力を比較せよ。"
+        ],
+        "answerHint": "（b）h = 346 W/m²·K／（c）グリセリンは23.4倍の抗力を生じる",
+        "bookPage": 339,
+        "endBookPage": 339,
+        "pdfPage": 353,
+        "endPdfPage": 353
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-16",
+        "number": "6.16",
+        "text": "−10 °Cの空気が、240 km/h で、滑らかで鋭い前縁を持つほぼ平らな空力表面の上を流れる。表面は10 °Cである。乱流への遷移は Re_l = 140,000 で始まり、Re_u = 315,000 で終わる。次を求めよ。",
+        "items": [
+          "（a）層流から乱流への遷移が起こる x 座標の範囲",
+          "（b）長さ2 m の表面に対する h",
+          "（c）長さ2 m の表面の後縁における h",
+          "（d）x_l における δ と h"
+        ],
+        "answerHint": "δ(x_l) ≃ 0.4 mm",
+        "bookPage": 339,
+        "endBookPage": 339,
+        "pdfPage": 353,
+        "endPdfPage": 353
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-17",
+        "number": "6.17",
+        "text": "Re_l = 80,000 として式（6.120）を使い、例6.9の h を求めよ。例の値と比較し、結果の含意を議論せよ。",
+        "hint": "例6.10を見よ。",
+        "bookPage": 339,
+        "endBookPage": 339,
+        "pdfPage": 353,
+        "endPdfPage": 353
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-18",
+        "number": "6.18",
+        "text": "例6.9で記述された系について、式（6.117）を使って、板の全長にわたる h の局所値をプロットせよ。同じグラフに、Re_x < 800,000 に対して式（6.58）から、Re_x > 400,000 に対して式（6.112）から h をプロットせよ。結果を議論せよ。",
+        "bookPage": 339,
+        "endBookPage": 339,
+        "pdfPage": 353,
+        "endPdfPage": 353
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-19",
+        "number": "6.19",
+        "text": "25 °Cの水銀が、60 °Cの長さ4 cm の平板ヒーターの上を0.7 m/s で流れる。流れは層流である。h、τ_w、h(x = 0.04 m)、δ(x = 0.04 m) を求めよ。",
+        "bookPage": 339,
+        "endBookPage": 339,
+        "pdfPage": 353,
+        "endPdfPage": 353
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-20",
+        "number": "6.20",
+        "text": "大きな板が、15 °Cの水の中で静止している。板が突然、それ自身と平行に1.5 m/s で動き始める。生じる流体の運動は、この章で研究した境界層のそれとは正確には同じではない。速度分布は、縁から始まるのではなく、板全体に沿って一様に発達するからである。非定常の運動量方程式は次の形をとる。t = 1、10、1000 s について、板の上方0.015 m における u を求めよ。そのためには、まず境界条件と初期条件で問題を定式化し、次に5.6節の半無限体の熱伝導解と比較せよ。",
+        "formulaBlocks": [
+          {
+            "expression": "∂u/∂t = ν ∂²u/∂y²"
+          }
+        ],
+        "answerHint": "10 s後の u ≊ 0.003 m/s",
+        "bookPage": 339,
+        "endBookPage": 340,
+        "pdfPage": 353,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-21",
+        "number": "6.21",
+        "text": "Pr が大きいとき、等温の平板ヒーター上の速度境界層厚さは δ_t よりはるかに大きい。熱境界層内部の速度分布はおよそ u/u_∞ ≃ (3/2)(y/δ) = (3/2)φ(y/δ_t) である（φ ≡ δ_t/δ）。積分エネルギー式を使って、この速度分布に基づくこの場合の Nu_x を導け。",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-22",
+        "number": "6.22",
+        "text": "等温板の上を流れる空気について、層流でありうるか乱流でありうる Re_x の範囲で、h(x) の層流値と乱流値の比を Re_x の関数としてプロットせよ。このプロットは、効果的な熱伝達のための設計について何を示唆するか。",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-23",
+        "number": "6.23",
+        "text": "7 °Cの水が、長さ0.207 m の薄い銅板の上部を0.38 m/s で横切って流れる。87 °Cのメタノールが、同じ板の底部を、同じ速度だが反対方向に横切って流れる。物性を評価する際に使う板温度について、明白な最初の推測をせよ。次に、位置の関数として板温度をプロットせよ。（物性への追加の補正はしなくてよい。それは問題6.24で行う。）板に沿って変化するすべてのものを考慮して、局所熱流束が最も小さくなる位置を求めよ。",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-24",
+        "number": "6.24",
+        "text": "物性の変化を十分に考慮して、問題6.23を解け。",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-25",
+        "number": "6.25",
+        "text": "例6.6では、一様な壁熱流束 q_w = 420 W/m² だった。代わりに壁温度がその平均値76 °Cに固定されていたら、平均の壁熱流束はいくらになるか。",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-26",
+        "number": "6.26",
+        "text": "6.4節で、気体の分子運動論は、単原子理想気体では2/3、複雑な分子では1という範囲の Pr の値を予測することに注意した。付録Aの表A.6を使って、400 Kの気体についてこれが裏付けられることを示せ。",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-27",
+        "number": "6.27",
+        "text": "2 ft四方、厚さ0.25 in. の軟鋼の平板が、1000 °Cで鍛造工程から出てくる。それは断熱ベッドの上に平らに置かれ、27 °Cの空気が上面の上を30 m/s で吹き付けられる。200 °Cまで冷えるのにどれだけかかるか。流れは層流とせよ。物性評価についての仮定を述べよ。",
+        "answerHint": "25.3分",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-28",
+        "number": "6.28",
+        "text": "問題6.27を、連続する時刻で物性を計算し直しながら、数値的に解け。問題6.27を解いた場合は、結果を比較せよ。",
+        "bookPage": 340,
+        "endBookPage": 340,
+        "pdfPage": 354,
+        "endPdfPage": 354
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-29",
+        "number": "6.29",
+        "text": "例6.9で記述された状況について、q_w を x に対してプロットせよ。（問題6.18をすでに解いている場合、この計算は短くなる。）",
+        "bookPage": 340,
+        "endBookPage": 341,
+        "pdfPage": 354,
+        "endPdfPage": 355
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-30",
+        "number": "6.30",
+        "text": "例6.9の板を考える。T_w = 310 K を指定する代わりに、q_w = 500 W/m² を指定したとする。この場合について、T_w を x に対してプロットせよ。",
+        "bookPage": 341,
+        "endBookPage": 341,
+        "pdfPage": 355,
+        "endPdfPage": 355
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-31",
+        "number": "6.31",
+        "text": "薄い金属板が、48 m/s で流れる44 °Cの空気と、0.2 m/s で流れる4 °Cの水を隔てている。両流体とも前縁から始まり、同じ方向に動く。x = 0.1 m まで、q_w を x の関数としてプロットせよ。T_plate はどのように変化するか。",
+        "bookPage": 341,
+        "endBookPage": 341,
+        "pdfPage": 355,
+        "endPdfPage": 355
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-32",
+        "number": "6.32",
+        "text": "60%グリセリンと40%水の混合物が、長さ1 m の平板の上を流れる。グリセリン（混合物）は20 °Cで、板は40 °Cである。後縁の上方1 mm にある小さな温度センサーが35 °Cを記録する。u_∞ はいくらか。また、センサー位置における u はいくらか。",
+        "bookPage": 341,
+        "endBookPage": 341,
+        "pdfPage": 355,
+        "endPdfPage": 355
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-33",
+        "number": "6.33",
+        "text": "表A.3のデータに基づいて、長さ5 m の板上の層流で達成できる h の最大値はおよそいくらか。そのような値を達成するには、どのような物理的状況が必要か。",
+        "bookPage": 341,
+        "endBookPage": 341,
+        "pdfPage": 355,
+        "endPdfPage": 355
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-34",
+        "number": "6.34",
+        "text": "17 °Cの水のシートが、当初厚さ Δ_1 m で、前縁から始まる水平板の隣を流れる。シートは一様な初期速度 u_∞ m/s を持つ。前縁から距離 L の位置における厚さ Δ_2 に対する無次元方程式を導け。δ ≪ Δ_2 とせよ。27 °Cの水で、u_∞ = 1 m/s、Δ_1 = 0.01 m、L = 0.1 m の場合について結果を評価せよ。",
+        "bookPage": 341,
+        "endBookPage": 341,
+        "pdfPage": 355,
+        "endPdfPage": 355
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-35",
+        "number": "6.35",
+        "text": "気体における µ の温度依存性に対する良い近似が、サザーランドの公式で与えられる。基準状態はどこに選んでもよく、T と T_ref はケルビンで表される。2点における空気のデータを使って、空気に対する S を評価せよ。この値を使って第3の点を予測し、データと比較せよ。",
+        "formulaBlocks": [
+          {
+            "expression": "μ/μ_ref = (T/T_ref)^1.5 (T_ref + S)/(T + S)",
+            "part": "式（6.122）"
+          }
+        ],
+        "bookPage": 341,
+        "endBookPage": 341,
+        "pdfPage": 355,
+        "endPdfPage": 355
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-36",
+        "number": "6.36",
+        "text": "6.2節では、定常状態の連続の方程式を導いた。今、時間依存の、圧縮性の、3次元のバージョンの方程式を導け。そのためには、式（2.10）の導出を言い換え、エネルギーではなく質量が保存されることを要求せよ。この方程式が、定常で密度一定の流れに対して式（6.11b）に帰着することを示せ。",
+        "formulaBlocks": [
+          {
+            "expression": "∂ρ/∂t + ∇·(ρu⃗) = 0",
+            "part": "式（6.123）"
+          }
+        ],
+        "bookPage": 341,
+        "endBookPage": 342,
+        "pdfPage": 355,
+        "endPdfPage": 356
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-37",
+        "number": "6.37",
+        "text": "完全に乱流の流れにおける最も小さなスケールの運動が、運動エネルギーの粘性散逸の大部分を担っている。散逸率 ε（W/kg）は、より大きなスケールの流れの運動によって小さな渦に課せられる。さらに、小さな渦は好ましい空間的な向きを持たない。したがって、ε と ν が、小スケール運動を定義する独立変数である。",
+        "items": [
+          "（a）次元解析を使って、小スケール運動の特性長さと速度スケール η と u_η を求めよ。これらはその流れのコルモゴロフスケールと呼ばれる。",
+          "（b）小スケール運動に対するレイノルズ数を計算し、結果を解釈せよ。",
+          "（c）コルモゴロフ長さスケールは、乱流中に見られる最も小さな運動を特徴づける。ε が10 W/kg で、1 bar、20 °Cにおける空気分子の平均自由行程が67 nm の場合、乱流運動が連続体現象であり、したがってこの章の方程式で正しく支配されることを示せ。"
+        ],
+        "bookPage": 342,
+        "endBookPage": 342,
+        "pdfPage": 356,
+        "endPdfPage": 356
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-38",
+        "number": "6.38",
+        "text": "外の温度は35 °Fだが、風冷え（ウィンドチル）を入れると24 °Fである。そして帽子を忘れてしまった。長い時間屋外に出ている場合、耳が凍る危険はあるか。理由も述べよ。",
+        "bookPage": 342,
+        "endBookPage": 342,
+        "pdfPage": 356,
+        "endPdfPage": 356
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-39",
+        "number": "6.39",
+        "text": "風洞の気流を加熱するために、実験者が、電気的に加熱されたニクロムVのストリップの配列を使う。各ストリップは20 cm × 2.5 cm で、きわめて薄い。それらは、薄い縁を風に向けて、流れを横切って張られている。空気は両側に沿って流れる。ストリップは垂直方向に間隔をあけられ、それぞれが次のものの1 cm 上にある。1 atm、20 °Cの空気が、ストリップの配列に10 m/s で入る。",
+        "items": [
+          "（a）気流の平均温度を30 °Cに上げるために、各ストリップはどれだけの電力を供給しなければならないか。",
+          "（b）ストリップにおける電気散逸が一様な場合、熱流束はいくらか。",
+          "（c）ストリップの平均温度と最大温度はいくらか。"
+        ],
+        "bookPage": 342,
+        "endBookPage": 342,
+        "pdfPage": 356,
+        "endPdfPage": 356
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-40",
+        "number": "6.40",
+        "text": "気流センサーは、平板の前縁から10 cm の位置に滑らかに埋め込まれた、長さ5 cm の加熱された銅のスラッグからなる。板の全長は15 cm で、板とスラッグの幅は両方とも10 cm である。スラッグは内部の発熱体によって電気的に加熱されるが、その熱伝導率が高いため、スラッグは空気側表面に沿ってほぼ一様な温度を持つ。ヒーターのコントローラーは、その電力を調整してスラッグ表面を固定された温度に保つ。空気速度は、スラッグ温度、空気温度、加熱電力の測定から計算される。",
+        "items": [
+          "（a）空気が280 K、スラッグが300 K、ヒーター電力が5.0 W の場合、流れが層流であると仮定して空気速度を求めよ。",
+          "（b）攪乱が前縁近くの境界層をトリップさせ、板全体にわたって乱流になったとする。空気速度、空気温度、スラッグの設定点の温度は同じままである。多くの解析をせずに、コントローラーが今供給するヒーター電力を、きわめておおざっぱに見積もれ。"
+        ],
+        "hint": "x_1/x_0 = 1.5 について、積分すると ∫_{x_0}^{x_1} x^(−1/2)[1 − (x_0/x)^(3/4)]^(−1/3) dx = 1.0035√x_0 となることが分かる。",
+        "bookPage": 342,
+        "endBookPage": 343,
+        "pdfPage": 356,
+        "endPdfPage": 357
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-41",
+        "number": "6.41",
+        "text": "式（6.64）は、非加熱の開始長さを持つ平板に対する Nu_x を与える。この方程式は、積分エネルギー式（6.47）、式（6.29）と式（6.50）の速度分布と温度分布、および式（6.31a）の δ(x) を使って導くことができる。式（6.52）が再び得られる。ただしこの場合、φ = δ_t/δ は x > x_0 に対して x の関数である。式（6.52）から出発し、項 3φ³/280 を無視し、δ_t を φδ で置き換えて、式（6.64）を導け。いくらかの操作の後、与えられた常微分方程式が得られる。その解が、未知定数 C を用いて与えられた式になることを示せ。次に、適切な初期条件と q_w と Nu_x の定義を適用して式（6.64）を得よ。",
+        "formulaBlocks": [
+          {
+            "expression": "x (4/3) d(φ³)/dx + φ³ = 13/(14 Pr)"
+          },
+          {
+            "expression": "φ³ = Cx^(−3/4) + 13/(14 Pr)"
+          }
+        ],
+        "bookPage": 343,
+        "endBookPage": 343,
+        "pdfPage": 357,
+        "endPdfPage": 357
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-42",
+        "number": "6.42",
+        "text": "プラントル数0.7、6、50、80 について、2 × 10⁵ ≤ Re_x ≤ 10⁷ の範囲で、式（6.111）を式（6.112）および式（6.113）と比較するスプレッドシートを作成せよ。各方程式の有効範囲に留意せよ。どのような結論が得られるか。",
+        "bookPage": 343,
+        "endBookPage": 344,
+        "pdfPage": 357,
+        "endPdfPage": 358
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-43",
+        "number": "6.43",
+        "text": "液体金属が平板を過ぎて流れる。軸方向の熱伝導は無視でき、運動量境界層は無視できる厚さである。",
+        "items": [
+          "（a）板が等温の場合、式（5.54）を使って式（6.62）を導け。",
+          "（b）板が一定の壁熱流束を持つ場合について、局所ヌッセルト数の対応する式を導け。",
+          "（c）両方の場合の平均ヌッセルト数を求めよ。"
+        ],
+        "bookPage": 344,
+        "endBookPage": 344,
+        "pdfPage": 358,
+        "endPdfPage": 358
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-44",
+        "number": "6.44",
+        "text": "式（6.73）から出発して、平板上の一定熱流束面上の層流境界層について、Nu_L が Pr の全範囲にわたって次の式で与えられることを示せ。",
+        "formulaBlocks": [
+          {
+            "expression": "Nu_L = 0.696 Re_L^(1/2) Pr^(1/3)/[1 + (0.0205/Pr)^(2/3)]^(1/4)",
+            "part": "式（6.124）"
+          }
+        ],
+        "bookPage": 344,
+        "endBookPage": 344,
+        "pdfPage": 358,
+        "endPdfPage": 358
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-45",
+        "number": "6.45",
+        "text": "平板上の層流で Pr > 0.6 の場合、T_w 一定の h は q_w 一定の h と比べてどうか。q_w 一定の板上で、局所的な板温度が平均板温度と等しくなるのはどの位置か。T_w 一定の板上で、局所熱流束が平均熱流束と等しくなるのはどの位置か。",
+        "bookPage": 344,
+        "endBookPage": 344,
+        "pdfPage": 358,
+        "endPdfPage": 358
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-46",
+        "number": "6.46",
+        "text": "乱流における表面摩擦係数には、2つの冪法則が利用できる。前者は White によるもので、後者は Prandtl［6.4］によるものである。式（6.102）は、どちらよりも正確で範囲が広い。10⁵ ≤ Re_x ≤ 10⁹ について、3つの式すべてを片対数座標にプロットせよ。冪法則が式（6.102）と妥当に一致する範囲はどこか。また、Re_x ≤ 10⁶ について、層流の方程式（6.33）を同じグラフにプロットせよ。すべての結果についてコメントせよ。",
+        "formulaBlocks": [
+          {
+            "expression": "C_f(x) = 0.027 Re_x^(−1/7)",
+            "part": "White"
+          },
+          {
+            "expression": "C_f(x) = 0.059 Re_x^(−1/5)",
+            "part": "Prandtl"
+          }
+        ],
+        "bookPage": 344,
+        "endBookPage": 344,
+        "pdfPage": 358,
+        "endPdfPage": 358
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-47",
+        "number": "6.47",
+        "text": "Reynolds ら［6.27］は、T_∞ = 86 °F、T_w = 63 °F で、127 ft/s で平板上を流れる空気について、表に示す測定値を提供している。これらのデータを、両対数座標に Nu_x 対 Re_x としてプロットし、冪法則を適合させよ。あなたの適合は式（6.112）と比べてどうか。",
+        "bookPage": 344,
+        "endBookPage": 345,
+        "pdfPage": 358,
+        "endPdfPage": 359
+      },
+      {
+        "type": "table",
+        "id": "table-6-47-1",
+        "caption": "表6.47 問題6.47の測定データ（Reynolds ら）",
+        "headers": [
+          "Re_x × 10⁻⁶",
+          "St × 10⁻³",
+          "Re_x × 10⁻⁶",
+          "St × 10⁻³",
+          "Re_x × 10⁻⁶",
+          "St × 10⁻³"
+        ],
+        "rows": [
+          [
+            "0.255",
+            "2.73",
+            "1.353",
+            "2.01",
+            "2.44",
+            "1.74"
+          ],
+          [
+            "0.423",
+            "2.41",
+            "1.507",
+            "1.85",
+            "2.60",
+            "1.75"
+          ],
+          [
+            "0.580",
+            "2.13",
+            "1.661",
+            "1.79",
+            "2.75",
+            "1.72"
+          ],
+          [
+            "0.736",
+            "2.11",
+            "1.823",
+            "1.84",
+            "2.90",
+            "1.68"
+          ],
+          [
+            "0.889",
+            "2.06",
+            "1.970",
+            "1.78",
+            "3.05",
+            "1.73"
+          ],
+          [
+            "1.045",
+            "2.02",
+            "2.13",
+            "1.79",
+            "3.18",
+            "1.67"
+          ],
+          [
+            "1.196",
+            "1.97",
+            "2.28",
+            "1.73",
+            "3.36",
+            "1.54"
+          ]
+        ],
+        "bookPage": 344,
+        "pdfPage": 358
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-48",
+        "number": "6.48",
+        "text": "Blair と Werle［6.37］は、次に示す境界層のデータを報告した。彼らの実験は、一様な壁熱流束を持ち、4.29 cm の非加熱開始長さがあり、u_∞ = 30.2 m/s、T_∞ = 20.5 °Cだった。",
+        "items": [
+          "（a）これらのデータを、Nu_x 対 Re_x として両対数座標にプロットせよ。層流、遷移、乱流である可能性が高い領域を特定せよ。",
+          "（b）層流における Nu_x の適切な理論式をこのグラフにプロットせよ。方程式はデータと一致するか。",
+          "（c）乱流における Nu_x の式（6.112）をこのグラフにプロットせよ。データと方程式はどれほどよく一致するか。",
+          "（d）遷移が始まるのはどの Re_x か。式（6.114b）をこれらのデータに適合させる c と Re_l の値を求め、適合をこのグラフにプロットせよ。",
+          "（e）Re_x の全範囲にわたって式（6.117）をプロットせよ。"
+        ],
+        "bookPage": 345,
+        "endBookPage": 345,
+        "pdfPage": 359,
+        "endPdfPage": 359
+      },
+      {
+        "type": "table",
+        "id": "table-6-48-1",
+        "caption": "表6.48 問題6.48の境界層データ（Blair と Werle）",
+        "headers": [
+          "Re_x × 10⁻⁶",
+          "St × 10⁻³",
+          "Re_x × 10⁻⁶",
+          "St × 10⁻³",
+          "Re_x × 10⁻⁶",
+          "St × 10⁻³"
+        ],
+        "rows": [
+          [
+            "0.112",
+            "2.94",
+            "0.362",
+            "1.07",
+            "1.27",
+            "2.09"
+          ],
+          [
+            "0.137",
+            "2.23",
+            "0.411",
+            "1.05",
+            "1.46",
+            "2.02"
+          ],
+          [
+            "0.162",
+            "1.96",
+            "0.460",
+            "1.01",
+            "1.67",
+            "1.96"
+          ],
+          [
+            "0.183",
+            "1.68",
+            "0.505",
+            "1.05",
+            "2.06",
+            "1.84"
+          ],
+          [
+            "0.212",
+            "1.56",
+            "0.561",
+            "1.07",
+            "2.32",
+            "1.86"
+          ],
+          [
+            "0.237",
+            "1.45",
+            "0.665",
+            "1.34",
+            "2.97",
+            "1.74"
+          ],
+          [
+            "0.262",
+            "1.33",
+            "0.767",
+            "1.74",
+            "3.54",
+            "1.66"
+          ],
+          [
+            "0.289",
+            "1.23",
+            "0.865",
+            "1.99",
+            "4.23",
+            "1.65"
+          ],
+          [
+            "0.312",
+            "1.17",
+            "0.961",
+            "2.15",
+            "4.60",
+            "1.62"
+          ],
+          [
+            "0.338",
+            "1.14",
+            "1.06",
+            "2.24",
+            "4.83",
+            "1.62"
+          ]
+        ],
+        "bookPage": 345,
+        "pdfPage": 359
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-49",
+        "number": "6.49",
+        "text": "図6.21は、式（6.117）を使った、Kestin ら［6.29］による次の空気データへの適合を示している。板温度は（その全長にわたって）100 °Cで、一様流温度は20 °Cから30 °Cの間で変化した。問題6.48で用いたステップに従ってその適合を再現し、これらのデータとともにプロットせよ。",
+        "figureRefs": [
+          "Fig. 6.21"
+        ],
+        "bookPage": 345,
+        "endBookPage": 346,
+        "pdfPage": 359,
+        "endPdfPage": 360
+      },
+      {
+        "type": "table",
+        "id": "table-6-49-1",
+        "caption": "表6.49 問題6.49の空気データ（Kestin ら）",
+        "headers": [
+          "Re_x × 10⁻³",
+          "Nu_x",
+          "Re_x × 10⁻³",
+          "Nu_x",
+          "Re_x × 10⁻³",
+          "Nu_x"
+        ],
+        "rows": [
+          [
+            "60.4",
+            "42.9",
+            "445.3",
+            "208.0",
+            "336.5",
+            "153.0"
+          ],
+          [
+            "76.6",
+            "66.3",
+            "580.7",
+            "289.0",
+            "403.2",
+            "203.0"
+          ],
+          [
+            "133.4",
+            "85.3",
+            "105.2",
+            "71.1",
+            "509.4",
+            "256.0"
+          ],
+          [
+            "187.8",
+            "105.0",
+            "154.2",
+            "95.1",
+            "907.5",
+            "522.0"
+          ],
+          [
+            "284.5",
+            "134.0",
+            "242.9",
+            "123.0",
+            "",
+            ""
+          ]
+        ],
+        "bookPage": 345,
+        "pdfPage": 359
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-50",
+        "number": "6.50",
+        "text": "気体の分子運動論の研究によれば、1気圧、20 °Cにおける空気分子の平均自由行程は67 nm で、その平均速度は467 m/s である。式（6.45）を使って、空気の既知の物性から C_1 と C_2 を求めよ。これらの定数は1のオーダーであるべきだと主張されてきた。本当にそうか。",
+        "bookPage": 346,
+        "endBookPage": 346,
+        "pdfPage": 360,
+        "endPdfPage": 360
+      },
+      {
+        "type": "problem",
+        "id": "problem-6-51",
+        "number": "6.51",
+        "text": "熱工学にとって最も重要な2つの流体は空気と水である。付録Aのデータを使って、280 Kから650 Kまで（水については、臨界温度647.1 Kにきわめて近い644 Kでプロットを止める）、空気と飽和液水のプラントル数をプロットせよ。このチャートの傾向についてコメントせよ。",
+        "bookPage": 346,
+        "endBookPage": 346,
+        "pdfPage": 360,
+        "endPdfPage": 360
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 37,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-6-1",
+        "number": "6.1",
+        "authors": "S. Juhasz",
+        "originalTitle": "Notes on Applied Mechanics Reviews – Referativnyi Zhurnal Mekhanika exhibit at XIII IUTAM, Moscow 1972",
+        "titleJa": "応用力学レビューに関するノート ― 第13回IUTAM（モスクワ、1972）における Referativnyi Zhurnal Mekhanika 展示",
+        "publication": "Appl. Mech. Rev., 26(2):145–160, 1973",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-2",
+        "number": "6.2",
+        "authors": "J. H. Lienhard",
+        "originalTitle": "Prandtl, Ludwig",
+        "titleJa": "プラントル、ルートヴィヒ",
+        "publication": "In Complete Dictionary of Scientific Biography. 2018. Retrieved on 13 July 2018 from www.encyclopedia.com",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-3",
+        "number": "6.3",
+        "authors": "R. H. Kargon",
+        "originalTitle": "Reynolds, Osborne",
+        "titleJa": "レイノルズ、オズボーン",
+        "publication": "In Complete Dictionary of Scientific Biography. 2018. Retrieved on 13 July 2018 from www.encyclopedia.com",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-4",
+        "number": "6.4",
+        "authors": "F. M. White",
+        "originalTitle": "Viscous Fluid Flow",
+        "titleJa": "粘性流体の流れ",
+        "publication": "McGraw-Hill, Inc., New York, 2nd ed., 1991",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-5",
+        "number": "6.5",
+        "authors": "G. B. Schubauer and H. K. Skramstad",
+        "originalTitle": "Laminar-boundary-layer oscillations and transition on a flat plate",
+        "titleJa": "平板上の層流境界層の振動と遷移",
+        "publication": "Report 909, NACA, Washington, DC, 1948",
+        "url": "http://hdl.handle.net/2060/19930091976",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-6",
+        "number": "6.6",
+        "authors": "J. H. Lienhard V",
+        "originalTitle": "Heat transfer in flat-plate boundary layers: a correlation for laminar, transitional, and turbulent flow",
+        "titleJa": "平板境界層における熱伝達：層流・遷移・乱流に対する相関式",
+        "publication": "J. Heat Transfer, 142(6):061805, June 2020",
+        "doi": "10.1115/1.4046795",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-7",
+        "number": "6.7",
+        "authors": "J. H. Lienhard",
+        "originalTitle": "Nusselt, Ernst Kraft Wilhelm",
+        "titleJa": "ヌッセルト、エルンスト・クラフト・ヴィルヘルム",
+        "publication": "In Complete Dictionary of Scientific Biography. 2018. Retrieved on 13 July 2018 from www.encyclopedia.com",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-8",
+        "number": "6.8",
+        "authors": "H. Schlichting",
+        "originalTitle": "Boundary-Layer Theory",
+        "titleJa": "境界層理論",
+        "publication": "(trans. J. Kestin). McGraw-Hill Book Company, New York, 7th ed., 1979",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-9",
+        "number": "6.9",
+        "authors": "F. M. White",
+        "originalTitle": "Viscous Fluid Flow",
+        "titleJa": "粘性流体の流れ",
+        "publication": "McGraw-Hill Book Company, New York, 1974",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-10",
+        "number": "6.10",
+        "authors": "C. L. Tien and J. H. Lienhard",
+        "originalTitle": "Statistical Thermodynamics",
+        "titleJa": "統計熱力学",
+        "publication": "Hemisphere Publishing Corp., Washington, D.C., revised ed., 1978",
+        "url": "https://www.uh.edu/engines/StatisticalThermodynamics.pdf",
+        "bookPage": 346,
+        "pdfPage": 360
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-11",
+        "number": "6.11",
+        "authors": "E. Pohlhausen",
+        "originalTitle": "Der wärmeaustausch zwischen festen Körpern und Flüssigkeiten mit kleiner reibung und kleiner Wärmeleitung",
+        "titleJa": "小さな摩擦と小さな熱伝導を持つ、固体と液体の間の熱交換",
+        "publication": "Zeitschrift für Angewandte Mathematik und Mechanik (ZAMM) / J. Applied Mathematics and Mechanics, 1(2):115–121, 1921",
+        "doi": "10.1002/zamm.19210010205",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-12",
+        "number": "6.12",
+        "authors": "H. L. Evans",
+        "originalTitle": "Mass transfer through laminar boundary layers—7. Further similar solutions to the b-equation for the case B = 0",
+        "titleJa": "層流境界層を通る物質伝達―7. B = 0 の場合の b 方程式のさらなる相似解",
+        "publication": "Int. J. Heat Mass Transfer, 5(1):35–57, 1962",
+        "doi": "10.1016/0017-9310(62)90100-X",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-13",
+        "number": "6.13",
+        "authors": "Y.-M. Chen",
+        "originalTitle": "Heat transfer of a laminar flow passing a wedge at small Prandtl number: a new approach",
+        "titleJa": "小さなプラントル数でくさびを過ぎる層流の熱伝達：新しいアプローチ",
+        "publication": "Int. J. Heat Mass Transfer, 28(8):1517–1523, August 1985",
+        "doi": "10.1016/0017-9310(85)90254-6",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-14",
+        "number": "6.14",
+        "authors": "S. W. Churchill and H. Ozoe",
+        "originalTitle": "Correlations for laminar forced convection in flow over an isothermal flat plate and in developing and fully developed flow in an isothermal tube",
+        "titleJa": "等温平板上の流れと、等温管内の発達中および十分に発達した流れにおける層流強制対流の相関式",
+        "publication": "J. Heat Transfer, 95(3):416–419, February 1973",
+        "doi": "10.1115/1.3450078",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-15",
+        "number": "6.15",
+        "authors": "S. W. Churchill",
+        "originalTitle": "A comprehensive correlating equation for forced convection from flat plates",
+        "titleJa": "平板からの強制対流に対する包括的な相関式",
+        "publication": "AIChE J., 22(2):264–268, March 1976",
+        "doi": "10.1002/aic.690220207",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-16",
+        "number": "6.16",
+        "authors": "O. Reynolds",
+        "originalTitle": "On the extent and action of the heating surface for steam boilers",
+        "titleJa": "蒸気ボイラーの加熱面の範囲と作用について",
+        "publication": "Proc. Manchester Lit. Phil. Soc., 14:7–12, 1874",
+        "noteJa": "doi は IJHMT の1961年の復刻に対するものである。",
+        "noteEn": "The doi is for a 1961 reprint in IJHMT.",
+        "doi": "10.1016/0017-9310(61)90087-4",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-17",
+        "number": "6.17",
+        "authors": "A. P. Colburn",
+        "originalTitle": "A method of correlating forced convection heat transfer data and a comparison with fluid friction",
+        "titleJa": "強制対流熱伝達データを相関させる方法と、流体摩擦との比較",
+        "publication": "Trans. Amer. Inst. Chem. Engrs., 29:174–206, 1933",
+        "noteJa": "doi は IJHMT の1964年の復刻に対するものである。",
+        "noteEn": "The doi is for a 1964 reprint in IJHMT.",
+        "doi": "10.1016/0017-9310(64)90125-5",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-18",
+        "number": "6.18",
+        "authors": "J. A. Schetz",
+        "originalTitle": "Foundations of Boundary Layer Theory for Momentum, Heat, and Mass Transfer",
+        "titleJa": "運動量・熱・物質伝達のための境界層理論の基礎",
+        "publication": "Prentice-Hall, Inc., Englewood Cliffs, NJ, 1984",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-19",
+        "number": "6.19",
+        "authors": "P. S. Granville",
+        "originalTitle": "A modified Van Driest formula for the mixing length of turbulent boundary layers in pressure gradients",
+        "titleJa": "圧力勾配のある乱流境界層の混合長に対する修正 Van Driest 公式",
+        "publication": "J. Fluids Engr., 111(1):94–97, March 1989",
+        "doi": "10.1115/1.3243606",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-20",
+        "number": "6.20",
+        "authors": "P. S. Granville",
+        "originalTitle": "A near-wall eddy viscosity formula for turbulent boundary layers in pressure gradients suitable for momentum, heat, or mass transfer",
+        "titleJa": "運動量・熱・物質伝達に適した、圧力勾配のある乱流境界層の壁近傍渦粘度公式",
+        "publication": "J. Fluids Engr., 112(2):240–243, June 1990",
+        "doi": "10.1115/1.2909395",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-21",
+        "number": "6.21",
+        "authors": "F. M. White",
+        "originalTitle": "A new integral method for analyzing the turbulent boundary layer with arbitrary pressure gradient",
+        "titleJa": "任意の圧力勾配を持つ乱流境界層を解析する新しい積分法",
+        "publication": "J. Basic Engr., 91:371–378, September 1969",
+        "doi": "10.1115/1.3571122",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-22",
+        "number": "6.22",
+        "authors": "J. Boussinesq",
+        "originalTitle": "Essai sur la théorie des eaux courante",
+        "titleJa": "流水の理論に関する試論",
+        "publication": "Mem. Pres. Acad. Sci., XXIII(1):1–680, 1877",
+        "url": "https://www.irphe.fr/~clanet/otherpaperfile/articles/Boussinesq/N0003328_PDF_1_770.pdf",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-23",
+        "number": "6.23",
+        "authors": "A. Žukauskas and A. Šlančiauskas",
+        "originalTitle": "Heat Transfer in Turbulent Fluid Flows",
+        "titleJa": "乱流における熱伝達",
+        "publication": "Hemisphere Publishing Corp., Washington, D.C., 1987",
+        "bookPage": 347,
+        "pdfPage": 361
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-24",
+        "number": "6.24",
+        "authors": "B. S. Petukhov",
+        "originalTitle": "Heat transfer and friction in turbulent pipe flow with variable physical properties",
+        "titleJa": "物性が変化する乱流管流における熱伝達と摩擦",
+        "publication": "In T.F. Irvine, Jr. and J. P. Hartnett, editors, Advances in Heat Transfer, Vol. 6, pp. 504–564. Academic Press, Inc., New York, 1970",
+        "doi": "10.1016/S0065-2717(08)70153-9",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-25",
+        "number": "6.25",
+        "authors": "T. G. Beckwith, R. D. Marangoni, and J. H. Lienhard",
+        "originalTitle": "Mechanical Measurements",
+        "titleJa": "機械計測",
+        "publication": "Pearson/Prentice Hall, Upper Saddle River, NJ, 6th ed., 2007",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-26",
+        "number": "6.26",
+        "authors": "R. A. Seban and D. L. Doughty",
+        "originalTitle": "Heat transfer to turbulent boundary layers with variable free-stream velocity",
+        "titleJa": "一様流速度が変化する乱流境界層への熱伝達",
+        "publication": "Trans. ASME, 78(1):217–223, January 1956",
+        "doi": "10.1115/1.4013621",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-27",
+        "number": "6.27",
+        "authors": "W. C. Reynolds, W. M. Kays, and S. J. Kline",
+        "originalTitle": "Heat transfer in the incompressible turbulent boundary layer. I–constant wall temperature",
+        "titleJa": "非圧縮乱流境界層における熱伝達 I―壁温度一定",
+        "publication": "Memorandum 12-1-58W, NASA, Washington, D.C., December 1958",
+        "url": "http://hdl.handle.net/2060/19980228020",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-28",
+        "number": "6.28",
+        "authors": "G. H. Junkhan and G. K. Serovy",
+        "originalTitle": "Effects of free-stream turbulence and pressure gradient on flat-plate boundary-layer velocity profiles and on heat transfer",
+        "titleJa": "一様流乱流と圧力勾配の、平板境界層の速度分布と熱伝達への影響",
+        "publication": "J. Heat Transfer, 89(2):169–175, May 1967",
+        "doi": "10.1115/1.3614346",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-29",
+        "number": "6.29",
+        "authors": "J. Kestin, P. F. Maeder, and H. E. Wang",
+        "originalTitle": "The influence of turbulence on the transfer of heat from plates with and without a pressure gradient",
+        "titleJa": "圧力勾配のある場合とない場合の、板からの熱伝達への乱流の影響",
+        "publication": "Int. J. Heat Mass Transfer, 3:133–154, September 1961",
+        "doi": "10.1016/0017-9310(61)90076-X",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-30",
+        "number": "6.30",
+        "authors": "M. F. Blair",
+        "originalTitle": "Influence of free-stream turbulence on turbulent boundary layer heat transfer and mean profile development, Part I– experimental data",
+        "titleJa": "一様流乱流の、乱流境界層熱伝達と平均分布の発達への影響、Part I―実験データ",
+        "publication": "J. Heat Transfer, 105(1):33–40, February 1983",
+        "doi": "10.1115/1.3245555",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-31",
+        "number": "6.31",
+        "authors": "A. A. Žukauskas and A. B. Ambrazyavichyus",
+        "originalTitle": "Heat transfer from a plate in a liquid flow",
+        "titleJa": "液体の流れにおける板からの熱伝達",
+        "publication": "Int. J. Heat Mass Transfer, 3(4):305–309, December 1961",
+        "doi": "10.1016/0017-9310(61)90045-X",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-32",
+        "number": "6.32",
+        "authors": "W. C. Reynolds, W. M. Kays, and S. J. Kline",
+        "originalTitle": "Heat transfer in the incompressible turbulent boundary layer. IV–Effect of location of transition and prediction of heat transfer in a known transition region",
+        "titleJa": "非圧縮乱流境界層における熱伝達 IV―遷移位置の影響と、既知の遷移領域における熱伝達の予測",
+        "publication": "Memorandum 12-4-58W, NASA, Washington, D.C., December 1958",
+        "url": "http://hdl.handle.net/2060/20050158659",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-33",
+        "number": "6.33",
+        "authors": "R. E. Mayle",
+        "originalTitle": "The role of laminar-turbulent transition in gas turbine engines",
+        "titleJa": "ガスタービンエンジンにおける層流–乱流遷移の役割",
+        "publication": "In Intl. Gas Turbine Aeroengine Congress & Exposition, Orlando, FL. American Society of Mechanical Engineers, June 1991. Paper No. 91-GT-261",
+        "doi": "10.1115/91-GT-261",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-34",
+        "number": "6.34",
+        "authors": "M. F. Blair",
+        "originalTitle": "Influence of free-stream turbulence on boundary layer transition in favorable pressure gradients",
+        "titleJa": "順圧力勾配における境界層遷移への一様流乱流の影響",
+        "publication": "J. Engineering for Power, 104(4):743–750, October 1982",
+        "doi": "10.1115/1.3227340",
+        "bookPage": 348,
+        "pdfPage": 362
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-35",
+        "number": "6.35",
+        "authors": "S. B. Pope",
+        "originalTitle": "Turbulent Flows",
+        "titleJa": "乱流",
+        "publication": "Cambridge University Press, Cambridge, 2000",
+        "bookPage": 349,
+        "pdfPage": 363
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-36",
+        "number": "6.36",
+        "authors": "P. A. Libby",
+        "originalTitle": "Introduction to Turbulence",
+        "titleJa": "乱流入門",
+        "publication": "Taylor & Francis, Washington, D.C., 1996",
+        "bookPage": 349,
+        "pdfPage": 363
+      },
+      {
+        "type": "reference",
+        "id": "reference-6-37",
+        "number": "6.37",
+        "authors": "M. F. Blair and M. J. Werle",
+        "originalTitle": "The influence of freestream turbulence on the zero pressure and gradient fully turbulent boundary layer",
+        "titleJa": "一様流乱流の、圧力勾配ゼロの十分に乱流化した境界層への影響",
+        "publication": "UTRC Report R80-915388-12, United Technologies Research Center, East Hartford, CT, September 1980",
+        "url": "https://apps.dtic.mil/sti/pdfs/ADA101094.pdf",
+        "bookPage": 349,
+        "pdfPage": 363
+      }
+    ]
+  }
+}

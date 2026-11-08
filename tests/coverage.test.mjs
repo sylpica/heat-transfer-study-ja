@@ -19,7 +19,7 @@ test('coverage report separates original problems from verified book citation an
   assert.equal(coverage.appCreatedQuestions,743);
   assert.equal(coverage.bookCitedQuestions,8);
   assert.equal(coverage.sectionsWithBookCitedQuestions,3);
-  assert.equal(coverage.guideEntries,48);
+  assert.equal(coverage.guideEntries,49);
   assert.equal(coverage.glossaryTerms,glossary.length);
   assert.equal(Object.values(coverage.practiceByField).reduce((a,b)=>a+b,0),751);
   assert.equal(coverage.chapters.reduce((a,b)=>a+b.sectionCount,0),76);

@@ -1,0 +1,1141 @@
+{
+  "chapterId": "chapter-05",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 5 (Transient and multidimensional heat conduction): Problems and References — Japanese translation",
+  "bookPages": "252–268",
+  "pdfPages": "266–282",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 66,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-5-1",
+        "number": "5.1",
+        "text": "例5.1をやり直して解をプロットし直せ。ただし1つ変更がある。今回は、温度計を時刻ゼロに、(T_i − bT) より低い初期温度で挿入せよ。",
+        "bookPage": 252,
+        "endBookPage": 252,
+        "pdfPage": 266,
+        "endPdfPage": 266
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-2",
+        "number": "5.2",
+        "text": "初期温度 T_i の物体が、温度が T_bath = T_i + (T_0 − T_i)e^(t/τ) と上昇する浴に突然浸される。次の場合に物体の温度応答を求めよ：物体は時刻 t = 0 に浸される；物体のビオ数は小さい；浴の時定数 τ は物体の時定数 T の10倍である。0 ≤ t/τ ≤ 2 について、物体の温度と浴の温度をプロットせよ。",
+        "formulaBlocks": [
+          {
+            "expression": "T_bath = T_i + (T_0 − T_i)e^(t/τ)"
+          }
+        ],
+        "bookPage": 252,
+        "endBookPage": 252,
+        "pdfPage": 266,
+        "endPdfPage": 266
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-3",
+        "number": "5.3",
+        "text": "体積と表面積が既知の物体が、平均値の周りに角周波数 ω で正弦的に変化する温度の浴に浸されている。熱伝達率は既知で、ビオ数は小さい。長い時間が経過した後の物体の温度変化を求め、浴の温度とともにプロットせよ。解の興味深い側面についてコメントせよ。この問題を解くためのプログラムの提案を次に示す。",
+        "items": [
+          "物体の温度応答に対する微分方程式を書け。",
+          "完全な方程式の特殊解を得るために、T − T_mean = C_1 cos ωt + C_2 sin ωt と仮定せよ。これを微分方程式に代入し、得られる方程式が成り立つような C_1 と C_2 の値を求めよ。",
+          "次に、同次解を特殊解に加えよ。結果には未知定数が1つ含まれる。",
+          "定数を消去するために、思いつく最も単純な初期条件を書け。",
+          "時間を大きくし、解から消える項に注意せよ。それらを捨てよ。",
+          "解の2つの三角関数の項を、sin(ωt − β) を含む項にまとめよ。ここで β = fn(ωT) は物体温度の位相遅れである。"
+        ],
+        "continuation": "解の興味深い側面についてコメントせよ。",
+        "bookPage": 252,
+        "endBookPage": 253,
+        "pdfPage": 266,
+        "endPdfPage": 267
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-4",
+        "number": "5.4",
+        "text": "銅のブロックが、薄い金属容器の中の大きな液体水銀のプールの上に浮いている（図5.28）。系は当初、一様な温度 T_i にある。水銀と外部環境の間の熱伝達率は h_m で、銅と水銀の間は h_c である。外部温度が突然 T_i から T_s < T_i へ下げられる。銅と水銀の両方の内部抵抗を無視して、銅ブロックの温度応答を予測せよ。結果が両方の初期条件に合うことと、t → ∞ で期待される挙動を与えることを確認して、結果をチェックせよ。",
+        "figure": {
+          "figureNumber": "5.28",
+          "caption": "図5.28 問題5.4の配置",
+          "alt": "薄い金属容器内の液体水銀のプールに銅ブロックが浮いた配置図。銅と水銀の間の熱伝達率は h_c、水銀と外部環境の間は h_m である。",
+          "bookPage": 253,
+          "pdfPage": 267
+        },
+        "figureRefs": [
+          "Fig. 5.28"
+        ],
+        "bookPage": 253,
+        "endBookPage": 253,
+        "pdfPage": 267,
+        "endPdfPage": 267
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-5",
+        "number": "5.5",
+        "text": "図5.5で扱われた2階の集中容量系に類似した電気回路をスケッチし、十分に説明せよ。",
+        "figureRefs": [
+          "Fig. 5.5"
+        ],
+        "bookPage": 253,
+        "endBookPage": 253,
+        "pdfPage": 267,
+        "endPdfPage": 267
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-6",
+        "number": "5.6",
+        "text": "中心に熱電対を持つ直径1インチの銅球が、図5.29のように取り付けられ、211 °Fで飽和した水に浸される。この図は、急冷過程の間の実際の熱電対の読みを時間の関数として示している。ビオ数が小さければ、中心温度は急冷の間の球の一様温度と解釈できる。まず曲線に接線を引き、図形的に微分せよ。次に、得られた dT/dt の値を使って、(T_sphere − T_sat) の関数として熱伝達率のグラフを構成せよ。ビオ数の最大値が、集中容量法の使用を許すには大きすぎないかどうかを確認せよ。",
+        "figure": {
+          "figureNumber": "5.29",
+          "caption": "図5.29 問題5.6の配置と温度応答",
+          "alt": "熱電対を取り付けた銅球の配置と、飽和水への急冷過程で実際に記録された中心温度の時間変化の曲線を示す図。曲線の形状から沸騰様式の遷移が読み取れる。",
+          "bookPage": 254,
+          "pdfPage": 268
+        },
+        "figureRefs": [
+          "Fig. 5.29"
+        ],
+        "bookPage": 253,
+        "endBookPage": 254,
+        "pdfPage": 267,
+        "endPdfPage": 268
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-7",
+        "number": "5.7",
+        "text": "突合せ溶接した36ゲージの熱電対が、20 °C/s の率で温度が上昇するガス流の中に置かれる。熱電対は、既知のガス流温度より2.4 °C低い温度を定常的に記録する。熱電対材料の ρc が3800 kJ/m³·K であれば、熱電対における h はいくらか。",
+        "answerHint": "h = 1006 W/m²·K",
+        "bookPage": 254,
+        "endBookPage": 254,
+        "pdfPage": 268,
+        "endPdfPage": 268
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-8",
+        "number": "5.8",
+        "text": "図5.7の Fo = 0.1、Bi = 10、x/L = 0 の点を解析的にチェックせよ。2桁の精度を得るには固有値を何個計算する必要があるか。",
+        "figureRefs": [
+          "Fig. 5.7"
+        ],
+        "bookPage": 254,
+        "endBookPage": 254,
+        "pdfPage": 268,
+        "endPdfPage": 268
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-9",
+        "number": "5.9",
+        "text": "Bi が大きいとき、式（5.34）が式（5.33）に帰着することを証明せよ。",
+        "bookPage": 254,
+        "endBookPage": 254,
+        "pdfPage": 268,
+        "endPdfPage": 268
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-10",
+        "number": "5.10",
+        "text": "平板について、Bi = 0.1、Fo = 2.5 の Φ を解析的に計算し、図5.10aと比較せよ。",
+        "figureRefs": [
+          "Fig. 5.10a"
+        ],
+        "bookPage": 254,
+        "endBookPage": 254,
+        "pdfPage": 268,
+        "endPdfPage": 268
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-11",
+        "number": "5.11",
+        "text": "図5.7、5.8、5.9のいずれか1つの位置についてチャートをスケッチし、次を特定せよ。",
+        "items": [
+          "第三種の境界条件を第一種の境界条件に置き換えることができる領域",
+          "集中容量応答を仮定できる領域",
+          "固体を半無限領域とみなすことができる領域"
+        ],
+        "figureRefs": [
+          "Fig. 5.7",
+          "Fig. 5.8",
+          "Fig. 5.9"
+        ],
+        "bookPage": 254,
+        "endBookPage": 255,
+        "pdfPage": 268,
+        "endPdfPage": 269
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-12",
+        "number": "5.12",
+        "text": "水が、AC電力を使う抵抗ヒーターとして働く、厚さ0.05 mm のニクロムの平板上を流れる。h の見かけの値は2000 W/m²·K である。表面温度の変動はどれほどになるか。",
+        "answerHint": "平均 ΔT の1.4%",
+        "bookPage": 255,
+        "endBookPage": 255,
+        "pdfPage": 269,
+        "endPdfPage": 269
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-13",
+        "number": "5.13",
+        "text": "ヤコブの気泡成長式、式（5.58）を無次元形にせよ。その際、Ja ≡ c_p(T_sup − T_sat)/h_fg を「ヤコブ数」として特定せよ。（Ja は顕熱と潜熱の比である。）無次元化がバッキンガムのπ定理と整合していることを確かめよ。",
+        "bookPage": 255,
+        "endBookPage": 255,
+        "pdfPage": 269,
+        "endPdfPage": 269
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-14",
+        "number": "5.14",
+        "text": "長さ7 cm の垂直なガラス管が、沸騰を引き起こすほどではない102 °Cまでわずかに過熱された水で満たされている。上面が突然1 atmの周囲圧力に開かれる。管の底が0.05 °C冷えるまでの間、蒸発による管内の水の高さの減少を時間の関数としてプロットせよ。",
+        "answerHint": "合計時間は29分",
+        "bookPage": 255,
+        "endBookPage": 255,
+        "pdfPage": 269,
+        "endPdfPage": 269
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-15",
+        "number": "5.15",
+        "text": "平板が、既知の初期温度から両側で対流的に冷やされる。Bi = 2 の場合に、図5.7で与えられる表面温度の時間変化と、式（5.53）で与えられるものを比較せよ。比較の意味を議論せよ。",
+        "figureRefs": [
+          "Fig. 5.7"
+        ],
+        "bookPage": 255,
+        "endBookPage": 255,
+        "pdfPage": 269,
+        "endPdfPage": 269
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-16",
+        "number": "5.16",
+        "text": "式（5.62）を得るために、Θ = f(ξ)exp(iΩ) の形の複素解を仮定せよ。ここで i ≡ √−1 である。この形により、解の実部が必要な周期性を持つことが保証される。そして式（5.61）に代入することで、f(ξ) についての解きやすい常微分方程式が得られる。",
+        "bookPage": 255,
+        "endBookPage": 255,
+        "pdfPage": 269,
+        "endPdfPage": 269
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-17",
+        "number": "5.17",
+        "text": "鋼製のピストンシリンダー壁が、T = 650 °C + (300 °C) cos ωt と近似する振動する表面温度にさらされる。ピストンは毎秒8回サイクルする。熱応力を評価するために、鋼内の温度変動の振幅を深さの関数としてプロットする必要がある。このプロットを作れ。シリンダーが厚さ1 cm の場合、それを無限の深さを持つとみなすことができるか。",
+        "bookPage": 255,
+        "endBookPage": 256,
+        "pdfPage": 269,
+        "endPdfPage": 270
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-18",
+        "number": "5.18",
+        "text": "75 °Cの直径40 cm の管が、ポルトランドセメントの大きなブロックに埋められている。それは、1 m の深さで、15 °Cの等温面と平行に走っている。15 °Cの面に垂直で、管の中心を通る線に沿った温度分布をプロットせよ。管からの熱損失を解析的に計算せよ。次に、フラックスプロットか（利用可能なら）数値ソフトウェアを使って解を得よ。",
+        "bookPage": 256,
+        "endBookPage": 256,
+        "pdfPage": 270,
+        "endPdfPage": 270
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-19",
+        "number": "5.19",
+        "text": "表5.4の形状係数4を導け。",
+        "bookPage": 256,
+        "endBookPage": 256,
+        "pdfPage": 270,
+        "endPdfPage": 270
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-20",
+        "number": "5.20",
+        "text": "表5.4の形状係数9を、フラックスプロットで確かめよ。R_1/R_2 = 2 と R_1/L = 1/2 を用いよ。（円柱の周囲に十分な余白のある紙を用意して始めること。）",
+        "bookPage": 256,
+        "endBookPage": 256,
+        "pdfPage": 270,
+        "endPdfPage": 270
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-21",
+        "number": "5.21",
+        "text": "厚さ1 in.、一辺3 in. の正方形の銅ブロックが、1 in. × 3 in. の一方の表面で100 °Fに保たれている。向かい合う1 in. × 3 in. の表面は、2 in. にわたって断熱で、1インチにわたって90 °Fである。残りの表面は断熱である。フラックスプロットを使って熱伝達率を求めよ。",
+        "answerHint": "Q ≃ 39 W",
+        "bookPage": 256,
+        "endBookPage": 256,
+        "pdfPage": 270,
+        "endPdfPage": 270
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-22",
+        "number": "5.22",
+        "text": "257–258ページの図5.30aからjに描かれた状況の、いずれかまたはすべての形状係数を求めよ。各場合に、よく描かれたフラックスプロットを示せ。任意に、数値シミュレーションソフトウェアを使ってこれらの結果をチェックしてもよい。",
+        "figure": {
+          "figureNumber": "5.30",
+          "caption": "図5.30 問題5.22の配置",
+          "alt": "形状係数を求める対象となる10種類（aからj）の2次元伝導配置を示す図。",
+          "bookPage": 257,
+          "pdfPage": 271
+        },
+        "figureRefs": [
+          "Fig. 5.30"
+        ],
+        "answerHint": "S_b ≃ 1.03、S_c ≃ 0.29、S_g = 1",
+        "bookPage": 256,
+        "endBookPage": 256,
+        "pdfPage": 270,
+        "endPdfPage": 270
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-23",
+        "number": "5.23",
+        "text": "厚さ3 cm の銅の平板2枚が、外側が断熱され、突然ぴったりと叩き合わせられる。左側のものは当初100 °C、右側は0 °Cである。2.3 s が経過した後、左側の断熱境界の温度を求めよ。",
+        "answerHint": "壁温 ≃ 80.5 °C",
+        "bookPage": 256,
+        "endBookPage": 256,
+        "pdfPage": 270,
+        "endPdfPage": 270
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-24",
+        "number": "5.24",
+        "text": "卵は、そのタンパク質が変性して凝固することで調理される。卵は、その黄身が固くなったとき「固ゆで」とみなされ、それは中心温度75 °Cに対応する。次の条件のとき、卵を固ゆでするのに必要な時間を見積もれ。",
+        "items": [
+          "短径は45 mmである。",
+          "卵全体の k は、卵白のそれとほぼ同じである。調理中に有意な熱の発生や物性の変化は起こらない。",
+          "卵と水の間の h は1000 W/m²·K である。",
+          "卵は、85 °Cの煮えたぎらない程度の熱湯に入れられるとき、一様な温度20 °Cである。"
+        ],
+        "bookPage": 256,
+        "endBookPage": 259,
+        "pdfPage": 270,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-25",
+        "number": "5.25",
+        "text": "式（5.23）で記述される2階の集中容量系について、T_1 が振動しえないことを証明せよ。",
+        "bookPage": 259,
+        "endBookPage": 259,
+        "pdfPage": 273,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-26",
+        "number": "5.26",
+        "text": "2次元物体において等温線と断熱線が交換されると、新しい形状係数が元のものの逆数になる理由を説明せよ。",
+        "bookPage": 259,
+        "endBookPage": 259,
+        "pdfPage": 273,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-27",
+        "number": "5.27",
+        "text": "直径0.5 cm の円柱が、1 atmの飽和水に突然浸される。水は沸騰し、h = 10,000 W/m²·K である。次の場合について、中心線温度と表面温度を求めよ。ヒント：始める前に各場合の Bi を評価せよ。",
+        "items": [
+          "（a）円柱が銅製の場合、0.2 s後",
+          "（b）円柱がニクロムV製の場合、0.2 s後",
+          "（c）円柱がニクロムV製の場合、0.04 s後の温度の、できる限り正確な値"
+        ],
+        "answerHint": "（b）表面温度 ≃ 216 °C／（c）表面温度 ≃ 259 °C",
+        "bookPage": 259,
+        "endBookPage": 259,
+        "pdfPage": 273,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-28",
+        "number": "5.28",
+        "text": "大きな平らな電気抵抗ストリップヒーターが、一様に15 °Cの耐火レンガ壁に固定されている。ヒーターが突然オンにされると、4000 W/m² の一様な率で熱を放出する。ヒーターの反対側が断熱されている場合、ヒーターの直下のレンガの温度を時間の関数としてプロットせよ。表面が200 °Cに達したとき、壁の内部1 cm の深さにおける熱流束はいくらか。",
+        "sourceNote": {
+          "ja": "原文の一部解答は「q = 338 W/m2 K」と印刷されているが、熱流束の単位は W/m² であるはずで、単位表記は誤植とみられる。値は原文どおり保持した。",
+          "en": "The printed partial answer gives the heat flux in W/m2 K; the unit for a heat flux should be W/m². The value is preserved as printed."
+        },
+        "answerHint": "q = 338 W/m2 K",
+        "bookPage": 259,
+        "endBookPage": 259,
+        "pdfPage": 273,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-29",
+        "number": "5.29",
+        "text": "実験5.2を行い、結果についてのレポートを提出せよ。",
+        "bookPage": 259,
+        "endBookPage": 259,
+        "pdfPage": 273,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-30",
+        "number": "5.30",
+        "text": "直径2 cm のほぼ球形の容器に電子機器が入っており、中心が地表面から2 m 下になるように、湿った鉱質土壌の中に置かれている。土壌表面は0 °Cに保たれている。球の内部構造が、その温度を一様に保つようなものである場合、球表面を30 °Cより上にすることなく、機器が放出できるエネルギーの率を求めよ。",
+        "sourceNote": {
+          "ja": "原文の一部解答は「Q = 1.0 kW」と印刷されているが、直径2 cmの球という条件から計算される桁とは合わず、誤植の可能性がある。値は原文どおり保持した。",
+          "en": "The book's partial answer prints Q = 1.0 kW, which appears inconsistent by orders of magnitude with the stated 2 cm sphere; preserved as printed."
+        },
+        "answerHint": "Q = 1.0 kW",
+        "bookPage": 259,
+        "endBookPage": 259,
+        "pdfPage": 273,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-31",
+        "number": "5.31",
+        "text": "−10 °Cの氷の半無限平板が、熱伝達率10 W/m²·K を通して15 °Cの空気にさらされる。まず、氷がさらされた後に何が起こるかを言葉で述べよ。次に、融解の初期および漸近的（t → ∞）な率を kg/m²·s で求めよ。氷の融解潜熱 h_sf は333,300 J/kg である。",
+        "answerHint": "ṁ_melt = 0.45 g/m²·s",
+        "bookPage": 259,
+        "endBookPage": 259,
+        "pdfPage": 273,
+        "endPdfPage": 273
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-32",
+        "number": "5.32",
+        "text": "厚さ10 cm で当初20 °Cの断熱用耐火レンガ壁の一方の側が、熱伝達率230 W/m²·K を通して1000 °Cの炎にさらされる。反対側が、触ると熱すぎる、例えば65 °Cになるまで、どれだけかかるか。物性は500 °Cで評価し、h が十分に低いので冷たい側は断熱として扱えるとせよ。",
+        "answerHint": "4時間弱",
+        "bookPage": 259,
+        "endBookPage": 260,
+        "pdfPage": 273,
+        "endPdfPage": 274
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-33",
+        "number": "5.33",
+        "text": "ある鉛の弾丸が、弾丸近くの空気を300 °Cに加熱する衝撃波の中を0.5 s 間進む。弾丸を直径0.8 cm の円柱で近似せよ。h = 600 W/m²·K で、弾丸が当初20 °Cだった場合、衝突時のその表面温度はいくらか。中心温度はいくらか。",
+        "bookPage": 260,
+        "endBookPage": 260,
+        "pdfPage": 274,
+        "endPdfPage": 274
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-34",
+        "number": "5.34",
+        "text": "パン一斤が125 °Cのオーブンから取り出され、25 °Cのキッチンのカウンターで冷まされる。パンは長さ30 cm、高さ15 cm、幅12 cm である。この問題では、カウンターは熱伝導率がきわめて低いのでパンの底は熱を失わないとせよ。パンの k = 0.05 W/m·K、α = 5 × 10⁻⁷ m²/s、h = 10 W/m²·K のとき、パンの最も熱い部分が60 °Cまで冷えるのはいつか。",
+        "answerHint": "約1時間5分",
+        "bookPage": 260,
+        "endBookPage": 260,
+        "pdfPage": 274,
+        "endPdfPage": 274
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-35",
+        "number": "5.35",
+        "text": "一辺50 cm、1.5トンの鉛のブロックが、当初20 °Cである。このブロックが、200 °Cの熱い空気流の中に吊り上げられ、立方体の周りの h は272 W/m²·K である。20分が経過した後、中心から一つの面の中央へ至る線に沿って、立方体の温度をプロットせよ。",
+        "bookPage": 260,
+        "endBookPage": 260,
+        "pdfPage": 274,
+        "endPdfPage": 274
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-36",
+        "number": "5.36",
+        "text": "150 °Cに過熱された清浄な水の直径1.24 mm のジェットが、小さなオリフィスから27 m/s で、1 atmの空気中へ噴出する。蒸発が T = T_sat で、ジェットの表面ですぐに始まる。オリフィスから約5 m までの距離の関数として、ジェットの中心線温度と T(r/r_o = 0.6) をプロットせよ。軸方向伝導と、ジェットと空気の間の動的相互作用は無視せよ。（この実験については［5.25］を見よ。）",
+        "bookPage": 260,
+        "endBookPage": 260,
+        "pdfPage": 274,
+        "endPdfPage": 274
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-37",
+        "number": "5.37",
+        "text": "厚さ3 cm のアルミニウムの平板（当初50 °C）が、厚さ5 cm の銅の平板（当初20 °C）にぴったりと叩き合わせられる。外側は両方とも断熱され、接触抵抗は無視できる。初期の界面温度はいくらか。界面がその初期温度を保ち続ける時間を決めるのはどちらの平板か。界面温度が変化し始めるまでの時間を見積もれ。",
+        "answerHint": "少なくとも0.7 s",
+        "bookPage": 260,
+        "endBookPage": 260,
+        "pdfPage": 274,
+        "endPdfPage": 274
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-38",
+        "number": "5.38",
+        "text": "直径2 m、長さ4 m の円筒形の地下ガソリンタンクが、k = 0.8 W/m·K、α = 1.3 × 10⁻⁶ m²/s の10 °Cの土壌に埋められている。漏れのテストのために、27 °Cの水がタンクに注入される。それは、水中の0.5 kW のポンプでよく攪拌される。内径10 cm の透明なスタンドパイプの水位を観察し、その上昇・下降の率を測定する。漏れがなければ、1時間後に生じる高さの変化率はいくらか。水位は上昇するか、下降するか。タンクの熱膨張と変形は無視せよ（充填が完了するころには完了しているはずである）。",
+        "hint": "この問題を解くには、式（8.7）まで先を見る必要がある。",
+        "answerHint": "−18.4 cm/h",
+        "bookPage": 260,
+        "endBookPage": 261,
+        "pdfPage": 274,
+        "endPdfPage": 275
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-39",
+        "number": "5.39",
+        "text": "47 °Cの銅の円柱（直径3 cm）が、重力が低減された環境で、27 °Cの水に水平に突然浸される。g = 0.76 m/s² で、h = [2.733 + 10.448(ΔT °C)^(1/6)]² W/m²·K のとき、T_cyl を時間の関数としてプロットせよ。（得られた方程式を解析的に積分できない場合は、数値的に行え。）",
+        "bookPage": 261,
+        "endBookPage": 261,
+        "pdfPage": 275,
+        "endPdfPage": 275
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-40",
+        "number": "5.40",
+        "text": "ユタ大学の機械工学の学生たちは、春学期の終わりに豚を丸焼きにしてピクニックをする。豚はほぼ円柱状で、直径約26 cm である。それは、空気に似た物性を持つ燃焼生成物が280 °Cで、約2 m/s で豚を横切って流れるプロパンの炎の上で焼かれる。肉は95 °Cに達したときに調理されたものとし、午後2時に供するものとして、調理は何時に始めるべきか。Bi は大きいとせよ。ただし問題7.40に注意せよ。豚は当初25 °Cである。",
+        "answerHint": "午前9時30分ごろ",
+        "bookPage": 261,
+        "endBookPage": 261,
+        "pdfPage": 275,
+        "endPdfPage": 275
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-41",
+        "number": "5.41",
+        "text": "寒い北国の気候の人々は、零下の天候で金属を素手でつかんではいけないことを知っている。例えば、わずかに霜の付いた鋳鉄の塊は、例えば−20 °Cの天候では、接着剤のようにあなたの手にくっつき、皮膚の塊を引きちぎるかもしれない。これを定量的に説明せよ。",
+        "bookPage": 261,
+        "endBookPage": 261,
+        "pdfPage": 275,
+        "endPdfPage": 275
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-42",
+        "number": "5.42",
+        "text": "直径4 cm のタイプ304ステンレス鋼の棒が、その中心にきわめて小さな穴を持つ。穴は、融点60 °Cのワックスで詰まっている。棒は20 °Cである。穴を解放しようとして、作業員が棒の端部とその長さ約1 m を、80 °Cの水のタンクの中でかき回す。h が棒の端部と側面の両方で688 W/m²·K のとき、例えば4 cm までの、融解面の深さを時間の関数としてプロットせよ。",
+        "hint": "5.8節を振り返れ。",
+        "bookPage": 261,
+        "endBookPage": 261,
+        "pdfPage": 275,
+        "endPdfPage": 275
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-43",
+        "number": "5.43",
+        "text": "円筒形の断熱材が、その中心と外側の中間を通る線に沿って走る、単一のきわめて薄い電気抵抗ワイヤーを含んでいる。ワイヤーは480 W/m を放出する。断熱材の熱伝導率は3 W/m·K で、外周は20 °Cに保たれている。ワイヤーが通る点の近傍では場がどう見えるべきかを慎重に考えながら、断面のフラックスプロットを作成せよ。断熱材の中心の温度を評価せよ。",
+        "bookPage": 261,
+        "endBookPage": 262,
+        "pdfPage": 275,
+        "endPdfPage": 276
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-44",
+        "number": "5.44",
+        "text": "長い、一辺10 cm の正方形銅棒が、向かい合う2つの側面で260 °Cのガス流に囲まれている。これらの流れは46 W/m²·K の熱伝達率を課す。間にある2つの側面は、15 °Cの水への自然対流で、熱伝達率525 W/m²·K で冷やされる。ブロックを通る熱流と、ブロックの中心の温度はいくらか。",
+        "hint": "これはかなり複雑な問題になりうるが、始める前に各側面のビオ数を計算する手間をかけよ。それらから何が分かるか。",
+        "answerHint": "34.7 °C",
+        "bookPage": 262,
+        "endBookPage": 262,
+        "pdfPage": 276,
+        "endPdfPage": 276
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-45",
+        "number": "5.45",
+        "text": "ケルビン卿は1864年に、地球の年齢のおもしろい見積もりを行った。彼は、地球が4144 K（7000 °F）の溶けた岩石の塊として生まれ、それ以来0 Kの外宇宙によって冷やされてきたと仮定した。そのために、彼は地球の Bi がきわめて大きく、冷却はこれまでのところ比較的薄い（1次元の）層を通ってのみ浸透したと仮定した。α_rock = 1.18 × 10⁻⁶ m²/s と、測定された地球の表面温度勾配1/27 K/m を用いて、ケルビンの地球の年齢の値を求めよ。（ケルビンの結果は、受け入れられている値である45.4億年よりずっと小さいことが分かる。彼の計算が成り立たないのは、地球が固体ではないからである。むしろ、溶けた核は固体のリソスフェアの下で対流的に攪拌されている。その結果、表面勾配は地球の年齢とはほとんど関係がない。）",
+        "bookPage": 262,
+        "endBookPage": 262,
+        "pdfPage": 276,
+        "endPdfPage": 276
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-46",
+        "number": "5.46",
+        "text": "直径4 cm、長さ8 cm の純アルミニウムの円柱が、当初300 °Cである。それが、h = 500 W/m²·K の40 °Cの液体浴に突入される。1分後の円柱内の最も熱い温度と最も冷たい温度を計算せよ。これらの結果を集中容量の計算と比較し、その比較を議論せよ。",
+        "bookPage": 262,
+        "endBookPage": 262,
+        "pdfPage": 276,
+        "endPdfPage": 276
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-47",
+        "number": "5.47",
+        "text": "イワンが冷凍庫を掃除したとき、誤って凍ったジュースの大きな缶を冷蔵庫に入れてしまった。ジュースの缶は高さ17.8 cm、内径8.9 cm である。缶は冷凍庫では−15 °Cだったが、冷蔵庫は4 °Cである。缶は今、間隔の広いプラスチック棒の棚の上に横たわり、空気がその上を自由に循環する。棒との熱的相互作用は無視できる。缶への実効熱伝達率（対流と熱放射の同時）は8 W/m²·K である。缶は厚さ1.0 mm の厚紙の表皮を持ち、k = 0.2 W/m·K である。凍ったジュースは、氷とほぼ同じ物性を持つ。",
+        "items": [
+          "（a）厚紙の表皮は、ジュースの熱応答にとってどれほど重要か。答えを定量的に正当化せよ。",
+          "（b）イワンが入れてから30分後に冷蔵庫の中で缶を見つけた場合、ジュースは溶け始めているか。"
+        ],
+        "bookPage": 262,
+        "endBookPage": 263,
+        "pdfPage": 276,
+        "endPdfPage": 277
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-48",
+        "number": "5.48",
+        "text": "清掃作業員が、休日の直前の冬のある金曜の夜に、倉庫の暖房システムを誤って切ってしまった。2週間後にスタッフが戻ると、倉庫はかなり冷えていた。いくつかの区域では、凝縮した水分がコンクリート床の上に厚さ1〜2 mm の氷の層を形成していた。コンクリート床は厚さ25 cm で、締め固められた土の上にある。平板とその下の地面は両方とも今や20 °Fである。建物の運転員が暖房システムを入れ、空気を急速に60 °Fまで温める。空気と床の間の熱伝達率が15 W/m²·K のとき、氷が溶け始めるまでにどれだけかかるか。α_concr = 7.0 × 10⁻⁷ m²/s、k_concr = 1.4 W/m·K とし、適切な正当化できる近似を用いよ。",
+        "bookPage": 263,
+        "endBookPage": 263,
+        "pdfPage": 277,
+        "endPdfPage": 277
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-49",
+        "number": "5.49",
+        "text": "当初25 °Cの厚い木の壁が、モミでできている。それが突然800 °Cの炎にさらされる。壁と炎の間の対流と放射の実効熱伝達率が80 W/m²·K のとき、木の壁が仮定した発火温度430 °Cに達するまでにどれだけかかるか。",
+        "bookPage": 263,
+        "endBookPage": 263,
+        "pdfPage": 277,
+        "endPdfPage": 277
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-50",
+        "number": "5.50",
+        "text": "冷たいバターは温かいバターほどよく伸びない。ホイップバターの小さな容器には、使用前に冷蔵庫から取り出して、室内の空気で30分間温めておくよう提案するラベルが付いている。容器は直径9.1 cm、高さ5.6 cm で、ホイップバターの物性は k = 0.125 W/m·K、c_p = 2520 J/kg·K、ρ = 620 kg/m³ である。容器のプラスチック壁は熱抵抗が無視できるとし、容器の外側の h = 10 W/m²·K とせよ。容器の下のカウンタートップから得る熱は無視せよ。冷蔵庫の温度が5 °Cで、容器が20 °Cの部屋で30分間温まった場合、バター容器の中心の温度、バター上面の縁の周りの温度、バター容器が吸収した全エネルギー（J）を求めよ。",
+        "bookPage": 263,
+        "endBookPage": 264,
+        "pdfPage": 277,
+        "endPdfPage": 278
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-51",
+        "number": "5.51",
+        "text": "2次元の90°の扇形環が、断熱の内側円弧 r = r_i と、断熱の外側円弧 r = r_o を持つ。θ = 0 に沿った平らな面は T_1 で等温であり、θ = π/2 に沿った平らな面は T_2 で等温である。形状係数が S = (2/π) ln(r_o/r_i) であることを示せ。",
+        "bookPage": 264,
+        "endBookPage": 264,
+        "pdfPage": 278,
+        "endPdfPage": 278
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-52",
+        "number": "5.52",
+        "text": "T_∞(t) を、対流で冷やされる集中物体を取り囲む環境の時間依存温度とする。",
+        "items": [
+          "（a）T_∞ が一定でないとき、式（1.19）から与えられた関係が導かれることを示せ。ここで時定数 T は通常どおり定義される。",
+          "（b）物体の初期温度が T_i の場合、積分因子かラプラス変換のいずれかを使って、T(t) が与えられた式になることを示せ。"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "d(T − T_∞)/dt + (T − T_∞)/T = −dT_∞/dt",
+            "part": "（a）"
+          },
+          {
+            "expression": "T(t) = T_∞(t) + (T_i − T_∞(0))e^(−t/T) − e^(−t/T) ∫_0^t e^(s/T) (dT_∞/ds) ds",
+            "part": "（b）"
+          }
+        ],
+        "bookPage": 264,
+        "endBookPage": 264,
+        "pdfPage": 278,
+        "endPdfPage": 278
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-53",
+        "number": "5.53",
+        "text": "問題5.52bで導いた方程式を使って、式（5.14）を確かめよ。",
+        "bookPage": 264,
+        "endBookPage": 264,
+        "pdfPage": 278,
+        "endPdfPage": 278
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-54",
+        "number": "5.54",
+        "text": "初期温度 T_i の熱電対が、その Bi ≪ 1 で、その時定数が T である気流の中に置かれるとする。さらに、気流の温度が T_∞(t) = T_i + ΔT cos(ωt) と調和的に変化するとする。",
+        "items": [
+          "（a）問題5.52bで導いた方程式を使って、t > 0 に対する熱電対の温度 T_tc(t) を求めよ。（希望すれば、e^(iωt) の実部が Re e^(iωt) = cos ωt であることに注意し、複素変数を使って積分してもよい。）",
+          "（b）t ≫ T に対して結果を近似せよ。次に、ωT ≪ 1 と ωT ≫ 1 に対する T_tc(t) の値を求めよ。これらの極限が、熱電対の周波数応答――さまざまな周波数に追随する能力――に物理的にどう関連するか説明せよ。",
+          "（c）熱電対の時定数が T = 0.1 s の場合、それが正確に測定できる温度変動の最高周波数を見積もれ。"
+        ],
+        "bookPage": 264,
+        "endBookPage": 264,
+        "pdfPage": 278,
+        "endPdfPage": 278
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-55",
+        "number": "5.55",
+        "text": "あるタングステンランプのフィラメントは直径100 µm で、不活性ガスで満たされたガラス球の中にある。対流と放射の実効熱伝達率は750 W/m·K（原文の単位表記のまま）で、電流は60 Hzである。ガス温度が200 °Cで、ワイヤーの平均温度が2900 °Cの場合、フィラメントの表面温度はどれだけ変動するか。",
+        "sourceNote": {
+          "ja": "原文は実効熱伝達率の単位を「W/m·K」と印刷しているが、正しくは W/m²·K とみられる。値は原文どおり保持した。",
+          "en": "The book prints the unit of the effective heat transfer coefficient as W/m·K; it should evidently be W/m²·K. The value is preserved as printed."
+        },
+        "bookPage": 264,
+        "endBookPage": 265,
+        "pdfPage": 278,
+        "endPdfPage": 279
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-56",
+        "number": "5.56",
+        "text": "式（5.41）のパラメータ ψ を考える。",
+        "items": [
+          "（a）熱が距離 δ を拡散する時間スケールが δ²/α である場合、ψ の物理的意味と、ψ の値が大きい場合と小さい場合の結果を説明せよ。",
+          "（b）Bi ≪ 1 の半径 δ のワイヤーの熱応答の時間スケールが ρc_p δ/(2h) であることを示せ。次に、新しいパラメータ φ = ρc_p ωδ/(4π h) の意味を説明せよ。",
+          "（c）Bi ≪ 1 のとき、φ と ψ のどちらのパラメータがより関連性が高いか。"
+        ],
+        "bookPage": 265,
+        "endBookPage": 265,
+        "pdfPage": 279,
+        "endPdfPage": 279
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-57",
+        "number": "5.57",
+        "text": "1項解を使って例5.2の計算を繰り返せ。自分の解と例の数値の違いを議論せよ。どちらの方が精度が高いか。",
+        "bookPage": 265,
+        "endBookPage": 265,
+        "pdfPage": 279,
+        "endPdfPage": 279
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-58",
+        "number": "5.58",
+        "text": "集中容量解、式（1.22）は t/T に依存する。",
+        "items": [
+          "（a）平板、円柱、球について、t/T を Bi と Fo を用いて書け。",
+          "（b）球について Fo = 1、2、5 として、集中容量解を Bi の関数として片対数座標にプロットせよ。これらの曲線は図5.9のものと比べてどうか。"
+        ],
+        "answerHint": "平板：t/T = Bi_L·Fo_L",
+        "figureRefs": [
+          "Fig. 5.9"
+        ],
+        "bookPage": 265,
+        "endBookPage": 265,
+        "pdfPage": 279,
+        "endPdfPage": 279
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-59",
+        "number": "5.59",
+        "text": "集中容量解を使って、熱の除去 Φ の、t の関数としての式を導け。次に、この式を円柱について Fo と Bi を用いて表せ。結果を、Fo = 25、10、5、2 について Bi の関数として片対数座標にプロットせよ。これらの曲線を図5.10bと比較せよ。",
+        "figureRefs": [
+          "Fig. 5.10b"
+        ],
+        "bookPage": 265,
+        "endBookPage": 265,
+        "pdfPage": 279,
+        "endPdfPage": 279
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-60",
+        "number": "5.60",
+        "text": "Bi = {0.01, 0.05, 0.1, 0.5, 1} の平板について、Θ の1項解を書き下せ。これらを、対応する集中容量の方程式と比較せよ（問題5.58を見よ）。Ostrogorsky［5.8］は、Bi ≤ 0.1 に対して λ̂_1 ≃ √(m·Bi) であることを示した。ここで m は平板で1、円柱で2、球で3である。この公式はあなたの結果と比べてどうか。",
+        "bookPage": 265,
+        "endBookPage": 265,
+        "pdfPage": 279,
+        "endPdfPage": 279
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-61",
+        "number": "5.61",
+        "text": "1項解、式（5.42）を、Bi と位置を固定して、log Θ 対 Fo として片対数座標にプロットすると、得られる曲線の形状はどうか。r/r_o = 1、0.2 ≤ Fo ≤ 1.5 で、Bi = {0.5, 1, 2, 5, 10} の球について、そのようなプロットを作れ。",
+        "bookPage": 265,
+        "endBookPage": 266,
+        "pdfPage": 279,
+        "endPdfPage": 280
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-62",
+        "number": "5.62",
+        "text": "対流を伴う半無限体の解、式（5.53）は、Bi√Fo のようなパラメータ β を含んでいる。Bi = 1 と Bi = 10 の円柱について、式（5.53）を使って Fo = 0.05 のときの Θ を、図5.8に示された4つの位置のそれぞれについて求めよ。r 座標と x 座標は原点が異なることに注意せよ。これらの値は図5.8の値と比べてどうか。",
+        "figureRefs": [
+          "Fig. 5.8"
+        ],
+        "bookPage": 266,
+        "endBookPage": 266,
+        "pdfPage": 280,
+        "endPdfPage": 280
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-63",
+        "number": "5.63",
+        "text": "半無限体に対する式（5.53）を使って、物体の表面における Θ の、Bi と Fo の関数としての式を書け。この関数を、Fo = 0.05、0.02、0.01 について、0.01 ≤ Bi ≤ 100 の範囲で片対数軸にプロットせよ。図5.7–5.9と比較せよ。（Bi の大きな値で数値的な問題に遭遇した場合は、x → ∞ のとき e^x erfc x ∼ 1/(√π x) であることに注意せよ。）",
+        "figureRefs": [
+          "Fig. 5.7",
+          "Fig. 5.8",
+          "Fig. 5.9"
+        ],
+        "bookPage": 266,
+        "endBookPage": 266,
+        "pdfPage": 280,
+        "endPdfPage": 280
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-64",
+        "number": "5.64",
+        "text": "［5.19］に概説された方法を使って、図5.30gと図5.30jの形状係数を求めよ。",
+        "figureRefs": [
+          "Fig. 5.30"
+        ],
+        "bookPage": 266,
+        "endBookPage": 266,
+        "pdfPage": 280,
+        "endPdfPage": 280
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-65",
+        "number": "5.65",
+        "text": "宇宙船のアブレーション熱シールドに関する問題11.56を解け。",
+        "bookPage": 266,
+        "endBookPage": 266,
+        "pdfPage": 280,
+        "endPdfPage": 280
+      },
+      {
+        "type": "problem",
+        "id": "problem-5-66",
+        "number": "5.66",
+        "text": "図5.31のフラックスプロットは、底辺が T = 1 の五角形に対するものである。（a）では右上の辺が T = 0 で、（b）では両方の上辺が T = 0 である。他の辺はすべて断熱である。各フラックスプロットの形状係数を求めよ。これら2つの形状係数の積はいくらか。その理由を説明せよ。",
+        "figure": {
+          "figureNumber": "5.31",
+          "caption": "図5.31 問題5.66のフラックスプロット",
+          "alt": "底辺が T = 1 で等温な正五角形のフラックスプロット。（a）は右上の辺のみが T = 0 で等温、（b）は両方の上辺が T = 0 で等温、その他の辺は断熱である。",
+          "bookPage": 266,
+          "pdfPage": 280
+        },
+        "figureRefs": [
+          "Fig. 5.31"
+        ],
+        "bookPage": 266,
+        "endBookPage": 267,
+        "pdfPage": 280,
+        "endPdfPage": 281
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 25,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-5-1",
+        "number": "5.1",
+        "authors": "H. D. Baehr and K. Stephan",
+        "originalTitle": "Heat and Mass Transfer",
+        "titleJa": "熱・物質伝達",
+        "publication": "Springer-Verlag, Berlin, 1998",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-2",
+        "number": "5.2",
+        "authors": "A. F. Mills",
+        "originalTitle": "Basic Heat and Mass Transfer",
+        "titleJa": "基礎熱・物質伝達",
+        "publication": "Prentice-Hall, Inc., Upper Saddle River, NJ, 2nd ed., 1999",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-3",
+        "number": "5.3",
+        "authors": "M. P. Heisler",
+        "originalTitle": "Temperature charts for induction and constant temperature heating",
+        "titleJa": "誘導加熱と一定温度加熱のための温度チャート",
+        "publication": "Trans. ASME, 69(3):227–236, 1947",
+        "doi": "10.1115/1.4017360",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-4",
+        "number": "5.4",
+        "authors": "P. J. Schneider",
+        "originalTitle": "Temperature Response Charts",
+        "titleJa": "温度応答チャート",
+        "publication": "John Wiley & Sons, Inc., New York, 1963",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-5",
+        "number": "5.5",
+        "authors": "H. S. Carslaw and J. C. Jaeger",
+        "originalTitle": "Conduction of Heat in Solids",
+        "titleJa": "固体内の熱伝導",
+        "publication": "Oxford University Press, New York, 2nd ed., 1959",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-6",
+        "number": "5.6",
+        "authors": "F. A. Jeglic",
+        "originalTitle": "An analytical determination of temperature oscillations in wall heated by alternating current",
+        "titleJa": "交流で加熱される壁における温度振動の解析的決定",
+        "publication": "Technical Note D-1286, NASA, July 1962",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-7",
+        "number": "5.7",
+        "authors": "F. A. Jeglic, K. A. Switzer, and J. H. Lienhard",
+        "originalTitle": "Surface temperature oscillations of electric resistance heaters supplied with alternating current",
+        "titleJa": "交流を供給される電気抵抗ヒーターの表面温度振動",
+        "publication": "J. Heat Transfer, 102(2):392–393, May 1980",
+        "doi": "10.1115/1.3244303",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-8",
+        "number": "5.8",
+        "authors": "A. G. Ostrogorsky",
+        "originalTitle": "Simple explicit equations for transient heat conduction in finite solids",
+        "titleJa": "有限な固体における非定常熱伝導の単純な陽的方程式",
+        "publication": "J. Heat Transfer, 131(1):011303, January 2009",
+        "doi": "10.1115/1.2977540",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-9",
+        "number": "5.9",
+        "authors": "A. G. Ostrogorsky",
+        "originalTitle": "Eigenvalues and three-term approximation of Fourier series solution of heat conduction transients, valid for 0.02 < Fo < ∞ and all Bi",
+        "titleJa": "熱伝導過渡応答のフーリエ級数解の固有値と3項近似（0.02 < Fo < ∞ およびすべての Bi で有効）",
+        "publication": "J. Serbian Society for Computational Mechanics, 11(1):110–118, 2017",
+        "doi": "10.24874/jsscm.2017.11.01.11",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-10",
+        "number": "5.10",
+        "authors": "J. Bronowski",
+        "originalTitle": "The Ascent of Man",
+        "titleJa": "人間の上昇",
+        "publication": "Chapter 4. Little, Brown and Company, Boston, 1973",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-11",
+        "number": "5.11",
+        "authors": "N. Zuber",
+        "originalTitle": "Hydrodynamic aspects of boiling heat transfer",
+        "titleJa": "沸騰熱伝達の流体力学的側面",
+        "publication": "Technical Report AECU-4439, US Atomic Energy Commission, June 1959",
+        "noteJa": "UCLAの博士論文。",
+        "noteEn": "UCLA doctoral dissertation.",
+        "doi": "10.2172/4175511",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-12",
+        "number": "5.12",
+        "authors": "M. S. Plesset and S. A. Zwick",
+        "originalTitle": "The growth of vapor bubbles in superheated liquids",
+        "titleJa": "過熱液体における蒸気泡の成長",
+        "publication": "J. Appl. Phys., 25:493–500, April 1954",
+        "doi": "10.1063/1.1721668",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-13",
+        "number": "5.13",
+        "authors": "L. E. Scriven",
+        "originalTitle": "On the dynamics of phase growth",
+        "titleJa": "相成長の動力学について",
+        "publication": "Chem. Eng. Sci., 10:1–13, April 1959",
+        "doi": "10.1016/0009-2509(59)80019-1",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-14",
+        "number": "5.14",
+        "authors": "P. Dergarabedian",
+        "originalTitle": "The rate of growth of bubbles in superheated water",
+        "titleJa": "過熱水における気泡の成長率",
+        "publication": "J. Appl. Mech., Trans. ASME, 20(4):537–545, December 1953",
+        "doi": "10.1115/1.4010761",
+        "bookPage": 267,
+        "pdfPage": 281
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-15",
+        "number": "5.15",
+        "authors": "L. R. Glicksman and J. H. Lienhard V",
+        "originalTitle": "Modeling and Approximation in Heat Transfer",
+        "titleJa": "熱伝達におけるモデリングと近似",
+        "publication": "Cambridge University Press, New York, 2016",
+        "noteJa": "基本的な物理原理を使って、複雑な過程の単純なモデルを構築する。MITの熱伝達の博士資格試験のアプローチに沿っている。",
+        "noteEn": "Uses basic physical principles to develop simple models of complex processes. Follows the approach of MIT's doctoral qualifying exams in heat transfer.",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-16",
+        "number": "5.16",
+        "authors": "E. R. G. Eckert and R. M. Drake, Jr.",
+        "originalTitle": "Analysis of Heat and Mass Transfer",
+        "titleJa": "熱・物質伝達の解析",
+        "publication": "Hemisphere Publishing Corp., Washington, D.C., 1987",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-17",
+        "number": "5.17",
+        "authors": "V. S. Arpaci",
+        "originalTitle": "Conduction Heat Transfer",
+        "titleJa": "熱伝導伝達",
+        "publication": "Ginn Press/Pearson Custom Publishing, Needham Heights, Mass., 1991",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-18",
+        "number": "5.18",
+        "authors": "L. M. K. Boelter, V. H. Cherry, H. A. Johnson, and R. C. Martinelli",
+        "originalTitle": "Heat Transfer Notes",
+        "titleJa": "熱伝達ノート",
+        "publication": "McGraw-Hill Book Company, New York, 1965",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-19",
+        "number": "5.19",
+        "authors": "J. H. Lienhard",
+        "originalTitle": "Heat conduction through 'Yin-Yang' bodies",
+        "titleJa": "「陰陽」体を通る熱伝導",
+        "publication": "J. Heat Transfer, 103(3):600–601, 1981",
+        "url": "http://www.uh.edu/engines/Yin-YangBodies.jpg",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-20",
+        "number": "5.20",
+        "authors": "E. Hahne and U. Grigull",
+        "originalTitle": "Formfaktor und Formwiderstand der stationären mehrdimensionalen Wärmeleitung",
+        "titleJa": "定常多次元熱伝導の形状係数と形状抵抗",
+        "publication": "Int. J. Heat Mass Transfer, 18(6):751–767, June 1975",
+        "doi": "10.1016/0017-9310(75)90205-7",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-21",
+        "number": "5.21",
+        "authors": "M. M. Yovanovich",
+        "originalTitle": "Conduction and thermal contact resistances (conductances)",
+        "titleJa": "伝導と熱接触抵抗（コンダクタンス）",
+        "publication": "In W. M. Rohsenow, J. P. Hartnett, and Y. I. Cho, editors, Handbook of Heat Transfer, Chapter 3. McGraw-Hill, New York, 3rd ed., 1998",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-22",
+        "number": "5.22",
+        "authors": "P. M. Morse and H. Feshbach",
+        "originalTitle": "Methods of Theoretical Physics",
+        "titleJa": "理論物理学の方法",
+        "publication": "McGraw-Hill Book Company, New York, 1953",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-23",
+        "number": "5.23",
+        "authors": "R. Rüdenberg",
+        "originalTitle": "Die ausbreitung der luft—und erdfelder um hochspannungsleitungen besonders bei erd—und kurzschlüssen",
+        "titleJa": "高電圧線路の周りの空気場と地場の広がり、特に地絡と短絡において",
+        "publication": "Electrotech. Z., 36:1342–1346, 1925",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-24",
+        "number": "5.24",
+        "authors": "S. H. Corriher",
+        "originalTitle": "Cookwise: the hows and whys of successful cooking",
+        "titleJa": "クックワイズ：成功する調理の方法と理由",
+        "publication": "Wm. Morrow and Company, New York, 1997",
+        "noteJa": "調理の物理的・化学的過程の見事な説明を含む。新入生の化学を楽しんだ人のための料理本。",
+        "noteEn": "Includes excellent descriptions of the physical and chemical processes of cooking. The cookbook for those who enjoyed freshman chemistry.",
+        "bookPage": 268,
+        "pdfPage": 282
+      },
+      {
+        "type": "reference",
+        "id": "reference-5-25",
+        "number": "5.25",
+        "authors": "J. H. Lienhard and R. B. Day",
+        "originalTitle": "The breakup of superheated liquid jets",
+        "titleJa": "過熱液体ジェットの分裂",
+        "publication": "J. Basic Engineering, 92(3):515–521, September 1970",
+        "url": "http://www.uh.edu/engines/BreakupSuperheatedLiquidJets.pdf",
+        "bookPage": 268,
+        "pdfPage": 282
+      }
+    ]
+  }
+}

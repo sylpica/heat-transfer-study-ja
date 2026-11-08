@@ -20,7 +20,7 @@ test('multigrid reduces pressure iterations on a resolved mixed-mode 64 square w
  const {jacobi,multigrid}=projection(64,64);assert.ok(multigrid.iterations<jacobi.iterations*.5,`${multigrid.iterations} vs ${jacobi.iterations}`);
 });
 test('small coarse solves, malformed geometry, RHS and mismatched preconditioners have explicit outcomes',()=>{
- const {multigrid}=projection(2,3);assert.ok(multigrid.iterations<=2);for(const bad of [{nx:1},{ny:0},{dx:0},{dx:1e-200},{nx:129}])assert.throws(()=>createNeumannMultigrid({nx:8,ny:8,dx:.1,dy:.1,...bad}));const mg=createNeumannMultigrid({nx:8,ny:8,dx:.1,dy:.1});assert.throws(()=>mg.apply([1]));assert.throws(()=>mg.apply(Array(64).fill(NaN)));
+ const {multigrid}=projection(2,3);assert.ok(multigrid.iterations<=2);for(const bad of [{nx:1},{ny:0},{dx:0},{dx:1e-200},{nx:257}])assert.throws(()=>createNeumannMultigrid({nx:8,ny:8,dx:.1,dy:.1,...bad}));const mg=createNeumannMultigrid({nx:8,ny:8,dx:.1,dy:.1});assert.throws(()=>mg.apply([1]));assert.throws(()=>mg.apply(Array(64).fill(NaN)));
  const us=new Float64Array(12),vs=new Float64Array(12);assert.throws(()=>projectFaces(us,vs,{nx:3,ny:3,dx:1,dy:1,dt:.1,preconditioner:mg}),/前処理/);
 });
 test('coupled lid, buoyant and manufactured trajectories match the original fine-grid solver',()=>{

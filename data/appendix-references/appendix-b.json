@@ -1,0 +1,26 @@
+{
+  "appendixId": "appendix-b",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Appendix B (Units and conversion factors): References — Japanese translation",
+  "bookPages": "765",
+  "pdfPages": "779",
+  "status": "complete",
+  "references": {
+    "heading": "参考文献",
+    "count": 1,
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-B-1",
+        "number": "B.1",
+        "authors": "A. Thompson and B. N. Taylor",
+        "originalTitle": "Guide for the Use of the International System of Units (SI)",
+        "titleJa": "国際単位系（SI）の使用ガイド",
+        "publication": "National Institute of Standards and Technology, Gaithersburg, MD, 2008. NIST Special Pub. 811.",
+        "url": "http://physics.nist.gov/SP811",
+        "bookPage": 765,
+        "pdfPage": 779
+      }
+    ]
+  }
+}

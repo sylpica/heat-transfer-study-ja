@@ -1,0 +1,1412 @@
+{
+  "chapterId": "chapter-09",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 9 (Heat transfer in boiling and other phase-change configurations): Problems and References — Japanese translation",
+  "bookPages": "528–540",
+  "pdfPages": "542–554",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 38,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-9-1",
+        "number": "9.1",
+        "text": "断熱された側面を持つ大きな正方形タンクには、厚さ1.27 cm の銅の底がある。底は650 °Cに加熱され、飽和水が突然タンクに注がれる。底の下面が断熱されているとして、図9.2に基づいて、時間の関数として底の温度をプロットせよ。グラフに沸騰のレジームを示し、冷却が最も速い温度を記せ。底はクエンチされていることに注意せよ（例9.7の議論を思い出せ）。",
+        "figureRefs": [
+          "Fig. 9.2"
+        ],
+        "bookPage": 528,
+        "endBookPage": 528,
+        "pdfPage": 542,
+        "endPdfPage": 542
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-2",
+        "number": "9.2",
+        "text": "図9.3bの2つのヒーターに対する q_max を予測せよ。各ヒーターは q_max の何パーセントで動作しているか。",
+        "hint": "両方ともバーンアウトの近くで動作している。",
+        "figureRefs": [
+          "Fig. 9.3"
+        ],
+        "bookPage": 528,
+        "endBookPage": 528,
+        "pdfPage": 542,
+        "endPdfPage": 542
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-3",
+        "number": "9.3",
+        "text": "70 °Cの水の非常に清浄なガラス容器が、30 °C過冷却されるまで減圧される。次にそれは突然、爆発的に「フラッシュ」する（沸騰する）。これが起きる圧力はいくらか。それを引き起こした気泡、または液体中の他の攪乱の直径はおよそいくらか。",
+        "bookPage": 528,
+        "endBookPage": 528,
+        "pdfPage": 542,
+        "endPdfPage": 542
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-4",
+        "number": "9.4",
+        "text": "1 atm の水について、液体の過熱度の関数として不安定な気泡半径をプロットせよ。曲線をどこまで描くのが妥当か、そしてその理由は何か。",
+        "bookPage": 528,
+        "endBookPage": 528,
+        "pdfPage": 542,
+        "endPdfPage": 542
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-5",
+        "number": "9.5",
+        "text": "化学の授業で、試験管における「突沸（バンピング）」（管の内容物を天井中に吹き飛ばす爆発的な沸騰）の現象を目撃したことがあるだろう。しかし台所の鍋でこれが起きるのを見たことは決してない。なぜかを説明せよ。",
+        "bookPage": 528,
+        "endBookPage": 528,
+        "pdfPage": 542,
+        "endPdfPage": 542
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-6",
+        "number": "9.6",
+        "text": "ファンデルワールスの状態方程式（熱力学の授業を思い出せ）を使って、水が低圧で過熱されうる最高の換算温度を近似せよ。このことは、水が1 atm の低圧で何度の過熱を持続できることを示唆するか。（この計算は約10%以内の精度であることが分かっている。）この過熱度における R_b はいくらか。",
+        "bookPage": 528,
+        "endBookPage": 530,
+        "pdfPage": 542,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-7",
+        "number": "9.7",
+        "text": "山形の式（9.3）を使って、図9.14の Berenson の曲線について、発泡点密度が ΔT とともにどのように増加するかを求めよ。言い換えれば、関係 n = 定数・ΔT^c における c を求めよ。",
+        "hint": "すべての場合において、発泡点密度は ΔT に非常に強く依存する。",
+        "figureRefs": [
+          "Fig. 9.14"
+        ],
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-8",
+        "number": "9.8",
+        "text": "ある表面に対する C_sf が50%高いとする。与えられた ΔT の値に対して計算される q の誤差率を見積もれ。",
+        "answerHint": "70%低い",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-9",
+        "number": "9.9",
+        "text": "100 atm の水が、温度が T_sat より6 °C高いニッケルヒーター上で沸騰する。h と q を見積もれ。",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-10",
+        "number": "9.10",
+        "text": "水が大きな平板上で1 atm で沸騰する。板が月の表面（地球の標準重力の1/6）で運転される場合、q_max を計算せよ。地球の標準重力の10⁻⁴を経験する宇宙船の中では q_max はいくらか。",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-11",
+        "number": "9.11",
+        "text": "1 atm で沸点にある水が、直径2 mm の水平な銅線によって電気的に加熱される。ΔT = 0 から銅の融点まで、q 対 ΔT をプロットせよ。この曲線の一部は到達不可能であることに注意せよ。",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-12",
+        "number": "9.12",
+        "text": "10 atm の水中の直径30 mm の球について、問題9.11をやり直せ。",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-13",
+        "number": "9.13",
+        "text": "式（9.17）を確かめよ。",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-14",
+        "number": "9.14",
+        "text": "プール沸騰過程に対する q 対 (T_w − T_sat) の関係をスケッチし、h が最大および最小になる点を特定する図式的な方法を記述せよ。図9.2から、これら2つの h にどのような数値が得られるか。",
+        "answerHint": "h = 48,000 および 680 W/m²·K",
+        "figureRefs": [
+          "Fig. 9.2"
+        ],
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-15",
+        "number": "9.15",
+        "text": "直径2 mm のメタノールのジェットが、直径1.5 cm の円板ヒーターの中心に垂直に、1 m/s で向けられる。ヒーターによって安全に供給できるワット数はいくらか。",
+        "answerHint": "Q_max = 6,450 W",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-16",
+        "number": "9.16",
+        "text": "飽和水が1 atm で直径½ cm の白金棒上で沸騰する。バーンアウトにおける棒の温度を見積もれ。",
+        "answerHint": "T_rod = 119 °C",
+        "bookPage": 530,
+        "endBookPage": 530,
+        "pdfPage": 544,
+        "endPdfPage": 544
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-17",
+        "number": "9.17",
+        "text": "例9.9の条件について、位置 z の関数として (T_w − T_sat) と乾き度 x をプロットせよ。x = 0 のところに z = 0 を置き、乾き度が80%に達するところでプロットを終えよ。",
+        "hint": "解は試行錯誤を必要とする。",
+        "bookPage": 530,
+        "endBookPage": 531,
+        "pdfPage": 544,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-18",
+        "number": "9.18",
+        "text": "0.3 kg/s の100 °Cの水が内径8 cm の管を通り、q_w = 200,000 W/m²の場合、位置の関数として (T_w − T_sat) と乾き度 x をプロットせよ。",
+        "hint": "解は試行錯誤を必要とする。",
+        "bookPage": 531,
+        "endBookPage": 531,
+        "pdfPage": 545,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-19",
+        "number": "9.19",
+        "text": "次元解析を使って、式（9.8）の形を確かめよ。",
+        "bookPage": 531,
+        "endBookPage": 531,
+        "pdfPage": 545,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-20",
+        "number": "9.20",
+        "text": "問題5.6で与えられたデータから計算されるピーク熱流束を、適切な予測と比較せよ。",
+        "answerHint": "予測は11%以内である",
+        "bookPage": 531,
+        "endBookPage": 531,
+        "pdfPage": 545,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-21",
+        "number": "9.21",
+        "text": "Kandlikar の相関式、式（9.50a）は、x = 0 としてサブクール流動沸騰に適用できる（図9.19の領域B）。q_w = h_fb(T_w − T_sat) であることに注意して、サブクール流動沸騰において次の式が成り立つことを示せ［9.61］。",
+        "formulaBlocks": [
+          {
+            "expression": "q_w = [1058 h_lo F (G h_fg)^(−0.7) (T_w − T_sat)]^(10/3)",
+            "part": "サブクール流動沸騰"
+          }
+        ],
+        "figureRefs": [
+          "Fig. 9.19"
+        ],
+        "bookPage": 531,
+        "endBookPage": 531,
+        "pdfPage": 545,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-22",
+        "number": "9.22",
+        "text": "境界条件 (∂u/∂y)_{y=δ} = 0 の代わりに (∂u/∂y)_{y=δ} = τ_δ/μ を使って、式（8.50）に続く解析を繰り返すことにより、式（9.53）を確かめよ。式（9.54）を含む記述を確かめよ。",
+        "bookPage": 531,
+        "endBookPage": 531,
+        "pdfPage": 545,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-23",
+        "number": "9.23",
+        "text": "冷水を運ぶ外径7 cm の管は、外面温度が40 °Cである。80 °Cの飽和蒸気がそれを横切って流れる。レイノルズ数の範囲 0 ≤ Re_D ≤ 10⁶ にわたって h̄_condensation をプロットせよ。Re_D = 0 において、第8章から予想される値が得られるか。",
+        "bookPage": 531,
+        "endBookPage": 531,
+        "pdfPage": 545,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-24",
+        "number": "9.24",
+        "text": "（a）金属ヒーター表面におよそ直径2 µm のピットがあるとする。圧力が20 atm の場合、その表面で水が沸騰し始めると予想されるのはおよそ何度か。（b）測定によれば、大気圧の水は通常の沸点より約200 °C過熱できる。そのような状態の水で核生成を引き起こすには、およそどれだけ大きな初期気泡が必要か。",
+        "hint": "（b）については、結果は銅の原子格子間隔の10倍になるはずである。",
+        "bookPage": 531,
+        "endBookPage": 531,
+        "pdfPage": 545,
+        "endPdfPage": 545
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-25",
+        "number": "9.25",
+        "text": "次元解析を使って、プール沸騰に対する q_max の式と、外部面上の流動沸騰に対する q_max の式の、無次元の関数形を得よ。結果を本文の式と比較せよ。",
+        "bookPage": 531,
+        "endBookPage": 532,
+        "pdfPage": 545,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-26",
+        "number": "9.26",
+        "text": "架空の化学者が、1 atm の水について σ を10倍に増やす、分解しない添加物を作り出す。添加物は、（a）無限平板、（b）小さな水平円柱におけるプール沸騰中の q_max を何倍改善するか。円板上へのジェットの流れにおけるバーンアウトを何倍改善するか。",
+        "items": [
+          "（a）無限平板における q_max",
+          "（b）小さな水平円柱における q_max",
+          "円板上へのジェットの流れにおけるバーンアウト"
+        ],
+        "answerHint": "q_max はおよそ2倍になる",
+        "bookPage": 532,
+        "endBookPage": 532,
+        "pdfPage": 546,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-27",
+        "number": "9.27",
+        "text": "1 atm の蒸気が、90 °Cの外径1 cm の円柱の上に26 m/s で吹き付けられる。h はいくらか。この流れの中でこの温度を維持できる、円柱内部の物理過程を何か提案できるか。",
+        "bookPage": 532,
+        "endBookPage": 532,
+        "pdfPage": 546,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-28",
+        "number": "9.28",
+        "text": "図9.17の写真に示された水は1 atm であり、ニクロムヒーターはニッケルで近似できる。T_w − T_sat はいくらか。",
+        "hint": "図から、欠けている寸法を1つ読み取る必要がある。",
+        "figureRefs": [
+          "Fig. 9.17"
+        ],
+        "bookPage": 532,
+        "endBookPage": 532,
+        "pdfPage": 546,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-29",
+        "number": "9.29",
+        "text": "水平円柱上の膜沸騰については、式（9.6a）は次の形をとらなければならない。飽和アセトンについて ρ_f が748 kg/m³ の場合、この λ_d と、無限平板の値を、図9.3dと比較せよ。",
+        "formulaBlocks": [
+          {
+            "expression": "λ_d = 2π√3 [g(ρ_f − ρ_g)/σ + 2/(直径)²]^(−1/2)"
+          }
+        ],
+        "hint": "波模様を横切って水平に動いていることが見て取れる攪乱のために、写真から波長の範囲を抽出できることに注意せよ。あなたの計算は、この公式が平板の値よりはるかに良いことを示すはずである。しかし比較は確かに完璧にはならない。",
+        "figureRefs": [
+          "Fig. 9.3"
+        ],
+        "bookPage": 532,
+        "endBookPage": 532,
+        "pdfPage": 546,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-30",
+        "number": "9.30",
+        "text": "47 °Cの水が、直径13 cm の薄肉管を通って8 m/s で流れる。1 atm の飽和水蒸気が、管を横切って50 m/s で流れる。T_tube、U、q を評価せよ。",
+        "answerHint": "T_tube = 69 °C",
+        "bookPage": 532,
+        "endBookPage": 532,
+        "pdfPage": 546,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-31",
+        "number": "9.31",
+        "text": "直径1 cm の薄肉管が、1 atm の飽和水を通して液体金属を運ぶ。金属の通過流量は、バーンアウトが起こるまで増やされる。その点で金属温度は250 °Cであり、管内の h は9600 W/m²·K である。バーンアウトにおける壁温度はいくらか。",
+        "answerHint": "T_wall = 132 °C",
+        "bookPage": 532,
+        "endBookPage": 532,
+        "pdfPage": 546,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-32",
+        "number": "9.32",
+        "text": "金属が水銀の場合、問題9.31におけるバーンアウトは、液体金属流のおよそどの速度で起こるか。",
+        "bookPage": 532,
+        "endBookPage": 532,
+        "pdfPage": 546,
+        "endPdfPage": 546
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-33",
+        "number": "9.33",
+        "text": "式（9.23）と式（9.24）が、2倍異なるのではなく、ほぼ等しい理由を、物理的に説明せよ。H′ が大きい場合、これらの式はどのように変わるか。",
+        "hint": "これを考える際、バーンアウトは生成される蒸気の量に依存することを思い出せ。",
+        "bookPage": 532,
+        "endBookPage": 533,
+        "pdfPage": 546,
+        "endPdfPage": 547
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-34",
+        "number": "9.34",
+        "text": "液体が、比エンタルピー ĥ_in を持って、z = 0 の位置で管の加熱区間に入る。壁熱流束が q_w(z) で、管径が D の場合、下流の距離 z = L におけるエンタルピーは次の式になることを示せ。乾き度は x ≡ (ĥ − ĥ_{f,sat})/h_fg と定義できるので、q_w が一定の場合、x ≥ 0 に対して次の式になることを示せ。",
+        "formulaBlocks": [
+          {
+            "expression": "ĥ = ĥ_in + (πD/ṁ) ∫_0^L q_w(z) dz"
+          },
+          {
+            "expression": "x = (ĥ_in − ĥ_{f,sat})/h_fg + 4 q_w L/(G D h_fg)"
+          }
+        ],
+        "bookPage": 533,
+        "endBookPage": 533,
+        "pdfPage": 547,
+        "endPdfPage": 547
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-35",
+        "number": "9.35",
+        "text": "問題7.44で記述されたX線単色化装置を再び考える。今、液体窒素の質量流量は0.023 kg/s であり、窒素は加熱区間に入るとき110 K で飽和しており、通路は水平であるとする。式（9.50）における窒素の F = 4.70 として、加熱区間の端における乾き度と壁温度を見積もれ。以前と同様、シリコンは熱負荷が通路の表面にわたって一様に分布するのに十分によく熱を伝えるとせよ。",
+        "bookPage": 533,
+        "endBookPage": 533,
+        "pdfPage": 547,
+        "endPdfPage": 547
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-36",
+        "number": "9.36",
+        "text": "付録Aと表9.1のデータを使って、次のヒートパイプ作動流体の候補について、200 K から600 K まで100 K 刻みで、性能指数 M を計算せよ：水、水銀、メタノール、アンモニア、HCFC-22。ある温度で流体のデータが利用できない場合は、それを示せ。特定の温度範囲に最適な流体はどれか。",
+        "bookPage": 533,
+        "endBookPage": 533,
+        "pdfPage": 547,
+        "endPdfPage": 547
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-37",
+        "number": "9.37",
+        "text": "Rose の滴状凝縮相関式、式（9.57）を使って、蒸気圧1 kPa、10 kPa、100 kPa について、ΔT ≤ 8 K で q 対 ΔT をプロットせよ。各圧力における h の範囲を計算せよ。得られた数値の大きさについてコメントせよ。",
+        "bookPage": 533,
+        "endBookPage": 533,
+        "pdfPage": 547,
+        "endPdfPage": 547
+      },
+      {
+        "type": "problem",
+        "id": "problem-9-38",
+        "number": "9.38",
+        "text": "Cercignani［9.79］は、非平衡気体運動論を使って、温度 T_0 の過熱液体表面から、より低い温度の蒸気中への蒸発速度（kg/m²·s）に対する次の式を導いた。ここで：α = 32π/(32 + 9π)；R は J/kg·K における蒸気の気体定数；p_{g,0} は T_0 における飽和蒸気圧；Δp_g は、飽和蒸気圧と表面から遠い蒸気の圧力の差；そして 0 < σ ≤ 1 である付着係数は、蒸気分子が液面に当たった後に跳ね返らない可能性を特徴づける。Lu ら［9.80］は、Δp_g/p_{g,0} ≲ 0.4 について水の蒸発速度を測定し、22〜50 °Cの界面について σ = 0.31 と報告した。式（9.58）はこれらのデータと非常によく一致する。σ がより高い温度でも0.31付近にとどまると仮定して、100〜110 °Cの水面から100 °Cの飽和蒸気中への蒸発熱流束をプロットせよ。",
+        "formulaBlocks": [
+          {
+            "expression": "ṁ″ = ρ_{g,0} √(R T_0/(2π)) · (ασ/(σ + α(1 − σ))) · (Δp_g/p_{g,0})",
+            "part": "式（9.58）"
+          }
+        ],
+        "bookPage": 533,
+        "endBookPage": 534,
+        "pdfPage": 547,
+        "endPdfPage": 548
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 80,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-9-1",
+        "number": "9.1",
+        "authors": "S. Nukiyama",
+        "originalTitle": "The maximum and minimum values of the heat q transmitted from metal to boiling water under atmospheric pressure",
+        "titleJa": "大気圧下で金属から沸騰水へ伝わる熱 q の最大値と最小値",
+        "publication": "J. Jap. Soc. Mech. Eng., 37:367–374, 1934. Translation: Int. J. Heat Mass Transfer, 9:1419–1433, 1966",
+        "doi": "10.1016/0017-9310(66)90138-4",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-2",
+        "number": "9.2",
+        "authors": "T. B. Drew and C. Mueller",
+        "originalTitle": "Boiling",
+        "titleJa": "沸騰",
+        "publication": "Trans. AIChE, 33:449, 1937",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-3",
+        "number": "9.3",
+        "authors": "International Association for the Properties of Water and Steam",
+        "originalTitle": "Revised release on surface tension of ordinary water substance",
+        "titleJa": "通常の水物質の表面張力に関する改訂リリース",
+        "publication": "Technical Report IAPWS R1-76, June 2014",
+        "url": "http://www.iapws.org/",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-4",
+        "number": "9.4",
+        "authors": "J. J. Jasper",
+        "originalTitle": "The surface tension of pure liquid compounds",
+        "titleJa": "純液体化合物の表面張力",
+        "publication": "J. Phys. Chem. Ref. Data, 1(4):841–1010, 1972",
+        "doi": "10.1063/1.3253106",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-5",
+        "number": "9.5",
+        "authors": "M. Okado and K. Watanabe",
+        "originalTitle": "Surface tension correlations for several fluorocarbon refrigerants",
+        "titleJa": "いくつかのフルオロカーボン冷媒に対する表面張力相関式",
+        "publication": "Heat Transfer: Japanese Research, 17(1):35–52, 1988",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-6",
+        "number": "9.6",
+        "authors": "A. P. Fröba, S. Will, and A. Leipertz",
+        "originalTitle": "Saturated liquid viscosity and surface tension of alternative refrigerants",
+        "titleJa": "代替冷媒の飽和液体粘度と表面張力",
+        "publication": "Int. J. Thermophys., 21(6):1225–1253, November 2000",
+        "doi": "10.1023/A:1006689724974",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-7",
+        "number": "9.7",
+        "authors": "V. G. Baidakov and I. I. Sulla",
+        "originalTitle": "Surface tension of propane and isobutane at near-critical temperatures",
+        "titleJa": "臨界温度付近におけるプロパンとイソブタンの表面張力",
+        "publication": "Russ. J. Phys. Chem., 59(4):551–554, 1985",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-8",
+        "number": "9.8",
+        "authors": "P. O. Binney, W.-G. Dong, and J. H. Lienhard",
+        "originalTitle": "Use of a cubic equation to predict surface tension and spinodal limits",
+        "titleJa": "表面張力とスピノーダル限界を予測するための三次方程式の使用",
+        "publication": "J. Heat Transfer, 108(2):405–410, 1986",
+        "url": "http://www.uh.edu/engines/cubicequationsurfacetension.pdf",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-9",
+        "number": "9.9",
+        "authors": "Y. Y. Hsu",
+        "originalTitle": "On the size range of active nucleation cavities on a heating surface",
+        "titleJa": "加熱面上の活発な核生成キャビティのサイズ範囲について",
+        "publication": "J. Heat Transfer, 84(3):207–216, August 1962",
+        "doi": "10.1115/1.3684339",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-10",
+        "number": "9.10",
+        "authors": "G. F. Hewitt",
+        "originalTitle": "Boiling",
+        "titleJa": "沸騰",
+        "publication": "In W. M. Rohsenow, J. P. Hartnett, and Y. I. Cho, editors, Handbook of Heat Transfer, Chapter 15. McGraw-Hill, New York, 3rd ed., 1998",
+        "bookPage": 534,
+        "pdfPage": 548
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-11",
+        "number": "9.11",
+        "authors": "V. K. Dhir",
+        "originalTitle": "Nucleate pool boiling",
+        "titleJa": "核沸騰プール沸騰",
+        "publication": "In F. A. Kulacki, editor, Handbook of Thermal Science and Engineering, Chapter 41, pp. 1645–1694. Springer, Cham, Switzerland, 2018",
+        "doi": "10.1007/978-3-319-26695-4_41",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-12",
+        "number": "9.12",
+        "authors": "K. Yamagata, F. Hirano, K. Nishiwaka, and H. Matsuoka",
+        "originalTitle": "Nucleate boiling of water on the horizontal heating surface",
+        "titleJa": "水平加熱面上の水の核沸騰",
+        "publication": "Mem. Fac. Eng. Kyushu, 15:98, 1955",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-13",
+        "number": "9.13",
+        "authors": "W. M. Rohsenow",
+        "originalTitle": "A method of correlating heat transfer data for surface boiling of liquids",
+        "titleJa": "液体の表面沸騰に対する熱伝達データを相関させる方法",
+        "publication": "Trans. ASME, 74(6):969, August 1952",
+        "doi": "10.1115/1.4015984",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-14",
+        "number": "9.14",
+        "authors": "I. L. Pioro",
+        "originalTitle": "Experimental evaluation of constants for the Rohsenow pool boiling correlation",
+        "titleJa": "Rohsenow プール沸騰相関式の定数の実験的評価",
+        "publication": "Int. J. Heat. Mass Transfer, 42(11):2003–2013, June 1999",
+        "doi": "10.1016/S0017-9310(98)00294-4",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-15",
+        "number": "9.15",
+        "authors": "R. Bellman and R. H. Pennington",
+        "originalTitle": "Effects of surface tension and viscosity on Taylor instability",
+        "titleJa": "Taylor 不安定性への表面張力と粘度の影響",
+        "publication": "Quart. Appl. Math., 12:151–162, 1954",
+        "doi": "10.1090/qam/63198",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-16",
+        "number": "9.16",
+        "authors": "V. Sernas",
+        "originalTitle": "Minimum heat flux in film boiling—a three dimensional model",
+        "titleJa": "膜沸騰における最小熱流束 ― 三次元モデル",
+        "publication": "In Proc. 2nd Can. Cong. Appl. Mech., pp. 425–426, Canada, 1969. Univ. of Waterloo",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-17",
+        "number": "9.17",
+        "authors": "H. Lamb",
+        "originalTitle": "Hydrodynamics",
+        "titleJa": "流体力学（Hydrodynamics）",
+        "publication": "Dover Publications, Inc., New York, 6th ed., 1945",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-18",
+        "number": "9.18",
+        "authors": "N. Zuber",
+        "originalTitle": "Hydrodynamic aspects of boiling heat transfer",
+        "titleJa": "沸騰熱伝達の流体力学的側面",
+        "publication": "Report AECU-4439, US Atomic Energy Commission, June 1959",
+        "noteJa": "UCLA 博士論文。",
+        "noteEn": "UCLA doctoral dissertation.",
+        "doi": "10.2172/4175511",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-19",
+        "number": "9.19",
+        "authors": "J. H. Lienhard and V. K. Dhir",
+        "originalTitle": "Extended hydrodynamic theory of the peak and minimum pool boiling heat fluxes",
+        "titleJa": "ピークおよび最小プール沸騰熱流束の拡張流体力学理論",
+        "publication": "Contractor Report NASA-CR-2270, NASA, Washington, D.C., July 1973",
+        "url": "http://hdl.handle.net/2060/19730019076",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-20",
+        "number": "9.20",
+        "authors": "J. H. Lienhard, V. K. Dhir, and D. M. Riherd",
+        "originalTitle": "Peak pool boiling heat-flux measurements on finite horizontal flat plates",
+        "titleJa": "有限な水平平板上のピークプール沸騰熱流束の測定",
+        "publication": "J. Heat Transfer, 95(4):477–482, November 1973",
+        "doi": "10.1115/1.3450092",
+        "url": "https://engines.egr.uh.edu/sites/engines/files/talks/PeakPoolBoiling.pdf",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-21",
+        "number": "9.21",
+        "authors": "J. H. Lienhard and V. K. Dhir",
+        "originalTitle": "Hydrodynamic prediction of peak pool-boiling heat fluxes from finite bodies",
+        "titleJa": "有限物体からのピークプール沸騰熱流束の流体力学的予測",
+        "publication": "J. Heat Transfer, 95(2):152–158, May 1973",
+        "doi": "10.1115/1.3450013",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-22",
+        "number": "9.22",
+        "authors": "Z. She and V. K. Dhir",
+        "originalTitle": "Parametric effects of heater size, contact angle, and surrounding vessel size on pool boiling critical heat flux from horizontal surfaces",
+        "titleJa": "水平面からのプール沸騰限界熱流束への、ヒーターサイズ・接触角・周囲容器サイズのパラメトリックな影響",
+        "publication": "Journal of Electronic Packaging, 143(4):041113, December 2021",
+        "doi": "10.1115/1.4052716",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-23",
+        "number": "9.23",
+        "authors": "C. F. Bonilla and C. W. Perry",
+        "originalTitle": "Heat transmission to boiling binary liquid mixtures",
+        "titleJa": "沸騰する二成分液体混合物への熱伝達",
+        "publication": "Trans. AIChE, 37:269–290, 1941",
+        "bookPage": 535,
+        "pdfPage": 549
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-24",
+        "number": "9.24",
+        "authors": "J. H. Lienhard and L. C. Witte",
+        "originalTitle": "An historical review of the hydrodynamic theory of boiling",
+        "titleJa": "沸騰の流体力学理論の歴史的レビュー",
+        "publication": "Rev. Chem. Engr., 3(3):187–280, 1985",
+        "noteJa": "オンラインで入手可能：http://www.uh.edu/engines/HydrodynamicHistory.pdf",
+        "noteEn": "Available online at http://www.uh.edu/engines/HydrodynamicHistory.pdf.",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-25",
+        "number": "9.25",
+        "authors": "S. S. Kutateladze",
+        "originalTitle": "On the transition to film boiling under natural convection",
+        "titleJa": "自然対流下における膜沸騰への遷移について",
+        "publication": "Kotloturbostroenie, 3:10, 1948",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-26",
+        "number": "9.26",
+        "authors": "N. Bakhru and J. H. Lienhard",
+        "originalTitle": "Boiling from small cylinders",
+        "titleJa": "小さな円柱からの沸騰",
+        "publication": "Int. J. Heat Mass Transfer, 15:2011–2025, 1972",
+        "url": "http://www.uh.edu/engines/BoilingFromSmallCylinders.pdf",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-27",
+        "number": "9.27",
+        "authors": "K. H. Sun and J. H. Lienhard",
+        "originalTitle": "The peak pool boiling heat flux on horizontal cylinders",
+        "titleJa": "水平円柱上のピークプール沸騰熱流束",
+        "publication": "Int. J. Heat Mass Transfer, 13(9):1425–1439, September 1970",
+        "doi": "10.1016/0017-9310(70)90178-X",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-28",
+        "number": "9.28",
+        "authors": "J. S. Ded and J. H. Lienhard",
+        "originalTitle": "The peak pool boiling heat flux from a sphere",
+        "titleJa": "球からのピークプール沸騰熱流束",
+        "publication": "AIChE J., 18(2):337–342, March 1972",
+        "doi": "10.1002/aic.690180215",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-29",
+        "number": "9.29",
+        "authors": "A. L. Bromley",
+        "originalTitle": "Heat transfer in stable film boiling",
+        "titleJa": "安定膜沸騰における熱伝達",
+        "publication": "Chem. Eng. Progr., 46:221–227, 1950",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-30",
+        "number": "9.30",
+        "authors": "P. Sadasivan and J. H. Lienhard",
+        "originalTitle": "Sensible heat correction in laminar film boiling and condensation",
+        "titleJa": "層流膜沸騰と凝縮における顕熱補正",
+        "publication": "J. Heat Transfer, 109(2):545–547, May 1987",
+        "doi": "10.1115/1.3248122",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-31",
+        "number": "9.31",
+        "authors": "V. K. Dhir and J. H. Lienhard",
+        "originalTitle": "Laminar film condensation on plane and axisymmetric bodies in non-uniform gravity",
+        "titleJa": "非一様重力における平面体と軸対称体上の層流膜凝縮",
+        "publication": "J. Heat Transfer, 93(1):97–100, February 1971",
+        "doi": "10.1115/1.3449773",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-32",
+        "number": "9.32",
+        "authors": "P. Pitschmann and U. Grigull",
+        "originalTitle": "Filmverdampfung an waagerechten Zylindern",
+        "titleJa": "水平円柱における膜蒸発",
+        "publication": "Wärme- und Stoffübertragung, 3:75–84, June 1970",
+        "doi": "10.1007/BF01108028",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-33",
+        "number": "9.33",
+        "authors": "J. E. Leonard, K. H. Sun, and G. E. Dix",
+        "originalTitle": "Low flow film boiling heat transfer on vertical surfaces: Part II: Empirical formulations and application to BWR-LOCA analysis",
+        "titleJa": "垂直面上の低流量膜沸騰熱伝達：Part II：経験的定式化と BWR-LOCA 解析への応用",
+        "publication": "In Proc. ASME-AIChE Nat. Heat Transfer Conf., St. Louis, August 1976. American Society of Mechanical Engineers",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-34",
+        "number": "9.34",
+        "authors": "J. W. Westwater and B. P. Breen",
+        "originalTitle": "Effect of diameter of horizontal tubes on film boiling heat transfer",
+        "titleJa": "膜沸騰熱伝達への水平管の直径の影響",
+        "publication": "Chem. Eng. Progr., 58:67–72, 1962",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-35",
+        "number": "9.35",
+        "authors": "P. J. Berenson",
+        "originalTitle": "Transition boiling heat transfer from a horizontal surface",
+        "titleJa": "水平面からの遷移沸騰熱伝達",
+        "publication": "Heat Transfer Lab. Tech. Rep. 17, Massachusetts Institute of Technology, Cambridge, MA, 1960",
+        "url": "http://hdl.handle.net/1721.1/61478",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-36",
+        "number": "9.36",
+        "authors": "J. H. Lienhard and P. T. Y. Wong",
+        "originalTitle": "The dominant unstable wavelength and minimum heat flux during film boiling on a horizontal cylinder",
+        "titleJa": "水平円柱上の膜沸騰における支配的な不安定波長と最小熱流束",
+        "publication": "J. Heat Transfer, 86(2):220–226, May 1964",
+        "doi": "10.1115/1.3687103",
+        "url": "https://engines.egr.uh.edu/sites/engines/files/talks/FilmBoilingWavelength.pdf",
+        "bookPage": 536,
+        "pdfPage": 550
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-37",
+        "number": "9.37",
+        "authors": "L. Feng, Y. Zhang, J. Xi, Y. Zhu, N. Wang, F. Xia, and L. Jiang",
+        "originalTitle": "Petal effect: A superhydrophobic state with high adhesive force",
+        "titleJa": "花弁効果：高い付着力を持つ超撥水状態",
+        "publication": "Langmuir, 24(8):4114–4119, March 2008",
+        "noteJa": "オープンアクセス。",
+        "noteEn": "Open access.",
+        "doi": "10.1021/la703821h",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-38",
+        "number": "9.38",
+        "authors": "W. Barthlott and C. Neinhuis",
+        "originalTitle": "Purity of the sacred lotus, or escape from contamination in biological surfaces",
+        "titleJa": "神聖な蓮の純粋さ、あるいは生物表面における汚染からの逃避",
+        "publication": "Planta, 202(1):1–8, Apr 1997",
+        "doi": "10.1007/s004250050096",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-39",
+        "number": "9.39",
+        "authors": "L. C. Witte and J. H. Lienhard",
+        "originalTitle": "On the existence of two transition boiling curves",
+        "titleJa": "2つの遷移沸騰曲線の存在について",
+        "publication": "Int. J. Heat Mass Transfer, 25(6):771–779, June 1982",
+        "doi": "10.1016/0017-9310(82)90089-8",
+        "url": "https://engines.egr.uh.edu/sites/engines/files/talks/TwoTransitionBoilingRegimes.pdf",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-40",
+        "number": "9.40",
+        "authors": "J. R. Ramilison and J. H. Lienhard",
+        "originalTitle": "Transition boiling heat transfer and the film transition region",
+        "titleJa": "遷移沸騰熱伝達と膜遷移領域",
+        "publication": "J. Heat Transfer, 109(3):746–752, August 1987",
+        "doi": "10.1115/1.3248153",
+        "url": "https://engines.egr.uh.edu/sites/engines/files/talks/Ramilison1987.pdf",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-41",
+        "number": "9.41",
+        "authors": "S. M. Ghiaasiaan",
+        "originalTitle": "Transition and film boiling",
+        "titleJa": "遷移沸騰と膜沸騰",
+        "publication": "In F. A. Kulacki, editor, Handbook of Thermal Science and Engineering, Chapter 42, pp. 1695–1746. Springer, Cham, Switzerland, 2018",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-42",
+        "number": "9.42",
+        "authors": "J. M. Ramilison, P. Sadasivan, and J. H. Lienhard",
+        "originalTitle": "Surface factors influencing burnout on flat heaters",
+        "titleJa": "平板ヒーターのバーンアウトに影響する表面因子",
+        "publication": "J. Heat Transfer, 114(1):287–290, February 1992",
+        "doi": "10.1115/1.2911261",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-43",
+        "number": "9.43",
+        "authors": "S. P. Liaw and V. K. Dhir",
+        "originalTitle": "Void fraction measurements during saturated pool boiling of water on partially wetted vertical surfaces",
+        "titleJa": "部分的に濡れた垂直面上での水の飽和プール沸騰中のボイド率測定",
+        "publication": "J. Heat Transfer, 111(3):731–738, August 1989",
+        "doi": "10.1115/1.3250744",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-44",
+        "number": "9.44",
+        "authors": "J. Reed and V. K. Dhir",
+        "originalTitle": "Assessment of critical heat flux on finite size surfaces under pool boiling",
+        "titleJa": "プール沸騰下の有限サイズ表面における限界熱流束の評価",
+        "publication": "In 2019 35th Thermal Measurement, Modeling Management Symposium (SEMI-THERM), San Jose, CA, March 2019. Paper no. 978-0578-43862-7/19",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-45",
+        "number": "9.45",
+        "authors": "S. Mori and Y. Utaka",
+        "originalTitle": "Critical heat flux enhancement by surface modification in a saturated pool boiling: A review",
+        "titleJa": "飽和プール沸騰における表面改質による限界熱流束の向上：レビュー",
+        "publication": "Int. J. Heat Mass Transfer, 108:2534–2557, May 2017",
+        "doi": "10.1016/j.ijheatmasstransfer.2017.01.090",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-46",
+        "number": "9.46",
+        "authors": "J. H. Lienhard and J. B. Keeling",
+        "originalTitle": "An induced-convection effect upon the peak-boiling heat flux",
+        "titleJa": "ピーク沸騰熱流束への誘起対流の影響",
+        "publication": "J. Heat Transfer, 92(1):1–5, February 1970",
+        "doi": "10.1115/1.3449633",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-47",
+        "number": "9.47",
+        "authors": "A. E. Bergles and W. M. Rohsenow",
+        "originalTitle": "The determination of forced-convection surface-boiling heat transfer",
+        "titleJa": "強制対流表面沸騰熱伝達の決定",
+        "publication": "J. Heat Transfer, 86(3):365–372, August 1964",
+        "doi": "10.1115/1.3688697",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-48",
+        "number": "9.48",
+        "authors": "E. J. Davis and G. H. Anderson",
+        "originalTitle": "The incipience of nucleate boiling in forced convection flow",
+        "titleJa": "強制対流流における核沸騰の開始",
+        "publication": "AIChE J., 12:774–780, July 1966",
+        "doi": "10.1002/aic.690120426",
+        "bookPage": 537,
+        "pdfPage": 551
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-49",
+        "number": "9.49",
+        "authors": "K. Kheyrandish and J. H. Lienhard",
+        "originalTitle": "Mechanisms of burnout in saturated and subcooled flow boiling over a horizontal cylinder",
+        "titleJa": "水平円柱上の飽和・サブクール流動沸騰におけるバーンアウトの機構",
+        "publication": "In Proc. ASME-AIChE Nat. Heat Transfer Conf., Denver, August 4–7, 1985",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-50",
+        "number": "9.50",
+        "authors": "A. Sharan and J. H. Lienhard",
+        "originalTitle": "On predicting burnout in the jet-disk configuration",
+        "titleJa": "ジェット–円板構成におけるバーンアウトの予測について",
+        "publication": "J. Heat Transfer, 107(2):398–401, May 1985",
+        "doi": "10.1115/1.3247428",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-51",
+        "number": "9.51",
+        "authors": "L. A. Bromley, N. R. LeRoy, and J. A. Robbers",
+        "originalTitle": "Heat transfer in forced convection film boiling",
+        "titleJa": "強制対流膜沸騰における熱伝達",
+        "publication": "Ind. Eng. Chem., 45(12):2639–2646, December 1953",
+        "doi": "10.1021/ie50528a027",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-52",
+        "number": "9.52",
+        "authors": "L. C. Witte",
+        "originalTitle": "Film boiling from a sphere",
+        "titleJa": "球からの膜沸騰",
+        "publication": "Ind. Eng. Chem. Fund., 7(3):517–518, August 1968",
+        "doi": "10.1021/i160027a026",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-53",
+        "number": "9.53",
+        "authors": "L. C. Witte",
+        "originalTitle": "External flow film boiling",
+        "titleJa": "外部流膜沸騰",
+        "publication": "In S. G. Kandlikar, M. Shoji, and V. K. Dhir, editors, Handbook of Phase Change: Boiling and Condensation, Chapter 13, pp. 311–330. Taylor & Francis, Philadelphia, 1999",
+        "doi": "10.1201/9780203752654",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-54",
+        "number": "9.54",
+        "authors": "J. G. Collier and J. R. Thome",
+        "originalTitle": "Convective Boiling and Condensation",
+        "titleJa": "対流沸騰と凝縮",
+        "publication": "Oxford University Press, Oxford, 3rd ed., 1996",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-55",
+        "number": "9.55",
+        "authors": "J. C. Chen",
+        "originalTitle": "Correlation for boiling heat transfer to saturated fluids in convective flow",
+        "titleJa": "対流流における飽和流体への沸騰熱伝達の相関式",
+        "publication": "Industrial & Engineering Chemistry Process Design and Development, 5(3):322–329, 1966",
+        "doi": "10.1021/i260019a023",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-56",
+        "number": "9.56",
+        "authors": "S. G. Kandlikar",
+        "originalTitle": "A general correlation for saturated two-phase flow boiling heat transfer inside horizontal and vertical tubes",
+        "titleJa": "水平管と垂直管内部の飽和二相流沸騰熱伝達に対する一般相関式",
+        "publication": "J. Heat Transfer, 112(1):219–228, February 1990",
+        "doi": "10.1115/1.2910348",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-57",
+        "number": "9.57",
+        "authors": "D. Steiner and J. Taborek",
+        "originalTitle": "Flow boiling heat transfer in vertical tubes correlated by an asymptotic model",
+        "titleJa": "漸近モデルで相関される垂直管内の流動沸騰熱伝達",
+        "publication": "Heat Transfer Engr., 13(2):43–69, 1992",
+        "doi": "10.1080/01457639208939774",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-58",
+        "number": "9.58",
+        "authors": "V. E. Schrock and L. M. Grossman",
+        "originalTitle": "Forced convection boiling in tubes",
+        "titleJa": "管内の強制対流沸騰",
+        "publication": "Nucl. Sci. Engr., 12:474–481, 1962",
+        "doi": "10.13182/NSE62-A26094",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-59",
+        "number": "9.59",
+        "authors": "M. M. Shah",
+        "originalTitle": "Chart correlation for saturated boiling heat transfer: equations and further study",
+        "titleJa": "飽和沸騰熱伝達の図表相関：方程式とさらなる研究",
+        "publication": "ASHRAE Trans., 88:182–196, 1982",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-60",
+        "number": "9.60",
+        "authors": "A. E. Gungor and R. S. H. Winterton",
+        "originalTitle": "Simplified general correlation for flow boiling heat transfer inside horizontal and vertical tubes",
+        "titleJa": "水平管と垂直管内部の流動沸騰熱伝達に対する簡略化された一般相関式",
+        "publication": "Chem. Engr. Res. Des., 65:148–156, 1987",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-61",
+        "number": "9.61",
+        "authors": "S. G. Kandlikar and H. Nariai",
+        "originalTitle": "Flow boiling in circular tubes",
+        "titleJa": "円管内の流動沸騰",
+        "publication": "In S. G. Kandlikar, M. Shoji, and V. K. Dhir, editors, Handbook of Phase Change: Boiling and Condensation, Chapter 15, pp. 367–402. Taylor & Francis, Philadelphia, 1999",
+        "doi": "10.1201/9780203752654",
+        "bookPage": 538,
+        "pdfPage": 552
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-62",
+        "number": "9.62",
+        "authors": "S. G. Kandlikar, S. T. Tian, J. Yu, and S. Koyama",
+        "originalTitle": "Further assessment of pool and flow boiling heat transfer with binary mixtures",
+        "titleJa": "二成分混合物におけるプール沸騰・流動沸騰熱伝達のさらなる評価",
+        "publication": "In G. P. Celata, P. Di Marco, and R. K. Shah, editors, Two-Phase Flow Modeling and Experimentation. Edizioni ETS, Pisa, 1999",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-63",
+        "number": "9.63",
+        "authors": "Y. Taitel and A. E. Dukler",
+        "originalTitle": "A model for predicting flow regime transitions in horizontal and near horizontal gas-liquid flows",
+        "titleJa": "水平およびほぼ水平な気液流における流動様式遷移を予測するモデル",
+        "publication": "AIChE J., 22(1):47–55, January 1976",
+        "doi": "10.1002/aic.690220105",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-64",
+        "number": "9.64",
+        "authors": "A. E. Dukler and Y. Taitel",
+        "originalTitle": "Flow pattern transitions in gas–liquid systems measurement and modelling",
+        "titleJa": "気液系における流動様式遷移 ― 測定とモデリング",
+        "publication": "In J. M. Delhaye, N. Zuber, and G. F. Hewitt, editors, Advances in Multi-Phase Flow, Vol. II. Hemisphere/McGraw-Hill, New York, 1985",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-65",
+        "number": "9.65",
+        "authors": "Y. Katto",
+        "originalTitle": "A generalized correlation of critical heat flux for the forced convection boiling in vertical uniformly heated round tubes",
+        "titleJa": "一様加熱された垂直円管内の強制対流沸騰に対する限界熱流束の一般化された相関式",
+        "publication": "Int. J. Heat Mass Transfer, 21(12):1527–1542, December 1978",
+        "doi": "10.1016/0017-9310(78)90009-1",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-66",
+        "number": "9.66",
+        "authors": "Y. Katto and H. Ohno",
+        "originalTitle": "An improved version of the generalized correlation of critical heat flux for convective boiling in uniformly heated vertical tubes",
+        "titleJa": "一様加熱された垂直管内の対流沸騰に対する限界熱流束の一般相関式の改良版",
+        "publication": "Int. J. Heat. Mass Transfer, 27(9):1641–1648, September 1984",
+        "doi": "10.1016/0017-9310(84)90276-X",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-67",
+        "number": "9.67",
+        "authors": "P. B. Whalley",
+        "originalTitle": "Boiling, Condensation, and Gas-Liquid Flow",
+        "titleJa": "沸騰、凝縮、気液流",
+        "publication": "Oxford University Press, Oxford, 1987",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-68",
+        "number": "9.68",
+        "authors": "B. Chexal, J. Horowitz, G. McCarthy, M. Merilo, J.-P. Sursock, J. Harrison, C. Peterson, J. Shatford, D. Hughes, M. Ghiaasiaan, V.K. Dhir, W. Kastner, and W. Köhler",
+        "originalTitle": "Two-phase pressure drop technology for design and analysis",
+        "titleJa": "設計と解析のための二相圧力損失技術",
+        "publication": "Technical Report 113189, Electric Power Research Institute, Palo Alto, CA, August 1999",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-69",
+        "number": "9.69",
+        "authors": "I. G. Shekriladze and V. I. Gomelauri",
+        "originalTitle": "Theoretical study of laminar film condensation of flowing vapour",
+        "titleJa": "流れる蒸気の層流膜凝縮の理論的研究",
+        "publication": "Int. J. Heat. Mass Transfer, 9(6):581–591, June 1966",
+        "doi": "10.1016/0017-9310(66)90092-5",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-70",
+        "number": "9.70",
+        "authors": "P. J. Marto",
+        "originalTitle": "Condensation",
+        "titleJa": "凝縮",
+        "publication": "In W. M. Rohsenow, J. P. Hartnett, and Y. I. Cho, editors, Handbook of Heat Transfer, Chapter 14. McGraw-Hill, New York, 3rd ed., 1998",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-71",
+        "number": "9.71",
+        "authors": "J. W. Rose",
+        "originalTitle": "Film and dropwise condensation",
+        "titleJa": "膜状凝縮と滴状凝縮",
+        "publication": "In F. A. Kulacki, editor, Handbook of Thermal Science and Engineering, Chapter 50, pp. 2031–2074. Springer, Cham, Switzerland, 2018",
+        "doi": "10.1007/978-3-319-26695-4_50",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-72",
+        "number": "9.72",
+        "authors": "M. H. Rausch, A. Leipertz, and A. P. Fröba",
+        "originalTitle": "Dropwise condensation of steam on ion implanted titanium surfaces",
+        "titleJa": "イオン注入されたチタン表面上の蒸気の滴状凝縮",
+        "publication": "Int. J. Heat and Mass Transfer, 53(1):423–430, 2010",
+        "doi": "10.1016/j.ijheatmasstransfer.2009.09.014",
+        "bookPage": 539,
+        "pdfPage": 553
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-73",
+        "number": "9.73",
+        "authors": "J. W. Rose",
+        "originalTitle": "Dropwise condensation theory and experiment: A review",
+        "titleJa": "滴状凝縮の理論と実験：レビュー",
+        "publication": "Proc. Instn. Mech. Engrs., Part A: J. Power and Energy, 216(2):115–128, 2002",
+        "doi": "10.1243/09576500260049034",
+        "bookPage": 540,
+        "pdfPage": 554
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-74",
+        "number": "9.74",
+        "authors": "A. T. Paxson, J. L. Yagüe, K. K. Gleason, and K. K. Varanasi",
+        "originalTitle": "Stable dropwise condensation for enhancing heat transfer via the initiated chemical vapor deposition (iCVD) of grafted polymer films",
+        "titleJa": "グラフトポリマー膜の開始化学気相成長（iCVD）による熱伝達促進のための安定な滴状凝縮",
+        "publication": "Advanced Materials, 26(3):418–423, 2014",
+        "doi": "10.1002/adma.201303065",
+        "bookPage": 540,
+        "pdfPage": 554
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-75",
+        "number": "9.75",
+        "authors": "D. J. Preston, D. L. Mafra, N. Miljkovic, J. Kong, and E. N. Wang",
+        "originalTitle": "Scalable graphene coatings for enhanced condensation heat transfer",
+        "titleJa": "凝縮熱伝達促進のためのスケーラブルなグラフェンコーティング",
+        "publication": "Nano Letters, 15(5):2902–2909, March 2015",
+        "doi": "10.1021/nl504628s",
+        "bookPage": 540,
+        "pdfPage": 554
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-76",
+        "number": "9.76",
+        "authors": "K. Khalil, D. Soto, T. Farnham, A. Paxson, A. U. Katmis, K. K. Gleason, and K. K. Varanasi",
+        "originalTitle": "Grafted nanofilms promote dropwise condensation of low-surface-tension fluids for high-performance heat exchangers",
+        "titleJa": "グラフトナノフィルムは、低表面張力流体の滴状凝縮を促進し、高性能熱交換器を実現する",
+        "publication": "Joule, 3(5):1377–1388, June 2019",
+        "doi": "10.1016/j.joule.2019.04.009",
+        "bookPage": 540,
+        "pdfPage": 554
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-77",
+        "number": "9.77",
+        "authors": "D. W. Woodruff and J. W. Westwater",
+        "originalTitle": "Steam condensation on electroplated gold: effect of plating thickness",
+        "titleJa": "電気めっき金上の蒸気凝縮：めっき厚さの影響",
+        "publication": "Int. J. Heat. Mass Transfer, 22(4):629–632, April 1979",
+        "doi": "10.1016/0017-9310(79)90066-8",
+        "bookPage": 540,
+        "pdfPage": 554
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-78",
+        "number": "9.78",
+        "authors": "P. D. Dunn and D. A. Reay",
+        "originalTitle": "Heat Pipes",
+        "titleJa": "ヒートパイプ",
+        "publication": "Pergamon Press Ltd., Oxford, UK, 4th ed., 1994",
+        "bookPage": 540,
+        "pdfPage": 554
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-79",
+        "number": "9.79",
+        "authors": "C. Cercignani",
+        "originalTitle": "Rarefied Gas Dynamics",
+        "titleJa": "希薄気体力学",
+        "publication": "Cambridge University Press, Cambridge, 2000",
+        "bookPage": 540,
+        "pdfPage": 554
+      },
+      {
+        "type": "reference",
+        "id": "reference-9-80",
+        "number": "9.80",
+        "authors": "Z. Lu, I. Kinefuchi, K. L. Wilke, G. Vaartstra, and E. N. Wang",
+        "originalTitle": "A unified relationship for evaporation kinetics at low Mach numbers",
+        "titleJa": "低マッハ数における蒸発速度論の統一的関係",
+        "publication": "Nature Comm., 10:2368, May 2019",
+        "doi": "10.1038/s41467-019-10209-w",
+        "bookPage": 540,
+        "pdfPage": 554
+      }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
 import {surfaceExchangeReport} from './surface-exchange-report.mjs';
 import {radialCoolingConfigs} from './radial-learning.mjs';
 import {attachRadialJourney} from './radial-learning-ui.mjs';
-import {attachNavigationContext} from './navigation-context.mjs';
+import {attachNavigationContext,attachLaunchContext} from './navigation-context.mjs';
+import {caseLaunchFromSearch} from '../dynamic-navigation.mjs';
 import {Experiment} from './experiment.mjs';import {drawRadial} from './radial-view.mjs';import {drawTraces} from './trace-plot.mjs';import {attachTermPanel} from './term-panel.mjs';import {MATERIALS} from './presets.mjs';
 const $=id=>document.getElementById(id),number=id=>{const text=$(id).value.trim();if(!text)throw Error('数値の空欄を入力してください。');const v=Number(text);if(!Number.isFinite(v))throw Error('有限の数値を入力してください。');return v;},fmt=(v,d=4)=>Number.isFinite(v)?(v!==0&&(Math.abs(v)<10**(-d)||Math.abs(v)>=1e6)?v.toExponential(Math.min(d,4)):v.toFixed(d)):'—';
 let journeyUI=null;
@@ -30,9 +31,12 @@ $('graph').onclick=e=>{if(!history.length||!$('graph').dataset.domain)return;con
 $('mode').onchange=()=>{document.body.dataset.mode=$('mode').value;};$('mode').onchange();$('manual-toggle').onclick=()=>{const show=$('manual').hidden;$('manual').hidden=!show;$('manual-toggle').setAttribute('aria-expanded',String(show));};function theme(){document.body.dataset.theme=$('theme').value;render();}$('theme').onchange=theme;matchMedia('(prefers-color-scheme:dark)').addEventListener('change',theme);window.addEventListener('resize',render);
 function preset(geometry,reduced=false){$('analysis').value=reduced?'lumped':'distributed';$('geometry').value=geometry;for(const [id,value]of Object.entries({radius:.025,length:.1,initial:80,'boundary-temperature':20,boundary:reduced?'convection':'temperature',h:80,source:0,interval:reduced?5:.25,n:matchMedia('(max-width:600px)').matches?32:64}))$(id).value=value;$('dt').value='';materialInputs();boundaryControls();initialize();}document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>preset(b.dataset.preset));
 $('lumped-preset').onclick=()=>preset('sphere',true);
-if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('status').textContent='オフライン準備に失敗しました。接続中の計算は利用できます。';});attachTermPanel({root:$('manual'),additionalRoots:[$('model-limit'),$('radial-learning')],dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});preset('sphere');
+if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('status').textContent='オフライン準備に失敗しました。接続中の計算は利用できます。';});attachTermPanel({root:$('manual'),additionalRoots:[$('model-limit'),$('radial-learning')],dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});
+let launch,launchError;try{launch=caseLaunchFromSearch('radial',location.search);}catch(error){launchError=error;}
+if(launch){for(const [id,value]of Object.entries(launch.fields))$(id).value=value;$('property-source').textContent='問題から受け取った物性値です。出典・単位・温度範囲を確認してください。';$('dt').value='';boundaryControls();initialize();}else preset('sphere');
 
 attachNavigationContext(document.querySelector('main'),'radial');
+attachLaunchContext(document.querySelector('main'),{launch,error:launchError});
 
 journeyUI=attachRadialJourney({root:$('radial-learning'),context:()=>({configs,meshes,snapshots:states}),pause:()=>experiment.pause(),locate:setProbe,rewind:()=>experiment.restart(),advance:duration=>{experiment.pause();return experiment.advanceSamples({duration,spacing:.05});},prepare:()=>{
  $('analysis').value='distributed';const [a,b]=radialCoolingConfigs(matchMedia('(max-width:600px)').matches?32:64);configB=b;

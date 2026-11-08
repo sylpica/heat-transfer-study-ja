@@ -8,6 +8,10 @@ import {Experiment} from './experiment.mjs';
 import {startBoilingPanel} from './boiling.mjs';
 import {drawFin} from './fin-view.mjs';
 import {attachTermPanel} from './term-panel.mjs';
+import {MODEL_MANUALS} from './model-manuals.mjs';
+import {MODEL_TUTORIALS} from './model-tutorials.mjs';
+import {initLabGuide} from './lab-guide.mjs';
+import {linkTermTextNodes} from '../term-links.mjs';
 import {MATERIALS,preset} from './presets.mjs';
 import {rectangle,circle,transformPolygon} from './geometry.mjs';
 const $=id=>document.getElementById(id),number=id=>{const input=$(id);if(!input.value.trim())throw Error(`${input.labels?.[0]?.textContent||id}を入力してください。`);const n=Number(input.value);if(!Number.isFinite(n))throw Error('有限の数値を入力してください。');return n;},fmt=(v,n=3)=>Number.isFinite(v)?v.toFixed(n):'—';
@@ -82,12 +86,95 @@ $('field-a').onpointerdown=e=>{dragging=true;$('field-a').setPointerCapture(e.po
 $('field-a').onkeydown=e=>{const moves={ArrowLeft:[-.02,0],ArrowRight:[.02,0],ArrowUp:[0,.02],ArrowDown:[0,-.02]};if(moves[e.key]){e.preventDefault();const [x,y]=moves[e.key];probe.x=Math.max(0,Math.min(.9999,probe.x+x));probe.y=Math.max(0,Math.min(.9999,probe.y+y));learning?.probeMoved(probe);render();}};
 $('graph').onclick=e=>{const raw=canvasPosition(e,$('graph')),ratio=devicePixelRatio||1,W=$('graph').width/ratio,fraction=Math.max(0,Math.min(1,(raw.x/ratio-55)/(W-80))),target=(history[0]?.a.time||0)+fraction*((history.at(-1)?.a.time||0)-(history[0]?.a.time||0));const index=history.reduce((best,h,i)=>Math.abs(h.a.time-target)<Math.abs(history[best].a.time-target)?i:best,0);rewind(index);};$('graph').onkeydown=e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();rewind(Math.max(0,Math.min(history.length-1,graphIndex+(e.key==='ArrowLeft'?-1:1))));}};
 for(const button of document.querySelectorAll('[data-preset]'))button.onclick=()=>loadPreset(button.dataset.preset);
-function loadPreset(id,learningNx,launch=null){$('launch-context').hidden=true;boiling.stop();$('boiling-panel').hidden=true;$('thermal-layout').hidden=false;$('boiling-select').setAttribute('aria-pressed','false');selection=id;drawPoints=[];$('vertices').value='';for(const [key,value] of Object.entries({rotation:0,'geom-scale':1,'offset-x':0,'offset-y':0,ny:0}))$(key).value=value;const c=preset(id,learningNx||(matchMedia('(max-width:600px)').matches?16:24)),left=c.boundaries.left;for(const [key,value] of Object.entries({width:c.width,height:c.height,depth:c.depth,initial:c.initial-273.15,'boundary-temperature':left.temperature-273.15,boundary:left.type,source:0,h:c.distributedConvection?.h??left.h??80,'fin-ambient':(c.distributedConvection?.temperature??293.15)-273.15,contact:0,nx:c.nx,shape:'rectangle'}))$(key).value=value;$('fin-ambient-step-time').value='';$('fin-ambient-step-temperature').value='';$('composite').checked=$('local-source').checked=false;$('tool').value='probe';$('dt').value='';document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.preset===id)));materialInputs();if(launch?.fields){for(const [key,value]of Object.entries(launch.fields))$(key).value=value;$('property-source').textContent='設問のkと、過渡観察のために仮定したρ/cpです。上の補足条件を確認してください。';}if(launch){$('launch-description').textContent=launch.description;$('launch-context').hidden=false;}$('radiation-temperature-label').hidden=$('boundary').value!=='convection-radiation';$('related-lesson').href='../index.html#reader/'+(launch?.sectionId||(id==='fin'?'4.5':id==='radiation'?'10.1':'5.3'));$('launch-lesson').href=$('related-lesson').href;$('launch-lesson').hidden=!launch;return initialize();}
+function loadPreset(id,learningNx,launch=null){$('launch-context').hidden=true;boiling.stop();$('boiling-panel').hidden=true;$('thermal-layout').hidden=false;$('boiling-select').setAttribute('aria-pressed','false');selection=id;drawPoints=[];$('vertices').value='';for(const [key,value] of Object.entries({rotation:0,'geom-scale':1,'offset-x':0,'offset-y':0,ny:0}))$(key).value=value;const c=preset(id,learningNx||(matchMedia('(max-width:600px)').matches?16:24)),left=c.boundaries.left;for(const [key,value] of Object.entries({width:c.width,height:c.height,depth:c.depth,initial:c.initial-273.15,'boundary-temperature':left.temperature-273.15,boundary:left.type,source:0,h:c.distributedConvection?.h??left.h??80,'fin-ambient':(c.distributedConvection?.temperature??293.15)-273.15,contact:0,nx:c.nx,shape:'rectangle'}))$(key).value=value;$('fin-ambient-step-time').value='';$('fin-ambient-step-temperature').value='';$('composite').checked=$('local-source').checked=false;$('tool').value='probe';$('dt').value='';document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.preset===id)));materialInputs();if(launch?.fields){for(const [key,value]of Object.entries(launch.fields))$(key).value=value;$('property-source').textContent='物性値の出典と仮定は上の補足条件に書かれています。';}if(launch){$('launch-description').textContent=launch.description;$('launch-context').hidden=false;}$('radiation-temperature-label').hidden=$('boundary').value!=='convection-radiation';$('related-lesson').href='../index.html#reader/'+(launch?.sectionId||(id==='fin'?'4.5':id==='radiation'?'10.1':'5.3'));$('launch-lesson').href=$('related-lesson').href;$('launch-lesson').hidden=!launch;return initialize();}
 if('serviceWorker' in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('status').textContent='オフラインの準備に失敗しました。接続中の計算は利用できます。';});
 let receivedLaunch,launchError;try{receivedLaunch=thermalLaunchFromSearch(location.search);}catch(error){launchError=error;}
 loadPreset(receivedLaunch?.preset||'heating',receivedLaunch?.caseId?48:undefined,receivedLaunch);if(launchError){$('launch-description').textContent=launchError.message;$('launch-context').hidden=false;}
 
+// §21 model manuals: docs/dynamic/*.md are the source of truth and
+// dynamic/model-manuals.mjs is generated from them by
+// scripts/generate-model-manuals.mjs. Only the selected model is rendered,
+// each of its 16 items behind a closed <details>, so opening the manual
+// never pushes the workspace down.
+const manualSelect=$('manual-model'),manualBox=$('model-manual');
+const appendManualInline=(parent,text)=>{
+  let last=0;
+  for(const m of text.matchAll(/\*\*([^*]+)\*\*|`([^`]+)`/g)){
+    if(m.index>last)parent.append(document.createTextNode(text.slice(last,m.index)));
+    const el=document.createElement(m[1]!==undefined?'strong':'code');
+    el.textContent=m[1]??m[2];parent.append(el);last=m.index+m[0].length;
+  }
+  if(last<text.length)parent.append(document.createTextNode(text.slice(last)));
+};
+const renderManualList=block=>{
+  const list=document.createElement(block.t);
+  for(const item of block.items){
+    const li=document.createElement('li');
+    appendManualInline(li,item.x);
+    if(item.sub)li.append(renderManualList(item.sub));
+    list.append(li);
+  }
+  return list;
+};
+const renderManualBlocks=(parent,blocks)=>{
+  for(const block of blocks){
+    if(block.t==='p'){const p=document.createElement('p');appendManualInline(p,block.x);parent.append(p);}
+    else if(block.t==='h'){const h=document.createElement('h4');appendManualInline(h,block.x);parent.append(h);}
+    else if(block.t==='ul'||block.t==='ol')parent.append(renderManualList(block));
+    else if(block.t==='table'){
+      const wrap=document.createElement('div');wrap.className='field-table';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','表');
+      const table=document.createElement('table'),thead=document.createElement('thead'),headRow=document.createElement('tr');
+      for(const cell of block.head){const th=document.createElement('th');appendManualInline(th,cell);headRow.append(th);}
+      thead.append(headRow);table.append(thead);
+      const tbody=document.createElement('tbody');
+      for(const row of block.rows){const tr=document.createElement('tr');for(const cell of row){const td=document.createElement('td');appendManualInline(td,cell);tr.append(td);}tbody.append(tr);}
+      table.append(tbody);wrap.append(table);parent.append(wrap);
+    }
+  }
+};
+let manualTerms=null;
+const renderModelManual=()=>{
+  const manual=MODEL_MANUALS.find(m=>m.id===manualSelect.value)||MODEL_MANUALS[0];
+  manualBox.replaceChildren();
+  const screenLine=document.createElement('p');screenLine.className='hint';
+  if(manual.screen){
+    screenLine.append(document.createTextNode('対象画面：'));
+    if(manual.screen.href){const a=document.createElement('a');a.href=manual.screen.href;a.textContent=manual.screen.label;screenLine.append(a);}
+    else screenLine.append(document.createTextNode(manual.screen.label));
+  }else screenLine.textContent='対象画面：開発専用（公開ビルドには含まれません）';
+  manualBox.append(screenLine);
+  for(const lead of manual.lead){
+    const p=document.createElement('p'),strong=document.createElement('strong');
+    strong.textContent=`${lead.label}：`;p.append(strong);appendManualInline(p,lead.x);manualBox.append(p);
+  }
+  const tutorial=MODEL_TUTORIALS.find(t=>t.id===manual.id);
+  if(tutorial){
+    const details=document.createElement('details'),summary=document.createElement('summary');
+    summary.textContent='手順案内（チュートリアル）';details.append(summary);
+    const body=document.createElement('div');
+    renderManualBlocks(body,[
+      {t:'h',x:'1. まず触る'},{t:'ul',items:tutorial.touch.map(x=>({x}))},
+      {t:'h',x:'2. 観察する'},{t:'ul',items:tutorial.observe.map(x=>({x}))},
+      {t:'h',x:'3. 確認する'},{t:'ul',items:tutorial.check.map(x=>({x}))},
+    ]);
+    details.append(body);manualBox.append(details);
+  }
+  for(const item of manual.items){
+    const details=document.createElement('details'),summary=document.createElement('summary');
+    summary.textContent=`${item.n}. ${item.title}`;details.append(summary);
+    const body=document.createElement('div');renderManualBlocks(body,item.blocks);details.append(body);manualBox.append(details);
+  }
+  const sourceLine=document.createElement('p');sourceLine.className='hint';
+  sourceLine.append(document.createTextNode('正本：'));
+  const code=document.createElement('code');code.textContent=manual.source;sourceLine.append(code);manualBox.append(sourceLine);
+  if(manualTerms)linkTermTextNodes(manualBox,manualTerms,{limit:2});
+};
+for(const manual of MODEL_MANUALS){const option=document.createElement('option');option.value=manual.id;option.textContent=manual.name;manualSelect.append(option);}
+manualSelect.addEventListener('change',renderModelManual);
+renderModelManual();
+fetch('../data/glossary.json').then(r=>r.ok?r.json():null).then(data=>{if(Array.isArray(data)){manualTerms=data;linkTermTextNodes(manualBox,manualTerms,{limit:2});}}).catch(()=>{});
 attachTermPanel({root:$('manual'),additionalRoots:[$('learning-result')],dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});
+initLabGuide();
 
 for(const id of ['yaw','pitch','zoom'])$(id).oninput=render;
 

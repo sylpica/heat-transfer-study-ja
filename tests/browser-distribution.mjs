@@ -87,7 +87,7 @@ try {
     const button=page.locator(`[data-action="${action}"]`);
     assert.ok((await button.getAttribute('aria-label')).includes(await button.innerText()));
   }
-  assert.equal(await page.locator('.reader-toc .toc-item:not(.not-ready)').count(),76);
+  assert.equal(await page.locator('.reader-toc .toc-item[data-section]:not(.not-ready)').count(),76);
   assert.match(await page.locator('#reader-article').innerText(),/専門家校閲待ち/);
   assert.match(await page.locator('.reader-pdf-actions a[aria-label^="原本PDFを開く"]').getAttribute('href'),/AHTTv600\.pdf#page=17$/);
   assert.equal(await page.locator('.reader-toc .toc-item.selected').getAttribute('data-section'),'1.1');

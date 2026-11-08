@@ -21,6 +21,7 @@ import {validateOriginalNotes,independentNoteForSection} from './original-notes.
 import {validateDeepLessons,deepLessonForSection} from './original-deep-lessons.mjs';
 import {renderTransientFields,renderTransientSteps,transientGraph,transientFieldNames} from './transient-ui.mjs';
 import {matchTerms,renderTermLinks,renderTermSheet,renderTermExample,renderTermLearningLinks,linkTermTextNodes,compileTermMatcher,renderTermLinksFast} from './term-links.mjs';
+import {buildFlashcardDeck,shuffledOrder,flashcardCategories,flashcardChapters,termChapters,clampFlashcardIndex} from './flashcards.mjs';
 import {renderSimulationDiagram} from './sim-diagrams.mjs';
 import {lessonDiagramPath,lessonDiagramSize} from './lesson-diagrams.mjs';
 const CORE_DATA_FILES = ['./data/book.json', './data/questions.json', './data/glossary.json', './data/content-manifest.json', './data/original-notes.json', './data/original-deep-lessons.json'];
@@ -63,12 +64,16 @@ let ui = {
   reportMessage: '',
   searchResults: null,
   searchLimit: 100,
+  searchExtrasPending: false,
+  extrasFocus: null,
   calendarDate: todayISO(),
   importDraft: null,
   simMode: 'conduction',
   simPickerOpen: false,
   bankOpen: false,
   statusOpen: false,
+  extrasChapter: '',
+  appendixRefs: '',
   expandedTerms: new Set(),
   simValues: {
     conduction: { k: 15, area: 0.5, thickness: 0.08, hot: 80, cold: 20 },
@@ -274,6 +279,256 @@ function validBookBlocks(blocks) {
     if (block.type === 'problem' && ((block.items !== undefined && (!Array.isArray(block.items) || !block.items.every(item => typeof item === 'string'))) || (block.figureRefs !== undefined && (!Array.isArray(block.figureRefs) || !block.figureRefs.every(item => typeof item === 'string'))) || (block.formulaBlocks !== undefined && (!Array.isArray(block.formulaBlocks) || !block.formulaBlocks.every(item => item && typeof item === 'object' && typeof item.expression === 'string'))) || (block.figure !== undefined && !validBookFigure(block.figure)))) return false;
     return true;
   });
+}
+// Chapter-end problems and references ship as separate per-chapter data
+// files (data/chapter-problems/), apart from the 76 section files. They are
+// fetched on demand the first time a learner opens the panel for a chapter,
+// so the initial load and the build's section-file gate are unchanged.
+const chapterProblemsCache = new Map();
+function chapterProblemsNumber(chapterId) {
+  const match = /^ch(\d{1,2})$/.exec(String(chapterId || ''));
+  const number = match ? Number(match[1]) : NaN;
+  return Number.isInteger(number) && number >= 1 && number <= 11 ? number : null;
+}
+function chapterProblemsPath(chapterId) {
+  const number = chapterProblemsNumber(chapterId);
+  return number ? `./data/chapter-problems/chapter-${String(number).padStart(2, '0')}.json` : null;
+}
+function validChapterProblemsData(data, chapterId) {
+  const number = chapterProblemsNumber(chapterId);
+  if (!number || !data || typeof data !== 'object' || Array.isArray(data)) return false;
+  if (data.chapterId !== `chapter-${String(number).padStart(2, '0')}` || data.language !== 'ja') return false;
+  const part = (value, type) => Boolean(value) && typeof value === 'object' && typeof value.heading === 'string'
+    && Number.isInteger(value.count) && Array.isArray(value.blocks)
+    && value.blocks.filter(block => block?.type === type).length === value.count
+    && validBookBlocks(value.blocks);
+  if (!part(data.problems, 'problem') || !part(data.references, 'reference')) return false;
+  const preamble = data.references.preambleBlocks;
+  return preamble === undefined || (Array.isArray(preamble) && (!preamble.length || validBookBlocks(preamble)));
+}
+function chapterProblemGroups(blocks) {
+  const groups = [];
+  for (const block of blocks || []) {
+    if (block.type === 'problem') groups.push({ problem: block, extra: [] });
+    else if (groups.length) groups.at(-1).extra.push(block);
+    else groups.push({ problem: null, extra: [block] });
+  }
+  return groups;
+}
+function chapterProblemLead(block) {
+  const text = String(block?.text || '').replace(/\s+/g, ' ').trim();
+  return text.length > 72 ? `${text.slice(0, 72)}…` : text;
+}
+// Plain text of a non-problem block that belongs to a problem group (data
+// tables and their notes), so a search can match the values they carry.
+function chapterExtraBlockText(block) {
+  return [block.caption, block.noteJa || block.note, block.text, block.alt, block.description,
+    ...(block.headers || []), ...(block.rows || []).flat()].filter(value => typeof value === 'string').join(' ');
+}
+// Search entries for the chapter-end problems and references. The chapter
+// files stay the single source of truth: entries are built only from
+// chapters already fetched and validated into chapterProblemsCache (by the
+// reader panel or by a search-triggered load), so the startup cost and the
+// initial render never pay for the ~610 KB of chapter data.
+function chapterExtrasSearchEntries() {
+  const entries = [];
+  for (const chapter of book?.chapters || []) {
+    const number = chapterProblemsNumber(chapter.id);
+    if (!number) continue;
+    const cached = chapterProblemsCache.get(chapter.id);
+    if (!cached || cached.status !== 'ready') continue;
+    const data = cached.data;
+    const base = { chapter: chapter.id, field: chapter.title, chapterTitle: chapter.title };
+    const source = `原書第${number}章 · 書籍 pp.${data.bookPages || ''} · PDF pp.${data.pdfPages || ''}`;
+    for (const group of chapterProblemGroups(data.problems.blocks)) {
+      if (!group.problem) continue;
+      const block = group.problem;
+      const content = [block.text, block.continuation, block.hint, block.answerHint,
+        typeof block.sourceNote === 'string' ? block.sourceNote : block.sourceNote?.ja,
+        ...(block.items || []), ...(block.figureRefs || []),
+        ...(block.formulaBlocks || []).map(formula => formula.expression),
+        block.figure?.caption, block.figure?.alt, block.figure?.description,
+        ...group.extra.map(chapterExtraBlockText)].filter(value => typeof value === 'string').join(' ');
+      entries.push({ ...base, kind: 'chapter-problem', kindLabel: '章末問題',
+        title: `第${number}章 問題 ${block.number || ''}`, text: content,
+        source: `${source} · 章末問題 ${block.number || ''}`,
+        target: { route: 'reader', chapterExtras: chapter.id, entryId: block.id } });
+    }
+    for (const block of data.references.blocks) {
+      if (block.type !== 'reference') continue;
+      const content = [block.authors, block.originalTitle, block.titleJa, block.publication,
+        block.noteJa, block.noteEn, block.doi, block.url].filter(value => typeof value === 'string').join(' ');
+      entries.push({ ...base, kind: 'chapter-reference', kindLabel: '参考文献',
+        title: block.titleJa || block.originalTitle || '', text: content,
+        source: `${source} · 参考文献 [${block.number || ''}]`,
+        target: { route: 'reader', chapterExtras: chapter.id, entryId: block.id } });
+    }
+  }
+  return entries;
+}
+// Chapters whose problem/reference files a search still needs, honouring the
+// kind and chapter filters so unrelated searches never fetch chapter data.
+function chapterExtrasNeededForSearch() {
+  const { kind, chapter } = ui.search;
+  if (!['all', 'chapter-problem', 'chapter-reference'].includes(kind)) return [];
+  if (chapter === 'supplement') return [];
+  const ids = chapter === 'all' ? (book?.chapters || []).map(item => item.id) : [chapter];
+  return ids.filter(id => chapterProblemsNumber(id) && chapterProblemsCache.get(id)?.status !== 'ready');
+}
+async function ensureChapterExtrasForSearch() {
+  const missing = chapterExtrasNeededForSearch();
+  ui.searchExtrasPending = missing.length > 0;
+  if (!missing.length) return;
+  if (ui.route === 'search') render();
+  await Promise.all(missing.map(id => loadChapterProblems(id)));
+  ui.searchExtrasPending = false;
+  if (ui.route === 'search' && ui.search.query) {
+    ui.searchResults = searchEntries(buildSearchIndex(), ui.search);
+    render();
+  }
+}
+function focusChapterExtrasEntry() {
+  const focus = ui.extrasFocus;
+  if (!focus || ui.route !== 'reader' || ui.extrasChapter !== focus.chapter) return false;
+  const element = document.getElementById(`chapter-extra-${focus.entryId}`);
+  if (!element) return false;
+  element.scrollIntoView({ block: 'center' });
+  element.classList.add('chapter-extra-highlight');
+  setTimeout(() => element.classList.remove('chapter-extra-highlight'), 2600);
+  return true;
+}
+async function loadChapterProblems(chapterId) {
+  const path = chapterProblemsPath(chapterId);
+  if (!path) return;
+  const current = chapterProblemsCache.get(chapterId);
+  if (current && current.status !== 'error') return;
+  chapterProblemsCache.set(chapterId, { status: 'loading' });
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error('chapter-problems-fetch');
+    const data = await response.json();
+    if (!validChapterProblemsData(data, chapterId)) throw new Error('chapter-problems-format');
+    chapterProblemsCache.set(chapterId, { status: 'ready', data });
+  } catch {
+    chapterProblemsCache.set(chapterId, { status: 'error' });
+  }
+  if (ui.route === 'reader' && ui.extrasChapter === chapterId) { render(); setTimeout(() => focusChapterExtrasEntry(), 60); }
+}
+function renderChapterExtras(chapter) {
+  const number = chapterProblemsNumber(chapter?.id);
+  if (!number) return '';
+  const open = ui.extrasChapter === chapter.id;
+  const entry = chapterProblemsCache.get(chapter.id) || { status: 'idle' };
+  let body = '';
+  if (open && entry.status === 'ready') {
+    const data = entry.data;
+    // A search result can name one entry: only then does the panel render
+    // with that group (and that problem) already open. Without a focus the
+    // panel always starts fully collapsed, as before.
+    const focusId = ui.extrasFocus?.chapter === chapter.id ? ui.extrasFocus.entryId : null;
+    const focusInProblems = Boolean(focusId) && data.problems.blocks.some(block => block.id === focusId);
+    const focusInReferences = Boolean(focusId) && data.references.blocks.some(block => block.id === focusId);
+    const groups = chapterProblemGroups(data.problems.blocks).map(group => group.problem
+      ? `<details class="chapter-problem-item" id="chapter-extra-${escapeHTML(group.problem.id)}"${focusId === group.problem.id ? ' open' : ''}><summary><span class="book-problem-number">問題 ${escapeHTML(group.problem.number || '')}</span><span class="chapter-problem-lead">${escapeHTML(chapterProblemLead(group.problem))}</span></summary><div class="chapter-problem-body">${renderBookBlock(group.problem, 'ja')}${group.extra.map(block => renderBookBlock(block, 'ja')).join('')}</div></details>`
+      : group.extra.map(block => renderBookBlock(block, 'ja')).join('')).join('');
+    const preamble = (data.references.preambleBlocks || []).map(block => renderBookBlock(block, 'ja')).join('');
+    body = `<div class="chapter-extras-groups">
+      <details class="chapter-extras-group"${focusInProblems ? ' open' : ''}><summary>${escapeHTML(data.problems.heading)}（${data.problems.count}問）</summary><div class="chapter-extras-list">${groups}</div></details>
+      <details class="chapter-extras-group"${focusInReferences ? ' open' : ''}><summary>${escapeHTML(data.references.heading)}（${data.references.count}件）</summary><div class="chapter-extras-list">${preamble}${data.references.blocks.map(block => `<div class="chapter-reference-item" id="chapter-extra-${escapeHTML(block.id)}">${renderBookBlock(block, 'ja')}</div>`).join('')}</div></details>
+      <p class="small-note">原書第${number}章の章末問題と参考文献の日本語訳です。書籍 pp.${escapeHTML(data.bookPages || '')} · PDF pp.${escapeHTML(data.pdfPages || '')}。翻訳は作業者が原本と照合済みですが、専門家校閲は未実施です。原図は収録していないため、図は題文と説明文で示します。</p>
+    </div>`;
+  } else if (open && entry.status === 'error') {
+    body = `<p class="chapter-extras-status" role="alert">章末問題・参考文献を読み込めませんでした。ネット接続を確認してください。<button type="button" class="text-button" data-action="retry-chapter-extras" data-chapter="${escapeHTML(chapter.id)}">もう一度読み込む</button></p>`;
+  } else if (open) {
+    body = '<p class="chapter-extras-status" role="status">章末問題・参考文献を読み込んでいます…</p>';
+  }
+  return `<section class="chapter-extras" id="chapter-extras" aria-label="第${number}章の章末問題と参考文献">
+    <div class="chapter-extras-heading"><h3>第${number}章 章末問題・参考文献</h3><button type="button" class="button secondary" data-action="toggle-chapter-extras" data-chapter="${escapeHTML(chapter.id)}" aria-expanded="${open}" aria-controls="chapter-extras-panel">${open ? '閉じる' : '開く'}</button></div>
+    ${open ? `<div class="chapter-extras-panel" id="chapter-extras-panel">${body}</div>` : ''}
+  </section>`;
+}
+function openChapterExtras(chapterId) {
+  const chapter = book.chapters.find(item => item.id === chapterId);
+  if (!chapter || !chapterProblemsNumber(chapterId)) return;
+  const show = () => {
+    ui.extrasChapter = chapterId;
+    loadChapterProblems(chapterId);
+    render();
+    setTimeout(() => { if (!focusChapterExtrasEntry()) document.getElementById('chapter-extras')?.scrollIntoView({ block: 'start' }); }, 60);
+  };
+  const lastSection = chapter.sections.at(-1);
+  if (ui.route === 'reader' && ui.readerSection === lastSection?.id) { show(); return; }
+  openReader(lastSection.id);
+  setTimeout(show, 160);
+}
+// Appendix references (Appendix A: [A.1]–[A.41], Appendix B: [B.1]) ship as
+// separate per-appendix data files (data/appendix-references/), apart from
+// the 76 section files and the chapter files. Like the chapter extras they
+// are fetched on demand and validated before display, so the initial load
+// and the build's section-file gate are unchanged. Only the reference lists
+// are included; the appendix bodies (property/conversion tables) are not.
+const APPENDIX_REFERENCE_FILES = { A: 'appendix-a', B: 'appendix-b' };
+const appendixReferencesCache = new Map();
+function appendixReferencesPath(appendixId) {
+  const file = APPENDIX_REFERENCE_FILES[appendixId];
+  return file ? `./data/appendix-references/${file}.json` : null;
+}
+function validAppendixReferencesData(data, appendixId) {
+  const file = APPENDIX_REFERENCE_FILES[appendixId];
+  if (!file || !data || typeof data !== 'object' || Array.isArray(data)) return false;
+  if (data.appendixId !== file || data.language !== 'ja') return false;
+  const refs = data.references;
+  return Boolean(refs) && typeof refs === 'object' && typeof refs.heading === 'string'
+    && Number.isInteger(refs.count) && Array.isArray(refs.blocks)
+    && refs.blocks.length === refs.count
+    && refs.blocks.every(block => block?.type === 'reference')
+    && validBookBlocks(refs.blocks);
+}
+async function loadAppendixReferences(appendixId) {
+  const path = appendixReferencesPath(appendixId);
+  if (!path) return;
+  const current = appendixReferencesCache.get(appendixId);
+  if (current && current.status !== 'error') return;
+  appendixReferencesCache.set(appendixId, { status: 'loading' });
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error('appendix-references-fetch');
+    const data = await response.json();
+    if (!validAppendixReferencesData(data, appendixId)) throw new Error('appendix-references-format');
+    appendixReferencesCache.set(appendixId, { status: 'ready', data });
+  } catch {
+    appendixReferencesCache.set(appendixId, { status: 'error' });
+  }
+  if (ui.route === 'reader' && ui.appendixRefs === appendixId) render();
+}
+function renderAppendixReferences() {
+  const appendixId = ui.appendixRefs;
+  if (!APPENDIX_REFERENCE_FILES[appendixId]) return '';
+  const appendix = book.appendices.find(item => item.id === appendixId);
+  const entry = appendixReferencesCache.get(appendixId) || { status: 'idle' };
+  let body = '';
+  if (entry.status === 'ready') {
+    const data = entry.data;
+    body = `<div class="chapter-extras-groups">
+      <details class="chapter-extras-group"><summary>${escapeHTML(data.references.heading)}（${data.references.count}件）</summary><div class="chapter-extras-list">${data.references.blocks.map(block => renderBookBlock(block, 'ja')).join('')}</div></details>
+      <p class="small-note">原書の付録${escapeHTML(appendixId)}「${escapeHTML(appendix?.title || '')}」の参考文献の日本語訳です。書籍 pp.${escapeHTML(data.bookPages || '')} · PDF pp.${escapeHTML(data.pdfPages || '')}。翻訳は作業者が原本と照合済みですが、専門家校閲は未実施です。付録の本文（物性値・換算の表）は収録していません。</p>
+    </div>`;
+  } else if (entry.status === 'error') {
+    body = `<p class="chapter-extras-status" role="alert">付録の参考文献を読み込めませんでした。ネット接続を確認してください。<button type="button" class="text-button" data-action="retry-appendix-references" data-appendix="${escapeHTML(appendixId)}">もう一度読み込む</button></p>`;
+  } else {
+    body = '<p class="chapter-extras-status" role="status">付録の参考文献を読み込んでいます…</p>';
+  }
+  return `<section class="chapter-extras appendix-references" id="appendix-references" aria-label="付録${escapeHTML(appendixId)}の参考文献">
+    <div class="chapter-extras-heading"><h3>付録${escapeHTML(appendixId)} 参考文献</h3><button type="button" class="button secondary" data-action="toggle-appendix-references" data-appendix="${escapeHTML(appendixId)}" aria-expanded="true" aria-controls="appendix-references-panel">閉じる</button></div>
+    <div class="chapter-extras-panel" id="appendix-references-panel">${body}</div>
+  </section>`;
+}
+function openAppendixReferences(appendixId) {
+  if (!appendixReferencesPath(appendixId)) return;
+  ui.appendixRefs = appendixId;
+  loadAppendixReferences(appendixId);
+  render();
+  setTimeout(() => document.getElementById('appendix-references')?.scrollIntoView({ block: 'start' }), 60);
 }
 function setRoute(route) {
   flushLearningTime();
@@ -533,7 +788,7 @@ function renderQuizResume(){
   return `<aside class="notice-card quiz-resume"><div><strong>中断した演習があります</strong><p>${state.quizDraft.index+1} / ${state.quizDraft.ids.length}問目 · 回答履歴は保存されています。</p>${issue?`<p role="status">${escapeHTML(issue)}</p>`:''}<div class="button-row"><button class="button primary" type="button" data-action="resume-quiz" ${issue?'disabled':''}>中断した演習を再開</button><button class="text-button" type="button" data-action="discard-quiz">この中断セットを破棄</button></div></div></aside>`;
 }
 function pageHeading(eyebrow, title, description = '', actions = '') {
-  const guideLink={home:'start',reader:'reader',quiz:'quiz',review:'review',search:'search',glossary:'search',map:'progress',simulator:'simulator',plan:'plan',calendar:'plan',settings:'data'}[ui.route];
+  const guideLink={home:'start',reader:'reader',quiz:'quiz',review:'review',search:'search',glossary:'search',map:'progress',simulator:'simulator',lab:'lab',plan:'plan',calendar:'plan',settings:'data'}[ui.route];
   const help=guideLink?`<a class="text-link page-help" href="#guide/${guideLink}">この画面の使い方 →</a>`:'';
   // UI/UX audit 2026-11-07 (standing checklist #6): most routes passed the
   // same string as eyebrow and title, so every page heading rendered the
@@ -679,8 +934,8 @@ function renderReader() {
   return `${pageHeading('読書モード', '読書モード', '', '<a class="button secondary" href="#search">本文を検索</a>')}
     <div class="reader-layout">
       <aside class="reader-toc surface-card"><div class="toc-heading"><span class="eyebrow">目次</span><strong>A Heat Transfer Textbook</strong></div>
-        ${book.chapters.map(item => `<details ${item.id === section.chapterId ? 'open' : ''}><summary><span>${escapeHTML(item.title)}</span><small>第${item.id.slice(2)}章</small></summary><div class="toc-items">${item.sections.map(sec => `<button class="toc-item ${sec.id === section.id ? 'selected' : ''} ${sectionIsTranslated(sec) ? '' : 'not-ready'}" type="button" data-section="${escapeHTML(sec.id)}"><span class="toc-number">${escapeHTML(sec.id)}</span><span>${escapeHTML(sec.title)}</span><i>${sectionProgressLabel(sec)}</i></button>`).join('')}${(item.backMatter || []).map(entry => `<div class="toc-item not-ready" aria-label="${escapeHTML(entry.title)}、${sectionProgressLabel(entry)}"><span class="toc-number">—</span><span>${escapeHTML(entry.title)}</span><i>${sectionProgressLabel(entry)}</i></div>`).join('')}</div></details>`).join('')}
-        <details class="all-bookmarks"><summary>すべてのしおり（${state.bookmarks.length}件）</summary>${state.bookmarks.map(b=>`<button type="button" class="toc-item" data-bookmark="${escapeHTML(b.id)}"><span>第${escapeHTML(b.sectionId)}節 · 書籍 p.${b.bookPage||'未記録'}</span><span>${escapeHTML(b.note||'メモなし')}</span></button>`).join('')||'<p>しおりはまだありません。</p>'}</details><div class="appendix-list"><span class="eyebrow">付録・索引</span>${book.appendices.map(item => `<div class="appendix-row"><span>${escapeHTML(item.title)}</span>${statusPill('未着手')}</div>`).join('')}</div>
+        ${book.chapters.map(item => `<details ${item.id === section.chapterId ? 'open' : ''}><summary><span>${escapeHTML(item.title)}</span><small>第${item.id.slice(2)}章</small></summary><div class="toc-items">${item.sections.map(sec => `<button class="toc-item ${sec.id === section.id ? 'selected' : ''} ${sectionIsTranslated(sec) ? '' : 'not-ready'}" type="button" data-section="${escapeHTML(sec.id)}"><span class="toc-number">${escapeHTML(sec.id)}</span><span>${escapeHTML(sec.title)}</span><i>${sectionProgressLabel(sec)}</i></button>`).join('')}${(item.backMatter || []).filter(entry => entry.id !== 'problems' && entry.id !== 'references').map(entry => `<div class="toc-item not-ready" aria-label="${escapeHTML(entry.title)}、${sectionProgressLabel(entry)}"><span class="toc-number">—</span><span>${escapeHTML(entry.title)}</span><i>${sectionProgressLabel(entry)}</i></div>`).join('')}<button class="toc-item" type="button" data-chapter-extras="${escapeHTML(item.id)}"><span class="toc-number">章末</span><span>章末問題・参考文献</span><i>日本語訳を収録</i></button></div></details>`).join('')}
+        <details class="all-bookmarks"><summary>すべてのしおり（${state.bookmarks.length}件）</summary>${state.bookmarks.map(b=>`<button type="button" class="toc-item" data-bookmark="${escapeHTML(b.id)}"><span>第${escapeHTML(b.sectionId)}節 · 書籍 p.${b.bookPage||'未記録'}</span><span>${escapeHTML(b.note||'メモなし')}</span></button>`).join('')||'<p>しおりはまだありません。</p>'}</details><div class="appendix-list"><span class="eyebrow">付録・索引</span>${book.appendices.map(item => APPENDIX_REFERENCE_FILES[item.id] ? `<div class="appendix-row"><span>${escapeHTML(item.title)}</span>${statusPill('参考文献のみ収録', 'blue')}</div><button class="toc-item" type="button" data-appendix-references="${escapeHTML(item.id)}"><span class="toc-number">付録${escapeHTML(item.id)}</span><span>参考文献</span><i>日本語訳を収録</i></button>` : `<div class="appendix-row"><span>${escapeHTML(item.title)}</span>${statusPill('未着手')}</div>`).join('')}</div>
       </aside>
       <article class="reader-panel surface-card" id="reader-article">
         <div class="reader-toolbar"><div class="language-toggle" role="group" aria-label="本文の表示言語"><button type="button" class="${contentLanguage === 'ja' ? 'selected' : ''}" data-language="ja" aria-pressed="${contentLanguage === 'ja'}">日本語</button><button type="button" class="${contentLanguage === 'en' ? 'selected' : ''}" data-language="en" ${hasEnglish ? '' : 'disabled'} aria-pressed="${contentLanguage === 'en'}">英語</button></div><span class="language-note">${hasEnglish ? (contentLanguage === 'ja' ? '日本語訳' : '英語版') : '英語原文は原本PDFで閲覧'}</span><button class="icon-button" type="button" data-action="reader-width" title="本文の幅を切り替え" aria-label="本文の幅を切り替え">↔</button><button class="icon-button" type="button" data-action="reader-font-down" aria-label="文字を小さくする A−">A−</button><button class="icon-button" type="button" data-action="reader-font-up" aria-label="文字を大きくする A＋">A＋</button><button class="icon-button" type="button" data-action="reader-line" aria-label="行間を調整">↕</button><button class="icon-button" type="button" data-action="speak" ${available ? '' : 'disabled'} aria-label="本文を読み上げる">▶ 読み上げ</button><button class="icon-button" type="button" data-action="stop-speech" aria-label="読み上げを停止">■ 停止</button><button class="button secondary" type="button" data-action="prepare-bookmark">この位置にしおり</button></div>
@@ -714,6 +969,8 @@ function renderReader() {
           <form class="reader-personal-note" id="reader-note-form"><p class="eyebrow">自分の学習メモ</p><div class="form-two"><label>見出し<input name="title" type="text" maxlength="100" value="${escapeHTML(editingNote?.title||'')}" placeholder="例：大事な考え方"/></label><label>メモ<textarea name="text" rows="2" maxlength="1000" placeholder="自分の言葉で整理しておく">${escapeHTML(editingNote?.text||'')}</textarea></label></div><button class="button ghost" type="submit">${editingNote?'メモの変更を保存':'この節にメモを保存'}</button>${editingNote?'<button type="button" class="text-button" data-action="cancel-note-edit">編集を取り消す</button>':''}</form>
           ${state.notes.filter(note => note.sectionId === section.id).map(note => `<div class="reader-note-entry"><strong>${escapeHTML(note.title || '学習メモ')}</strong><p>${escapeHTML(note.text)}</p><small>${formatDate(localDay(note.createdAt))}</small><button type="button" class="text-button" data-edit-note="${escapeHTML(note.id)}">編集</button><button type="button" class="text-button" data-delete-note="${escapeHTML(note.id)}">削除</button></div>`).join('')}
           ${sectionBookmarks.length ? `<div class="bookmark-list"><h3>この節のしおり</h3>${sectionBookmarks.map(bookmark => `<div class="bookmark-row"><label>しおりのメモ<input type="text" maxlength="180" data-bookmark-note="${escapeHTML(bookmark.id)}" value="${escapeHTML(bookmark.note)}"/><small>${formatDate(localDay(bookmark.createdAt))} · 書籍 p.${bookmark.bookPage || '未記録'}${bookmark.blockId?'':'（節の開始）'}</small></label><button type="button" class="text-button" data-bookmark="${escapeHTML(bookmark.id)}">${bookmark.blockId?'この位置へ':'この節へ'}</button><button type="button" class="text-button" data-delete-bookmark="${escapeHTML(bookmark.id)}">削除</button></div>`).join('')}</div>` : ''}
+        ${renderChapterExtras(chapter)}
+        ${renderAppendixReferences()}
         <p class="small-note">この画面について：原本PDFの対応ページを開けます。書籍の日本語訳（全76節）を収録しています。翻訳は作業者が原本と照合済みですが、専門家校閲は未実施です。書籍の原図は収録していないため、図は題文と説明文で表示します。自分の訳稿などをローカル教材として追加した場合は、その本文を段落や式とともに表示します。全節に独自作成の日本語ノート・発展教材・図解を収録しています。読了・しおり・メモはこの端末に保存します。</p>
         <div class="reader-pager"><button class="button ghost" type="button" ${prev ? `data-section="${prev.id}"` : 'disabled'}>← 前の節${prev ? ` · ${escapeHTML(prev.title)}` : ''}</button><button class="button ghost" type="button" ${next ? `data-section="${next.id}"` : 'disabled'}>次の節${next ? ` · ${escapeHTML(next.title)}` : ''} →</button></div>
       </article>
@@ -870,6 +1127,10 @@ function buildSearchIndex() {
   for(const n of state.notes)if(getSection(n.sectionId))entries.push({kind:'memo',kindLabel:'学習メモ',chapter:chapterKey(n.sectionId),field:'メモ',title:n.title||'学習メモ',text:n.text,source:`第${n.sectionId}節`,target:{route:'reader',section:n.sectionId,blockId:n.blockId}});
   for(const b of state.bookmarks)if(getSection(b.sectionId))entries.push({kind:'memo',kindLabel:'本文のしおり',chapter:chapterKey(b.sectionId),field:'しおり',title:`しおり：第${b.sectionId}節`,text:b.note,source:'利用者のしおり',target:{route:'reader',section:b.sectionId,blockId:b.blockId,position:b.position,language:b.language}});
   for(const id of state.questionBookmarks){const q=getQuestion(id);if(q)entries.push({kind:'memo',kindLabel:'問題ブックマーク',chapter:questionChapter(q,GUIDE_SECTIONS)||'supplement',field:q.field,title:q.prompt,text:q.explanation,source:sourceLabel(q.source),target:{route:'quiz',question:id}});}
+  // Chapter-end problems and references join the same index, but only for
+  // chapters whose files have actually been fetched and validated; the
+  // search flow loads the missing ones on demand (ensureChapterExtrasForSearch).
+  entries.push(...chapterExtrasSearchEntries());
   return entries;
 }
 function renderSearch() {
@@ -877,10 +1138,11 @@ function renderSearch() {
   const shownResults = results.slice(0, ui.searchLimit || 100);
   return `${pageHeading('横断検索', '横断検索', '')}
     <form id="search-form" class="search-form surface-card"><label for="search-query">検索語</label><div class="search-input-row"><div class="search-input-wrap"><span aria-hidden="true">⌕</span><input id="search-query" name="query" type="search" value="${escapeHTML(ui.search.query)}" placeholder="例：温度勾配、対流、熱抵抗" autocomplete="off"/><button type="button" class="clear-search" data-action="clear-search" aria-label="検索語を消去">×</button></div><button class="button primary" type="submit">検索</button></div>
-      <div class="filter-row"><label>対象<select name="kind"><option value="all" ${ui.search.kind === 'all' ? 'selected' : ''}>すべて</option><option value="book" ${ui.search.kind === 'book' ? 'selected' : ''}>本文・見出し</option><option value="glossary" ${ui.search.kind === 'glossary' ? 'selected' : ''}>用語集</option><option value="guide" ${ui.search.kind === 'guide' ? 'selected' : ''}>学習ガイド</option><option value="original-note" ${ui.search.kind === 'original-note' ? 'selected' : ''}>独自の日本語節別ノート</option><option value="deep-lesson" ${ui.search.kind === 'deep-lesson' ? 'selected' : ''}>独立発展日本語講義</option><option value="question" ${ui.search.kind === 'question' ? 'selected' : ''}>問題・解説</option><option value="memo" ${ui.search.kind === 'memo' ? 'selected' : ''}>メモ・しおり</option></select></label><label>章<select name="chapter"><option value="all">すべての章</option>${book.chapters.map(ch => `<option value="${ch.id}" ${ui.search.chapter === ch.id ? 'selected' : ''}>第${ch.id.slice(2)}章 ${escapeHTML(ch.title)}</option>`).join('')}<option value="supplement" ${ui.search.chapter === 'supplement' ? 'selected' : ''}>補足説明</option></select></label><label>分野<select name="field"><option value="all">すべての分野</option>${[...new Set(buildSearchIndex().map(e=>e.field).filter(Boolean))].map(field=>`<option value="${escapeHTML(field)}" ${ui.search.field===field?'selected':''}>${escapeHTML(field)}</option>`).join('')}</select></label><span class="search-hint">日本語の一部だけでも検索できます</span></div>
+      <div class="filter-row"><label>対象<select name="kind"><option value="all" ${ui.search.kind === 'all' ? 'selected' : ''}>すべて</option><option value="book" ${ui.search.kind === 'book' ? 'selected' : ''}>本文・見出し</option><option value="glossary" ${ui.search.kind === 'glossary' ? 'selected' : ''}>用語集</option><option value="guide" ${ui.search.kind === 'guide' ? 'selected' : ''}>学習ガイド</option><option value="original-note" ${ui.search.kind === 'original-note' ? 'selected' : ''}>独自の日本語節別ノート</option><option value="deep-lesson" ${ui.search.kind === 'deep-lesson' ? 'selected' : ''}>独立発展日本語講義</option><option value="question" ${ui.search.kind === 'question' ? 'selected' : ''}>問題・解説</option><option value="chapter-problem" ${ui.search.kind === 'chapter-problem' ? 'selected' : ''}>章末問題</option><option value="chapter-reference" ${ui.search.kind === 'chapter-reference' ? 'selected' : ''}>参考文献</option><option value="memo" ${ui.search.kind === 'memo' ? 'selected' : ''}>メモ・しおり</option></select></label><label>章<select name="chapter"><option value="all">すべての章</option>${book.chapters.map(ch => `<option value="${ch.id}" ${ui.search.chapter === ch.id ? 'selected' : ''}>第${ch.id.slice(2)}章 ${escapeHTML(ch.title)}</option>`).join('')}<option value="supplement" ${ui.search.chapter === 'supplement' ? 'selected' : ''}>補足説明</option></select></label><label>分野<select name="field"><option value="all">すべての分野</option>${[...new Set(buildSearchIndex().map(e=>e.field).filter(Boolean))].map(field=>`<option value="${escapeHTML(field)}" ${ui.search.field===field?'selected':''}>${escapeHTML(field)}</option>`).join('')}</select></label><span class="search-hint">日本語の一部だけでも検索できます</span></div>
     </form>
     <section class="search-results"><div class="results-heading"><h2>${ui.search.query ? `「${escapeHTML(ui.search.query)}」の検索結果` : '検索結果'}</h2>${ui.search.query ? `<span role="status" aria-live="polite">${results.length}件</span>` : ''}</div>
-      ${!ui.search.query ? `<div class="empty-state"><span class="empty-mark">⌕</span><h3>見つけたい言葉を入力してください</h3><p>原本の節見出し、独立学習ガイド、用語、問題、保存したメモを検索できます。</p></div>` : !results.length ? `<div class="empty-state"><span class="empty-mark">…</span><h3>一致する内容がありません</h3><p>別の言葉や短い表現で検索してみてください。未翻訳本文は検索対象に含まれません。</p></div>` : `<div class="result-list">${shownResults.map(entry => { const snippet = searchSnippet(entry.text, ui.search.query); return `<article class="result-card"><div class="result-meta">${statusPill(entry.kindLabel, entry.kind === 'book' ? 'blue' : entry.kind === 'memo' ? 'amber' : 'green')}<span>${escapeHTML(entry.chapterTitle || '')}</span></div><h3><button type="button" class="result-link" data-search-target='${escapeHTML(JSON.stringify(entry.target))}'>${highlight(entry.title, ui.search.query)}</button></h3><p>${renderTermLinksFast(snippet, glossaryMatcher(), { limit: 3, highlights: searchRanges(snippet, ui.search.query) })}</p><small>${escapeHTML(entry.source)}</small></article>`; }).join('')}</div>${results.length>shownResults.length?`<div class="search-more"><p aria-live="polite">全${results.length}件中 ${shownResults.length}件を表示しています。</p><button type="button" class="button secondary" data-action="search-more">もっと見る（次の100件）</button></div>`:''}`}
+      ${ui.search.query && ui.searchExtrasPending ? '<p class="search-extras-note" role="status">章末問題・参考文献も読み込んで検索しています…</p>' : ''}
+      ${!ui.search.query ? `<div class="empty-state"><span class="empty-mark">⌕</span><h3>見つけたい言葉を入力してください</h3><p>原本の節見出し、独立学習ガイド、用語、問題、章末問題・参考文献、保存したメモを検索できます。</p></div>` : !results.length && !ui.searchExtrasPending ? `<div class="empty-state"><span class="empty-mark">…</span><h3>一致する内容がありません</h3><p>別の言葉や短い表現で検索してみてください。未翻訳本文は検索対象に含まれません。</p></div>` : !results.length ? '' : `<div class="result-list">${shownResults.map(entry => { const snippet = searchSnippet(entry.text, ui.search.query); return `<article class="result-card"><div class="result-meta">${statusPill(entry.kindLabel, entry.kind === 'book' ? 'blue' : entry.kind === 'memo' ? 'amber' : 'green')}<span>${escapeHTML(entry.chapterTitle || '')}</span></div><h3><button type="button" class="result-link" data-search-target='${escapeHTML(JSON.stringify(entry.target))}'>${highlight(entry.title, ui.search.query)}</button></h3><p>${renderTermLinksFast(snippet, glossaryMatcher(), { limit: 3, highlights: searchRanges(snippet, ui.search.query) })}</p><small>${escapeHTML(entry.source)}</small></article>`; }).join('')}</div>${results.length>shownResults.length?`<div class="search-more"><p aria-live="polite">全${results.length}件中 ${shownResults.length}件を表示しています。</p><button type="button" class="button secondary" data-action="search-more">もっと見る（次の100件）</button></div>`:''}`}
     </section>`;
 }
 
@@ -907,19 +1169,88 @@ function renderGlossary() {
     // the article keeps id="term-<id>", and jump handlers add the id to
     // ui.expandedTerms so the target arrives already expanded.
     const expanded = ui.expandedTerms.has(term.id);
+    const bookmarked = state.termBookmarks.includes(term.id);
     const summary = language === 'en' ? (term.meaningEn || term.brief || term.meaning) : (term.brief || term.meaning);
     const summaryLanguage = language === 'en' && term.meaningEn ? 'en' : 'ja';
     // The glossary's own prose links onward to other terms (never to the
     // term itself), via the shared compiled matcher so all 504 entries stay
     // affordable. Unit and formula lines stay plain, as in the term sheet.
     const linkedBody = (value, limit) => renderTermLinksFast(value, glossaryMatcher(), { limit, excludeId: term.id });
-    return `<article class="term-card term-row surface-card" id="term-${escapeHTML(term.id)}" lang="ja"><div class="term-heading"><h2 lang="${primaryLanguage}">${escapeHTML(primary)}</h2>${secondary?`<span lang="${primaryLanguage==='en'?'ja':'en'}">${escapeHTML(secondary)}</span>`:''}<button type="button" class="button secondary term-toggle" data-action="toggle-term" data-term-toggle="${escapeHTML(term.id)}" aria-expanded="${expanded}" aria-controls="term-body-${escapeHTML(term.id)}">${expanded ? '閉じる' : '詳しく見る'}</button></div><p class="term-brief" lang="${summaryLanguage}">${linkedBody(summary, 3)}</p><div class="term-body" id="term-body-${escapeHTML(term.id)}" ${expanded ? '' : 'hidden'}><p lang="${meaningLanguage}">${linkedBody(meaning, 4)}</p>${term.beginner&&term.beginner!==term.meaning&&term.beginner!==term.detail?`<p class="term-beginner">${linkedBody(term.beginner, 4)}</p>`:''}${term.detail&&term.detail!==term.meaning?`<details class="term-full"><summary>詳しい意味と使い方</summary><p>${linkedBody(term.detail, 4)}</p></details>`:''}${term.unit?`<p class="term-unit"><strong>単位：</strong>${escapeHTML(term.unit)}</p>`:''}${term.formula?`<p class="term-formula"><strong>式：</strong>${escapeHTML(term.formula)}</p>`:''}${term.aliases?.length?`<small>別名・表記：${escapeHTML(term.aliases.join('・'))}</small>`:''}${renderTermExample(term, [], glossaryMatcher())}<div class="term-source">${sourceLabel(term.source)}</div>${reviewTag}${sourceLink}${renderTermLearningLinks(term)}${questionLinks}</div></article>`;
+    return `<article class="term-card term-row surface-card" id="term-${escapeHTML(term.id)}" lang="ja"><div class="term-heading"><h2 lang="${primaryLanguage}">${escapeHTML(primary)}</h2>${secondary?`<span lang="${primaryLanguage==='en'?'ja':'en'}">${escapeHTML(secondary)}</span>`:''}<button type="button" class="icon-button term-bookmark ${bookmarked ? 'is-bookmarked' : ''}" data-term-bookmark="${escapeHTML(term.id)}" aria-label="${bookmarked ? '用語のブックマークを外す' : '用語をブックマーク'}" aria-pressed="${bookmarked}">${bookmarked ? '★' : '☆'}</button><button type="button" class="button secondary term-toggle" data-action="toggle-term" data-term-toggle="${escapeHTML(term.id)}" aria-expanded="${expanded}" aria-controls="term-body-${escapeHTML(term.id)}">${expanded ? '閉じる' : '詳しく見る'}</button></div><p class="term-brief" lang="${summaryLanguage}">${linkedBody(summary, 3)}</p><div class="term-body" id="term-body-${escapeHTML(term.id)}" ${expanded ? '' : 'hidden'}><p lang="${meaningLanguage}">${linkedBody(meaning, 4)}</p>${term.beginner&&term.beginner!==term.meaning&&term.beginner!==term.detail?`<p class="term-beginner">${linkedBody(term.beginner, 4)}</p>`:''}${term.detail&&term.detail!==term.meaning?`<details class="term-full"><summary>詳しい意味と使い方</summary><p>${linkedBody(term.detail, 4)}</p></details>`:''}${term.unit?`<p class="term-unit"><strong>単位：</strong>${escapeHTML(term.unit)}</p>`:''}${term.formula?`<p class="term-formula"><strong>式：</strong>${escapeHTML(term.formula)}</p>`:''}${term.aliases?.length?`<small>別名・表記：${escapeHTML(term.aliases.join('・'))}</small>`:''}${renderTermExample(term, [], glossaryMatcher())}<div class="term-source">${sourceLabel(term.source)}</div>${reviewTag}${sourceLink}${renderTermLearningLinks(term)}${questionLinks}</div></article>`;
   }).join('') || '<div class="empty-state"><p>一致する用語がありません。</p></div>';
+  const mode = state.flashcards.mode === 'cards' ? 'cards' : 'list';
   return `${pageHeading('用語集', '用語集', '')}
     <div class="reader-toolbar glossary-language-toolbar"><div class="language-toggle" role="group" aria-label="用語の表示言語"><button type="button" class="${language === 'ja' ? 'selected' : ''}" data-language="ja" aria-pressed="${language === 'ja'}">日本語</button><button type="button" class="${language === 'en' ? 'selected' : ''}" data-language="en" aria-pressed="${language === 'en'}">英語</button></div><span class="language-note">${language === 'ja' ? '日本語の用語名' : '英語名を優先・説明は収録言語で表示'}</span></div>
-    <div class="glossary-search surface-card"><label for="glossary-query">用語を探す</label><input id="glossary-query" type="search" value="${escapeHTML(query)}" placeholder="用語や英語名を入力"/></div>
-    <div class="glossary-grid">${termCards}</div>
+    <div class="glossary-mode-row"><div class="language-toggle" role="group" aria-label="用語集の表示方法"><button type="button" class="${mode === 'list' ? 'selected' : ''}" data-action="glossary-mode" data-mode="list" aria-pressed="${mode === 'list'}">通常表示</button><button type="button" class="${mode === 'cards' ? 'selected' : ''}" data-action="glossary-mode" data-mode="cards" aria-pressed="${mode === 'cards'}">単語帳</button></div></div>
+    ${mode === 'cards' ? renderFlashcards(language) : `<div class="glossary-search surface-card"><label for="glossary-query">用語を探す</label><input id="glossary-query" type="search" value="${escapeHTML(query)}" placeholder="用語や英語名を入力"/></div>
+    <div class="glossary-grid">${termCards}</div>`}
     <div class="notice-card"><span class="notice-icon">i</span><p>用語集は全${allSections().length}節の収録教材（独自日本語ノート・発展教材）をもとに作成しています。原書の翻訳本文は未収録です。</p></div>`;
+}
+
+function currentFlashcardDeck() {
+  return buildFlashcardDeck(glossary || [], state.flashcards, state.termBookmarks);
+}
+
+function renderFlashcards(language) {
+  const prefs = state.flashcards;
+  const all = glossary || [];
+  const deck = currentFlashcardDeck();
+  const total = deck.length;
+  const index = clampFlashcardIndex(prefs.index, total);
+  const chapters = flashcardChapters(all);
+  const categories = flashcardCategories(all);
+  const controls = `<div class="flash-controls surface-card">
+    <label>範囲<select name="flash-scope"><option value="all" ${prefs.scope === 'all' ? 'selected' : ''}>すべての用語</option><option value="bookmarks" ${prefs.scope === 'bookmarks' ? 'selected' : ''}>ブックマークのみ</option></select></label>
+    <label>章<select name="flash-chapter"><option value="all" ${prefs.chapter === 'all' ? 'selected' : ''}>すべての章</option>${chapters.map(chapter => `<option value="${chapter}" ${prefs.chapter === String(chapter) ? 'selected' : ''}>第${chapter}章</option>`).join('')}</select></label>
+    <label>分野<select name="flash-category"><option value="all" ${prefs.category === 'all' ? 'selected' : ''}>すべての分野</option>${categories.map(category => `<option value="${escapeHTML(category)}" ${prefs.category === category ? 'selected' : ''}>${escapeHTML(category)}</option>`).join('')}</select></label>
+    <label>並び順<select name="flash-sort"><option value="default" ${prefs.sort === 'default' ? 'selected' : ''}>標準順</option><option value="kana" ${prefs.sort === 'kana' ? 'selected' : ''}>五十音順</option><option value="section" ${prefs.sort === 'section' ? 'selected' : ''}>章・分野順</option></select></label>
+    <label class="flash-check"><input type="checkbox" name="flash-back-first" ${prefs.backFirst ? 'checked' : ''}/>裏から表示</label>
+    <button type="button" class="button secondary" data-action="flash-shuffle" ${total ? '' : 'disabled'}>シャッフル</button>
+    ${prefs.order ? '<button type="button" class="text-button" data-action="flash-reset-order">並びを戻す</button>' : ''}
+  </div>`;
+  if (!total) {
+    if (prefs.scope === 'bookmarks' && !state.termBookmarks.length) {
+      return `${controls}<div class="empty-state"><span class="empty-mark">☆</span><h3>ブックマークした用語がありません</h3><p>用語の☆を押すと、ブックマークした用語だけの単語帳を回せます。</p><button type="button" class="button secondary" data-action="flash-scope-all">すべての用語で学習する</button></div>`;
+    }
+    return `${controls}<div class="empty-state"><span class="empty-mark">…</span><h3>条件に合う用語がありません</h3><p>章や分野の絞り込みを変えてください。</p><button type="button" class="button secondary" data-action="flash-clear-filters">絞り込みを解除する</button></div>`;
+  }
+  const term = deck[index];
+  const primary = language === 'en' ? (term.en || term.ja) : term.ja;
+  const secondary = language === 'en' ? term.ja : term.en;
+  const primaryLanguage = language === 'en' && term.en ? 'en' : 'ja';
+  const meaning = language === 'en' ? (term.meaningEn || term.meaning) : term.meaning;
+  const meaningLanguage = language === 'en' && term.meaningEn ? 'en' : 'ja';
+  const summary = language === 'en' ? (term.meaningEn || term.brief || term.meaning) : (term.brief || term.meaning);
+  const summaryLanguage = language === 'en' && term.meaningEn ? 'en' : 'ja';
+  const linkedBody = (value, limit) => renderTermLinksFast(value, glossaryMatcher(), { limit, excludeId: term.id });
+  const bookmarked = state.termBookmarks.includes(term.id);
+  const termChapterList = [...termChapters(term)].sort((a, b) => a - b);
+  const meta = `${termChapterList.length ? `第${termChapterList[0]}章 · ` : ''}${escapeHTML(term.category || '')}`;
+  const face = prefs.flipped
+    ? `<div class="flash-face flash-back" data-action="flash-flip" role="button" tabindex="0" aria-label="${escapeHTML(primary)}の用語名に戻る"><div class="flash-scroll"><p class="flash-brief" lang="${summaryLanguage}">${linkedBody(summary, 3)}</p><p lang="${meaningLanguage}">${linkedBody(meaning, 4)}</p>${term.beginner && term.beginner !== term.meaning && term.beginner !== term.detail ? `<p class="term-beginner">${linkedBody(term.beginner, 4)}</p>` : ''}${term.detail && term.detail !== term.meaning ? `<details class="term-full"><summary>詳しい意味と使い方</summary><p>${linkedBody(term.detail, 4)}</p></details>` : ''}${term.unit ? `<p class="term-unit"><strong>単位：</strong>${escapeHTML(term.unit)}</p>` : ''}${term.formula ? `<p class="term-formula"><strong>式：</strong>${escapeHTML(term.formula)}</p>` : ''}${term.aliases?.length ? `<small>別名・表記：${escapeHTML(term.aliases.join('・'))}</small>` : ''}${renderTermExample(term, [], glossaryMatcher())}<div class="term-source">${sourceLabel(term.source)}</div></div><p class="flash-flip-hint">押すと表に戻ります</p></div>`
+    : `<div class="flash-face flash-front" data-action="flash-flip" role="button" tabindex="0" aria-label="${escapeHTML(primary)}の説明を表示"><h2 lang="${primaryLanguage}">${escapeHTML(primary)}</h2>${secondary ? `<p class="flash-secondary" lang="${primaryLanguage === 'en' ? 'ja' : 'en'}">${escapeHTML(secondary)}</p>` : ''}<p class="flash-flip-hint">押すと裏返ります</p></div>`;
+  return `${controls}
+  <div class="flash-stage">
+    <div class="flash-progress"><span class="flash-count" aria-live="polite">${index + 1} / ${total}</span><div class="flash-bar" role="progressbar" aria-label="単語帳の進捗" aria-valuemin="1" aria-valuemax="${total}" aria-valuenow="${index + 1}"><i style="width:${((index + 1) / total * 100).toFixed(1)}%"></i></div></div>
+    <article class="flash-card surface-card">
+      <div class="flash-card-head"><span class="flash-meta">${meta}</span><span class="flash-side">${prefs.flipped ? '裏' : '表'}</span><button type="button" class="icon-button term-bookmark ${bookmarked ? 'is-bookmarked' : ''}" data-term-bookmark="${escapeHTML(term.id)}" aria-label="${bookmarked ? '用語のブックマークを外す' : '用語をブックマーク'}" aria-pressed="${bookmarked}">${bookmarked ? '★' : '☆'}</button></div>
+      ${face}
+    </article>
+    <div class="flash-nav"><button type="button" class="button secondary" data-action="flash-prev" ${index === 0 ? 'disabled' : ''}>← 前へ</button><button type="button" class="button primary" data-action="flash-flip">裏返す</button><button type="button" class="button secondary" data-action="flash-next" ${index >= total - 1 ? 'disabled' : ''}>次へ →</button></div>
+  </div>`;
+}
+
+function moveFlashcard(delta) {
+  const prefs = state.flashcards, deck = currentFlashcardDeck();
+  const next = clampFlashcardIndex((prefs.index || 0) + delta, deck.length);
+  if (next === prefs.index) return;
+  prefs.index = next; prefs.flipped = prefs.backFirst; saveState(); render();
+  root.querySelector('.flash-face')?.focus();
+}
+
+function flipFlashcard() {
+  state.flashcards.flipped = !state.flashcards.flipped; saveState(); render();
+  root.querySelector('.flash-face')?.focus();
 }
 
 function searchNow(form) {
@@ -928,6 +1259,9 @@ function searchNow(form) {
   ui.searchResults=searchEntries(buildSearchIndex(),ui.search);
   ui.searchLimit=100;
   render();
+  // Chapter-end files are fetched on demand; when they arrive, the results
+  // are recomputed so chapter problems and references join the same list.
+  ensureChapterExtrasForSearch();
 }
 function renderSettings() {
   const sections=allSections(), readable=sections.filter(sectionIsTranslated);
@@ -1624,6 +1958,18 @@ function onClick(event) {
     document.querySelector(`[data-language="${languageButton.dataset.language}"]`)?.focus();
     return;
   }
+  const extrasTrigger = event.target.closest('[data-chapter-extras]');
+  if (extrasTrigger) {
+    event.preventDefault();
+    openChapterExtras(extrasTrigger.dataset.chapterExtras);
+    return;
+  }
+  const appendixTrigger = event.target.closest('[data-appendix-references]');
+  if (appendixTrigger) {
+    event.preventDefault();
+    openAppendixReferences(appendixTrigger.dataset.appendixReferences);
+    return;
+  }
   const sectionTrigger = event.target.closest('[data-section]');
   if (sectionTrigger) {
     event.preventDefault();
@@ -1654,7 +2000,8 @@ function onClick(event) {
   const short = event.target.closest('[data-short-session]'); if (short) { event.preventDefault(); startQuickSession(Number(short.dataset.shortSession)); return; }
   const startQuestion = event.target.closest('[data-start-question]'); if (startQuestion) { event.preventDefault(); startQuiz({ mode: 'single', questionId: startQuestion.dataset.startQuestion, count: 1 }); return; }
   const startIds = event.target.closest('[data-start-ids]'); if (startIds) { event.preventDefault(); try { startQuiz({ mode: 'wrong', questionIds: JSON.parse(startIds.dataset.startIds), count: 8 }); } catch { showStatus('問題セットを読み込めませんでした。'); } return; }
-  const target = event.target.closest('[data-search-target]'); if (target) { event.preventDefault(); try { const item=JSON.parse(target.dataset.searchTarget); if (item.section) ui.readerSection=item.section; if (item.language && ['ja','en'].includes(item.language)) { state.settings.contentLanguage=item.language; saveState(); } if (item.question) { startQuiz({ mode:'single', questionId:item.question, count:1 }); return; } if(item.guideId&&GUIDE_SECTIONS.some(g=>g.id===item.guideId)){location.hash='#guide/'+item.guideId;return;} if (item.term) { ui.glossaryQuery=''; ui.expandedTerms.add(item.term); setRoute('glossary'); setTimeout(()=>document.getElementById(`term-${item.term}`)?.scrollIntoView({behavior:'smooth',block:'center'}),80); return; } if(item.route==='reader'&&item.section){openReader(item.section,{...item,query:ui.search.query});return;} if (item.route) setRoute(item.route); } catch { showStatus('検索先を開けませんでした。'); } return; }
+  const target = event.target.closest('[data-search-target]'); if (target) { event.preventDefault(); try { const item=JSON.parse(target.dataset.searchTarget); if (item.section) ui.readerSection=item.section; if (item.language && ['ja','en'].includes(item.language)) { state.settings.contentLanguage=item.language; saveState(); } if (item.question) { startQuiz({ mode:'single', questionId:item.question, count:1 }); return; } if(item.guideId&&GUIDE_SECTIONS.some(g=>g.id===item.guideId)){location.hash='#guide/'+item.guideId;return;} if (item.term) { ui.glossaryQuery=''; ui.expandedTerms.add(item.term); setRoute('glossary'); setTimeout(()=>document.getElementById(`term-${item.term}`)?.scrollIntoView({behavior:'smooth',block:'center'}),80); return; } if (item.chapterExtras) { ui.extrasFocus={chapter:item.chapterExtras,entryId:item.entryId}; openChapterExtras(item.chapterExtras); return; } if(item.route==='reader'&&item.section){openReader(item.section,{...item,query:ui.search.query});return;} if (item.route) setRoute(item.route); } catch { showStatus('検索先を開けませんでした。'); } return; }
+  const termBookmarkToggle = event.target.closest('[data-term-bookmark]'); if (termBookmarkToggle) { const id=termBookmarkToggle.dataset.termBookmark; state.termBookmarks = state.termBookmarks.includes(id) ? state.termBookmarks.filter(item=>item!==id) : [...state.termBookmarks,id]; const saved=saveState(); render(); if(state.flashcards.mode==='cards')root.querySelector('.flash-card [data-term-bookmark]')?.focus(); showStatus(saved?(state.termBookmarks.includes(id) ? '用語をブックマークしました。' : '用語ブックマークを外しました。'):'用語ブックマークを端末に保存できませんでした。JSONを書き出してください。'); return; }
   const bookmarkToggle = event.target.closest('[data-question-bookmark]'); if (bookmarkToggle) { const id=bookmarkToggle.dataset.questionBookmark; state.questionBookmarks = state.questionBookmarks.includes(id) ? state.questionBookmarks.filter(item=>item!==id) : [...state.questionBookmarks,id]; const saved=saveState(); render(); showStatus(saved?(state.questionBookmarks.includes(id) ? '問題をブックマークしました。' : '問題ブックマークを外しました。'):'問題ブックマークを端末に保存できませんでした。JSONを書き出してください。'); return; }
   const deleteBookmark = event.target.closest('[data-delete-bookmark]'); if (deleteBookmark) { state.bookmarks=state.bookmarks.filter(item=>item.id!==deleteBookmark.dataset.deleteBookmark); saveState(); render(); return; }
   const editNote=event.target.closest('[data-edit-note]');if(editNote){ui.noteEditId=editNote.dataset.editNote;render();document.querySelector('#reader-note-form textarea')?.focus();return;}
@@ -1670,7 +2017,19 @@ function onClick(event) {
   else if (action === 'toggle-sim-picker') { ui.simPickerOpen=!ui.simPickerOpen; render(); if(ui.simPickerOpen)root.querySelector(`[role="tab"][data-sim-mode="${ui.simMode}"]`)?.focus(); else root.querySelector('[data-action="toggle-sim-picker"]')?.focus(); }
   else if (action === 'toggle-question-bank') { ui.bankOpen=!ui.bankOpen; render(); root.querySelector('[data-action="toggle-question-bank"]')?.focus(); }
   else if (action === 'toggle-section-status') { ui.statusOpen=!ui.statusOpen; render(); root.querySelector('[data-action="toggle-section-status"]')?.focus(); }
+  else if (action === 'toggle-chapter-extras') { const chapterId=actionButton.dataset.chapter; if(ui.extrasChapter===chapterId){ui.extrasChapter='';if(ui.extrasFocus?.chapter===chapterId)ui.extrasFocus=null;render();} else {ui.extrasChapter=chapterId;loadChapterProblems(chapterId);render();} root.querySelector('[data-action="toggle-chapter-extras"]')?.focus(); }
+  else if (action === 'retry-chapter-extras') { const chapterId=actionButton.dataset.chapter; chapterProblemsCache.delete(chapterId); loadChapterProblems(chapterId); render(); }
+  else if (action === 'toggle-appendix-references') { const appendixId=actionButton.dataset.appendix; if(ui.appendixRefs===appendixId){ui.appendixRefs='';render(); root.querySelector(`[data-appendix-references="${appendixId}"]`)?.focus();} else {ui.appendixRefs=appendixId;loadAppendixReferences(appendixId);render();} }
+  else if (action === 'retry-appendix-references') { const appendixId=actionButton.dataset.appendix; appendixReferencesCache.delete(appendixId); loadAppendixReferences(appendixId); render(); }
   else if (action === 'toggle-term') { const id=actionButton.dataset.termToggle; if(id){ if(ui.expandedTerms.has(id))ui.expandedTerms.delete(id); else ui.expandedTerms.add(id); render(); root.querySelector(`[data-term-toggle="${id}"]`)?.focus(); } }
+  else if (action === 'glossary-mode') { const m=actionButton.dataset.mode; if(m==='list'||m==='cards'){ state.flashcards.mode=m; saveState(); render(); root.querySelector(`[data-action="glossary-mode"][data-mode="${m}"]`)?.focus(); } }
+  else if (action === 'flash-flip') { if(actionButton.classList.contains('flash-face')&&event.target.closest('a,button,summary,details,input,select,textarea,[data-term-id]'))return; flipFlashcard(); }
+  else if (action === 'flash-prev') moveFlashcard(-1);
+  else if (action === 'flash-next') moveFlashcard(1);
+  else if (action === 'flash-shuffle') { const sorted=buildFlashcardDeck(glossary||[], {...state.flashcards, order:null}, state.termBookmarks); if(sorted.length){ state.flashcards.order=shuffledOrder(sorted.map(t=>t.id)); state.flashcards.index=0; state.flashcards.flipped=state.flashcards.backFirst; const saved=saveState(); render(); root.querySelector('[data-action="flash-shuffle"]')?.focus(); showStatus(saved?'単語帳の並びをシャッフルしました。':'シャッフルを端末に保存できませんでした。'); } }
+  else if (action === 'flash-reset-order') { state.flashcards.order=null; state.flashcards.index=0; state.flashcards.flipped=state.flashcards.backFirst; saveState(); render(); root.querySelector('.flash-face')?.focus(); }
+  else if (action === 'flash-scope-all') { state.flashcards.scope='all'; state.flashcards.index=0; state.flashcards.order=null; state.flashcards.flipped=state.flashcards.backFirst; saveState(); render(); root.querySelector('.flash-face')?.focus(); }
+  else if (action === 'flash-clear-filters') { state.flashcards.chapter='all'; state.flashcards.category='all'; state.flashcards.index=0; state.flashcards.order=null; state.flashcards.flipped=state.flashcards.backFirst; saveState(); render(); root.querySelector('.flash-face')?.focus(); }
   else if (action === 'reader-font-up') { state.settings.fontScale=Math.min(1.4,Number((state.settings.fontScale+0.05).toFixed(2))); saveState(); render(); }
   else if (action === 'reader-font-down') { state.settings.fontScale=Math.max(0.9,Number((state.settings.fontScale-0.05).toFixed(2))); saveState(); render(); }
   else if (action === 'reader-width') { state.settings.width=state.settings.width==='reading'?'wide':'reading'; saveState(); render(); }
@@ -1678,7 +2037,7 @@ function onClick(event) {
   else if (action === 'toggle-read') { state.readSections[ui.readerSection]=!state.readSections[ui.readerSection]; saveState(); render(); }
   else if (action === 'speak') speakSection();
   else if (action === 'stop-speech') stopSpeech();
-  else if (action === 'clear-search') { ui.search.query=''; ui.searchResults=[]; ui.searchLimit=100; render(); document.querySelector('#search-query')?.focus(); }
+  else if (action === 'clear-search') { ui.search.query=''; ui.searchResults=[]; ui.searchLimit=100; ui.searchExtrasPending=false; render(); document.querySelector('#search-query')?.focus(); }
   else if (action === 'search-more') { ui.searchLimit=(ui.searchLimit||100)+100; render(); }
   else if (action === 'reveal-hint') { if (ui.quiz) { const q=getQuestion(ui.quiz.ids[ui.quiz.index]); const max=(q.solutionSteps||q.hints||[]).length; ui.quiz.hintCount=Math.min(max,ui.quiz.hintCount+1);persistQuiz();saveState();render(); } }
   else if (action === 'next-question') moveToNextQuestion();
@@ -1742,6 +2101,11 @@ function onChange(event) {
   else if (target.name === 'theme') { state.settings.theme=target.value; saveState(); render(); }
   else if (target.name === 'fontScale') { state.settings.fontScale=Number(target.value); saveState(); document.documentElement.style.setProperty('--reader-scale',String(state.settings.fontScale)); const label=target.parentElement.querySelector('strong'); if(label)label.textContent=`${Math.round(state.settings.fontScale*100)}%`; }
   else if (target.name === 'lineHeight') { state.settings.lineHeight=Number(target.value); saveState(); document.documentElement.style.setProperty('--reader-line-height',String(state.settings.lineHeight)); const label=target.parentElement.querySelector('strong'); if(label)label.textContent=Number(state.settings.lineHeight).toFixed(1); }
+  else if (target.name === 'flash-scope') { state.flashcards.scope = target.value === 'bookmarks' ? 'bookmarks' : 'all'; state.flashcards.index = 0; state.flashcards.order = null; state.flashcards.flipped = state.flashcards.backFirst; saveState(); render(); document.querySelector('select[name="flash-scope"]')?.focus(); }
+  else if (target.name === 'flash-chapter') { state.flashcards.chapter = target.value; state.flashcards.index = 0; state.flashcards.order = null; state.flashcards.flipped = state.flashcards.backFirst; saveState(); render(); document.querySelector('select[name="flash-chapter"]')?.focus(); }
+  else if (target.name === 'flash-category') { state.flashcards.category = target.value; state.flashcards.index = 0; state.flashcards.order = null; state.flashcards.flipped = state.flashcards.backFirst; saveState(); render(); document.querySelector('select[name="flash-category"]')?.focus(); }
+  else if (target.name === 'flash-sort') { state.flashcards.sort = ['default','kana','section'].includes(target.value) ? target.value : 'default'; state.flashcards.index = 0; state.flashcards.order = null; state.flashcards.flipped = state.flashcards.backFirst; saveState(); render(); document.querySelector('select[name="flash-sort"]')?.focus(); }
+  else if (target.name === 'flash-back-first') { state.flashcards.backFirst = target.checked; state.flashcards.flipped = target.checked; saveState(); render(); document.querySelector('input[name="flash-back-first"]')?.focus(); }
   else if (target.dataset.reviewDate) setReviewDate(target.dataset.reviewDate,target.value);
   else if (target.dataset.date) { ui.calendarDate=target.dataset.date; render(); }
   else if (target.id === 'import-file' && target.files?.[0]) readImportFile(target.files[0]);
@@ -1929,6 +2293,13 @@ function onKeyDown(event) {
       if((event.shiftKey&&document.activeElement===first)||(!event.shiftKey&&document.activeElement===last)){event.preventDefault();(event.shiftKey?last:first)?.focus();}
     }
     return;
+  }
+  if (ui.route === 'glossary' && state.flashcards?.mode === 'cards' && !event.altKey && !event.ctrlKey && !event.metaKey) {
+    const target = event.target;
+    if (target && (target.matches?.('input,textarea,select,[contenteditable="true"]') || target.isContentEditable)) return;
+    if (event.key === 'ArrowLeft') { event.preventDefault(); moveFlashcard(-1); return; }
+    if (event.key === 'ArrowRight') { event.preventDefault(); moveFlashcard(1); return; }
+    if ((event.key === ' ' || event.key === 'Enter') && (target === document.body || target?.classList?.contains('flash-face'))) { event.preventDefault(); flipFlashcard(); return; }
   }
   if (ui.route !== 'quiz' || !ui.quiz || event.altKey || event.ctrlKey || event.metaKey) return;
   const target=event.target; if(target && ((target.matches('input,textarea,select,[contenteditable="true"]') && !target.matches('input[name="choice"]')) || target.isContentEditable)) return;

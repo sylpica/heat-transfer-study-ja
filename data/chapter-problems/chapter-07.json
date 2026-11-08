@@ -1,0 +1,1223 @@
+{
+  "chapterId": "chapter-07",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 7 (Forced convection in a variety of configurations): Problems and References — Japanese translation",
+  "bookPages": "399–412",
+  "pdfPages": "413–426",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 51,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-7-1",
+        "number": "7.1",
+        "text": "円管内の十分に発達した層流において、量 (−dp/dx)R/(4µ) は平均速度の2倍であることを証明せよ。そのためには、管を通る質量流量を (ρu_av)(面積) と等しくせよ。",
+        "formulaBlocks": [
+          {
+            "expression": "(−dp/dx)R/(4µ) = 2u_av"
+          }
+        ],
+        "bookPage": 399,
+        "endBookPage": 399,
+        "pdfPage": 413,
+        "endPdfPage": 413
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-2",
+        "number": "7.2",
+        "text": "27 °C、1 atm の空気の流れが、内径1 cm の管内で水力学的に十分に発達しており、u_av = 2 m/s である。次の点の後の距離 x の関数として、T_w、q_w、T_b を縮尺どおりプロットせよ。グラフに x_et を示せ。",
+        "items": [
+          "（a）T_w が68.4 °Cに変えられる点",
+          "（b）q_w が378 W/m²に設定される点"
+        ],
+        "bookPage": 399,
+        "endBookPage": 400,
+        "pdfPage": 413,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-3",
+        "number": "7.3",
+        "text": "円管内の十分に発達した層流において C_f = 16/Re_D であることを証明せよ。",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-4",
+        "number": "7.4",
+        "text": "200 °Cの空気が、240 °Cに保たれた外径3 cm の管に垂直に4 m/s で流れる。",
+        "items": [
+          "（a）h を求めよ。",
+          "（b）空気を200 °Cの加圧水で置き換えた場合、同じ Nu_D または同じ Re_D を与える速度はいくらか。",
+          "（c）その水の流れを空気の実験で模擬したい場合、それを行うことに何か問題があるか。"
+        ],
+        "answerHint": "同じ Nu_D に対して u∞ = 0.0156 m/s",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-5",
+        "number": "7.5",
+        "text": "例7.3で計算された h の値を、Dittus-Boelter、Colburn、McAdams、Sieder-Tate の各方程式から計算された値と比較せよ。比較についてコメントせよ。",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-6",
+        "number": "7.6",
+        "text": "局所バルク温度 T_b,local = 10 °Cの水が、内径3 cm の管内を10 m/s で流れる。管壁は70 °Cに保たれ、流れは十分に発達している。h と、着目点における dT_b/dx の局所値を評価せよ。相対粗さ ε/D は0.006である。",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-7",
+        "number": "7.7",
+        "text": "10 °Cの水が、70 °Cの外径3 cm の円柱に垂直に流れる。速度は1 m/s である。h を評価せよ。",
+        "answerHint": "6 kW/m²·K",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-8",
+        "number": "7.8",
+        "text": "例7.8の熱線風速計を考える。熱入力が17.8 W/m で一定であるとし、非圧縮性とみなせる流速（マッハ数0.3未満）について、u∞ 対 T_wire をプロットせよ。",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-9",
+        "number": "7.9",
+        "text": "20 °Cの水が、外径35 mm の管の長さ2 m の部分の上を2 m/s で流れる。60 °Cの水が管内を同じ速度で流れる。管に垂直な流れに対する h と、管内の流れに対する h を、十分に発達した流れとして比較せよ。管が壁厚1.4 mm の銅の場合、総括熱伝達係数はいくらか。3つの熱抵抗のうち最大なのはどれか。",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-10",
+        "number": "7.10",
+        "text": "熱的に十分に発達した NaK の流れが、内径5 cm の管内を u_av = 8 m/s で流れる。流れは層流か乱流か。T_b = 395 °C、T_w = 403 °Cの位置における局所熱伝達係数と熱流束はいくらか。",
+        "bookPage": 400,
+        "endBookPage": 400,
+        "pdfPage": 414,
+        "endPdfPage": 414
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-11",
+        "number": "7.11",
+        "text": "水が5 °Cで滑らかな壁の内径7 cm の管に入り、バルク速度0.86 m/s で流れる。管壁は、外側で凝縮する低圧蒸気によって73 °Cに保たれる。(T_w − T_b)/68 = 0.01 になるまでの管内位置に対して T_b をプロットせよ。入口長さは無視するが、物性の変化は考慮せよ。",
+        "hint": "スプレッドシートを使え。",
+        "bookPage": 400,
+        "endBookPage": 401,
+        "pdfPage": 414,
+        "endPdfPage": 415
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-12",
+        "number": "7.12",
+        "text": "20 °Cの空気が、100 °Cに保たれた外径2 cm の管の大きな管群の上を流れる。空気は管に対して法線から15°ずれた角度で接近する。管配列は千鳥配列で、S_L = 3.5 cm、S_T = 2.8 cm である。空気が管群に入る前の速度が4.3 m/s の場合、最初の管における h と、管群の奥深くの管における h を求めよ。",
+        "answerHint": "h_deep = 136 W/m²·K",
+        "bookPage": 401,
+        "endBookPage": 401,
+        "pdfPage": 415,
+        "endPdfPage": 415
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-13",
+        "number": "7.13",
+        "text": "問題7.11を、5 + ¾(73 − 5) = 56 °Cで評価した単一の h の値を使って、管を熱交換器として扱ってやり直せ。管が交換器として効率的でなくなるのは何メートルの長さだと判断するか。説明せよ。",
+        "bookPage": 401,
+        "endBookPage": 401,
+        "pdfPage": 415,
+        "endPdfPage": 415
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-14",
+        "number": "7.14",
+        "text": "熱伝達の学術誌を探し、熱伝達データの相関式をどれか1つ調べよ。7.7節で概説した基準に従って、その相関式の適用可能性を評価せよ。",
+        "bookPage": 401,
+        "endBookPage": 401,
+        "pdfPage": 415,
+        "endPdfPage": 415
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-15",
+        "number": "7.15",
+        "text": "24 °Cの水が、30 °Cに保たれた滑らかな内径1.5 cm の管内を0.8 m/s で流れる。系は極めて清浄で静かであり、実験室で騒がしいエアコンプレッサーが始動するまで流れは層流のままである。振動によって流れは突然乱流になる。乱流の h の層流の h に対する比を計算せよ。",
+        "answerHint": "h_turb = 4430 W/m²·K",
+        "bookPage": 401,
+        "endBookPage": 401,
+        "pdfPage": 415,
+        "endPdfPage": 415
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-16",
+        "number": "7.16",
+        "text": "実験室の実験で、空気が27 °Cで、77 °Cに保たれた幅12 cm のブラフボディの上を流れる。測定された熱流束は、空気が2 m/s で動くとき646 W/m²、18 m/s のとき3590 W/m²である。第2の試験では、他はすべて同じだが、今度は0.4 m/s の17 °Cの水を使い、q_w = 131,000 W/m²が得られる。第7章の相関式は、このような限られたデータでは、おそらく Nu_L = C·Re^a·Pr^b という形の相関式を作れることを示唆する。定数 C、a、b を見積もれ。これを行う簡単な方法の1つは、データを両対数座標にクロスプロットすることである。",
+        "bookPage": 401,
+        "endBookPage": 401,
+        "pdfPage": 415,
+        "endPdfPage": 415
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-17",
+        "number": "7.17",
+        "text": "1.38 MPa（200 psia）の空気が、内径11 cm のダクト内を12 m/s で流れる。ある位置では、バルク温度は40 °Cで、管壁は268 °Cである。ε/D = 0.002 の場合、h を評価せよ。",
+        "answerHint": "h = 397 W/m²·K",
+        "bookPage": 401,
+        "endBookPage": 401,
+        "pdfPage": 415,
+        "endPdfPage": 415
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-18",
+        "number": "7.18",
+        "text": "円柱状ヒーターを横切る流れにおける h は、Re_D が非常に大きい場合、直径とともにどのように変化するか。",
+        "bookPage": 401,
+        "endBookPage": 402,
+        "pdfPage": 415,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-19",
+        "number": "7.19",
+        "text": "空気が20 °Cで内径0.8 cm の管に入り、平均速度0.8 m/s で流れる。管壁は40 °Cに保たれる。T_b が39 °Cに達するまで T_b(x) をプロットせよ。問題全体を通して [(20 + 40)/2] °Cで評価した物性を使い、最後に h の局所誤差を報告して、定物性の使用に伴う誤差の感覚をつかめ。",
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-20",
+        "number": "7.20",
+        "text": "管流における Re_D を ṁ で表し、この表現が圧縮性管流を扱う際に特に有用でありうる理由を説明せよ。等温の気体流れでは、圧力が下がると Re_D はどのように変化するか。",
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-21",
+        "number": "7.21",
+        "text": "394 °Cの NaK が、長さ1.82 m、外径0.036 m の管に垂直に0.57 m/s で流れる。管は404 °Cに保たれる。h と、管からの熱除去率を求めよ。",
+        "answerHint": "25.3 kW",
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-22",
+        "number": "7.22",
+        "text": "問題3.22で指定された h の値を確かめよ。",
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-23",
+        "number": "7.23",
+        "text": "例7.3で与えられた h の値と、式（7.37）の形の Reynolds-Colburn 類似則を使って得られる値を比較せよ。これらの値は百分率でどれだけ異なるか。",
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-24",
+        "number": "7.24",
+        "text": "自家製の熱交換器は、0.5 m 四方の銅板に、内径1.5 cm の銅管20本をはんだ付けしたものである。上の10本の管は、上面にわたって等間隔で、2辺と平行に並ぶ。下の10本も等間隔だが、上の管に対して90°に走る。この交換器は、上の管を0.48 m/s で流れるメタノールを初めの温度73 °Cから冷却するために使われ、下の管の水は0.91 m/s で流れ、7 °Cで入る。メタノールが出口側のヘッダーで混合されたときの温度はいくらか。この熱交換器はうまく設計されていると思うか。",
+        "answerHint": "T_meth,out ≃ 65 °C",
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-25",
+        "number": "7.25",
+        "text": "連続の式を使って、円管において ∂u/∂x = 0 が半径方向速度 v = 0 を意味することを示せ。また、v = 0 が ∂u/∂x = 0 を意味することも示せ。",
+        "hint": "円柱座標における発散演算子を調べる必要がある。",
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-26",
+        "number": "7.26",
+        "text": "図7.14のデータのばらつきの最大率（パーセント）を報告せよ。ばらつきが最悪の範囲では、流体の流れに何が起きているか。",
+        "figureRefs": [
+          "Fig. 7.14"
+        ],
+        "bookPage": 402,
+        "endBookPage": 402,
+        "pdfPage": 416,
+        "endPdfPage": 416
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-27",
+        "number": "7.27",
+        "text": "27 °Cの水が、内径0.04 m の薄肉銅管内を2.2 m/s で流れる。227 °Cの空気が7.6 m/s でそれを横切って流れる。管壁温度を求めよ。",
+        "answerHint": "T_pipe = 28 °C",
+        "bookPage": 402,
+        "endBookPage": 403,
+        "pdfPage": 416,
+        "endPdfPage": 417
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-28",
+        "number": "7.28",
+        "text": "直径0.02 m の塗装されたばかりのアルミニウム棒が、150 °Cの乾燥炉から引き出され、23 °Cの空気の3 m/s の横流れで冷却される。40 °Cまで冷えて手で扱えるようになるまでどれだけかかるか。",
+        "answerHint": "10.4分",
+        "bookPage": 403,
+        "endBookPage": 403,
+        "pdfPage": 417,
+        "endPdfPage": 417
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-29",
+        "number": "7.29",
+        "text": "20 °Cの空気は、断熱材が役に立ち始めるには、断熱された管を横切ってどの速さ u∞ で流れなければならないか。管は60 °Cで直径6 mm である。断熱材は直径12 mm で、k = 0.08 W/m·K である。（例2.6で議論した、断熱材が最も害になる u∞ を問うているのではないことに注意せよ。）",
+        "answerHint": "5 cm/s",
+        "bookPage": 403,
+        "endBookPage": 403,
+        "pdfPage": 417,
+        "endPdfPage": 417
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-30",
+        "number": "7.30",
+        "text": "37 °Cの水が、97 °Cに保たれた外径6 cm の管を横切って3 m/s で流れる。第2の構成では、37 °Cの水が、97 °Cに保たれた外径6 cm の管の管束を通って平均速度3 m/s で流れる。管束は千鳥配列で、S_T/S_L = 2 である。2つの状況の熱伝達係数を比較せよ。",
+        "bookPage": 403,
+        "endBookPage": 403,
+        "pdfPage": 417,
+        "endPdfPage": 417
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-31",
+        "number": "7.31",
+        "text": "非常に古い空気冷却器は、64 °Cの空気を、u_av = 30 m/s で、十分に発達した状態で、長さ1 m、内径8 cm の滑らかで熱伝導性の高い管内を流れさせて冷却するよう設計されていた。冷媒は、現在は禁止されているフロン12で、大管の外側の周りに等間隔に配置された8本の滑らかな内径1 cm の管の中を、反対方向に u_av = 0.5 m/s で流れていた。フロンは −15 °Cで入り、ほぼ全長にわたって十分に発達していた。溶接が小管と大管の間の完全な熱接触を与え、管壁の伝導抵抗は無視できるとして、出口の空気温度を求めよ。この熱交換器を批判し、より良い設計を提案せよ。",
+        "bookPage": 403,
+        "endBookPage": 403,
+        "pdfPage": 417,
+        "endPdfPage": 417
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-32",
+        "number": "7.32",
+        "text": "図7.13の Giedt のデータから、Re_D = 140,000 で円柱の上を流れる空気について Nu_D を直接計算せよ。結果を適切な相関式および図7.14と比較せよ。",
+        "figureRefs": [
+          "Fig. 7.13",
+          "Fig. 7.14"
+        ],
+        "bookPage": 403,
+        "endBookPage": 403,
+        "pdfPage": 417,
+        "endPdfPage": 417
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-33",
+        "number": "7.33",
+        "text": "時速25マイルの風が、0.25 in.（6.35 mm）の電話線を横切って吹く。それが発するハム音の音程（音名）はいくらか。",
+        "hint": "その音は、多くの成人男性が快適に歌える音域である。",
+        "bookPage": 403,
+        "endBookPage": 403,
+        "pdfPage": 417,
+        "endPdfPage": 417
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-34",
+        "number": "7.34",
+        "text": "厚さ0.2 m の大きなニクロムVのスラブに、内径1 cm の平行な穴が2つ貫通して開けられている。それらの中心は8 cm 離れている。一方は、下方の −13 °Cの貯槽から1.2 m/s の液体 CO₂ を運ぶ。他方は、上方の47 °Cの貯槽から1.9 m/s のメタノールを運ぶ。間にあるニクロムを考慮に入れて、熱伝達率を計算せよ。CO₂ はメタノールによって有意に温められるか。",
+        "hint": "表5.4を思い出せ。",
+        "bookPage": 403,
+        "endBookPage": 404,
+        "pdfPage": 417,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-35",
+        "number": "7.35",
+        "text": "問題4.37で記述された状況を考える。ただし h は分からないものとする。代わりに、棒の上に27 °Cの空気の10 m/s の横流れがあることが分かっているとする。これらの条件の下で問題を解き直せ。",
+        "answerHint": "温度は約11 °C低くなる",
+        "bookPage": 404,
+        "endBookPage": 404,
+        "pdfPage": 418,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-36",
+        "number": "7.36",
+        "text": "物性の分からない液体が、外径40 cm の管を横切って20 m/s で流れる。測定された熱伝達係数は8000 W/m²·K である。Re_D は確かに非常に大きいと確信できる。D が53 cm なら h はいくらか。u∞ が28 m/s なら h はいくらか。",
+        "hint": "問題7.18を解け。",
+        "answerHint": "11.2 kW/m²",
+        "sourceNote": {
+          "ja": "本書に印刷された一部解答の単位は「kW/m²」であり、求める量である熱伝達係数の単位（W/m²·K）の K が欠けているように見える。値は原文どおり保持した。",
+          "en": "The partial answer printed in the book gives the unit as \"kW/m2\"; the quantity asked for is a heat transfer coefficient, whose unit (W/m2 K) appears to be missing the K. The value is preserved as printed."
+        },
+        "bookPage": 404,
+        "endBookPage": 404,
+        "pdfPage": 418,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-37",
+        "number": "7.37",
+        "text": "水が100 °C、4 m/s で、内径6 cm の薄肉管内を流れ、その上に85%マグネシア断熱材が2 cm の層で巻かれている。外側の熱伝達係数は6 W/m²·K で、外側温度は20 °Cである。次を求めよ。",
+        "items": [
+          "（a）内面積に基づく U",
+          "（b）Q（単位長さあたり、W/m）",
+          "（c）断熱材の両側の温度"
+        ],
+        "continuation": "強制対流の熱抵抗はどれほど有意か。",
+        "answerHint": "Q = 47.3 W/m",
+        "bookPage": 404,
+        "endBookPage": 404,
+        "pdfPage": 418,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-38",
+        "number": "7.38",
+        "text": "グリセリンが、20 °Cの混合タンクで水に加えられる。混合物は、一定の3 m の水頭の下で、長さ4 m、内径0.04 m の管を通って排出される。混合物中のグリセリンの割合の関数として、排出速度（m³/hr）をプロットせよ（表A.3を見よ）。",
+        "hint": "管を出るジェットの速度水頭を含めることを忘れるな。",
+        "bookPage": 404,
+        "endBookPage": 404,
+        "pdfPage": 418,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-39",
+        "number": "7.39",
+        "text": "問題7.38の排出管について、グリセリンの割合の関数として h をプロットせよ。小さな温度差とせよ。",
+        "bookPage": 404,
+        "endBookPage": 404,
+        "pdfPage": 418,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-40",
+        "number": "7.40",
+        "text": "Bi が非常に大きいと仮定せずに、問題5.40を解き直せ。",
+        "bookPage": 404,
+        "endBookPage": 404,
+        "pdfPage": 418,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-41",
+        "number": "7.41",
+        "text": "水が24 °Cで内径0.5 cm の管に入る。管壁は30 °Cに保たれる。u_av が0.27 m/s の場合、計算では入口挙動を無視して、入口からの距離に対して T_b をプロットせよ。ただしグラフには入口領域を示せ。",
+        "bookPage": 404,
+        "endBookPage": 404,
+        "pdfPage": 418,
+        "endPdfPage": 418
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-42",
+        "number": "7.42",
+        "text": "辺の長さ a の正方形ダクト内の層流に対する速度分布と摩擦係数を求める数値計算法を考案せよ。N × N の正方形格子を設定し、差分方程式を N = 2、3、4 について手で解け。まず、速度分布は次の方程式の解で与えられることを示せ。ここで ū = 0 は正方形の辺上であり、x̄ = (x/a)、ȳ = (y/a)、ū = u/[(a²/µ)(dp/dz)] と定義する。次に、摩擦係数 f［式（7.34）］が次の式で与えられることを示せ。二重積分は Σ_{i,j=1}^N (ū_{i,j}/N²) と評価できることに注意せよ。",
+        "formulaBlocks": [
+          {
+            "expression": "∂²ū/∂x̄² + ∂²ū/∂ȳ² = 1"
+          },
+          {
+            "expression": "f = −2/{(ρ u_av a/μ) ∬ ū dx̄ dȳ}"
+          }
+        ],
+        "hint": "まず速度分布がその方程式の解であることを示すことから始めよ。",
+        "bookPage": 404,
+        "endBookPage": 405,
+        "pdfPage": 418,
+        "endPdfPage": 419
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-43",
+        "number": "7.43",
+        "text": "15 °C、1 m/s の冷たい空気が水平ダクトに入る。ダクトは薄い亜鉛メッキ鋼板製で、断熱されていない。ダクトの30 m の区間が、30 °Cの湿った空気の中を屋外を通る。ダクトの外側の結露は望ましくないが、ダクト壁が露点温度20 °C以下であれば起こる。",
+        "items": [
+          "（a）ダクトの断面が0.3 m × 0.3 m の正方形で、静止空気中の外側の有効熱伝達係数が5 W/m²·K とする。結露が起こるかどうかを求めよ。",
+          "（b）単一のダクトを、それぞれ直径0.17 m の4本の円形水平ダクトで置き換える。ダクトは鉛直面内で互いに平行で、中心間隔は0.5 m である。各ダクトは厚さ6 cm のグラスファイバー断熱材（k_i = 0.04 W/m·K）の層で包まれ、以前と同じ入口温度と速度で空気を運ぶ。15 m/s の風が円形ダクトの面に垂直に吹く場合、ダクトを出る空気のバルク温度を求めよ。"
+        ],
+        "bookPage": 405,
+        "endBookPage": 405,
+        "pdfPage": 419,
+        "endPdfPage": 419
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-44",
+        "number": "7.44",
+        "text": "X線単色化装置（モノクロメーター）は、広帯域のX線ビームから単一波長のみを反射する鏡である。ビームのエネルギーの99%以上が他の波長で到着し吸収され、単色化装置の表面に高い熱流束を生じる。長さ10 mm、断面3 mm × 3 mm のシリコンブロックででき、6 mm²の細長い楕円形の面積にわたって12.5 W/mm²を吸収する（熱負荷75 W）単色化装置を考える。温度を制御するため、シリコンブロックの中心に開けた円形流路に液体窒素を通すことが提案されている。流路は長さ10 mm、直径1 mm である。LN₂ は80 K、圧力1.6 MPa（T_sat = 111.5 K）で流路に入る。この流路への入口は、同じ直径の長い直通路である。",
+        "items": [
+          "（a）LN₂ のバルク温度上昇が流路の長さにわたって1.5 K 未満になる質量流量の範囲はいくらか。",
+          "（b）あなたの最小流量において、流路内の最大壁温度を見積もれ。第1近似として、シリコンが熱を十分によく伝え、75 W の熱負荷を流路面にわたって一様に分布させるとせよ。流路内で沸騰が起こりうるか。入口長さと物性変化の影響を議論せよ。"
+        ],
+        "bookPage": 405,
+        "endBookPage": 406,
+        "pdfPage": 419,
+        "endPdfPage": 420
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-45",
+        "number": "7.45",
+        "text": "乱流の変動する流体速度は、定温度熱線風速計で測定できる。これは、2本のずっと大きな針の間に支持された長い細い線（通常は白金、直径4 µm、長さ1.25 mm）からなる。針は電子ブリッジ回路に接続され、その回路は線を電気的に加熱しながら、加熱電圧 V_w を素早く調整して、線の電気抵抗 R_w、したがってその温度を一定に保つ。線に散逸される電力 V_w²/R_w は、線の表面から対流で運ばれる。熱損失を解析して、次式が得られることを示せ。ここで u は線に垂直な瞬時の流速である。u は2〜100 m/s の間であり、流体は等温の気体とせよ。定数 A と B は物性、寸法、抵抗に依存し、通常は実験的な校正によって求められる。この結果は King の法則と呼ばれる。",
+        "formulaBlocks": [
+          {
+            "expression": "V_w²/R_w = (T_wire − T_flow)(A + B u^(1/2))"
+          }
+        ],
+        "bookPage": 406,
+        "endBookPage": 406,
+        "pdfPage": 420,
+        "endPdfPage": 420
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-46",
+        "number": "7.46",
+        "text": "オリーブ油が、20 °C、0.3 kg/s でらせんコイルに送り込まれる。コイルは内径1 cm、壁厚1 mm の銅管ででき、直径50 cm の巻きが10回ある。管の全長は17 m である。コイルは50 °Cの水の浴に囲まれ、外部熱伝達係数3000 W/m²·K を与えるよう攪拌される。",
+        "items": [
+          "（a）コイルを出る油のバルク温度を求めよ。",
+          "（b）技術者が、コイルにフィンを付けて出口温度を上げようと提案する。彼の提案は良いものか。説明せよ。"
+        ],
+        "bookPage": 406,
+        "endBookPage": 407,
+        "pdfPage": 420,
+        "endPdfPage": 421
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-47",
+        "number": "7.47",
+        "text": "フィルム製造工程は、ポリマーフィルムの表面に乳剤を噴霧し、次にその温度を上げて塗膜を硬化させる工程を含む。提案された設計では、塗布されたフィルムの連続した帯を空気トンネルに通す。フィルムはトンネルの右側から20 °Cで入り、暖かい空気は左側から60 °Cで入る。フィルム表面は、適切に硬化するために40 °Cに達する必要があるが、55 °Cを超えてはならない。フィルムの幅は70 mm である。フィルムの厚さは150 µm で、速度40 mm/s で動く。塗膜はフィルムと同じ物性を持つとしてよい。長さ0.5 m の空気トンネルは、フィルムと同じ幅で、フィルムの上下にそれぞれ10 mm の高さがあり、全体の高さは20 mm である。トンネル壁は断熱で、表面は明るいアルミニウム（ε ≈ 0.15）である。塗布されたフィルムは次の物性を持つ：k = 0.2 W/m·K、c_p = 1300 J/kg·K、ρ = 1380 kg/m³、ε ≈ 0.9。",
+        "items": [
+          "（a）空気がバルク速度0.5 m/s で入るとする。空気流とフィルムの熱容量率を計算せよ。この情報を使って、トンネルの一方の端から他方の端までの、空気とフィルムのバルク温度分布を定性的にスケッチせよ。",
+          "（b）フィルムの速度を空気のバルク速度と比較せよ。これは、フィルムと空気の間の熱伝達係数を推定する際に使う合理的な単純化を示唆するか。",
+          "（c）フィルムの厚さに基づくビオ数はいくらか。それは何を教えてくれるか。",
+          "（d）今度はフィルムの出口温度を計算せよ。",
+          "（e）空気速度を4 m/s に上げると性能にどう影響するか。結果として得られるフィルムの出口温度を見積もれ。"
+        ],
+        "bookPage": 407,
+        "endBookPage": 407,
+        "pdfPage": 421,
+        "endPdfPage": 421
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-48",
+        "number": "7.48",
+        "text": "（a）円管に対するレイノルズ数が、質量流量を用いて Re_D = 4ṁ/(πµD) と書けることを示せ。（b）この結果が非円形の管には適用されないこと、具体的には Re_{D_h} ≠ 4ṁ/(πµD_h) であることを示せ。",
+        "formulaBlocks": [
+          {
+            "expression": "Re_D = 4ṁ/(πµD)"
+          }
+        ],
+        "bookPage": 407,
+        "endBookPage": 407,
+        "pdfPage": 421,
+        "endPdfPage": 421
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-49",
+        "number": "7.49",
+        "text": "図7.14、図8.3、図8.6、図9.7、図9.13を見よ。各場合について、対応する相関式から最も異なるように見えるデータ点を選び出せ。点と曲線の間の距離を測り、相関式があなたが選んだ各データ点と百分率でどれだけ異なるかを報告せよ。",
+        "figureRefs": [
+          "Fig. 7.14",
+          "Fig. 8.3",
+          "Fig. 8.6",
+          "Fig. 9.7",
+          "Fig. 9.13"
+        ],
+        "bookPage": 407,
+        "endBookPage": 408,
+        "pdfPage": 421,
+        "endPdfPage": 422
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-50",
+        "number": "7.50",
+        "text": "空気が内径10 mm の管内を2 m/s、57 °Cで流れる。流れが十分に発達した位置で、壁温度が27 °Cに下がる。",
+        "items": [
+          "（a）その低下から200 mm 下流におけるバルク温度はいくらか。",
+          "（b）200 mm の管長に沿った熱伝達係数をプロットせよ。同じグラフに、同じ速度と温度で200 mm の長さの平板上における h をプロットせよ。"
+        ],
+        "answerHint": "T_b = 44.3 °C",
+        "bookPage": 408,
+        "endBookPage": 408,
+        "pdfPage": 422,
+        "endPdfPage": 422
+      },
+      {
+        "type": "problem",
+        "id": "problem-7-51",
+        "number": "7.51",
+        "text": "問題2.49（図2.24）の水冷式環状抵抗体を考える。抵抗体は長さ1 m で、9.4 kW を散逸する。水は内管に47 °C、質量流量0.39 kg/s で入る。水は内管を通り、次に方向を反転して外側の環状通路を、内側の流れと向流で流れる。",
+        "items": [
+          "（a）外側通路を出る水のバルク温度を求めよ。",
+          "（b）問題2.49をまだ解いていなければ解け。抵抗体と各水流の間の熱抵抗 R_i と R_o を比較せよ。",
+          "（c）熱抵抗を使って、内側と外側のバルク温度の流れ方向（x方向）の変化に対する微分方程式と、局所的な抵抗体温度の式を立てよ。あなたの方程式を使って、T_{b,o} − T_{b,i} の x の関数としての式を得よ。",
+          "（d）両通路のバルク温度分布と抵抗体の分布を定性的にスケッチせよ。抵抗体とバルク温度の差の大きさと、各流れの全体の温度上昇を議論せよ。抵抗体温度は一方の端から他方の端まで大きく変化するか。",
+          "（e）あなたの上司は、管の内面を等価砂粒粗さ500 µm に粗くするよう提案する。この変更は抵抗体温度を有意に下げるか。",
+          "（f）出口の水圧が1 bar の場合、水は沸騰するか。",
+          "（g）（c）の方程式を解いて T_{b,i}(x) と T_r(x) を求めよ。結果を NTU_o ≡ 1/(ṁc_p R_o) と NTU_i ≡ 1/(ṁc_p R_i) を用いて整理せよ。これらのパラメータの大きさを考えて、T_r が x によらず一定であるという近似を評価せよ。"
+        ],
+        "answerHint": "（a）52.8 °C",
+        "hint": "（f）については問題2.48を見よ。",
+        "figureRefs": [
+          "Fig. 2.24"
+        ],
+        "bookPage": 408,
+        "endBookPage": 409,
+        "pdfPage": 422,
+        "endPdfPage": 423
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 49,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-7-1",
+        "number": "7.1",
+        "authors": "F. M. White",
+        "originalTitle": "Viscous Fluid Flow",
+        "titleJa": "粘性流体の流れ",
+        "publication": "McGraw-Hill Book Company, New York, 1974",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-2",
+        "number": "7.2",
+        "authors": "S. S. Mehendale, A. M. Jacobi, and R. K. Shah",
+        "originalTitle": "Fluid flow and heat transfer at micro- and meso-scales with application to heat exchanger design",
+        "titleJa": "マイクロスケールとメソスケールにおける流体の流れと熱伝達 ― 熱交換器設計への応用",
+        "publication": "Appl. Mech. Revs., 53(7):175–193, 2000",
+        "doi": "10.1115/1.3097347",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-3",
+        "number": "7.3",
+        "authors": "W. M. Kays, M. E. Crawford, and B. Weigand",
+        "originalTitle": "Convective Heat and Mass Transfer",
+        "titleJa": "対流熱・物質伝達",
+        "publication": "McGraw-Hill Book Company, New York, 4th ed., 2005",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-4",
+        "number": "7.4",
+        "authors": "R. K. Shah and M. S. Bhatti",
+        "originalTitle": "Laminar convective heat transfer in ducts",
+        "titleJa": "ダクト内の層流対流熱伝達",
+        "publication": "In S. Kakaç, R. K. Shah, and W. Aung, editors, Handbook of Single-Phase Convective Heat Transfer, Chapter 3. Wiley-Interscience, New York, 1987",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-5",
+        "number": "7.5",
+        "authors": "R. K. Shah and A. L. London",
+        "originalTitle": "Laminar Flow Forced Convection in Ducts",
+        "titleJa": "ダクト内の層流強制対流",
+        "publication": "Academic Press, Inc., New York, 1978. Supplement 1 to the series Advances in Heat Transfer",
+        "doi": "10.1016/C2013-0-06152-X",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-6",
+        "number": "7.6",
+        "authors": "L. Graetz",
+        "originalTitle": "Über die wärmeleitungfähigkeit von flüssigkeiten",
+        "titleJa": "液体の熱伝導性について",
+        "publication": "Ann. Phys., 261(7):337–357, 1885",
+        "doi": "10.1002/andp.18852610702",
+        "url": "https://archive.org/details/bub_gb_qwcAAAAAMAAJ/page/n347",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-7",
+        "number": "7.7",
+        "authors": "S. R. Sellars, M. Tribus, and J. S. Klein",
+        "originalTitle": "Heat transfer to laminar flow in a round tube or a flat plate—the Graetz problem extended",
+        "titleJa": "円管または平板内の層流への熱伝達 ― 拡張されたグレーツ問題",
+        "publication": "Trans. ASME, 78(2):441–448, February 1956",
+        "doi": "10.1115/1.4013701",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-8",
+        "number": "7.8",
+        "authors": "H. D. Baehr and K. Stephan",
+        "originalTitle": "Heat and Mass Transfer",
+        "titleJa": "熱・物質伝達",
+        "publication": "Springer-Verlag, Berlin, 1998",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-9",
+        "number": "7.9",
+        "authors": "M. S. Bhatti and R. K. Shah",
+        "originalTitle": "Turbulent and transition flow convective heat transfer in ducts",
+        "titleJa": "ダクト内の乱流・遷移流の対流熱伝達",
+        "publication": "In S. Kakaç, R. K. Shah, and W. Aung, editors, Handbook of Single-Phase Convective Heat Transfer, Chapter 4. Wiley-Interscience, New York, 1987",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-10",
+        "number": "7.10",
+        "authors": "F. Kreith",
+        "originalTitle": "Principles of Heat Transfer",
+        "titleJa": "熱伝達の原理",
+        "publication": "Intext Press, Inc., New York, 3rd ed., 1973",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-11",
+        "number": "7.11",
+        "authors": "A. P. Colburn",
+        "originalTitle": "A method of correlating forced convection heat transfer data and a comparison with fluid friction",
+        "titleJa": "強制対流熱伝達データを相関させる方法と、流体摩擦との比較",
+        "publication": "Trans. Amer. Inst. Chem. Engrs., 29:174–206, 1933",
+        "noteJa": "doi は IJHMT の1964年の復刻に対するものである。",
+        "noteEn": "The doi is for a 1964 reprint in IJHMT.",
+        "doi": "10.1016/0017-9310(64)90125-5",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-12",
+        "number": "7.12",
+        "authors": "E. C. Koo",
+        "originalTitle": "Mechanisms of isothermal and non-isothermal flow of fluids in pipes",
+        "titleJa": "管内における流体の等温流と非等温流の機構",
+        "publication": "Sc.D. thesis, Massachusetts Institute of Technology, Cambridge, 1932",
+        "url": "http://hdl.handle.net/1721.1/61824",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-13",
+        "number": "7.13",
+        "authors": "L. M. K. Boelter, V. H. Cherry, H. A. Johnson, and R. C. Martinelli",
+        "originalTitle": "Heat Transfer Notes",
+        "titleJa": "熱伝達ノート",
+        "publication": "McGraw-Hill Book Company, New York, 1965",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-14",
+        "number": "7.14",
+        "authors": "W. H. McAdams",
+        "originalTitle": "Heat Transmission",
+        "titleJa": "熱伝達（Heat Transmission）",
+        "publication": "McGraw-Hill, New York, 1933",
+        "bookPage": 409,
+        "pdfPage": 423
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-15",
+        "number": "7.15",
+        "authors": "E. N. Sieder and G. E. Tate",
+        "originalTitle": "Heat transfer and pressure drop of liquids in tubes",
+        "titleJa": "管内における液体の熱伝達と圧力損失",
+        "publication": "Ind. Eng. Chem., 28(12):1429–1435, December 1936",
+        "doi": "10.1021/ie50324a027",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-16",
+        "number": "7.16",
+        "authors": "V. Gnielinski",
+        "originalTitle": "New equations for heat and mass transfer in turbulent pipe and channel flow",
+        "titleJa": "乱流管流と流路流における熱・物質伝達の新しい方程式",
+        "publication": "Int. Chemical Engineering, 16:359–368, 1976",
+        "noteJa": "doi はドイツ語版に対するものである。",
+        "noteEn": "The doi is for the German language version.",
+        "doi": "10.1007/BF02559682",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-17",
+        "number": "7.17",
+        "authors": "B. S. Petukhov",
+        "originalTitle": "Heat transfer and friction in turbulent pipe flow with variable physical properties",
+        "titleJa": "物性が変化する乱流管流における熱伝達と摩擦",
+        "publication": "In T.F. Irvine, Jr. and J. P. Hartnett, editors, Advances in Heat Transfer, Vol. 6, pp. 504–564. Academic Press, Inc., New York, 1970",
+        "doi": "10.1016/S0065-2717(08)70153-9",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-18",
+        "number": "7.18",
+        "authors": "G. K. Filonenko",
+        "originalTitle": "Hydraulic resistance in pipes",
+        "titleJa": "管内の水力抵抗",
+        "publication": "Teploenergetika, 1(4):40–44, 1954",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-19",
+        "number": "7.19",
+        "authors": "J. McGovern",
+        "originalTitle": "Friction factor diagrams for pipe flow",
+        "titleJa": "管流の摩擦係数図",
+        "publication": "Technical note, Dublin Institute of Technology, October 2011",
+        "url": "https://arrow.dit.ie/engschmecart/28/",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-20",
+        "number": "7.20",
+        "authors": "L. F. Moody",
+        "originalTitle": "Friction factors for pipe flow",
+        "titleJa": "管流の摩擦係数",
+        "publication": "Trans. ASME, 66(8):671–684, November 1944",
+        "doi": "10.1115/1.4018140",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-21",
+        "number": "7.21",
+        "authors": "D. M. McEligot",
+        "originalTitle": "Convective heat transfer in internal gas flows with temperature-dependent properties",
+        "titleJa": "物性が温度に依存する内部気体流における対流熱伝達",
+        "publication": "In A. S. Majumdar and R. A. Mashelkar, editors, Advances in Transport Processes, Vol. IV, pp. 113–200. Wiley, New York, 1986",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-22",
+        "number": "7.22",
+        "authors": "M. F. Taylor",
+        "originalTitle": "Prediction of friction and heat-transfer coefficients with large variations in fluid properties",
+        "titleJa": "流体物性の大きな変化を伴う摩擦係数と熱伝達係数の予測",
+        "publication": "Technical Memorandum X-2145, NASA, Washington, D.C., December 1970",
+        "url": "http://hdl.handle.net/2060/19710004556",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-23",
+        "number": "7.23",
+        "authors": "S. E. Haaland",
+        "originalTitle": "Simple and explicit formulas for the friction factor in turbulent pipe flow",
+        "titleJa": "乱流管流の摩擦係数に対する単純で陽な公式",
+        "publication": "J. Fluids Engr., 105(1):89–90, March 1983",
+        "doi": "10.1115/1.3240948",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-24",
+        "number": "7.24",
+        "authors": "T. S. Ravigururajan and A. E. Bergles",
+        "originalTitle": "Development and verification of general correlations for pressure drop and heat transfer in single-phase turbulent flow in enhanced tubes",
+        "titleJa": "伝熱促進管内の単相乱流における圧力損失と熱伝達の一般相関式の開発と検証",
+        "publication": "Exptl. Thermal Fluid Sci., 13:55–70, July 1996",
+        "doi": "10.1016/0894-1777(96)00014-3",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-25",
+        "number": "7.25",
+        "authors": "R. L. Webb",
+        "originalTitle": "Enhancement of single-phase heat transfer",
+        "titleJa": "単相熱伝達の促進",
+        "publication": "In S. Kakaç, R. K. Shah, and W. Aung, editors, Handbook of Single-Phase Convective Heat Transfer, Chapter 17. Wiley-Interscience, New York, 1987",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-26",
+        "number": "7.26",
+        "authors": "C. Amy, D. Budenstein, M. Bagepalli, D. England, F. DeAngelis, G. Wilk, C. Jarrett, C. Kelsall, J. Hirschey, H. Wen, A. Chavan, B. Gilleland, C. Yuan, W. C. Chueh, K. H. Sandhage, Y. Kawajiri, and A. Henry",
+        "originalTitle": "Pumping liquid metal at high temperatures up to 1,673 kelvin",
+        "titleJa": "1,673ケルビンまでの高温における液体金属の送液",
+        "publication": "Nature, 550:199–203, October 2017",
+        "doi": "10.1038/nature24054",
+        "bookPage": 410,
+        "pdfPage": 424
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-27",
+        "number": "7.27",
+        "authors": "C. Amy, H. R. Seyf, M. A. Steiner, D. J. Friedman, and A. Henry",
+        "originalTitle": "Thermal energy grid storage using multi-junction photovoltaics",
+        "titleJa": "多接合太陽電池を用いた熱エネルギーグリッド蓄電",
+        "publication": "Energy Environ. Sci., 12:334–343, 2019",
+        "doi": "10.1039/C8EE02341G",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-28",
+        "number": "7.28",
+        "authors": "B. Lubarsky and S. J. Kaufman",
+        "originalTitle": "Review of experimental investigations of liquid-metal heat transfer",
+        "titleJa": "液体金属熱伝達の実験研究のレビュー",
+        "publication": "Report NACA-TR-1270, NACA Lewis Flight Propulsion Lab., Cleveland, OH, January 1956",
+        "url": "http://hdl.handle.net/2060/19930091001",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-29",
+        "number": "7.29",
+        "authors": "R. N. Lyon, editor",
+        "originalTitle": "Liquid Metals Handbook",
+        "titleJa": "液体金属ハンドブック",
+        "publication": "A.E.C. and Dept. of the Navy, Washington, D.C., 1952",
+        "url": "https://babel.hathitrust.org/cgi/pt?id=umn.31951t002544483",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-30",
+        "number": "7.30",
+        "authors": "R. A. Seban and T. T. Shimazaki",
+        "originalTitle": "Heat transfer to a fluid flowing turbulently in a smooth pipe with walls at a constant temperature",
+        "titleJa": "壁温度一定の滑らかな管内を乱れて流れる流体への熱伝達",
+        "publication": "Trans. ASME, 73(6):803–907, August 1951",
+        "doi": "10.1115/1.4016437",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-31",
+        "number": "7.31",
+        "authors": "E. Skupinski, J. Tortel, and L. Vautrey",
+        "originalTitle": "Determination des coefficients de convection d’un alliage sodium-potassium dans un tube circulaire",
+        "titleJa": "円管内におけるナトリウム–カリウム合金の対流係数の決定",
+        "publication": "Int. J. Heat Mass Transfer, 8(6):937–951, June 1965",
+        "doi": "10.1016/0017-9310(65)90077-3",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-32",
+        "number": "7.32",
+        "authors": "V. I. Subbotin, A. K. Papovyants, P. L. Kirillov, and N. N. Ivanovskii",
+        "originalTitle": "A study of heat transfer to molten sodium in tubes",
+        "titleJa": "管内の溶融ナトリウムへの熱伝達の研究",
+        "publication": "Soviet J. Atomic Energy, 13(4):991–994, June 1963",
+        "doi": "10.1007/BF01480861",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-33",
+        "number": "7.33",
+        "authors": "H. A. Johnson, J. P. Hartnett, and W. J. Clabaugh",
+        "originalTitle": "Heat transfer to molten lead-bismuth eutectic in turbulent pipe flow",
+        "titleJa": "乱流管流における溶融鉛–ビスマス共晶への熱伝達",
+        "publication": "Trans. ASME, 75(6):1191–1198, August 1953",
+        "doi": "10.1115/1.4015579",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-34",
+        "number": "7.34",
+        "authors": "V. I. Subbotin, P. A. Ushakov, B. N. Gabrianovich, V. D. Taranov, and I. P. Sviridenko",
+        "originalTitle": "Heat transfer to liquid metals in round tubes",
+        "titleJa": "円管内の液体金属への熱伝達",
+        "publication": "J. Engineering Physics, 6(4):19–27, 1963",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-35",
+        "number": "7.35",
+        "authors": "J. Pacio, L. Marocco, and T. Wetzel",
+        "originalTitle": "Review of data and correlations for turbulent forced convective heat transfer of liquid metals in pipes",
+        "titleJa": "管内液体金属の乱流強制対流熱伝達のデータと相関式のレビュー",
+        "publication": "Heat Mass Transfer, 51:153–164, 2015",
+        "doi": "10.1007/s00231-014-1392-3",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-36",
+        "number": "7.36",
+        "authors": "D. Taler",
+        "originalTitle": "Semi-empirical heat transfer correlations for turbulent tube flow of liquid metals",
+        "titleJa": "液体金属の乱流管流に対する半経験的熱伝達相関式",
+        "publication": "Int. J. Numerical Methods for Heat & Fluid Flow, 28(1):151–172, 2018",
+        "doi": "10.1108/HFF-09-2017-0367",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-37",
+        "number": "7.37",
+        "authors": "S.-L. Lee",
+        "originalTitle": "Liquid metal heat transfer in turbulent pipe flow with uniform wall heat flux",
+        "titleJa": "一様壁熱流束の乱流管流における液体金属熱伝達",
+        "publication": "Int. J. Heat Mass Transfer, 26(3):349–356, March 1983",
+        "doi": "10.1016/0017-9310(83)90039-X",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-38",
+        "number": "7.38",
+        "authors": "Nuclear Energy Agency",
+        "originalTitle": "Handbook on lead-bismuth eutectic alloy and lead properties, materials compatibility, thermal-hydraulics and technologies",
+        "titleJa": "鉛–ビスマス共晶合金と鉛の物性、材料適合性、熱流動と技術に関するハンドブック",
+        "publication": "NEA No. 7268, Organisation for Economic Co-operation and Development, Paris, August 2015",
+        "url": "https://www.oecd-nea.org/science/pubs/2015/7268-lead-bismuth-2015.pdf",
+        "bookPage": 411,
+        "pdfPage": 425
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-39",
+        "number": "7.39",
+        "authors": "J. H. Lienhard",
+        "originalTitle": "Synopsis of lift, drag, and vortex frequency data for rigid circular cylinders",
+        "titleJa": "剛体円柱の揚力・抗力・渦周波数データの概要",
+        "publication": "Bulletin 300, Wash. State Univ., Pullman, WA, 1966",
+        "url": "http://www.uh.edu/engines/vortexcylinders.pdf",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-40",
+        "number": "7.40",
+        "authors": "W. H. Giedt",
+        "originalTitle": "Investigation of variation of point unit-heat-transfer coefficient around a cylinder normal to an air stream",
+        "titleJa": "気流に垂直な円柱周りの点単位熱伝達係数の変化の研究",
+        "publication": "Trans. ASME, 71(4):375–381, May 1949",
+        "doi": "10.1115/1.4017081",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-41",
+        "number": "7.41",
+        "authors": "S. W. Churchill and M. Bernstein",
+        "originalTitle": "A correlating equation for forced convection from gases and liquids to a circular cylinder in crossflow",
+        "titleJa": "直交流における気体と液体から円柱への強制対流の相関式",
+        "publication": "J. Heat Transfer, 99(2):300–306, May 1977",
+        "doi": "10.1115/1.3450685",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-42",
+        "number": "7.42",
+        "authors": "S. Nakai and T. Okazaki",
+        "originalTitle": "Heat transfer from a horizontal circular wire at small Reynolds and Grashof numbers—1 pure convection",
+        "titleJa": "小さなレイノルズ数とグラスホフ数における水平円形線からの熱伝達 ― 1 純粋対流",
+        "publication": "Int. J. Heat Mass Transfer, 18(3):387–396, March 1975",
+        "doi": "10.1016/0017-9310(75)90028-9",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-43",
+        "number": "7.43",
+        "authors": "A. Žukauskas",
+        "originalTitle": "Heat transfer from tubes in crossflow",
+        "titleJa": "直交流における管からの熱伝達",
+        "publication": "In T.F. Irvine, Jr. and J. P. Hartnett, editors, Advances in Heat Transfer, Vol. 8, pp. 93–160. Academic Press, Inc., New York, 1972",
+        "doi": "10.1016/S0065-2717(08)70038-8",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-44",
+        "number": "7.44",
+        "authors": "A. Žukauskas",
+        "originalTitle": "Heat transfer from tubes in crossflow",
+        "titleJa": "直交流における管からの熱伝達",
+        "publication": "In T. F. Irvine, Jr. and J. P. Hartnett, editors, Advances in Heat Transfer, Vol. 18, pp. 87–159. Academic Press, Inc., New York, 1987",
+        "doi": "10.1016/S0065-2717(08)70118-7",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-45",
+        "number": "7.45",
+        "authors": "S. Kalish and O. E. Dwyer",
+        "originalTitle": "Heat transfer to NaK flowing through unbaffled rod bundles",
+        "titleJa": "バッフルなしロッドバンドルを流れる NaK への熱伝達",
+        "publication": "Int. J. Heat Mass Transfer, 10(11):1533–1558, November 1967",
+        "doi": "10.1016/0017-9310(67)90006-3",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-46",
+        "number": "7.46",
+        "authors": "M. S. El-Genk and T. M. Schriener",
+        "originalTitle": "A review of experimental data and heat transfer correlations for parallel flow of alkali liquid metals and lead-bismuth eutectic in bundles",
+        "titleJa": "バンドル内のアルカリ液体金属と鉛–ビスマス共晶の平行流に関する実験データと熱伝達相関式のレビュー",
+        "publication": "Nucl. Eng. Des., 317:199–219, June 2017",
+        "doi": "10.1016/j.nucengdes.2017.03.028",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-47",
+        "number": "7.47",
+        "authors": "G. F. Hewitt, editor",
+        "originalTitle": "Heat Exchanger Design Handbook 2008",
+        "titleJa": "熱交換器設計ハンドブック 2008",
+        "publication": "Begell House, New York, 2008",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-48",
+        "number": "7.48",
+        "authors": "S. Kakaç, R. K. Shah, and W. Aung, editors",
+        "originalTitle": "Handbook of Single-Phase Convective Heat Transfer",
+        "titleJa": "単相対流熱伝達ハンドブック",
+        "publication": "Wiley-Interscience, New York, 1987",
+        "bookPage": 412,
+        "pdfPage": 426
+      },
+      {
+        "type": "reference",
+        "id": "reference-7-49",
+        "number": "7.49",
+        "authors": "R. L. Webb and N.-H. Kim",
+        "originalTitle": "Principles of Enhanced Heat Transfer",
+        "titleJa": "伝熱促進の原理",
+        "publication": "Taylor & Francis, New York, 2nd ed., 2005",
+        "bookPage": 412,
+        "pdfPage": 426
+      }
+    ]
+  }
+}

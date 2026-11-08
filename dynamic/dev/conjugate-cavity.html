@@ -1,0 +1,27 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>自然対流の共役伝熱（固体壁＋閉キャビティ）の開発検証</title><link rel="stylesheet" href="cavity.css"><style>fieldset{min-width:0}label,select,input{min-width:0}.wide{display:flex}.wide select{flex:1 1 auto;min-width:0}p{overflow-wrap:anywhere}</style></head><body><main>
+<h1>自然対流の共役伝熱（固体壁＋閉キャビティ）の開発検証</h1><p class="notice">開発用・公開承認前。有限厚の固体壁（背面をθ=1に保持）と、その右に接する閉キャビティ（右壁θ=0、上下断熱・全壁滑りなし）を、界面で温度と熱流束が連続する1つの温度場として無次元で解きます。検証済み範囲は厚さ比δ=0.25固定・Ra≤1000・Pr=0.71の体系検証で、それ以外は値を出さず理由を表示します。公開ビルドに含めません。</p>
+<form id="settings"><fieldset><legend>条件：無次元パラメータ（流体の物性を基準に正規化）</legend>
+<label class="wide">検証済みプリセット<select id="preset"><option value="" selected>手入力</option><option value="main">主ケース（Ra=1000、K=0.5、C=2）</option><option value="conduction">伝導のみ（Ra=0、解析解 Q=2/3）</option><option value="source">固体発熱（Ra=0、S=1、解析解 Q=17/24）</option><option value="solid">固体支配（Ra=1000、K=C=0.01）</option><option value="isothermal">等温壁極限（Ra=1000、K=256、C=32）</option></select></label>
+<label>格子数 n（流体 n×n、固体は n/4 列）<select id="grid"><option selected>16</option><option>24</option><option>32</option></select></label>
+<label>Rayleigh数 Ra<input id="rayleigh" type="number" value="1000" min="0" step="any" required></label>
+<label>Prandtl数 Pr<input id="prandtl" type="number" value="0.71" min="0" step="any" required></label>
+<label>熱伝導率比 K = ks/kf<input id="conductivity" type="number" value="0.5" min="0" step="any" required></label>
+<label>体積熱容量比 C = (ρcp)s/(ρcp)f<input id="capacity" type="number" value="2" min="0" step="any" required></label>
+<label>固体の体積発熱 S（無次元）<input id="source" type="number" value="0" min="0" step="any" required></label>
+<label>初期無次元温度 θ0（一様）<input id="initial" type="number" value="0.5" step="any" required></label>
+<button id="apply" type="submit">初期状態から計算</button></fieldset></form>
+<p id="summary">主ケース：Ra=1000、Pr=0.71、K=0.5、C=2、S=0、格子16（固体4列＋流体16列）、δ=0.25、初期θ=0.5一様・静止。</p>
+<section aria-label="時間操作"><label>1コマの無次元時間 Δτ<input id="interval" type="number" value="0.1" min="0.001" max="5" step="any"></label>
+<div class="buttons"><button id="run">再生</button><button id="pause">一時停止・計算取消</button><button id="step">1コマ進める</button><button id="back">1コマ戻す</button><button id="restart">時刻0へ戻す</button><button id="steady">定常まで進める</button></div>
+<p>無次元時刻 <output id="clock">τ = 0.000</output>。再生は計算完了ごとに次のコマへ進み、実時間との同速再生を保証しません。計算はこのページ内で行い、1コマ（Δτ=0.1、格子16）に数秒かかります。格子32は1コマに数十秒かかることがあります。</p>
+<p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p></section>
+<section aria-label="温度場"><p id="legend"></p>
+<figure style="margin:0"><canvas id="field" width="750" height="600" role="img" aria-label="固体壁と流体を1つの場として描いた無次元温度場"></canvas><figcaption>左が固体壁（厚さ0.25H、背面θ=1）、右が流体（右壁θ=0、上下断熱）。白黒の縦線が界面で、温度と熱流束はここで連続です。色は無次元温度θです。</figcaption></figure>
+<pre id="readout"></pre></section>
+<details id="diagnostics"><summary>収支・収束・計算条件</summary><pre id="diagnostic-values"></pre><p>蓄熱は初期状態（θ0一様）からの変化です。積算熱は背面・冷壁・固体の発熱・界面の4つの出入りを段の台形則で積分したもので、固体・流体・全体の3収支の誤差は、蓄熱と出入りの差です。界面熱・界面温度は固体側から流体側へ渡る向きを正とします。実効熱伝達比は界面熱を界面平均温度で割った値、Bi_s はそれに δ/K を掛けた固体側の内部抵抗の指標です。</p></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>固体では C ∂τθs=K∇²θs+S、流体では温度の移流拡散と Boussinesq 浮力を持つ運動量式を解きます。温度は固体＋流体の全領域をセル中心の有限体積で離散化し、面のコンダクタンスは半セルの直列抵抗（調和型）で与えるため、界面に独立の熱伝達率は挿入しません。流体の運動量は MAC 配置の保存形2次差分、圧力は Neumann 問題を多重格子で投影し、時間は SSPRK2 で前進します。背面温度差基準の Ra_nom は、界面温度が非一様な主ケースを等温壁の de Vahl Davis 条件そのものとは扱いません。</p>
+<p>検証の要約（詳細は docs/dynamic/CONJUGATE_MODEL_JS_20261107.md）：主ケースの定常値は Codex の独立プロトタイプ（FVM/P1 照合済み）の記録と、格子16で界面熱が相対差2.06×10⁻¹⁴、界面平均温度が絶対差1.09×10⁻¹⁴まで一致します。伝導のみの場合は解析解（S=0で Q=1/(1+δ/K)、S=1・K=0.5で Q=17/24）に帰着し、K=256 では界面平均温度が 0.99890144 へ近づいて等温壁条件へ帰着します。全ケースで3収支の相対誤差は 3.7×10⁻¹⁴ 以下でした。</p>
+<p>扱わないもの：流体内の孤立加熱体・障害物、δ≠0.25、接触抵抗、物性の温度依存、Pr=0.71以外の体系検証、Ra&gt;1000 の共役、3次元、放射、相変化。範囲外の入力は外挿せず、計算核の理由をそのまま表示して計算しません。定常の宣言は、計算核と同じ判定（Δτ=0.1ごとの全温度の最大変化&lt;10⁻⁷、速度の相対変化&lt;10⁻⁶、界面熱の相対変化&lt;10⁻⁶を連続2区間）を画面側でも満たしたときに限ります。</p>
+<p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="conjugate-cavity-ui.mjs"></script></body></html>

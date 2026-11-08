@@ -28,4 +28,4 @@
 <p>適用範囲は検証済みの範囲だけです：Pr=0.1〜100、Ra_L=10⁴〜10⁹（層流）。乱流域の式(8.13b)、傾斜板・水平板、鉛直円柱、閉空間は扱いません。範囲外は外挿せず、理由を表示して計算しません。一様熱流束では式(8.44b)の適用条件 Nu≳5 を満たさない条件も計算しません。</p>
 <p>検証の要約（詳細は docs/dynamic/NATURAL_CONVECTION_WALL_DEVELOPMENT.md）：相似解は2つの独立な50桁参照（mpmath の射撃法と scipy の solve_bvp）と θ′(0) で 3e-15 まで一致し、Pr=0.72 では −θ′(0)=0.5046341858 です。例題8.1では式(8.13a)の評価値 Nu_L=47.346（印刷値 47.33）に対し相似解は 46.797、例題8.3では式(8.27)の評価値 61.247（印刷値 61.25）です。</p>
 <p>この開発ページは入力と結果をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
-</main><script type="module" src="natural-convection-wall-ui.mjs"></script></body></html>
+</main><script type="module" src="natural-convection-wall-ui.mjs"></script><script type="module" src="sim-guide-natconv-wall.mjs"></script></body></html>

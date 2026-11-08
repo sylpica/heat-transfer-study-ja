@@ -1,6 +1,7 @@
 import {channelInitialTemperature,channelLearningConfigs} from './channel-learning.mjs';
 import {attachChannelJourney} from './channel-learning-ui.mjs';
-import {attachNavigationContext} from './navigation-context.mjs';
+import {attachNavigationContext,attachLaunchContext} from './navigation-context.mjs';
+import {caseLaunchFromSearch} from '../dynamic-navigation.mjs';
 import {Experiment} from './experiment.mjs';import {fieldFrame} from './field-frame.mjs';import {renderCrossSections} from './field-plots.mjs';import {drawTraces} from './trace-plot.mjs';import {attachTermPanel} from './term-panel.mjs';
 const $=id=>document.getElementById(id),fmt=(v,d=4)=>Number.isFinite(v)?v.toFixed(d):'—',number=id=>{if(!$(id).value.trim())throw Error('数値の空欄を入力してください。');const v=Number($(id).value);if(!Number.isFinite(v))throw Error('有限の数値を入力してください。');return v;};
 let journeyUI=null;
@@ -36,9 +37,13 @@ $('conditions').onsubmit=e=>{e.preventDefault();initialize();};$('play').onclick
 for(const id of ['scale','show-grid','section-axis'])$(id).onchange=render;$('section-view').ontoggle=$('velocity-view').ontoggle=render;$('theme').onchange=()=>{document.body.dataset.theme=$('theme').value;render();};matchMedia('(prefers-color-scheme:dark)').addEventListener('change',render);$('mode').onchange=()=>{document.body.dataset.mode=$('mode').value;};$('mode').onchange();$('manual-toggle').onclick=()=>{const open=$('manual').hidden;$('manual').hidden=!open;$('manual-toggle').setAttribute('aria-expanded',String(open));};
 for(const id of ['rho','cp','k','nu'])$(id).oninput=()=>{airSource=false;$('property-source').textContent='手動の一定物性です。出典・単位・温度と圧力の範囲を確認してください。';};$('air-properties').onclick=()=>{for(const [key,value]of Object.entries({rho:1.177,cp:1006,k:.0264,nu:1.575e-5}))$(key).value=value;airSource=true;$('property-source').textContent='空気300 K・101325 Pa、原本Table A.6（書籍755/PDF769頁）の一定参考値。変更後は条件を適用してください。';};
 $('graph').onclick=e=>{if(!history.length)return;const d=JSON.parse($('graph').dataset.domain),r=$('graph').getBoundingClientRect(),border=parseFloat(getComputedStyle($('graph')).borderLeftWidth)||0,x=(e.clientX-r.left-border)/(r.width-2*border)*d.width,f=Math.max(0,Math.min(1,(x-d.left)/d.plotWidth)),time=d.start+f*(d.end-d.start),next=history.reduce((best,h,i)=>Math.abs(h[0].time-time)<Math.abs(history[best][0].time-time)?i:best,0);experiment.rewind(next);};$('graph').onkeydown=e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();experiment.rewind(Math.max(0,Math.min(history.length-1,index+(e.key==='ArrowLeft'?-1:1))));}};
-attachTermPanel({root:$('manual'),additionalRoots:[$('channel-learning')],dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});window.addEventListener('resize',render);if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('warning').textContent='オフラインの準備に失敗しました。接続中は計算できます。';});if(matchMedia('(max-width:600px)').matches){$('nx').value=32;$('ny').value=12;}initialize();
+attachTermPanel({root:$('manual'),additionalRoots:[$('channel-learning')],dialog:$('term-dialog'),title:$('term-title'),body:$('term-body'),close:$('term-close')});window.addEventListener('resize',render);if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(()=>{$('warning').textContent='オフラインの準備に失敗しました。接続中は計算できます。';});let launch,launchError;try{launch=caseLaunchFromSearch('channel',location.search);}catch(error){launchError=error;}
+if(matchMedia('(max-width:600px)').matches){$('nx').value=32;$('ny').value=12;}
+if(launch){for(const [id,value]of Object.entries(launch.fields))$(id).value=value;airSource=false;$('property-source').textContent='問題から受け取った物性値です。出典・単位・温度と圧力の範囲を確認してください。';}
+initialize();
 
 attachNavigationContext(document.querySelector('main'),'channel');
+attachLaunchContext(document.querySelector('main'),{launch,error:launchError});
 
 journeyUI=attachChannelJourney({root:$('channel-learning'),context:()=>({configs,snapshots:states}),pause:()=>experiment.pause(),locate:setProbe,rewind:()=>experiment.restart(),advance:duration=>experiment.advanceSamples({duration,spacing:.00625}),prepare:()=>{
  const mobile=matchMedia('(max-width:600px)').matches,[a,b]=channelLearningConfigs(mobile?32:64,mobile?12:24);configB=b;

@@ -1,0 +1,1840 @@
+{
+  "chapterId": "chapter-11",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 11 (An introduction to mass transfer): Problems and References — Japanese translation",
+  "bookPages": "707–728",
+  "pdfPages": "721–742",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 58,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-11-1",
+        "number": "11.1",
+        "text": "式（11.9）を導け。",
+        "bookPage": 707,
+        "endBookPage": 707,
+        "pdfPage": 721,
+        "endPdfPage": 721
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-2",
+        "number": "11.2",
+        "text": "300 K の1000リットルの円筒が、0.10 kmol の NH₃、0.04 kmol の CO₂、0.06 kmol の He からなるガス混合物を含む。",
+        "items": [
+          "（a）各化学種の質量分率と、円筒内の圧力を求めよ。",
+          "（b）円筒が600 K に加熱された後、新しいモル分率、質量分率、モル濃度はいくらか。",
+          "（c）円筒が今度は等温で600リットルの体積まで圧縮される。モル濃度、質量分率、部分密度はいくらか。",
+          "（d）温度が600 K のまま、0.40 kg の N₂ が円筒に注入される場合、モル分率、質量分率、モル濃度を求めよ。"
+        ],
+        "answerHint": "（a）m_CO2 = 0.475／（c）c_CO2 = 0.0667 kmol/m³／（d）x_CO2 = 0.187",
+        "bookPage": 707,
+        "endBookPage": 707,
+        "pdfPage": 721,
+        "endPdfPage": 721
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-3",
+        "number": "11.3",
+        "text": "木星の大気の圧力は深さとともに増加する。木星の有名な雲は対流圏と呼ばれる層にあり、そこでは圧力が0.1 bar から10 bar まで上昇する。対流圏の上端、対流圏界面と呼ばれる部分は、雲の約50 km 上にあり、0.1 bar、110 K である。水素、ヘリウム、メタンの大気モル分率は x_H2 = 0.86、x_He = 0.136、x_CH4 = 0.0018 である。他の化学種は小さいが局所的な濃度を持つ。例えば対流圏のアンモニア氷の雲の中などである。",
+        "items": [
+          "（a）対流圏界面における H₂、He、CH₄ のモル濃度と部分密度を計算せよ。",
+          "（b）対流圏界面における単位体積あたりの水素原子数（数密度）N_H2 を求めよ。",
+          "（c）圧力が10 bar、温度が340 K である木星対流圏の底における N_H2 を見積もれ。"
+        ],
+        "bookPage": 707,
+        "endBookPage": 707,
+        "pdfPage": 721,
+        "endPdfPage": 721
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-4",
+        "number": "11.4",
+        "text": "例11.2において、s-表面にあるガスは CO、O₂、N₂ のみであるとする。以前と同様、m_{O2,s} は非常に小さいとせよ。j_{N2,s}、n_{N2,s}、m_{N2,s} を求めよ。",
+        "bookPage": 707,
+        "endBookPage": 707,
+        "pdfPage": 721,
+        "endPdfPage": 721
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-5",
+        "number": "11.5",
+        "text": "小型の自動車用バッテリーは一般に、電極として鉛と酸化鉛の板を持つ硫酸（H₂SO₄）の水溶液を含む。電流は、電解質と電極材料の反応によって生成される。鉛電極（アノード）における反応は、Pb(s) + HSO₄⁻ → PbSO₄(s) + H⁺ + 2e⁻ であり、ここで (s) は固相成分を表す。そのような電極における電流密度が i = 5 mA/cm² の場合、電極への HSO₄⁻（重硫酸）のモルフラックスはいくらか。電子の電荷は −1.609 × 10⁻¹⁹ C であり、1 A = 1 C/s であることを思い出せ。HSO₄⁻ の質量フラックスはいくらか。PbSO₄ が生成される質量速度はいくらか。H⁺ が電極から流れ去る速度はいくらか。",
+        "formulaBlocks": [
+          {
+            "expression": "Pb(s) + HSO₄⁻ → PbSO₄(s) + H⁺ + 2e⁻"
+          }
+        ],
+        "answerHint": "ṙ″_PbSO4 = 7.83 × 10⁻⁵ kg/m²·s",
+        "bookPage": 707,
+        "endBookPage": 708,
+        "pdfPage": 721,
+        "endPdfPage": 722
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-6",
+        "number": "11.6",
+        "text": "触媒作用では、ある気体の化学種が触媒の表面で別の化学種と反応して、気体の生成物を形成する。例えば、ブタン（C₄H₁₀）はニッケル触媒の表面で水素と反応して、プロパン（C₃H₈）とメタン（CH₄）を形成する。水素化分解と呼ばれるこの不均一反応は、C₄H₁₀ + H₂ —Ni→ C₃H₈ + CH₄ である。反応における単位面積あたりの C₄H₁₀ の消費のモル速度は Ṙ_{C4H10} = A(e^{−ΔE/R°T})·p_{C4H10}·p_{H2}^{−2.4} であり、ここで A = 2.9 × 10⁹ kmol/m²·s、ΔE = 1.9 × 10⁸ J/kmol、p は atm である［11.78］。",
+        "items": [
+          "（a）440 °C、全圧0.87 atm の条件のニッケル表面で、p_{C4H10,s} = p_{C3H8,s} = 0.2 atm、p_{CH4,s} = 0.17 atm、p_{H2,s} = 0.3 atm の場合、ブタンの消費速度はいくらか。",
+          "（b）表面へのブタンと水素のモルフラックスはいくらか。表面から離れるプロパンとメタンの質量フラックスはいくらか。",
+          "（c）v_{C4H10,s} はいくらか。v_s と v*_s はいくらか。",
+          "（d）ブタンの拡散モルフラックスはいくらか。プロパンの拡散質量フラックスはいくらか。Ni のフラックスはいくらか。"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "Ṙ_{C4H10} = A (e^{−ΔE/R°T}) p_{C4H10} p_{H2}^{−2.4}"
+          }
+        ],
+        "answerHint": "（b）n_CH4,s = 2.03 g/m²·s／（d）j_C3H8 = 5.58 g/m²·s",
+        "bookPage": 708,
+        "endBookPage": 708,
+        "pdfPage": 722,
+        "endPdfPage": 722
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-7",
+        "number": "11.7",
+        "text": "二成分混合物において D_12 = D_21 であることを示せ。",
+        "bookPage": 708,
+        "endBookPage": 708,
+        "pdfPage": 722,
+        "endPdfPage": 722
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-8",
+        "number": "11.8",
+        "text": "フラックス、速度、濃度の定義を使って、二成分拡散に対する式（11.26）から式（11.30）を導け。",
+        "bookPage": 708,
+        "endBookPage": 708,
+        "pdfPage": 722,
+        "endPdfPage": 722
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-9",
+        "number": "11.9",
+        "text": "式（11.32）から式（11.33）を得る際の詳細を埋めよ。",
+        "bookPage": 708,
+        "endBookPage": 709,
+        "pdfPage": 722,
+        "endPdfPage": 723
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-10",
+        "number": "11.10",
+        "text": "海の塩分濃度は深さ z とともに増加する。より塩分の多い水は密度が大きく、沈む傾向があるからである。海洋上部の濃度分布のモデル式は、S = 33.25 + 0.75·tanh(0.026z − 3.7) であり、ここで S は海水1キログラムあたりの塩のグラム数で表した塩分、z は表面下の距離（メートル）である。",
+        "items": [
+          "（a）z の関数として塩の質量分率をプロットせよ。（m_salt(z) が急速に遷移する領域はハロクラインと呼ばれる。）",
+          "（b）波や流れの影響を無視して、j_salt(z) を計算せよ。D_{salt,water} = 1.5 × 10⁻⁹ m²/s の値を使え。塩分濃度のプロットに、拡散が最大になる位置を示せ。",
+          "（c）海洋の上部領域は風で駆動される波と乱流によってよく混合されるが、下部の領域とハロクラインはより穏やかな傾向がある。（b）の j_salt(z) を使って、5 km²の水平な海域で1週間に上方へ拡散する塩の量を簡単に見積もれ。降雨や他の淡水の流入は無視せよ。"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "S = 33.25 + 0.75 tanh(0.026z − 3.7)"
+          }
+        ],
+        "bookPage": 709,
+        "endBookPage": 709,
+        "pdfPage": 723,
+        "endPdfPage": 723
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-11",
+        "number": "11.11",
+        "text": "それぞれ温度 T_1 と T_2 に保たれた2つのチャンバーが、小さな断熱管でつながれている。チャンバーは二成分ガス混合物で満たされ、管は開いており、定常状態に到達するのを許される。ソレー効果を考慮に入れた場合、2つのチャンバーの間の濃度差はいくらか。熱拡散比の有効な平均値が既知であるとする。",
+        "bookPage": 709,
+        "endBookPage": 709,
+        "pdfPage": 723,
+        "endPdfPage": 723
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-12",
+        "number": "11.12",
+        "text": "（a）問題6.36を解け。（b）一般に、流体粒子が流れの中を動き回る際にその密度が変化しない場合（すなわち Dρ/Dt = 0 の場合）、流体は「非圧縮性」であると言われる。非圧縮流が ∇·u⃗ = 0 を満たすことを示せ。（c）非圧縮性の条件は「密度一定」とどのように異なるか。非圧縮性だが「密度一定」ではない流れを記述せよ。",
+        "items": [
+          "（a）問題6.36を解く",
+          "（b）非圧縮流が ∇·u⃗ = 0 を満たすことを示す",
+          "（c）非圧縮性と「密度一定」の違いを述べ、そのような流れを記述する"
+        ],
+        "bookPage": 709,
+        "endBookPage": 709,
+        "pdfPage": 723,
+        "endPdfPage": 723
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-13",
+        "number": "11.13",
+        "text": "（a）式（11.44）を注意深く導け。式（11.44）では ρ は一定と仮定されていないことに注意せよ。（b）ρ が空間的に一様な場合、次の式になることを示せ。ここで物質微分 D/Dt は式（6.38）で定義される。",
+        "items": [
+          "（a）式（11.44）を導く",
+          "（b）ρ が空間的に一様な場合の式（11.142）を示す"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "Dρ_i/Dt = D_im ∇²ρ_i + ṙ_i‴",
+            "part": "式（11.142）"
+          }
+        ],
+        "bookPage": 709,
+        "endBookPage": 710,
+        "pdfPage": 723,
+        "endPdfPage": 724
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-14",
+        "number": "11.14",
+        "text": "ρ_i の代わりに c_i を使って、モル基準の化学種保存の式を導け。また、非圧縮性の仮定なしに、式（11.44）に似た c_i だけの式を得よ。後者の結果を得るにはどのような仮定が必要か。",
+        "bookPage": 710,
+        "endBookPage": 710,
+        "pdfPage": 724,
+        "endPdfPage": 724
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-15",
+        "number": "11.15",
+        "text": "次の濃度を求めよ：（a）5 °C、1 atm で水と溶液状態にある空気のモル分率（同じ条件の空気にさらされ、H = 4.88 × 10⁴ atm）、（b）水溶液の上方の空気中のアンモニアのモル分率（x_NH3 = 0.05、0.9 atm、40 °C、H = 1522 mm Hg）、（c）水溶液中の SO₂ のモル分率（15 °C、1 atm、p_SO2 = 28.0 mm Hg、H = 1.42 × 10⁴ mm Hg）、（d）水溶液上方のエチレンの分圧（25 °C、1 atm、x_C2H4 = 1.75 × 10⁻⁵、H = 11.4 × 10³ atm）。",
+        "items": [
+          "（a）水溶液中の空気のモル分率（H = 4.88 × 10⁴ atm）",
+          "（b）水溶液上方の空気中のアンモニアのモル分率（H = 1522 mm Hg）",
+          "（c）水溶液中の SO₂ のモル分率（H = 1.42 × 10⁴ mm Hg）",
+          "（d）水溶液上方のエチレンの分圧（H = 11.4 × 10³ atm）"
+        ],
+        "bookPage": 710,
+        "endBookPage": 710,
+        "pdfPage": 724,
+        "endPdfPage": 724
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-16",
+        "number": "11.16",
+        "text": "蒸気表のデータを使って次を計算せよ：（a）50 °Cにおける、重量で3パーセントの HCl 水溶液上方の水の分圧、（b）質量分率 m_NaCl = 0.18 の塩水の1 atm における沸点。",
+        "items": [
+          "（a）HCl 水溶液上方の水の分圧",
+          "（b）塩水の沸点"
+        ],
+        "answerHint": "（b）T_B.P. = 101.8 °C",
+        "bookPage": 710,
+        "endBookPage": 710,
+        "pdfPage": 724,
+        "endPdfPage": 724
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-17",
+        "number": "11.17",
+        "text": "等温の理想気体1と2が、管の z 軸に沿って反対方向に進む、一次元の二成分拡散を考える。流れは質量平均速度がゼロであり、したがって物質伝達は純粋に拡散的であるとする。",
+        "items": [
+          "（a）質量、化学種、運動量の保存方程式が、v = 0、j_1 = −j_2 = 一定、p = 一定によって満たされることを示せ。",
+          "（b）フィックの法則を使って、m_1(0) = 0、m_1(L) = 1 の場合に m_1(z) を求めよ。",
+          "（c）ガスのモル質量を用いて j_1 を求めよ。",
+          "（d）質量フラックスを用いてモルフラックスを書き、モル平均速度 v* を求めよ。v* = 0 になるのはどのような条件の下か。",
+          "（e）気体1がヘリウム、気体2が空気で、T = 276 K、p = 1 atm、L = 1 m とする。両方の気体について v*、j_i、N_i を計算せよ。モル拡散速度は等しく反対向きか。"
+        ],
+        "hint": "（c）については、ρ は一定ではない。ρ = Mc を使い、積分する前に M を m_1 で表せ。",
+        "bookPage": 710,
+        "endBookPage": 711,
+        "pdfPage": 724,
+        "endPdfPage": 725
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-18",
+        "number": "11.18",
+        "text": "炭素の質量分率が0.2%の鋼製部品が、910 °Cで浸炭ガスと接触させられ、それらのガスは金属表面のすぐ内側に炭素の定常質量分率 m_{C,u} = 1.0% を生じるとする。この鋼における炭素の拡散係数は、T をケルビンとして次の式である［11.79］。深さ0.5 mm で質量で0.6%の炭素濃度を生じるのにどれだけかかるか。温度が950 °Cなら、どれだけ短い時間で済むか。",
+        "formulaBlocks": [
+          {
+            "expression": "D_{C,Fe} = (1.20 × 10⁻⁵ m²/s) exp[−(1.34 × 10⁸ J/kmol)/(R°T)]"
+          }
+        ],
+        "bookPage": 711,
+        "endBookPage": 711,
+        "pdfPage": 725,
+        "endPdfPage": 725
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-19",
+        "number": "11.19",
+        "text": "（a）式（11.58）につながった11.5節の質量基準の解析との類推によって作業し、淀み層を横切るモルフラックスに対する式（11.62）を導け。cD_12 は一定と仮定し、層を横切る座標として z を使え。（b）式（11.61）に類似したモル濃度分布が、次の式になることを示せ。",
+        "items": [
+          "（a）式（11.62）を導く",
+          "（b）モル濃度分布の式を示す"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "(1 − x_2(z))/(1 − x_{2,0}) = [(1 − x_{2,L})/(1 − x_{2,0})]^(z/L)"
+          }
+        ],
+        "bookPage": 711,
+        "endBookPage": 711,
+        "pdfPage": 725,
+        "endPdfPage": 725
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-20",
+        "number": "11.20",
+        "text": "直径1 cm のステファン管は、初め上端から200.0 mm 下に液体四塩化炭素のプールを持つ。純粋なアルゴンが管の上を流れる。系は60 °C、8.0 × 10⁴ Pa に保たれる。12時間の実験の間に、プールのレベルは6.1 mm 下がる。Ar 中の CCl₄ の拡散係数はいくらか。CCl₄ の蒸気圧は log₁₀ p_v = 4.023 − 1222/(T − 45.74) であり、ここで p_v は bar、T は K である。液体 CCl₄ の比重は1.59である。",
+        "bookPage": 711,
+        "endBookPage": 711,
+        "pdfPage": 725,
+        "endPdfPage": 725
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-21",
+        "number": "11.21",
+        "text": "60 °Cのステファン管は、上端から15 cm 下に液体エタノールのプールを含む。純粋な窒素ガスが上端を横切って流れる。全圧は1.2 bar である。質量分率とモル分率の両方で、管内のエタノールと窒素の濃度分布をプロットせよ（問題 prob:12.33 を見よ）。エタノール（C₂H₅OH）の蒸気圧は、p_v が bar、T が K の場合、log₁₀ p_v = 5.247 − 1599/(T − 46.42) で与えられる。",
+        "sourceNote": {
+          "ja": "原文の相互参照は「（see Problem prob:12.33）」と印刷されており、未解決の LaTeX 参照ラベル（prob:12.33）がそのまま残っている。原文どおり保持した。",
+          "en": "The original cross-reference is printed as \"(see Problem prob:12.33)\", leaving an unresolved LaTeX reference label (prob:12.33) in the text. Preserved as printed."
+        },
+        "bookPage": 711,
+        "endBookPage": 711,
+        "pdfPage": 725,
+        "endPdfPage": 725
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-22",
+        "number": "11.22",
+        "text": "化学種1のみが s-表面を通して伝達される二成分混合物における物質対流を考える。g_{m,1} = g_{m,2} であることを示せ。j_{2,s} は n_{1,s} とどのように関係するか。",
+        "bookPage": 711,
+        "endBookPage": 712,
+        "pdfPage": 725,
+        "endPdfPage": 726
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-23",
+        "number": "11.23",
+        "text": "静止した気体の中の小さな球は、化学種1の蒸気圧が低く、そのため化学種1は気相中で希薄である。球の周りの自然対流が無視できる場合、半径方向における化学種1の定常質量フラックスは n_{1,r} ≊ j_{1,r} = −ρD_12 dm_1/dr である。質量収支を使って、球から遠くの濃度 m_{1,∞} と表面近くの濃度 m_{1,s} の差を用いて s-表面の質量フラックスを得よ。ρD_12 を一定と近似せよ。これは化学種1が希薄な場合に正確である。次に式（11.66）と式（11.69）を使って、Nu_{m,D} = 2 であることを示せ。対流が無視できるためには、どのような条件が適用されなければならないか。",
+        "bookPage": 712,
+        "endBookPage": 712,
+        "pdfPage": 726,
+        "endPdfPage": 726
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-24",
+        "number": "11.24",
+        "text": "膜吸収は、気体が落下する液膜に吸収される過程である。典型的には、気体が流れる垂直管の内側を、液体の薄膜が流れ下る。次のような仮定をして、この過程を解析せよ。膜流は層流で厚さが一定 δ_0 であり、速度分布は式（8.51）で与えられる。気体は液体にわずかしか溶けず、そのため液面をはるかに超えては浸透せず、液体の物性はそれによって影響を受けない。そして、s-表面と u-表面（それぞれ液–気界面の上と下）における気体濃度は管の長さに沿って変化しない。液体中の気体の入口濃度は m_{1,0} である。物質伝達ヌッセルト数が次の式で与えられることを示せ。ここで物質伝達係数は、u-表面と、m_{1,0} におけるバルク液体の間の濃度差に基づく。",
+        "formulaBlocks": [
+          {
+            "expression": "Nu_{m,x} = (u_0 x/(π D_12))^(1/2)"
+          },
+          {
+            "expression": "u_0 = (ρ_f − ρ_g) g δ_0²/(2 µ_f)"
+          }
+        ],
+        "hint": "小さな浸透の仮定は、膜に対する化学種の方程式を拡散方程式（11.56）に帰着させるために使うことができる。",
+        "bookPage": 712,
+        "endBookPage": 712,
+        "pdfPage": 726,
+        "endPdfPage": 726
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-25",
+        "number": "11.25",
+        "text": "ベンゼン蒸気が、内径3 cm の垂直管を通って流れる。初め純粋な水の薄膜が、0.3 リットル/s の流量で管の内壁を流れ下る。管の長さが0.5 m で40 °Cの場合、管の全長にわたってベンゼンが水に吸収される速度（kg/s）を見積もれ。u-表面におけるベンゼンの質量分率は0.206である。",
+        "hint": "問題11.24で述べられた結果を使え。δ_0 は第8章の結果から得よ。",
+        "bookPage": 712,
+        "endBookPage": 712,
+        "pdfPage": 726,
+        "endPdfPage": 726
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-26",
+        "number": "11.26",
+        "text": "（a）式（11.44）をその境界層の形で書け。（b）この濃度境界層方程式とその境界条件を、式（6.42）の無次元温度に類似した、無次元の質量分率 ψ を用いて書け。（c）ν = D_im の場合、平板上の流れに対するブラジウス関数 f に ψ を関係づけよ。（d）2つの境界層輸送過程における Pr と Sc の類似した役割に注意せよ。式（6.55）の質量濃度における類似物を推測し、Sc = 1 と Sc ≫ 1 について濃度と運動量の境界層分布をスケッチせよ。",
+        "items": [
+          "（a）式（11.44）の境界層形",
+          "（b）無次元質量分率 ψ による濃度境界層方程式と境界条件",
+          "（c）ν = D_im の場合の ψ とブラジウス関数 f の関係",
+          "（d）式（6.55）の質量濃度の類似物の推測と分布のスケッチ"
+        ],
+        "bookPage": 712,
+        "endBookPage": 713,
+        "pdfPage": 726,
+        "endPdfPage": 727
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-27",
+        "number": "11.27",
+        "text": "Sc が大きい場合、運動量は物質より拡散しやすく、濃度境界層厚さ δ_c は運動量境界層厚さ δ よりはるかに小さい。平板上では、濃度境界層内の速度分布の小さい部分はおよそ u/U_e = 3y/(2δ) である。壁濃度一定を仮定して、この速度分布に基づく Nu_{m,x} を計算せよ。",
+        "hint": "式（6.47）と式（6.50）の物質伝達における類似物を使い、q_w/(ρc_p) が j_{i,s}/ρ に類似していることに注意せよ。",
+        "bookPage": 713,
+        "endBookPage": 713,
+        "pdfPage": 727,
+        "endPdfPage": 727
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-28",
+        "number": "11.28",
+        "text": "亜酸化窒素が、外径3/8 in. の多孔質管の表面を通して、管の長さ1メートルあたり0.025 リットル/s で放出される。空気は管に垂直に25 ft/s で流れる。空気と管は両方とも18 °Cであり、周囲圧力は1 atm である。管表面における N₂O の平均濃度を見積もれ。D_{air,N2O} = 1.48 × 10⁻⁵ m²/s である。",
+        "hint": "まず純粋な空気の物性を使って濃度を見積もり、次に必要なら物性を修正せよ。",
+        "bookPage": 713,
+        "endBookPage": 713,
+        "pdfPage": 727,
+        "endPdfPage": 727
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-29",
+        "number": "11.29",
+        "text": "ヘリウムが、高さ40 cm の多孔質の垂直壁を通して、周囲の空気に87.0 mg/m²·s の速度で放出される。ヘリウムと空気は両方とも300 K で、環境は1 atm であり、D_{He,air} = 7.12 × 10⁻⁵ m²/s である。壁に沿った空気中のヘリウムの平均濃度 m_{He,s} はいくらか。",
+        "bookPage": 713,
+        "endBookPage": 713,
+        "pdfPage": 727,
+        "endPdfPage": 727
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-30",
+        "number": "11.30",
+        "text": "西テキサスをドライブに出かける。今日は暑くなる ― 40 °Cだ ― が、湿度が分からない。ピックアップトラックの日陰側に「砂漠の水袋」を取り付ける。それはキャンバス地で作られ、1.5 リットルの飲料水が入る。満たすときは、キャンバスの内側と外側を飽和させるようにする。水は引き続き布地を透過するが、織りが十分に密なので水は滴らない。袋の中の水の温度を、屋外の湿度の関数としてプロットせよ。",
+        "hint": "これらの袋はかつて米国西部で広く使われたが、米国メキシコ湾岸ではあまり使われることがなかった。",
+        "bookPage": 713,
+        "endBookPage": 714,
+        "pdfPage": 727,
+        "endPdfPage": 728
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-31",
+        "number": "11.31",
+        "text": "次のデータは、数ヶ月にわたって気象観測所で取られたものである。式（11.74）を使って、各日付における空気中の水の質量分率を求めよ。湿度図表（サイクロメトリックチャート）からの値と比較せよ。",
+        "bookPage": 714,
+        "endBookPage": 714,
+        "pdfPage": 728,
+        "endPdfPage": 728
+      },
+      {
+        "type": "table",
+        "id": "table-11-31-1",
+        "caption": "表11.31 問題11.31の気象データ",
+        "headers": [
+          "日付",
+          "乾球温度 (°C)",
+          "湿球温度 (°C)"
+        ],
+        "rows": [
+          [
+            "3/15",
+            "15.5",
+            "11.0"
+          ],
+          [
+            "4/21",
+            "22.0",
+            "16.8"
+          ],
+          [
+            "5/13",
+            "27.3",
+            "25.8"
+          ],
+          [
+            "5/31",
+            "32.7",
+            "20.0"
+          ],
+          [
+            "7/4",
+            "39.0",
+            "31.2"
+          ]
+        ],
+        "bookPage": 714,
+        "pdfPage": 728
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-32",
+        "number": "11.32",
+        "text": "コーティング工程の間に、エタノールの薄膜が、0.1 m × 0.1 m の厚い平板に拭き取られる。液体膜の初期の厚さは0.1 mm であり、板と膜の初期温度は両方とも303 K である。膜の上方の空気は303 K で、10 m/s で流れ、エタノールを含まない。",
+        "items": [
+          "（a）板は熱伝導が悪いので、そこからの熱伝達は無視できるとせよ。短い初期の過渡の後、液体膜は定常温度に達する。この温度を求め、膜が蒸発するのに必要な時間を計算せよ。",
+          "（b）板が非常に良い熱伝導体の場合に何が起こるかを議論し、蒸発時間の下限を計算せよ。"
+        ],
+        "continuation": "エタノールの物性は次のとおりである：log₁₀(p_v mmHg) = 9.4432 − 2287.8/(T K)；h_fg = 9.3 × 10⁵ J/kg；液体密度 ρ_eth = 789 kg/m³；空気中のエタノール蒸気について Sc = 1.30；蒸気の比熱容量 c_{p,eth} = 1420 J/kg·K。",
+        "bookPage": 714,
+        "endBookPage": 714,
+        "pdfPage": 728,
+        "endPdfPage": 728
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-33",
+        "number": "11.33",
+        "text": "冷凍庫に残された氷の立方体は、空気中へゆっくり昇華する。氷のトレイが、空気が −10 °C、相対湿度50%の冷凍庫に残されているとする。冷凍庫の空気は小さなファンによって循環され、氷トレイの上面からの熱伝達係数5 W/m²·K を生じる。20 g の氷の立方体が長方形で、露出した上面積が8 cm² の場合、氷の温度を求め、それが完全に昇華するのに必要な時間を見積もれ。氷トレイを通る熱伝達はないとせよ。氷については h_sg = 2.837 MJ/kg とし、空気中の水蒸気については Sc = 0.63 とせよ。氷の蒸気圧は例11.6に与えられている。",
+        "bookPage": 714,
+        "endBookPage": 714,
+        "pdfPage": 728,
+        "endPdfPage": 728
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-34",
+        "number": "11.34",
+        "text": "ビクラムヨガは、相対湿度20〜50%、38〜41 °Cの部屋で行われる激しいスタイルのヨガだった。それを行う人々は、熱中症を避けるために除去しなければならない体の熱 Q̇_b を300〜600 W 発生する。これらの条件の下で体が冷却できる速度を計算し、発熱速度と比較せよ。体は冷却の必要が高まるにつれてより多く汗をかくが、皮膚で蒸発する汗の量は気温と湿度に依存する。発汗は1時間あたり約2リットルを超えることはなく、そのうち蒸発するのは約半分だけである（残りは単に滴る）。発汗する皮膚の温度は36 °C、放射率は0.95であり、平均的な体表面積は A_b = 1.8 m² であるとする。ヨガスタジオの壁は気温にあるとする。軽いヨガの衣服は熱的な影響を持たないとする。水の蒸気圧は蒸気表または他のデータベースから取ることができる。静止空気中で活動する人への対流は、次の式で見積もることができる［11.80］。高湿度・高温では、過熱して運動を止めなければならない人もいることに注意せよ。",
+        "formulaBlocks": [
+          {
+            "expression": "h̄ = (5.7 W/m²·K) ( Q̇_b/((58.1 W/m²) A_b) − 0.8 )^0.39"
+          }
+        ],
+        "bookPage": 714,
+        "endBookPage": 715,
+        "pdfPage": 728,
+        "endPdfPage": 729
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-35",
+        "number": "11.35",
+        "text": "Biff Harwell は Deb をセーリングに連れて行った。Deb と Biff のタオルが港に落ちる。Biff は通りかかったイルカから両方を救い出し、次に濡れたタオルをボートのグラスファイバー製前部甲板に広げて乾かす。入射する太陽放射は1050 W/m²、周囲の空気は31 °Cで m_H2O = 0.017、風速はボートに対して8ノット（1ノット = 1.151 mph）、ε_towel ≊ α_towel ≊ 1、空は280 K の黒体の性質を持つ。タオルは風上方向に3 ft の長さ、幅2 ft である。タオルから水がどれほど速く（kg/s で）蒸発するかを Biff が計算するのを助けよ。",
+        "bookPage": 715,
+        "endBookPage": 715,
+        "pdfPage": 729,
+        "endPdfPage": 729
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-36",
+        "number": "11.36",
+        "text": "小さな水滴は、乾燥した空気中で急速に蒸発する。液滴が30 °C、相対湿度40%、1 atm の部屋に置かれたとする。初期直径が0.2、0.5、1、2、5 µm の場合の液滴の寿命を計算せよ。",
+        "bookPage": 715,
+        "endBookPage": 715,
+        "pdfPage": 729,
+        "endPdfPage": 729
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-37",
+        "number": "11.37",
+        "text": "層流境界層のクエット流（または淀み膜）モデルは、流れ方向微分を局所的に無視する。そのため速度は y によって変化するが x によっては変化せず、壁の u = 0 から境界層の端 y = δ の u∞ まで変化する。境界層厚さ δ は x とともにゆっくり増加するだけだと仮定される。",
+        "items": [
+          "（a）層流において u/u∞ = y/δ であることを示せ。",
+          "（b）表面摩擦係数 C_f、温度分布 T(y)、ヌッセルト数 Nu_x を、δ と δ_t を用いて計算せよ。",
+          "（c）式（6.31b）と式（6.55）を使って、層流クエット流モデルが、式（6.33）と式（6.58）とは1のオーダーの定数だけ異なる C_f(x) と Nu_x の推定を与えることを示せ。"
+        ],
+        "bookPage": 715,
+        "endBookPage": 716,
+        "pdfPage": 729,
+        "endPdfPage": 730
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-38",
+        "number": "11.38",
+        "text": "（a）物質伝達の駆動力 B_{m,2} の最大値と最小値はいくらか。（b）ブローイング因子を B_{m,2} の関数としてプロットせよ。グラフに、ブローイング、サクション、低速度物質伝達の領域を示せ。",
+        "items": [
+          "（a）B_{m,2} の最大値と最小値",
+          "（b）ブローイング因子のプロットと領域の表示"
+        ],
+        "bookPage": 716,
+        "endBookPage": 716,
+        "pdfPage": 730,
+        "endPdfPage": 730
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-39",
+        "number": "11.39",
+        "text": "積分を実行して式（11.85）を得よ。次に、式（11.86）と式（11.87）を得るのに必要な微分と極限を取れ。",
+        "bookPage": 716,
+        "endBookPage": 716,
+        "pdfPage": 730,
+        "endPdfPage": 730
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-40",
+        "number": "11.40",
+        "text": "（a）式（11.97）から式（11.98）を導け。（b）スクラムジェット燃焼器の試験で、気体が燃焼器壁の多孔質部分を通して注入される［11.81］。気体速度は980 m/s である。粘性摩擦と気体圧縮の結果、壁の断熱部分の温度は1048 K になる。この温度を、あたかも一様流温度であるかのように使え。注入なしの熱伝達係数は h* = 720 W/m²·K である。注入気体は、質量フラックス n_{i,s} = 0.3 kg/m²·s で、350 K の貯槽から引き出される。気体が He、Ar、N₂ の場合の壁温度 T_s はいくらか。（c）0 ≤ n_{i,s} ≤ 1.5 kg/m²·s について、各気体の T_s をプロットせよ。",
+        "items": [
+          "（a）式（11.98）の導出",
+          "（b）He、Ar、N₂ の場合の壁温度 T_s",
+          "（c）各気体の T_s のプロット"
+        ],
+        "bookPage": 716,
+        "endBookPage": 716,
+        "pdfPage": 730,
+        "endPdfPage": 730
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-41",
+        "number": "11.41",
+        "text": "ドライアイス（固体 CO₂）は、アラスカの遠隔の村へ小型飛行機で輸送される医療用品を冷却するために使われる。直径5 cm のおおよそ球形のドライアイスの塊が、5 °Cの空気を通って飛行機から落ちる。それは40 m/s の終端速度に達する。定常条件を仮定して、ドライアイスの温度と昇華速度はいくらか。昇華の潜熱は約590 kJ/kg であり、log₁₀(p_v bar) = 6.81228 − 1301.679/(T K − 3.494) である。表面温度は、1 atm における CO₂ の固体–蒸気平衡温度 −78.5 °Cよりはるかに低くなる。室温の空気中の球上の強制対流に対する相関式［11.82］を使い、プラントル数依存性を近似せよ。氷への熱伝導は無視せよ。",
+        "formulaBlocks": [
+          {
+            "expression": "Nū_D = 2 + 0.493 Re_D^(1/2) + 0.0011 Re_D （7800 ≤ Re_D ≤ 2.9 × 10⁵）"
+          }
+        ],
+        "hint": "まず純粋な空気の物性を使い、次に必要なら物性を修正せよ。",
+        "bookPage": 716,
+        "endBookPage": 717,
+        "pdfPage": 730,
+        "endPdfPage": 731
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-42",
+        "number": "11.42",
+        "text": "蒸気が、低圧凝縮器ユニット内の高さ25 cm の冷たい垂直壁に凝縮する。壁は25 °Cで等温であり、周囲圧力は8000 Pa である。空気がユニットに漏れ込み、質量分率0.04 に達した。蒸気–空気混合物は45 °Cであり、8 m/s で壁を過ぎて下方に吹き付けられる。",
+        "items": [
+          "（a）壁における凝縮速度を見積もれ。",
+          "（b）（a）の結果を、蒸気中に空気がない場合の凝縮と比較せよ。どのような結論が得られるか。"
+        ],
+        "hint": "凝縮膜の表面は、混合物温度でも壁温度でもない。",
+        "bookPage": 717,
+        "endBookPage": 717,
+        "pdfPage": 731,
+        "endPdfPage": 731
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-43",
+        "number": "11.43",
+        "text": "（a）各貴ガスが、1 atm、300 K で窒素ガスと個別に混合された場合の二成分拡散係数を計算せよ。結果を貴ガスのモル質量の関数としてプロットせよ。どのような結論が得られるか。（b）窒素 x_N2 = 0.48 とアルゴン x_Ar = 0.48 の混合物への、少量のヘリウム x_He = 0.04 の添加を考える。D_{He,m} を計算し、D_{Ar,m} と比較せよ。アルゴンの濃度が増えても、混合物中のその拡散係数は上がらないことに注意せよ。",
+        "items": [
+          "（a）貴ガス–窒素の二成分拡散係数の計算とプロット",
+          "（b）D_{He,m} と D_{Ar,m} の比較"
+        ],
+        "bookPage": 717,
+        "endBookPage": 717,
+        "pdfPage": 731,
+        "endPdfPage": 731
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-44",
+        "number": "11.44",
+        "text": "防虫ボールは、ワイヤーでクローゼットに吊るされた直径2.5 cm のナフタレン（C₁₀H₈）の球からなる。固体ナフタレンはゆっくり蒸気に昇華し、それが蛾を追い払う。平均温度20 °Cのクローゼットにおけるこの防虫ボールの寿命を見積もれ。ナフタレンについては次のデータを使え：σ = 6.18 Å、ε/k_B = 561.5 K、固体については20 °Cで ρ_C10H8 = 1145 kg/m³。室温付近のナフタレンの蒸気圧は、log₁₀(p_v mmHg) = 11.450 − 3729.3/(T K) で近似される。得られる積分は数値的に評価できる。昇華の潜熱と蒸発速度は十分に低いので、湿球温度は本質的に周囲温度である。",
+        "bookPage": 717,
+        "endBookPage": 717,
+        "pdfPage": 731,
+        "endPdfPage": 731
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-45",
+        "number": "11.45",
+        "text": "問題11.44で記述されたナフタレンの防虫ボールとは対照的に、他の防虫ボールはパラジクロロベンゼン（PDB）で作られている。次の室温の物性データを使って、直径2.5 cm の PDB 防虫ボールの寿命を見積もれ：ρ_PDB = 1248 kg/m³、σ = 5.76 Å、ε/k_B = 578.9 K、M_PDB = 147.0 kg/kmol、log₁₀(p_v mmHg) = 11.985 − 3570/(T K)。",
+        "bookPage": 717,
+        "endBookPage": 718,
+        "pdfPage": 731,
+        "endPdfPage": 732
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-46",
+        "number": "11.46",
+        "text": "（a）式（11.108）と（b）ブランの法則、式（11.109）を使って、空気中のメタンの拡散係数を計算せよ。（b）については、アルゴンを無視して空気を酸素と窒素の混合物として扱え。x_methane = 0.05、T = 420 °F、p = 10 psia とせよ。",
+        "items": [
+          "（a）式（11.108）による計算",
+          "（b）ブランの法則による計算"
+        ],
+        "answerHint": "（a）D_CH4,air = 7.66 × 10⁻⁵ m²/s／（b）D_CH4,air = 8.02 × 10⁻⁵ m²/s",
+        "bookPage": 718,
+        "endBookPage": 718,
+        "pdfPage": 732,
+        "endPdfPage": 732
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-47",
+        "number": "11.47",
+        "text": "11.5節では、ρD_12 または cD_12 が位置によらないと仮定されることがあった。気体に対するこの近似を考える。",
+        "items": [
+          "（a）これら2つのグループは、圧力、温度、または化学種1と2の割合に依存するか。どちらかのグループを一定に保つために等圧条件は必要か。",
+          "（b）ρD_12 が組成に最も敏感なのは、どのような種類の混合物か。これは、モル基準の解析と質量基準の解析について何を示すか。",
+          "（c）Pr や Sc は組成、温度、圧力に依存するか。"
+        ],
+        "bookPage": 718,
+        "endBookPage": 718,
+        "pdfPage": 732,
+        "endPdfPage": 732
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-48",
+        "number": "11.48",
+        "text": "カリウムイオンを含む希薄な水溶液が、1 V/cm の電場にさらされる。測定によれば、K⁺ イオンは電場に応じて 4 × 10⁻⁴ cm/s で動く。溶液が300 K の場合、K⁺ イオンの有効半径を見積もれ。電子の電荷は −1.609 × 10⁻¹⁹ C であり、1 V/m = 1 N/C である。",
+        "bookPage": 718,
+        "endBookPage": 718,
+        "pdfPage": 732,
+        "endPdfPage": 732
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-49",
+        "number": "11.49",
+        "text": "（a）式（11.115）を使って、次の拡散係数を得よ：i) 340 K で液体メタノールを通して拡散する希薄な CCl₄、ii) 290 K で水を通して拡散する希薄なベンゼン、iii) 350 K で水を通して拡散する希薄なエチルアルコール、iv) 370 K でメタノールを通して拡散する希薄なアセトン。（b）希薄な水溶液中のメタノール分子の有効半径を見積もれ。",
+        "items": [
+          "（a）i) メタノール中の希薄 CCl₄（340 K）",
+          "（a）ii) 水中の希薄ベンゼン（290 K）",
+          "（a）iii) 水中の希薄エチルアルコール（350 K）",
+          "（a）iv) メタノール中の希薄アセトン（370 K）",
+          "（b）メタノール分子の有効半径"
+        ],
+        "answerHint": "（a）D_acetone,methanol = 6.8 × 10⁻⁹ m²/s",
+        "bookPage": 718,
+        "endBookPage": 718,
+        "pdfPage": 732,
+        "endPdfPage": 732
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-50",
+        "number": "11.50",
+        "text": "式（11.116）を使って、次の条件の下で、気体のメタン、硫化水素、亜酸化窒素の動力粘度 µ を計算せよ：250 K、1 atm、500 K、1 atm、250 K、2 atm、250 K、12 atm、500 K、12 atm。すべての場合で計算は可能か。",
+        "bookPage": 718,
+        "endBookPage": 718,
+        "pdfPage": 732,
+        "endPdfPage": 732
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-51",
+        "number": "11.51",
+        "text": "学生が、モル組成がメタン10.3%、エタン15.4%、酸素74.3%の、予混合された気体燃料の燃焼を研究している。彼女は混合物0.006 ft³/s（70 °F、18 psia）を、滑らかな内径3/8 インチ、長さ47 インチの管に通す。",
+        "items": [
+          "（a）圧力損失はいくらか。",
+          "（b）学生の指導教員は、ダクトの最後の5インチに巻き付けたニクロム帯ヒーターを使って燃料混合物を予熱するよう勧める。ヒーターが0.8 W/インチを生じる場合、ダクト出口における壁温度はいくらか。"
+        ],
+        "continuation": "c_{p,CH4} = 2280 J/kg·K、γ_CH4 = 1.3、c_{p,C2H6} = 1730 J/kg·K、γ_C2H6 = 1.2 とし、物性は入口条件で評価せよ。",
+        "hint": "圧力損失の式については第7章を参照せよ。",
+        "bookPage": 718,
+        "endBookPage": 719,
+        "pdfPage": 732,
+        "endPdfPage": 733
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-52",
+        "number": "11.52",
+        "text": "（a）単原子気体について k = (5/2)µc_v であることを示せ。（b）低密度気体のプラントル数に対するオイケンの式（11.118）を得よ。（c）理想気体については γ ≊ (D + 2)/D であることを思い出せ。ここで D はその分子のエネルギー貯蔵モードの数である。Pr の式を D の関数として得よ。（d）オイケンの公式を使って、並進と回転のエネルギー貯蔵を考慮して、気体の Ar、N₂、H₂O に対する Pr を計算せよ。結果を、温度範囲にわたる付録Aの1 atm のデータと比較せよ。Ar と N₂ とは対照的な、蒸気について得られた結果を議論せよ。",
+        "items": [
+          "（a）k = (5/2)µc_v を示す",
+          "（b）オイケンの式を得る",
+          "（c）Pr を D の関数として得る",
+          "（d）Ar、N₂、H₂O の Pr の計算とデータとの比較"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "Pr = 4γ/(9γ − 5)",
+            "part": "式（11.118）"
+          }
+        ],
+        "bookPage": 719,
+        "endBookPage": 719,
+        "pdfPage": 733,
+        "endPdfPage": 733
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-53",
+        "number": "11.53",
+        "text": "マクスウェル–ステファン方程式（11.139）の3つの単純化は、有効な二成分フィック拡散係数 D_im につながる。",
+        "items": [
+          "（a）低濃度の化学種 i が、他の点では一様な混合物へ拡散する場合に、ブランの法則、式（11.109）が適用されることを示せ。",
+          "（b）Ð_ij が各化学種ペアについて同じ値を持ち、混合物が理想的である場合、D_im = Ð_ij であることを示せ。",
+          "（c）化学種 i = 1, 2, 3, …, n − 1 がすべて低濃度である場合、式（11.110）で述べられたように、D_im = Ð_{i,n} であることを示せ。ここで化学種 n は支配的な化学種（または溶媒）である。"
+        ],
+        "bookPage": 719,
+        "endBookPage": 719,
+        "pdfPage": 733,
+        "endPdfPage": 733
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-54",
+        "number": "11.54",
+        "text": "液体溶液中の希薄な溶質 A は、化学ポテンシャル µ_A の勾配を下って拡散する。ポテンシャルエネルギーの勾配が、11.11節で議論されたように、A 1モルあたりの力を生じるからである。この力を計算し、結果をフィックの法則のモル形と組み合わせて、アインシュタインの関係式（11.111）を導け。アインシュタインの関係式は分子あたりの力を考え、R° = k_B N_A であることに注意せよ。ここで N_A はアボガドロ数である。",
+        "bookPage": 719,
+        "endBookPage": 719,
+        "pdfPage": 733,
+        "endPdfPage": 733
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-55",
+        "number": "11.55",
+        "text": "11.11節では、ある化学種が別の化学種を過ぎて拡散する際の抗力を評価した。この力もアインシュタインの関係式（11.111）につながることを示せ。（問題11.54と比較せよ。）",
+        "bookPage": 719,
+        "endBookPage": 720,
+        "pdfPage": 733,
+        "endPdfPage": 734
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-56",
+        "number": "11.56",
+        "text": "n − 1 個の希薄な溶質を含み、x_i ≪ x_n ≊ 1 である溶媒 n を考える。",
+        "items": [
+          "（a）問題11.53cを解け。",
+          "（b）溶質が希薄な場合、v⃗* ≊ v⃗_n ≊ v⃗ であることを示せ。",
+          "（c）溶質が、水に溶けた食塩の Na⁺ と Cl⁻ のような荷電イオンであるとする。溶液に加えられた電位勾配 −∇φ は、イオン1モルあたりの力 −z_i F∇φ を生じる。ここで z_i はイオンの価数（Na⁺ と Cl⁻ については ±1）、F = 9.6485 × 10⁴ C/mol はファラデー定数である。マクスウェル–ステファン方程式から出発して、ネルンスト–プランクの式を導け。"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "N_i = −c D_{i,n} ∇x_i + c_i v_n − c_i D_{i,n} z_i (F/(R°T)) ∇φ",
+            "part": "ネルンスト–プランクの式"
+          }
+        ],
+        "bookPage": 720,
+        "endBookPage": 720,
+        "pdfPage": 734,
+        "endPdfPage": 734
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-57",
+        "number": "11.57",
+        "text": "アセトンとメタノールの液体混合物が、高さ23.8 cm のステファン管の底にある。上端は純粋な空気の流れで掃引される。化学種1をアセトン、化学種2をメタノール、化学種3を空気とする。温度は328.5 K で、圧力は745.2 mmHg である。液体のすぐ上方のモル分率は x_{1,s} = 0.319 と x_{2,s} = 0.528 である。これらの気体については、Ð_12 = 0.0848 cm²/s、Ð_13 = 0.1372 cm²/s、Ð_23 = 0.1991 cm²/s である［11.83］。",
+        "items": [
+          "（a）マクスウェル–ステファン方程式を、ベクトル X(z) = {x_1(z), x_2(z)} に対する行列常微分方程式として書け。空気のモルフラックス N_3 はいくらか。液面（z = 0）と管の上端（z = 23.8 cm）における境界条件は何か。",
+          "（b）任意のソフトウェアを使って（a）の方程式を解き、3つの濃度を z の関数としてプロットせよ。モルフラックス N_1 と N_2 は未知なので、方程式は、上端における境界条件に対応する値を決定するために反復的に解かなければならないことに注意せよ。",
+          "（c）（b）が複雑すぎるように思える場合は、代わりに（b）に与えられた答えを使って、フラックスが既知であるかのように方程式を解け。あなたの解は管の上端における境界条件を満たすか。（満たすはずである。）",
+          "（d）z = 0 で J_air = 0 か。説明せよ。"
+        ],
+        "answerHint": "N_1 = 1.782 × 10⁻⁷ mol/cm²·s、N_2 = 3.126 × 10⁻⁷ mol/cm²·s",
+        "bookPage": 720,
+        "endBookPage": 720,
+        "pdfPage": 734,
+        "endPdfPage": 734
+      },
+      {
+        "type": "problem",
+        "id": "problem-11-58",
+        "number": "11.58",
+        "text": "アブレーション熱シールドの単純なモデルは、アブレーションした材料が流れに影響することなく速やかに除去され、空力熱流束 q_aero が一定であると仮定する（図11.29）。",
+        "items": [
+          "（a）加熱が t = 0 で始まるときシールドが T_0 である場合、溶融または昇華のいずれかについて、表面がアブレーション温度 T_a に達するまでの時間はどれだけか。",
+          "（b）アブレーションが始まったら、表面は一定速度 V_a で後退するとせよ。t > t_a について、表面より下の材料内の温度分布を求めよ。",
+          "（c）エネルギー収支を使って、物質の物性と q_aero を用いて V_a を求めよ。",
+          "（d）熱シールドへ伝導される熱を最もよく減らすのは、物質の物性のどのような組み合わせか。"
+        ],
+        "hint": "（b）については、後退する表面に付けた座標 η = x − V_a(t − t_a) に変更し、T の初期分布は無視せよ。",
+        "figure": {
+          "figureNumber": "Fig. 11.29",
+          "caption": "図11.29 アブレーション熱シールド（問題11.58）",
+          "alt": "空力熱流束 q_aero を受ける熱シールドの表面が、時刻 t_a の前後で後退する様子を示す図。座標 η は後退する表面に付けられる。",
+          "bookPage": 720,
+          "pdfPage": 734
+        },
+        "bookPage": 720,
+        "endBookPage": 721,
+        "pdfPage": 734,
+        "endPdfPage": 735
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 83,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-11-1",
+        "number": "11.1",
+        "authors": "W. C. Reynolds",
+        "originalTitle": "Energy, from Nature to Man",
+        "titleJa": "エネルギー ― 自然から人間へ",
+        "publication": "McGraw-Hill Book Company, New York, 1974",
+        "bookPage": 721,
+        "pdfPage": 735
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-2",
+        "number": "11.2",
+        "authors": "A. Makino and C. K. Law",
+        "originalTitle": "An analysis of the transient combustion and burnout time of carbon particles",
+        "titleJa": "炭素粒子の過渡燃焼と燃え尽き時間の解析",
+        "publication": "Proc. Combustion Institute, 32(2):2067–2074, 2009",
+        "doi": "10.1016/j.proci.2008.07.036",
+        "bookPage": 721,
+        "pdfPage": 735
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-3",
+        "number": "11.3",
+        "authors": "R. H. Hurt and R. E. Mitchell",
+        "originalTitle": "Unified high-temperature char combustion kinetics for a suite of coals of various rank",
+        "titleJa": "さまざまなランクの一群の石炭に対する統一された高温チャー燃焼速度論",
+        "publication": "Symposium (International) on Combustion, 24(1):1243–1250, 1992. Twenty-Fourth Symposium on Combustion",
+        "doi": "10.1016/S0082-0784(06)80146-3",
+        "bookPage": 721,
+        "pdfPage": 735
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-4",
+        "number": "11.4",
+        "authors": "D. R. Poirier and G. H. Geiger",
+        "originalTitle": "Transport Phenomena in Materials Processing",
+        "titleJa": "材料プロセスにおける輸送現象",
+        "publication": "The Minerals, Metals & Materials Society, Warrendale, Pennsylvania, 1994",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-5",
+        "number": "11.5",
+        "authors": "B. E. Poling, J. M. Prausnitz, and J. P. O’Connell",
+        "originalTitle": "The Properties of Gases and Liquids",
+        "titleJa": "気体と液体の物性",
+        "publication": "McGraw-Hill Book Company, New York, 5th ed., 2000",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-6",
+        "number": "11.6",
+        "authors": "K. C. Pratt and W. A. Wakeham",
+        "originalTitle": "The mutual diffusion coefficient of ethanol–water mixtures: determination by a rapid, new method",
+        "titleJa": "エタノール–水混合物の相互拡散係数：迅速な新しい方法による決定",
+        "publication": "Proc. R. Soc. Lond. A, 336(1606):393–406, February 1974",
+        "doi": "10.1098/rspa.1974.0026",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-7",
+        "number": "11.7",
+        "authors": "T. R. Marrero and E. A. Mason",
+        "originalTitle": "Gaseous diffusion coefficients",
+        "titleJa": "気体拡散係数",
+        "publication": "J. Phys. Chem. Ref. Data, 1(1):3–118, January 1972",
+        "doi": "10.1063/1.3253094",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-8",
+        "number": "11.8",
+        "authors": "S. Chapman and T. G. Cowling",
+        "originalTitle": "The Mathematical Theory of Nonuniform Gases",
+        "titleJa": "非一様気体の数学的理論",
+        "publication": "Cambridge University Press, New York, 2nd ed., 1964",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-9",
+        "number": "11.9",
+        "authors": "S. Kjelstrup, D. Bedeaux, E. Johannessen, and J. Gross",
+        "originalTitle": "Non-equilibrium thermodynamics for engineers",
+        "titleJa": "技術者のための非平衡熱力学",
+        "publication": "World Scientific Publishing Co., Singapore, 2nd ed., 2017",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-10",
+        "number": "11.10",
+        "authors": "P. W. Atkins, J. de Paula, and J. Keeler",
+        "originalTitle": "Atkins’ Physical Chemistry: Molecular thermodynamics and kinetics",
+        "titleJa": "アトキンス物理化学：分子熱力学と速度論",
+        "publication": "Oxford University Press, Oxford, 12th ed., 2023",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-11",
+        "number": "11.11",
+        "authors": "J. M. Prausnitz, R. N. Lichtenthaler, and E. G. de Azevedo",
+        "originalTitle": "Molecular Thermodynamics of Fluid-Phase Equilibria",
+        "titleJa": "流体相平衡の分子熱力学",
+        "publication": "Prentice-Hall, Englewood Cliffs, N.J., 3rd ed., 1999",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-12",
+        "number": "11.12",
+        "authors": "R. Sander",
+        "originalTitle": "Compilation of Henry’s law constants (version 5.0.0) for water as solvent",
+        "titleJa": "溶媒としての水に対するヘンリー法則定数の編集（バージョン 5.0.0）",
+        "publication": "Atmospheric Chem. Phys., 23(19):10901–12440, 2023",
+        "doi": "10.5194/acp-23-10901-2023",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-13",
+        "number": "11.13",
+        "authors": "L. A. Bromley, D. Singh, P. Ray, S. Sridhar, and S. M. Read",
+        "originalTitle": "Thermodynamic properties of sea salt solutions",
+        "titleJa": "海塩溶液の熱力学的性質",
+        "publication": "AIChE J., 20(2):326–335, March 1974",
+        "doi": "10.1002/aic.690200218",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-14",
+        "number": "11.14",
+        "authors": "R. C. Weast, editor",
+        "originalTitle": "Handbook of Chemistry and Physics",
+        "titleJa": "化学・物理ハンドブック",
+        "publication": "Chemical Rubber Co., Cleveland, Ohio, 56th ed., 1976",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-15",
+        "number": "11.15",
+        "authors": "C. L. Yaws, editor",
+        "originalTitle": "The Yaws Handbook of Vapor Pressure",
+        "titleJa": "Yaws 蒸気圧ハンドブック",
+        "publication": "Gulf Professional Publishing, 2nd ed., 2015",
+        "doi": "10.1016/C2014-0-03590-3",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-16",
+        "number": "11.16",
+        "authors": "D. S. Wilkinson",
+        "originalTitle": "Mass Transfer in Solids and Fluids",
+        "titleJa": "固体と流体における物質伝達",
+        "publication": "Cambridge University Press, Cambridge, 2000",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-17",
+        "number": "11.17",
+        "authors": "E. Dražević, K. Košutić, and V. Freger",
+        "originalTitle": "Permeability and selectivity of reverse osmosis membranes: Correlation to swelling revisited",
+        "titleJa": "逆浸透膜の透過性と選択性：膨潤との相関の再考",
+        "publication": "Water Research, 49:444–452, 2014",
+        "doi": "10.1016/j.watres.2013.10.029",
+        "bookPage": 722,
+        "pdfPage": 736
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-18",
+        "number": "11.18",
+        "authors": "D. R. Paul",
+        "originalTitle": "Reformulation of the solution-diffusion theory of reverse osmosis",
+        "titleJa": "逆浸透の溶解–拡散理論の再定式化",
+        "publication": "J. Membrane Sci., 241(2):371–386, 2004",
+        "doi": "10.1016/j.memsci.2004.05.026",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-19",
+        "number": "11.19",
+        "authors": "J. Crepeau",
+        "originalTitle": "Josef Stefan and his contributions to heat transfer",
+        "titleJa": "ヨーゼフ・ステファンと熱伝達への彼の貢献",
+        "publication": "In Proc. ASME 2008 Heat Transfer Conf., Jacksonville, FL, August 2008. Paper No. HT2008-56073",
+        "doi": "10.1115/HT2008-56073",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-20",
+        "number": "11.20",
+        "authors": "J. Mitrović",
+        "originalTitle": "Josef Stefan and his evaporation-diffusion tube—the Stefan diffusion problem",
+        "titleJa": "ヨーゼフ・ステファンと彼の蒸発–拡散管 ― ステファン拡散問題",
+        "publication": "Chem. Eng. Sci., 75:279–281, 2012",
+        "doi": "10.1016/j.ces.2012.03.034",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-21",
+        "number": "11.21",
+        "authors": "J. Stefan",
+        "originalTitle": "Versuche über die Verdampfung",
+        "titleJa": "蒸発に関する実験",
+        "publication": "Sitzungsberichte der Mathematisch-Naturwissenschaftlichen Classe der Kaiserlichen Akademie der Wissenschaften, 68(1–2):385–423, 1873",
+        "url": "https://www.digitale-sammlungen.de/en/view/bsb11036802?page=407",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-22",
+        "number": "11.22",
+        "authors": "W. M. Kays, M. E. Crawford, and B. Weigand",
+        "originalTitle": "Convective Heat and Mass Transfer",
+        "titleJa": "対流熱・物質伝達",
+        "publication": "McGraw-Hill Book Company, New York, 4th ed., 2005",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-23",
+        "number": "11.23",
+        "authors": "R. J. Goldstein and H. H. Cho",
+        "originalTitle": "A review of mass transfer measurements using naphthalene sublimation",
+        "titleJa": "ナフタレン昇華を用いた物質伝達測定のレビュー",
+        "publication": "Exptl. Thermal and Fluid Sci., 10(4):416–434, 1995",
+        "doi": "10.1016/0894-1777(94)00071-F",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-24",
+        "number": "11.24",
+        "authors": "W. K. Lewis",
+        "originalTitle": "The evaporation of a liquid into a gas",
+        "titleJa": "液体の気体中への蒸発",
+        "publication": "Mech. Engr., 44(7):445–446, 1922",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-25",
+        "number": "11.25",
+        "authors": "T. H. Chilton and A. P. Colburn",
+        "originalTitle": "Mass transfer (absorption) coefficients: Prediction from data on heat transfer and fluid friction",
+        "titleJa": "物質伝達（吸収）係数：熱伝達と流体摩擦のデータからの予測",
+        "publication": "Ind. Eng. Chem., 26(11):1183–1187, November 1934",
+        "doi": "10.1021/ie50299a012",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-26",
+        "number": "11.26",
+        "authors": "G. M. Faeth",
+        "originalTitle": "Current status of droplet and liquid combustion",
+        "titleJa": "液滴と液体燃焼の現状",
+        "publication": "Prog. Energy Combust. Sci., 3(4):191–224, 1977",
+        "doi": "10.1016/0360-1285(77)90012-0",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-27",
+        "number": "11.27",
+        "authors": "C. K. Law",
+        "originalTitle": "Recent advances in droplet vaporization and combustion",
+        "titleJa": "液滴の蒸発と燃焼における最近の進歩",
+        "publication": "Prog. Energy Combust. Sci., 8(3):171–201, 1982",
+        "doi": "10.1016/0360-1285(82)90011-9",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-28",
+        "number": "11.28",
+        "authors": "J. Finneran, C. P. Garner, and F. Nadal",
+        "originalTitle": "Deviations from classical droplet evaporation theory",
+        "titleJa": "古典的液滴蒸発理論からの逸脱",
+        "publication": "Proc. Royal Soc. A., 477:20210078, 2021",
+        "doi": "10.1098/rspa.2021.0078",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-29",
+        "number": "11.29",
+        "authors": "A. F. Mills",
+        "originalTitle": "Mass Transfer",
+        "titleJa": "物質伝達",
+        "publication": "Prentice-Hall, Inc., Upper Saddle River, 2001",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-30",
+        "number": "11.30",
+        "authors": "R. B. Bird, W. E. Stewart, and E. N. Lightfoot",
+        "originalTitle": "Transport Phenomena",
+        "titleJa": "輸送現象",
+        "publication": "John Wiley & Sons, Inc., New York, 2nd ed., 2002",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-31",
+        "number": "11.31",
+        "authors": "Y. Okamoto and J. H. Lienhard",
+        "originalTitle": "How RO membrane permeability and other performance factors affect process cost and energy use: A review",
+        "titleJa": "RO 膜の透過性とその他の性能因子がプロセスコストとエネルギー使用にどう影響するか：レビュー",
+        "publication": "Desalination, 470:114064, 2019",
+        "doi": "10.1016/j.desal.2019.07.004",
+        "bookPage": 723,
+        "pdfPage": 737
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-32",
+        "number": "11.32",
+        "authors": "A. F. Mills",
+        "originalTitle": "The use of the diffusion velocity in conservation equations for multicomponent gas mixtures",
+        "titleJa": "多成分ガス混合物の保存方程式における拡散速度の使用",
+        "publication": "Int. J. Heat. Mass Transfer, 41(13):1955–1968, 1998",
+        "doi": "10.1016/S0017-9310(97)00306-2",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-33",
+        "number": "11.33",
+        "authors": "T. Langener, J. von Wolfersdorf, and J. Steelant",
+        "originalTitle": "Experimental investigations on transpiration cooling for scramjet applications using different coolants",
+        "titleJa": "異なる冷却材を用いたスクラムジェット応用のための蒸散冷却に関する実験的研究",
+        "publication": "AIAA J., 49(7):1409–1419, 2011",
+        "doi": "10.2514/1.J050698",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-34",
+        "number": "11.34",
+        "authors": "J. C. Han",
+        "originalTitle": "Advanced cooling in gas turbines",
+        "titleJa": "ガスタービンにおける先進冷却",
+        "publication": "J. Heat Transfer, 140(11):113001, July 2018",
+        "doi": "10.1115/1.4039644",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-35",
+        "number": "11.35",
+        "authors": "S. R. Shine and S. Shri Nidhi",
+        "originalTitle": "Review on film cooling of liquid rocket engines",
+        "titleJa": "液体ロケットエンジンのフィルム冷却に関するレビュー",
+        "publication": "Propul. Power Res., 7(1):1–18, 2018",
+        "doi": "10.1016/j.jppr.2018.01.004",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-36",
+        "number": "11.36",
+        "authors": "M. Barzegar Gerdroodbary",
+        "originalTitle": "Introduction",
+        "titleJa": "序論",
+        "publication": "In M. Barzegar Gerdroodbary, editor, Aerodynamic Heating in Supersonic and Hypersonic Flows, Chapter 1, pp. 1–16. Elsevier, Amsterdam, 2023",
+        "doi": "10.1016/B978-0-323-91770-4.00001-X",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-37",
+        "number": "11.37",
+        "authors": "J. Vander Kam and A. Amar",
+        "originalTitle": "Orion aerosciences and thermal protection system overview",
+        "titleJa": "オリオンの空力科学と熱防護システムの概要",
+        "publication": "In Entry, Descent, and Landing Summer Seminar, July 2021. Approved for public release NF-1676 20210018325",
+        "noteJa": "ビデオ。",
+        "noteEn": "Video.",
+        "url": "https://www.colorado.edu/irt/hypersonic-vehicles/sites/default/files/attached-files/orion_correct.pdf",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-38",
+        "number": "11.38",
+        "authors": "P. M. Sforza",
+        "originalTitle": "Thermal protection systems",
+        "titleJa": "熱防護システム",
+        "publication": "In P. M. Sforza, editor, Manned Spacecraft Design Principles, Chapter 9, pp. 391–452. Butterworth-Heinemann, Boston, 2016",
+        "doi": "10.1016/B978-0-12-804425-4.00009-X",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-39",
+        "number": "11.39",
+        "authors": "A. J. Amar, N. D. Calvert, and B. S. Kirk",
+        "originalTitle": "Development and verification of the charring ablating thermal protection implicit system solver",
+        "titleJa": "炭化アブレーション熱防護陰的システムソルバーの開発と検証",
+        "publication": "In Proc. 49th AIAA Aerospace Sciences Meeting, Orlando, FL, January 2011. AIAA Paper No. 2011-144",
+        "doi": "10.2514/6.2011-144",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-40",
+        "number": "11.40",
+        "authors": "H. S. Alpert, D. A. Saunders, M. Mahzari, J. D. Monk, T. R. White, and T. K. West",
+        "originalTitle": "Inverse estimation and sensitivity analysis of Mars 2020 entry aeroheating environments",
+        "titleJa": "Mars 2020 進入空力加熱環境の逆推定と感度解析",
+        "publication": "J. Spacecraft and Rockets, 60(3):899–911, 2023",
+        "doi": "10.2514/1.A35571",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-41",
+        "number": "11.41",
+        "authors": "A. C. Mueller",
+        "originalTitle": "Process heat exchangers",
+        "titleJa": "プロセス熱交換器",
+        "publication": "In W. M. Rohsenow, J. P. Hartnett, and E. N. Ganić, editors, Handbook of Heat Transfer Applications. McGraw-Hill Book Company, New York, 2nd ed., 1985",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-42",
+        "number": "11.42",
+        "authors": "A. C. Mueller",
+        "originalTitle": "Discussion of condenser types",
+        "titleJa": "凝縮器のタイプに関する議論",
+        "publication": "In G. F. Hewitt, editor, Heat Exchanger Design Handbook. Begell House, New York, 1998. Sect. 3.4.3",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-43",
+        "number": "11.43",
+        "authors": "A. C. Mueller",
+        "originalTitle": "Operational problems",
+        "titleJa": "運転上の問題",
+        "publication": "In G. F. Hewitt, editor, Heat Exchanger Design Handbook. Begell House, New York, 1998. Sect. 3.4.5",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-44",
+        "number": "11.44",
+        "authors": "J. O. Hirschfelder, C. F. Curtiss, and R. B. Bird",
+        "originalTitle": "Molecular Theory of Gases and Liquids",
+        "titleJa": "気体と液体の分子理論",
+        "publication": "John Wiley & Sons, Inc., New York, 1954",
+        "bookPage": 724,
+        "pdfPage": 738
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-45",
+        "number": "11.45",
+        "authors": "C. L. Tien and J. H. Lienhard",
+        "originalTitle": "Statistical Thermodynamics",
+        "titleJa": "統計熱力学",
+        "publication": "Hemisphere Publishing Corp., Washington, D.C., revised ed., 1978",
+        "url": "https://www.uh.edu/engines/StatisticalThermodynamics.pdf",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-46",
+        "number": "11.46",
+        "authors": "J. E. Lennard-Jones",
+        "originalTitle": "Cohesion",
+        "titleJa": "凝集",
+        "publication": "Proc. Physical Society, 43(5):461, September 1931",
+        "doi": "10.1088/0959-5309/43/5/301",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-47",
+        "number": "11.47",
+        "authors": "D. Reichenberg",
+        "originalTitle": "The indeterminacy of the values of potential parameters as derived from transport and virial coefficients",
+        "titleJa": "輸送係数とビリアル係数から導かれるポテンシャルパラメータの値の不確定性",
+        "publication": "AIChE J., 19(4):854–856, 1973",
+        "doi": "10.1002/aic.690190429",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-48",
+        "number": "11.48",
+        "authors": "R. A. Svehla",
+        "originalTitle": "Estimated viscosities and thermal conductivities of gases at high temperatures",
+        "titleJa": "高温における気体の推定粘度と熱伝導率",
+        "publication": "Technical Report NASA-TR-R-132, NASA Lewis Research Center, Cleveland, OH, January 1962",
+        "url": "http://hdl.handle.net/2060/19630012982",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-49",
+        "number": "11.49",
+        "authors": "A. B. Weaver and A. A. Alexeenko",
+        "originalTitle": "Revised variable soft sphere and Lennard-Jones model parameters for eight common gases up to 2200 K",
+        "titleJa": "2200 K までの8つの一般的な気体に対する、改訂された可変軟球およびレナード–ジョーンズモデルパラメータ",
+        "publication": "J. Phys. Chem. Ref. Data, 44(2):023103, June 2015",
+        "doi": "10.1063/1.4921245",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-50",
+        "number": "11.50",
+        "authors": "S. T. Lin and H. W. Hsu",
+        "originalTitle": "Transport collision integral for gases using the Lennard-Jones (6, n) potentials",
+        "titleJa": "レナード–ジョーンズ (6, n) ポテンシャルを用いた気体の輸送衝突積分",
+        "publication": "J. Chem. Eng. Data, 14(3):328–332, July 1969",
+        "doi": "10.1021/je60042a010",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-51",
+        "number": "11.51",
+        "authors": "G. Rutkai, M. Thol, R. Span, and J. Vrabec",
+        "originalTitle": "How well does the Lennard-Jones potential represent the thermodynamic properties of noble gases?",
+        "titleJa": "レナード–ジョーンズポテンシャルは貴ガスの熱力学的性質をどれだけよく表すか",
+        "publication": "Molecular Physics, 115(9–12):1104–1121, 2017",
+        "doi": "10.1080/00268976.2016.1246760",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-52",
+        "number": "11.52",
+        "authors": "M. Klein and F. J. Smith",
+        "originalTitle": "Tables of collision integrals for the (m, 6) potential function for 10 values of m",
+        "titleJa": "m の10の値に対する (m, 6) ポテンシャル関数の衝突積分の表",
+        "publication": "J. Res. Natl. Bur. Stand. A Phys. Chem., 72(4):359–424, July 1968",
+        "doi": "10.6028/jres.072A.033",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-53",
+        "number": "11.53",
+        "authors": "W. Hogervorst",
+        "originalTitle": "Diffusion coefficients of noble-gas mixtures between 300 K and 1400 K",
+        "titleJa": "300 K から1400 K の間の貴ガス混合物の拡散係数",
+        "publication": "Physica, 51(1):59–76, 1971",
+        "doi": "10.1016/0031-8914(71)90137-6",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-54",
+        "number": "11.54",
+        "authors": "J. Millat, J. H. Dymond, and C. A. Nieto de Castro",
+        "originalTitle": "Transport Properties of Fluids: Their Correlation, Prediction and Estimation",
+        "titleJa": "流体の輸送物性：相関、予測、推定",
+        "publication": "Cambridge University Press, Cambridge, UK, 1996",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-55",
+        "number": "11.55",
+        "authors": "C. Cercignani",
+        "originalTitle": "Rarefied Gas Dynamics",
+        "titleJa": "希薄気体力学",
+        "publication": "Cambridge University Press, Cambridge, UK, 2000",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-56",
+        "number": "11.56",
+        "authors": "W. G. Vincenti and C. H. Kruger",
+        "originalTitle": "Introduction to Physical Gas Dynamics",
+        "titleJa": "物理的気体力学入門",
+        "publication": "Wiley, New York, NY, 1965",
+        "url": "https://archive.org/details/introductiontoph00vinc/",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-57",
+        "number": "11.57",
+        "authors": "W. Sutherland",
+        "originalTitle": "A dynamical theory of diffusion for non-electrolytes and the molecular mass of albumin",
+        "titleJa": "非電解質の拡散の動力学的理論とアルブミンの分子質量",
+        "publication": "Phil. Mag., Ser. 6, 9(54):781–785, June 1905",
+        "doi": "10.1080/14786440509463331",
+        "bookPage": 725,
+        "pdfPage": 739
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-58",
+        "number": "11.58",
+        "authors": "A. Einstein",
+        "originalTitle": "Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen",
+        "titleJa": "熱の分子運動論から要求される、静止した液体中に懸濁した粒子の運動について",
+        "publication": "Annalen der Physik, 322(8):549–560, 1905",
+        "doi": "10.1002/andp.19053220806",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-59",
+        "number": "11.59",
+        "authors": "A. B. Basset",
+        "originalTitle": "A Treatise on Hydrodynamics, with numerous examples",
+        "titleJa": "流体力学の論考 ― 多数の例題付き",
+        "publication": "Vol. II. Deighton, Bell and Co., Cambridge, UK, 1888",
+        "url": "https://books.google.com/books?id=uMA3AAAAMAAJ",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-60",
+        "number": "11.60",
+        "authors": "G. G. Stokes",
+        "originalTitle": "On the effect of internal friction of fluids on the motion of pendulums",
+        "titleJa": "振り子の運動への流体の内部摩擦の影響について",
+        "publication": "Trans. Cambridge Philosophical Soc., 9(II):8–106, 1856",
+        "url": "https://hdl.handle.net/2027/mdp.39015012112531",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-61",
+        "number": "11.61",
+        "authors": "J. C. M. Li and P. Chang",
+        "originalTitle": "Self-diffusion coefficient and viscosity in liquids",
+        "titleJa": "液体における自己拡散係数と粘度",
+        "publication": "J. Chem. Phys., 23(3):518–520, March 1955",
+        "doi": "10.1063/1.1742022",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-62",
+        "number": "11.62",
+        "authors": "C. J. King, L. Hsueh, and K.-W. Mao",
+        "originalTitle": "Liquid phase diffusion of nonelectrolytes at high dilution",
+        "titleJa": "高希釈における非電解質の液相拡散",
+        "publication": "J. Chem. Engr. Data, 10(4):348–350, 1965",
+        "doi": "10.1021/je60027a014",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-63",
+        "number": "11.63",
+        "authors": "O. Großmann, D. Bellaire, N. Hayer, F. Jirasek, and H. Hasse",
+        "originalTitle": "Database for liquid phase diffusion coefficients at infinite dilution at 298 K and matrix completion methods for their prediction",
+        "titleJa": "298 K における無限希釈の液相拡散係数のデータベースと、その予測のための行列完成法",
+        "publication": "Digital Discovery, 1:886–897, 2022",
+        "doi": "10.1039/D2DD00073C",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-64",
+        "number": "11.64",
+        "authors": "R. C. Reid, J. M. Prausnitz, and T. K. Sherwood",
+        "originalTitle": "The Properties of Gases and Liquids",
+        "titleJa": "気体と液体の物性",
+        "publication": "McGraw-Hill Book Company, New York, 3rd ed., 1977",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-65",
+        "number": "11.65",
+        "authors": "S. A. Sanni, C. J. D. Fell, and H. P. Hutchison",
+        "originalTitle": "Diffusion coefficients and densities for binary organic liquid mixtures",
+        "titleJa": "二成分有機液体混合物の拡散係数と密度",
+        "publication": "J. Chem. Eng. Data, 16(4):424–427, 1971",
+        "doi": "10.1021/je60051a009",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-66",
+        "number": "11.66",
+        "authors": "R. A. Robinson and R. H. Stokes",
+        "originalTitle": "Electrolyte Solutions",
+        "titleJa": "電解質溶液",
+        "publication": "Dover Publications, Inc., Mineola, NY, 2nd revised ed., 2002",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-67",
+        "number": "11.67",
+        "authors": "A. Eucken",
+        "originalTitle": "Über das Wärmeleitvermögen, die spezifische Wärme und die innere Reibung der Gase",
+        "titleJa": "気体の熱伝導性、比熱、内部摩擦について",
+        "publication": "Physikalische Zeitschrift, 14:324–332, 1913",
+        "url": "https://hdl.handle.net/2027/mdp.39015021268936",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-68",
+        "number": "11.68",
+        "authors": "C. R. Wilke",
+        "originalTitle": "A viscosity equation for gas mixtures",
+        "titleJa": "ガス混合物の粘度方程式",
+        "publication": "J. Chem. Phys., 18(4):517–519, April 1950",
+        "doi": "10.1063/1.1747673",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-69",
+        "number": "11.69",
+        "authors": "E. A. Mason and S. C. Saxena",
+        "originalTitle": "Approximate formula for the thermal conductivity of gas mixtures",
+        "titleJa": "ガス混合物の熱伝導率に対する近似公式",
+        "publication": "Phys. Fluids, 1(5):361–369, September 1958",
+        "doi": "10.1063/1.1724352",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-70",
+        "number": "11.70",
+        "authors": "R. Taylor and R. Krishna",
+        "originalTitle": "Multicomponent Mass Transfer",
+        "titleJa": "多成分物質伝達",
+        "publication": "John Wiley & Sons, Inc., New York, 1993",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-71",
+        "number": "11.71",
+        "authors": "J. B. Duncan and H. L. Toor",
+        "originalTitle": "An experimental study of three component gas diffusion",
+        "titleJa": "三成分気体拡散の実験的研究",
+        "publication": "AIChE Journal, 8(1):38–41, March 1962",
+        "doi": "10.1002/aic.690080112",
+        "bookPage": 726,
+        "pdfPage": 740
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-72",
+        "number": "11.72",
+        "authors": "J. Wambui Mutoru and Abbas Firoozabadi",
+        "originalTitle": "Form of multicomponent Fickian diffusion coefficients matrix",
+        "titleJa": "多成分フィック拡散係数行列の形",
+        "publication": "J. Chemical Thermodynamics, 43(8):1192–1203, 2011",
+        "noteJa": "補足データには888組の実験データセットが含まれる。",
+        "noteEn": "The supplementary data include 888 experimental data sets.",
+        "doi": "10.1016/j.jct.2011.03.003",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-73",
+        "number": "11.73",
+        "authors": "J. C. Maxwell",
+        "originalTitle": "On the dynamical theory of gases",
+        "titleJa": "気体の動力学的理論について",
+        "publication": "Philosophical Transactions of the Royal Society of London, 157:49–88, 1867",
+        "doi": "10.1098/rstl.1867.0004",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-74",
+        "number": "11.74",
+        "authors": "J. Stefan",
+        "originalTitle": "Über das Gleichgewicht und die Bewegung, insbesondere die Diffusion von Gasgemengen",
+        "titleJa": "気体混合物の平衡と運動、特に拡散について",
+        "publication": "Sitzungsberichte der Mathematisch-Naturwissenschaftlichen Classe der Kaiserlichen Akademie der Wissenschaften, 63(1–5):63–124, 1871",
+        "url": "https://www.digitale-sammlungen.de/view/bsb10812588?page=81",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-75",
+        "number": "11.75",
+        "authors": "L. D. Landau and E. M. Lifshitz",
+        "originalTitle": "Mechanics",
+        "titleJa": "力学",
+        "publication": "Pergamon Press, Oxford, 1960. Chapter 4",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-76",
+        "number": "11.76",
+        "authors": "S. I. Sandler",
+        "originalTitle": "Chemical, Biochemical, and Engineering Thermodynamics",
+        "titleJa": "化学・生物化学・工学熱力学",
+        "publication": "Wiley, Hoboken, NJ, 5th ed., 2017",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-77",
+        "number": "11.77",
+        "authors": "R. Krishna and J. A. Wesselingh",
+        "originalTitle": "The Maxwell-Stefan approach to mass transfer",
+        "titleJa": "物質伝達へのマクスウェル–ステファンアプローチ",
+        "publication": "Chemical Engineering Science, 52(6):861–911, 1997",
+        "doi": "10.1016/S0009-2509(96)00458-7",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-78",
+        "number": "11.78",
+        "authors": "G. Leclercq, L. Leclercq, L.M. Bouleau, S. Pietrzyk, and R. Maurel",
+        "originalTitle": "Hydrogenolysis of saturated hydrocarbons: IV. Kinetics of the hydrogenolysis of ethane, propane, butane, and isobutane over nickel",
+        "titleJa": "飽和炭化水素の水素化分解：IV. ニッケル上でのエタン、プロパン、ブタン、イソブタンの水素化分解の速度論",
+        "publication": "J. Catalysis, 88(1):8–17, 1984",
+        "doi": "10.1016/0021-9517(84)90044-7",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-79",
+        "number": "11.79",
+        "authors": "J. I. Goldstein and A. E. Moren",
+        "originalTitle": "Diffusion modeling of the carburization process",
+        "titleJa": "浸炭プロセスの拡散モデリング",
+        "publication": "Metallurgical Trans. A, 9:1515–1525, 1978",
+        "doi": "10.1007/BF02661934",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-80",
+        "number": "11.80",
+        "authors": "American Society of Heating, Refrigerating, and Air-Conditioning Engineers",
+        "originalTitle": "2017 ASHRAE Handbook—Fundamentals (SI Edition)",
+        "titleJa": "2017 ASHRAE ハンドブック ― 基礎編（SI 版）",
+        "publication": "Atlanta, 2017. Chapter 9",
+        "noteJa": "表6を見よ。",
+        "noteEn": "See Table 6.",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-81",
+        "number": "11.81",
+        "authors": "T. Langener, J. von Wolfersdorf, and J. Steelant",
+        "originalTitle": "Experimental investigations on transpiration cooling for scramjet applications using different coolants",
+        "titleJa": "異なる冷却材を用いたスクラムジェット応用のための蒸散冷却に関する実験的研究",
+        "publication": "AIAA Journal, 49(7):1409–1419, April 2011",
+        "doi": "10.2514/1.J050698",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-82",
+        "number": "11.82",
+        "authors": "J. B. Will, N. P. Kruyt, and C. H. Venner",
+        "originalTitle": "An experimental study of forced convective heat transfer from smooth, solid spheres",
+        "titleJa": "滑らかな固体球からの強制対流熱伝達の実験的研究",
+        "publication": "Int. J. Heat Mass Transfer, 109:1059–1067, June 2017",
+        "doi": "10.1016/j.ijheatmasstransfer.2017.02.018",
+        "bookPage": 727,
+        "pdfPage": 741
+      },
+      {
+        "type": "reference",
+        "id": "reference-11-83",
+        "number": "11.83",
+        "authors": "R. Carty and T. Schrodt",
+        "originalTitle": "Concentration profiles in ternary gaseous diffusion",
+        "titleJa": "三成分気体拡散における濃度分布",
+        "publication": "Ind. Eng. Chem. Fund., 14(3):276–278, August 1975",
+        "doi": "10.1021/i160055a025",
+        "bookPage": 727,
+        "pdfPage": 741
+      }
+    ]
+  }
+}

@@ -1,0 +1,1225 @@
+{
+ "chapterId": "chapter-08",
+ "language": "ja",
+ "source": "A Heat Transfer Textbook, 6th edition, Chapter 8 (Natural convection in single-phase fluids and during film condensation): Problems and References — Japanese translation",
+ "bookPages": "456–470",
+ "pdfPages": "470–484",
+ "status": "complete",
+ "problems": {
+  "heading": "問題",
+  "count": 59,
+  "blocks": [
+   {
+    "type": "problem",
+    "id": "problem-8-1",
+    "number": "8.1",
+    "text": "膜凝縮問題における Π₄ が、Pr·Re²·Ja と正しく解釈できることを示せ。",
+    "hint": "特性速度が必要である ― 液体が距離 L を自由落下で到達する速度を使え。",
+    "formulaBlocks": [
+     {
+      "expression": "Π_4 = Pr Re² Ja"
+     }
+    ],
+    "bookPage": 456,
+    "endBookPage": 456,
+    "pdfPage": 470,
+    "endPdfPage": 470
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-2",
+    "number": "8.2",
+    "text": "高さ20 cm の垂直板が、20 °Cの室内で34 °Cに保たれる。高さに対する δ と h を（縮尺どおり）プロットし、上端における y に対する温度と速度をプロットせよ。δ と u の最大値はいくらか。",
+    "hint": "Squire-Eckert の結果を使え。",
+    "bookPage": 456,
+    "endBookPage": 456,
+    "pdfPage": 470,
+    "endPdfPage": 470
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-3",
+    "number": "8.3",
+    "text": "慣性を無視して Squire-Eckert の解析をやり直し、Nu_x の高 Pr 近似を得よ。結果を Squire-Eckert の公式と比較せよ。違いを説明せよ。",
+    "bookPage": 456,
+    "endBookPage": 456,
+    "pdfPage": 470,
+    "endPdfPage": 470
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-4",
+    "number": "8.4",
+    "text": "図8.16に示すように、線形の温度分布と単純な三角形の速度分布を、等温垂直板上の自然対流に対して仮定せよ。Nu_x = fn(Pr, Gr_x) を導き、結果を Squire-Eckert の結果と比較し、比較を議論せよ。",
+    "hint": "この非常に粗い近似は、誤差が15%程度しかない結果を与える。",
+    "figure": {
+     "figureNumber": "Fig. 8.16",
+     "caption": "図8.16 問題8.4の分布",
+     "alt": "温度分布は T_w から T_∞ へ直線的に変化し、速度分布は壁で0、δ/3 で u_max、δ で0となる三角形である。",
+     "bookPage": 456,
+     "pdfPage": 470
+    },
+    "bookPage": 456,
+    "endBookPage": 456,
+    "pdfPage": 470,
+    "endPdfPage": 470
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-5",
+    "number": "8.5",
+    "text": "断面がダイヤモンド形の断熱されていない水平円筒ダクト（図8.17）が、35 °Cの空気を運ぶ。熱抵抗のほとんどすべてが外側の自然対流境界層にあるので、T_w はおよそ35 °Cとせよ。T_∞ = 25 °Cである。ダクト1メートルあたりの自然対流熱損失を見積もれ。境界層が角で剥離するとしたら、結果はどれだけ変わりうるか。",
+    "answerHint": "Q = 24.0 W/m",
+    "figure": {
+     "figureNumber": "Fig. 8.17",
+     "caption": "図8.17 問題8.5の構成",
+     "alt": "ダイヤモンド形（ひし形）断面を持つ水平ダクトの図。",
+     "bookPage": 456,
+     "pdfPage": 470
+    },
+    "bookPage": 456,
+    "endBookPage": 457,
+    "pdfPage": 470,
+    "endPdfPage": 471
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-6",
+    "number": "8.6",
+    "text": "高さ3 m の壁の電気加熱パネルが、18 °Cの静止空気の部屋に175 W/m²を供給する。パネルからの放射は一様で100 W/m²と近似できる。パネルの平均温度はいくらか。上端の温度はどうか。下端の温度はどうか。",
+    "hint": "パネルの下端の温度は18 °Cである。",
+    "bookPage": 457,
+    "endBookPage": 457,
+    "pdfPage": 471,
+    "endPdfPage": 471
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-7",
+    "number": "8.7",
+    "text": "表1.1に与えられた膜凝縮熱伝達係数が有効となる管径と壁温度を求めよ。蒸気は1 atm とせよ。ベンゼンのデータを探す必要があることに注意せよ。ベンゼンは付録Aには含まれていない。この種のハードルは工学ではよくあることである。",
+    "bookPage": 457,
+    "endBookPage": 457,
+    "pdfPage": 471,
+    "endPdfPage": 471
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-8",
+    "number": "8.8",
+    "text": "例8.6を考える。この例で下端における層流から乱流への遷移をもたらす壁温度の値（もしあれば）、または板の高さはいくらか。",
+    "bookPage": 457,
+    "endBookPage": 457,
+    "pdfPage": 471,
+    "endPdfPage": 471
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-9",
+    "number": "8.9",
+    "text": "板が、図8.18に示すように、それと同期して回転する蒸気の中で回転する。地表面に垂直な重力を無視して、膜凝縮の結果としての Nu_L を計算せよ。",
+    "hint": "452ページで議論された回転水平円板と似ている、この問題の側面に注意せよ。",
+    "figure": {
+     "figureNumber": "Fig. 8.18",
+     "caption": "図8.18 問題8.9の構成",
+     "alt": "同期して回転する蒸気の中で回転する板の図。",
+     "bookPage": 457,
+     "pdfPage": 471
+    },
+    "bookPage": 457,
+    "endBookPage": 457,
+    "pdfPage": 471,
+    "endPdfPage": 471
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-10",
+    "number": "8.10",
+    "text": "T_sat の層流の液膜が、同じく T_sat の垂直壁を流れ下る。流れは十分に発達しており、膜厚は δ_o である。ある水平線に沿って、壁温度がより低い値 T_w に下がり、その下のいたるところでその温度に保たれる。壁温度が変わる線を x = 0 と呼ぶ。膜に隣接する領域が、流れる液体の飽和蒸気である場合、δ(x)、Nu_x、Nu_L を計算せよ。ここで x = L は壁の下端である。（x = 0 の近傍の遷移挙動は無視せよ。）",
+    "hint": "式（8.55）から始めよ。",
+    "bookPage": 457,
+    "endBookPage": 458,
+    "pdfPage": 471,
+    "endPdfPage": 472
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-11",
+    "number": "8.11",
+    "text": "27 °Cの空気中と水中における、通常の重力下での自然対流について、次の形の公式の表を作成せよ。T_∞ = 27 °Cとし、T_w は27 °Cに近いとせよ。表には、垂直板、水平円柱、球、および可能なら追加の形状に対する結果を含めること。計算過程は含めないこと。",
+    "formulaBlocks": [
+     {
+      "expression": "h̄ (W/m²·K) = C[ΔT/(L K/m)]^(1/4)"
+     }
+    ],
+    "bookPage": 458,
+    "endBookPage": 458,
+    "pdfPage": 472,
+    "endPdfPage": 472
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-12",
+    "number": "8.12",
+    "text": "条件 |∂²u/∂y²|_{y=0} = gβ(T_w − T_∞)/ν が Squire-Eckert の境界層解において正確に満たされるのは、Pr がいくらのときか。",
+    "answerHint": "Pr = 2.86",
+    "bookPage": 458,
+    "endBookPage": 458,
+    "pdfPage": 472,
+    "endPdfPage": 472
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-13",
+    "number": "8.13",
+    "text": "家の側壁は高さ10 m である。室内空気と外面の間の総括熱伝達係数は2.5 W/m²·K である。寒く穏やかな冬の夜、T_outside = −30 °C、T_inside,air = 25 °Cである。ε = 0.9 の場合、家の外壁における h_conv はいくらか。外部対流は層流か乱流か。",
+    "answerHint": "h = 4.59 W/m²·K",
+    "bookPage": 458,
+    "endBookPage": 458,
+    "pdfPage": 472,
+    "endPdfPage": 472
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-14",
+    "number": "8.14",
+    "text": "例8.2を考える。シートは軟鋼で、長さ2 m、厚さ6 mm である。浴は基本的に60 °Cの水であり、シートは18 °Cでその中に入れられる。",
+    "items": [
+     "（a）時間の関数としてシート温度をプロットせよ。",
+     "（b）ΔT = [(60 + 18)/2 − 18] °Cにおける h で近似して、従来の指数応答を同じグラフにプロットせよ。"
+    ],
+    "bookPage": 458,
+    "endBookPage": 458,
+    "pdfPage": 472,
+    "endPdfPage": 472
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-15",
+    "number": "8.15",
+    "text": "式（8.7）では、密度差の温度依存性を線形化した。温度 T_w の壁が、T_∞ = 7 °Cの水の中にあるとする。表A.3のデータを使って、7 °C ≤ T_w ≤ 100 °C に対して |ρ_w − ρ_∞| と |ρ_∞ − ρ_f β_f (T_w − T_∞)| をプロットせよ。ここで (‥)_f は膜温度における値である。線形化はどれだけうまく機能するか。",
+    "bookPage": 458,
+    "endBookPage": 459,
+    "pdfPage": 472,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-16",
+    "number": "8.16",
+    "text": "77 °Cの垂直壁が27 °Cの空気を加熱する。δ_top/L、Ra_L、および図8.3の線が直線でなくなる L を評価せよ。結果の含意についてコメントせよ。",
+    "answerHint": "δ_top/L ≃ 0.6",
+    "figureRefs": [
+     "Fig. 8.3"
+    ],
+    "bookPage": 459,
+    "endBookPage": 459,
+    "pdfPage": 473,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-17",
+    "number": "8.17",
+    "text": "外径8 cm の水平管が、17 °Cの部屋を通して150 °Cの蒸気を運ぶ。管は85%マグネシア断熱材の1.5 cm の層で覆われている。管1メートルあたりの自然対流による熱損失を評価せよ。",
+    "answerHint": "Q = 97.3 W/m",
+    "bookPage": 459,
+    "endBookPage": 459,
+    "pdfPage": 473,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-18",
+    "number": "8.18",
+    "text": "0.01 mm の水平線を、その周囲の10 °Cの水より30 °C高く保つために供給しなければならない熱率（W/m）はいくらか。",
+    "bookPage": 459,
+    "endBookPage": 459,
+    "pdfPage": 473,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-19",
+    "number": "8.19",
+    "text": "直径5 mm、長さ20 cm の銅管の垂直な部分が、27 °Cの空気を通して60 °Cの凝縮蒸気を運ぶ。全熱損失はいくらか。",
+    "hint": "熱抵抗のどれかが無視できるか。",
+    "answerHint": "Q = 0.94 W",
+    "bookPage": 459,
+    "endBookPage": 459,
+    "pdfPage": 473,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-20",
+    "number": "8.20",
+    "text": "物体は、底面で接合された2つの円錐からなる。直径は10 cm で、接合された円錐の全長は25 cm である。物体の軸は鉛直であり、物体は7 °Cの空気中で27 °Cに保たれる。自然対流によって物体から除去される熱率はいくらか。",
+    "answerHint": "Q = 3.38 W",
+    "bookPage": 459,
+    "endBookPage": 459,
+    "pdfPage": 473,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-21",
+    "number": "8.21",
+    "text": "例8.1で扱われた板を考える。熱い側を上下両方向に ±90°の範囲で傾けたときの、板の傾斜角の関数として h をプロットせよ。θ の異なる範囲では不連続な公式で間に合わせなければならないことに注意せよ。",
+    "bookPage": 459,
+    "endBookPage": 459,
+    "pdfPage": 473,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-22",
+    "number": "8.22",
+    "text": "住宅用の高さ1.5 m の垂直壁パネルヒーターを設計するよう求められている。壁のどの部分も33 °Cを超えないようにするには、熱流束はどうあるべきか。パネルの幅が7 m、ε = 0.7 の場合、どれだけの熱が部屋へ行くか。",
+    "hint": "自然対流は、室温をどう仮定するかにもよるが、およそ200 W しか除去しない。",
+    "bookPage": 459,
+    "endBookPage": 459,
+    "pdfPage": 473,
+    "endPdfPage": 473
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-23",
+    "number": "8.23",
+    "text": "高さ14 cm の垂直面が、1 atm の凝縮蒸気によって加熱される。H₂O を別の凝縮流体に置き換えて壁を加熱した場合の熱除去の分数変化の式を与えよ。有機流体を1つ選び、両流体とも壁が30 °Cの場合の h の変化率を評価せよ。",
+    "bookPage": 459,
+    "endBookPage": 460,
+    "pdfPage": 473,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-24",
+    "number": "8.24",
+    "text": "外径1 cm の管が、1 atm の飽和蒸気の領域を水平に27 cm 延びる。管の外側は50 °Cから150 °Cの間の任意の温度に保つことができる。熱放射を除いて、管温度の関数として熱伝達をプロットせよ。",
+    "bookPage": 460,
+    "endBookPage": 460,
+    "pdfPage": 474,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-25",
+    "number": "8.25",
+    "text": "高さ2 m の垂直板が、1 atm の蒸気を凝縮させる。ヌッセルトの h の予測が精度を失い始めるのは、壁温度がどれだけ以下か。凝縮膜が乱流になるのはどれだけ以下の温度か。",
+    "bookPage": 460,
+    "endBookPage": 460,
+    "pdfPage": 474,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-26",
+    "number": "8.26",
+    "text": "らせん還流凝縮器は、外径0.8 cm の銅管でできており、壁温度は30 °Cである。それは1 atm の蒸気を凝縮させる。α = 18°、コイル径7 cm の場合、h を求めよ。",
+    "answerHint": "h = 9.5 kW/m²·K",
+    "bookPage": 460,
+    "endBookPage": 460,
+    "pdfPage": 474,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-27",
+    "number": "8.27",
+    "text": "らせん凝縮器のコイル径は5 cm で、管径は5 mm である。凝縮器は15 °Cの水を運び、1 atm の飽和蒸気の浴の中にある。6 kg/hr の蒸気を凝縮させるためのコイルの数と、適当な らせん角を指定せよ。h_inside = 600 W/m²·K である。",
+    "answerHint": "4.4コイル",
+    "bookPage": 460,
+    "endBookPage": 460,
+    "pdfPage": 474,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-28",
+    "number": "8.28",
+    "text": "スケジュール40、304ステンレス鋼の蒸気管（公称径4 in.）が、加工工場で150 psia の飽和蒸気を運ぶ。管が裸で、周囲の空気が68 °Fで静止している場合の、管の単位長さあたりの熱損失を計算せよ。管がジャケット付きグラスファイバー管断熱材の1 in. の層で断熱された場合、この熱損失はどれだけ減るか。ε_ss = 0.55、ε_gf = 0.9 とせよ。",
+    "bookPage": 460,
+    "endBookPage": 460,
+    "pdfPage": 474,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-29",
+    "number": "8.29",
+    "text": "例8.3における自然対流境界層内の空気の最大速度はいくらか。",
+    "answerHint": "u_max = 0.35 m/s",
+    "bookPage": 460,
+    "endBookPage": 460,
+    "pdfPage": 474,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-30",
+    "number": "8.30",
+    "text": "この章の T_w 一定の自然対流相関式のいくつかは、小さな加算定数と複雑な Pr 因子を含んでいる：式（8.13a）、式（8.28）、式（8.33）。Pr が大きく、Ra がその加算定数を無視できるほど大きいとする。これらの相関式はどのような形をとるか。Ra の代わりに Gr で書くとどうか。同じ極限で、乱流の相関式、式（8.13b）と式（8.29）はどのような形か。",
+    "bookPage": 460,
+    "endBookPage": 460,
+    "pdfPage": 474,
+    "endPdfPage": 474
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-31",
+    "number": "8.31",
+    "text": "工業プロセスには、水のプールに浸された非常に大きな水平円柱が含まれる。水は27 °Cである。円柱の直径は5 m で、67 °Cに保たれる。まず h を求めよ。次に、直径を10 m に増やしたとする。新しい h はいくらか。乱流自然対流レジームにおけるこれらの答えの類似性を説明せよ。",
+    "answerHint": "h ≃ 1000 W/m²·K",
+    "bookPage": 460,
+    "endBookPage": 461,
+    "pdfPage": 474,
+    "endPdfPage": 475
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-32",
+    "number": "8.32",
+    "text": "直径 d、速度 u∞ で動く液体の垂直なジェットが、ω rad/s で回転する水平円板に衝突する。系内に熱伝達はない。δ(r) の式を導け。ここで r は円板上の半径座標である。δ の r 依存性を、回転円板上の凝縮膜のそれと対比し、違いを定性的に説明せよ。",
+    "hint": "δ は r^(−2/3) のように変化する。",
+    "bookPage": 461,
+    "endBookPage": 461,
+    "pdfPage": 475,
+    "endPdfPage": 475
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-33",
+    "number": "8.33",
+    "text": "物性が一定なら、自然対流では h ∝ ΔT^(1/4) であることを見てきた。T_w が T_∞ より高くなるにつれて物性の変化を考えると、h は空気中では ΔT へより強く依存するか、より弱く依存するか。水の中ではどうか。",
+    "bookPage": 461,
+    "endBookPage": 461,
+    "pdfPage": 475,
+    "endPdfPage": 475
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-34",
+    "number": "8.34",
+    "text": "液体の膜が垂直板に沿って落下する。それは初め飽和しており、飽和蒸気に囲まれている。膜厚は δ_o である。壁のある点（x = 0 と呼ぶ）より下で壁温度が T_sat よりわずかに高い値 T_w に上げられた場合、δ(x)、Nu_x、および板が乾く距離 x_f の式を導け。流体が1 atm の水で、T_w = 105 °C、δ_o = 0.1 mm の場合、x_f を計算せよ。",
+    "hint": "板は0.5 m を少し超えたところで乾く。",
+    "bookPage": 461,
+    "endBookPage": 461,
+    "pdfPage": 475,
+    "endPdfPage": 475
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-35",
+    "number": "8.35",
+    "text": "ある太陽熱蒸気発生器では、吸収率の高い染料を含む水が、層流の膜として垂直板を流れ下る。膜の初期の厚さは δ_o である。太陽の光は、液面から少し離れた平行なガラス板（10.6節を見よ）を通り、膜の表面に q_s W/m²を付与する。水は入口で飽和しており、その背後の板は断熱されているとする。水が蒸発するにつれての δ(x) の式を導け。濡れた板の最大長さの式を導け、層流の解が有効であるための δ_o の最大値の式を求めよ。",
+    "bookPage": 461,
+    "endBookPage": 461,
+    "pdfPage": 475,
+    "endPdfPage": 475
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-36",
+    "number": "8.36",
+    "text": "静止した27 °Cの空気中で、直径0.01 mm の水平な電気抵抗線の表面で達成できる熱流束は、その融点が927 °Cの場合いくらか。放射は無視せよ。",
+    "hint": "答えは驚くほど大きくなる。",
+    "bookPage": 461,
+    "endBookPage": 461,
+    "pdfPage": 475,
+    "endPdfPage": 475
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-37",
+    "number": "8.37",
+    "text": "外径0.03 m、長さ3 m、ε = 0.7 の垂直管が、低湿度の24 °Cの部屋を通して冷媒を運ぶ。管壁が10 °Cの場合、それは部屋からどれだけの熱を吸収するか。",
+    "answerHint": "Q = 25.8 W",
+    "bookPage": 461,
+    "endBookPage": 462,
+    "pdfPage": 475,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-38",
+    "number": "8.38",
+    "text": "50 °Cの外径1 cm の管が、20 °Cの空気中を水平に走る。管上の85%マグネシア断熱材の臨界半径はいくらか。断熱材は、放射率が非常に低くなるようコーティングされている。",
+    "hint": "反復解法が必要である。",
+    "bookPage": 462,
+    "endBookPage": 462,
+    "pdfPage": 476,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-39",
+    "number": "8.39",
+    "text": "25.4 mm（1 in.）の氷の立方体が、20 °Cの空気中に吊るされている。滴下速度を gm/min で見積もれ。離れる水膜を通る ΔT は無視し、上面の対流は悪いとせよ。h_sf = 333.3 kJ/kg である。",
+    "bookPage": 462,
+    "endBookPage": 462,
+    "pdfPage": 476,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-40",
+    "number": "8.40",
+    "text": "直径1 mm の水平な電気抵抗ヒーターが、17 °Cの水の中で100 W/m を放出する。線の温度はいくらか。",
+    "answerHint": "T_w ≈ 47 °C",
+    "bookPage": 462,
+    "endBookPage": 462,
+    "pdfPage": 476,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-41",
+    "number": "8.41",
+    "text": "熱伝達係数に対する正しい公式を使って、問題5.39を解け。",
+    "bookPage": 462,
+    "endBookPage": 462,
+    "pdfPage": 476,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-42",
+    "number": "8.42",
+    "text": "長さ20 mm、直径5 mm の垂直な棒が、室温の空気中で電流を分流するために使われると赤熱する。その融点が1000 °Cの場合、どれだけの電力を散逸できるか。すべての仮定と補正を記せ。F_{rod–room} = 0.15 を使って放射を含めよ。",
+    "hint": "熱伝達の半分以上が放射による。",
+    "bookPage": 462,
+    "endBookPage": 462,
+    "pdfPage": 476,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-43",
+    "number": "8.43",
+    "text": "直径0.25 mm、長さ0.2 m の白金線を、水平に1035 °Cに保つものとする。それは黒体である。どれだけの電力が必要か。熱伝達の対流部分を計算する際に、それを壁温度一定のヒーターとして扱うのは正当か。周囲は20 °Cであり、周囲の部屋は実質的に黒体である。",
+    "bookPage": 462,
+    "endBookPage": 462,
+    "pdfPage": 476,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-44",
+    "number": "8.44",
+    "text": "長さ11.6 m の垂直板が、1 atm の飽和蒸気を凝縮させる。膜が層流のままでいることを確実にしたい。許容できる最低の板温度はいくらか、その温度における q はいくらか。",
+    "answerHint": "q = 25 kW/m²",
+    "bookPage": 462,
+    "endBookPage": 462,
+    "pdfPage": 476,
+    "endPdfPage": 476
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-45",
+    "number": "8.45",
+    "text": "まっすぐな水平フィンが、層流自然対流によって周囲空気と熱交換する。",
+    "items": [
+     "（a）d²θ/dξ² = m²L²θ^(5/4) であることを示せ。ここで m は h_o ≡ h(T = T_o) に基づく。",
+     "（b）常微分方程式を積分する適切なソフトウェアにアクセスできる場合、m²L² が10⁻³から10³までの範囲について方程式を解け。結果を η/η_o として表せ。ここで η はフィン効率、η_o は h_o がフィン全体にわたって一様な熱伝達係数であった場合に得られる効率である。"
+    ],
+    "formulaBlocks": [
+     {
+      "expression": "d²θ/dξ² = m²L² θ^(5/4)"
+     }
+    ],
+    "bookPage": 462,
+    "endBookPage": 463,
+    "pdfPage": 476,
+    "endPdfPage": 477
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-46",
+    "number": "8.46",
+    "text": "直径2.5 cm の黒い球（F = 1）が、20 °Cの空気と放射–対流平衡にある。周囲は1000 K である。球の温度はいくらか。",
+    "hint": "反復解法が必要である。",
+    "bookPage": 463,
+    "endBookPage": 463,
+    "pdfPage": 477,
+    "endPdfPage": 477
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-47",
+    "number": "8.47",
+    "text": "垂直な円形板上の凝縮における h(D) と Nu_D の式を導け。",
+    "bookPage": 463,
+    "endBookPage": 463,
+    "pdfPage": 477,
+    "endPdfPage": 477
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-48",
+    "number": "8.48",
+    "text": "直径300 mm の水平な金属円板の周りに高さ5 mm の縁があり、浅い容器を形成している。円板は95 °Cであり、100 °Cの飽和水蒸気に囲まれている。",
+    "items": [
+     "（a）円板への定常熱流束と凝縮速度を見積もれ。",
+     "（b）容器が初め空の場合、それが満ちるまでの時間を見積もれ。"
+    ],
+    "bookPage": 463,
+    "endBookPage": 463,
+    "pdfPage": 477,
+    "endPdfPage": 477
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-49",
+    "number": "8.49",
+    "text": "原子力発電所の提案設計は、原子炉の炉心から熱を除去するために溶融鉛を使う。加熱された鉛は次に、水を沸騰させて蒸気タービンを駆動するために使われる。60 °C、70 bar（T_sat = 286 °C）の水が、鉛によって加熱される管の区間を ṁ = 2 kg/s で流れる。管はステンレス鋼（k_s = 15 W/m·K）で、壁厚12 mm、外径62 mm である。管の外の鉛はほぼ静止しており、477 °Cである。",
+    "items": [
+     "（a）液体の水のバルク温度が T_b = 80 °Cである点において、管の内壁温度と外壁温度 T_wi と T_wo を、およそ5 °C以内の精度で見積もれ。入口長さと物性変化の影響は無視し、β_lead ≈ 0.000118 K⁻¹ とせよ。",
+     "（b）入口からどの距離で、管の内壁が T_sat に達するか。設計にどのような変更が必要かもしれないか。"
+    ],
+    "hint": "鉛に対する h を計算する際は、外壁温度を370 °Cより高い値で推測せよ。",
+    "bookPage": 463,
+    "endBookPage": 463,
+    "pdfPage": 477,
+    "endPdfPage": 477
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-50",
+    "number": "8.50",
+    "text": "長さ10 cm、幅40 cm の平板が、鉛直から30°傾いている。それは一様な温度250 K に保たれる。260 K の飽和 HCFC-22 蒸気が板上に凝縮する。次を求めよ。",
+    "items": [
+     "（a）h′_fg/h_fg の比",
+     "（b）平均熱伝達係数と、板を冷却しなければならない率（ワット）",
+     "（c）板の下端における膜厚と、板の凝縮速度（g/s）"
+    ],
+    "bookPage": 463,
+    "endBookPage": 464,
+    "pdfPage": 477,
+    "endPdfPage": 478
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-51",
+    "number": "8.51",
+    "text": "ある自動車用空調システムの部品の1つは「レシーバー」であり、液体冷媒 HFC-134a のプールを、その上に蒸気とともに含む小さな垂直円筒タンクである。レシーバーはシステムの余分な冷媒を蓄え、圧力を調整する助けをする。レシーバーは330 K の周囲と平衡にある。レシーバー内部の直径5 mm の球形サーミスターが液面レベルを監視する。サーミスターは小さな電流で駆動される温度検出抵抗体であり、0.1 W の電力を散逸する。システムが冷媒で完全に満たされているとき、サーミスターは液面の下にある。冷媒がシステムから漏れると、液面が下がり、サーミスターはやがて蒸気の中に位置する。サーミスターはレシーバーに比べて小さく、その電力はレシーバー内のバルク温度に影響するには低すぎる。",
+    "items": [
+     "（a）システムが完全に満たされているときのサーミスターの温度を求めよ。",
+     "（b）サーミスターが蒸気の中に位置するほど冷媒が漏れたときのサーミスターの温度を求めよ。放射は無視せよ。"
+    ],
+    "hint": "（a）については Nu_D ≫ 2 とせよ。（b）については放射を無視せよ。",
+    "bookPage": 464,
+    "endBookPage": 464,
+    "pdfPage": 478,
+    "endPdfPage": 478
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-52",
+    "number": "8.52",
+    "text": "300 K、圧力1.062 MPa のアンモニア蒸気が、水平管の外側に凝縮する。管の外径は19.1 mm である。",
+    "items": [
+     "（a）管の外側が一様な温度290 K であるとする。平均凝縮熱伝達係数を求めよ。",
+     "（b）管は、その中を流れる冷水によって冷却され、薄い銅管の熱抵抗は無視できる。外表面が290 K である位置で水のバルク温度が275 K の場合、管内の熱伝達係数はいくらか。",
+     "（c）今求めた熱伝達係数を使って、管の熱抵抗を無視できる最大の壁厚を見積もれ。管壁温度の、円周方向と管の長さ方向の変化を記述せよ。"
+    ],
+    "bookPage": 464,
+    "endBookPage": 464,
+    "pdfPage": 478,
+    "endPdfPage": 478
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-53",
+    "number": "8.53",
+    "text": "プロセス機器の中の傾斜板が、水平から30°上に傾いている。板は傾斜面内で長さ20 cm、幅25 cm である。板は、その下面を過ぎて流れる液体によって280 K に保たれる。液体は12 W を除去できる冷凍システムによって冷却されるが、熱負荷が12 W を超えると、液体と板の両方の温度が上昇し始める。板の上面は、300 K で変動する圧力のアンモニア蒸気と接触している。ある技術者は、液体のバルク温度の上昇が、圧力がおよそ p_crit = 551 kPa のレベルを超えたことを知らせるだろうと提案する。",
+    "items": [
+     "（a）気体の圧力が冷媒への熱伝達に影響する理由を説明せよ。p_crit = 551 kPa の意義は何か。",
+     "（b）圧力が255.3 kPa であるとする。板温度が T_w = 280 K の場合、気体から板への熱伝達率（W）はいくらか。冷媒温度は上昇するか。",
+     "（c）圧力が1062 kPa に上昇したとする。板がまだ T_w = 280 K の場合、熱伝達率はいくらか。冷媒温度は上昇するか。"
+    ],
+    "continuation": "255.3 kPa、290 K における気体アンモニアについては：β = 0.0040 K⁻¹、ρ = 1.86 kg/m³、c_p = 2314 J/kg·K、µ = 9.75 × 10⁻⁶ kg/m³、k = 0.0247 W/m·K。その他のデータは付録Aから取れ。",
+    "sourceNote": {
+     "ja": "本書では粘度 µ の単位が「kg/m³」と印刷されている（正しくは kg/(m·s) とみられる）。数値と単位は原文どおり保持した。",
+     "en": "The book prints the unit of viscosity µ as \"kg/m3\" (evidently kg/(m·s) is meant). The value and unit are preserved as printed."
+    },
+    "bookPage": 464,
+    "endBookPage": 465,
+    "pdfPage": 478,
+    "endPdfPage": 479
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-54",
+    "number": "8.54",
+    "text": "式（8.72）の膜レイノルズ数 Re_c は、厚さ δ に基づいていた。レイノルズ数が膜の水力直径に基づけば4倍大きくなることを示せ。",
+    "bookPage": 465,
+    "endBookPage": 465,
+    "pdfPage": 479,
+    "endPdfPage": 479
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-55",
+    "number": "8.55",
+    "text": "落下する液膜の特性長さスケールは ℓ = (ν²/g)^(1/3) である。平面壁上に凝縮する層流膜のヌッセルト数が Nu_ℓ ≡ hℓ/k と書かれる場合、Nu_ℓ の式を Re_c を用いて導け。ρ_f ≫ ρ_g のとき、Nu_ℓ = (3Re_c)^(−1/3) であることを示せ。",
+    "formulaBlocks": [
+     {
+      "expression": "ℓ = (ν²/g)^(1/3)"
+     },
+     {
+      "expression": "Nu_ℓ = (3 Re_c)^(−1/3) （ρ_f ≫ ρ_g のとき）"
+     }
+    ],
+    "bookPage": 465,
+    "endBookPage": 465,
+    "pdfPage": 479,
+    "endPdfPage": 479
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-56",
+    "number": "8.56",
+    "text": "式（8.13a）と式（8.13b）を、図8.3に合わせた座標にプロットせよ。（それぞれ Pr 依存性がわずかに異なるので、Pr = 0.7 を使え。）これらの方程式がよく一致する範囲はどこか。横軸の値10⁹、10¹⁰、10¹¹、10¹²について図8.3からデータ点を写し取り、グラフに加えよ。データは相関式と比べてどうか。",
+    "figureRefs": [
+     "Fig. 8.3"
+    ],
+    "bookPage": 465,
+    "endBookPage": 465,
+    "pdfPage": 479,
+    "endPdfPage": 479
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-57",
+    "number": "8.57",
+    "text": "例8.8における h̄ の積分を実行し、式（8.67）を得よ。",
+    "hint": "ガンマ関数 Γ(z) は表にされた特殊関数であることを思い出せ。［8.42, §12.41］によれば、m, n > 0 に対して次の式が示される。",
+    "formulaBlocks": [
+     {
+      "expression": "∫_0^(π/2) cos^(2m−1) θ sin^(2n−1) θ dθ = Γ(m)Γ(n)/(2Γ(m + n)) （m, n > 0）"
+     }
+    ],
+    "bookPage": 465,
+    "endBookPage": 466,
+    "pdfPage": 479,
+    "endPdfPage": 480
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-58",
+    "number": "8.58",
+    "text": "例8.4の油ラインが ε = 0.17 の研磨されたステンレス鋼の場合、全熱損失は g レベルとともにどのように変化するか。",
+    "bookPage": 466,
+    "endBookPage": 466,
+    "pdfPage": 480,
+    "endPdfPage": 480
+   },
+   {
+    "type": "problem",
+    "id": "problem-8-59",
+    "number": "8.59",
+    "text": "表A.4と表A.5のデータを使って、200 K ≤ T ≤ 380 K における飽和アンモニア蒸気の β を、理想気体の式 β_IG = 1/T とともにプロットせよ。また Z = P/(ρRT) を計算せよ。アンモニア蒸気は、三重点温度の近くでより理想気体らしくなるか、臨界点温度の近くでより理想気体らしくなるか。",
+    "bookPage": 466,
+    "endBookPage": 466,
+    "pdfPage": 480,
+    "endPdfPage": 480
+   }
+  ]
+ },
+ "references": {
+  "heading": "参考文献",
+  "count": 42,
+  "preambleBlocks": [],
+  "blocks": [
+   {
+    "type": "reference",
+    "id": "reference-8-1",
+    "number": "8.1",
+    "authors": "W. Nusselt",
+    "originalTitle": "Das grundgesetz des wärmeüberganges",
+    "titleJa": "熱伝達の基本法則",
+    "publication": "Gesund. Ing., 38:872, 1915",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-2",
+    "number": "8.2",
+    "authors": "C. J. Sanders and J. P. Holman",
+    "originalTitle": "Franz Grashof and the Grashof Number",
+    "titleJa": "フランツ・グラスホフとグラスホフ数",
+    "publication": "Int. J. Heat Mass Transfer, 15(3):562–563, March 1972",
+    "doi": "10.1016/0017-9310(72)90220-7",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-3",
+    "number": "8.3",
+    "authors": "S. W. Churchill and H. H. S. Chu",
+    "originalTitle": "Correlating equations for laminar and turbulent free convection from a vertical plate",
+    "titleJa": "垂直板からの層流・乱流自由対流の相関式",
+    "publication": "Int. J. Heat Mass Transfer, 18(11):1323–1329, November 1975",
+    "doi": "10.1016/0017-9310(75)90243-4",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-4",
+    "number": "8.4",
+    "authors": "S. Goldstein, editor",
+    "originalTitle": "Modern Developments in Fluid Mechanics",
+    "titleJa": "流体力学の現代的発展",
+    "publication": "Vol. 2, Chapter 14. Oxford University Press, New York, 1938",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-5",
+    "number": "8.5",
+    "authors": "E. R. G. Eckert and R. M. Drake, Jr.",
+    "originalTitle": "Analysis of Heat and Mass Transfer",
+    "titleJa": "熱・物質伝達の解析",
+    "publication": "Hemisphere Publishing Corp., Washington, D.C., 1987",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-6",
+    "number": "8.6",
+    "authors": "A. Bejan and J. L. Lage",
+    "originalTitle": "The Prandtl number effect on the transition in natural convection along a vertical surface",
+    "titleJa": "垂直面に沿う自然対流の遷移に対するプラントル数の影響",
+    "publication": "J. Heat Transfer, 112(3):787–790, August 1990",
+    "doi": "10.1115/1.2910457",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-7",
+    "number": "8.7",
+    "authors": "W. Kraus",
+    "originalTitle": "Messungen des Temperatur- und Geschwindigkeitsfeldes bei freier Konvektion",
+    "titleJa": "自由対流における温度場と速度場の測定",
+    "publication": "Verlag G. Braun, Karlsruhe, 1955. Chapter F",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-8",
+    "number": "8.8",
+    "authors": "S. W. Churchill and H. H. S. Chu",
+    "originalTitle": "Correlating equations for laminar and turbulent free convection from a horizontal cylinder",
+    "titleJa": "水平円柱からの層流・乱流自由対流の相関式",
+    "publication": "Int. J. Heat Mass Transfer, 18(9):1049–1053, September 1975",
+    "doi": "10.1016/0017-9310(75)90222-7",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-9",
+    "number": "8.9",
+    "authors": "T. Cebeci",
+    "originalTitle": "Laminar-free-convective-heat transfer from the outer surface of a vertical slender circular cylinder",
+    "titleJa": "垂直な細い円柱の外面からの層流自由対流熱伝達",
+    "publication": "In Proc. Fifth Int. Heat Transfer Conf., Vol. 3, pp. 15–19. Tokyo, September 3–7, 1974",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-10",
+    "number": "8.10",
+    "authors": "T. Yuge",
+    "originalTitle": "Experiments on heat transfer from spheres including combined forced and natural convection",
+    "titleJa": "強制対流と自然対流の複合を含む、球からの熱伝達の実験",
+    "publication": "J. Heat Transfer, 82(3):214, August 1960",
+    "doi": "10.1115/1.3679912",
+    "bookPage": 466,
+    "pdfPage": 480
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-11",
+    "number": "8.11",
+    "authors": "G. D. Raithby and K. G. T. Hollands",
+    "originalTitle": "Natural convection",
+    "titleJa": "自然対流",
+    "publication": "In W. M. Rohsenow, J. P. Hartnett, and Y. I. Cho, editors, Handbook of Heat Transfer, Chapter 4. McGraw-Hill, New York, 3rd ed., 1998",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-12",
+    "number": "8.12",
+    "authors": "J. H. Lienhard",
+    "originalTitle": "On the commonality of equations for natural convection from immersed bodies",
+    "titleJa": "浸漬物体からの自然対流の方程式の共通性について",
+    "publication": "Int. J. Heat Mass Transfer, 16(11):2121–2123, November 1973",
+    "doi": "10.1016/0017-9310(73)90116-6",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-13",
+    "number": "8.13",
+    "authors": "B. R. Rich",
+    "originalTitle": "An investigation of heat transfer from an inclined flat plate in free convection",
+    "titleJa": "自由対流における傾斜平板からの熱伝達の研究",
+    "publication": "Trans. ASME, 75(4):489–499, May 1953",
+    "doi": "10.1115/1.4015329",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-14",
+    "number": "8.14",
+    "authors": "T. Fujii and H. Imura",
+    "originalTitle": "Natural convection heat transfer from a plate with arbitrary inclination",
+    "titleJa": "任意の傾斜を持つ板からの自然対流熱伝達",
+    "publication": "Int. J. Heat Mass Transfer, 15(4):755–767, April 1972",
+    "doi": "10.1016/0017-9310(72)90118-4",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-15",
+    "number": "8.15",
+    "authors": "G. C. Vliet",
+    "originalTitle": "Natural convection local heat transfer on constant heat transfer inclined surface",
+    "titleJa": "一定熱伝達の傾斜面における自然対流局所熱伝達",
+    "publication": "J. Heat Transfer, 91(4):511–516, November 1969",
+    "doi": "10.1115/1.3580235",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-16",
+    "number": "8.16",
+    "authors": "L. Pera and B. Gebhart",
+    "originalTitle": "On the stability of natural convection boundary layer flow over horizontal and slightly inclined surfaces",
+    "titleJa": "水平面とわずかに傾斜した面上の自然対流境界層流の安定性について",
+    "publication": "Int. J. Heat Mass Transfer, 16(6):1147–1163, June 1973",
+    "doi": "10.1016/0017-9310(73)90127-0",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-17",
+    "number": "8.17",
+    "authors": "M. Al-Arabi and M. K. El-Riedy",
+    "originalTitle": "Natural convection heat transfer from isothermal horizontal plates of different shapes",
+    "titleJa": "異なる形状の等温水平板からの自然対流熱伝達",
+    "publication": "Int. J. Heat Mass Transfer, 19:1399–1404, December 1976",
+    "doi": "10.1016/0017-9310(76)90069-7",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-18",
+    "number": "8.18",
+    "authors": "L. Pera and B. Gebhart",
+    "originalTitle": "Natural convection boundary layer flow over horizontal and slightly inclined surfaces",
+    "titleJa": "水平面とわずかに傾斜した面上の自然対流境界層流",
+    "publication": "Int. J. Heat Mass Transfer, 16(6):1131–1147, June 1973",
+    "doi": "10.1016/0017-9310(73)90126-9",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-19",
+    "number": "8.19",
+    "authors": "B. Gebhart, Y. Jaluria, R. L. Mahajan, and B. Sammakia",
+    "originalTitle": "Buoyancy-Induced Flows and Transport",
+    "titleJa": "浮力誘起流れと輸送",
+    "publication": "Hemisphere Publishing Corp., Washington, D.C., 1988",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-20",
+    "number": "8.20",
+    "authors": "J. R. Lloyd and W. R. Moran",
+    "originalTitle": "Natural convection adjacent to horizontal surface of various planforms",
+    "titleJa": "さまざまな平面形状の水平面に隣接する自然対流",
+    "publication": "J. Heat Transfer, 96(4):443–447, November 1974",
+    "doi": "10.1115/1.3450224",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-21",
+    "number": "8.21",
+    "authors": "A. M. Clausing and J. J. Berton",
+    "originalTitle": "An experimental investigation of natural convection from an isothermal horizontal plate",
+    "titleJa": "等温水平板からの自然対流の実験的研究",
+    "publication": "J. Heat Transfer, 111(4):904–908, November 1989",
+    "doi": "10.1115/1.3250804",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-22",
+    "number": "8.22",
+    "authors": "F. Restrepo and L. R. Glicksman",
+    "originalTitle": "The effect of edge conditions on natural convection heat transfer from a horizontal plates",
+    "titleJa": "水平板からの自然対流熱伝達への端部条件の影響",
+    "publication": "Int. J. Heat Mass Transfer, 17(1):135–142, January 1974",
+    "doi": "10.1016/0017-9310(74)90046-5",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-23",
+    "number": "8.23",
+    "authors": "D. W. Hatfield and D. K. Edwards",
+    "originalTitle": "Edge and aspect ratio effects on natural convection from the horizontal heated plate facing downwards",
+    "titleJa": "下向きの水平加熱板からの自然対流への端部とアスペクト比の影響",
+    "publication": "Int. J. Heat Mass Transfer, 24(6):1019–1024, June 1981",
+    "doi": "10.1016/0017-9310(81)90132-0",
+    "bookPage": 467,
+    "pdfPage": 481
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-24",
+    "number": "8.24",
+    "authors": "V. Kadambi and R. M. Drake, Jr.",
+    "originalTitle": "Free convection heat transfer from horizontal surfaces for prescribed variations in surface temperature and mass flow through the surface",
+    "titleJa": "表面温度の規定された変化と表面を通る質量流量に対する、水平面からの自由対流熱伝達",
+    "publication": "Tech. Rept. Mech. Eng. HT-1, Princeton Univ., June 1959",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-25",
+    "number": "8.25",
+    "authors": "K. T. Yang",
+    "originalTitle": "Natural convection in enclosures",
+    "titleJa": "閉空間内の自然対流",
+    "publication": "In S. Kakaç, R. K. Shah, and W. Aung, editors, Handbook of Single-Phase Convective Heat Transfer, Chapter 13. Wiley-Interscience, New York, 1987",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-26",
+    "number": "8.26",
+    "authors": "I. Catton",
+    "originalTitle": "Natural convection in enclosures",
+    "titleJa": "閉空間内の自然対流",
+    "publication": "In Proc. Sixth Int. Heat Transfer Conf., Vol. 6, pp. 13–31, Toronto, August 7–11, 1978",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-27",
+    "number": "8.27",
+    "authors": "S. W. Churchill",
+    "originalTitle": "A comprehensive correlating equation for laminar, assisting, forced and free convection",
+    "titleJa": "層流・助勢・強制・自由対流に対する包括的な相関式",
+    "publication": "AIChE J., 23(1):10–16, January 1977",
+    "doi": "10.1002/aic.690230103",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-28",
+    "number": "8.28",
+    "authors": "T. S. Chen and B. F. Armaly",
+    "originalTitle": "Mixed convection in external flow",
+    "titleJa": "外部流における複合対流",
+    "publication": "In S. Kakaç, R. K. Shah, and W. Aung, editors, Handbook of Single-Phase Convective Heat Transfer, Chapter 14. Wiley-Interscience, New York, 1987",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-29",
+    "number": "8.29",
+    "authors": "W. Aung",
+    "originalTitle": "Mixed convection in internal flow",
+    "titleJa": "内部流における複合対流",
+    "publication": "In S. Kakaç, R. K. Shah, and W. Aung, editors, Handbook of Single-Phase Convective Heat Transfer, Chapter 15. Wiley-Interscience, New York, 1987",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-30",
+    "number": "8.30",
+    "authors": "V. K. Dhir",
+    "originalTitle": "Quasi-steady laminar film condensation of steam on copper spheres",
+    "titleJa": "銅球上の蒸気の準定常層流膜凝縮",
+    "publication": "J. Heat Transfer, 97(3):347–351, August 1975",
+    "doi": "10.1115/1.3450377",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-31",
+    "number": "8.31",
+    "authors": "V. K. Dhir and J. H. Lienhard",
+    "originalTitle": "Laminar film condensation on plane and axisymmetric bodies in non-uniform gravity",
+    "titleJa": "非一様重力における平面体と軸対称体上の層流膜凝縮",
+    "publication": "J. Heat Transfer, 93(1):97–100, February 1971",
+    "doi": "10.1115/1.3449773",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-32",
+    "number": "8.32",
+    "authors": "W. Nusselt",
+    "originalTitle": "Die oberflächenkondensation des wasserdampfes",
+    "titleJa": "水蒸気の表面凝縮",
+    "publication": "Z. Ver. Dtsch. Ing., 60:541 and 569, 1916",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-33",
+    "number": "8.33",
+    "authors": "W. M. Rohsenow",
+    "originalTitle": "Heat transfer and temperature distribution in laminar-film condensation",
+    "titleJa": "層流膜凝縮における熱伝達と温度分布",
+    "publication": "Trans. ASME, 78(8):1645–1648, November 1956",
+    "doi": "10.1115/1.4014125",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-34",
+    "number": "8.34",
+    "authors": "E. M. Sparrow and J. L. Gregg",
+    "originalTitle": "A boundary-layer treatment of laminar-film condensation",
+    "titleJa": "層流膜凝縮の境界層的取り扱い",
+    "publication": "J. Heat Transfer, 81(1):13–18, February 1959",
+    "doi": "10.1115/1.4008118",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-35",
+    "number": "8.35",
+    "authors": "P. Sadasivan and J. H. Lienhard",
+    "originalTitle": "Sensible heat correction in laminar film boiling and condensation",
+    "titleJa": "層流膜沸騰と凝縮における顕熱補正",
+    "publication": "J. Heat Transfer, 109(2):545–547, May 1987",
+    "doi": "10.1115/1.3248122",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-36",
+    "number": "8.36",
+    "authors": "E. M. Sparrow and J. L. Gregg",
+    "originalTitle": "A theory of rotating condensation",
+    "titleJa": "回転凝縮の理論",
+    "publication": "J. Heat Transfer, 81(2):113–120, May 1959",
+    "doi": "10.1115/1.4008150",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-37",
+    "number": "8.37",
+    "authors": "A. Karimi",
+    "originalTitle": "Laminar film condensation on helical reflux condensers and related configurations",
+    "titleJa": "らせん還流凝縮器と関連構成における層流膜凝縮",
+    "publication": "Int. J. Heat Mass Transfer, 20(11):1137–1144, November 1977",
+    "doi": "10.1016/0017-9310(77)90122-3",
+    "bookPage": 468,
+    "pdfPage": 482
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-38",
+    "number": "8.38",
+    "authors": "R. Gregorig, J. Kern, and K. Turek",
+    "originalTitle": "Improved correlation of film condensation data based on a more rigorous application of similarity parameters",
+    "titleJa": "相似パラメータのより厳密な適用に基づく膜凝縮データの改良された相関",
+    "publication": "Wärme- und Stoffübertragung, 7:1–13, March 1974",
+    "doi": "10.1007/BF01438315",
+    "bookPage": 469,
+    "pdfPage": 483
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-39",
+    "number": "8.39",
+    "authors": "P. J. Marto",
+    "originalTitle": "Condensation",
+    "titleJa": "凝縮",
+    "publication": "In W. M. Rohsenow, J. P. Hartnett, and Y. I. Cho, editors, Handbook of Heat Transfer, Chapter 14. McGraw-Hill, New York, 3rd ed., 1998",
+    "bookPage": 469,
+    "pdfPage": 483
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-40",
+    "number": "8.40",
+    "authors": "J. Rose, H. Uehara, S. Koyama, and T. Fujii",
+    "originalTitle": "Film condensation",
+    "titleJa": "膜凝縮",
+    "publication": "In S. G. Kandlikar, M. Shoji, and V. K. Dhir, editors, Handbook of Phase Change: Boiling and Condensation, Chapter 19. Taylor & Francis, Philadelphia, 1999",
+    "bookPage": 469,
+    "pdfPage": 483
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-41",
+    "number": "8.41",
+    "authors": "V. E. Denny, A. F. Mills, and V. J. Jusionis",
+    "originalTitle": "Laminar film condensation from a steam-air mixture undergoing forced flow down a vertical surface",
+    "titleJa": "垂直面を下向きに強制流動する蒸気–空気混合物からの層流膜凝縮",
+    "publication": "J. Heat Transfer, 93(3):297–304, August 1971",
+    "doi": "10.1115/1.3449814",
+    "bookPage": 469,
+    "pdfPage": 483
+   },
+   {
+    "type": "reference",
+    "id": "reference-8-42",
+    "number": "8.42",
+    "authors": "E. T. Whittaker and E. N. Watson",
+    "originalTitle": "A Course of Modern Analysis",
+    "titleJa": "現代解析学講座",
+    "publication": "Cambridge University Press, Cambridge, UK, 4th ed., 1927",
+    "bookPage": 469,
+    "pdfPage": 483
+   }
+  ]
+ }
+}

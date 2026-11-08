@@ -27,4 +27,4 @@
 <p>検証の要約（詳細は docs/dynamic/FIN_CONVECTIVE_TIP_DEVELOPMENT.md）：定常解を50桁の解析参照と照合しました。正準条件（L=100 mm、断面10 mm×10 mm、k=200、h=25、基部−周囲=60 K）で、参照の基部熱流は先端対流 5.259731 W・η=0.855241、断熱先端 5.166343 W・η=0.861057 です。この離散モデルは格子を細かくすると約2次でその値へ近づきます。断熱式に修正長さ Lc=L+Ac/P を使う近似は正準条件で相対誤差0.00018%まで小さくなることも測定済みです。過渡は行列指数による独立参照と照合済みです。</p>
 <p>解かないもの：基部内2D熱拡がり、複数フィンの相互作用、先端だけ異なるh、断面変化、放射、物性の温度依存、流体。断面一様の仮定が崩れる条件（h(Ac/P)/k&gt;0.1）は理由を表示して受理しません。任意の実フィンの性能保証ではありません。</p>
 <p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
-</main><script type="module" src="fin-convective-tip-ui.mjs"></script></body></html>
+</main><script type="module" src="fin-convective-tip-ui.mjs"></script><script type="module" src="sim-guide-fin-tip.mjs"></script></body></html>

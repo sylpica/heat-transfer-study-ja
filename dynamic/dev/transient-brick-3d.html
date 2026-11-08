@@ -45,4 +45,4 @@
 <p>検証の要約（詳細は docs/dynamic/TRANSIENT_BRICK_3D_DEVELOPMENT.md）：全面温度指定の過渡解を1次元級数の積（mpmath 50桁のセル平均）と比較し、立方体で RMS 誤差 0.4916 → 0.1176 → 0.0291 K（格子 4³ → 8³ → 16³、観測次数 2.06 / 2.02）を得ました。厚さ一様条件では2次元矩形FVMとビット一致し、定常極限は独立な直接解と最大 6.8e-13 K で一致します。エネルギー収支は補償付き加算で追跡し、誤差を診断に表示します。</p>
 <p>解かないもの：放射境界と対流＋放射の同時境界、物性の温度依存、体積発熱、複数材料・接触熱抵抗、非直方体形状、陰解法・適応刻み。温度指定・対流の面は半セル近似であり、面温度そのものを解く表面交換型ではありません。格子は各軸64セル・合計32,768セルが上限です。</p>
 <p>この開発ページは履歴をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
-</main><script type="module" src="transient-brick-3d-ui.mjs"></script></body></html>
+</main><script type="module" src="transient-brick-3d-ui.mjs"></script><script type="module" src="sim-guide-brick-3d.mjs"></script></body></html>

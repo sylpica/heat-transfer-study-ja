@@ -35,6 +35,36 @@ for(const name of sectionFileNames){
   const parsed=JSON.parse(await readFile(join(root,'data','sections',name),'utf8'));
   if(!parsed||parsed.language!=='ja'||!Array.isArray(parsed.blocks)||!parsed.blocks.length)throw new Error('日本語訳ファイルの形式を確認してください: '+name);
 }
+// Chapter-end problems and references are separate data from the sections:
+// the reader fetches one chapter file on demand, so they deliberately stay
+// out of content-manifest.json (which lists section files only) and the
+// 76-file gate above keeps its meaning as a section count.
+const chapterProblemFileNames=(await readdir(join(root,'data','chapter-problems'))).filter(name=>/^chapter-\d{2}\.json$/.test(name)).sort();
+if(chapterProblemFileNames.length!==11)throw new Error('章末問題・参考文献のファイルが11件そろっていません: '+chapterProblemFileNames.length);
+const chapterProblemPaths=chapterProblemFileNames.map(name=>'data/chapter-problems/'+name);
+for(const name of chapterProblemFileNames){
+  const parsed=JSON.parse(await readFile(join(root,'data','chapter-problems',name),'utf8'));
+  const countOf=(blocks,type)=>Array.isArray(blocks)?blocks.filter(block=>block&&block.type===type).length:-1;
+  if(!parsed||parsed.language!=='ja'||parsed.chapterId!==name.replace(/\.json$/,'')
+    ||countOf(parsed.problems?.blocks,'problem')!==parsed.problems?.count
+    ||countOf(parsed.references?.blocks,'reference')!==parsed.references?.count)
+    throw new Error('章末問題・参考文献ファイルの形式を確認してください: '+name);
+}
+// Appendix reference lists (Appendix A: [A.1]-[A.41], Appendix B: [B.1]) are
+// separate data from the sections and the chapter files: the reader fetches
+// one appendix file on demand, so they stay out of content-manifest.json and
+// the 76-file gate above keeps its meaning as a section count.
+const appendixReferenceFileNames=(await readdir(join(root,'data','appendix-references'))).filter(name=>/^appendix-[ab]\.json$/.test(name)).sort();
+if(appendixReferenceFileNames.length!==2)throw new Error('付録参考文献のファイルが2件そろっていません: '+appendixReferenceFileNames.length);
+const appendixReferencePaths=appendixReferenceFileNames.map(name=>'data/appendix-references/'+name);
+for(const name of appendixReferenceFileNames){
+  const parsed=JSON.parse(await readFile(join(root,'data','appendix-references',name),'utf8'));
+  const blocks=parsed?.references?.blocks;
+  if(!parsed||parsed.language!=='ja'||parsed.appendixId!==name.replace(/\.json$/,'')
+    ||!Array.isArray(blocks)||blocks.length!==parsed.references?.count
+    ||blocks.some(block=>!block||block.type!=='reference'))
+    throw new Error('付録参考文献ファイルの形式を確認してください: '+name);
+}
 for(const question of questions)if(question.figure?.kind==='book')delete question.figure.src;
 // Validate the actual allowlisted data after source sanitization, before writing any public files.
 const glossary=JSON.parse(await readFile(join(root,'data/glossary.json'),'utf8'));
@@ -43,7 +73,7 @@ const deepLessons=JSON.parse(await readFile(join(root,'data/original-deep-lesson
 const issues=checkPublicContent({book,questions,glossary,guides:GUIDE_SECTIONS,originalNotes,deepLessons});
 if(issues.length)throw new Error('公開教材の整合性検査に失敗しました:\n'+issues.join('\n'));
 
-const files=['dynamic/lumped-radial.mjs','dynamic/surface-exchange-report.mjs','dynamic/surface-exchange.mjs','dynamic/navigation-context.mjs','dynamic/radial-learning.mjs','dynamic/radial-learning-ui.mjs','dynamic/radial.mjs','dynamic/radial.html','dynamic/radial-ui.mjs','dynamic/radial-view.mjs','dynamic/radial-analysis.mjs','dynamic/radial.css','dynamic/channel-learning.mjs','dynamic/channel-learning-ui.mjs','dynamic/developed-channel.mjs','dynamic/channel.html','dynamic/channel-ui.mjs','dynamic/trace-plot.mjs','dynamic/field-frame.mjs','dynamic/field-analysis.mjs','dynamic/field-plots.mjs','dynamic/term-panel.mjs','dynamic/experiment.mjs','dynamic/actor.mjs','dynamic/radiation-learning.mjs','dynamic/radiation-learning-ui.mjs','dynamic/radiation-network.mjs','dynamic/radiation.html','dynamic/radiation-ui.mjs','dynamic/radiation.css','dynamic/properties.mjs','dynamic/boiling.mjs','dynamic/fin-learning.mjs','dynamic/fin-learning-ui.mjs','dynamic/fin-learning.html','dynamic/fin-learning.css','dynamic/fin-view.mjs','dynamic/index.html','dynamic/lab.css','dynamic/learning-path.mjs','dynamic/learning-ui.mjs','dynamic/lab.mjs','dynamic/geometry.mjs','dynamic/thermal.mjs','dynamic/worker-runtime.mjs','dynamic/worker.mjs','dynamic/presets.mjs','index.html','styles.css','app.js','dynamic-navigation.mjs','study-core.mjs','guide.mjs','chapter-curriculum.mjs','original-notes.mjs','original-deep-lessons.mjs','transient-ui.mjs','term-links.mjs','sim-diagrams.mjs','lesson-diagrams.mjs','fin-efficiency.mjs','heat-exchanger.mjs','transient-slab.mjs','radiation-enclosure.mjs','cylindrical-insulation.mjs','semi-infinite-solid.mjs','forced-convection-flat-plate.mjs','turbulent-pipe-convection.mjs','cylinder-crossflow.mjs','natural-convection-vertical.mjs','laminar-pipe-convection.mjs','laminar-film-condensation.mjs','binary-gas-diffusion.mjs','pool-boiling-nucleate.mjs','pool-boiling-chf.mjs','sw.js','manifest.json','data/glossary.json',...LESSON_DIAGRAM_PATHS];
+const files=['dynamic/lumped-radial.mjs','dynamic/surface-exchange-report.mjs','dynamic/surface-exchange.mjs','dynamic/navigation-context.mjs','dynamic/radial-learning.mjs','dynamic/radial-learning-ui.mjs','dynamic/radial.mjs','dynamic/radial.html','dynamic/radial-ui.mjs','dynamic/radial-view.mjs','dynamic/radial-analysis.mjs','dynamic/radial.css','dynamic/channel-learning.mjs','dynamic/channel-learning-ui.mjs','dynamic/developed-channel.mjs','dynamic/channel.html','dynamic/channel-ui.mjs','dynamic/trace-plot.mjs','dynamic/field-frame.mjs','dynamic/field-analysis.mjs','dynamic/field-plots.mjs','dynamic/term-panel.mjs','dynamic/experiment.mjs','dynamic/actor.mjs','dynamic/radiation-learning.mjs','dynamic/radiation-learning-ui.mjs','dynamic/radiation-network.mjs','dynamic/radiation.html','dynamic/radiation-ui.mjs','dynamic/radiation.css','dynamic/properties.mjs','dynamic/boiling.mjs','dynamic/fin-learning.mjs','dynamic/fin-learning-ui.mjs','dynamic/fin-learning.html','dynamic/fin-learning.css','dynamic/fin-view.mjs','dynamic/index.html','dynamic/lab.css','dynamic/learning-path.mjs','dynamic/learning-ui.mjs','dynamic/lab.mjs','dynamic/model-manuals.mjs','dynamic/lab-guide.mjs','dynamic/sim-guide.mjs','dynamic/model-tutorials.mjs','dynamic/geometry.mjs','dynamic/thermal.mjs','dynamic/worker-runtime.mjs','dynamic/worker.mjs','dynamic/presets.mjs','index.html','styles.css','app.js','dynamic-navigation.mjs','study-core.mjs','flashcards.mjs','guide.mjs','chapter-curriculum.mjs','original-notes.mjs','original-deep-lessons.mjs','transient-ui.mjs','term-links.mjs','sim-diagrams.mjs','lesson-diagrams.mjs','fin-efficiency.mjs','heat-exchanger.mjs','transient-slab.mjs','radiation-enclosure.mjs','cylindrical-insulation.mjs','semi-infinite-solid.mjs','forced-convection-flat-plate.mjs','turbulent-pipe-convection.mjs','cylinder-crossflow.mjs','natural-convection-vertical.mjs','laminar-pipe-convection.mjs','laminar-film-condensation.mjs','binary-gas-diffusion.mjs','pool-boiling-nucleate.mjs','pool-boiling-chf.mjs','sw.js','manifest.json','data/glossary.json',...LESSON_DIAGRAM_PATHS];
 for(const path of new Set(files)){
   const source=join(root,path),target=join(output,path);
   await mkdir(dirname(target),{recursive:true});await copyFile(source,target);
@@ -57,11 +87,15 @@ for(const [name,value] of Object.entries({'book.json':book,'questions.json':ques
 }
 await mkdir(join(output,'data','sections'),{recursive:true});
 for(const name of sectionFileNames)await copyFile(join(root,'data','sections',name),join(output,'data','sections',name));
+await mkdir(join(output,'data','chapter-problems'),{recursive:true});
+for(const name of chapterProblemFileNames)await copyFile(join(root,'data','chapter-problems',name),join(output,'data','chapter-problems',name));
+await mkdir(join(output,'data','appendix-references'),{recursive:true});
+for(const name of appendixReferenceFileNames)await copyFile(join(root,'data','appendix-references',name),join(output,'data','appendix-references',name));
 // Every new public content revision must produce a new service-worker script.
 // Otherwise an existing installation may keep old offline lessons and questions.
 const publicAssets=[...new Set([...files,
   'data/book.json','data/questions.json','data/content-manifest.json',
-  'data/original-notes.json','data/original-deep-lessons.json',...sectionPaths])];
+  'data/original-notes.json','data/original-deep-lessons.json',...sectionPaths,...chapterProblemPaths,...appendixReferencePaths])];
 const cacheAssets=await Promise.all(publicAssets.map(async path=>({
   path,content:await readFile(join(output,path))
 })));
@@ -108,4 +142,4 @@ for(const entry of appShell){
   try{await stat(join(output,entry));}catch{throw new Error('APP_SHELLの記載ファイルが配信物にありません: '+entry);}
 }
 await writeFile(marker,'公開対象だけを列挙して作成した配信物です。\n');
-console.log('公開配信物：許諾済みの原本PDF、アプリ・独自ガイド・問題・用語・書籍の目次情報、および書籍の日本語訳（全76節、専門家校閲未実施）。原図は含めていません。');
+console.log('公開配信物：許諾済みの原本PDF、アプリ・独自ガイド・問題・用語・書籍の目次情報、および書籍の日本語訳（全76節と全11章の章末問題・参考文献、付録A・Bの参考文献、専門家校閲未実施）。原図は含めていません。');

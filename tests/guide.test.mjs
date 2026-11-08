@@ -5,7 +5,7 @@ import {calculateHeatTransfer,STEFAN_BOLTZMANN_VALUE} from '../study-core.mjs';
 
 test('the in-app guide covers every screen and all five implemented models, including Japanese partial search',()=>{
   const ids=new Set(GUIDE_SECTIONS.map(section=>section.id));
-  for(const id of ['start','reader','quiz','progress','review','plan','notes','search','data','offline','accessibility','simulator','sim-conduction','sim-convection','sim-radiation','sim-resistance','sim-transient','faq'])assert.ok(ids.has(id),id);
+  for(const id of ['start','reader','quiz','progress','review','plan','notes','search','data','offline','accessibility','simulator','lab','sim-conduction','sim-convection','sim-radiation','sim-resistance','sim-transient','faq'])assert.ok(ids.has(id),id);
   assert.equal(ids.size,GUIDE_SECTIONS.length);
   assert.ok(searchGuide('放射率').some(section=>section.id==='sim-radiation'));
   assert.ok(searchGuide('復元').some(section=>section.id==='data'));
@@ -36,7 +36,7 @@ test('the four guide examples agree with independently calculated hand values',(
 
 
 test('advanced self-authored lessons are searchable and explicit about approximations and limitations',()=>{
-  assert.equal(GUIDE_SECTIONS.length,48);
+  assert.equal(GUIDE_SECTIONS.length,49);
   const keys={
     'learn-dimensionless-transient':['Bi','Fo','0.1','L𝚌'],
     'learn-lumped-cooling':['ρVc','2000 s','Bi','exp'],

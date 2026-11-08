@@ -181,7 +181,7 @@ test('A2-FUN-07: very small superheat warns that natural convection may dominate
 test('A2-DOC-01: README states the measured current content and publication state',()=>{
   assert.ok(readme.includes('**751問**'));
   assert.ok(readme.includes('図解76点'));
-  assert.ok(readme.includes('学習ガイド48項目'));
+  assert.ok(readme.includes('学習ガイド49項目'));
   assert.ok(readme.includes('用語集504語'));
   assert.ok(readme.includes('公開済みです（https://sylpica.github.io/heat-transfer-study-ja/）'));
   assert.ok(readme.includes('PR #1はマージ済みです'));

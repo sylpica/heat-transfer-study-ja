@@ -1,0 +1,38 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ヒートシンク連成モデル（3D基部・発達流・放射）の開発検証</title><link rel="stylesheet" href="cavity.css"><style>fieldset{min-width:0}select{max-width:calc(100vw - 4rem)}</style></head><body><main>
+<h1>ヒートシンク連成モデル（3D基部・発達流・放射）の開発検証</h1><p class="notice">開発用・公開承認前。3次元基部伝導・薄板フィン・発達した流路流れ・流体温度輸送・断面放射を連成した定常参照モデルです。一般の3D CFDではなく、公開ビルドに含めません。</p>
+<p>基部下面の発熱パッチから入った熱が、基部とフィンの伝導、流路を流れる空気への対流、フィン間の放射にどう分かれるかを同時に計算します。学習用の規定hモデルとは別のモジュールで、計算はバックグラウンドで実行されます。図と説明はアプリ作成です。</p>
+<form id="settings"><fieldset><legend>条件：連成ヒートシンク</legend>
+<label>プリセット<select id="preset"></select></label>
+<label>フィン本数<input id="fincount" type="number" value="7" min="1" max="64" step="1" required></label>
+<label>フィン厚さ [mm]<input id="fthick" type="number" value="1" step="any" required></label>
+<label>フィン間隔（隙間）[mm]<input id="gap" type="number" value="3" step="any" required></label>
+<label>フィン高さ [mm]<input id="fheight" type="number" value="30" step="any" required></label>
+<label>流路長さ [mm]<input id="length" type="number" value="120" step="any" required></label>
+<label>ベース厚さ [mm]<input id="bthick" type="number" value="3" step="any" required></label>
+<label>固体の熱伝導率 k [W/(m K)]<input id="solidk" type="number" value="167" step="any" required></label>
+<label>空気の密度 ρ [kg/m³]<input id="frho" type="number" value="1.177" step="any" required></label>
+<label>空気の比熱 cp [J/(kg K)]<input id="fcp" type="number" value="1006" step="any" required></label>
+<label>空気の熱伝導率 k [W/(m K)]<input id="fk" type="number" value="0.0264" step="any" required></label>
+<label>空気の動粘度 ν [10⁻⁶ m²/s]<input id="fnu" type="number" value="15.75" step="any" required></label>
+<label>周囲・入口温度 [K]<input id="ambient" type="number" value="300" step="any" required></label>
+<label>総流量 [L/min]<input id="flow" type="number" value="43.2" step="any" required></label>
+<label>発熱量 [W]<input id="power" type="number" value="10" step="any" required></label>
+<label>放射率 ε<input id="emissivity" type="number" value="0.8" step="any" required></label>
+<label>発熱パッチ長さ [mm]<input id="patchl" type="number" value="30" step="any" required></label>
+<label>発熱パッチ幅 [mm]<input id="patchw" type="number" value="9" step="any" required></label>
+<label>格子細分化 r<select id="refinement"><option value="1">1</option><option value="2">2</option><option value="4" selected>4</option></select></label>
+<label>速度副格子細分化<select id="hrefinement"><option value="1">1</option><option value="2" selected>2</option></select></label>
+<button id="apply" type="submit">この条件で計算</button></fieldset></form>
+<p id="summary">標準条件：フィン7本・厚さ1 mm・間隔3 mm・高さ30 mm、流路長さ120 mm、ベース厚さ3 mm（幅31 mm）。発熱10 W、総流量43.2 L/min、放射率0.8、格子 r=4・速度副格子2で計算します。</p>
+<section aria-label="計算結果"><p id="status" role="status" aria-live="polite">準備中</p><p id="error" role="alert" hidden></p>
+<pre id="readout"></pre>
+<figure><canvas id="flows" width="800" height="200" role="img" aria-label="流路ごとの流量配分のグラフ"></canvas></figure>
+<pre id="flowlist"></pre>
+<p>流量配分は断面速度分布の共通圧力差による並列配分です。全流路の隙間が等しい標準条件では均等になります。出口バルク温度は流路ごとの流出エンタルピーから計算した値です。</p></section>
+<details id="diagnostics"><summary>収支・反復・格子の診断</summary><pre id="diagnostic-values"></pre><p>全熱収支の残差は、発熱から流体のエンタルピー増加・フィン端面の対流・放射（開口）を引いた残りです。内部交換（固体‐流体界面熱、放射の内部収支）は二重に数えません。</p></details>
+<details><summary>理論・仮定・適用限界</summary>
+<p>支配関係は、ベース内の3次元定常伝導、厚さ方向一様なフィンの2次元伝導、流路断面の発達流れ（側面・底面は滑りなし、上面は自由せん断）のPoisson解による流量配分、指定速度による流体温度の受動物輸送（流れ方向は1次風上、軸方向拡散なし）、各流れ方向位置での長ダクト断面の形態係数と射度法による放射（遮蔽・相互反射・上部開口・ガード壁の拡散反射を含む）の連成です。放射だけが非線形で、線形行列を固定した固定点反復で解きます。放射は基部・フィンの隣接セル温度で評価し、独立の表面節点は解きません。</p>
+<p>検証の要約（詳細は docs/dynamic/HEATSINK_COUPLED_JS_20261107.md）：標準条件（フィン7本・10 W・43.2 L/min・ε=0.8、格子 r=4・速度副格子2）で、独立の参照計算と発熱面平均温度 316.6867 K・圧損 3.0417 Pa・放射 0.22714 W が最大でも 5×10⁻⁸ K の差で一致しました。放射を切ると（ε=0）発熱面平均は 316.9890 K で、放射による低下は約 0.30 K です。全熱収支の相対残差は 1×10⁻⁸ 未満、流量係数は連続級数に対して 0.69% の差です。</p>
+<p>解かないもの：流量0や逆流（自然対流が必要であり、理由を表示して受理しません）、速度の入口発達、3次元運動量・剥離・乱流、ファン曲線やマニホールド損失、温度依存物性、流れ方向の非局所放射、接触抵抗、実機の性能認定。任意の実ヒートシンクの性能保証ではありません。</p>
+<p>この開発ページは結果をメモリーだけへ保持し、再読み込みで消えます。既存アプリの回答・メモ・設定を変更/送信しません。実機、支援技術、オフライン、外部専門家、公開URLでの動作は未確認です。</p></details>
+</main><script type="module" src="heat-sink-coupled-ui.mjs"></script></body></html>

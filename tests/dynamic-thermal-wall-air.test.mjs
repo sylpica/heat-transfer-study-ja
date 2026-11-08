@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';import {thermalWallConfig,thermalWallApplicability} from '../dynamic/dev/thermal-wall-ui-config.mjs';import {createThermalWallCavity} from '../dynamic/dev/thermal-wall-cavity.mjs';
-const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/THERMAL_WALL_AIR_REFERENCE_20261107_v1.json',import.meta.url)));
+const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/THERMAL_WALL_AIR_REFERENCE_20261107_v3.json',import.meta.url)));
 test('actual-air finite and controlled wall presets satisfy independent full-state time budgets at the preselected GUI timestep',()=>{
  const own=JSON.parse(execFileSync(process.execPath,['scripts/dynamic-thermal-wall-air-cases.mjs'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:8*1024*1024}));assert.deepEqual(own.sourceFilesSHA256,ref.sourceFilesSHA256);
  for(const [p,sha]of Object.entries(ref.independentReferenceSourceFilesSHA256))assert.equal(createHash('sha256').update(readFileSync(new URL('../'+p,import.meta.url))).digest('hex'),sha);

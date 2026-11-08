@@ -1,0 +1,1283 @@
+{
+  "chapterId": "chapter-10",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 10 (Radiative heat transfer): Problems and References — Japanese translation",
+  "bookPages": "604–618",
+  "pdfPages": "618–632",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 56,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-10-1",
+        "number": "10.1",
+        "text": "λ = 0.2 µm と 0.65 µm について、地球表面の観測者にとって太陽の ε_λ はどのように見えるか。図10.2を参照せよ。",
+        "answerHint": "ε_0.65µm ≃ 0.77",
+        "figureRefs": [
+          "Fig. 10.2"
+        ],
+        "bookPage": 604,
+        "endBookPage": 605,
+        "pdfPage": 618,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-2",
+        "number": "10.2",
+        "text": "式（1.30）の助けを借りて、T = 300 K と 10,000 K について e_{λb} 対 λ をプロットせよ。各黒体からのエネルギーのおよそ何割が見えるか。",
+        "answerHint": "10,000 K で41%",
+        "bookPage": 605,
+        "endBookPage": 605,
+        "pdfPage": 619,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-3",
+        "number": "10.3",
+        "text": "ε = 0.85、直径0.6 mm の線が、950 °Cでマンドレルを通して引き出される。線は次に、直径7 cm の市販アルミニウム板の長い円筒シールドを通る。シールドは25 °Cの静止空気中で水平である。シールドの温度はいくらか。シールド内部の自然対流、またはシールド外部の放射を無視するのは妥当か。",
+        "answerHint": "T_shield = 153 °C",
+        "bookPage": 605,
+        "endBookPage": 605,
+        "pdfPage": 619,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-4",
+        "number": "10.4",
+        "text": "断熱された側面を持つ1 ft²の浅い容器が、32 °Fの水で縁まで満たされている。それは、温度 −18 °Fの夜空に放射し、一方で50 °Fのそよ風が1.5 ft/s でその上を吹く。水は凍るか、温まるか。",
+        "bookPage": 605,
+        "endBookPage": 605,
+        "pdfPage": 619,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-5",
+        "number": "10.5",
+        "text": "アルコール入りガラス温度計が、球部を下にして鉛直に、空気が10 °C、壁が27 °Cの部屋に保持される。すべてが黒体とみなせる場合、温度計は何度を示すか。仮定を述べよ。",
+        "bookPage": 605,
+        "endBookPage": 605,
+        "pdfPage": 619,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-6",
+        "number": "10.6",
+        "text": "部屋が壁紙張りであるとし、温度計を非黒体として、問題10.5を解き直せ。",
+        "answerHint": "大きな変化はない",
+        "bookPage": 605,
+        "endBookPage": 605,
+        "pdfPage": 619,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-7",
+        "number": "10.7",
+        "text": "2枚の薄いアルミニウム板、第1は研磨され第2は黒く塗られ、屋外に水平に置かれ、10 °Cの空気によって冷却される。熱伝達係数は上面と下面の両方で5 W/m²·K である。太陽は上面に750 W/m²を照射し、上面は250 K の空へ放射する。板の下の地面は黒体で10 °Cである。各板の平衡温度を求めよ。",
+        "answerHint": "一方の板は12 °Cである",
+        "bookPage": 605,
+        "endBookPage": 605,
+        "pdfPage": 619,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-8",
+        "number": "10.8",
+        "text": "98%純アルミニウムの機器ホルダー、直径1 cm、長さ16 cm が、軌道宇宙船の小さなハウジングから突き出ている。ホルダーは、有効温度30 K の宇宙空間以外ほとんど何も「見ない」。ホルダーの基部は0 °Cであり、その先端の試料の温度を求めなければならない。アルミニウムが使われているので、先端の温度が基部の温度にかなり近いままであることに注意すると助けになる。",
+        "hint": "4.5節を思い出せ。",
+        "answerHint": "T_tip = −0.7 °C",
+        "bookPage": 605,
+        "endBookPage": 605,
+        "pdfPage": 619,
+        "endPdfPage": 619
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-9",
+        "number": "10.9",
+        "text": "図10.29に示す箱の底は放射ヒーターである。箱の上部は周囲に開いている。熱の何パーセントが上部から出るか。各4側面に衝突する割合はいくらか。",
+        "hint": "百分率の合計は100にならなければならない。",
+        "figure": {
+          "figureNumber": "Fig. 10.29",
+          "caption": "図10.29 問題10.9の構成",
+          "alt": "底が放射ヒーターで、上部が開いた箱の図。",
+          "bookPage": 605,
+          "pdfPage": 619
+        },
+        "bookPage": 605,
+        "endBookPage": 606,
+        "pdfPage": 619,
+        "endPdfPage": 620
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-10",
+        "number": "10.10",
+        "text": "図10.11を考える。F_{1–(2+4)} と F_{(2+4)–1} を求めよ。",
+        "answerHint": "F_(2+4)–1 = 0.087",
+        "figureRefs": [
+          "Fig. 10.11"
+        ],
+        "bookPage": 606,
+        "endBookPage": 606,
+        "pdfPage": 620,
+        "endPdfPage": 620
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-11",
+        "number": "10.11",
+        "text": "図10.30に示す面に対する F_{2–4} を求めよ。",
+        "answerHint": "0.255",
+        "figure": {
+          "figureNumber": "Fig. 10.30",
+          "caption": "図10.30 問題10.11の構成",
+          "alt": "問題10.11の面の配置図。",
+          "bookPage": 606,
+          "pdfPage": 620
+        },
+        "bookPage": 606,
+        "endBookPage": 606,
+        "pdfPage": 620,
+        "endPdfPage": 620
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-12",
+        "number": "10.12",
+        "text": "図10.31に示す正方形に対する F_{1–2} はいくらか。",
+        "figure": {
+          "figureNumber": "Fig. 10.31",
+          "caption": "図10.31 問題10.12の構成",
+          "alt": "問題10.12の正方形の配置図。",
+          "bookPage": 606,
+          "pdfPage": 620
+        },
+        "bookPage": 606,
+        "endBookPage": 606,
+        "pdfPage": 620,
+        "endPdfPage": 620
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-13",
+        "number": "10.13",
+        "text": "ある内燃機関には、20 °Cの冷却水ラインと平行に走る600 °Cの排気マニホールドがある。マニホールドと冷却水ラインの両方が直径4 cm で、それらの中心が7 cm 離れており、両方が近似的に黒体の場合、放射によって冷却水ラインへ伝わる熱はどれだけか。",
+        "answerHint": "383 W/m",
+        "bookPage": 606,
+        "endBookPage": 607,
+        "pdfPage": 620,
+        "endPdfPage": 621
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-14",
+        "number": "10.14",
+        "text": "図10.32に示すような、任意の2次元平面の面のペアに対する F_{1–2} が、[(a + b) − (c + d)]/(2L_1) に等しいことを証明せよ。これはひも規則（string rule）と呼ばれる。分子は、交差したひもの組（a と b）と交差しないひもの組（c と d）の長さの差に等しいと想像できるからである。",
+        "formulaBlocks": [
+          {
+            "expression": "F_{1–2} = [(a + b) − (c + d)]/(2 L_1)"
+          }
+        ],
+        "figure": {
+          "figureNumber": "Fig. 10.32",
+          "caption": "図10.32 問題10.14の構成",
+          "alt": "ひも規則を説明する2次元面のペアの図。交差するひも a、b と交差しないひも c、d が示される。",
+          "bookPage": 607,
+          "pdfPage": 621
+        },
+        "bookPage": 607,
+        "endBookPage": 607,
+        "pdfPage": 621,
+        "endPdfPage": 621
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-15",
+        "number": "10.15",
+        "text": "図10.33に示す面に対する F_{1–5} を求めよ。",
+        "answerHint": "0.035",
+        "figure": {
+          "figureNumber": "Fig. 10.33",
+          "caption": "図10.33 問題10.15の構成",
+          "alt": "問題10.15の面の配置図。",
+          "bookPage": 607,
+          "pdfPage": 621
+        },
+        "bookPage": 607,
+        "endBookPage": 607,
+        "pdfPage": 621,
+        "endPdfPage": 621
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-16",
+        "number": "10.16",
+        "text": "図10.34に示す面に対する F_{1–(2+3+4)} を求めよ。",
+        "figure": {
+          "figureNumber": "Fig. 10.34",
+          "caption": "図10.34 問題10.16の構成",
+          "alt": "問題10.16の面の配置図。",
+          "bookPage": 607,
+          "pdfPage": 621
+        },
+        "bookPage": 607,
+        "endBookPage": 607,
+        "pdfPage": 621,
+        "endPdfPage": 621
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-17",
+        "number": "10.17",
+        "text": "一辺1 m の立方体の箱は、放射率0.2 で300 °Cに保たれた一面を除いて黒体である。隣接する一面は500 °Cに保たれる。他の面は断熱されている。箱内部の Q_net を求めよ。",
+        "answerHint": "2.5 kW",
+        "bookPage": 607,
+        "endBookPage": 607,
+        "pdfPage": 621,
+        "endPdfPage": 621
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-18",
+        "number": "10.18",
+        "text": "問題10.17を解き直せ。ただし今度は断熱壁の放射率を0.6 とせよ。断熱壁の温度を、壁が黒体だった場合に得られる値と比較せよ。",
+        "answerHint": "479 °C",
+        "bookPage": 607,
+        "endBookPage": 608,
+        "pdfPage": 621,
+        "endPdfPage": 622
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-19",
+        "number": "10.19",
+        "text": "断熱された黒い円筒、長さ10 cm、内径5 cm は、一端に黒いキャップ、他端に放射率0.1 のキャップを持つ。黒い端は100 °Cに保たれ、反射する端は0 °Cに保たれる。円筒内部の Q_net と断熱壁の温度を求めよ。",
+        "bookPage": 608,
+        "endBookPage": 608,
+        "pdfPage": 622,
+        "endPdfPage": 622
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-20",
+        "number": "10.20",
+        "text": "シールドの内側放射率が0.34 で、部屋が20 °Cの場合について、例10.3を解き直せ。シールドを100 °Cに保つために、どれだけの冷却が必要か。",
+        "answerHint": "551 W",
+        "bookPage": 608,
+        "endBookPage": 608,
+        "pdfPage": 622,
+        "endPdfPage": 622
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-21",
+        "number": "10.21",
+        "text": "放射率 ε_1、面積 A_1 の滑らかな灰色物体があり、それ自身を見ず、はるかに大きな等温環境 A_2 の中に座っている。物体が、その全表面を覆う多くの小さな空洞を作ることによって粗くされ、材料の放射特性は変わらないとする。粗い表面は今や面積 A_r > A_1 を持つ。粗い表面の投影面積は、空洞の頂点にちょうど接する滑らかな表面であり、元の滑らかな表面と同じ面積 A_1 を持つ。式（10.26）から出発して、粗くされた表面が、元の滑らかな表面が「より黒く」なったかのように周囲へ放射を放出することを示せ。さらに、粗くした後の有効放射率が ε_1 と1の間に有界であることを示せ。",
+        "hint": "周囲は実質的に黒体なので、A_2 の値は熱伝達に影響しない：A_2 を投影面に到達するまで縮めよ。",
+        "bookPage": 608,
+        "endBookPage": 608,
+        "pdfPage": 622,
+        "endPdfPage": 622
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-22",
+        "number": "10.22",
+        "text": "30 ft × 40 ft の家には、ピッチ30.3°の従来の傾斜屋根があり、棟は40 ft 方向に走っている。太陽が真上にあるとき、20 °Cの静止空気中における屋根の温度を計算せよ：（a）屋根が木製シングルの場合、（b）市販アルミニウム板の場合。入射する太陽エネルギーは670 W/m²、有効空温度は22 °C、屋根材は灰色放射体であり、屋根は非常によく断熱されている。",
+        "items": [
+          "（a）屋根が木製シングルの場合",
+          "（b）市販アルミニウム板の場合"
+        ],
+        "bookPage": 608,
+        "endBookPage": 609,
+        "pdfPage": 622,
+        "endPdfPage": 623
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-23",
+        "number": "10.23",
+        "text": "電気回路の類似を使って、直径0.2 m のステンレス鋼半球（ε_ss = 0.4）から、その基部をなす銅の床（ε_Cu = 0.15）への放射熱伝達を計算せよ。半球は300 °Cに保たれ、基部は100 °Cである。",
+        "answerHint": "21.24 W",
+        "bookPage": 609,
+        "endBookPage": 609,
+        "pdfPage": 623,
+        "endPdfPage": 623
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-24",
+        "number": "10.24",
+        "text": "滑らかな鍛鉄板の半球状のへこみは、半径8 mm である。40 °Cのへこみから −20 °Cの周囲へ放射される熱はどれだけか。",
+        "answerHint": "平らな表面に対して48%増加",
+        "bookPage": 609,
+        "endBookPage": 609,
+        "pdfPage": 623,
+        "endPdfPage": 623
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-25",
+        "number": "10.25",
+        "text": "ε = 0.5 の金属ブロックの円錐穴は、表面で直径5 cm、深さ5 cm である。穴の存在によって、穴の面積からの放射は何倍変わるか。（円錐があまり深く細長くなければ、この問題はこの章の方法を使ってよい近似で解ける。深く細長い場合、頂点が受ける放射がはるかに少ないため、ネットワークの類似を使うのは正しくない。）",
+        "bookPage": 609,
+        "endBookPage": 609,
+        "pdfPage": 623,
+        "endPdfPage": 623
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-26",
+        "number": "10.26",
+        "text": "大きな部屋の片面ガラス窓は、幅4 ft、高さ6 ft である。部屋は70 °Fに保たれるが、ガラスはより冷たい外気への熱損失のために67 °Fである。次を求めよ。",
+        "items": [
+          "（a）窓への放射による熱伝達",
+          "（b）窓への自然対流による熱伝達",
+          "（c）窓へ伝わる熱のうち放射による割合"
+        ],
+        "answerHint": "（c）80%",
+        "bookPage": 609,
+        "endBookPage": 609,
+        "pdfPage": 623,
+        "endPdfPage": 623
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-27",
+        "number": "10.27",
+        "text": "問題10.26で窓ガラスの温度が分からないとする。外気は40 °Fで、窓の外側の h は62 W/m²·K である。夜であり、空の有効温度は15 °Fである。F_{window−sky} = 0.5 とせよ。残りの周囲は40 °Fとせよ。T_window を求め、類似の電気回路を描き、すべての熱抵抗に数値を与えよ。回路を議論せよ。",
+        "hint": "窓は赤外放射に対して不透明だが、伝導に対しては非常に小さい抵抗しか提供しないことに注意すると、計算が簡単になるかもしれない。したがって、窓温度は内側と外側でほぼ同じである。",
+        "bookPage": 609,
+        "endBookPage": 609,
+        "pdfPage": 623,
+        "endPdfPage": 623
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-28",
+        "number": "10.28",
+        "text": "非常に効果的な低温断熱は、平行な金属シートの間の空間を排気することによって作られる。対流は排除され、伝導はスペーサーでのみ起こり、放射がわずかに起こる熱伝達を担う。150 K と100 K の間の q を、次の3つの場合について計算せよ：（a）高研磨アルミニウムのシート2枚、（b）高研磨アルミニウムのシート3枚、（c）圧延鋼板のシート3枚。設計は熱伝導を最小化するとせよ。",
+        "items": [
+          "（a）高研磨アルミニウムのシート2枚",
+          "（b）高研磨アルミニウムのシート3枚",
+          "（c）圧延鋼板のシート3枚"
+        ],
+        "bookPage": 609,
+        "endBookPage": 610,
+        "pdfPage": 623,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-29",
+        "number": "10.29",
+        "text": "3つの同一の長い黒い壁、幅1 m が、正三角形の管を形成する。1つの壁は400 K に保たれ、1つは300 K で、第3の壁は断熱されている。Q（W/m）と第3の壁の温度を求めよ。",
+        "answerHint": "T_3rd = 360 K",
+        "bookPage": 610,
+        "endBookPage": 610,
+        "pdfPage": 624,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-30",
+        "number": "10.30",
+        "text": "直径1 cm の2本の棒が平行に走り、中心は4 cm 離れている。一方は1500 K に保たれ黒体である。他方は加熱されておらず、ε = 0.66 である。両方は400 K の円筒形の黒い放射シールドに取り囲まれている。棒からの熱損失を評価し、加熱されていない棒の温度を求めよ。",
+        "answerHint": "281 W/m",
+        "bookPage": 610,
+        "endBookPage": 610,
+        "pdfPage": 624,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-31",
+        "number": "10.31",
+        "text": "小径のヒーターが、大きな円筒形放射シールドの中心にある。鏡面放射と拡散放射におけるシールドの放射率の相対的な重要性を議論せよ。",
+        "bookPage": 610,
+        "endBookPage": 610,
+        "pdfPage": 624,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-32",
+        "number": "10.32",
+        "text": "幅1 m の市販アルミニウム板2枚が、一辺に沿って120°の角度で接合されている。背面（240°側）は断熱されている。板は両方とも120 °Cに保たれる。20 °Cの周囲は遠くにある。左側の板から右側と周囲への正味の放射熱伝達はいくらか。",
+        "answerHint": "83 W/m",
+        "bookPage": 610,
+        "endBookPage": 610,
+        "pdfPage": 624,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-33",
+        "number": "10.33",
+        "text": "直径0.5 m の平行な円板2枚が、それらの中間にあり、直径0.2 m の穴を持つ無限の平行板によって隔てられている。円板と穴は同じ中心線上にある。円板が0.6 m 離れている場合、2つの円板の間の形態係数はいくらか。",
+        "bookPage": 610,
+        "endBookPage": 610,
+        "pdfPage": 624,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-34",
+        "number": "10.34",
+        "text": "無重力環境にある直径0.3 m の排気された球形空洞が、300 °Cに保たれる。次に、1 atm の飽和蒸気が空洞に入れられる。",
+        "items": [
+          "（a）蒸気への初期の放射熱流束はいくらか。",
+          "（b）q_conduction が q_radiation より小さくなるまでにどれだけかかるかを求めよ。必要なら、上昇する蒸気温度について補正せよ。"
+        ],
+        "answerHint": "（b）0.35 s",
+        "bookPage": 610,
+        "endBookPage": 610,
+        "pdfPage": 624,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-35",
+        "number": "10.35",
+        "text": "問題10.14で記述されたひも法を使って、表10.2のケース（1）、（2）、（3）を確かめよ。",
+        "bookPage": 610,
+        "endBookPage": 610,
+        "pdfPage": 624,
+        "endPdfPage": 624
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-36",
+        "number": "10.36",
+        "text": "2つの長い平行ヒーターは、中心が20 cm 離れた直径10 cm の平行円筒の120°の部分からなる。凸面同士が向き合い、それらの中心を結ぶ平面上に対称に置かれている。問題10.14で記述されたひも法を使って F_{1–2} を求めよ。",
+        "answerHint": "F_1–2 = 0.2216",
+        "bookPage": 610,
+        "endBookPage": 611,
+        "pdfPage": 624,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-37",
+        "number": "10.37",
+        "text": "圧延鋼板の2つの長い平行な帯が、仮想的な1 m の正三角形円筒の辺に沿って横たわる。一方は幅1 m で、20 °Cに保たれる。他方は幅1/2 m で、隣接する脚の中央にあり、400 °Cに保たれる。周囲は遠くにあり、それらは断熱されている。Q_net を求めよ。",
+        "hint": "形態係数が必要である。それは問題10.14で記述された方法を使って求めることができる。",
+        "answerHint": "2930 W",
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-38",
+        "number": "10.38",
+        "text": "ひも法ではなく表10.2を使って、問題10.37における熱い帯から冷たい帯への形態係数を求めよ。担当教員に求められた場合は、F_{1–2} を得た後に問題10.37を完成せよ。",
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-39",
+        "number": "10.39",
+        "text": "表10.3の第2のケースの形態係数が、図が非常に長くなる場合に表10.2の第3のケースに与えられたものに帰着することを証明せよ。",
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-40",
+        "number": "10.40",
+        "text": "表10.3の第1のケースに対する F_{1–2} が、板1と板2を無限に延ばした場合に予想される結果に帰着することを示せ。",
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-41",
+        "number": "10.41",
+        "text": "問題2.26では、伝導だけの結果として q が8227 W/m²に等しいことを示す際に、放射を無視するよう求められた。その仮定の妥当性を定量的に議論せよ。",
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-42",
+        "number": "10.42",
+        "text": "100 °Cの球（ε = 0.86）が、300 °Cの第2の球（ε = 0.47）の中心に置かれている。外径は0.3 m、内径は0.1 m である。放射熱流束はいくらか。",
+        "answerHint": "433 W/m²",
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-43",
+        "number": "10.43",
+        "text": "表10.2のケース4に対する F_{1–2} を確かめよ。",
+        "hint": "これは積分なしに行うことができる。",
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-44",
+        "number": "10.44",
+        "text": "大きな等温囲いの中の小さな灰色物体に対する式（10.30）の近似を考える。小物体の放射率が ε_1 = 0.5 で、囲いが次の場合、F_{1–2} に10%未満の誤差を導入するために A_1/A_2 はどれだけ小さくなければならないか：a) 市販アルミニウム板、b) 圧延鋼板、c) 粗い赤レンガ、d) 酸化した鋳鉄、e) 研磨された電解銅。物体とその環境の両方の温度は40〜90 °Cの範囲にあるとせよ。",
+        "items": [
+          "a) 市販アルミニウム板",
+          "b) 圧延鋼板",
+          "c) 粗い赤レンガ",
+          "d) 酸化した鋳鉄",
+          "e) 研磨された電解銅"
+        ],
+        "bookPage": 611,
+        "endBookPage": 611,
+        "pdfPage": 625,
+        "endPdfPage": 625
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-45",
+        "number": "10.45",
+        "text": "式（10.39）〜式（10.41）から出発して、式（10.45）を導け。",
+        "bookPage": 611,
+        "endBookPage": 612,
+        "pdfPage": 625,
+        "endPdfPage": 626
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-46",
+        "number": "10.46",
+        "text": "（a）2つの物体の間の単一の放射シールドに対する式（10.31）を導け。放射ネットワークのスケッチを含めよ。（b）第1のシールドのすぐ外側に第2の放射シールドがある場合について、計算を繰り返せ。",
+        "items": [
+          "（a）単一の放射シールドに対する式（10.31）の導出（放射ネットワークのスケッチを含む）",
+          "（b）2つの放射シールドがある場合の計算"
+        ],
+        "bookPage": 612,
+        "endBookPage": 612,
+        "pdfPage": 626,
+        "endPdfPage": 626
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-47",
+        "number": "10.47",
+        "text": "式（10.32）を使って、鏡面反射する放射シールドによって隔てられた、鏡面反射する2つの物体の間の正味熱伝達を求めよ。結果を式（10.31）と比較せよ。鏡面反射は熱伝達を減らすか。",
+        "bookPage": 612,
+        "endBookPage": 612,
+        "pdfPage": 626,
+        "endPdfPage": 626
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-48",
+        "number": "10.48",
+        "text": "液体の水に対する単色吸収係数の値のいくつかが、ρκ_λ (cm⁻¹) として表10.6［10.5］に列挙されている。各波長について、単色透過率が10%になる水の層の厚さを求めよ。これに基づいて、水面下で見える可能性のある色と、水の赤外放射率を議論せよ。",
+        "bookPage": 612,
+        "endBookPage": 612,
+        "pdfPage": 626,
+        "endPdfPage": 626
+      },
+      {
+        "type": "table",
+        "id": "table-10-48-1",
+        "caption": "表10.6 水の単色吸収係数",
+        "headers": [
+          "λ (µm)",
+          "ρκ_λ (cm⁻¹)",
+          "色"
+        ],
+        "rows": [
+          [
+            "0.3",
+            "0.0067",
+            ""
+          ],
+          [
+            "0.4",
+            "0.00058",
+            "紫"
+          ],
+          [
+            "0.5",
+            "0.00025",
+            "緑"
+          ],
+          [
+            "0.6",
+            "0.0023",
+            "橙"
+          ],
+          [
+            "0.8",
+            "0.0196",
+            ""
+          ],
+          [
+            "1.0",
+            "0.363",
+            ""
+          ],
+          [
+            "2.0",
+            "69.1",
+            ""
+          ],
+          [
+            "2.6–10.0",
+            "> 100",
+            ""
+          ]
+        ],
+        "bookPage": 612,
+        "pdfPage": 626
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-49",
+        "number": "10.49",
+        "text": "太陽の直径は1.3914 × 10⁶ km である。地球の平均直径は12,742 km で、太陽の中心から平均距離1.496 × 10⁸ km にある。",
+        "items": [
+          "（a）地球が太陽から地球への半径に垂直な平らな円板として扱われる場合、形態係数 F_{sun–earth} を求めよ。",
+          "（b）この形態係数と、測定された太陽放射照度1361 ± 0.5 W/m²を使って、太陽の有効黒体温度が5772 K であることを示せ［10.20］。"
+        ],
+        "bookPage": 612,
+        "endBookPage": 612,
+        "pdfPage": 626,
+        "endPdfPage": 626
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-50",
+        "number": "10.50",
+        "text": "円筒殻の長い部分は半径 R を持つが、完全な円を形成しない。代わりに、円筒殻は180°未満の角度 θ にわたる弧を形成する。殻は湾曲しているため、殻の内面（面1）はそれ自身を見る。形態係数 F_{1–1} の式を導き、θ = 30°について F_{1–1} を評価せよ。",
+        "bookPage": 612,
+        "endBookPage": 612,
+        "pdfPage": 626,
+        "endPdfPage": 626
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-51",
+        "number": "10.51",
+        "text": "問題1.46を解き、ステファン–ボルツマン定数を他の基本的な物理定数を用いて表せ。",
+        "bookPage": 612,
+        "endBookPage": 613,
+        "pdfPage": 626,
+        "endPdfPage": 627
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-52",
+        "number": "10.52",
+        "text": "波長0から λ の間の黒体放射の割合は、放射割合関数 f で与えられる。",
+        "items": [
+          "（a）問題1.46を解け。",
+          "（b）次の式を示せ。ここで c_2 は第2放射定数 hc/k_B で、14387.8 µm·K に等しい。",
+          "（c）任意のソフトウェアを使って f(λT) をプロットし、結果が表10.7と一致することを確かめよ。"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "f = ∫_0^λ e_{λ,b} dλ/(σT⁴)",
+            "part": "式（10.60）"
+          },
+          {
+            "expression": "f(λT) = 1 − (15/π⁴) ∫_0^{c_2/λT} t³/(e^t − 1) dt",
+            "part": "式（10.61）"
+          }
+        ],
+        "bookPage": 613,
+        "endBookPage": 613,
+        "pdfPage": 627,
+        "endPdfPage": 627
+      },
+      {
+        "type": "table",
+        "id": "table-10-52-1",
+        "caption": "表10.7 f の関数としての λT（µm·K）",
+        "headers": [
+          "f",
+          "λT",
+          "f",
+          "λT",
+          "f",
+          "λT"
+        ],
+        "rows": [
+          [
+            "0.0500",
+            "1884",
+            "0.4000",
+            "3583",
+            "0.8000",
+            "6864"
+          ],
+          [
+            "0.1000",
+            "2195",
+            "0.5000",
+            "4107",
+            "0.9000",
+            "9376"
+          ],
+          [
+            "0.2000",
+            "2676",
+            "0.6000",
+            "4745",
+            "0.9500",
+            "12461"
+          ],
+          [
+            "0.3000",
+            "3119",
+            "0.7000",
+            "5590",
+            "",
+            ""
+          ]
+        ],
+        "bookPage": 613,
+        "pdfPage": 627
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-53",
+        "number": "10.53",
+        "text": "問題10.52を読め。次に、室温（300 K）と太陽温度（5772 K）の黒体が放出するエネルギーの80%を含む、波長の中央範囲を求めよ。",
+        "bookPage": 613,
+        "endBookPage": 613,
+        "pdfPage": 627,
+        "endPdfPage": 627
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-54",
+        "number": "10.54",
+        "text": "問題10.52を読め。結晶シリコン太陽電池は、光子の波長がバンドギャップ波長 λ_band = 1.11 µm より短ければ、光子を伝導電子に変換できる。より長い波長は電流を生じず、単に吸収されてシリコンを加熱する。320 K の太陽電池について、バンドギャップより短い波長にある太陽放射の割合を概算せよ。なぜこれが重要か。",
+        "bookPage": 613,
+        "endBookPage": 613,
+        "pdfPage": 627,
+        "endPdfPage": 627
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-55",
+        "number": "10.55",
+        "text": "2つのステンレス鋼ブロックは、表面粗さが約10 µm、ε ≈ 0.5 である。それらは接触させられ、それらの界面は300 K 付近にある。直接接触する点は無視し、空気で満たされた隙間を2枚の平らな板で近似して、その隙間を横切るコンダクタンスを概算せよ。放射は重要か。表2.2を考えて、直接接触の相対的な重要性はどうか。",
+        "bookPage": 613,
+        "endBookPage": 614,
+        "pdfPage": 627,
+        "endPdfPage": 628
+      },
+      {
+        "type": "problem",
+        "id": "problem-10-56",
+        "number": "10.56",
+        "text": "長さ0.8 m の円筒形燃焼室は直径0.2 m である。その中の高温ガスは温度1200 °C、圧力1 atm であり、吸収成分は体積で12%の CO₂ と18%の CO₂ からなる。壁が黒体の場合、壁を730 °Cに保つために必要な冷却量を求めよ。",
+        "hint": "この小さな光学的厚さに対しては、CO₂ と CO₂ の放射率は補正なしに加えることができる。ガス混合物は近似的に理想気体であり、a の体積% = モル分率、x_a = p_a/p である。",
+        "sourceNote": {
+          "ja": "原文では吸収成分が「12% by volume of CO2 and 18% CO2」と印刷され、ヒントも「emissivities of CO2 and CO2」とある。第2の CO2 は H2O の誤植とみられるが、原文の表記のまま保持した。",
+          "en": "The original prints the absorbing components as \"12% by volume of CO2 and 18% CO2\" and the hint says \"emissivities of CO2 and CO2\"; the second CO2 is evidently a misprint for H2O, but the printed wording is preserved."
+        },
+        "bookPage": 614,
+        "endBookPage": 614,
+        "pdfPage": 628,
+        "endPdfPage": 628
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 39,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-10-1",
+        "number": "10.1",
+        "authors": "E. M. Sparrow and R. D. Cess",
+        "originalTitle": "Radiation Heat Transfer",
+        "titleJa": "放射熱伝達",
+        "publication": "Hemisphere Publishing Corp., Washington, D.C., 1978",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-2",
+        "number": "10.2",
+        "authors": "J. H. Lienhard V",
+        "originalTitle": "Linearization of nongray radiation exchange: The internal fractional function reconsidered",
+        "titleJa": "非灰色放射交換の線形化：内部割合関数の再考",
+        "publication": "J. Heat Transfer, 141:052701, May 2019",
+        "doi": "10.1115/1.4042158",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-3",
+        "number": "10.3",
+        "authors": "D. K. Edwards",
+        "originalTitle": "Radiation Heat Transfer Notes",
+        "titleJa": "放射熱伝達ノート",
+        "publication": "Hemisphere Publishing Corp., Washington, D.C., 1981",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-4",
+        "number": "10.4",
+        "authors": "M. F. Modest and S. Mazumder",
+        "originalTitle": "Radiative Heat Transfer",
+        "titleJa": "放射性熱伝達",
+        "publication": "Academic Press, London, UK, 4th ed., 2021",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-5",
+        "number": "10.5",
+        "authors": "J. R. Howell, M. P. Mengüç, and R. Siegel",
+        "originalTitle": "Thermal Radiation Heat Transfer",
+        "titleJa": "熱放射熱伝達",
+        "publication": "CRC Press (Taylor and Francis), Boca Raton, FL, 6th ed., 2015",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-6",
+        "number": "10.6",
+        "authors": "J. R. Howell",
+        "originalTitle": "A Catalog of Radiation Heat Transfer Configuration Factors",
+        "titleJa": "放射熱伝達形態係数カタログ",
+        "publication": "University of Texas, Austin, 2nd ed., 2001",
+        "url": "http://www.thermalradiation.net/indexCat.html",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-7",
+        "number": "10.7",
+        "authors": "A. K. Oppenheim",
+        "originalTitle": "Radiation analysis by the network method",
+        "titleJa": "ネットワーク法による放射解析",
+        "publication": "Trans. ASME, 78(4):725–735, May 1956",
+        "doi": "10.1115/1.4013795",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-8",
+        "number": "10.8",
+        "authors": "R. Siegel and J. R. Howell",
+        "originalTitle": "Thermal radiation heat transfer, Volume 2: Thermal radiation exchange between surfaces and enclosures",
+        "titleJa": "熱放射熱伝達、第2巻：表面と囲いの間の熱放射交換",
+        "publication": "Special Publication SP-164, NASA, Washington, D.C., January 1969",
+        "url": "http://hdl.handle.net/2060/19690020939",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-9",
+        "number": "10.9",
+        "authors": "W.-J. Yang, H. Taniguchi, and K. Kudo",
+        "originalTitle": "Radiative heat transfer by the Monte Carlo method",
+        "titleJa": "モンテカルロ法による放射熱伝達",
+        "publication": "In T.F. Irvine, Jr., J. P. Hartnett, Y. I. Cho, and G. A. Greene, editors, Advances in Heat Transfer, Vol. 27. Academic Press, Inc., San Diego, 1995",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-10",
+        "number": "10.10",
+        "authors": "H. C. van de Hulst",
+        "originalTitle": "Light Scattering by Small Particles",
+        "titleJa": "小粒子による光散乱",
+        "publication": "Dover Publications Inc., New York, 1981",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-11",
+        "number": "10.11",
+        "authors": "P. Atkins and J. de Paula",
+        "originalTitle": "Atkins’ Physical Chemistry",
+        "titleJa": "アトキンス物理化学",
+        "publication": "W. H. Freeman and Co., New York, 8th ed., 2006",
+        "bookPage": 614,
+        "pdfPage": 628
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-12",
+        "number": "10.12",
+        "authors": "G. Herzberg",
+        "originalTitle": "Molecular Spectra and Molecular Structure",
+        "titleJa": "分子スペクトルと分子構造",
+        "publication": "Kreiger Publishing, Malabar, Florida, 1989",
+        "noteJa": "全3巻。",
+        "noteEn": "In three volumes.",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-13",
+        "number": "10.13",
+        "authors": "M. Alberti, R. Weber, M. Mancini, A. Fateev, and S. Clausen",
+        "originalTitle": "Validation of HITEMP-2010 for carbon dioxide and water vapour at high temperatures and atmospheric pressures in 450–7600 cm−1 spectral range",
+        "titleJa": "450–7600 cm⁻¹スペクトル範囲における高温・大気圧での二酸化炭素と水蒸気に対する HITEMP-2010 の検証",
+        "publication": "J. Quant. Spectroscopy and Radiative Transfer, 157:14–33, 2015",
+        "doi": "10.1016/j.jqsrt.2015.01.016",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-14",
+        "number": "10.14",
+        "authors": "H. C. Hottel and A. F. Sarofim",
+        "originalTitle": "Radiative Transfer",
+        "titleJa": "放射伝達",
+        "publication": "McGraw-Hill Book Company, New York, 1967",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-15",
+        "number": "10.15",
+        "authors": "M. Alberti, R. Weber, and M. Mancini",
+        "originalTitle": "Re-creating Hottel’s emissivity charts for carbon dioxide and extending them to 40 bar pressure using HITEMP-2010 data base",
+        "titleJa": "HITEMP-2010 データベースを使って二酸化炭素に対する Hottel の放射率チャートを再現し、40 bar まで拡張する",
+        "publication": "Combustion and Flame, 162(3):597–612, 2015",
+        "noteJa": "著者は計算を容易にするためのスプレッドシートを提供している。",
+        "noteEn": "The authors provide a spreadsheet to facilitate calculations.",
+        "doi": "10.1016/j.combustflame.2014.09.005",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-16",
+        "number": "10.16",
+        "authors": "M. Alberti, R. Weber, and M. Mancini",
+        "originalTitle": "Re-creating Hottel’s emissivity charts for water vapor and extending them to 40 bar pressure using HITEMP-2010 data base",
+        "titleJa": "HITEMP-2010 データベースを使って水蒸気に対する Hottel の放射率チャートを再現し、40 bar まで拡張する",
+        "publication": "Combustion and Flame, 169:141–153, 2016",
+        "noteJa": "著者は計算を容易にするためのスプレッドシートを提供している。",
+        "noteEn": "The authors provide a spreadsheet to facilitate calculations.",
+        "doi": "10.1016/j.combustflame.2016.04.013",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-17",
+        "number": "10.17",
+        "authors": "M. Alberti, R. Weber, and M. Mancini",
+        "originalTitle": "Overlap corrections for emissivity calculations of H2O-CO2-CO-N2 mixtures",
+        "titleJa": "H₂O–CO₂–CO–N₂ 混合物の放射率計算に対する重なり補正",
+        "publication": "J. Quant. Spectroscopy and Radiative Transfer, 205:230–240, 2018",
+        "doi": "10.1016/j.jqsrt.2017.10.005",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-18",
+        "number": "10.18",
+        "authors": "D. K. Edwards and R. Matavosian",
+        "originalTitle": "Scaling rules for total absorptivity and emissivity of gases",
+        "titleJa": "気体の全吸収率と放射率に対するスケーリング則",
+        "publication": "J. Heat Transfer, 106(4):684–689, 1984",
+        "doi": "10.1115/1.3246739",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-19",
+        "number": "10.19",
+        "authors": "M. F. Modest",
+        "originalTitle": "Radiative heat transfer in turbulent combustion",
+        "titleJa": "乱流燃焼における放射熱伝達",
+        "publication": "J. Heat Mass Transfer, 145(7):073101, February 2023",
+        "doi": "10.1115/1.4056402",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-20",
+        "number": "10.20",
+        "authors": "A. Prša et al.",
+        "originalTitle": "Nominal values for selected solar and planetary quantities: IUA 2015 Resolution B3",
+        "titleJa": "選ばれた太陽・惑星量の公称値：IUA 2015 決議 B3",
+        "publication": "The Astronomical Journal, 152(2):41, August 2016",
+        "doi": "10.3847/0004-6256/152/2/41",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-21",
+        "number": "10.21",
+        "authors": "J. A. Duffie and W. A. Beckman",
+        "originalTitle": "Solar Engineering of Thermal Processes",
+        "titleJa": "熱プロセスの太陽エネルギー工学",
+        "publication": "John Wiley & Sons, Inc., Hoboken, N.J., 4th ed., 2013",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-22",
+        "number": "10.22",
+        "authors": "K. E. Trenberth, J. T. Fasullo, and J. Kiehl",
+        "originalTitle": "Earth’s global energy budget",
+        "titleJa": "地球の全球エネルギー収支",
+        "publication": "Bull. Amer. Meteor. Soc., 90(3):311–324, March 2009",
+        "doi": "10.1175/2008BAMS2634.1",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-23",
+        "number": "10.23",
+        "authors": "P. Berdahl and R. Fromberg",
+        "originalTitle": "The thermal radiance of clear skies",
+        "titleJa": "晴天の熱放射輝度",
+        "publication": "Solar Energy, 29(4):299–314, 1982",
+        "doi": "10.1016/0038-092X(82)90245-6",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-24",
+        "number": "10.24",
+        "authors": "A. Skartveit, J. A. Olseth, G. Czeplak, and M. Rommel",
+        "originalTitle": "On the estimation of atmospheric radiation from surface meteorological data",
+        "titleJa": "地表気象データからの大気放射の推定について",
+        "publication": "Solar Energy, 56:349–359, April 1996",
+        "doi": "10.1016/0038-092X(95)00117-A",
+        "bookPage": 615,
+        "pdfPage": 629
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-25",
+        "number": "10.25",
+        "authors": "P. Berdahl and M. Martin",
+        "originalTitle": "Emissivity of clear skies",
+        "titleJa": "晴天の放射率",
+        "publication": "Solar Energy, 32(5):663–664, 1984",
+        "doi": "10.1016/0038-092X(84)90144-0",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-26",
+        "number": "10.26",
+        "authors": "C. E. Kennedy",
+        "originalTitle": "Review of mid- to high-temperature solar selective materials",
+        "titleJa": "中温から高温の太陽選択材料のレビュー",
+        "publication": "Technical Report NREL/TP-520-31267, National Renewable Energy Laboratory, Golden, Colorado, July 2002",
+        "doi": "10.2172/15000706",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-27",
+        "number": "10.27",
+        "authors": "D. Zhao, A. Aili, Y. Zhai, S. Xu, G. Tan, X. Yin, and R. Yang",
+        "originalTitle": "Radiative sky cooling: Fundamental principles, materials, and applications",
+        "titleJa": "放射天空冷却：基本原理、材料、応用",
+        "publication": "Applied Physics Reviews, 6(2):021306, 2019",
+        "doi": "10.1063/1.5087281",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-28",
+        "number": "10.28",
+        "authors": "A. Leroy, B. Bhatia, C. C. Kelsall, A. Castillejo-Cuberos, M. Di Capua H., L. Zhao, L. Zhang, A. M. Guzman, and E. N. Wang",
+        "originalTitle": "High-performance subambient radiative cooling enabled by optically selective and thermally insulating polyethylene aerogel",
+        "titleJa": "光学的に選択的で断熱性のポリエチレンエアロゲルによって可能になる高性能な外気以下放射冷却",
+        "publication": "Sci. Advances, 5(10), 2019",
+        "doi": "10.1126/sciadv.aat9480",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-29",
+        "number": "10.29",
+        "authors": "J. A. Fay and D. S. Gollub",
+        "originalTitle": "Energy and Environment",
+        "titleJa": "エネルギーと環境",
+        "publication": "Oxford University Press, New York, 2002",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-30",
+        "number": "10.30",
+        "authors": "D. Lüthi, M. Le Floch, B. Bereiter, T. Blunier, J.-M. Barnola, U. Siegenthaler, D. Raynaud, J. Jouzel, H. Fischer, K. Kawamura, and T. F. Stocker",
+        "originalTitle": "High-resolution carbon dioxide concentration record 650,000-800,000 years before present",
+        "titleJa": "現在より65万〜80万年前の高分解能二酸化炭素濃度記録",
+        "publication": "Nature, May 2008",
+        "doi": "10.1038/nature06949",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-31",
+        "number": "10.31",
+        "authors": "J. Hansen, R. Ruedy, M. Sato, and K. Lo",
+        "originalTitle": "Global surface temperature change",
+        "titleJa": "全球地表面温度の変化",
+        "publication": "Rev. Geophys., 48:RG4004, 2010",
+        "noteJa": "追加データと更新は http://data.giss.nasa.gov/gistemp/ にある。",
+        "noteEn": "Additional data and updates are at http://data.giss.nasa.gov/gistemp/.",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-32",
+        "number": "10.32",
+        "authors": "GISTEMP Team",
+        "originalTitle": "GISS Surface Temperature Analysis (GISTEMP v4)",
+        "titleJa": "GISS 地表面温度解析（GISTEMP v4）",
+        "publication": "2024. Dataset accessed 13 Feb. 2024",
+        "url": "https://data.giss.nasa.gov/gistemp/",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-33",
+        "number": "10.33",
+        "authors": "IPCC Core Writing Team, R. K. Pachauri, and L. A. Meyer, editors",
+        "originalTitle": "Climate Change 2014: Synthesis Report. Contribution of Working Groups I, II and III to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change",
+        "titleJa": "気候変動2014：統合報告書。気候変動に関する政府間パネルの第5次評価報告書への第I・II・III作業部会の寄与",
+        "publication": "IPCC, Geneva, 2014",
+        "url": "http://www.ipcc.ch",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-34",
+        "number": "10.34",
+        "authors": "D. M. Murphy, S. Solomon, R. W. Portmann, K. H. Rosenlof, P. M. Forster, and T. Wong",
+        "originalTitle": "An observationally based energy balance for the earth since 1950",
+        "titleJa": "1950年以降の地球に対する観測に基づくエネルギー収支",
+        "publication": "J. Geophysical Research: Atmospheres, 114:D17107, 2009",
+        "doi": "10.1029/2009JD012105",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-35",
+        "number": "10.35",
+        "authors": "P. A. Stott, S. F. B. Tett, G. S. Jones, M. R. Allen, J. F. B. Mitchell, and G. J. Jenkins",
+        "originalTitle": "External control of 20th century temperature by natural and anthropogenic forcings",
+        "titleJa": "自然および人為的強制力による20世紀の温度の外部制御",
+        "publication": "Science, 290:2133–2137, December 2000",
+        "doi": "10.1126/science.290.5499.2133",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-36",
+        "number": "10.36",
+        "authors": "D. S. Battisti and R. L. Naylor",
+        "originalTitle": "Historical warnings of future food insecurity with unprecedented seasonal heat",
+        "titleJa": "前例のない季節的な暑さを伴う将来の食料不安に対する歴史的警告",
+        "publication": "Science, 323:240–244, January 2009",
+        "doi": "10.1126/science.1164363",
+        "bookPage": 616,
+        "pdfPage": 630
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-37",
+        "number": "10.37",
+        "authors": "J. Schewe et al.",
+        "originalTitle": "Multimodel assessment of water scarcity under climate change",
+        "titleJa": "気候変動下の水不足のマルチモデル評価",
+        "publication": "Proc. Nat. Acad. Sci., 111:3245–3250, 2014",
+        "doi": "10.1073/pnas.1222460110",
+        "bookPage": 617,
+        "pdfPage": 631
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-38",
+        "number": "10.38",
+        "authors": "AAAS Climate Science Panel",
+        "originalTitle": "What we know: The reality, risks, and response to climate change",
+        "titleJa": "私たちが知っていること：気候変動の現実、リスク、対応",
+        "publication": "Technical report, American Association for the Advancement of Science, Washington, D.C., July 2014",
+        "url": "http://whatweknow.aaas.org/",
+        "bookPage": 617,
+        "pdfPage": 631
+      },
+      {
+        "type": "reference",
+        "id": "reference-10-39",
+        "number": "10.39",
+        "authors": "MIT Energy Initiative",
+        "originalTitle": "The future of solar energy",
+        "titleJa": "太陽エネルギーの将来",
+        "publication": "Technical report, Massachusetts Institute of Technology, Cambridge, MA, 2015",
+        "url": "http://energy.mit.edu/publication/future-solar-energy/",
+        "bookPage": 617,
+        "pdfPage": 631
+      }
+    ]
+  }
+}

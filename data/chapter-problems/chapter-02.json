@@ -1,0 +1,759 @@
+{
+  "chapterId": "chapter-02",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 2 (Heat conduction, thermal resistance, and the overall heat transfer coefficient): Problems and References — Japanese translation",
+  "bookPages": "86–98",
+  "pdfPages": "100–112",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 49,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-2-1",
+        "number": "2.1",
+        "text": "平板内の熱伝導は1次元で定常であり、k は T に対して直線的に変化する。平板内の平均温度で k をとることにより、式（1.9）で q を正確に評価できることを証明せよ。",
+        "bookPage": 86,
+        "endBookPage": 86,
+        "pdfPage": 100,
+        "endPdfPage": 100
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-2",
+        "number": "2.2",
+        "text": "厚さ L の平面壁を通る定常熱流について、k(T) が任意の関数のとき次の関係が成り立つことを示せ。その関係を使い、単純な数値積分で、左側が−100 °C、右側が400 °Cに温度が変化する厚さ1 cmの純鉄の平板の q を求めよ。k_average = (k_left + k_right)/2 と単純にとって式（1.9）を使っていたら、どれだけ誤っていたか。",
+        "formulaBlocks": [
+          {
+            "expression": "qL = ∫_{T_left}^{T_right} k(T) dT"
+          }
+        ],
+        "answerHint": "誤差：+6.5%",
+        "bookPage": 86,
+        "endBookPage": 86,
+        "pdfPage": 100,
+        "endPdfPage": 100
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-3",
+        "number": "2.3",
+        "text": "平板の一方の側の定常熱流束は既知の値 q_o であり、熱伝導率は平板内で k(T) として温度とともに変化する。",
+        "items": [
+          "（a）式（2.10）から出発して、熱流束は平板内のどの位置 x でも同じであることを示し、問題2.2で与えた積分を導け。",
+          "（b）熱伝導率が温度の冪級数として書ける場合、平板の両側の温度差と単一の有効熱伝導率を用いて熱流束を求めよ。n = 0 または n = 1 のとき、この有効熱伝導率はいくらか。"
+        ],
+        "formulaBlocks": [
+          {
+            "expression": "k = Σ_{i=0}^{i=n} A_i T^i",
+            "part": "（b）の冪級数"
+          }
+        ],
+        "bookPage": 86,
+        "endBookPage": 86,
+        "pdfPage": 100,
+        "endPdfPage": 100
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-4",
+        "number": "2.4",
+        "text": "式（2.7）を導く際にエネルギーについて行ったのと同様に、フィックの法則、式（2.19）を、（希薄種の）質量保存の原理と組み合わせよ。単位体積あたりの種1の質量は、質量分率 m_1 に混合物の密度 ρ を掛けたものであることに注意せよ。j_1 を消去して、m_1 についての2階微分方程式を得よ。結果の重要性と用途を議論せよ。この演習では、ρ と D_12 を定数と近似してよい。",
+        "bookPage": 86,
+        "endBookPage": 87,
+        "pdfPage": 100,
+        "endPdfPage": 101
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-5",
+        "number": "2.5",
+        "text": "内側のバルク温度と外側の空気温度 T_∞i と T_∞o が既知のとき、肉厚の管内の温度分布を求めよ。内側と外側の熱伝達率はそれぞれ h_i と h_o である。例2.5の方法に従い、結果を次の無次元形にまとめよ。",
+        "formulaBlocks": [
+          {
+            "expression": "(T − T_∞i)/(T_∞i − T_∞o) = fn(Bi_i, Bi_o, r/r_i, r_o/r_i)"
+          }
+        ],
+        "bookPage": 87,
+        "endBookPage": 87,
+        "pdfPage": 101,
+        "endPdfPage": 101
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-6",
+        "number": "2.6",
+        "text": "問題2.5の境界条件を、ビオ数が現れる無次元形にせよ。ビオ数を無限大に近づけよ。これにより例2.4の境界条件に戻るはずである。したがって、問題2.5で得た解は、ビオ数が無限大に近づくとき例2.4の解に帰着するはずである。これが成り立つことを示せ。",
+        "bookPage": 87,
+        "endBookPage": 87,
+        "pdfPage": 101,
+        "endPdfPage": 101
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-7",
+        "number": "2.7",
+        "text": "断熱材の臨界半径という考え方を、小学校に通う弟か妹が理解できるように正確に説明せよ。（手近な子どもがいない場合は、借りてきて、自分の説明が本当に通じるか確かめてみよ。）",
+        "bookPage": 87,
+        "endBookPage": 87,
+        "pdfPage": 101,
+        "endPdfPage": 101
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-8",
+        "number": "2.8",
+        "text": "図2.22に示す平板は、5つの面が断熱材に埋め込まれている。第6の面は、熱伝達率を通して周囲温度にさらされている。平板内では1.0 kW/m³ の率で熱が発生している。平板の熱伝導率は0.2 W/m·Kである。図2.22の平板は一辺100 cmの正方形で厚さは10 cm、露出した面は h = 20 W/m²·K で T_∞ = 25 °C の環境に接している。",
+        "items": [
+          "（a）平板内の温度分布を求めよ。必要な仮定を明記すること。境界条件をはっきり特定することに注意せよ。",
+          "（b）露出した前面と反対側の背面で T を評価せよ。",
+          "（c）解が背面と前面で期待される熱流束を与えることを示せ。"
+        ],
+        "figure": {
+          "figureNumber": "2.22",
+          "caption": "図2.22 問題2.8の配置",
+          "alt": "一辺100 cmの正方形で厚さ10 cmの平板の配置図。5つの面は断熱材に埋め込まれ、露出した前面は25 °Cの環境へ h = 20 W/m²·K で熱を失う。平板内では一様に熱が発生する。",
+          "bookPage": 88,
+          "pdfPage": 102
+        },
+        "figureRefs": [
+          "Fig. 2.22"
+        ],
+        "answerHint": "（b）背面の温度 = 55 °C",
+        "bookPage": 87,
+        "endBookPage": 87,
+        "pdfPage": 101,
+        "endPdfPage": 101
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-9",
+        "number": "2.9",
+        "text": "図2.23に示す複合壁を考える。コンクリート部とレンガ部は同じ厚さである。T_1、T_2、q と、q のうちレンガを通る割合を求めよ。そのためには、熱流を1次元と近似せよ。始める前に、この壁の熱回路を描き、4つの抵抗すべてを特定せよ。レンガとコンクリートの界面を通る熱流は無視せよ。この問題を1次元として扱うのは妥当だったか。図2.23の壁は左から順に、モミ（k = 0.11 W/m·K、厚さ2.5 cm）、厚さ7.5 cmの部分（上半分がコンクリートシンダーブロック k = 0.76 W/m·K、下半分が建材レンガ k = 0.69 W/m·K の並列路）、イエローパイン（k = 0.14 W/m·K、厚さ5 cm）からなり、左面は370 °C、右面は66 °Cである。",
+        "figure": {
+          "figureNumber": "2.23",
+          "caption": "図2.23 問題2.9の配置",
+          "alt": "左から右へ熱が流れる複合壁の断面図。第1層は厚さ2.5 cmのモミ（k = 0.11 W/m·K）。第2部は厚さ7.5 cmで、上半分がコンクリートシンダーブロック（k = 0.76 W/m·K）、下半分が建材レンガ（k = 0.69 W/m·K）の並列路。第3層は厚さ5 cmのイエローパイン（k = 0.14 W/m·K）。左面は370 °C、右面は66 °Cで、2つの界面温度が T_1 と T_2 である。",
+          "bookPage": 89,
+          "pdfPage": 103
+        },
+        "figureRefs": [
+          "Fig. 2.23"
+        ],
+        "answerHint": "レンガを通る割合47.6%",
+        "bookPage": 87,
+        "endBookPage": 88,
+        "pdfPage": 101,
+        "endPdfPage": 102
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-10",
+        "number": "2.10",
+        "text": "壁の厚さが0.3 mの場合について、例2.11の Q と U を計算せよ。松とおがくずの層は各5層で、それぞれ5 cmと8 cmの厚さであり、熱伝達率は左側が10 W/m²·K、右側が18 W/m²·K である。T_∞l = 30 °C、T_∞r = 10 °C である。",
+        "bookPage": 88,
+        "endBookPage": 88,
+        "pdfPage": 102,
+        "endPdfPage": 102
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-11",
+        "number": "2.11",
+        "text": "例1.2の平板について U を計算せよ。",
+        "bookPage": 88,
+        "endBookPage": 88,
+        "pdfPage": 102,
+        "endPdfPage": 102
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-12",
+        "number": "2.12",
+        "text": "例2.10のティーケトルを考える。ケトルに1 kgの水（約1リットル）が入り、炎が底の0.02 m² に当たっているとする。",
+        "items": [
+          "（a）水が沸点に達したとき、水温の上昇の速さはどれほどか。また、炎のガスがケトルの底に触れるとき500 °Cである場合、水の直下のケトル底の温度を計算せよ。アルミケトルの熱容量は無視できるとせよ。",
+          "（b）紙コップに水を入れて直火にかけ、紙を燃やさずに水を沸騰させるという昔のパーラートリックがある（実験2.1を見よ）。電気的アナロジーを使ってこれを説明せよ。"
+        ],
+        "answerHint": "（a）dT/dt = 0.36 °C/s",
+        "bookPage": 88,
+        "endBookPage": 88,
+        "pdfPage": 102,
+        "endPdfPage": 102
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-13",
+        "number": "2.13",
+        "text": "厚さ2 mmと3 mmの銅板が、かなり軽く押し付けられている。一方の側では油分を含まない蒸気が圧力下で T_sat = 200 °C で凝縮し（h = 12,000 W/m²·K）、他方の側ではメタノールが圧力下で130 °Cで沸騰する（h = 9,000 W/m²·K）。使用開始当初と、長期間使用した後の U と q を見積もれ。関連する熱抵抗を重要度の大きい順に並べ、そのいずれかが無視できるかどうかを述べよ。この計算の精度についてコメントせよ。",
+        "bookPage": 88,
+        "endBookPage": 89,
+        "pdfPage": 102,
+        "endPdfPage": 103
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-14",
+        "number": "2.14",
+        "text": "20 °Cの空気0.5 kg/s が、幅1 mで高さの指定されていない流路を流れる。流路の底は熱交換面（U = 300 W/m²·K）で、その外側では蒸気が120 °Cで凝縮している。次を求めよ。",
+        "items": [
+          "（a）入口での q",
+          "（b）入口での、空気温度の x に対する増加率",
+          "（c）2 m下流での温度と熱流束"
+        ],
+        "answerHint": "（c）2 m地点の温度 = 89.7 °C",
+        "bookPage": 89,
+        "endBookPage": 89,
+        "pdfPage": 103,
+        "endPdfPage": 103
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-15",
+        "number": "2.15",
+        "text": "80 °Cの直径3 cmの等温球が、大きな粘土の領域に埋め込まれている。球から遠くの粘土の温度は10 °Cに保たれている。k_clay = 1.28 W/m·K のとき、球の温度を維持するためにどれだけの熱を球に供給しなければならないか。",
+        "hint": "熱伝導方程式は、球の中ではなく、球を取り囲む粘土の中で解かなければならない。",
+        "answerHint": "Q = 16.9 W",
+        "bookPage": 89,
+        "endBookPage": 89,
+        "pdfPage": 103,
+        "endPdfPage": 103
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-16",
+        "number": "2.16",
+        "text": "対流で冷やされる等温球に断熱材を追加することで、熱伝達を増やすことができる場合が果たしてあるか。十分に説明せよ。",
+        "bookPage": 89,
+        "endBookPage": 89,
+        "pdfPage": 103,
+        "endPdfPage": 103
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-17",
+        "number": "2.17",
+        "text": "壁は金属とプラスチックの層からなり、両側に熱伝達率がある。U は255 W/m²·K で、全温度差は200 °Cである。壁内のある1層は厚さ3 mmのステンレス鋼（k = 18 W/m·K）である。ステンレス鋼を挟む ΔT はいくらか。",
+        "bookPage": 89,
+        "endBookPage": 90,
+        "pdfPage": 103,
+        "endPdfPage": 104
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-18",
+        "number": "2.18",
+        "text": "直径20 cm、炭素1%の鋼球の外側が250 °Cに保たれている。球には直径8 cmの空洞があり、大気に開放された沸騰水が入っている（内側の h はきわめて大きい）。殻を通る Q はいくらか。",
+        "hint": "熱伝導方程式を解け。",
+        "bookPage": 90,
+        "endBookPage": 90,
+        "pdfPage": 104,
+        "endPdfPage": 104
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-19",
+        "number": "2.19",
+        "text": "平板は一方の側が断熱され、他方の側が熱伝達率を通して周囲温度 T_∞ にさらされている。平板内では q̇ = Ax のように不均一に熱が発生する。ここで x = 0 は断熱壁、x = L は冷却壁であり、A は定数である。平板内の温度分布を導け。（正しく解ければ、温度差は位置の3次式として変化するはずである。）",
+        "bookPage": 90,
+        "endBookPage": 90,
+        "pdfPage": 104,
+        "endPdfPage": 104
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-20",
+        "number": "2.20",
+        "text": "直径10 cmのニッケル鋼球（k = 10 W/m·K）の内部で800 W/m³ の熱が発生している。環境は20 °Cで、球の外側の周囲には自然対流熱伝達率10 W/m²·K がある。熱伝導方程式を解いて、定常状態での中心温度を求めよ。",
+        "answerHint": "21.37 °C",
+        "bookPage": 90,
+        "endBookPage": 90,
+        "pdfPage": 104,
+        "endPdfPage": 104
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-21",
+        "number": "2.21",
+        "text": "内半径 r_i、外半径 r_o の球殻の熱抵抗の式を導け。",
+        "bookPage": 90,
+        "endBookPage": 90,
+        "pdfPage": 104,
+        "endPdfPage": 104
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-22",
+        "number": "2.22",
+        "text": "問題1.11の給湯器を考える。それが k = 0.12 W/m·K の断熱材で2 cm覆われており、h = 16 W/m²·K であるとする。次を求めよ。",
+        "items": [
+          "（a）ケーシングは無視し、これら2つの熱抵抗を考慮したタンクの時定数",
+          "（b）初期の冷却速度（°C/h）",
+          "（c）水が初期温度75 °Cから40 °Cまで冷えるのに必要な時間",
+          "（d）断熱材の外側ケーシングが、内外ケーシングの間の直径1 cm、炭素1%鋼の棒8本で固定されていた場合に生じる熱損失の増加率（%）"
+        ],
+        "bookPage": 90,
+        "endBookPage": 90,
+        "pdfPage": 104,
+        "endPdfPage": 104
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-23",
+        "number": "2.23",
+        "text": "厚さ L の平板が、左側で一定の熱流束 q_1 を受ける。右側は温度 T_∞ の環境によって対流で冷やされる。",
+        "items": [
+          "（a）平板の温度に対する無次元方程式を導け。",
+          "（b）左側と右側の壁温度についても無次元方程式を示せ。",
+          "（c）壁が厚さ10 cmの化粧レンガ製で、q_1 が400 W/m²、h = 20 W/m²·K、T_∞ = 20 °C のとき、左側と右側の温度を計算せよ。"
+        ],
+        "answerHint": "（c）左側の温度 = 40 °C",
+        "bookPage": 90,
+        "endBookPage": 91,
+        "pdfPage": 104,
+        "endPdfPage": 105
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-24",
+        "number": "2.24",
+        "text": "熱が、厚さ L_ss = 0.06 m のステンレス鋼の壁を通って定常的に流れる。その熱伝導率は k_ss = 1.67 + 0.0143T（T は °C）と温度によって変化する。壁は右側が、厚さ L_gw = 0.1 m、熱伝導率 k_gw = 0.04 W/m·K のグラスウールで部分的に断熱されている。ステンレス鋼の左側の温度は400 °C、グラスウールの右側の温度は100 °Cである。q と T_i を評価せよ。",
+        "hint": "問題2.1を見よ。",
+        "bookPage": 91,
+        "endBookPage": 91,
+        "pdfPage": 105,
+        "endPdfPage": 105
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-25",
+        "number": "2.25",
+        "text": "問題1.29を、カップの外側に熱伝達率 h_o = 40 W/m²·K があり、空気を0 °Cに保ってやり直せ。",
+        "answerHint": "q = 2,200 W/m²",
+        "bookPage": 91,
+        "endBookPage": 91,
+        "pdfPage": 105,
+        "endPdfPage": 105
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-26",
+        "number": "2.26",
+        "text": "20 °Cの水の大きなタンクの中にある宇宙ステーションの実験を照明しなければならない。周囲の水を沸騰させることなくタンクを照らすことができる、直径3 cmの球形の水中電球の最大ワット数はいくらか。その電球はLEDで、電力の70%を光に変換する。これは無重力下で起こることに留意せよ。",
+        "bookPage": 91,
+        "endBookPage": 91,
+        "pdfPage": 105,
+        "endPdfPage": 105
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-27",
+        "number": "2.27",
+        "text": "円筒殻は2つの同心層からなる：内半径 r_i、外半径 r_c の内層と、内半径 r_c、外半径 r_o の外層である。2層の間には接触抵抗 h_c がある。両層の熱伝導率は異なり、T_1(r = r_i) = T_i、T_2(r = r_o) = T_o である。外側の殻の内側温度 T_2(r_c) を、T_o と T_i を用いて表せ。",
+        "bookPage": 91,
+        "endBookPage": 91,
+        "pdfPage": 105,
+        "endPdfPage": 105
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-28",
+        "number": "2.28",
+        "text": "直径8 mm、長さ0.3 m の1 kWの商用電気発熱棒が、腐食性の強いガス環境で使われる。そのため、耐火粘土の円筒シースで覆われなければならない。ガスは120 °Cで流れ、シースの外側の h は230 W/m²·K である。発熱棒の表面は800 °Cを超えてはならない。許容できるシースの最大厚さを求め、耐火粘土の外側温度を求めよ。",
+        "hint": "直列の熱抵抗を用いて、熱流と温度の境界条件を使え。",
+        "bookPage": 91,
+        "endBookPage": 91,
+        "pdfPage": 105,
+        "endPdfPage": 105
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-29",
+        "number": "2.29",
+        "text": "きわめて細い、電気絶縁された発熱ワイヤーが、直径7.5 mmのタイプ304ステンレス鋼の棒の中心を走っている。外側は22 °Cの室内空気中で自然対流（h = 6.7 W/m²·K）により冷やされる。ワイヤーは12 W/m を放出する。棒の表面温度を求め、r > 0 について棒内の動径位置 r に対して T_rod をプロットせよ。接触抵抗は無視せよ。",
+        "hint": "r = 0 で境界条件を使えない理由が分かるだろうか。",
+        "bookPage": 91,
+        "endBookPage": 92,
+        "pdfPage": 105,
+        "endPdfPage": 106
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-30",
+        "number": "2.30",
+        "text": "接触抵抗の実験では、異なる材料の2枚の平板を押し付け、既知の熱流束を通し、各平板の外側温度を測定する。既知量を用いて h_c の一般式を書け。次に、平板が厚さ2 cmの銅と厚さ1.5 cmのアルミニウムで、q が30,000 W/m²、2つの温度が15 °Cと22.1 °Cの場合に h_c を計算せよ。",
+        "answerHint": "h_c = 8,122 W/m²·K",
+        "bookPage": 92,
+        "endBookPage": 92,
+        "pdfPage": 106,
+        "endPdfPage": 106
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-31",
+        "number": "2.31",
+        "text": "夜遅くまで熱伝達の問題に取り組む学生が、目を覚ますために熱いココアを必要としている。彼女は電気コンロの上の鍋にミルクを入れ、コンロを強火にし、ミルクを絶えずかき混ぜることで、ミルクを焦がさずにできるだけ速く温めようとする。類似の電気回路を使って、これがどのように働くか説明せよ。ミルクの一部を焦がすことなく、ミルク全体を焦げ温度まで上げることは可能か。",
+        "bookPage": 92,
+        "endBookPage": 92,
+        "pdfPage": 106,
+        "endPdfPage": 106
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-32",
+        "number": "2.32",
+        "text": "直径10 mの小さな球形の熱気球が、小さなゴンドラと乗客1人で130 kgの重さがある。27 °Cの静止した空気中、低高度でホバリングするためには、どれだけの燃料を消費しなければならないか（kJ/h)。自然対流の結果として、h_outside = 215 W/m²·K、h_inside = 126 W/m²·K とせよ。",
+        "hint": "まず、中性浮力を保つために必要な気球内部の温度を求めよ。",
+        "answerHint": "7.21 × 10⁶ kJ/h",
+        "bookPage": 92,
+        "endBookPage": 92,
+        "pdfPage": 106,
+        "endPdfPage": 106
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-33",
+        "number": "2.33",
+        "text": "厚さ4 cm、炭素0.5%鋼の平板が、背面が1,000 °Cに保たれている。前面はほぼ黒体で、真空を通して100 °Cの黒色周囲へ放射する。前面の温度はいくらか。",
+        "answerHint": "872 °C",
+        "bookPage": 92,
+        "endBookPage": 92,
+        "pdfPage": 106,
+        "endPdfPage": 106
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-34",
+        "number": "2.34",
+        "text": "図2.3のデータを使い、アンモニア蒸気の k(T) の経験式を導け。（データは片対数座標上でほぼ直線をなすので、曲線適合は指数関数の形をとらなければならない。）次に、冷たい表面の下方、距離 H の位置にある熱い水平表面と、その間のアンモニア蒸気を想像せよ。x = 0 を冷たい表面、x = H を熱い表面として、T(x) と q の式を導け。T_hot = 150 °C、T_cold = −5 °C、H = 0.15 m のとき q を計算せよ。",
+        "figureRefs": [
+          "Fig. 2.3"
+        ],
+        "bookPage": 92,
+        "endBookPage": 92,
+        "pdfPage": 106,
+        "endPdfPage": 106
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-35",
+        "number": "2.35",
+        "text": "タイプ316ステンレス鋼管は、内径6 cm、外径8 cmで、その周囲に2 mmの85%マグネシア断熱層がある。112 °Cの液体が内側を流れ、h_i = 346 W/m²·K である。管の周囲の空気は20 °Cで、h_o = 6 W/m²·K である。内側面積基準の U を計算せよ。既知の温度をすべて示して、等価電気回路をスケッチせよ。結果を議論し、改良された設計を提案せよ。",
+        "answerHint": "T_o = 96.36 °C",
+        "bookPage": 92,
+        "endBookPage": 93,
+        "pdfPage": 106,
+        "endPdfPage": 107
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-36",
+        "number": "2.36",
+        "text": "反射率の高い水平板2枚が5 mm離れている。上の板は1000 °Cに、下の板は200 °Cに保たれている。両者の間には空気がある。放射を無視し、空気中の熱流束と中点温度を計算せよ。表A.6の空気データを表すために、T をケルビンとする k = aT^b の形の適合を用いよ。",
+        "bookPage": 93,
+        "endBookPage": 93,
+        "pdfPage": 107,
+        "endPdfPage": 107
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-37",
+        "number": "2.37",
+        "text": "厚さ0.1 m、k = 3.4 W/m·K の平板が、左側が100 °Cに保たれている。右側は20 °Cの空気で、熱伝達率 h = (5.1 W/m²·K^(−5/4))(T_wall − T_∞)^(1/4) によって冷やされる。q と右側の T_wall を求めよ。",
+        "hint": "試行錯誤による解法が必要である。",
+        "bookPage": 93,
+        "endBookPage": 93,
+        "pdfPage": 107,
+        "endPdfPage": 107
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-38",
+        "number": "2.38",
+        "text": "直径0.16 mの球の内部で54,000 W/m³ の熱が発生している。球は、流体温度0 °C、h = [2 + 6(T_surface − T_∞)^(1/4)] W/m²·K、k_sphere = 9 W/m·K の自然対流で冷やされる。球の表面温度と中心温度を求めよ。",
+        "bookPage": 93,
+        "endBookPage": 93,
+        "pdfPage": 107,
+        "endPdfPage": 107
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-39",
+        "number": "2.39",
+        "text": "トウヒとピッチパインの同じ厚さの層を積層して断熱材を作る。積層の向きが温度勾配に対してどうであるかは重要か。",
+        "bookPage": 93,
+        "endBookPage": 93,
+        "pdfPage": 107,
+        "endPdfPage": 107
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-40",
+        "number": "2.40",
+        "text": "厚い円筒状断熱層の抵抗を増やさなければならない。外径を少し増やすのと、内径を同じだけ減らすのとでは、どちらの方が Q をより下げるか。",
+        "bookPage": 93,
+        "endBookPage": 93,
+        "pdfPage": 107,
+        "endPdfPage": 107
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-41",
+        "number": "2.41",
+        "text": "あなたは工場の省エネルギー担当である。長さ300 m、外径6 in. の鉄管が、125 psig の蒸気を運んでいる。管は25 °Cの室内に吊るされ、自然対流熱伝達率 h = 6 W/m²·K である。管の放射率は ε = 0.65 である。熱抵抗の関係から、管の表面は蒸気の飽和温度近くにとどまる。",
+        "items": [
+          "（a）管表面と室内の間の実効熱伝達率と、この管からの熱損失率（kWh/年）を求めよ。",
+          "（b）k = 0.05 W/m·K のガラス繊維断熱材を2 in. の層で追加することが提案されている。断熱材の外側表面の放射率は ε = 0.7 である。断熱した場合の熱損失率はいくらか。",
+          "（c）断熱材の施工費が人件費込みで $50/m、熱エネルギーの価格が $0.03/kWh のとき、断熱材追加の回収期間はいくらか。"
+        ],
+        "bookPage": 93,
+        "endBookPage": 94,
+        "pdfPage": 107,
+        "endPdfPage": 108
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-42",
+        "number": "2.42",
+        "text": "薄い鋼板でできた大きなタンクに400 °Fの豚脂が入っており、油に精製されている。タンクの表面に3インチの85%マグネシア断熱層を施すことを考える。外側の自然対流の平均熱伝達率は1.5 Btu/h·ft²·°F である。内側でははるかに大きい。外気温度は70 °F である。断熱材を追加することで熱損失は何パーセント減るか。",
+        "answerHint": "89%",
+        "bookPage": 94,
+        "endBookPage": 94,
+        "pdfPage": 108,
+        "endPdfPage": 108
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-43",
+        "number": "2.43",
+        "text": "円筒の熱抵抗は R_tcyl = (1/(2πkl)) ln(r_o/r_i) である。r_o = r_i + δ のとき、薄肉円筒（δ ≪ r_i）の熱抵抗が厚さ δ の平板のそれで近似できることを示せ。すなわち R_tthin = δ/(kA_i) であり、ここで A_i = 2π r_i l は内側表面積である。δ/r_i = 0.2 のとき、この近似によって生じる誤差はどれほどか。δ/r_i の関数として R_tthin/R_tcyl をプロットせよ。",
+        "hint": "テイラー級数を使え。",
+        "bookPage": 94,
+        "endBookPage": 94,
+        "pdfPage": 108,
+        "endPdfPage": 108
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-44",
+        "number": "2.44",
+        "text": "ガードンゲージは、温度差を検出することで放射熱流束を測定する［2.10］。ゲージは、半径 R、厚さ t、熱伝導率 k_ct の円形のコンスタンタン膜からなり、その縁で重い銅のヒートシンクに接合されている。放射熱流束 q_rad が膜に吸収されると、熱は膜の内部から縁の銅ヒートシンクへ流れ、動径方向の温度勾配が生じる。銅のリード線が膜の中心と銅ヒートシンクに溶接され、2つの銅–コンスタンタン熱電対接合を作る。これらの接合は、膜の中心の温度 T(r = 0) と膜の縁の温度 T(r = R) の温度差 ΔT を測定する。次の近似を置くことができる。",
+        "items": [
+          "膜の表面は黒色化されており、降り注ぐ放射をすべて吸収する。",
+          "放射熱流束は、対流や再放射によって膜から失われる熱よりはるかに大きい。したがって、吸収された放射はすべてヒートシンクへ伝導し、他の損失は無視できる。",
+          "ゲージは定常状態で動作する。",
+          "膜は十分に薄く（t ≪ R）、その中の温度は r のみに依存する。すなわち T = T(r) のみである。"
+        ],
+        "continuation": "次の問題を解け。（a）ヒートシンク温度 T(R) を固定し、放射熱流束 q_rad1 と q_rad2（ただし q_rad1 > q_rad2）に対する膜内の温度分布 T(r) の形状を定性的にスケッチせよ。（b）放射熱流束 q_rad と、熱電対から得られる温度差 ΔT の関係を導け。ヒント：吸収された放射熱流束を、大きさ q_rad/t W/m³ の体積熱源として扱え。",
+        "bookPage": 94,
+        "endBookPage": 95,
+        "pdfPage": 108,
+        "endPdfPage": 109
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-45",
+        "number": "2.45",
+        "text": "室温（70 °F）の12 oz（375 mL）のソーダの缶があり、飲む前に45 °Fまで冷やしたい。缶を、冷蔵庫の棚のプラスチック棒の上に横向きに置く。缶は直径2.5インチ、長さ5インチである。缶の放射率は ε = 0.4 で、その周囲の自然対流熱伝達率は缶と空気の温度差の関数であり、ΔT をケルビンとして h = 2ΔT^(1/4) である。冷蔵庫の棚との熱的相互作用は無視でき、缶内の浮力流がソーダをよく混合した状態に保つとせよ。",
+        "items": [
+          "（a）40 °F の冷蔵室で缶を冷やすのにかかる時間を見積もれ。",
+          "（b）5 °F の冷凍室で缶を冷やすのにかかる時間を見積もれ。",
+          "（c）（a）と（b）の答えは同じか。異なる場合、その主な理由は何か。"
+        ],
+        "bookPage": 95,
+        "endBookPage": 95,
+        "pdfPage": 109,
+        "endPdfPage": 109
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-46",
+        "number": "2.46",
+        "text": "木造住宅の外壁は通常、外側から内側へ、木製サイディングの層、ガラス繊維断熱材の層、石膏壁ボードの層で構成される。標準的なガラス繊維断熱材は厚さ3.5インチ、熱伝導率0.038 W/m·K である。石膏壁ボードは通常0.50インチ厚で熱伝導率0.17 W/m·K、サイディングは1.0インチ厚で熱伝導率0.10 W/m·K とみなすことができる。",
+        "items": [
+          "（a）面積400 ft² のこのような壁の全熱抵抗（K/W）を求めよ。",
+          "（b）壁の外側の実効熱伝達率（対流と放射の両方を考慮）は h_o = 20 W/m²·K、内側は h_i = 10 W/m²·K である。室内空気から室外空気への熱損失に対する全熱抵抗を求めよ。また、総括熱伝達率 U（W/m²·K）を求めよ。",
+          "（c）室内温度が20 °C、室外温度が−5 °C のとき、壁を通る熱損失（ワット）と熱流束（W/m²）を求めよ。",
+          "（d）5つの熱抵抗のうち支配的なのはどれか。",
+          "（e）壁は、サイディングと石膏の間の垂直な木製スタッドで保持されている。スタッドはトウヒ材で3.5 in. × 1.5 in.、中心間隔は16 in. である。壁の高さが8 ft のとき、スタッドは U をどれだけ増やすか。"
+        ],
+        "bookPage": 95,
+        "endBookPage": 96,
+        "pdfPage": 109,
+        "endPdfPage": 110
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-47",
+        "number": "2.47",
+        "text": "2.1節の熱伝導方程式には、体積熱発生率 q̇ が含まれている。われわれは通常、熱を系境界を横切るエネルギーとエントロピーの伝達として記述するので、体積熱発生という概念には多少の考察が必要である。定常状態で、電圧差 ΔV の下を電流 I が流れる電気抵抗体を考えよ。電気的仕事は率 ΔV·I で抵抗体に対してなされる。",
+        "items": [
+          "（a）式（1.1）を使って、抵抗体から出る熱とエントロピーの流れの率を求めよ。抵抗体の表面温度 T は一様とする。エントロピー生成率 Ṡ_gen はいくらか。",
+          "（b）抵抗体がその体積 V の中で電気的仕事を一様に散逸し、その熱伝導率が内部温度をほぼ一様に保つのに十分高いとする。体積エントロピー生成率 ṡ_gen はいくらか。",
+          "（c）微小体積 dV から出る正味の熱を考えることにより、ṡ_gen を使って体積熱発生率 q̇ を定義せよ。",
+          "（d）抵抗体の内部温度が不均一でも仕事の散逸率が一様な場合、全エントロピー生成は変化するか。理由も述べよ。",
+          "（e）抵抗体が断熱されて熱が外へ流れ出ない場合、エントロピー生成率はいくらか。抵抗体の温度はほぼ一様で、t = 0 で T_0 から始まるとせよ。"
+        ],
+        "bookPage": 96,
+        "endBookPage": 96,
+        "pdfPage": 110,
+        "endPdfPage": 110
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-48",
+        "number": "2.48",
+        "text": "温度差 ΔT が N 個の直列の熱抵抗に課されるとき、第 i 番目の熱抵抗の両端の温度差が次の式になることを示せ。この結果の電気的アナロジーは分圧器と呼ばれる。",
+        "formulaBlocks": [
+          {
+            "expression": "ΔT_i = R_i ΔT/Σ_{i=1}^N R_i"
+          }
+        ],
+        "bookPage": 96,
+        "endBookPage": 97,
+        "pdfPage": 110,
+        "endPdfPage": 111
+      },
+      {
+        "type": "problem",
+        "id": "problem-2-49",
+        "number": "2.49",
+        "text": "電気抵抗体は、厚さ1 mmのインコネルの環状体である（図2.24）。それは9.4 kW/m を散逸する。抵抗体は両側を厚さ3 mmのエポキシ層（k_e = 0.5 W/m·K）で断熱されている。抵抗体の内側のタイプ316ステンレス鋼管は、流れる水によって内側から冷やされる。管は内径5 cm、外径6 cmである。より大きな管が抵抗体の外側に環状通路を形成し、そこにも水が流れる。h_inside = h_outside = 1400 W/m²·K である。外側の管は内径8.7 cm、壁厚0.5 cmで、厚さ2 cmのガラス繊維管断熱材で包まれ、その外側は周囲空気に囲まれている。内側の水温が47 °C、外側が53 °C のとき、抵抗体の温度を求めよ。",
+        "figure": {
+          "figureNumber": "2.24",
+          "caption": "図2.24 問題2.49の配置",
+          "alt": "内側から順に、水の流れる鋼管、エポキシ、環状のインコネル抵抗体、エポキシ、水の流れる環状通路を持つ鋼管が同心に重なり、最外側が断熱材で包まれた配置図。",
+          "bookPage": 97,
+          "pdfPage": 111
+        },
+        "figureRefs": [
+          "Fig. 2.24"
+        ],
+        "bookPage": 97,
+        "endBookPage": 97,
+        "pdfPage": 111,
+        "endPdfPage": 111
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 10,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-2-1",
+        "number": "2.1",
+        "authors": "W. M. Rohsenow and J. P. Hartnett, editors",
+        "originalTitle": "Handbook of Heat Transfer",
+        "titleJa": "熱伝達ハンドブック",
+        "publication": "McGraw-Hill Book Company, New York, 1973",
+        "bookPage": 97,
+        "pdfPage": 111
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-2",
+        "number": "2.2",
+        "authors": "R. G. Wheeler",
+        "originalTitle": "Thermal conductance of fuel element materials",
+        "titleJa": "燃料要素材料の熱コンダクタンス",
+        "publication": "Hanford Atomic Production Operations Report HW-60343, US Atomic Energy Commission, April 1959",
+        "bookPage": 97,
+        "pdfPage": 111
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-3",
+        "number": "2.3",
+        "authors": "M. M. Yovanovich",
+        "originalTitle": "Recent developments in thermal contact, gap and joint conductance theories and experiment",
+        "titleJa": "熱接触・ギャップ・継手コンダクタンスの理論と実験における最近の発展",
+        "publication": "In Proc. Eight Int. Heat Transfer Conf., Vol. 1, pp. 35–45. San Francisco, 1986",
+        "bookPage": 97,
+        "pdfPage": 111
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-4",
+        "number": "2.4",
+        "authors": "C. V. Madhusudana",
+        "originalTitle": "Thermal Contact Conductance",
+        "titleJa": "熱接触コンダクタンス",
+        "publication": "Springer-Verlag, New York, 1996",
+        "bookPage": 97,
+        "pdfPage": 111
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-5",
+        "number": "2.5",
+        "authors": "American Society of Heating, Refrigerating, and Air-Conditioning Engineers",
+        "originalTitle": "2017 ASHRAE Handbook—Fundamentals (SI Edition)",
+        "titleJa": "2017 ASHRAEハンドブック―基礎編（SI版）",
+        "publication": "Atlanta, 2017",
+        "bookPage": 97,
+        "pdfPage": 111
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-6",
+        "number": "2.6",
+        "authors": "R. K. Shah and D. P. Sekulić",
+        "originalTitle": "Heat exchangers",
+        "titleJa": "熱交換器",
+        "publication": "In W. M. Rohsenow, J. P. Hartnett, and Y. I. Cho, editors, Handbook of Heat Transfer, Chapter 17. McGraw-Hill, New York, 3rd ed., 1998",
+        "bookPage": 98,
+        "pdfPage": 112
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-7",
+        "number": "2.7",
+        "authors": "Tubular Exchanger Manufacturer's Association",
+        "originalTitle": "Standards of Tubular Exchanger Manufacturer's Association",
+        "titleJa": "管型熱交換器製造業者協会規格",
+        "publication": "New York, 4th and 6th ed., 1959 and 1978",
+        "bookPage": 98,
+        "pdfPage": 112
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-8",
+        "number": "2.8",
+        "authors": "H. Müller-Steinhagen",
+        "originalTitle": "Cooling-water fouling in heat exchangers",
+        "titleJa": "熱交換器における冷却水の汚れ",
+        "publication": "In T. F. Irvine, Jr., J. P. Hartnett, Y. I. Cho, and G. A. Greene, editors, Advances in Heat Transfer, Vol. 33, pp. 415–496. Academic Press, Inc., San Diego, 1999",
+        "doi": "10.1016/S0065-2717(08)70307-1",
+        "bookPage": 98,
+        "pdfPage": 112
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-9",
+        "number": "2.9",
+        "authors": "W. J. Marner and J. W. Suitor",
+        "originalTitle": "Fouling with convective heat transfer",
+        "titleJa": "対流熱伝達における汚れ",
+        "publication": "In S. Kakaç, R. K. Shah, and W. Aung, editors, Handbook of Single-Phase Convective Heat Transfer, Chapter 21. Wiley-Interscience, New York, 1987",
+        "bookPage": 98,
+        "pdfPage": 112
+      },
+      {
+        "type": "reference",
+        "id": "reference-2-10",
+        "number": "2.10",
+        "authors": "R. Gardon",
+        "originalTitle": "An instrument for the direct measurement of intense thermal radiation",
+        "titleJa": "強力な熱放射の直接測定のための装置",
+        "publication": "Rev. Sci. Instr., 24(5):366–371, 1953",
+        "doi": "10.1063/1.1770712",
+        "bookPage": 98,
+        "pdfPage": 112
+      }
+    ]
+  }
+}

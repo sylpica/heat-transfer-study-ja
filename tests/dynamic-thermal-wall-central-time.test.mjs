@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
-const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/THERMAL_WALL_CENTRAL_TIME_REFERENCE_20261107_v1.json',import.meta.url)));
+const ref=JSON.parse(readFileSync(new URL('../docs/dynamic/THERMAL_WALL_CENTRAL_TIME_REFERENCE_20261107_v3.json',import.meta.url)));
 test('central finite-capacity and actual-heat thermostated walls converge to independently projected physical ODE in every temperature, velocity and integral',()=>{
  const own=JSON.parse(execFileSync(process.execPath,['scripts/dynamic-thermal-wall-central-time-cases.mjs'],{cwd:new URL('..',import.meta.url),encoding:'utf8',maxBuffer:8*1024*1024}));
  assert.deepEqual(own.sourceFilesSHA256,ref.sourceFilesSHA256);

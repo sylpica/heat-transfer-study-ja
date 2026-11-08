@@ -26,12 +26,15 @@ test('aspect ratio scales width and the width cell count with square cells',()=>
  const wide=cavityUIConfig({aspectRatio:2,grid:32});assert.equal(wide.nx,64);assert.equal(wide.ny,32);assert.equal(wide.width,.02);assert.equal(wide.height,.01);
  const tall=cavityUIConfig({aspectRatio:.5,grid:32});assert.equal(tall.nx,16);assert.equal(tall.ny,32);assert.equal(tall.width,.005);
  for(const aspectRatio of CAVITY_UI_ASPECT_RATIOS)for(const grid of [12,16,24,32]){const c=cavityUIConfig({aspectRatio,grid});assert.ok(Math.abs(c.width/c.nx-c.height/c.ny)<1e-15);}
- assert.throws(()=>cavityUIConfig({aspectRatio:2,grid:64}),/4〜96/,'64 per height at AR=2 needs nx=128, above the kernel grid limit');
+ assert.throws(()=>cavityUIConfig({aspectRatio:2,grid:64}),/4〜96/,'64 per height at AR=2 needs nx=128, above the screen grid limit');
 });
 test('unverified or out-of-range UI values are refused before the kernel',()=>{
  for(const input of [{prandtl:.5},{prandtl:2},{aspectRatio:.25},{aspectRatio:4},{grid:48},{difference:12.5},{difference:-1},{gravity:9.82},{unknown:1}])assert.throws(()=>cavityUIConfig(input),undefined,JSON.stringify(input));
- assert.doesNotThrow(()=>cavityUIConfig({difference:12,gravity:9.81}),'the builder does not invent its own Ra limit');
- assert.throws(()=>createCavity(cavityUIConfig({difference:12,gravity:9.81})),/Ra≤1000/,'kernel Ra limit is unchanged and still refuses');
+ // Since the 2026-11-07 high-Ra port the kernel accepts Ra<=1e6 for
+ // development benchmarks, so the screen's own verified scope (Ra<=1000)
+ // is refused by the builder itself, with the message the kernel used.
+ assert.throws(()=>cavityUIConfig({difference:12,gravity:9.81}),/Ra≤1000/,'the builder refuses outside the screen verified Ra scope');
+ assert.doesNotThrow(()=>createCavity({nx:8,ny:8,width:.01,height:.01,rho:1.177,cp:1006,nu:1.575e-5,alpha:2.229e-5,initial:300,leftTemperature:306,rightTemperature:294,gravityBeta:9.81/300,beta:1/300,referenceTemperature:300}),'the kernel itself now accepts Ra>1000 (development range up to 1e6)');
 });
 test('builder configs run in the kernel and feed the heat-flux display for every Pr and aspect ratio',()=>{
  for(const prandtl of CAVITY_UI_PRANDTL){

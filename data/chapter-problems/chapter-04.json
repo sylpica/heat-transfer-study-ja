@@ -1,0 +1,647 @@
+{
+  "chapterId": "chapter-04",
+  "language": "ja",
+  "source": "A Heat Transfer Textbook, 6th edition, Chapter 4 (Analytical and numerical solutions of heat conduction problems): Problems and References — Japanese translation",
+  "bookPages": "183–193",
+  "pdfPages": "197–207",
+  "status": "complete",
+  "problems": {
+    "heading": "問題",
+    "count": 45,
+    "blocks": [
+      {
+        "type": "problem",
+        "id": "problem-4-1",
+        "number": "4.1",
+        "text": "直交座標、円筒座標、球座標における、物性が一定の定常1次元熱伝導問題の一般解を、一様な熱発生がある場合とない場合について、すべて表にまとめよ。この表は、今後の問題解決にきわめて有用な道具になるはずである。合計18の解を含むこと。解に対する制限があれば述べよ。計算は含めなくてよい。",
+        "bookPage": 183,
+        "endBookPage": 183,
+        "pdfPage": 197,
+        "endPdfPage": 197
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-2",
+        "number": "4.2",
+        "text": "厚さ L の平板の左側が0 °Cに保たれている。右側は、温度 T_∞ °C の空気が吹き付けることによって冷やされ、h_RHS が既知である。平板内では発熱反応が起こり、熱が q̇ = A(T − T_∞) W/m³ のように発生する。ここで A は定数である。平板内の温度分布に対する完全に無次元化された式を求めよ。",
+        "bookPage": 183,
+        "endBookPage": 184,
+        "pdfPage": 197,
+        "endPdfPage": 198
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-3",
+        "number": "4.3",
+        "text": "大きさ、材料、厚さ L が既知の、長くて幅の広い板が、電源の端子間に接続され、抵抗ヒーターとして働いている。板は底面が断熱され、上面から温度 T_∞ の流体への対流によって熱を出す。電圧、電流、T_∞ は既知である。底面の温度 T_tc が熱電対で測定される。次の式を求めよ。",
+        "items": [
+          "（a）板内の温度分布",
+          "（b）上面における h",
+          "（c）上面の温度"
+        ],
+        "continuation": "答えは既知の情報のみに依存しなければならないことに注意せよ。",
+        "answerHint": "上面の温度 = T_tc − EIL²/(2k·体積）",
+        "bookPage": 184,
+        "endBookPage": 184,
+        "pdfPage": 198,
+        "endPdfPage": 198
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-4",
+        "number": "4.4",
+        "text": "平板上の強制流による熱伝達率 h は、流体の速度、粘度、密度、比熱、熱伝導率、および板の長さに依存する。熱伝達率に対する無次元関数方程式を導け。",
+        "answerHint": "厳密な方程式の無次元形は6.5節と6.7節にある",
+        "bookPage": 184,
+        "endBookPage": 184,
+        "pdfPage": 198,
+        "endPdfPage": 198
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-5",
+        "number": "4.5",
+        "text": "水蒸気が冷たい管の上で凝縮し、図3.9に描かれたように、規則的な間隔のノードを作って底から滴り落ちる。これらのノードの波長 λ は、液–蒸気の密度差 ρ_f − ρ_g、表面張力 σ、重力 g に依存する。λ がその従属変数に対してどのように変化するかを求めよ。解を厳密な結果、式（9.6a）と比較せよ。",
+        "figureRefs": [
+          "Fig. 3.9"
+        ],
+        "bookPage": 184,
+        "endBookPage": 184,
+        "pdfPage": 198,
+        "endPdfPage": 198
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-6",
+        "number": "4.6",
+        "text": "液体の膜が垂直な壁を流れ下る。壁からの任意の距離における局所的な膜の速度は、その距離、重力、液体の動粘度、膜の厚さに依存する。局所速度に対する無次元関数方程式を求めよ（8.5節を参照）。",
+        "bookPage": 184,
+        "endBookPage": 185,
+        "pdfPage": 198,
+        "endPdfPage": 199
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-7",
+        "number": "4.7",
+        "text": "蒸気予熱器は、外側が断熱された、厚い、導電性の円筒殻からなり、その中央を湿り蒸気が流れ下る（図4.14）。蒸気の温度は、管内の既知の圧力によって決まる。予熱は、円筒壁内の q̇ W/m³ の電気抵抗加熱によって駆動される。円筒壁内の温度を位置の関数として求めよ。Θ を適切な無次元温度、ρ = r/r_o として、Θ を ρ に対してプロットせよ。Bi が解のパラメータになることに注意せよ。内側半径比 ρ_i = 2/3 と、いくつかの Bi の値を用いよ。このプロットに基づいて、（a）内側の対流境界条件を単純な一定温度条件に置き換えること、（b）円筒壁内の温度変化を無視すること、に対する基準（Bi を用いて）を推奨せよ。",
+        "figure": {
+          "figureNumber": "4.14",
+          "caption": "図4.14 問題4.7の配置",
+          "alt": "外側が断熱材で覆われた鋼製の円筒殻の断面図。殻の中では電気抵抗によって q̇ の熱が発生し、内側の表面は中央を流れる蒸気へ h で熱を失う。内半径 r_i、外半径 r_o が示されている。",
+          "bookPage": 185,
+          "pdfPage": 199
+        },
+        "figureRefs": [
+          "Fig. 4.14"
+        ],
+        "bookPage": 185,
+        "endBookPage": 185,
+        "pdfPage": 199,
+        "endPdfPage": 199
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-8",
+        "number": "4.8",
+        "text": "蒸気が肉厚の管の内側で凝縮し、内側を指定された温度 T_i に保っている。管は q̇ W/m³ の率で電気的に加熱される。外壁は、温度 T_∞ の流体への熱伝達率 h の自然対流で冷やされる。",
+        "items": [
+          "（a）管壁内の温度分布の無次元式 Θ = (T − T_∞)/(T_i − T_∞) を、半径比 ρ = r/r_o と ρ_i = r_i/r_o、熱発生数 Γ = q̇ r_o²/(k(T_i − T_∞))、およびビオ数の関数として導け。",
+          "（b）ρ_i = 2/3、Bi = 1 の場合について、いくつかの Γ の値でこの結果をプロットせよ。",
+          "（c）結果の興味深い側面を議論せよ。"
+        ],
+        "bookPage": 185,
+        "endBookPage": 185,
+        "pdfPage": 199,
+        "endPdfPage": 199
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-9",
+        "number": "4.9",
+        "text": "まだ解いていないなら問題2.5を解け。始める前に無次元形にせよ。次に、その解の中でビオ数を無限大に近づけよ。第一種の境界条件を使って例2.4で得たのと同じ解が得られるはずである。得られたか。",
+        "bookPage": 185,
+        "endBookPage": 185,
+        "pdfPage": 199,
+        "endPdfPage": 199
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-10",
+        "number": "4.10",
+        "text": "式（4.30）と式（4.31b）の間、および式（4.41）に欠けている代数を完成させよ。",
+        "bookPage": 185,
+        "endBookPage": 185,
+        "pdfPage": 199,
+        "endPdfPage": 199
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-11",
+        "number": "4.11",
+        "text": "式（4.47）の境界条件を式（4.35）に適用して式（4.48）を得る際に欠けている代数を完成させよ。",
+        "hint": "最後のステップまで、cosh と sinh ではなく e^(±mL) と e^(±mLξ) を用いて方程式を保て。",
+        "bookPage": 185,
+        "endBookPage": 186,
+        "pdfPage": 199,
+        "endPdfPage": 200
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-12",
+        "number": "4.12",
+        "text": "フィンの一般解［式（4.35）］から、境界条件 T(x = 0) = T_0 と T(x = L) = T_∞ を使って式（4.50）を求め、L がきわめて長くなると結果がどのように単純化されるか観察せよ。",
+        "bookPage": 186,
+        "endBookPage": 186,
+        "pdfPage": 200,
+        "endPdfPage": 200
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-13",
+        "number": "4.13",
+        "text": "サーモメータウェルは、一端が閉じたタイプ304ステンレス鋼管が管の中へ達したものである。管は外径2 cm、内径1.88 cmである。温度計の球部はウェルの端部とよく接触している。260 °Cの蒸気が管内を流れ、蒸気と管壁の間の熱伝達率は300 W/m²·K である。管壁温度と蒸気温度の差の0.5%未満の誤差を保証するために必要な、ウェルの最小長さ L はいくらか。",
+        "answerHint": "3.44 cm",
+        "bookPage": 186,
+        "endBookPage": 186,
+        "pdfPage": 200,
+        "endPdfPage": 200
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-14",
+        "number": "4.14",
+        "text": "断面が2 mm × 20 mm で熱伝導率50 W/m·K の薄いフィンが、T_0 = 170 °C の壁から突き出している。外側では h ≃ 600 W/m²·K、T_∞ = 20 °C である。各フィンへの熱流率と有効度はいくらか。",
+        "bookPage": 186,
+        "endBookPage": 186,
+        "pdfPage": 200,
+        "endPdfPage": 200
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-15",
+        "number": "4.15",
+        "text": "細い棒が、一端で温度 T = T_0 の壁に固定されている。もう一端は断熱されている。無次元長さの関数として、棒内の無次元温度分布をプロットせよ。",
+        "items": [
+          "（a）棒が、熱伝達率を通して温度 T_∞ の環境にさらされている場合",
+          "（b）棒の表面が完全に断熱されているが、フィン材料から一様な率 q̇ = −hP(T_0 − T_∞)/A W/m³ で熱が［何らかの方法で］取り除かれる場合"
+        ],
+        "continuation": "この理論的比較の含意についてコメントせよ。",
+        "bookPage": 186,
+        "endBookPage": 186,
+        "pdfPage": 200,
+        "endPdfPage": 200
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-16",
+        "number": "4.16",
+        "text": "外径 d_o、内径 d_i の管が、温度 T = T_1 の流体を、温度 T_1 の一方の壁から、距離 L 離れた温度 T_r のもう一方の壁へ運ぶ。管の外側では h_o が無視できるほど小さいが、内側の h_i は小さくない。管をフィンとして扱い、その中の無次元温度分布を無次元長さの関数としてプロットせよ。",
+        "bookPage": 186,
+        "endBookPage": 186,
+        "pdfPage": 200,
+        "endPdfPage": 200
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-17",
+        "number": "4.17",
+        "text": "図4.12のフィンの形状が、A(x) = 2δ(x/L)b ではなく A(x) = 2δ(x/L)²b となるように変更される。温度分布と基部での熱流束を計算せよ。温度分布とフィンの厚さを x/L に対してプロットせよ。フィン効率 η_f の式を導け。",
+        "hint": "常微分方程式の学習から、オイラー方程式と呼ばれる変数係数方程式を思い出せ。",
+        "figureRefs": [
+          "Fig. 4.12"
+        ],
+        "bookPage": 186,
+        "endBookPage": 187,
+        "pdfPage": 200,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-18",
+        "number": "4.18",
+        "text": "まだ解いていないなら問題2.21を解け。解こうとする前に問題を無次元化せよ。今やはるかに簡単なはずである。",
+        "bookPage": 187,
+        "endBookPage": 187,
+        "pdfPage": 201,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-19",
+        "number": "4.19",
+        "text": "長さ30 cmの銅棒の一端が200 °Cに、もう一端が93 °Cに保たれている。棒を取り囲む空気と室内は T_∞ = 38 °C である。棒の円周では、対流と放射の両方を含めて、実効熱伝達率は17 W/m²·K である。棒の直径が1.25 cm のとき、棒の円周からの正味熱伝達はいくらか。",
+        "answerHint": "19.13 W",
+        "bookPage": 187,
+        "endBookPage": 187,
+        "pdfPage": 201,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-20",
+        "number": "4.20",
+        "text": "例4.8におけるフィンへの熱流の計算に、断熱先端近似はどれだけの誤差を引き起こすか。",
+        "answerHint": "3.67%",
+        "bookPage": 187,
+        "endBookPage": 187,
+        "pdfPage": 201,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-21",
+        "number": "4.21",
+        "text": "直径0.6 cm、長さ6 cm のまっすぐな円柱フィンが、300 °Cのマグネシウムブロックから突き出している。35 °Cの空気がフィンを横切って強制的に流され、h は130 W/m²·K である。フィンによって除去される熱、フィン効率、フィン有効度を計算せよ。",
+        "bookPage": 187,
+        "endBookPage": 187,
+        "pdfPage": 201,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-22",
+        "number": "4.22",
+        "text": "直径2 cm、水平な、1.0%鋼の棒が、30 °Cの室内で氷のブロックとドライアイス（CO_2）のブロックを結んでいる。凍ったブロックは他は断熱されている。棒は各ブロックに埋め込まれ、両ブロック間のスパンは20 cmである。環境への熱伝達率は10 W/m²·K である。棒が定常状態にあるとき、氷は溶け始めるかどうかを判定せよ。",
+        "bookPage": 187,
+        "endBookPage": 187,
+        "pdfPage": 201,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-23",
+        "number": "4.23",
+        "text": "軸方向断面が三角形のフィン（図4.12）が、長さ0.1 m、基部の幅0.02 m で、炭素0.5%鋼の壁の表面積を拡大するために使われている。壁が40 °Cで、加熱されたガスが200 °Cで流れ過ぎる（h = 230 W/m²·K）場合、フィンの幅 b の1 mあたり、フィンによって除去される熱を計算せよ。",
+        "figureRefs": [
+          "Fig. 4.12"
+        ],
+        "bookPage": 187,
+        "endBookPage": 187,
+        "pdfPage": 201,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-24",
+        "number": "4.24",
+        "text": "例2.1のコンクリート平板を考える。熱発生が時刻 t = 0 で突然止み、平板が T_w に向かって冷え始めたとする。初期の放物線状温度分布が正弦関数でうまく近似できることに注意して、T − T_w を時間の関数として予測せよ。（正弦近似がなければ、この問題には第5章のフーリエ級数の方法が必要になる。）",
+        "bookPage": 187,
+        "endBookPage": 187,
+        "pdfPage": 201,
+        "endPdfPage": 201
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-25",
+        "number": "4.25",
+        "text": "タイプ6061-T6アルミニウムの蒸気凝縮器管は外径20 mm で、その外表面にフィンの配列がある。フィンは厚さ0.8 mm、直径35 mm、中心間隔5 mm である。内側の蒸気は10 atm、外側の空気と室内は18 °Cで、実効 h_outside = 6 W/m²·K である。凝縮の熱伝達率はきわめて大きく、管壁は厚くない。管の長さが1.5 m のとき、凝縮の質量率はいくらか。",
+        "answerHint": "凝縮量 ṁ_cond = 0.802 kg/h",
+        "bookPage": 187,
+        "endBookPage": 188,
+        "pdfPage": 201,
+        "endPdfPage": 202
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-26",
+        "number": "4.26",
+        "text": "断熱先端の温度が周囲空気温度を (T_0 − T_∞) の20%上回るためには、直径0.4 cm の円柱状銅フィンはどれだけ長くなければならないか。T_air = 20 °C、h = 28 W/m²·K とせよ。",
+        "answerHint": "27.3 cm",
+        "bookPage": 188,
+        "endBookPage": 188,
+        "pdfPage": 202,
+        "endPdfPage": 202
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-27",
+        "number": "4.27",
+        "text": "一辺2 cm の氷の立方体が、10 °Cの冷蔵庫の中で、直径3 mm のアルミニウム棒を広く間隔をあけて並べた棚の上に置かれている。棒の表面での h が10 W/m²·K（対流と放射の両方を含む）のとき、棒は氷の立方体をどれだけ速く（mm/min）溶かして進むか。計算の前に、物理的メカニズムを理解しているか確認せよ。h_sf = 333 kJ/kg である。（そのような冷蔵庫の棚があれば、結果を実験的に確認できる。）",
+        "bookPage": 188,
+        "endBookPage": 188,
+        "pdfPage": 202,
+        "endPdfPage": 202
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-28",
+        "number": "4.28",
+        "text": "核沸騰で達成できる最大熱流束（q_max ―9.1節の定性的な議論を見よ）は、飽和蒸気密度 ρ_g、蒸発潜熱 h_fg、表面張力 σ、特性長さ l、および単位体積あたりの浮力 g(ρ_f − ρ_g)（ρ_f は飽和液体密度）に依存する。無次元長さを用いて、q_max に対する無次元関数方程式を導け。",
+        "bookPage": 188,
+        "endBookPage": 188,
+        "pdfPage": 202,
+        "endPdfPage": 202
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-29",
+        "number": "4.29",
+        "text": "炉の壁にあるドアの取っ手を取り付けたい。ドアは160 °Cである。直径6.35 mm、炭素0.5%鋼の棒の長さ40 cm を U 字形に曲げ、その端部をドアに溶接することを考える。24 °Cの周囲空気が取っ手を冷やす（h = 12 W/m²·K、対流と放射の両方を含む）。取っ手の最も冷たい温度はいくらか。T_burn = 65 °C のとき、火傷せずに取っ手をつかめるのはドアからどれだけ近くまでか。設計をどう改善できるか。",
+        "bookPage": 188,
+        "endBookPage": 188,
+        "pdfPage": 202,
+        "endPdfPage": 202
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-30",
+        "number": "4.30",
+        "text": "長さ14 cm、一辺1 cm の正方形断面の黄銅棒が、その基部で25 W を供給される。もう一端は断熱されている。それは20 °Cの空気で、h = 68 W/m²·K で冷やされる。適切な無次元温度 Θ の方程式を、ξ、mL、その他の既知の情報の関数として導け。基部の温度を計算せよ。",
+        "answerHint": "169 °C",
+        "bookPage": 188,
+        "endBookPage": 189,
+        "pdfPage": 202,
+        "endPdfPage": 203
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-31",
+        "number": "4.31",
+        "text": "円柱フィンが、一端に課せられた一定の熱流束 q_1、他端に q_2 を受け、その長さに沿って対流で冷やされる。フィン内の無次元温度分布の方程式を導け。この結果を q_2 = 0 かつ L → ∞ の場合に特殊化し、式（4.50）と比較せよ。",
+        "bookPage": 189,
+        "endBookPage": 189,
+        "pdfPage": 203,
+        "endPdfPage": 203
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-32",
+        "number": "4.32",
+        "text": "半径 r_o の薄い環状の円筒が電気抵抗ヒーターとして働く。θ_1 = 0 の軸方向の線に沿った温度は T_1 に保たれている。そこから θ_2 ラジアン離れた別の線は T_2 に保たれている。2つの部分における温度分布の無次元式を導け。",
+        "bookPage": 189,
+        "endBookPage": 189,
+        "pdfPage": 203,
+        "endPdfPage": 203
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-33",
+        "number": "4.33",
+        "text": "ある熱交換器では、流れの中へ20 mm 突き出した直径7 mm のフィンの場で熱伝達が増強されている。フィンは六角形の配列で並び、最小の中心間隔は1.8 cm である。フィンは青銅製で、フィンの周りの h_f は168 W/m²·K である。壁そのものの上では、h_w は54 W/m²·K にすぎない。フィンを持つ壁について、h_eff ≡ Q_wall/(A_wall(T_wall − T_∞)) を計算せよ。",
+        "answerHint": "228 W/m²·K",
+        "bookPage": 189,
+        "endBookPage": 189,
+        "pdfPage": 203,
+        "endPdfPage": 203
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-34",
+        "number": "4.34",
+        "text": "ある技術者が、コンクリートの養生温度を制御することで、温度のコンクリートの養生に対する影響を研究しようとしている。厚さ L のサンプル平板が、一方の側で熱流束 q_w を受け、他方の側で温度 T_1 まで冷やされる。平板内の定常温度に対する無次元式を導け。その式をプロットし、平板内の内部熱発生を無視する基準を提案せよ。",
+        "bookPage": 189,
+        "endBookPage": 189,
+        "pdfPage": 203,
+        "endPdfPage": 203
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-35",
+        "number": "4.35",
+        "text": "内壁が一方の温度に、外壁が第2の温度に保たれた球殻における無次元温度分布を導け。r_outside ≫ r_inside の場合と、r_outside が r_inside にきわめて近い場合の2つの極限について、解を簡約せよ。これらの極限を議論せよ。",
+        "bookPage": 189,
+        "endBookPage": 189,
+        "pdfPage": 203,
+        "endPdfPage": 203
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-36",
+        "number": "4.36",
+        "text": "第一種の境界条件のみを持つ物体内の定常熱伝達の際の温度分布は、k に依存するか。説明せよ。第二種の境界条件の場合はどうか。第三種の条件についてはどうか。",
+        "bookPage": 189,
+        "endBookPage": 189,
+        "pdfPage": 203,
+        "endPdfPage": 203
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-37",
+        "number": "4.37",
+        "text": "直径5 mm の長いジュラルミン棒が、その長さの30 mm にわたって電気抵抗体で包まれている。抵抗体は40 kW/m² の表面熱流束を与える。加熱部でない棒の周りで h = 150 W/m²·K、T_ambient = 27 °C のとき、加熱部の両側における棒の温度分布を評価せよ。",
+        "answerHint": "135 °C",
+        "bookPage": 189,
+        "endBookPage": 190,
+        "pdfPage": 203,
+        "endPdfPage": 204
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-38",
+        "number": "4.38",
+        "text": "蒸気が冷たい表面上で膜状に凝縮するとき、冷たい表面と飽和蒸気の間の熱伝達率は、次に依存する：液体の密度と比熱、液体の熱伝導率と動粘度、潜熱、温度差、単位体積あたりの浮力 g(ρ_f − ρ_g)、および冷たい表面上の位置 x。h に対する無次元関数方程式を導け。",
+        "hint": "この方程式の慣用形は、本書の後の方を見ることで見つけることができる。",
+        "bookPage": 190,
+        "endBookPage": 190,
+        "pdfPage": 204,
+        "endPdfPage": 204
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-39",
+        "number": "4.39",
+        "text": "冷たい部屋を通るジュラルミン管は内径4 cm、外径5 cm である。それは、時には静止したままの水を運ぶ。管の周りに電気加熱リングを設置し、−7 °Cまで下がる寒冷期に凍結から守ることが提案されている。管の外側の熱伝達率は9 W/m²·K（対流と放射の両方を含む）である。ヒーターが局所的に管温度を40 °Cにする場合、ヒーターはどれだけ離して配置しなければならないか。必要な電力はどれだけか。",
+        "hint": "水の中の熱伝導は無視できる（なぜか）。",
+        "answerHint": "37.6 W",
+        "bookPage": 190,
+        "endBookPage": 190,
+        "pdfPage": 204,
+        "endPdfPage": 204
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-40",
+        "number": "4.40",
+        "text": "d(tanh x)/dx を評価せよ。",
+        "bookPage": 190,
+        "endBookPage": 190,
+        "pdfPage": 204,
+        "endPdfPage": 204
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-41",
+        "number": "4.41",
+        "text": "理想気体の比エントロピーは、その定圧比熱、温度と圧力、理想気体定数、および温度と圧力の基準値に依存する。比エントロピーに対する無次元関数方程式を求め、理想気体のエントロピーの既知の方程式と比較せよ。",
+        "bookPage": 190,
+        "endBookPage": 190,
+        "pdfPage": 204,
+        "endPdfPage": 204
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-42",
+        "number": "4.42",
+        "text": "大きな冷凍庫のドアの設計案は、厚さ2.5 cm の断熱層（k_in = 0.04 W/m·K）を、内側、外側、縁を厚さ3.2 mm の連続したアルミニウムの表皮（k_Al = 165 W/m·K）で覆ったものである。ドアは幅1 cm の非伝導性シールに押し当てられて閉まる。ドアを通る熱の侵入は、断熱材と表皮をまっすぐ通る（ドアの面に垂直な）伝導と、外側の表皮から縁の表皮を回って内側の表皮へ至る、アルミニウム表皮だけの中の伝導とによって生じうる。内側 h_i と外側 h_o の熱伝達率は各12 W/m²·K で、対流と放射の両方を考慮している。冷凍庫の外の温度は25 °C、内側は−15 °Cである。",
+        "items": [
+          "（a）ドアの幅が1 m の場合、表皮の縁を回る伝導を無視して、ドアを通る1次元の熱侵入を見積もれ。答えはドアの高さ1 mあたりのワットで表される。",
+          "（b）次に、ドアの外側と内側を包むアルミニウム表皮を通る熱侵入を見積もれ。熱は外側から、ドアの縁を回って、内側へ伝導する。この計算では、断熱材は完全に断熱的であるとし、ドアの底と上部は無視せよ。答えはやはりドアの高さ1 mあたりのワットで表される。",
+          "（c）ドアの縁を回る熱伝導を減らす設計変更をいくつか提案せよ。"
+        ],
+        "bookPage": 190,
+        "endBookPage": 191,
+        "pdfPage": 204,
+        "endPdfPage": 205
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-43",
+        "number": "4.43",
+        "text": "熱伝導率の高い表面にエポキシで接着された熱電対が、表面温度を測定するために使われている。熱電対は直径 D_w = 0.51 mm の2本の裸線からなる。一方の線はクロメル（Ni-10% Cr、k_cr = 17 W/m·K）製、もう一方はコンスタンタン（Ni-45% Cu、k_cn = 23 W/m·K）製である。線の端部同士が溶接され、幅 w ≃ D_w、長さ l ≃ 2D_w のほぼ矩形の測定接合を作る。線は表面から垂直に伸び、互いに接触しない。エポキシの層（k_ep = 0.5 W/m·K）が、熱電対接合を表面から0.2 mm 隔てている。20 °Cの周囲との間の線の熱伝達率は h = 28 W/m²·K で、対流と放射の両方を含む。熱電対が T_tc = 40 °Cを示す場合、表面の実際の温度 T_s を見積もり、より良い線の配置を提案せよ。",
+        "bookPage": 191,
+        "endBookPage": 191,
+        "pdfPage": 205,
+        "endPdfPage": 205
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-44",
+        "number": "4.44",
+        "text": "例4.9の抵抗体のリード線は、「無限に長い」フィンであると仮定されていた。このようにモデル化するためには、各リード線は最低どれだけの長さがなければならないか。線の有効度 ε_f と効率 η_f はいくらか。計算した有効度と効率の意味を議論せよ。",
+        "bookPage": 191,
+        "endBookPage": 191,
+        "pdfPage": 205,
+        "endPdfPage": 205
+      },
+      {
+        "type": "problem",
+        "id": "problem-4-45",
+        "number": "4.45",
+        "text": "管内を流れる液体の内部の局所熱伝達率 h を測定するために、次の実験を使う。既知のバルク温度の液体を、電気抵抗ヒーターとして働き、外側が完全に断熱された管にポンプで送る。熱電対がその外側温度を測定する。抵抗と電流の測定から、管壁内の体積熱発生 q̇ が分かる。また、管の直径、壁厚、熱伝導率も分かる。h に対する方程式を導け。（h が未知である以上、第三種の境界条件だけでは T(r) を求めるのに十分でないことを思い出せ。）次に、結果を無次元化せよ。",
+        "bookPage": 191,
+        "endBookPage": 192,
+        "pdfPage": 205,
+        "endPdfPage": 206
+      }
+    ]
+  },
+  "references": {
+    "heading": "参考文献",
+    "count": 10,
+    "preambleBlocks": [],
+    "blocks": [
+      {
+        "type": "reference",
+        "id": "reference-4-1",
+        "number": "4.1",
+        "authors": "V. L. Streeter and E. B. Wylie",
+        "originalTitle": "Fluid Mechanics",
+        "titleJa": "流体力学",
+        "publication": "McGraw-Hill Book Company, New York, 7th ed., 1979. Chapter 4",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-2",
+        "number": "4.2",
+        "authors": "E. Buckingham",
+        "originalTitle": "On physically similar systems; illustrations of the use of dimensional equations",
+        "titleJa": "物理的に相似な系について；次元方程式の使用の例証",
+        "publication": "Phys. Rev., 4:345–376, October 1914",
+        "doi": "10.1103/PhysRev.4.345",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-3",
+        "number": "4.3",
+        "authors": "E. Buckingham",
+        "originalTitle": "Model experiments and the forms of empirical equations",
+        "titleJa": "模型実験と経験式の形式",
+        "publication": "Trans. ASME, 37:263–296, 1915",
+        "noteJa": "Google Booksで入手可能。",
+        "noteEn": "Available in GoogleBooks.",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-4",
+        "number": "4.4",
+        "authors": "Lord Rayleigh, John Wm. Strutt",
+        "originalTitle": "The principle of similitude",
+        "titleJa": "相似の原理",
+        "publication": "Nature, 95:66–68, March 1915",
+        "noteJa": "オープンアクセス。",
+        "noteEn": "Open access.",
+        "doi": "10.1038/095066c0",
+        "url": "https://www.nature.com/articles/095066c0.pdf",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-5",
+        "number": "4.5",
+        "authors": "J. O. Farlow, C. V. Thompson, and D. E. Rosner",
+        "originalTitle": "Plates of the dinosaur stegosaurus: Forced convection heat loss fins?",
+        "titleJa": "恐竜ステゴサウルスのプレート：強制対流の放熱フィンか？",
+        "publication": "Science, 192(4244):1123–1125 and cover, June 1976",
+        "doi": "10.1126/science.192.4244.1123",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-6",
+        "number": "4.6",
+        "authors": "A. D. Kraus, A. Aziz, and J.R. Welty",
+        "originalTitle": "Extended Surface Heat Transfer",
+        "titleJa": "拡大伝熱面の熱伝達",
+        "publication": "John Wiley & Sons, Inc., New York, 2001",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-7",
+        "number": "4.7",
+        "authors": "P. J. Schneider",
+        "originalTitle": "Conduction Heat Transfer",
+        "titleJa": "熱伝導伝達",
+        "publication": "Addison-Wesley Publishing Co., Inc., Reading, Mass., 1955",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-8",
+        "number": "4.8",
+        "authors": "L. J. Huang and R. K. Shah",
+        "originalTitle": "Assessment of calculation methods for efficiency of straight fins of rectangular profile",
+        "titleJa": "矩形断面の直線フィンの効率の計算方法の評価",
+        "publication": "Int. J. Heat Fluid Flow, 13(3):282–293, September 1992",
+        "doi": "10.1016/0142-727X(92)90042-8",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-9",
+        "number": "4.9",
+        "authors": "G. Comini and S. Savino",
+        "originalTitle": "Accuracy of one-dimensional design procedures for finned-tube heat exchangers",
+        "titleJa": "フィン付き管熱交換器の1次元設計手順の精度",
+        "publication": "Applied Thermal Engineering, 29:2863–2869, October 2009",
+        "doi": "10.1016/j.applthermaleng.2009.02.007",
+        "bookPage": 192,
+        "pdfPage": 206
+      },
+      {
+        "type": "reference",
+        "id": "reference-4-10",
+        "number": "4.10",
+        "authors": "L. C. Thomas",
+        "originalTitle": "Heat transfer in fin assemblies: Significance of two-dimensional effects—a reexamination of the issue",
+        "titleJa": "フィンアセンブリにおける熱伝達：2次元効果の重要性―問題の再検討",
+        "publication": "J. Heat Transfer, 121:748–752, August 1999",
+        "doi": "10.1115/1.2826047",
+        "bookPage": 192,
+        "pdfPage": 206
+      }
+    ]
+  }
+}

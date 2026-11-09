@@ -12,10 +12,15 @@
   "product_fixes": 0,
   "full_suites_executed": 0,
   "github_write_api_calls": 0,
-  "completed_pushes_before_checkpoint": 1,
-  "checkpoint": 2,
+  "completed_pushes_before_checkpoint": 2,
+  "checkpoint": 3,
   "new_source_pages": [
     452,
     685
+  ],
+  "alt_sample_sections": [
+    "3.2",
+    "4.3",
+    "11.8"
   ]
 }

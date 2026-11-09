@@ -1,0 +1,8 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.evaluate: Target page, context or browser has been closed
+    at /workspace/work/codex-round-04/docs/audit/codex-round-04/check-alt-sample.mjs:9:283
+
+Node.js v24.19.0

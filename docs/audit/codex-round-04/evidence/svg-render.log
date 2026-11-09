@@ -1,0 +1,51 @@
+
+** (process:177886): WARNING **: 10:53:39.132: Unable to create profile directory (Read-only file system) (30)
+
+** (inkscape:177886): WARNING **: 10:53:39.168: Failed to wrap object of type 'PangoFT2FontMap'. Hint: this error is commonly caused by failing to call a library init() function.
+Fontconfig error: No writable cache directories
+** Message: 10:53:39.175: Cannot create profile directory /home/agent/.config/inkscape.
+** Message: 10:53:39.175: Inkscape will run with default settings, and new settings will not be saved.
+
+** (inkscape:177886): WARNING **: 10:53:39.319: Could not create directory '/home/agent/.config/inkscape'
+
+** (inkscape:177886): WARNING **: 10:53:39.319: Could not create extension error log file '/home/agent/.config/inkscape/extension-errors.log'
+
+** (inkscape:177886): WARNING **: 10:53:39.356: Ignoring unrecognized CSS property: max-width
+
+** (inkscape:177886): WARNING **: 10:53:39.372: Failed to wrap object of type 'GtkRecentManager'. Hint: this error is commonly caused by failing to call a library init() function.
+
+** (inkscape:177886): WARNING **: 10:53:39.373: Ignoring unrecognized CSS property: max-width
+
+** (process:177894): WARNING **: 10:53:39.586: Unable to create profile directory (Read-only file system) (30)
+
+** (inkscape:177894): WARNING **: 10:53:39.604: Failed to wrap object of type 'PangoFT2FontMap'. Hint: this error is commonly caused by failing to call a library init() function.
+Fontconfig error: No writable cache directories
+** Message: 10:53:39.616: Cannot create profile directory /home/agent/.config/inkscape.
+** Message: 10:53:39.616: Inkscape will run with default settings, and new settings will not be saved.
+
+** (inkscape:177894): WARNING **: 10:53:39.680: Could not create directory '/home/agent/.config/inkscape'
+
+** (inkscape:177894): WARNING **: 10:53:39.680: Could not create extension error log file '/home/agent/.config/inkscape/extension-errors.log'
+
+** (inkscape:177894): WARNING **: 10:53:39.728: Ignoring unrecognized CSS property: max-width
+
+** (inkscape:177894): WARNING **: 10:53:39.735: Failed to wrap object of type 'GtkRecentManager'. Hint: this error is commonly caused by failing to call a library init() function.
+
+** (inkscape:177894): WARNING **: 10:53:39.735: Ignoring unrecognized CSS property: max-width
+
+** (process:177901): WARNING **: 10:53:40.023: Unable to create profile directory (Read-only file system) (30)
+
+** (inkscape:177901): WARNING **: 10:53:40.030: Failed to wrap object of type 'PangoFT2FontMap'. Hint: this error is commonly caused by failing to call a library init() function.
+Fontconfig error: No writable cache directories
+** Message: 10:53:40.040: Cannot create profile directory /home/agent/.config/inkscape.
+** Message: 10:53:40.040: Inkscape will run with default settings, and new settings will not be saved.
+
+** (inkscape:177901): WARNING **: 10:53:40.152: Could not create directory '/home/agent/.config/inkscape'
+
+** (inkscape:177901): WARNING **: 10:53:40.152: Could not create extension error log file '/home/agent/.config/inkscape/extension-errors.log'
+
+** (inkscape:177901): WARNING **: 10:53:40.221: Ignoring unrecognized CSS property: max-width
+
+** (inkscape:177901): WARNING **: 10:53:40.227: Failed to wrap object of type 'GtkRecentManager'. Hint: this error is commonly caused by failing to call a library init() function.
+
+** (inkscape:177901): WARNING **: 10:53:40.227: Ignoring unrecognized CSS property: max-width

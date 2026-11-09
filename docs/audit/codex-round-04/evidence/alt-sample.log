@@ -1,0 +1,27 @@
+{
+  "cases": 6,
+  "all_match": true,
+  "all_loaded": true,
+  "overflow": 0,
+  "pageerrors": [],
+  "verification": {
+    "counterflow": {
+      "hot_heat_rate": 10000,
+      "cold_heat_rate": 10000,
+      "lmtd": 49.326069247528636,
+      "UA": 202.7325540540822
+    },
+    "similarity": {
+      "Bi_original": 0.1,
+      "Bi_scaled": 0.1,
+      "Fo_original": 0.49999999999999994,
+      "Fo_scaled": 0.49999999999999994
+    },
+    "osmosis": {
+      "relative_enrichment_at_15": 0.10978540373670877,
+      "relative_enrichment_at_35": 0.27513946323197885,
+      "surface_salt_15": 0.03884248913078481,
+      "surface_salt_35": 0.04462988121311926
+    }
+  }
+}

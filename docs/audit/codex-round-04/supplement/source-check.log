@@ -1,0 +1,41 @@
+{
+  "phi": {
+    "source": "0.9638/sqrt(Pr*phi*(1-phi^2/14))",
+    "baseline": "0.9638*(Pr*phi*(1-phi^2/14))",
+    "test_Pr": 1,
+    "test_phi": 1,
+    "source_RHS": 1.000182527957157,
+    "baseline_RHS": 0.8949571428571429,
+    "baseline_squared_nonzero_solution_at_Pr1": -0.5258352355260443,
+    "independent_relation": "phi^3*(1-phi^2/14)=0.9638^2/Pr; coefficient is rounded"
+  },
+  "correlations": {
+    "6.63": {
+      "Re_x": 100000.0,
+      "Pr": 0.7,
+      "baseline": 3.006667320507945,
+      "source": 91.62408717594467,
+      "Re_power_baseline": 0.125,
+      "Re_power_source": 0.5
+    },
+    "6.73": {
+      "Re_x": 100000.0,
+      "Pr": 0.7,
+      "baseline": 3.30267965003184,
+      "source": 127.35894296017538,
+      "Re_power_baseline": 0.125,
+      "Re_power_source": 0.5
+    }
+  },
+  "pages": [
+    185,
+    318,
+    319,
+    322,
+    326,
+    447,
+    458,
+    459,
+    513
+  ]
+}

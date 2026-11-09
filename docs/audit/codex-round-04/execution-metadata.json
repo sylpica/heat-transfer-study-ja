@@ -12,8 +12,8 @@
   "product_fixes": 0,
   "full_suites_executed": 0,
   "github_write_api_calls": 0,
-  "completed_pushes_before_checkpoint": 3,
-  "checkpoint": "final/priority4",
+  "completed_pushes_before_checkpoint": 4,
+  "checkpoint": "supplement-A",
   "new_source_pages": [
     452,
     685
@@ -25,5 +25,17 @@
   ],
   "final_checkpoint_push_planned": 1,
   "converged": false,
-  "formal_complete": false
+  "formal_complete": false,
+  "scope_extension": "All prior bilateral defects and usage findings: surrounding equations/tables/derivation chains and global recurring patterns; unfinished portions prioritized for round5 on Muse fixed integration tree.",
+  "additional_source_pages": [
+    185,
+    318,
+    319,
+    322,
+    326,
+    447,
+    458,
+    459,
+    513
+  ]
 }

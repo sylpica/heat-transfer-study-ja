@@ -74,6 +74,25 @@ try {
   await page.locator('#reader-original-note [data-start-question="supp-applied-1-1-v1"]').click();
   await page.locator('.question-card').waitFor({state:'visible'});
   assert.match(await page.locator('.question-card').innerText(),/0\.08 m².*0\.02 m²/s);
+  // A5-L3-F01 regression: with a question card displayed, the meta row
+  // (.question-actions) must stay inside the card and the「問題を報告」
+  // button must keep its label on one line at phone widths. Route-level
+  // width checks only see the quiz start screen, not this state.
+  const questionCardMetrics=()=>page.evaluate(()=>{
+    const card=document.querySelector('.question-card'),actions=document.querySelector('.question-actions'),report=actions?.querySelector('[data-action="open-report"]');
+    if(!card||!actions||!report)return null;
+    const cardRect=card.getBoundingClientRect(),actionsRect=actions.getBoundingClientRect(),reportRect=report.getBoundingClientRect();
+    return {doc:document.documentElement.scrollWidth,actionsRight:actionsRect.right,cardRight:cardRect.right,reportHeight:reportRect.height};
+  });
+  for(const width of [390,375]){
+    await page.setViewportSize({width,height:844});
+    await page.waitForTimeout(300);
+    const metrics=await questionCardMetrics();
+    assert.ok(metrics&&metrics.doc<=width+1,`問題カード表示中の文書はみ出し@${width}: ${JSON.stringify(metrics)}`);
+    assert.ok(metrics.actionsRight<=metrics.cardRight+1,`問題カードの操作行がカード外へ張り出し@${width}: ${JSON.stringify(metrics)}`);
+    assert.ok(metrics.reportHeight<=45,`「問題を報告」ラベルが縦に潰れている@${width}: ${JSON.stringify(metrics)}`);
+  }
+  await page.setViewportSize({width:390,height:844});
   await page.locator('[data-action="exit-quiz"]').click();
   await page.locator('[data-action="discard-quiz"]').click();
   await nav('reader');

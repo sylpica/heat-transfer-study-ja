@@ -93,3 +93,9 @@ test('gray-body transfer reciprocity and insulated third-wall resistance are eva
   const difference=100/(1+2*(.2+.8/2)),j1=(100+difference)/2;
   close(actual,100-j1);
 });
+test('Churchill-Chu full-range correlation (8.13b) applies the 8/27 power to the denominator bracket only',async()=>{
+  const b=await equation('8-3','8.13b');
+  const actual=value(b.expression.split('=')[1],{RaL:6.78e7,Pr:.710});
+  close(actual,(0.825+0.387*6.78e7**(1/6)/(1+(0.492/.710)**(9/16))**(8/27))**2);
+  close(actual,54.40653390374691);
+});

@@ -1,0 +1,27 @@
+{
+  "mode_switch": "Latest user instruction overrides earlier autonomous-fix workflow: audit only, four prioritized checkpoints and final checkpoint. No new all-Node/full-browser execution after switch.",
+  "product_diff_against_baseline": [],
+  "prior_candidate_edits": "Saved outside the repository and restored to baseline before checkpoint1; not delivered as fixes.",
+  "restored_png_status": "14 known PNGs were temporarily restored before mode switch. They are now outside the audit worktree; no product asset changes committed. Existing local dist still includes these original PNG bytes.",
+  "missing_remote_assets": "User declared remote missing47 PNG (2app +45evidence). This is a known delivery exception, not a newly inferred product defect. Restoration is for Feiris integration/deployment.",
+  "baseline_node_log": {
+    "relative_evidence": "evidence/pre-switch-node-baseline.log",
+    "total": 1797,
+    "pass": 1792,
+    "fail": 0,
+    "skip": 5,
+    "process_exit_code": null,
+    "limitation": "Completed log survived usage interruption; process exit status was not collected by this resumed audit. Not a new full-suite execution."
+  },
+  "targeted_checks": {
+    "coverage48": "48 preserved blind answers; match current packet and keys, 0 disagreements",
+    "coverage_receipts": "289+41 current-content valid; accepted peer422; union751, 0uncovered",
+    "alt": "3 images at375px Chromium; loaded3, pageerror0, overflow0, AX snapshots only",
+    "science": "9 original page images inspected, no original images redistributed"
+  },
+  "full_distribution_suite": "Not run in this audit; previous Muse report completion unconfirmed; Feiris to verify after fixes",
+  "webkit": "Pre-switch attempt failed missing GTK4/graphene/woff2dec/harfbuzz-icu/hyphen/manette/GLESv2. No new attempt after switch.",
+  "npm_audit": "Pre-switch registry audit returned0 known vulnerabilities; not a comprehensive security audit.",
+  "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a",
+  "directive_sha256": "22205d584a28857f87c1dd9fabdfbce0c65007c038dca42837278894f424d5cf"
+}

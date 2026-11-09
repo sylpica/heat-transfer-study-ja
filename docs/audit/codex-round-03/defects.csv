@@ -1,0 +1,12 @@
+ID,severity,location,finding,proposed_fix,verification_for_Feiris,state
+C3-S01,P1,data/sections/8-3-ja.json blocks[14].expression,8.13b指数が分子にも作用,8/27乗を分母のみに適用、原典PDF434,Ra=6.78e7 Pr=.710で54.40653390、現行5.60067569,未修正・監査のみ
+C3-S02,P2,data/sections/8-3-ja.json 8.11説明 / original-deep-lessons.json lessons[45] 遷移の目安,遷移座標の乗算と原典括弧不整合の混同,除算を復元し本文印刷と図8.3の括弧差を訳注で区別,PDF433本文と434図を別々に照合,未修正・監査のみ
+C3-S03,P2,data/sections/8-3-ja.json blocks[30].explanation,平均Nu積分の1/x欠落,Nu平均=integral(Nux/x)dx,Nux~x^(3/4)の解析積分で係数4/3,未修正・監査のみ
+C3-S04,P2,data/original-deep-lessons.json lessons[45].blocks[9].text,ucを極大速度と説明,速度尺度としu_max=4uc/27と位置eta=1/3を併記,速度多項式を微分して極値確認,未修正・監査のみ
+C3-S05,P2,data/sections/8-3-ja.json blocks[32].text,例8.3でRa*Prを使用,Ra/Prへ、印刷値0.0431は別記,delta/L独立値0.0435716161,未修正・監査のみ
+C3-S06,P2,data/sections/8-3-ja.json blocks[32].text / original-deep-lessons.json lessons[45].blocks[10].text,平均記号欠落により局所h/qと混同,平均上線と平均の説明を復元、deltaのみ上端,平均h4.01624と上端局所h3.00922を分ける,未修正・監査のみ
+C3-S07,P3,data/sections/8-3-ja.json blocks[32].text 訳注,厚さ数値差を丸め由来と未根拠断定,印刷0.0431と計算0.0435716を分け原因未確定と記す,原因を裏付ける計算資料なし,未修正・監査のみ
+C3-Q01,P3,data/questions.json supp-next-local-versus-average-v1 choices[3],平均と終端が必ず数値不一致と読める,一般に一致せず平均には積分が必要とする,h=h0+a sin(2pi*x/L)の反例、キー維持・revision/証拠更新,未修正・監査のみ
+C3-A01,P3,lesson-diagrams.mjs 5.6,XMLエンティティがaltで二重エスケープ,登録をデコード済みt>0へ、DOM escapeHTML維持,img.altとAXからリテラル&gt;が消えること,未修正・監査のみ
+C3-A02,P3,lesson-diagrams.mjs 10.1 / assets/lesson-diagrams/section-10-1-radiosity-irradiation-balance.svg desc,三つの棒という説明と4行の描画が不一致,四つへ又は数を省き、descと登録を同期,Eb/G/J/J-G、J成分二分は1行,未修正・監査のみ
+C3-A03,P2,lesson-diagrams.mjs 11.10 / assets/lesson-diagrams/section-11-10-transport-properties-kinetic-theory.svg desc,epsilonにK単位を直接付与,epsilon_AB/k_Bが56.1Kと明示、descと登録同期,可視式とaltが同一の物理量を表すこと,未修正・監査のみ

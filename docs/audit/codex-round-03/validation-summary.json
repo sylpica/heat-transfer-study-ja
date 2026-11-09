@@ -1,0 +1,58 @@
+{
+  "baseline_sha": "925f6508a3369e428e3de90a4fe2b82f609dab01",
+  "mode": "audit-only",
+  "priorities_completed": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "new_findings": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 6,
+    "P3": 4,
+    "total": 11
+  },
+  "findings_fixed_by_this_audit": 0,
+  "R1-P2-01": "Closed for accepted worked-audit ID coverage; no assertion of mathematical infallibility",
+  "R3-07": "Accepted original-source match",
+  "question_coverage": {
+    "total": 751,
+    "union": 751,
+    "uncovered": 0,
+    "blind_sample": 48,
+    "numeric": 32,
+    "conceptual": 16,
+    "key_disagreements": 0,
+    "sampling": "deliberate stratification, not random"
+  },
+  "source_pages_inspected": [
+    433,
+    434,
+    435,
+    438,
+    440,
+    441,
+    442,
+    517,
+    585
+  ],
+  "full_tests_after_mode_switch": false,
+  "full_browser_after_mode_switch": false,
+  "narrow_alt_probe": {
+    "cases": 3,
+    "engine": "Chromium",
+    "width": 375,
+    "pageerrors": 0,
+    "overflow": 0,
+    "all_images_loaded": true,
+    "actual_AT": false
+  },
+  "converged": false,
+  "formal_complete": false,
+  "github_write_api_calls": 0,
+  "completed_git_pushes_before_final_checkpoint": 4,
+  "final_checkpoint_push_planned": 1,
+  "next_owner": "Feiris: implement proposed fixes, reverify, integrate and A5 use testing"
+}

@@ -8,7 +8,10 @@
   "earlier_lines": "Astra ultra; interrupted twice by usage limits; their saved outputs retained as evidence, not represented as completed work",
   "product_changes_before_steering": "Two uncommitted candidate data edits were preserved outside repository then restored to the baseline. Restored PNGs moved outside worktree. git product diff is empty.",
   "github_write_api_calls": 0,
-  "completed_git_pushes_before_checkpoint": 3,
-  "checkpoint": 4,
-  "expert_review": "acquisition not required per A3; no external review claimed"
+  "completed_git_pushes_before_checkpoint": 4,
+  "checkpoint": "final",
+  "expert_review": "acquisition not required per A3; no external review claimed",
+  "final_checkpoint_push_planned": 1,
+  "model_provenance": "Saved numerical/conceptual/SVG review outputs came from earlier Astra ultra support lines. Current resumed synthesis and targeted checks follow user-selected Sol extra-high; no model-setting tool call claimed.",
+  "product_diff_against_baseline": []
 }

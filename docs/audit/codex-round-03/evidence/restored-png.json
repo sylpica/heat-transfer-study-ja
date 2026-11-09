@@ -1,0 +1,89 @@
+{
+  "status": "Pre-switch restoration only. Files subsequently moved outside worktree; no PNG product assets/history committed in round3.",
+  "rows": [
+    {
+      "path": "assets/icon-192.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 7836,
+      "sha256": "25f09280685a039f1681dac961fc119ffed1157bf8f7794c5760855fa21eeeb9"
+    },
+    {
+      "path": "assets/icon-512.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 21324,
+      "sha256": "4e580b8647ef222afacc8c4e8a30b00c567e216d85fbc91fba2e876ac3d837d9"
+    },
+    {
+      "path": "docs/audit/codex-round-01/evidence/screenshots/dark-375-glossary.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 60728,
+      "sha256": "5de01b5a47cf065280698a4b1dbb3bfd42617c064be8b2bf80ce9b293a9fd1a6"
+    },
+    {
+      "path": "docs/audit/codex-round-01/evidence/screenshots/dark-375-lab.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 76207,
+      "sha256": "63470a2b6f87335c71e275f441617e74394540075aae9bc97818055abdb48a4c"
+    },
+    {
+      "path": "docs/audit/codex-round-01/evidence/screenshots/dark-375-simulator.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 58237,
+      "sha256": "6c1c8184048b44ed85abcb4537f6910cb59a917fa8a671d9caaeb57e26b67d00"
+    },
+    {
+      "path": "docs/audit/codex-round-01/evidence/screenshots/light-375-glossary.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 60514,
+      "sha256": "a0b009a41b615cdabebe54519e6a8053c5c067c42ed585ba6055f92381c1d6da"
+    },
+    {
+      "path": "docs/audit/codex-round-01/evidence/screenshots/light-375-lab.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 74961,
+      "sha256": "2dde7b9a506713b418ed4fdc92db00e8a632f9977bd7eec7447c1c7f182c5007"
+    },
+    {
+      "path": "docs/audit/codex-round-01/evidence/screenshots/light-375-simulator.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 57533,
+      "sha256": "0b4aa7a067c6607133ac814bf2f46c98c441edab85c710ba6431095435412ac6"
+    },
+    {
+      "path": "docs/audit/codex-round-02/evidence/current-screenshots/calendar-1280-dark.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 114981,
+      "sha256": "53590e2ca912acaeef4b7a1a35420ee3c4791d62428cded3c5e86b12710c0c66"
+    },
+    {
+      "path": "docs/audit/codex-round-02/evidence/current-screenshots/calendar-375-light.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 72013,
+      "sha256": "382c855d0de37bc203d6a50fcd6ed2b2d922e205be894e742a2e0428ac3f1ab0"
+    },
+    {
+      "path": "docs/audit/codex-round-02/evidence/current-screenshots/glossary-1280-light.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 128111,
+      "sha256": "3d22af388af6d85c388df14dc8206d47c7c80d968e45e66364a1354852d70bfb"
+    },
+    {
+      "path": "docs/audit/codex-round-02/evidence/current-screenshots/glossary-375-dark.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 76900,
+      "sha256": "6f985442aa0e81db0ac327f7f3a2fbcdbdcd6b843d02340b2a4ffb5dc2337a55"
+    },
+    {
+      "path": "docs/audit/codex-round-02/evidence/current-screenshots/reader-10-3-1280-dark.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 196476,
+      "sha256": "62ce0b2a6e8b6068b27efd9da3b6798343a5e2f3c57c580c9c2b131039df5422"
+    },
+    {
+      "path": "docs/audit/codex-round-02/evidence/current-screenshots/reader-8-4-375-light.png",
+      "source_commit": "51c3c7fd0d3adcda549864f6534c60e372ef94ae",
+      "bytes": 97196,
+      "sha256": "e09895879de980862d32818b1162bc69819a11741dec49335b3bd2afa01627b9"
+    }
+  ]
+}

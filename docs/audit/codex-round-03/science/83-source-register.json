@@ -1,0 +1,42 @@
+{
+  "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a",
+  "page_images_not_redistributed": true,
+  "pages": [
+    {
+      "pdf_page": 433,
+      "book_page": 419,
+      "png_sha256": "185cf08a1c6f94e964c3f66df291f562eec135c5bfcfa559fd90bc95a504b751"
+    },
+    {
+      "pdf_page": 434,
+      "book_page": 420,
+      "png_sha256": "9491e936cdf2d437ed57bdbec158ffe0ceb94989f936c0530253d33367ed0a29"
+    },
+    {
+      "pdf_page": 435,
+      "book_page": 421,
+      "png_sha256": "04caef0b197f9495043c6e606924ddf36fdf455ebd90d634e9e93a8e60a43f5a"
+    },
+    {
+      "pdf_page": 438,
+      "book_page": 424,
+      "png_sha256": "f98bcd8ee438343b1634f697c58bb9597296defd59a08791a9b299076369fe4e"
+    },
+    {
+      "pdf_page": 440,
+      "book_page": 426,
+      "png_sha256": "3d4564ae19039445caef1573d8ec87e09637a48948b615804a60f7584f5f03f6"
+    },
+    {
+      "pdf_page": 441,
+      "book_page": 427,
+      "png_sha256": "327336d30d16f7f7e75465463a7d85a7e1774e249c6a8a24fc43601515daf1a2"
+    },
+    {
+      "pdf_page": 442,
+      "book_page": 428,
+      "png_sha256": "8d76192b72c634f55ad688c2c22b5725d9af929546c3730cec0fc77a9d34b806"
+    }
+  ],
+  "method": "Original PDF page images inspected; arithmetic in check-83.py; reproduce page renders with pdftoppm."
+}

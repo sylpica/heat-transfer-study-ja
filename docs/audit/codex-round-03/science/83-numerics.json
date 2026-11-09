@@ -1,0 +1,30 @@
+{
+  "8.13b": {
+    "Ra": 67800000.0,
+    "Pr": 0.71,
+    "baseline": 5.600675692636206,
+    "source": 54.40653390374691
+  },
+  "natural_convection_mean": {
+    "Nux_power": 0.75,
+    "wrong_factor": 0.5714285714285714,
+    "correct_factor": 1.3333333333333333
+  },
+  "velocity": {
+    "eta_max": 0.3333333333333333,
+    "u_max_over_uc": 0.14814814814814817
+  },
+  "example8.3": {
+    "Ra": 155500000.0,
+    "Pr": 0.713,
+    "Nu_mean": 61.24647739509139,
+    "h_mean_W_m2K": 4.016237755183118,
+    "q_mean_W_m2": 104.42218163476107,
+    "h_local_at_L_W_m2K": 3.009216489134253,
+    "q_local_at_L_W_m2": 78.23962871749058,
+    "delta_over_L_wrong_Ra_times_Pr": 0.05160109331613489,
+    "delta_over_L_correct_Ra_divided_Pr": 0.0435716160912444,
+    "delta_over_L_original_printed": 0.0431,
+    "difference_cause": "not established"
+  }
+}

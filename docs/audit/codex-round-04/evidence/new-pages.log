@@ -1,0 +1,38 @@
+{
+  "scope": "Only PDF452 and685 newly imaged; no original page images distributed",
+  "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a",
+  "pages": [
+    {
+      "pdf_page": 452,
+      "book_page": 438,
+      "dpi": 130,
+      "image_sha256": "10af0852a1b2483315e2e39b6057e046a848514c6277fc6af835f6eac7ecef9f"
+    },
+    {
+      "pdf_page": 685,
+      "book_page": 671,
+      "dpi": 130,
+      "image_sha256": "20485c0081dcba2a5f2cd96ae84aa5edcc7124cf335ac4e223b8bb71831b50ac"
+    }
+  ],
+  "eq8.43b": {
+    "Ra_star": 100000000.0,
+    "Pr": 0.7,
+    "baseline_wrong": 505.0919793454739,
+    "source_printed": 23.487954894159863,
+    "ratio_wrong_to_source": 21.50429791020511,
+    "derived_ignoring_0_68": 23.35512447454377,
+    "derived_coefficient": 0.7258716624432954,
+    "implicit8.43a_bisection": 23.90069010693732,
+    "error_definition": "wrong/source ratio; independent asymptotic coefficient0.67^(4/5) versus rounded original0.73 kept distinct"
+  },
+  "eq11.77": {
+    "rhoD_over_delta": 1,
+    "m_s": 0.4,
+    "m_e": 0.05,
+    "Bm": 0.5833333333333334,
+    "log_flux": 0.45953232937844024,
+    "independent_stefan_integral": 0.45953232937844013,
+    "difference": 1.1102230246251565e-16
+  }
+}

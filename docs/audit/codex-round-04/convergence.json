@@ -5,25 +5,25 @@
       "number": 1,
       "requirement": "公開対象に未解決P0/P1なし",
       "status": "不充足",
-      "evidence": "R4-S01(P1):公開教材8.43bに指数の誤りが残る"
+      "evidence": "R4-S01、R4-X01、R4-X05のP1が基点ccc6cc3で未修正"
     },
     {
       "number": 2,
       "requirement": "対応可能P2なし",
-      "status": "本回範囲では新規P2なし／全体最終認定は保留",
-      "evidence": "前回11件の製品修正を受理。全要件の対応可能P2ゼロを限定確認だけで再認定しない"
+      "status": "不充足",
+      "evidence": "開示を独立確認したR4-X02/03/04のP2が基点で未修正"
     },
     {
       "number": 3,
       "requirement": "既知の誤った科学結果を正常表示する経路なし",
       "status": "不充足",
-      "evidence": "誤った8.43bを正常な教材式として表示。新しいソルバー不具合を認定したという意味ではない"
+      "evidence": "誤った表示式8.43b、8.51、6.63、6.73等。新たな数値エンジン経路の不具合と混同しない"
     },
     {
       "number": 4,
       "requirement": "全要件の状態が証拠付きで判定済み",
       "status": "未再認定",
-      "evidence": "既存requirements表＋本回差分を継承。全件の現行HEAD整合を今回全面確認したわけではない。未実装と未判定は区別"
+      "evidence": "追加された全旧所見の周辺・導出・同種パターンの徹底再監査は未完。候補索引だけで検証済みへ数えない"
     },
     {
       "number": 5,
@@ -47,7 +47,7 @@
       "number": 8,
       "requirement": "両者が最終統合版で新規P0〜P2を発見しない",
       "status": "不充足",
-      "evidence": "Codex第4回で新規P1 R4-S01を発見。独立した無欠陥の最終再監査条件は未達"
+      "evidence": "Codex第4回と追補で新規P1/P2を独立確認。無欠陥の最終再監査条件未達"
     },
     {
       "number": 9,
@@ -65,8 +65,10 @@
   "converged": false,
   "decisive_failures": [
     1,
+    2,
     3,
     8
   ],
-  "formal_app_complete": false
+  "formal_app_complete": false,
+  "scope_extension_incomplete": true
 }

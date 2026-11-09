@@ -1,0 +1,10 @@
+{
+  "historical_reference_ids": 72,
+  "source_documents": 9,
+  "public_json_files_scanned": 80,
+  "formula_blocks_indexed": 735,
+  "mean_word_candidates": 389,
+  "outer_fraction_power_candidates": 11,
+  "production_JS_candidate_lines": 41,
+  "status": "Indexes for exhaustive role/source review, not validated defects. No regex can establish the absence of missing overbars or of wrong exponent scope."
+}

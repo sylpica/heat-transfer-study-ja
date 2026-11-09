@@ -1,0 +1,663 @@
+{
+  "source_documents": [
+    "docs/audit/codex-round-01/defects.csv",
+    "docs/audit/codex-round-02/defects.csv",
+    "docs/audit/codex-round-03/defects.csv",
+    "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+    "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+    "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md",
+    "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+    "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md",
+    "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md"
+  ],
+  "source_document_hashes": {
+    "docs/audit/codex-round-01/defects.csv": "7efffd6f6adc8dbb55cdc7f383a713b5b10d78a6621c6202dc72027f7f52fb4f",
+    "docs/audit/codex-round-02/defects.csv": "a2b2bcf74856bad1e5fb8f30e0c543596f4feeedd6407532d65f9fe91a60c33f",
+    "docs/audit/codex-round-03/defects.csv": "bc78c2023ae8a4ad8dc32ebba171f0b967eb48525e19630dd51a3e8e82472003",
+    "docs/audit-round1/DEFECT_LEDGER_20261108.md": "47adf62b1e69f8e4f00fc8b6dcb3a032bdc0d89ecf62cd0f91c4e6c282627c58",
+    "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md": "fcde48ef3812a4bdde531ae32852879abc29eb364f29263be57a751e97b4fbc3",
+    "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md": "0d0f6af9407d663b9b7c05123064b264bc15f846ca869ec556584bf679343251",
+    "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md": "3c9735ec6622ecd61f7c90a9db7ad15b61a21091efe612a519340a65f6abb2a4",
+    "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md": "c714399b032369bec5ab620736dc20423db40d0f43a465029e0b179cc627ff6a",
+    "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md": "72d072fed6c854ff11be5da497a0bc17c09e0b41752c3b6366ee496a586ecf6c"
+  },
+  "source_locations": {
+    "docs/audit/codex-round-01/defects.csv": "working-tree:docs/audit/codex-round-01/defects.csv",
+    "docs/audit/codex-round-02/defects.csv": "working-tree:docs/audit/codex-round-02/defects.csv",
+    "docs/audit/codex-round-03/defects.csv": "git:b3a582600cd648c9adfeedbb0167d8322cfa752c:docs/audit/codex-round-03/defects.csv",
+    "docs/audit-round1/DEFECT_LEDGER_20261108.md": "working-tree:docs/audit-round1/DEFECT_LEDGER_20261108.md",
+    "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md": "working-tree:docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+    "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md": "working-tree:docs/audit-round3/DEFECT_LEDGER_R3_20261109.md",
+    "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md": "working-tree:docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+    "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md": "working-tree:docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md",
+    "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md": "working-tree:docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md"
+  },
+  "unique_reference_ids": 72,
+  "counting": "Unique reference IDs, aliases not collapsed. Contains references to withdrawals/observations; not a count of actual defects or of reaudited cases. All accepted findings must be mapped using their source decisions.",
+  "rows": [
+    {
+      "id": "A5-F01",
+      "sources": [
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "入力台帳：ループ1統合台帳31件（照合記録 §3）。本表は継続13件（P2 1件＋P3 12件）と使い倒し所見2件（A5-F01／A5-F02）への第2回の処置、および第2回の新規指摘を記録する。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "A5-F02",
+      "sources": [
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "入力台帳：ループ1統合台帳31件（照合記録 §3）。本表は継続13件（P2 1件＋P3 12件）と使い倒し所見2件（A5-F01／A5-F02）への第2回の処置、および第2回の新規指摘を記録する。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "A5-L3-F01",
+      "sources": [
+        "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md"
+      ],
+      "context": "### A5-L3-F01（P3）問題カードの `.question-actions` が 375px でカード外へ張り出し、横はみ出しと「問題を報告」の縦書き化を起こす",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C1-01",
+      "sources": [
+        "docs/audit/codex-round-01/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "C1-01,P1,app.js,用語アンカーを未対応ルートへ分類、カード保存時に対象行なし,8da12ad1bdc202b8b4f494711e1f20717647d02e,navigation-final.log; dynamic-sim-guide-final.log,Codex修正・検証済、Muse照合待ち",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C1-02",
+      "sources": [
+        "docs/audit/codex-round-01/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "C1-02,P2,study-core.mjs,旧JSONへ補った既定値が追加取り込みで既存の単語帳設定を上書き,8da12ad1bdc202b8b4f494711e1f20717647d02e,node-final.log / flashcards regressions,Codex修正・検証済、Muse照合待ち",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C1-03",
+      "sources": [
+        "docs/audit/codex-round-01/defects.csv"
+      ],
+      "context": "C1-03,P2,app.js; tests/browser-distribution.mjs,翻訳公開前の文言が残存,8da12ad1bdc202b8b4f494711e1f20717647d02e + 32d6957191e76e845af97c58f51383631252f461,navigation-final.log; log-only assertions unchanged,Codex修正・検証済、Muse照合待ち",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C1-04",
+      "sources": [
+        "docs/audit/codex-round-01/defects.csv",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md"
+      ],
+      "context": "C1-04,P1,.github/workflows/deploy-public-pages.yml,公開元が旧枝固定、依存導入なし,8da12ad1bdc202b8b4f494711e1f20717647d02e,YAML parse; lockfile build; hosted deployment not executed,Codex修正・検証済、Muse照合待ち（ホステッド公開実行は未実施）",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C1-05",
+      "sources": [
+        "docs/audit/codex-round-01/defects.csv"
+      ],
+      "context": "C1-05,P2,tests/dynamic-sim-guide-browser.mjs,初期空白document待ちと目的URL到達の混同,8da12ad1bdc202b8b4f494711e1f20717647d02e,dynamic-sim-guide-final.log,Codex修正・検証済、Muse照合待ち",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C1-06",
+      "sources": [
+        "docs/audit/codex-round-01/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "C1-06,P2,styles.css,min-width410pxで図内の右ラベルがスマホ幅外へ,8da12ad1bdc202b8b4f494711e1f20717647d02e,navigation-final.log / SVG bbox 10 cases; screenshots,Codex修正・検証済、Muse照合待ち",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C1-07",
+      "sources": [
+        "docs/audit/codex-round-01/defects.csv"
+      ],
+      "context": "C1-07,P2,tests/browser.mjs,実時計進行で5秒保存周期の位相が仮想10秒計測からずれる,8da12ad1bdc202b8b4f494711e1f20717647d02e,browser-legacy-final.log / unchanged 10s and 90s assertions,Codex修正・検証済、Muse照合待ち",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C2-COV-01",
+      "sources": [
+        "docs/audit/codex-round-02/defects.csv"
+      ],
+      "context": "R1-P2-01 / C2-COV-01,P2,継続,問題検証の計数,422>375から残件包含を推論、329ステータスの混在,全751の内容SHA、41作業解、既存テスト候補索引、計数の訂正,question-coverage.json; independent-41.json,補集合289問に本回作業解なし。既存別形式証拠は有効、過去検証と現行内容の対応確認を継続",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C2-PWA-01",
+      "sources": [
+        "docs/audit/codex-round-02/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "C2-PWA-01,P3,監査枝で修正・再検証済／統合照合待ち,PWA icons,既知のPNG不足,同一SVGから192/512PNG・allowlist/SW,寸法・オフライン取得200,実機インストール未実施",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C2-SCI-01",
+      "sources": [
+        "docs/audit/codex-round-02/defects.csv",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "C2-SCI-01,P1,監査枝で修正・再検証済／統合照合待ち,data/sections 9節14要素,画像未確認の再構成で括弧/符号/指数が誤る,原典照合・式表修正、印刷式と導出の区別,source-tests-final.log; source-corrections.json,公開サイトは旧誤式のまま。収束後の公開反映と全教材監査は別",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C2-SESSION-01",
+      "sources": [
+        "docs/audit/codex-round-02/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "C2-SESSION-01,P2,監査枝で修正・再検証済／統合照合待ち,カレンダー,検証が通る99/99/answers[]を0/0と無標識併記,保存時集計ラベル＋不一致表示、保存値保持,session-baseline.json; audit-round02-browser,旧形式履歴は保持",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C2-TERM-01",
+      "sources": [
+        "docs/audit/codex-round-02/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "C2-TERM-01,P3,監査枝で修正・再検証済／統合照合待ち,行/単語帳,brief=meaningでhelperが同じ全文を返す433語,空の残り＋空段落非描画,全語内容保持テスト・実ブラウザー,用語全定義の科学校閲は別",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-A01",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md"
+      ],
+      "context": "C3-A01,P3,lesson-diagrams.mjs 5.6,XMLエンティティがaltで二重エスケープ,登録をデコード済みt>0へ、DOM escapeHTML維持,img.altとAXからリテラル&gt;が消えること,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-A02",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv"
+      ],
+      "context": "C3-A02,P3,lesson-diagrams.mjs 10.1 / assets/lesson-diagrams/section-10-1-radiosity-irradiation-balance.svg desc,三つの棒という説明と4行の描画が不一致,四つへ又は数を省き、descと登録を同期,Eb/G/J/J-G、J成分二分は1行,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-A03",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv"
+      ],
+      "context": "C3-A03,P2,lesson-diagrams.mjs 11.10 / assets/lesson-diagrams/section-11-10-transport-properties-kinetic-theory.svg desc,epsilonにK単位を直接付与,epsilon_AB/k_Bが56.1Kと明示、descと登録同期,可視式とaltが同一の物理量を表すこと,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-Q01",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md"
+      ],
+      "context": "C3-Q01,P3,data/questions.json supp-next-local-versus-average-v1 choices[3],平均と終端が必ず数値不一致と読める,一般に一致せず平均には積分が必要とする,h=h0+a sin(2pi*x/L)の反例、キー維持・revision/証拠更新,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-S01",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md"
+      ],
+      "context": "C3-S01,P1,data/sections/8-3-ja.json blocks[14].expression,8.13b指数が分子にも作用,8/27乗を分母のみに適用、原典PDF434,Ra=6.78e7 Pr=.710で54.40653390、現行5.60067569,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-S02",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv"
+      ],
+      "context": "C3-S02,P2,data/sections/8-3-ja.json 8.11説明 / original-deep-lessons.json lessons[45] 遷移の目安,遷移座標の乗算と原典括弧不整合の混同,除算を復元し本文印刷と図8.3の括弧差を訳注で区別,PDF433本文と434図を別々に照合,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-S03",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv"
+      ],
+      "context": "C3-S03,P2,data/sections/8-3-ja.json blocks[30].explanation,平均Nu積分の1/x欠落,Nu平均=integral(Nux/x)dx,Nux~x^(3/4)の解析積分で係数4/3,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-S04",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv",
+        "docs/audit-collation/USAGE_STRESS_LOOP3_20261109.md"
+      ],
+      "context": "C3-S04,P2,data/original-deep-lessons.json lessons[45].blocks[9].text,ucを極大速度と説明,速度尺度としu_max=4uc/27と位置eta=1/3を併記,速度多項式を微分して極値確認,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-S05",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv"
+      ],
+      "context": "C3-S05,P2,data/sections/8-3-ja.json blocks[32].text,例8.3でRa*Prを使用,Ra/Prへ、印刷値0.0431は別記,delta/L独立値0.0435716161,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-S06",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv"
+      ],
+      "context": "C3-S06,P2,data/sections/8-3-ja.json blocks[32].text / original-deep-lessons.json lessons[45].blocks[10].text,平均記号欠落により局所h/qと混同,平均上線と平均の説明を復元、deltaのみ上端,平均h4.01624と上端局所h3.00922を分ける,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "C3-S07",
+      "sources": [
+        "docs/audit/codex-round-03/defects.csv"
+      ],
+      "context": "C3-S07,P3,data/sections/8-3-ja.json blocks[32].text 訳注,厚さ数値差を丸め由来と未根拠断定,印刷0.0431と計算0.0435716を分け原因未確定と記す,原因を裏付ける計算資料なし,未修正・監査のみ",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "L4-1",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "棄却した監査スライス・並行ラインの主張：8件（L4-1 を含む）。独立ラインによる裏付け（corroboration）：R1-P3-05（L3 一致）、R1-P3-07（L3・L1 の二重の裏付け）。未検証のまま残した候補：1件（L5-06、Graetz 説明書の「本線」言及）。監査側が自ら撤回した指摘：1件（R1-P3-01、いずれも下記「棄却・撤回した主張」）。第15章の確定済み論点の再開：0件。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "L4-2",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "7. 実測結果：L5 ラインが横断点検で発見し、本体が実物で全件確認した。フィン系3件は「GUI なし／ブラウザー確認未実施」と書くが開発画面と Chromium ブラウザーテストが実在する。平板マニュアルは「円柱・フィン間の動的モデルは存在しない」と書くが開発モデルとして実在し、さらに「Chromium／WebKit の両エンジンで実施済み」と書くが WebKit は本環境で一度も実行されていない（円管2件にも同文）。長ダクトは頂点編集 UI が「別ブランチのみ」と書くが本ツリーに実在する。キャビティは圧力反復の既定値を計算核の値（1e-10／2000回）のみで書き、画面の既定（1e-11／4000回）と区別していない（L4-2）。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "L5-06",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "棄却した監査スライス・並行ラインの主張：8件（L4-1 を含む）。独立ラインによる裏付け（corroboration）：R1-P3-05（L3 一致）、R1-P3-07（L3・L1 の二重の裏付け）。未検証のまま残した候補：1件（L5-06、Graetz 説明書の「本線」言及）。監査側が自ら撤回した指摘：1件（R1-P3-01、いずれも下記「棄却・撤回した主張」）。第15章の確定済み論点の再開：0件。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P1-01",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP1_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "| P1 | 1 | 1（R1-P1-01） | 0 |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-01",
+      "sources": [
+        "docs/audit/codex-round-02/defects.csv",
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "R1-P2-01 / C2-COV-01,P2,継続,問題検証の計数,422>375から残件包含を推論、329ステータスの混在,全751の内容SHA、41作業解、既存テスト候補索引、計数の訂正,question-coverage.json; independent-41.json,補集合289問に本回作業解なし。既存別形式証拠は有効、過去検証と現行内容の対応確認を継続",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-02",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "| P2 | 8 | 7（R1-P2-02〜R1-P2-08 のうち R1-P2-01 を除く全件） | 1（R1-P2-01） |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-03",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "## R1-P2-03【修正済み】動的ガイド内の用語リンクの着地先が壊れている（#term-<id> ハッシュ未処理）",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-04",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P2-04【修正済み】アプリ内モデル説明書（§21）に統合前の古い状態記述が残り、実物と矛盾する",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-05",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "## R1-P2-05【修正済み】学習ガイドが簡易シミュレーターの h 推定を「未対応」と誤記",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-06",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "## R1-P2-06【修正済み】置換インポートで同一 ID の学習記録を重複登録でき、二重に集計される",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-07",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "## R1-P2-07【修正済み】同一 ID・異内容の回答記録が検証を通り、先勝ちで黙って潰れる",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P2-08",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "| P2 | 8 | 7（R1-P2-02〜R1-P2-08 のうち R1-P2-01 を除く全件） | 1（R1-P2-01） |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-01",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "棄却した監査スライス・並行ラインの主張：8件（L4-1 を含む）。独立ラインによる裏付け（corroboration）：R1-P3-05（L3 一致）、R1-P3-07（L3・L1 の二重の裏付け）。未検証のまま残した候補：1件（L5-06、Graetz 説明書の「本線」言及）。監査側が自ら撤回した指摘：1件（R1-P3-01、いずれも下記「棄却・撤回した主張」）。第15章の確定済み論点の再開：0件。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-02",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "7. 実測結果：ID 一意性・必須フィールド・正解一意性は全件構造合格。標本再計算 15問は全件一致。**いずれの照合でも誤答は発見されていない**。正解位置の分布は R1-P3-02 に記録（保存順に軽度の偏り、表示時シャッフルで緩和）。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-03",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P3-03用語集 sourceNote の書式混在",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-04",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P3-04一部の操作部品が WCAG 2.2 AA の 24px 基準に対して境界的",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-05",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "棄却した監査スライス・並行ラインの主張：8件（L4-1 を含む）。独立ラインによる裏付け（corroboration）：R1-P3-05（L3 一致）、R1-P3-07（L3・L1 の二重の裏付け）。未検証のまま残した候補：1件（L5-06、Graetz 説明書の「本線」言及）。監査側が自ら撤回した指摘：1件（R1-P3-01、いずれも下記「棄却・撤回した主張」）。第15章の確定済み論点の再開：0件。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-06",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "## R1-P3-06§6.2 の英語原典ブロックに抽出ノイズを含む箇所",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-07",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "棄却した監査スライス・並行ラインの主張：8件（L4-1 を含む）。独立ラインによる裏付け（corroboration）：R1-P3-05（L3 一致）、R1-P3-07（L3・L1 の二重の裏付け）。未検証のまま残した候補：1件（L5-06、Graetz 説明書の「本線」言及）。監査側が自ら撤回した指摘：1件（R1-P3-01、いずれも下記「棄却・撤回した主張」）。第15章の確定済み論点の再開：0件。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-08",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "| P3 | 20 | 5（R1-P3-08、R1-P3-11、R1-P3-13、R1-P3-16、R1-P3-22） | 15 |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-09",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P3-09【未修正・観察】用語集・問題集の任意キーの欠落（スキーマ不均一）",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-10",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P3-10【未修正・観察】問題の field ラベルは51種の主題別ラベルのまま（章分類は別系統）",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-11",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "| P3 | 20 | 5（R1-P3-08、R1-P3-11、R1-P3-13、R1-P3-16、R1-P3-22） | 15 |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-12",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P3-12【未修正・観察】セッションの合計・正解数が内包する回答と不整合でも検証を通る",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-13",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "| P3 | 20 | 5（R1-P3-08、R1-P3-11、R1-P3-13、R1-P3-16、R1-P3-22） | 15 |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-14",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P3-14【未修正】PWA マニフェストにアイコンがなく、インストール提示が成立しない",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-16",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "| P3 | 20 | 5（R1-P3-08、R1-P3-11、R1-P3-13、R1-P3-16、R1-P3-22） | 15 |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-17",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "## R1-P3-17【未修正・観察】アプリ作成の図解76件の代替テキストがすべて同一の定型文",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-18",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "## R1-P3-18【未修正・手続】公開デプロイワークフローに依存インストール工程がなく、クリーンなランナーでは失敗する",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-19",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "## R1-P3-19【未修正】全ワークフローのアクション参照が変更可能なタグのままで SHA 固定がない",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-20",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "## R1-P3-20【未修正】デプロイワークフローの checkout 先が旧ブランチに固定され、誤認の余地がある",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-21",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md",
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "## R1-P3-21【未修正・観察】実験室フッターの CFD 等の文言の対象範囲が曖昧",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R1-P3-22",
+      "sources": [
+        "docs/audit-round1/DEFECT_LEDGER_20261108.md"
+      ],
+      "context": "| P3 | 20 | 5（R1-P3-08、R1-P3-11、R1-P3-13、R1-P3-16、R1-P3-22） | 15 |",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R2-01",
+      "sources": [
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "### R2-01問題 supp-transient-gap-one-term-initial-overshoot-v1 の正答選択肢の文言が近似の性質を誤らせる（P3）",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R2-02",
+      "sources": [
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "- L5-06（Graetz 説明書の「本線」言及）：R2-02 で決着・修正済み。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R2-03",
+      "sources": [
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md",
+        "docs/audit-collation/USAGE_STRESS_LOOP2_20261109.md"
+      ],
+      "context": "### R2-03用語の簡単な説明と同じ文が、展開表示・単語帳裏面で続けて二重に表示される（P3）— A5-F01",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R2-04",
+      "sources": [
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "### R2-04使い方ガイド「検索と用語集」が章末問題・参考文献の検索に触れていない（P3）— A5-F02",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R2-05",
+      "sources": [
+        "docs/audit-round2/DEFECT_LEDGER_R2_20261108.md"
+      ],
+      "context": "### R2-05 ユーザー実報告2点の再確認（2026-11-08 22:50）— 欠陥登録ではなく確認項目",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-01",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "- 検証の過程で見つけた文言・数値の不整合6件は R3-01〜R3-06 として修正した（いずれも正解キー・解説本体は正しく、誤答理由文・補足数値のみ）。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-02",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "### R3-02 supp-found-resistor-series-v1 の誤答理由文が数値と不整合（P3）— 修正済み",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-03",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "### R3-03 supp-found-slab-biot-v1 の誤答理由文が数値と不整合（P3）— 修正済み",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-04",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "### R3-04 supp-chf-ideal-correlation-v1 の解説の補足パーセントが誤り（P3）— 修正済み",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-05",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "### R3-05 supp-dropwise-area-average-v1 の誤答理由文の数値が誤り（P3）— 修正済み",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-06",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "- 検証の過程で見つけた文言・数値の不整合6件は R3-01〜R3-06 として修正した（いずれも正解キー・解説本体は正しく、誤答理由文・補足数値のみ）。",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-07",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "### R3-07 原典式 (8.23) の誤った形が発展教材に残存（P2）— 修正済み（C2-SCI-01 の伝播残件）",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    },
+    {
+      "id": "R3-OBS-01",
+      "sources": [
+        "docs/audit-round3/DEFECT_LEDGER_R3_20261109.md"
+      ],
+      "context": "### R3-OBS-01 solutionSteps／hints が定型文のみの問題が 242/751 問ある",
+      "expanded_reaudit": "Round5 pending; review original disposition first, do not treat every reference as an accepted defect or reopen a settled non-finding without evidence."
+    }
+  ]
+}

@@ -12,8 +12,8 @@
   "product_fixes": 0,
   "full_suites_executed": 0,
   "github_write_api_calls": 0,
-  "completed_pushes_before_checkpoint": 4,
-  "checkpoint": "supplement-A",
+  "completed_pushes_before_checkpoint": 5,
+  "checkpoint": "supplement-B/final",
   "new_source_pages": [
     452,
     685
@@ -37,5 +37,8 @@
     458,
     459,
     513
-  ]
+  ],
+  "final_supplement_push_planned": 1,
+  "expanded_reaudit_complete": false,
+  "round5_top_priority": "supplement/ROUND5_PRIORITY.md"
 }

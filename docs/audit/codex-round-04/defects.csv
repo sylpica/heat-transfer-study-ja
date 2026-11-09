@@ -1,3 +1,9 @@
 ID,severity,location,finding,proposed_fix,reverification,state
 R4-S01,P1,data/sections/8-4-ja.json blocks[26] number8.43b,指数16/45が分子にも作用、Ra*の1/5乗が失われる,0.73*(Ra*_L)^(1/5)/[1+(0.492/Pr)^(9/16)]^(16/45)へ,Ra*=1e8 Pr=.7で23.4879548942、固定Prの1/5スケーリング、8.43aとの近似関係,未修正・Museへ引継ぎ
 R4-Q01,P3,docs/audit-collation/evidence/q01-revised-receipt.json alternative_choices_review,h一定の場合だけ平均と終端が一致と誤断定,一定なら一致するが一般には終端値だけで平均は決まらない、と補足を訂正/訂正記録追記,h=h0+a sin(2pi*x/L)で変化しても平均=終端という反例を確認。主作業解・キーは維持,未修正・記録上の補足所見
+R4-X01,P1,data/sections/8-5-ja.json number8.51,速度分布が半分、運動量式8.50と流量8.53に矛盾,前置因子を保持し括弧を2eta-eta^2にする,ODE残差、u(0)=0/uprime(delta)=0、積分流量、熱収支と厚さ/熱伝達の連鎖,未修正・開示内容を原典で独立確認
+R4-X02,P2,data/sections/6-5-ja.json blocks[10].text 式6.51,左辺因子u_infinity*(Tw-Tinf)が逆数,左辺前置因子を積へ復元,式6.47から正規化を追い左右の次元K*m/sと6.52/6.53の係数を確認,未修正・開示内容を原典で独立確認
+R4-X03,P2,data/sections/6-5-ja.json blocks[12].text phi関係,0.9638の後が逆平方根でなく積,0.9638/sqrt(Pr*phi*(1-phi^2/14))へ,phi^3*(1-phi^2/14)=0.9638^2/Pr、Pr依存と6.54/6.55比較,未修正・開示内容を原典で独立確認
+R4-X04,P2,data/sections/9-3-ja.json blocks[33] 表9.3第2行 式9.17,原典にない全体の1/2乗,1.14*(lambda_d1^2*N_j/Aheater)へ,群4で4.56、ジェット数/面積比への線形性、全12行の条件を保持,未修正・開示内容を原典で独立確認
+R4-X05,P1,data/sections/6-5-ja.json 式6.63および6.73,分母の1/4乗が分子にも作用する同種パターン,各式の1/4乗を分母のみに限定,Re=1e5 Pr=.7で6.63は91.6240872、6.73は127.358943。固定PrでRe^1/2スケーリング,未修正・同種パターンから追加発見、2式を1群
+R4-X06,P3,data/sections/4-5-ja.json 4.49、8-4-ja.json 8.32/8.33および平均量パターン全体,平均h/Nuの上線脱落,確認済み3式の平均記号を復元。他の候補は原典/平均の役割を確認してから判断,面/長さ/体積/時間平均と重み、局所量/一様近似、関連講義/問題/SVG表示を全体照合,確認済み3式。全パターンの第5回徹底再監査は未完

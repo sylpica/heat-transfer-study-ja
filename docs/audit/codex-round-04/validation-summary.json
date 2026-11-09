@@ -11,9 +11,10 @@
   "F01_accepted": true,
   "new_findings": {
     "P0": 0,
-    "P1": 1,
-    "P2": 0,
-    "P3": 1
+    "P1": 3,
+    "P2": 3,
+    "P3": 2,
+    "groups": 8
   },
   "product_fixes_by_Codex": 0,
   "full_Node_suites_run": 0,
@@ -45,5 +46,31 @@
   "github_write_api_calls": 0,
   "successful_pushes_before_final_checkpoint": 3,
   "final_checkpoint_push_planned": 1,
-  "next_owner": "Muse implement R4-S01 and correct R4-Q01 record, reverify/integrate/A5; preserve settled scientific decisions"
+  "next_owner": "Muse implement R4-S01 and correct R4-Q01 record, reverify/integrate/A5; preserve settled scientific decisions",
+  "counting": "R4-X05 counts two formulas as one recurring-pattern group; R4-X06 is one mean-mark pattern group, not one defect for each search candidate.",
+  "supplement_source_pages": [
+    185,
+    318,
+    319,
+    322,
+    326,
+    447,
+    458,
+    459,
+    513
+  ],
+  "total_original_pages_this_round": 11,
+  "expanded_reaudit_complete": false,
+  "round5_top_priority": "supplement/ROUND5_PRIORITY.md after Muse whole-fix integrated SHA is supplied",
+  "scope_inventory": {
+    "source_documents": 9,
+    "historical_reference_ids_not_defect_count": 72,
+    "JSON_files_scanned": 80,
+    "formula_blocks_not_all_embedded_formulas": 735,
+    "mean_candidates_not_confirmed_defects": 389,
+    "fraction_power_candidates": 11,
+    "JS_candidate_lines": 41
+  },
+  "successful_pushes_before_final_supplement": 5,
+  "final_supplement_push_planned": 1
 }

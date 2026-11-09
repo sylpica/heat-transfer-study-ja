@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "S01": {
+      "Nu": 54.40653390374691,
+      "expected": 54.40653390374691,
+      "pass": true
+    },
+    "S02": {
+      "pass": true
+    },
+    "S03": {
+      "pass": true
+    },
+    "S04": {
+      "pass": true
+    },
+    "S05": {
+      "pass": true
+    },
+    "S06": {
+      "pass": true
+    },
+    "S07": {
+      "pass": true
+    },
+    "Q01": {
+      "pass": true,
+      "length": 26,
+      "receipt_current": true,
+      "old_receipt_stale": true,
+      "receipt_alternative_review": "終端局所値をいつでも平均として使えるは誤り（h_x が定数の場合にだけ一致）、平均が必ず0になる根拠なし、終端値だけでは分布の情報が欠け平均は決定できない"
+    },
+    "A01": {
+      "pass": true
+    },
+    "A02": {
+      "pass": true
+    },
+    "A03": {
+      "pass": true
+    }
+  },
+  "conditions": 16,
+  "overflow": [],
+  "actionsOutside": [],
+  "pageerrors": []
+}

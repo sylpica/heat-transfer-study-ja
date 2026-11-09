@@ -1,0 +1,17 @@
+{
+  "round": 4,
+  "mode": "audit-only",
+  "baseline_branch": "audit/integration-loop3",
+  "baseline_sha": "ccc6cc3b8e8955f0a04baf28ec655bb4e5b386c9",
+  "work_branch": "audit/codex-round-04",
+  "directive_sha256": "22205d584a28857f87c1dd9fabdfbce0c65007c038dca42837278894f424d5cf",
+  "requested_model": "GPT-6.1 Sol",
+  "requested_reasoning": "極高",
+  "model_control": "User says configured; no model-setting tool used",
+  "baseline_exceptions": "Remote excludes deployment workflow local delta and evidence PNG; product equivalence as specified by user, not independently verified against inaccessible local tree",
+  "product_fixes": 0,
+  "full_suites_executed": 0,
+  "github_write_api_calls": 0,
+  "completed_pushes_before_checkpoint": 0,
+  "checkpoint": 1
+}

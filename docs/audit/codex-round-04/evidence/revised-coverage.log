@@ -1,0 +1,32 @@
+{
+  "baseline": "ccc6cc3b8e8955f0a04baf28ec655bb4e5b386c9",
+  "questions": 751,
+  "peer_unique": 422,
+  "latest_receipt_count": 330,
+  "latest_valid": 330,
+  "invalid_latest": [],
+  "union": 751,
+  "unknown": [],
+  "missing": [],
+  "unchanged_old_receipt_files": [
+    {
+      "path": "docs/audit/codex-round-02/evidence/independent-41.json",
+      "sha256": "d1e962eb5d2a3dc246dfa9b7760f944b4556a7a53db42dfab5f89ccfb6b21583",
+      "byte_equal_to_round3": true
+    },
+    {
+      "path": "docs/audit-round3/evidence/independent-289.json",
+      "sha256": "e493eee576b795bce94d4b01373339e3c047c253466be9774d0e054b20aa314d",
+      "byte_equal_to_round3": true
+    }
+  ],
+  "superseded_invalid_history": [
+    {
+      "id": "supp-next-local-versus-average-v1",
+      "path": "docs/audit-round3/evidence/independent-289.json",
+      "valid": false,
+      "reason": "stale content or invalid; old Q01 expected stale after revision"
+    }
+  ],
+  "rule": "New per-ID current-content receipt supersedes stale revision receipt; old files remain immutable historical evidence. Peer422 remain the loop2 accepted ID records, not newly hashed calculations."
+}

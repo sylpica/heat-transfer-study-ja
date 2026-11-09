@@ -1,0 +1,12 @@
+{
+  "pdf_page": 585,
+  "book_page": 571,
+  "png_sha256": "f012f6458449818ad3774b16ac440beff9d9cfd7616cef96f12d802f64f0b989",
+  "checked": [
+    "10.31 radiation shield resistance",
+    "10.32 specularly reflecting bodies",
+    "view factor conditions F1s=Fs2=1 in adjacent paragraph"
+  ],
+  "verdict": "No new finding: expressions and qualifying prose match the original page. Eq10.32 is deliberately the same form as10.25 in this special specular case.",
+  "limits": "One additional page only; not a full chapter source audit. Original image not redistributed."
+}

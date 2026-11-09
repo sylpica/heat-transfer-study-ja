@@ -1,0 +1,511 @@
+{
+  "schema": "codex-round03-alt-semantic-review-v1",
+  "reviewed_at_utc": "2026-11-09T02:47:04.759934+00:00",
+  "base_commit": "925f6508a3369e428e3de90a4fe2b82f609dab01",
+  "method": "Manual semantic reading of all 76 saved decoded SVG desc and visible text arrays, grouped in six bounded batches; candidates cross-checked against current SVG source and current registry alt. No repeated extraction.",
+  "input_file": "docs/audit/codex-round-03/alt/svg-text-extraction.json",
+  "input_sha256": "03dab00d35dec6540fae22dbae9f058a24d320dff4c28eed0ac51849c052edf7",
+  "counts": {
+    "reviewed_sections": 76,
+    "sections_without_semantic_candidate": 74,
+    "sections_with_semantic_candidate": 2
+  },
+  "findings": [
+    {
+      "id": "ALT-SEM-10.1-bars",
+      "section": "10.1",
+      "status": "candidate_for_parent_triage",
+      "suggested_severity": "P3",
+      "desc_and_alt_excerpt": "三つの棒は同じ線形尺度に従い",
+      "visible_evidence": [
+        "黒体 Eb",
+        "入射 G",
+        "射度 J",
+        "正味 J−G"
+      ],
+      "source_evidence": "assets/lesson-diagrams/section-10-1-radiosity-irradiation-balance.svg lines 39–50: bar-eb, bar-g, bar-emission + bar-reflection on one row, bar-net form four rows.",
+      "impact": "Minor count mismatch; values, identities, scale and J segmentation correspond. Eb could be treated as reference, but that exclusion is not stated in the description.",
+      "suggested_resolution": "Use 四つの棒 or avoid cardinal count; keep SVG desc and registry alt synchronized."
+    },
+    {
+      "id": "ALT-SEM-11.10-epsilon",
+      "section": "11.10",
+      "status": "candidate_for_parent_triage",
+      "suggested_severity": "P2",
+      "desc_and_alt_excerpt": "イプシロン56.1ケルビン",
+      "visible_evidence": [
+        "ε_AB/k_B = √(78.6 × 40.0) = 56.1 K（式(11.107)）",
+        "k_B T/ε_AB = 5.027 → Ω_D = 0.8410（表11.4）"
+      ],
+      "source_evidence": "assets/lesson-diagrams/section-11-10-transport-properties-kinetic-theory.svg lines 34–35; lesson-diagrams.mjs line 263 repeats omitted normalization.",
+      "impact": "Accessible prose assigns temperature units directly to the energy well-depth ε, while the figure explicitly states ε/k_B.",
+      "suggested_resolution": "State イプシロンをボルツマン定数で割った値56.1ケルビン; preserve SVG desc and registry synchronization."
+    }
+  ],
+  "sections": [
+    {
+      "section": "1.1",
+      "file": "section-1-1-heat-rate-flux-integrals.svg",
+      "status": "corresponds",
+      "assertion": "面積積分100 W・時間積分2000 J・閉じた系ΔU=-2000 Jと単位区別が対応。"
+    },
+    {
+      "section": "1.2",
+      "file": "section-1-2-energy-balance-vs-heat-equation.svg",
+      "status": "corresponds",
+      "assertion": "入力200 W・損失50 W・66.67 s/50 s比較および一様温度モデルと局所PDEの区別が対応。"
+    },
+    {
+      "section": "1.3",
+      "file": "section-1-3-three-modes-comparison.svg",
+      "status": "corresponds",
+      "assertion": "独立した伝導200 W・対流100 W・放射54.11 Wと合算不可の条件が対応。"
+    },
+    {
+      "section": "1.4",
+      "file": "section-1-4-roadmap-series-resistance.svg",
+      "status": "corresponds",
+      "assertion": "三つの課題と0.080+0.200 K/Wの直列抵抗・285.7 W・77.14 ℃が対応。"
+    },
+    {
+      "section": "1.5",
+      "file": "section-1-5-problem-solving-uncertainty.svg",
+      "status": "corresponds",
+      "assertion": "解法手順、k=0.50、独立標準不確かさ10%と最悪幅20%の区別が対応。"
+    },
+    {
+      "section": "10.1",
+      "file": "section-10-1-radiosity-irradiation-balance.svg",
+      "status": "candidate",
+      "assertion": "放射の条件・数値・J/G/正味区別は対応するが、三つの棒という数え方はEbを含む四行のグラフと不一致候補。"
+    },
+    {
+      "section": "10.2",
+      "file": "section-10-2-kirchhoff-spectral-bands.svg",
+      "status": "corresponds",
+      "assertion": "Kirchhoff三形式、太陽/常温の波長帯分離、黒/白ペイントの放射釣合い温度が対応。"
+    },
+    {
+      "section": "10.3",
+      "file": "section-10-3-view-factor-reciprocity.svg",
+      "status": "corresponds",
+      "assertion": "面積1/4 m²とF12/F21=0.8/0.2、相反則と黒体交換793.8 Wが対応。"
+    },
+    {
+      "section": "10.4",
+      "file": "section-10-4-gray-surface-radiation-network.svg",
+      "status": "corresponds",
+      "assertion": "表面/空間の三抵抗、射度1322.18/804.45 W/m²、正味258.86 Wと抵抗単位が対応。"
+    },
+    {
+      "section": "10.5",
+      "file": "section-10-5-gas-radiation-beer-hottel.svg",
+      "status": "corresponds",
+      "assertion": "Beerの帯内/窓の指数減衰、平均光路長とHottel例27.59 kW/mが対応。"
+    },
+    {
+      "section": "10.6",
+      "file": "section-10-6-solar-roof-balance.svg",
+      "status": "corresponds",
+      "assertion": "日射/天空放射/対流の屋根収支、黒338.12 Kと白312.59 K、選択性表面が対応。"
+    },
+    {
+      "section": "11.1",
+      "file": "section-11-1-introduction-flux-timescale.svg",
+      "status": "corresponds",
+      "assertion": "冷却塔、等モル逆拡散0.020 mol/(m²s)、移動率/質量移動率、時間尺度が対応。"
+    },
+    {
+      "section": "11.10",
+      "file": "section-11-10-transport-properties-kinetic-theory.svg",
+      "status": "candidate",
+      "assertion": "Lennard-Jones形状・拡散予測6.98対実測6.58・液体式は対応するが、εを56.1 Kと呼ぶ記述は図のε/kB=56.1 Kの正規化を欠く。"
+    },
+    {
+      "section": "11.11",
+      "file": "section-11-11-multicomponent-chemical-potential.svg",
+      "status": "corresponds",
+      "assertion": "多成分交差流束、γ別化学ポテンシャル、Fick係数=Γ×Maxwell–Stefan係数が対応。"
+    },
+    {
+      "section": "11.2",
+      "file": "section-11-2-air-composition-flux-decomposition.svg",
+      "status": "corresponds",
+      "assertion": "質量→モル分率→酸素分圧/濃度/密度、全流束の移流+拡散分解が対応。"
+    },
+    {
+      "section": "11.3",
+      "file": "section-11-3-fick-molar-diffusion-comparison.svg",
+      "status": "corresponds",
+      "assertion": "等モル逆拡散とB停滞の0.01219/0.01396、全流束と拡散流束の区別が対応。"
+    },
+    {
+      "section": "11.4",
+      "file": "section-11-4-species-balance-raoult-henry.svg",
+      "status": "corresponds",
+      "assertion": "成分保存、相平衡で濃度跳躍、炭酸467 kPa、54 ℃の蒸気質量分率0.097が対応。"
+    },
+    {
+      "section": "11.5",
+      "file": "section-11-5-stationary-medium-log-profile.svg",
+      "status": "corresponds",
+      "assertion": "濃厚定常拡散の指数分布、Bm0.5833、流束31%増と局所関係が対応。"
+    },
+    {
+      "section": "11.6",
+      "file": "section-11-6-naphthalene-sublimation-analogy.svg",
+      "status": "corresponds",
+      "assertion": "低移動率類似とナフタレン例、Bm小・Re/Sc/Numから平均損失58.0 g/(m²h)が対応。"
+    },
+    {
+      "section": "11.7",
+      "file": "section-11-7-coffee-cup-wet-bulb.svg",
+      "status": "corresponds",
+      "assertion": "コーヒー損失三成分、蒸発約82%、Lewis関係と乾球43.9 ℃が対応。"
+    },
+    {
+      "section": "11.8",
+      "file": "section-11-8-blowing-factor-reverse-osmosis.svg",
+      "status": "corresponds",
+      "assertion": "吹出/吸込因子、逆浸透15/35 L/(m²h)でCP10.9/27.5%、膜面塩濃度が対応。"
+    },
+    {
+      "section": "11.9",
+      "file": "section-11-9-high-rate-heat-coefficient.svg",
+      "status": "corresponds",
+      "assertion": "h/h*の吹出/吸込変化、X増加で壁温が貯蔵温度に近づく例と潜熱項が対応。"
+    },
+    {
+      "section": "2.1",
+      "file": "section-2-1-heat-equation-control-volume.svg",
+      "status": "corresponds",
+      "assertion": "保存則から熱伝導式への導出、発熱平板中央30.8 ℃、両面1600 W/m²が対応。"
+    },
+    {
+      "section": "2.2",
+      "file": "section-2-2-slab-method-linear-profile.svg",
+      "status": "corresponds",
+      "assertion": "8ステップ、60→20 ℃の直線分布、800 W/m²・1600 W・0.025 K/Wが対応。"
+    },
+    {
+      "section": "2.3",
+      "file": "section-2-3-series-parallel-thermal-resistance.svg",
+      "status": "corresponds",
+      "assertion": "直列200 W・中間60 ℃と並列600+300 W・同じ温度差60 Kが対応。"
+    },
+    {
+      "section": "2.4",
+      "file": "section-2-4-cylindrical-wall-resistance.svg",
+      "status": "corresponds",
+      "assertion": "円筒抵抗の三要素、内外面積基準Uの違い、UA一定・531.64 Wが対応。"
+    },
+    {
+      "section": "2.5",
+      "file": "section-2-5-composite-wall-summary.svg",
+      "status": "corresponds",
+      "assertion": "五つの抵抗0.280 K/W、142.86 W、接触前後を分けた界面温度が対応。"
+    },
+    {
+      "section": "3.1",
+      "file": "section-3-1-hx-configurations-balance.svg",
+      "status": "corresponds",
+      "assertion": "三形式、気体側フィンの理由、48/120 kW・出口35 ℃・有効度0.40が対応。"
+    },
+    {
+      "section": "3.2",
+      "file": "section-3-2-counterflow-lmtd.svg",
+      "status": "corresponds",
+      "assertion": "高温流れ→・低温流れ←、端点差60/40 K、10 kW、LMTD49.326 Kが対応。"
+    },
+    {
+      "section": "3.3",
+      "file": "section-3-3-ntu-isothermal-heat-exchanger.svg",
+      "status": "corresponds",
+      "assertion": "等温高温側60 ℃、冷側20→45.28 ℃、NTU1・有効度0.6321・7585.4 Wが対応。"
+    },
+    {
+      "section": "3.4",
+      "file": "section-3-4-required-heat-transfer-area.svg",
+      "status": "corresponds",
+      "assertion": "U半減で必要面積2→4 m²、要求12/上限30 kW、上限以下は達成保証でない点が対応。"
+    },
+    {
+      "section": "4.1",
+      "file": "section-4-1-well-posed-boundary-conditions.svg",
+      "status": "corresponds",
+      "assertion": "方程式・初期/境界条件、境界三種、指定温度100 ℃と指定外向き流束から右面90 ℃が対応。"
+    },
+    {
+      "section": "4.2",
+      "file": "section-4-2-uniform-generation-plane-wall.svg",
+      "status": "corresponds",
+      "assertion": "両面20 ℃・中心22.5 ℃の発熱平板と外向き流束各1000 W/m²が対応。"
+    },
+    {
+      "section": "4.3",
+      "file": "section-4-3-bi-fo-similarity-scaling.svg",
+      "status": "corresponds",
+      "assertion": "半厚さ2倍、h半減、時間4倍でBi0.10/Fo0.50、その他の相似条件も必要な点が対応。"
+    },
+    {
+      "section": "4.4",
+      "file": "section-4-4-shape-factor-scaling.svg",
+      "status": "corresponds",
+      "assertion": "Q=kSΔT、相似拡大2倍で120→240 W、平均流束半減が対応。"
+    },
+    {
+      "section": "4.5",
+      "file": "section-4-5-adiabatic-fin-efficiency-effectiveness.svg",
+      "status": "corresponds",
+      "assertion": "断熱先端フィンの温度低下、先端勾配ゼロ、効率86.1%と有効度34.44の区別が対応。"
+    },
+    {
+      "section": "5.1",
+      "file": "section-5-1-time-scales-model-selection.svg",
+      "status": "corresponds",
+      "assertion": "内部100 s/外部2000 sの時間尺度、Bi0.050、200 s後92.39 ℃とモデル選択が対応。"
+    },
+    {
+      "section": "5.2",
+      "file": "section-5-2-lumped-capacitance-exponential-cooling.svg",
+      "status": "corresponds",
+      "assertion": "一様温度近似、τ250 s、周囲との差0.368、49.43 ℃・25.28 kJが対応。"
+    },
+    {
+      "section": "5.3",
+      "file": "section-5-3-transient-slab-cooling.svg",
+      "status": "corresponds",
+      "assertion": "両面冷却平板、Bi0.20、Fo0/0.25/1で表面が先に冷却される無次元分布が対応。"
+    },
+    {
+      "section": "5.4",
+      "file": "section-5-4-response-chart-profile-reading.svg",
+      "status": "corresponds",
+      "assertion": "中心・局所・平均の区別、81.84/76.20/74.49 ℃、放出31.9%が対応。"
+    },
+    {
+      "section": "5.5",
+      "file": "section-5-5-one-term-eigenvalue-series.svg",
+      "status": "corresponds",
+      "assertion": "固有値条件・第一根、Fo0.5の一項値、短時間外挿の制限が対応。図の見出し自体も全項と呼ぶが凡例は15項の計算であり、この監査は無限級数の厳密計算を認証しない。"
+    },
+    {
+      "section": "5.6",
+      "file": "section-5-6-semi-infinite-error-function.svg",
+      "status": "corresponds",
+      "assertion": "表面80 ℃・初期20 ℃、3時刻の半無限解、48.77 ℃、瞬時流束と積分熱量の違いが対応。XMLエンティティ転記は親監査が別途検証。"
+    },
+    {
+      "section": "5.7",
+      "file": "section-5-7-steady-2d-square-series.svg",
+      "status": "corresponds",
+      "assertion": "三辺20 ℃・上辺100 ℃、中心θ1/4=40 ℃、奇数モード部分和収束が対応。"
+    },
+    {
+      "section": "5.8",
+      "file": "section-5-8-product-solution-square-bar.svg",
+      "status": "corresponds",
+      "assertion": "二方向の積解、中心0.597・平均0.464、放出53.6%で単純和は不可が対応。"
+    },
+    {
+      "section": "6.1",
+      "file": "section-6-1-velocity-thermal-boundary-layers.svg",
+      "status": "corresponds",
+      "assertion": "速度層と温度層の別図、定性範囲、Re66667・Pr0.75・Nu400が対応。"
+    },
+    {
+      "section": "6.2",
+      "file": "section-6-2-blasius-similarity-friction.svg",
+      "status": "corresponds",
+      "assertion": "Blasius分布・δ99約9.68 mm、局所/平均摩擦の2倍関係・片面抗力が対応。"
+    },
+    {
+      "section": "6.3",
+      "file": "section-6-3-energy-equation-integral-balance.svg",
+      "status": "corresponds",
+      "assertion": "壁でFourier伝導、積分収支9.60 W・96 W/m²・h1.60、局所値は未決定が対応。"
+    },
+    {
+      "section": "6.4",
+      "file": "section-6-4-prandtl-thickness-ratio.svg",
+      "status": "corresponds",
+      "assertion": "Pr8で厚さ尺度半分、Pr^(-1/3)と静止拡散Pr^(-1/2)を区別する点が対応。"
+    },
+    {
+      "section": "6.5",
+      "file": "section-6-5-laminar-local-average-nusselt.svg",
+      "status": "corresponds",
+      "assertion": "h_x∝x^(-1/2)、平均は末端局所の2倍、12.52 W/(m²K)・30.04 Wが対応。"
+    },
+    {
+      "section": "6.6",
+      "file": "section-6-6-reynolds-colburn-analogy.svg",
+      "status": "corresponds",
+      "assertion": "Cf→jH→St→hの条件付き類推、15.22対12.0、成立しない条件が対応。"
+    },
+    {
+      "section": "6.7",
+      "file": "section-6-7-turbulent-wall-units-log-law.svg",
+      "status": "corresponds",
+      "assertion": "摩擦速度0.316 m/s、壁単位の粘性底層/対数域の使い分けと渦粘性の意味が対応。"
+    },
+    {
+      "section": "6.8",
+      "file": "section-6-8-turbulent-gas-liquid-correlations.svg",
+      "status": "corresponds",
+      "assertion": "気体Pr^0.6/非金属液体Pr^0.43、平均5/4倍と末端4/5倍が対応。4分の5=5/4は正しい既決判断として維持。"
+    },
+    {
+      "section": "6.9",
+      "file": "section-6-9-transition-mixed-average.svg",
+      "status": "corresponds",
+      "assertion": "層流0.5 mと乱流0.5 m、C′665.63、平均Nu1219.1対1884.8とPr依存が対応。"
+    },
+    {
+      "section": "7.1",
+      "file": "section-7-1-rectangular-duct-hydraulic-diameter.svg",
+      "status": "corresponds",
+      "assertion": "Dh0.01333 m、Re1778、L/Dh37.5対助走尺度88.9、周長定義が対応。"
+    },
+    {
+      "section": "7.2",
+      "file": "section-7-2-laminar-pipe-entrance-lengths.svg",
+      "status": "corresponds",
+      "assertion": "速度/熱助走0.20/1.00 m、0.50 m地点の状態、Nu3.66の条件が対応。"
+    },
+    {
+      "section": "7.3",
+      "file": "section-7-3-turbulent-pipe-correlations-friction.svg",
+      "status": "corresponds",
+      "assertion": "四相関Nu440.0/529.2/490.0/599.1、Darcy係数と11.25 kPa・17.66 Wが対応。"
+    },
+    {
+      "section": "7.4",
+      "file": "section-7-4-constant-wall-temperature-ntu.svg",
+      "status": "corresponds",
+      "assertion": "一定壁温80 ℃、出口57.93 ℃、NTU1、3792.72 WとLMTD検算が対応。"
+    },
+    {
+      "section": "7.5",
+      "file": "section-7-5-square-duct-nusselt-friction.svg",
+      "status": "corresponds",
+      "assertion": "正方形/円管、Nu2.98/3.61/3.66と摩擦定数56.91/64の区別が対応。"
+    },
+    {
+      "section": "7.6",
+      "file": "section-7-6-cylinder-crossflow-churchill-bernstein.svg",
+      "status": "corresponds",
+      "assertion": "単独円柱横流れ、Nu42.74・h55.56、側面積と投影面積の区別・69.82 Wが対応。"
+    },
+    {
+      "section": "7.7",
+      "file": "section-7-7-correlation-uncertainty-residuals.svg",
+      "status": "corresponds",
+      "assertion": "独立不確かさRSS3.74%、残差-10/+20%、一点では全範囲を判断不可が対応。"
+    },
+    {
+      "section": "8.1",
+      "file": "section-8-1-driving-forces-richardson.svg",
+      "status": "corresponds",
+      "assertion": "浮力/外部駆動/膜の重力流の区別、Gr・Ra・Ri0.0809と判定限界が対応。"
+    },
+    {
+      "section": "8.2",
+      "file": "section-8-2-film-velocity-profile.svg",
+      "status": "corresponds",
+      "assertion": "凝縮膜の下流増厚・増流量、速度放物線、平均h6395・1.279 kW・Ref25.6が対応。"
+    },
+    {
+      "section": "8.3",
+      "file": "section-8-3-vertical-plate-boundary-layer.svg",
+      "status": "corresponds",
+      "assertion": "上昇境界層x^(1/4)、近似温度/速度分布、Nu64.17・h3.427・6.85 Wが対応。"
+    },
+    {
+      "section": "8.4",
+      "file": "section-8-4-natural-convection-orientation.svg",
+      "status": "corresponds",
+      "assertion": "垂直面/熱い上面/熱い下面の定性差、垂直例Ra7.848e6・18.24 Wの限定が対応。"
+    },
+    {
+      "section": "8.5",
+      "file": "section-8-5-film-condensation-liquid-film.svg",
+      "status": "corresponds",
+      "assertion": "重力流下非波状膜、δ∝x^(1/4)、h17.24 kW/(m²K)・1.724 kWと対象外が対応。"
+    },
+    {
+      "section": "9.1",
+      "file": "section-9-1-pool-boiling-curve-regimes.svg",
+      "status": "corresponds",
+      "assertion": "目盛なしの沸騰領域概念、別例20 kW/m²・h1000、CHF不明で安全判定不可が対応。"
+    },
+    {
+      "section": "9.10",
+      "file": "section-9-10-dropwise-droplet-cycle.svg",
+      "status": "corresponds",
+      "assertion": "液滴成長/合体/滑落循環、Rose式θ4 K・655 kW/m²、被覆連成θ3.05 Kが対応。"
+    },
+    {
+      "section": "9.11",
+      "file": "section-9-11-heat-pipe-capillary-budget.svg",
+      "status": "corresponds",
+      "assertion": "潜熱循環・毛管還流、4000=2800+1200 Pa、別モデルの限界候補が対応。"
+    },
+    {
+      "section": "9.2",
+      "file": "section-9-2-spherical-bubble-laplace-pressure.svg",
+      "status": "corresponds",
+      "assertion": "静止球形泡Δp=2σ/R、40/20 μmと2:1半径、核生成/CHFを予測しない条件が対応。"
+    },
+    {
+      "section": "9.3",
+      "file": "section-9-3-critical-heat-flux-liquid-vapor-counterflow.svg",
+      "status": "corresponds",
+      "assertion": "蒸気排出/液体補給競合、CHF1.073対運転0.800 MW/m²、比を安全保証にしない点が対応。"
+    },
+    {
+      "section": "9.4",
+      "file": "section-9-4-film-boiling-vapor-layer-resistance.svg",
+      "status": "corresponds",
+      "assertion": "固定膜厚の伝導比較0.25/0.50 mm、960/480 W、実際の膜沸騰総伝熱ではない点が対応。"
+    },
+    {
+      "section": "9.5",
+      "file": "section-9-5-minimum-heat-flux-berenson.svg",
+      "status": "corresponds",
+      "assertion": "最小熱流束、Berenson速度尺度0.1253 m/s・45.1 kW/m²、重力16倍で2倍が対応。"
+    },
+    {
+      "section": "9.6",
+      "file": "section-9-6-transition-wetting-fraction.svg",
+      "status": "corresponds",
+      "assertion": "濡れ割合0.60→0.20で平均192→84 kW/m²、熱移動率と負勾配の説明が対応。"
+    },
+    {
+      "section": "9.7",
+      "file": "section-9-7-surface-effects-chf.svg",
+      "status": "corresponds",
+      "assertion": "粗さ/接触角補正0.949と二乗和平方根30/40→50の別モデルが対応。"
+    },
+    {
+      "section": "9.8",
+      "file": "section-9-8-kandlikar-two-branches.svg",
+      "status": "corresponds",
+      "assertion": "加熱管の流動様式、Kandlikar二枝の大きい側5.16、h1.334e4・過熱3 Kが対応。"
+    },
+    {
+      "section": "9.9",
+      "file": "section-9-9-shear-film-stopping-condition.svg",
+      "status": "corresponds",
+      "assertion": "界面せん断の向き、膜厚依存停止条件、δ0約78.6 μm・停止-0.549 Paが対応。"
+    }
+  ],
+  "limitations": [
+    "This evidence establishes prose correspondence with extracted visible text, not a fresh independent verification of all textbook science or numerical calculations.",
+    "Graph shapes, arrows, geometric proportions, clipping and color/theme rendering require the parent visual/browser sample audit; this child performed no rendered image inspection.",
+    "No screen reader or real assistive-technology testing was performed.",
+    "The §5.6 t&gt;0 mapping/escaping issue is assigned to the parent alt auditor and excluded from this semantic-candidate count.",
+    "The accepted §6.8 Japanese fraction 4分の5=5/4 was retained and not reopened."
+  ],
+  "product_edits": 0
+}

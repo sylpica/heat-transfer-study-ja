@@ -1,0 +1,472 @@
+{
+  "sections": 76,
+  "extraction_sha256": "03dab00d35dec6540fae22dbae9f058a24d320dff4c28eed0ac51849c052edf7",
+  "method": "Registry deliberately drops the repeated app-original introduction; compare the remaining body as a suffix, not the entire raw desc.",
+  "nonempty": 76,
+  "body_mismatches": [
+    {
+      "id": "5.6",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": false,
+      "dropped_lead": null
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "1.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自図解。"
+    },
+    {
+      "id": "1.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": ""
+    },
+    {
+      "id": "1.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "1.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "1.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "10.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "10.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "10.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "10.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "10.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "10.6",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "11.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.10",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.11",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.6",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.7",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.8",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "11.9",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の学習図。"
+    },
+    {
+      "id": "2.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "2.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "2.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の熱抵抗図。"
+    },
+    {
+      "id": "2.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図解。"
+    },
+    {
+      "id": "2.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "3.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "3.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自模式図。"
+    },
+    {
+      "id": "3.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の熱交換器の模式図。"
+    },
+    {
+      "id": "3.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の設計比較図。"
+    },
+    {
+      "id": "4.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "4.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自図解。"
+    },
+    {
+      "id": "4.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の図解。"
+    },
+    {
+      "id": "4.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作成の模式図。"
+    },
+    {
+      "id": "4.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自図解。"
+    },
+    {
+      "id": "5.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自図解。"
+    },
+    {
+      "id": "5.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自図。"
+    },
+    {
+      "id": "5.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自図解。"
+    },
+    {
+      "id": "5.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自図解。"
+    },
+    {
+      "id": "5.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自図解。"
+    },
+    {
+      "id": "5.6",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": false,
+      "dropped_lead": null
+    },
+    {
+      "id": "5.7",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自図解。"
+    },
+    {
+      "id": "5.8",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ作成の独自図解。"
+    },
+    {
+      "id": "6.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の定性的な図。"
+    },
+    {
+      "id": "6.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "6.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "6.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "6.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "6.6",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "6.7",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "6.8",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "6.9",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の図。"
+    },
+    {
+      "id": "7.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "7.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "7.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "7.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "7.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "7.6",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "7.7",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自作図。"
+    },
+    {
+      "id": "8.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "8.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "8.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "8.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の自然対流模式図。"
+    },
+    {
+      "id": "8.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "9.1",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の教育用模式図。"
+    },
+    {
+      "id": "9.10",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "9.11",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "9.2",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の模式図。"
+    },
+    {
+      "id": "9.3",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリ独自の模式図。"
+    },
+    {
+      "id": "9.4",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": ""
+    },
+    {
+      "id": "9.5",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "9.6",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "9.7",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "9.8",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    },
+    {
+      "id": "9.9",
+      "nonempty": true,
+      "decoded_svg_desc_ends_with_registered_body": true,
+      "dropped_lead": "アプリが独自に作図した模式図。"
+    }
+  ]
+}

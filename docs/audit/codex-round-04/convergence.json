@@ -1,0 +1,72 @@
+{
+  "directive_section": "4.1",
+  "criteria": [
+    {
+      "number": 1,
+      "requirement": "公開対象に未解決P0/P1なし",
+      "status": "不充足",
+      "evidence": "R4-S01(P1):公開教材8.43bに指数の誤りが残る"
+    },
+    {
+      "number": 2,
+      "requirement": "対応可能P2なし",
+      "status": "本回範囲では新規P2なし／全体最終認定は保留",
+      "evidence": "前回11件の製品修正を受理。全要件の対応可能P2ゼロを限定確認だけで再認定しない"
+    },
+    {
+      "number": 3,
+      "requirement": "既知の誤った科学結果を正常表示する経路なし",
+      "status": "不充足",
+      "evidence": "誤った8.43bを正常な教材式として表示。新しいソルバー不具合を認定したという意味ではない"
+    },
+    {
+      "number": 4,
+      "requirement": "全要件の状態が証拠付きで判定済み",
+      "status": "未再認定",
+      "evidence": "既存requirements表＋本回差分を継承。全件の現行HEAD整合を今回全面確認したわけではない。未実装と未判定は区別"
+    },
+    {
+      "number": 5,
+      "requirement": "全公開モデルの数値品質ゲート",
+      "status": "既存記録を継承・本回未再監査",
+      "evidence": "数値エンジンと公開承認範囲の変更なし。教材式の欠陥をモデル全面合格や全面不合格へ拡大しない"
+    },
+    {
+      "number": 6,
+      "requirement": "自動テスト・公開ビルド・必要ブラウザー確認",
+      "status": "一部",
+      "evidence": "Museの全Node1798=1793pass/0fail/5skipと公開ビルドは記録にある。現統合ツリーの配信スイート完走は未実施。Codexは限定プローブのみ"
+    },
+    {
+      "number": 7,
+      "requirement": "既存機能の重大な回帰なし",
+      "status": "限定確認で重大回帰なし",
+      "evidence": "Q01本文/receipt、F01回答前後、図の読み込みを確認。全機能の全面保証はしない"
+    },
+    {
+      "number": 8,
+      "requirement": "両者が最終統合版で新規P0〜P2を発見しない",
+      "status": "不充足",
+      "evidence": "Codex第4回で新規P1 R4-S01を発見。独立した無欠陥の最終再監査条件は未達"
+    },
+    {
+      "number": 9,
+      "requirement": "残るP3・外部依存・未検証を正確に記録",
+      "status": "本回記録あり",
+      "evidence": "新規P3 R4-Q01、既存継続P3/公開段階事項、実機AT/WebKit/配信スイート未完を引継ぎ。専門家レビュー取得はA3により残件としない"
+    },
+    {
+      "number": 10,
+      "requirement": "最終報告書と証拠をGitHub保存",
+      "status": "本回成果を専用枝へ保存",
+      "evidence": "優先度1〜3はpush確認済み。この最終判定と台帳も同枝へpushし先端SHAを照合する"
+    }
+  ],
+  "converged": false,
+  "decisive_failures": [
+    1,
+    3,
+    8
+  ],
+  "formal_app_complete": false
+}

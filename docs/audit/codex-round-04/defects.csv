@@ -1,0 +1,3 @@
+ID,severity,location,finding,proposed_fix,reverification,state
+R4-S01,P1,data/sections/8-4-ja.json blocks[26] number8.43b,指数16/45が分子にも作用、Ra*の1/5乗が失われる,0.73*(Ra*_L)^(1/5)/[1+(0.492/Pr)^(9/16)]^(16/45)へ,Ra*=1e8 Pr=.7で23.4879548942、固定Prの1/5スケーリング、8.43aとの近似関係,未修正・Museへ引継ぎ
+R4-Q01,P3,docs/audit-collation/evidence/q01-revised-receipt.json alternative_choices_review,h一定の場合だけ平均と終端が一致と誤断定,一定なら一致するが一般には終端値だけで平均は決まらない、と補足を訂正/訂正記録追記,h=h0+a sin(2pi*x/L)で変化しても平均=終端という反例を確認。主作業解・キーは維持,未修正・記録上の補足所見

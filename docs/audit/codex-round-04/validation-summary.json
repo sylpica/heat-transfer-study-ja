@@ -1,0 +1,49 @@
+{
+  "baseline_sha": "ccc6cc3b8e8955f0a04baf28ec655bb4e5b386c9",
+  "mode": "audit-only",
+  "priority_blocks_completed": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "accepted_prior_product_fixes": 11,
+  "F01_accepted": true,
+  "new_findings": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 0,
+    "P3": 1
+  },
+  "product_fixes_by_Codex": 0,
+  "full_Node_suites_run": 0,
+  "full_browser_suites_run": 0,
+  "implementation_browser_conditions": 16,
+  "implementation_pageerrors": 0,
+  "implementation_document_overflow": 0,
+  "current_coverage_union": 751,
+  "current_coverage_missing": 0,
+  "valid_latest_receipts": 330,
+  "old_receipt_files_byte_unchanged": true,
+  "new_original_pages": [
+    452,
+    685
+  ],
+  "new_original_page_count": 2,
+  "alt_sample_sections": [
+    "3.2",
+    "4.3",
+    "11.8"
+  ],
+  "alt_browser_conditions": 6,
+  "alt_pageerrors": 0,
+  "alt_overflows": 0,
+  "actual_AT": false,
+  "visual_method": "Unmodified app SVGs rendered by Inkscape and inspected; not browser screenshots. Browser DOM/AX checked separately.",
+  "converged": false,
+  "formal_app_complete": false,
+  "github_write_api_calls": 0,
+  "successful_pushes_before_final_checkpoint": 3,
+  "final_checkpoint_push_planned": 1,
+  "next_owner": "Muse implement R4-S01 and correct R4-Q01 record, reverify/integrate/A5; preserve settled scientific decisions"
+}

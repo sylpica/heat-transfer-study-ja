@@ -8,7 +8,7 @@
   "earlier_lines": "Astra ultra; interrupted twice by usage limits; their saved outputs retained as evidence, not represented as completed work",
   "product_changes_before_steering": "Two uncommitted candidate data edits were preserved outside repository then restored to the baseline. Restored PNGs moved outside worktree. git product diff is empty.",
   "github_write_api_calls": 0,
-  "completed_git_pushes_before_checkpoint": 0,
-  "checkpoint": 1,
+  "completed_git_pushes_before_checkpoint": 1,
+  "checkpoint": 2,
   "expert_review": "acquisition not required per A3; no external review claimed"
 }

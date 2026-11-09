@@ -1,0 +1,216 @@
+{
+  "purpose": "Blind current round-3 receipt spot check; answer-bearing files and prior workings excluded",
+  "selection": "Deliberate stratification by field and failure mode; includes the only book question, sign/units, distinct Reynolds definitions, nonlinear correlations and physical interpretation. Not a random statistical sample.",
+  "ids": [
+    "supp-deep-rate-vs-state-v1",
+    "supp-found-slab-nonlinear-limit-v1",
+    "supp-found-ntu-config-v1",
+    "supp-next-local-versus-average-v1",
+    "supp-batch3-pure-neumann-unique-v1",
+    "supp-batch3-variable-k-equation-v1",
+    "supp-minimum-negative-slope-feedback-v1",
+    "supp-tube-boiling-equilibrium-quality-v1",
+    "supp-film-radiation-coupling-v1",
+    "supp-forced-condensation-opposing-shear-v1",
+    "supp-dropwise-distribution-not-mean-v1",
+    "supp-kirchhoff-steady-versus-equilibrium-v1",
+    "supp-fick-stagnant-versus-equimolar-v1",
+    "supp-condensation-gamma-shape-v1",
+    "supp-tube-correlation-orientation-placement-v1",
+    "supp-natural-geometry-cylinder-range-v1"
+  ],
+  "questions": [
+    {
+      "id": "supp-deep-rate-vs-state-v1",
+      "prompt": "物体の表面温度を高精度に測定できたが、熱伝導率や流体の流れ、周囲の放射環境は不明である。表面からの熱移動率について正しい結論はどれか。",
+      "choices": [
+        "表面温度に面積を掛ければ熱移動率が決まる",
+        "物体が高温なら熱移動率は常に正と決まる",
+        "定常なら温度差の有無にかかわらず熱移動率はゼロ",
+        "温度だけでは定量化できず、機構と境界条件が必要"
+      ],
+      "figure": null,
+      "field": "伝熱の基本量・保存則"
+    },
+    {
+      "id": "supp-found-slab-nonlinear-limit-v1",
+      "prompt": "一定kの平板で線形の温度分布を導いた後、内部発熱が一様な正の値を取るようになった。適切な判断はどれか。",
+      "choices": [
+        "発熱があっても温度勾配は必ず一定となる",
+        "発熱すると平板の厚さは式から消えてしまう",
+        "表面温度を決めれば熱流束は必ずゼロとなる",
+        "保存式に発熱項が入り温度分布は曲がりうる"
+      ],
+      "figure": null,
+      "field": "定常熱伝導・熱抵抗"
+    },
+    {
+      "id": "supp-found-ntu-config-v1",
+      "prompt": "同じNTUとC_rで熱交換器の配置を並流から向流に変えた。正しい判断は？",
+      "choices": [
+        "流路が変わっても有効度は必ず同じになる",
+        "有効度はNTUだけ分かれば一意に決まる",
+        "熱容量流量比は向流になると消えてしまう",
+        "有効度は流路配置に応じた関係式で求める"
+      ],
+      "figure": null,
+      "field": "熱交換器・有効度"
+    },
+    {
+      "id": "supp-next-local-versus-average-v1",
+      "prompt": "平板上で局所熱伝達率h_xが流れ方向に変化する。終端x=Lの局所値h_Lと面平均h̄_Lを扱う際の正しい判断は？",
+      "choices": [
+        "終端の局所値をいつでも全長の面平均熱伝達率として使用できる",
+        "hが変化しても必ず平均値は0となる",
+        "終端の値だけから面積積分は不要である",
+        "分布を平均して求める値と終端の値は異なる"
+      ],
+      "figure": null,
+      "field": "対流と境界層"
+    },
+    {
+      "id": "supp-batch3-pure-neumann-unique-v1",
+      "prompt": "発熱なし・熱伝導率kが一定の線形モデルの定常熱伝導で、全境界の熱流束だけを指定し、全体の入出熱は整合している。温度の絶対値を一意に求めるには？",
+      "choices": [
+        "指定された流束だけから温度の基準値は常に定まる",
+        "どの面でも熱流束を0にすれば温度は必ず0℃",
+        "熱伝導率だけが分かれば温度の定数項も決まる",
+        "ある一点の温度など追加の基準条件が必要となる"
+      ],
+      "figure": null,
+      "field": "境界値問題・熱流束の符号"
+    },
+    {
+      "id": "supp-batch3-variable-k-equation-v1",
+      "prompt": "定常熱伝導で熱伝導率kが温度依存する場合、一般に正しい方程式の取り扱いは？",
+      "choices": [
+        "温度によってkが変化しても、kは常に微分の外に出し∇²T=0だけで十分とする",
+        "熱伝導率が変化すると保存則は成立しない",
+        "熱流率と温度場は無関係なので微分不要",
+        "kを微分の内側に置いた∇·(k∇T)を用いる"
+      ],
+      "figure": null,
+      "field": "内部発熱・熱伝導支配式"
+    },
+    {
+      "id": "supp-minimum-negative-slope-feedback-v1",
+      "prompt": "C dT/dt=P−Aq″(T)という一様温度モデルで、C>0、PとAは一定とする。定常点近傍でdq″/dT<0のとき、温度がわずかに上がると起こる応答はどれか。モデル外の損失や制御応答は含めない。",
+      "choices": [
+        "除熱が増えて、元の温度へ戻る向きに働く",
+        "入力Pが自動的に減って、元の温度へ戻る向きに働く",
+        "除熱が減って、さらに温度を上げる向きに働く",
+        "熱容量Cがゼロとなって、温度変化が停止する"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-tube-boiling-equilibrium-quality-v1",
+      "prompt": "局所圧力の飽和エンタルピーからx_eq=(h−h_f)/h_fgを計算すると−0.05となった。この値の解釈として適切なのはどれか。",
+      "choices": [
+        "平衡では過冷却液側を表し、実際の蒸気質量割合は負にならない",
+        "実際の蒸気質量流量が負となり、蒸気は必ず上流へ逆流している",
+        "実際の蒸気体積割合が負となり、流路断面積も負になっている",
+        "平衡上は過熱蒸気側で、実際の液体質量割合が負という意味になる"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-film-radiation-coupling-v1",
+      "prompt": "放射を無視して求めた膜沸騰係数h_fに、独立な灰色面モデルから求めたh_radを加え、h_total=h_f+h_radとしたい。実際の蒸気膜への適用で必要な判断はどれか。",
+      "choices": [
+        "放射による膜厚・界面の変化と、連成モデルを確認する",
+        "放射と伝導は別現象なので、全条件で足せば厳密となる",
+        "膜が蒸気なので、放射の寄与は全条件でゼロと見なす",
+        "灰色面の式が計算できれば、他の境界条件は省略する"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-forced-condensation-opposing-shear-v1",
+      "prompt": "静穏蒸気の重力駆動液膜モデルを、上向き蒸気流が下向き凝縮液膜にせん断を及ぼす外部垂直板へ移したい。適切な評価方針はどれか。",
+      "choices": [
+        "重力と逆向きのせん断を運動量収支へ入れ、排液と適用範囲を見直す",
+        "せん断の向きに関係なく液膜は必ず薄くなるので、静穏の係数を増やす",
+        "液膜Reが小さければ、上向き蒸気が及ぼすせん断を常にゼロにする",
+        "流体が同じなら、静穏な外部板と管内凝縮の係数を常に同一にする"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-dropwise-distribution-not-mean-v1",
+      "prompt": "二つの滴状凝縮面で、液滴の平均直径だけが同じだった。面平均熱伝達率の判断として適切なのはどれか。",
+      "choices": [
+        "同じ平均直径なら、滴の生成と離脱は評価から除外する",
+        "滴の個数・分布・被覆率・離脱の違いも調べて比較する",
+        "同じ平均直径なら、全ての面で熱伝達率も同じと結論する",
+        "同じ平均直径なら、液滴を通る全熱抵抗はゼロと結論する"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-kirchhoff-steady-versus-equilibrium-v1",
+      "prompt": "外部光源から放射を吸収する面を冷却装置で一定温度に保っている。表面温度が時間変化しないことから、周囲との放射の熱平衡も成立すると判断してよいか。",
+      "choices": [
+        "温度が一定なら、照射と冷却による熱の出入りは全てゼロになる",
+        "冷却装置があれば、放射率と吸収率は物質によらず1になる",
+        "冷却を含めた全体の定常収支であり、放射の熱平衡とは限らない",
+        "温度が一定なら、波長ごとの放出と吸収は必ず等しくなる"
+      ],
+      "figure": null,
+      "field": "放射"
+    },
+    {
+      "id": "supp-fick-stagnant-versus-equimolar-v1",
+      "prompt": "一定温度・圧力の二成分層で、固定座標系に対してBは移動しないが、Aの全モル流束N_Aはゼロではない。Aの全流束のモデルを選ぶとき、与条件と整合する判断はどれか。",
+      "choices": [
+        "N_A+N_B=0なので、全モル流れを除く",
+        "N_A=0と置き、Aの拡散だけを計算する",
+        "J_A=0と置き、濃度勾配を常にゼロとする",
+        "N_B=0と置き、全モル流れの寄与を含める"
+      ],
+      "figure": null,
+      "field": "物質移動"
+    },
+    {
+      "id": "supp-condensation-gamma-shape-v1",
+      "prompt": "単位幅あたりの凝縮流量Γと膜厚δの関係Γ=ρ_l(ρ_l−ρ_v)gδ³/(3μ_l)は、垂直板・水平円柱・球など形状の異なる面の、どの位置でも成り立つとされる。その理由として正しいものはどれか。",
+      "choices": [
+        "膜厚δそのものが形状や位置によらず常に同じ値になるため、流量の関係も形状に左右されない",
+        "放物線型の速度分布が形状に依らず、形状差はδ(x)と重力成分g(x)に現れるため",
+        "重力加速度の大きさが形状によらず一定であり、膜の流れ方も形に影響されないため",
+        "温度分布が線形であることが、速度分布の積分結果を形状から切り離しているため"
+      ],
+      "figure": null,
+      "field": "対流"
+    },
+    {
+      "id": "supp-tube-correlation-orientation-placement-v1",
+      "prompt": "水平管のKandlikar形でR=(1−x)^0.8とし、各枝の係数をa,b、指数をm,nと略記する。f_oは方向因子、Fは流体・伝熱面の係数である。正しい方向因子の置き方はどれか。",
+      "choices": [
+        "R[a Co^m+b Boi^n F f_o]",
+        "R[a Co^m/f_o+b Boi^n F]",
+        "R[a Co^m f_o+b Boi^n F]",
+        "R[a Co^m+b Boi^n F]f_o"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-natural-geometry-cylinder-range-v1",
+      "prompt": "等温水平円柱のある層流相関は10⁻⁶≤Ra_D≤10⁹を推奨範囲とする。対象のRa_D=2.00×10¹⁰と計算されたとき、適切な判断はどれか。",
+      "choices": [
+        "式が有限値を返すので、同じ層流相関を外挿する",
+        "球の相関の範囲が広いので、係数を同じまま転用する",
+        "直径の代わりに面積を使い、Raの数値だけ小さくする",
+        "範囲外として、乱流等に適合する別相関を確認する"
+      ],
+      "figure": null,
+      "field": "対流"
+    }
+  ]
+}

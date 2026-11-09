@@ -1,0 +1,424 @@
+{
+  "purpose": "Blind current round-3 receipt spot check; answer-bearing files and prior workings excluded",
+  "selection": "Deliberate stratification by field and failure mode; includes the only book question, sign/units, distinct Reynolds definitions, nonlinear correlations and physical interpretation. Not a random statistical sample.",
+  "ids": [
+    "book-1-2-closed-energy-rate",
+    "supp-deep-heat-generation-center-v1",
+    "supp-deep-fin-base-heat-v1",
+    "supp-deep-fick-equimolar-flux-v1",
+    "supp-deep-fick-stefan-ratio-v1",
+    "supp-deep-rad-radiosity-v1",
+    "supp-found-ntu-thermal-v1",
+    "supp-next-parallel-extra-branch-v1",
+    "supp-batch2-pump-shaft-v1",
+    "supp-batch2-outer-base-u-v1",
+    "supp-batch2-fo-scale-t-v1",
+    "supp-batch3-left-boundary-outward-flux-v1",
+    "supp-batch3-generated-total-power-v1",
+    "supp-natural-beta-v1",
+    "supp-natural-geometry-cylinder-coefficient-v1",
+    "supp-natural-geometry-temperature-average-v1",
+    "supp-condensation-film-reynolds-v1",
+    "supp-condensation-reynolds-definition-v1",
+    "supp-transition-average-slope-v1",
+    "supp-tube-boiling-slip-void-v1",
+    "supp-system-clapeyron-increment-v1",
+    "supp-tube-boiling-subcooled-budget-v1",
+    "supp-forced-condensation-film-shear-flow-v1",
+    "supp-heat-pipe-pore-tradeoff-v1",
+    "supp-heatpipe-limit-entrainment-v1",
+    "supp-heatpipe-limit-capillary-load-v1",
+    "supp-kirchhoff-emission-weight-v1",
+    "supp-tube-correlation-single-phase-reference-v1",
+    "supp-phase-correlation-cylinder-h-v1",
+    "supp-phase-correlation-wire-geometry-v1",
+    "supp-dropwise-correlation-effective-coefficient-v1",
+    "supp-tube-correlation-horizontal-factor-v1"
+  ],
+  "questions": [
+    {
+      "id": "book-1-2-closed-energy-rate",
+      "prompt": "本書の式(1.1) Q=Wₖ+dU/dt に従う閉じた系を考えます。Qは系へ入る向きを正とする熱移動率、Wₖは系から出る向きを正とする仕事率です。Q=120 W、Wₖ=30 Wのとき、内部エネルギーの変化率 dU/dt はいくらですか。答えは整数のWで示してください。",
+      "choices": [
+        "+150 W",
+        "−90 W",
+        "+90 W",
+        "−150 W"
+      ],
+      "figure": null,
+      "field": "熱収支"
+    },
+    {
+      "id": "supp-deep-heat-generation-center-v1",
+      "prompt": "内部発熱が一様な一次元定常平板で、両面温度30.0 ℃、厚さ0.040 m、熱伝導率20 W/(m·K)、発熱率8.0×10⁴ W/m³とする。面内均一・一定物性のとき中央の最高温度は？",
+      "choices": [
+        "30.4 ℃",
+        "30.8 ℃",
+        "31.6 ℃",
+        "30.0 ℃"
+      ],
+      "figure": null,
+      "field": "熱伝導・内部発熱"
+    },
+    {
+      "id": "supp-deep-fin-base-heat-v1",
+      "prompt": "断熱先端の一定断面フィンで、k=200 W/(m·K)、h=25 W/(m²·K)、P=0.040 m、Ac=1.0×10⁻⁴ m²、L=0.10 m、基部と周囲の温度差60 K。m=7.0711 m⁻¹、tanh(mL)=0.608859のとき、基部から入る熱移動率q_bは？",
+      "choices": [
+        "4.500 W",
+        "6.000 W",
+        "5.166 W",
+        "8.485 W"
+      ],
+      "figure": null,
+      "field": "伝導・フィン設計"
+    },
+    {
+      "id": "supp-deep-fick-equimolar-flux-v1",
+      "prompt": "T=300 K、P=101325 Paの二成分理想気体で、D_AB=2.0×10⁻⁵ m²/s、層厚L=0.010 m、y_A(0)=0.20、y_A(L)=0.05。定常・一定D_AB・全モル流束0の等モル相互拡散におけるN_Aは？",
+      "choices": [
+        "+0.01219 mol/(m²·s)",
+        "−0.01219 mol/(m²·s)",
+        "+0.01396 mol/(m²·s)",
+        "+0.00122 mol/(m²·s)"
+      ],
+      "figure": null,
+      "field": "物質移動・拡散"
+    },
+    {
+      "id": "supp-deep-fick-stefan-ratio-v1",
+      "prompt": "一定c・D_ABの一次元定常二成分層でy_A(0)=0.20、y_A(L)=0.05とする。同一境界条件で成分Bが停滞（N_B=0）するAの全モル流束は、等モル相互拡散（N_A+N_B=0）のAの流束のおよそ何倍か？",
+      "choices": [
+        "1.00 倍",
+        "2.00 倍",
+        "0.87 倍",
+        "1.15 倍"
+      ],
+      "figure": null,
+      "field": "物質移動・拡散"
+    },
+    {
+      "id": "supp-deep-rad-radiosity-v1",
+      "prompt": "不透明・拡散・灰色面（ε=0.80）が400 Kで、外部からの照射量G=459.300 W/m²を受ける。黒体発散度E_b=1451.616 W/m²のとき、射度J=εE_b+(1−ε)Gは？",
+      "choices": [
+        "1161.293 W/m²（灰色面の自己放出のみ）",
+        "1253.153 W/m²（自己放出＋反射）",
+        "793.852 W/m²（正味熱流束）",
+        "459.300 W/m²（照射量そのもの）"
+      ],
+      "figure": null,
+      "field": "熱放射・放射交換"
+    },
+    {
+      "id": "supp-found-ntu-thermal-v1",
+      "prompt": "高温側がほぼ60℃一定、冷側入口20℃、C_min=300 W/K、UA=300 W/K、C_r≈0。ε=1−exp(−NTU)を用いた熱移動率は約？",
+      "choices": [
+        "4.415 kW",
+        "6.000 kW",
+        "7.585 kW",
+        "12.00 kW"
+      ],
+      "figure": null,
+      "field": "熱交換器・有効度"
+    },
+    {
+      "id": "supp-next-parallel-extra-branch-v1",
+      "prompt": "温度差60 Kの両端に、熱抵抗0.10 K/Wと0.20 K/Wの経路が並列にある。さらに0.30 K/Wの経路を並列追加すると、総熱移動率は？",
+      "choices": [
+        "600 W",
+        "900 W",
+        "1100 W",
+        "1500 W"
+      ],
+      "figure": null,
+      "field": "定常熱伝導・熱抵抗"
+    },
+    {
+      "id": "supp-batch2-pump-shaft-v1",
+      "prompt": "圧力損失50 kPa、体積流量.0010 m³/s、効率η=.50のポンプ必要軸動力は？",
+      "choices": [
+        "25 W",
+        "50 W",
+        "100 W",
+        "200 W"
+      ],
+      "figure": null,
+      "field": "熱交換器設計と流動"
+    },
+    {
+      "id": "supp-batch2-outer-base-u-v1",
+      "prompt": "内側基準U_i=100 W/(m²K)、A_i=.50 m²、A_o=1.00 m²の装置でU_oはいくらか。",
+      "choices": [
+        "25 W/(m²K)",
+        "50 W/(m²K)",
+        "100 W/(m²K)",
+        "200 W/(m²K)"
+      ],
+      "figure": null,
+      "field": "総括熱伝達係数と円筒熱抵抗"
+    },
+    {
+      "id": "supp-batch2-fo-scale-t-v1",
+      "prompt": "元L=.020 m、t=100 s、同じ熱拡散率の相似平板をL=.040 mにした。同じFoにする経過時間は？",
+      "choices": [
+        "100 s",
+        "200 s",
+        "400 s",
+        "800 s"
+      ],
+      "figure": null,
+      "field": "次元解析・相似条件"
+    },
+    {
+      "id": "supp-batch3-left-boundary-outward-flux-v1",
+      "prompt": "右向き熱流束q_x″=+200 W/m²で一定の平板。左面の外向き法線は−x向きである。左面の外向き熱流束成分は？",
+      "choices": [
+        "−200 W/m²",
+        "−100 W/m²",
+        "+100 W/m²",
+        "+200 W/m²"
+      ],
+      "figure": null,
+      "field": "境界値問題・熱流束の符号"
+    },
+    {
+      "id": "supp-batch3-generated-total-power-v1",
+      "prompt": "全厚さ0.10 m、平面面積A=1.0 m²の平板で一様q‴=20000 W/m³の発熱がある。総発熱率は？",
+      "choices": [
+        "500 W",
+        "1000 W",
+        "2000 W",
+        "4000 W"
+      ],
+      "figure": null,
+      "field": "内部発熱・熱伝導支配式"
+    },
+    {
+      "id": "supp-natural-beta-v1",
+      "prompt": "理想気体を小さな温度差で扱い、体膨張係数β≈1/T_fと近似する。膜温度T_f=26.85 ℃のとき、βはいくらか。絶対温度換算には273.15を用い、有効数字3桁とする。",
+      "choices": [
+        "0.0372 K⁻¹",
+        "0.00333 K⁻¹",
+        "0.000333 K⁻¹",
+        "300 K⁻¹"
+      ],
+      "figure": null,
+      "field": "対流"
+    },
+    {
+      "id": "supp-natural-geometry-cylinder-coefficient-v1",
+      "prompt": "等温水平円柱に適合するNu_D=0.36+0.518Ra_D^(1/4)/[1+(0.559/Pr)^(9/16)]^(4/9)を使う。Ra_D=64327.8689、Pr=0.800、k=0.0280 W/(m·K)、直径D=0.0400 mのときh=Nu_Dk/Dはいくらか。有効数字3桁とする。放射や端面を含めない。",
+      "choices": [
+        "4.68 W/(m²·K)",
+        "6.69 W/(m²·K)",
+        "9.36 W/(m²·K)",
+        "4.43 W/(m²·K)"
+      ],
+      "figure": null,
+      "field": "対流"
+    },
+    {
+      "id": "supp-natural-geometry-temperature-average-v1",
+      "prompt": "一様熱流束板の仮想温度差モデルがΔT(x)=ΔT_L(x/L)^(1/5)、0≤x≤Lである。ΔT_L=12.0 Kとしたとき、長さ方向の平均(1/L)∫₀ᴸΔT(x)dxはいくらか。中点温度差や下流端とは区別する。",
+      "choices": [
+        "10.0 K",
+        "10.4 K",
+        "12.0 K",
+        "6.00 K"
+      ],
+      "figure": null,
+      "field": "対流"
+    },
+    {
+      "id": "supp-condensation-film-reynolds-v1",
+      "prompt": "垂直板の幅b=0.40 m、板下端の凝縮流量ṁ=5.0×10⁻⁴ kg/s、液体粘度μ_l=2.0×10⁻⁴ Pa·sとする。液膜Reの定義をRe_f=4ṁ/(bμ_l)としたとき値はいくらか。有効数字2桁とする。",
+      "choices": [
+        "6.3",
+        "13",
+        "25",
+        "50"
+      ],
+      "figure": null,
+      "field": "対流"
+    },
+    {
+      "id": "supp-condensation-reynolds-definition-v1",
+      "prompt": "液膜レイノルズ数にはRe_c=Γ/μ_lの定義のほか、水力直径に基づく4Γ/μ_lの定義も広く使われる。ある膜でΓ/μ_l=300であったとき、4Γ/μ_lの定義では値はいくらになるか。",
+      "choices": [
+        "7.5×10¹",
+        "3.0×10²",
+        "6.0×10²",
+        "1.2×10³"
+      ],
+      "figure": null,
+      "field": "対流"
+    },
+    {
+      "id": "supp-transition-average-slope-v1",
+      "prompt": "滑らかな二領域学習モデルで、ある状態のf=0.40、q″_wet=400 kW/m²、q″_dry=40 kW/m²とする。温度に対する局所傾きはdq″_wet/dT=2.0、dq″_dry/dT=0.20 kW/(m²·K)、df/dT=−0.0050 K⁻¹。積の微分を含めたd q̄″/dTはいくらか。有効数字2桁とする。",
+      "choices": [
+        "+0.92 kW/(m²·K)",
+        "−1.8 kW/(m²·K)",
+        "+2.7 kW/(m²·K)",
+        "−0.88 kW/(m²·K)"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-tube-boiling-slip-void-v1",
+      "prompt": "仮想の定常二相流で質量流量乾き度x=0.10、ρ_l=1000 kg/m³、ρ_v=10 kg/m³、滑り比S=u_v/u_l=2.0。断面平均の各相速度と密度を使うモデルα=1/[1+((1−x)/x)(ρ_v/ρ_l)S]でボイド率を求める。有効数字3桁。",
+      "choices": [
+        "0.917",
+        "0.100",
+        "0.957",
+        "0.847"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-system-clapeyron-increment-v1",
+      "prompt": "仮想の純物質の液体・蒸気平衡で、T_sat=400 K、比体積差v_v−v_l=0.50 m³/kg、潜熱h_fg=2.0×10⁶ J/kgとする。小さい圧力増分Δp=4.0 kPaの間、dT_sat/dp=T_sat(v_v−v_l)/h_fgを一定と近似する。飽和温度の増分はいくらか。有効数字2桁とする。",
+      "choices": [
+        "0.00040 K",
+        "0.40 K",
+        "4.0 K",
+        "40 K"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-tube-boiling-subcooled-budget-v1",
+      "prompt": "仮想の一定圧力流路に過冷却液がṁ=0.020 kg/sで入り、飽和液までの比エンタルピー差は100 kJ/kg、潜熱は2.0×10⁶ J/kgとする。流体への総入熱3.0 kW、他のエネルギー項なし、出口は局所平衡とする。出口蒸気の質量乾き度はいくらか。",
+      "choices": [
+        "0.0500",
+        "0.1000",
+        "0.0250",
+        "0.0750"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-forced-condensation-film-shear-flow-v1",
+      "prompt": "下向きを正とする外部垂直板の仮想層流液膜で、δ=1.0×10⁻⁴ m、μ=1.0×10⁻³ Pa·s、ρ_l=1000 kg/m³、ρ_vを無視、g=10 m/s²、下向き界面せん断τ_i=+0.10 Pa。単位幅流量Γ=ρ_l(ρ_l−ρ_v)gδ³/(3μ)+ρ_lτ_iδ²/(2μ)を使う。Γを有効数字3桁で求める。",
+      "choices": [
+        "5.00×10⁻⁴ kg/(m·s)",
+        "2.83×10⁻³ kg/(m·s)",
+        "3.83×10⁻³ kg/(m·s)",
+        "3.33×10⁻³ kg/(m·s)"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-heat-pipe-pore-tradeoff-v1",
+      "prompt": "独立の単純モデルで毛管圧力をa/r、液流損失をbQ̇/r²とする（a,b>0一定）。蒸気損失と重力を無視し、毛管限界はa/r=bQ̇_max/r²。細孔半径だけを半分にすると、このモデルのQ̇_maxはどう変わるか。",
+      "choices": [
+        "変わらない",
+        "半分になる",
+        "2倍になる",
+        "4倍になる"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-heatpipe-limit-entrainment-v1",
+      "prompt": "学習用に液体を静止とし、所与の同伴基準We_c=ρ_vv_v²ℓ/σを使えると仮定する。We_c=0.500、ρ_v=2.00 kg/m³、ℓ=0.00100 m、σ=0.0400 N/m、A_v=5.00×10⁻⁵ m²、h_fg=1.00×10⁶ J/kg。Q̇_ent=ρ_vA_vh_fgv_vの候補値はいくらか。有効数字3桁とし、普遍的な実機の同伴限界とはしない。",
+      "choices": [
+        "316 W",
+        "447 W",
+        "632 W",
+        "100 W"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-heatpipe-limit-capillary-load-v1",
+      "prompt": "仮想の線形圧損モデルで、利用可能毛管圧力4000 Pa、液体の還流を妨げる重力項800 Pa、流動圧損の和Δp_l+Δp_v=(125.10 Pa/W)Q̇とする。他の限界は別評価として、毛管条件が等号になるQ̇の候補値はいくらか。有効数字3桁とする。",
+      "choices": [
+        "38.4 W",
+        "2.56 W",
+        "25.6 W",
+        "32.0 W"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-kirchhoff-emission-weight-v1",
+      "prompt": "独立の二帯モデルで、表面の帯別放射率は0.60と0.20。表面温度の黒体総放射E_b=1000 W/m²のうち、各帯の割合は0.25と0.75である。全半球放射率と自己放出の組合せはどれか。",
+      "choices": [
+        "ε=0.80、E=800 W/m²",
+        "ε=0.30、E=300 W/m²",
+        "ε=0.40、E=400 W/m²",
+        "ε=0.50、E=500 W/m²"
+      ],
+      "figure": null,
+      "field": "放射"
+    },
+    {
+      "id": "supp-tube-correlation-single-phase-reference-v1",
+      "prompt": "液単相基準にGnielinski形Nu_lo=(f_D/8)(Re_lo−1000)Pr_l/[1+12.7sqrt(f_D/8)(Pr_l^(2/3)−1)]を採用できるとする。Re_lo=50000、Pr_l=4.00、Darcy係数f_D=0.0210、k_l=0.200 W/(m·K)、D=0.0200 mのときh_lo=Nu_lok_l/Dはいくらか。有効数字3桁とする。",
+      "choices": [
+        "2.59×10³ W/(m²·K)",
+        "2.59×10² W/(m²·K)",
+        "2.59×10⁴ W/(m²·K)",
+        "1.03×10⁴ W/(m²·K)"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-phase-correlation-cylinder-h-v1",
+      "prompt": "静止飽和液中の水平円筒を連続層流蒸気膜が覆うと仮定する。小径補正・放射を除くBromley形h_b=0.62[k_v³ρ_v(ρ_l−ρ_v)g h_fg*/(μ_v DΔT)]^(1/4)を使う。k_v=0.100 W/(m·K)、ρ_v=0.500 kg/m³、ρ_l=900 kg/m³、g=10.0 m/s²、h_fg*=2.45855×10⁶ J/kg、μ_v=4.00×10⁻⁵ Pa·s、D=0.0500 m、ΔT=300 Kのときh_bはいくらか。指定した物性評価条件は満たすものとし、有効数字3桁とする。",
+      "choices": [
+        "2.28×10² W/(m²·K)",
+        "1.14×10² W/(m²·K)",
+        "4.57×10² W/(m²·K)",
+        "3.68×10² W/(m²·K)"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-phase-correlation-wire-geometry-v1",
+      "prompt": "水平細線の式q″_min,wire/q″_min,B=0.515[18/{R*²(2R*²+1)}]^(1/4)を使う。半径を毛管長で割ったR*=0.500、同じ物性の平板基準値q″_min,B=45.0 kW/m²を与える。細線の基準熱流束はいくらか。有効数字3桁とする。",
+      "choices": [
+        "36.3 kW/m²",
+        "118 kW/m²",
+        "45.0 kW/m²",
+        "61.0 kW/m²"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-dropwise-correlation-effective-coefficient-v1",
+      "prompt": "適合する滴状凝縮経験式q″=1000 t_C^0.8(5θ+0.3θ²) W/m²を使う。t_C=60.0、θ=4.00での実効熱伝達係数h_eff=q″/ΔT_sはいくらか。ΔT_s=4.00 K、有効数字3桁とする。微分勾配とは区別する。",
+      "choices": [
+        "6.56×10⁵ W/(m²·K)",
+        "1.32×10⁵ W/(m²·K)",
+        "1.64×10⁵ W/(m²·K)",
+        "1.96×10⁵ W/(m²·K)"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    },
+    {
+      "id": "supp-tube-correlation-horizontal-factor-v1",
+      "prompt": "水平管の方向因子はFr_lo=G²/(ρ_l²gD)、Fr_lo<0.04でf_o=(25Fr_lo)^0.3、それ以外は1である。G=50.0 kg/(m²·s)、ρ_l=800 kg/m³、g=10.0 m/s²、D=0.0200 mのときf_oはいくらか。有効数字3桁とする。",
+      "choices": [
+        "0.488",
+        "0.806",
+        "1.00",
+        "0.699"
+      ],
+      "figure": null,
+      "field": "沸騰・相変化"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "baseline": "925f6508a3369e428e3de90a4fe2b82f609dab01",
+  "total": 751,
+  "unique_questions": 751,
+  "peer_claim_count": 422,
+  "peer_unique": 422,
+  "peer_unknown": [],
+  "checks": {
+    "codex41": {
+      "count": 41,
+      "unique": 41,
+      "invalid": []
+    },
+    "muse289": {
+      "count": 289,
+      "unique": 289,
+      "invalid": []
+    },
+    "numeric": {
+      "packet_sha256": "2cc23931861c6cc9086e36440d0037ef0b05815bad9b47cef69a76aaff26fcce",
+      "frozen_packet_sha256": "2cc23931861c6cc9086e36440d0037ef0b05815bad9b47cef69a76aaff26fcce",
+      "packet_hash_matches": true,
+      "count": 32,
+      "key_exposure": "No saved keys, answer-bearing question content, or prior receipt workings consulted before this file was first written. Prior report mentioned separate sample values; selected numeric sample excludes those specific prior sample questions."
+    },
+    "concept": {
+      "packet_sha256": "66c324094fba072e22fb4a8bcbed59e846c64f3170220c01c018500877d9a973",
+      "frozen_packet_sha256": "66c324094fba072e22fb4a8bcbed59e846c64f3170220c01c018500877d9a973",
+      "packet_hash_matches": true,
+      "count": 16,
+      "key_exposure": "Only the answer-free conceptual packet and preserved numerical solution files were inspected before freezing these conceptual judgments. No current question keys or prior receipt workings were consulted."
+    }
+  },
+  "union": 751,
+  "uncovered": [],
+  "overlaps": {
+    "peer_codex": [
+      "supp-transient-gap-one-term-initial-overshoot-v1"
+    ],
+    "muse289_prior": []
+  },
+  "sample_size": 48,
+  "sample_mismatches": [],
+  "sample_packet_differences": [],
+  "limits": "751 is ID coverage of accepted audit records; sample48 is deliberately stratified, not a random error-rate estimate. Peer422 are ID-based records accepted in loop2, not 422 newly content-pinned receipts. This check does not prove every working scientifically correct."
+}

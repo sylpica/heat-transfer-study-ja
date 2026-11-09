@@ -1,0 +1,11 @@
+codex round 2: receipts 41, valid 41, invalid []
+Muse round 3: receipts 289, valid 289, invalid []
+{
+  "total": 751,
+  "muse_round2_claims": 422,
+  "codex_round2_receipts_valid": 41,
+  "muse_round3_receipts_valid": 289,
+  "covered_union": 751,
+  "uncovered_count": 0,
+  "uncovered": []
+}

@@ -1,0 +1,480 @@
+{
+  "baseline": "925f6508a3369e428e3de90a4fe2b82f609dab01",
+  "total": 751,
+  "unique_questions": 751,
+  "peer_claim_count": 422,
+  "peer_unique": 422,
+  "peer_unknown": [],
+  "checks": {
+    "codex41": {
+      "count": 41,
+      "unique": 41,
+      "invalid": []
+    },
+    "muse289": {
+      "count": 289,
+      "unique": 289,
+      "invalid": []
+    },
+    "numeric": {
+      "packet_sha256": "2cc23931861c6cc9086e36440d0037ef0b05815bad9b47cef69a76aaff26fcce",
+      "frozen_packet_sha256": "2cc23931861c6cc9086e36440d0037ef0b05815bad9b47cef69a76aaff26fcce",
+      "packet_hash_matches": true,
+      "count": 32,
+      "key_exposure": "No saved keys, answer-bearing question content, or prior receipt workings consulted before this file was first written. Prior report mentioned separate sample values; selected numeric sample excludes those specific prior sample questions."
+    },
+    "concept": {
+      "packet_sha256": "66c324094fba072e22fb4a8bcbed59e846c64f3170220c01c018500877d9a973",
+      "frozen_packet_sha256": "66c324094fba072e22fb4a8bcbed59e846c64f3170220c01c018500877d9a973",
+      "packet_hash_matches": true,
+      "count": 16,
+      "key_exposure": "Only the answer-free conceptual packet and preserved numerical solution files were inspected before freezing these conceptual judgments. No current question keys or prior receipt workings were consulted."
+    }
+  },
+  "union": 751,
+  "uncovered": [],
+  "overlaps": {
+    "peer_codex": [
+      "supp-transient-gap-one-term-initial-overshoot-v1"
+    ],
+    "muse289_prior": []
+  },
+  "sample_size": 48,
+  "sample_mismatches": [],
+  "sample_packet_differences": [],
+  "sampled": [
+    {
+      "id": "book-1-2-closed-energy-rate",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-deep-heat-generation-center-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-deep-fin-base-heat-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-deep-fick-equimolar-flux-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-deep-fick-stefan-ratio-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-deep-rad-radiosity-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-found-ntu-thermal-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-next-parallel-extra-branch-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-batch2-pump-shaft-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-batch2-outer-base-u-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-batch2-fo-scale-t-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-batch3-left-boundary-outward-flux-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-batch3-generated-total-power-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-natural-beta-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-natural-geometry-cylinder-coefficient-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-natural-geometry-temperature-average-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-condensation-film-reynolds-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-condensation-reynolds-definition-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-transition-average-slope-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-tube-boiling-slip-void-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-system-clapeyron-increment-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-tube-boiling-subcooled-budget-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-forced-condensation-film-shear-flow-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-heat-pipe-pore-tradeoff-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-heatpipe-limit-entrainment-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-heatpipe-limit-capillary-load-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-kirchhoff-emission-weight-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-tube-correlation-single-phase-reference-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-phase-correlation-cylinder-h-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-phase-correlation-wire-geometry-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-dropwise-correlation-effective-coefficient-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-tube-correlation-horizontal-factor-v1",
+      "kind": "numeric",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-deep-rate-vs-state-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-found-slab-nonlinear-limit-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-found-ntu-config-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-next-local-versus-average-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": "Read the answer as distinguishing the quantities and their definitions: specially constructed nonmonotone distributions can have mean equal to the endpoint despite variation, so literal universal numerical inequality is too strong."
+    },
+    {
+      "id": "supp-batch3-pure-neumann-unique-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-batch3-variable-k-equation-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-minimum-negative-slope-feedback-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-tube-boiling-equilibrium-quality-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-film-radiation-coupling-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-forced-condensation-opposing-shear-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 0,
+      "key": 0,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-dropwise-distribution-not-mean-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-kirchhoff-steady-versus-equilibrium-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-fick-stagnant-versus-equimolar-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-condensation-gamma-shape-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 1,
+      "key": 1,
+      "matches": true,
+      "qualification": "The displayed g must mean the local tangential gravity component. If interpreted as the constant magnitude, the claim of validity at every point on a cylinder or sphere is false. The selected option explicitly supplies g(x), so its intended interpretation is recoverable."
+    },
+    {
+      "id": "supp-tube-correlation-orientation-placement-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 2,
+      "key": 2,
+      "matches": true,
+      "qualification": null
+    },
+    {
+      "id": "supp-natural-geometry-cylinder-range-v1",
+      "kind": "concept",
+      "prompt_choices_equal": true,
+      "choice": 3,
+      "key": 3,
+      "matches": true,
+      "qualification": null
+    }
+  ],
+  "limits": "751 is ID coverage of accepted audit records; sample48 is deliberately stratified, not a random error-rate estimate. Peer422 are ID-based records accepted in loop2, not 422 newly content-pinned receipts. This check does not prove every working scientifically correct."
+}

@@ -1,0 +1,15 @@
+{
+  "pdf_page": 517,
+  "book_page": 503,
+  "png_sha256": "f5122015526430eb1006600e424cbc3d3c6e94d5c6c82097acb40d51bfb2025f",
+  "source_denominator": "(rho_f+rho_g)^2",
+  "application_rows": [
+    {
+      "file": "data/sections/9-5-ja.json",
+      "block": 3,
+      "expression": "qmin,Berenson = 0.09·ρg·hfg·[σg(ρf − ρg)/(ρf + ρg)²]^(1/4)"
+    }
+  ],
+  "image_redistributed": false,
+  "verdict": "No counterevidence to Muse non-finding; preserve Berenson formulation, do not substitute a distinct approximation."
+}

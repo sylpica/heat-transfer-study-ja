@@ -46,3 +46,13 @@ R3-07：原典PDF440・書籍426の式(8.23)は `C1=Pr/[3(20/21+Pr)]`。現在�
 証拠：[coverage/current-coverage.json](coverage/current-coverage.json)、固定作業解とパケット、[science/823-propagation.json](science/823-propagation.json)。次は非所見2件の独立判定。
 
 チェックポイント1のpush成功を確認済み（67a0cd6）。書き込みAPI累計0件、完了Git push累計1回。この第2チェックポイントを追加pushする。
+
+## 第3優先：非所見2件への反証（完了）
+
+**式(9.34)：反証なし。** 原典PDF517・書籍503のBerenson式を画像で再確認した。分母は明確に `(ρf+ρg)²` であり、現在の翻訳式を別式へ置き換える根拠はない。和を蒸気密度だけの項へ置換する等の他定式化・近似と混同しない。原画像のハッシュと実装箇所は [science/934-verdict.json](science/934-verdict.json)。この判定は原典適合の確認であり、相関式を全条件で検証したとの主張ではない。
+
+**文字化け：製品欠陥との判定への反証あり、Museの非所見裁定を維持。** 対象 `supp-film-versus-condensation-v1` の第4誤答理由は、基準Gitオブジェクト・直前コミットc5b445e・現在ソース・既存distで同じ正常なUTF-8文字列だった。問題集全751件の全文字列も厳密UTF-8デコード、U+FFFD、典型的文字化け候補、不可視制御文字の検査を通過した。候補0。保存されたphase2の苦情文には置換文字があるが、製品側には再現しない。どの読み取り経路が置換文字を生じさせたかまでは証明できないため、「特定ツールが原因」と断定しない。ヒューリスティック検査は全種類の文字化け不存在の証明でもない。
+
+読み取り専用の `coverage/encoding-check.py` は監査用パスを修正して実行し、[coverage/encoding-evidence.json](coverage/encoding-evidence.json) に生バイトSHA・コードポイント・過去比較を保存した。製品側の修正はない。
+
+チェックポイント2のpush成功を確認済み（e95beaa）。書き込みAPI累計0件、完了Git push累計2回。この第3チェックポイントを追加pushする。次はalt形式と、余力内の未照合ページ探索。

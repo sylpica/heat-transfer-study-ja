@@ -1,0 +1,12 @@
+{
+  "output": "docs/audit/codex-round-03/coverage/encoding-evidence.json",
+  "current_product_sha256": "569226ad3af9163035109f78c035e9a22a2c0a643a2e8fdb24053299275067e6",
+  "current_source_dist_equal": true,
+  "target_unchanged_since_before_round3": true,
+  "candidate_counts": {
+    "data/questions.json": 0,
+    "dist/data/questions.json": 0,
+    "git:925f6508a3369e428e3de90a4fe2b82f609dab01:data/questions.json": 0,
+    "git:c5b445e:data/questions.json": 0
+  }
+}

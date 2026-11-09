@@ -7,7 +7,7 @@ import subprocess
 import unicodedata
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[5]
+ROOT = Path(__file__).resolve().parents[4]
 HERE = Path(__file__).resolve().parent
 TARGET = 'supp-film-versus-condensation-v1'
 BASELINE = '925f6508a3369e428e3de90a4fe2b82f609dab01'

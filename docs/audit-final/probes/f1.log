@@ -1,0 +1,26 @@
+INFO 章エクストラボタン: [{"ch":"ch1","visible":true},{"ch":"ch2","visible":true},{"ch":"ch3","visible":true},{"ch":"ch4","visible":true},{"ch":"ch5","visible":true},{"ch":"ch6","visible":true},{"ch":"ch7","visible":true},{"ch":"ch8","visible":true},{"ch":"ch9","visible":true},{"ch":"ch10","visible":true},{"ch":"ch11","visible":true}]
+INFO 付録ボタン: [{"ap":"A","visible":true},{"ap":"B","visible":true}]
+INFO 第1章エクストラ: {"panel":true,"groupSummaries":["問題（46問）","参考文献（22件）"],"problems":46,"references":22}
+OK   第1章：問題46件が一覧表示される（データ実数と一致）
+OK   第1章：参考文献22件が表示される（データ実数と一致）
+INFO 問題1.1本文: {"len":239,"hasCork":true,"hasFullEnd":true,"bodyScrollH":391,"bodyClientH":391}
+OK   問題1.1の題文が末尾まで表示される（見切れなし）
+OK   第1章エクストラ 375px 横はみ出し 0
+INFO 参考文献1.1: {"len":189,"text":"[1.1] J. Fourier熱の解析的理論原題：The Analytical Theory of HeatDover Publications, Inc., New York, 1955フーリエの1822年のモノグラフの復刻。https://archive.org/details/analyticaltheory00fourrich ↗書籍 p.47 · PDF p.61"}
+OK   参考文献1.1（Fourier）が著者・邦題つきで表示される
+OK   第1章参考文献 375px 横はみ出し 0
+INFO 第6章エクストラ: {"panel":true,"groupSummaries":["問題（51問）","参考文献（37件）"],"problems":51,"references":37,"tables":3}
+OK   第6章：問題51件が表示される（表ブロックを問題と数えない）
+OK   第6章：参考文献37件
+OK   第6章：問題付属の表3件が描画される
+OK   第6章エクストラ 375px 横はみ出し 0
+INFO 付録A: {"panel":true,"items":41,"heading":"付録A 参考文献","longestLen":405,"longestHead":"[A.11] E. W. Lemmon, I. H. Bell, M. L. Huber, and M. O. McLindenNIST標準参照データベース23：基準流体の熱力学・輸送物性 REFPROP、バージョン10.0原題：NIST "}
+OK   付録A：参考文献41件が表示される
+OK   付録A：最長の書誌（405字）も項目として描画される
+OK   付録A 375px 横はみ出し 0
+INFO 付録B: {"panel":true,"items":1,"heading":"付録B 参考文献","longestLen":256,"longestHead":"[B.1] A. Thompson and B. N. Taylor国際単位系（SI）の使用ガイド原題：Guide for the Use of the International System of Units (SI)National "}
+OK   付録B：参考文献1件が表示される（A+B=42件でデータ実数と一致）
+OK   付録B 375px 横はみ出し 0
+INFO F1 console errors（観察）: ["console: Failed to load resource: the server responded with a status of 404 (Not Found)"]
+OK   F1 pageerror 0
+F1 DONE

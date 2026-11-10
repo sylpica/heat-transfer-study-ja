@@ -1,0 +1,20 @@
+INFO 一覧ブックマーク: ☆ → ★
+OK   用語一覧でブックマークを付けられる（☆→★）
+INFO 単語帳初期: {"side":"表","count":"1 / 504","face":"熱heat押すと裏返ります","stage":true}
+OK   単語帳が開き、最初のカード表面が表示される
+INFO 反転後: {"side":"裏","back":"温度差があるために、ある物体や領域から別の物体や領域へ移るエネルギー。熱は物体に蓄えられた物質ではなく、エネルギーの移動として扱う。本書 第1.1節／書籍 p."}
+OK   カードを押すと裏面（説明）に反転する
+INFO カード内ブックマーク: {"name":"第1章 · 既存の原本関連・補足用語裏☆ 温度差があるために","clicked":true,"before":"☆"} → ★
+OK   単語帳カードの中でもブックマークを付けられる
+INFO ブックマークのみデッキ: {"count":"1 / 2","face":"熱heat押すと裏返ります"}
+OK   「ブックマークのみ」でブックマーク用語だけのデッキになる（総数 2）
+OK   単語帳（ブックマークのみ） 1280px 横はみ出し 0
+INFO リロード後の単語帳状態: {"mode":"true","scope":"bookmarks","count":"1 / 2"}
+OK   リロード後も単語帳モードが保持される
+INFO リロード後の一覧ブックマーク: ★
+OK   リロード後も用語ブックマークが保持される
+INFO 別コンテキスト(375px)では新規端末扱いのためブックマークは無い想定: ☆
+OK   用語集 375px 横はみ出し 0
+INFO F3 console errors（観察）: ["console: Failed to load resource: the server responded with a status of 404 (Not Found)","console: Failed to load resource: the server responded with a status of 404 (Not Found)","console: Failed to load resource: the server responded with a status of 404 (Not Found)"]
+OK   F3 pageerror 0
+F3 DONE

@@ -1,0 +1,102 @@
+{
+ "packet": 5,
+ "count": 8,
+ "questions": [
+  {
+   "id": "supp-found-ntu-config-v1",
+   "prompt": "同じNTUとC_rで熱交換器の配置を並流から向流に変えた。正しい判断は？",
+   "choices": [
+    "流路が変わっても有効度は必ず同じになる",
+    "有効度はNTUだけ分かれば一意に決まる",
+    "熱容量流量比は向流になると消えてしまう",
+    "有効度は流路配置に応じた関係式で求める"
+   ],
+   "figure": null,
+   "field": "熱交換器・有効度"
+  },
+  {
+   "id": "supp-found-pr-fluid-v1",
+   "prompt": "流体動粘度ν=1.5×10⁻⁵ m²/s、流体熱拡散率α_f=2.0×10⁻⁵ m²/s。Prは？",
+   "choices": [
+    "0.50",
+    "0.75",
+    "1.00",
+    "1.50"
+   ],
+   "figure": null,
+   "field": "対流・境界層"
+  },
+  {
+   "id": "supp-found-resistor-interface-temperature-v1",
+   "prompt": "左100℃、右40℃の定常直列経路で、左から順にR₁=0.10 K/W、R₂=0.20 K/Wがある。二つの抵抗の間の温度は？",
+   "choices": [
+    "40 ℃",
+    "60 ℃",
+    "80 ℃",
+    "100 ℃"
+   ],
+   "figure": null,
+   "field": "定常熱伝導・熱抵抗"
+  },
+  {
+   "id": "supp-found-three-mode-conduction-v1",
+   "prompt": "厚さ0.10 m、k=2.0 W/(m·K)、面積0.50 m²の平板の両面に20 Kの温度差がある。一定k・一次元定常・発熱なしの伝導熱移動率の大きさは？",
+   "choices": [
+    "100 W",
+    "150 W",
+    "200 W",
+    "400 W"
+   ],
+   "figure": null,
+   "field": "基本熱収支・熱移動機構"
+  },
+  {
+   "id": "supp-gas-layer-order-v1",
+   "prompt": "非散乱の等温層を二つ通す。一帯の各層の透過率は共に0.50で、黒体方向強度は層Aが100、層Bが20 W/(m²·sr)。入口強度0、境界反射なし。A→Bの出口と、B→Aの出口の組合せはどれか。各層でI_out=0.5I_in+0.5I_bを使う。",
+   "choices": [
+    "A→B: 25、B→A: 25 W/(m²·sr)",
+    "A→B: 60、B→A: 60 W/(m²·sr)",
+    "A→B: 55、B→A: 35 W/(m²·sr)",
+    "A→B: 35、B→A: 55 W/(m²·sr)"
+   ],
+   "figure": null,
+   "field": "放射"
+  },
+  {
+   "id": "supp-heat-pipe-gravity-assisted-margin-v1",
+   "prompt": "仮想の毛管条件で利用可能圧力3000 Pa、液体・蒸気の流動損失の和2000 Pa、ρ_l=800 kg/m³、g=10 m/s²。蒸発部は凝縮部より0.20 m低い。蒸気静水圧を無視し、Δz=z_evap−z_cond、余裕=Δp_cap−(Δp_loss+ρ_l gΔz)とする。余裕はいくらか。",
+   "choices": [
+    "1.0×10³ Pa",
+    "4.6×10³ Pa",
+    "2.6×10³ Pa",
+    "−6.0×10² Pa"
+   ],
+   "figure": null,
+   "field": "沸騰・相変化"
+  },
+  {
+   "id": "supp-next-cold-outlet-with-loss-v1",
+   "prompt": "定常熱交換器で温側の失熱50 kW、冷側の受熱46 kW、冷側C_c=2000 W/K、冷側入口20℃。冷側出口温度は？",
+   "choices": [
+    "23 ℃",
+    "40 ℃",
+    "43 ℃",
+    "50 ℃"
+   ],
+   "figure": null,
+   "field": "熱交換器の熱収支"
+  },
+  {
+   "id": "supp-next-dimensionless-centre-temperature-v1",
+   "prompt": "非定常平板で初期一様温度100℃、周囲温度20℃、ある時刻の中心無次元超過温度θ_c=(T_c−T∞)/(T_i−T∞)=0.40。中心温度は？",
+   "choices": [
+    "40 ℃",
+    "52 ℃",
+    "60 ℃",
+    "72 ℃"
+   ],
+   "figure": null,
+   "field": "非定常熱伝導"
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "packet": 2,
+ "count": 8,
+ "questions": [
+  {
+   "id": "supp-applied-8-3-v1",
+   "prompt": "自然対流でg=9.81 m/s²、体膨張係数β=0.003 K⁻¹、|ΔT|=10 K、代表長さL=0.20 m、ν=1.5×10⁻⁵ m²/s、α=2.0×10⁻⁵ m²/sです。Ra=gβ|ΔT|L³/(να)はいくらですか。",
+   "choices": [
+    "7.85×10⁵",
+    "1.57×10⁷",
+    "2.94×10⁵",
+    "7.85×10⁶"
+   ],
+   "figure": null,
+   "field": "応用・数値計算"
+  },
+  {
+   "id": "supp-batch2-f-area-ratio-v1",
+   "prompt": "熱負荷・U・LMTDを固定して補正係数Fを1.0から.80へ変更した。必要面積の倍率は？",
+   "choices": [
+    "0.80倍",
+    "1.00倍",
+    "1.25倍",
+    "1.80倍"
+   ],
+   "figure": null,
+   "field": "熱交換器設計と流動"
+  },
+  {
+   "id": "supp-batch3-generated-center-rise-v1",
+   "prompt": "全厚さ0.10 mの両面を20℃に保持する対称平板。半厚さL=.050 m、q‴=20000 W/m³、k=10 W/(mK)。中心温度の上昇幅は？",
+   "choices": [
+    "1.25 K",
+    "2.00 K",
+    "2.50 K",
+    "5.00 K"
+   ],
+   "figure": null,
+   "field": "内部発熱・熱伝導支配式"
+  },
+  {
+   "id": "supp-batch3-left-boundary-outward-flux-v1",
+   "prompt": "右向き熱流束q_x″=+200 W/m²で一定の平板。左面の外向き法線は−x向きである。左面の外向き熱流束成分は？",
+   "choices": [
+    "−200 W/m²",
+    "−100 W/m²",
+    "+100 W/m²",
+    "+200 W/m²"
+   ],
+   "figure": null,
+   "field": "境界値問題・熱流束の符号"
+  },
+  {
+   "id": "supp-batch3-neumann-grad-v1",
+   "prompt": "一次元平板で右面の外向き熱流束q″=+200 W/m²、k=2 W/(mK)である。右面の温度勾配dT/dxは？",
+   "choices": [
+    "−50 K/m",
+    "−100 K/m",
+    "+100 K/m",
+    "+200 K/m"
+   ],
+   "figure": null,
+   "field": "境界値問題・熱流束の符号"
+  },
+  {
+   "id": "supp-buoyancy-film-richardson-scale-v1",
+   "prompt": "同じLでGr_L=3.16018×10⁸、強制主流のRe_L=62500。Ri=Gr_L/Re_L²はどれか。",
+   "choices": [
+    "約12.4",
+    "約5.06×10⁻⁶",
+    "約0.0809",
+    "約5056"
+   ],
+   "figure": null,
+   "field": "自然対流・凝縮"
+  },
+  {
+   "id": "supp-chapter-ch1-storage",
+   "prompt": "一様温度の物体2.0 kg、比熱500 J/(kg·K)を相変化なしで10 K上昇させる際の内部エネルギー増加をmcΔTで近似すると何Jですか。",
+   "choices": [
+    "1,000 J",
+    "500 J",
+    "10,000 J",
+    "100,000 J"
+   ],
+   "figure": null,
+   "field": "エネルギー収支"
+  },
+  {
+   "id": "supp-chapter-ch2-cylinder-watts",
+   "prompt": "円筒壁の熱抵抗が0.050 K/W、内外の表面温度差が10 Kのとき、壁を通る熱移動率の大きさは何Wですか。",
+   "choices": [
+    "0.5 W",
+    "20 W",
+    "200 W",
+    "2,000 W"
+   ],
+   "figure": null,
+   "field": "円筒壁の熱伝導"
+  }
+ ]
+}

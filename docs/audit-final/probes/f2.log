@@ -1,0 +1,16 @@
+INFO 検索入力欄: {"id":"search-query","name":"query","ph":"例：温度勾配、対流、熱抵抗"}
+INFO 「コルクボード」全種別: {"cards":2,"kinds":["本文 · 日本語非定常および多次元熱伝導","章末問題序論"],"more":"","empty":""}
+INFO 種別=章末問題: {"cards":1,"kinds":["章末問題序論"],"more":"","empty":""}
+OK   検索を「章末問題」に絞ると章末問題だけが残る
+OK   検索結果（章末問題） 375px 横はみ出し 0
+INFO 着地: {"route":"#reader","itemExists":true,"itemOpen":true,"panel":true}
+OK   検索結果から問題1.1へ着地し、項目が開いた状態で表示される
+OK   着地後の読書画面 375px 横はみ出し 0
+INFO 種別=参考文献「Fourier」: {"cards":3,"kinds":["参考文献序論","参考文献序論","参考文献非定常および多次元熱伝導"],"more":"","empty":""}
+INFO 参考文献カード群: 参考文献序論熱の解析的理論J. Fourier The Analytical Theory of Heat 熱の解析的理論 Dover Publications, Inc., New York, 1955 フーリエの1822年のモノグラフの復刻。 Reprint of Fourier's 1822 monograph. https://archive.org/details/analyticaltheory00fourrich原書第1章 · 書籍 pp.36–48 · PDF pp.50–62 · 参考文献 [1.1] || 参考文献序論有用な人々の肖像と歴史：50点の肖像画コレクション…its 有用な人々の肖像と歴史：50点の肖像画コレクション 1839-1840 フーリエのエッチングは次のURLからダウンロードできる。 Etching of Fourier may be downloaded here. http://web.mit.edu/lienhard/www/fourier.tif原書第1章 · 書籍 pp.36–48 · PDF pp.50–62 · 参考文献 [1.2] || 参考文献非定常および多次元熱伝導熱伝導過渡応答のフーリエ級数解の固有値と3項近似（0.02 < Fo < ∞ およびすべての Bi で有効）A. G. Ostrogorsky Eigenval
+OK   「参考文献」種別で Fourier の書誌だけに絞って検索できる
+OK   検索結果（参考文献） 375px 横はみ出し 0
+INFO 404 リクエスト: ["/data/local-content-manifest.json"]
+INFO F2 console errors（観察）: ["console: Failed to load resource: the server responded with a status of 404 (Not Found)"]
+OK   F2 pageerror 0
+F2 DONE

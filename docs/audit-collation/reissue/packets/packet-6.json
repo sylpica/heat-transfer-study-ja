@@ -1,0 +1,102 @@
+{
+ "packet": 6,
+ "count": 8,
+ "questions": [
+  {
+   "id": "supp-next-ntu-eps-ratio-v1",
+   "prompt": "C_min=300 W/K、入口温度差40 Kの熱交換器が6.0 kWを伝熱している。通常の無損失単相モデルの有効度εは？",
+   "choices": [
+    "0.25",
+    "0.40",
+    "0.50",
+    "0.75"
+   ],
+   "figure": null,
+   "field": "熱交換器の有効度"
+  },
+  {
+   "id": "supp-next-nusselt-invert-h-v1",
+   "prompt": "流体熱伝導率k_f=0.025 W/(m·K)、代表長さL=0.50 m、平均Nu=200。平均熱伝達率hは？",
+   "choices": [
+    "5 W/(m²·K)",
+    "10 W/(m²·K)",
+    "20 W/(m²·K)",
+    "40 W/(m²·K)"
+   ],
+   "figure": null,
+   "field": "対流と境界層"
+  },
+  {
+   "id": "supp-next-parallel-extra-branch-v1",
+   "prompt": "温度差60 Kの両端に、熱抵抗0.10 K/Wと0.20 K/Wの経路が並列にある。さらに0.30 K/Wの経路を並列追加すると、総熱移動率は？",
+   "choices": [
+    "600 W",
+    "900 W",
+    "1100 W",
+    "1500 W"
+   ],
+   "figure": null,
+   "field": "定常熱伝導・熱抵抗"
+  },
+  {
+   "id": "supp-next-parallel-temperature-condition-v1",
+   "prompt": "定常の二つの独立した熱抵抗が同じ高温節点・低温節点を共有して並列に接続される。各枝について何が共通か。",
+   "choices": [
+    "並列の二枝では熱移動率が抵抗値によらず必ず同じ値になる",
+    "各枝の熱抵抗値がいつも同一と決まる",
+    "各枝の熱容量流量が必ず同一となる",
+    "両端節点間の温度差が各枝で同じ値となる"
+   ],
+   "figure": null,
+   "field": "定常伝導・抵抗"
+  },
+  {
+   "id": "supp-next-pr-layer-thickness-v1",
+   "prompt": "同様の平板・流動条件で、流体のPrが十分大きくなった場合の温度境界層について一般的に適切な傾向は？",
+   "choices": [
+    "温度境界層が必ず速度境界層より厚くなる",
+    "速度境界層と温度境界層は常に一致する",
+    "熱拡散が相対的に小さく温度境界層は薄まりやすい",
+    "Prにかかわらず境界層の厚さは常に無限大である"
+   ],
+   "figure": null,
+   "field": "対流と境界層"
+  },
+  {
+   "id": "supp-roadmap-dimension-per-length-v1",
+   "prompt": "二次元断面で単位奥行き当たりの熱流Q̇′[W/m]を考える。一定k・発熱なしの温度差ΔTに対し、次元が合う規格化はどれか。",
+   "choices": [
+    "Q̇′/(kL²ΔT)",
+    "Q̇′/ΔT",
+    "Q̇′/(kΔT)",
+    "Q̇′/(kLΔT)"
+   ],
+   "figure": null,
+   "field": "熱伝導・フィン"
+  },
+  {
+   "id": "supp-roadmap-wall-path-v1",
+   "prompt": "内面80℃、外部流体20℃の平板壁。A=0.20 m²、L=0.010 m、k=0.20 W/(m·K)、外側h=20 W/(m²·K)。内面温度直接指定、発熱放射なしの定常一次元でQ̇=ΔT/[L/(kA)+1/(hA)]はいくらか。",
+   "choices": [
+    "30 W",
+    "120 W",
+    "240 W",
+    "60 W"
+   ],
+   "figure": null,
+   "field": "基礎・熱収支"
+  },
+  {
+   "id": "supp-section-11-2",
+   "prompt": "【第11.2節・独立学習ノート】Aが2 mol、Bが3 molのときy_Aは。",
+   "choices": [
+    "0.6",
+    "0.4",
+    "0.2",
+    "2"
+   ],
+   "figure": null,
+   "field": "物質移動"
+  }
+ ]
+}

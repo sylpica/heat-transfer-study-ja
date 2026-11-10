@@ -34,5 +34,18 @@ def main():
     result['8.5_example']={'Ra_star':rastar,'source_RHS':rhs,'correct_Nu':rhs**(5/6),'incorrect_Nu':rhs,'correct_deltaT':q*D/(k*rhs**(5/6)),'incorrect_deltaT':q*D/(k*rhs)}
     result['6.63_Nu']=.339*1e5**.5*.7**(1/3)/(1+(.0468/.7)**(2/3))**.25
     result['6.73_Nu']=.464*1e5**.5*.7**(1/3)/(1+(.0205/.7)**(2/3))**.25
+    import math
+    result['8.60_correct_limit']=4**(-.25)
+    result['9.11_derived_coefficient']=math.pi/16*3**(-.25)
+    sigma=5.67e-8; a=1+.7/.3; b=-.14 # use radiosity matrix directly below
+    # B1=.7(.2B2+.8B3)+.3 e1; B2=.5(.2B1+.8B3)+.5 e2.
+    rhs1=.7*.8*sigma*250**4+.3*sigma*400**4
+    rhs2=.5*.8*sigma*250**4+.5*sigma*300**4
+    B1=(rhs1+.14*rhs2)/(1-.14*.1);B2=.1*B1+rhs2
+    result['example_10_9_a']={'B1':B1,'B2':B2,'Q12':.2*(B1-B2)}
+    denominator=.7/.3+1/(1/(1/.8+1/.8)+.2)+.5/.5
+    result['example_10_9_b']={'denominator':denominator,'Q':sigma*(400**4-300**4)/denominator}
+    H=W=1.;S=H*H+W*W
+    result['table_10_3_perpendicular_square']=(W*math.atan(1/W)-math.sqrt(S)*math.atan(1/math.sqrt(S))+H*math.atan(1/H)+.25*math.log((1+W*W)*(1+H*H)/(1+S)*(W*W*(1+S)/((1+W*W)*S))**(W*W)*(H*H*(1+S)/((1+H*H)*S))**(H*H)))/(math.pi*W)
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

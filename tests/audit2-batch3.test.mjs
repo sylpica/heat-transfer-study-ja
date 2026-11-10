@@ -49,15 +49,17 @@ test('R2-4.4-01: lesson 4.4 discloses the shape-factor placement vs book 5.7',()
   assert.ok(t.includes('§5.7'));
   assert.ok(t.includes('例題4.7'));
 });
-test('FC-11: lesson 4.5 states the transverse Biot condition Bi_fin = h(A/P)/k << 1',()=>{
+test('FC-11: lesson 4.5 states the transverse Biot condition Bi_fin = h-bar(A/P)/k << 1',()=>{
   const t=lessonText('4.5');
-  assert.ok(t.includes('Bi_fin=h(A/P)/k'));
+  // Overline restoration (Y3 adjudication): the fin coefficient carries the
+  // mean-value bar in print, so the pinned string is the barred form.
+  assert.ok(t.includes('Bi_fin=h̄(A/P)/k'));
   assert.ok(t.includes('R/2'));
 });
-test('R2-4.5-04: lesson 4.5 distinguishes tip coefficient h_L and Biax',()=>{
+test('R2-4.5-04: lesson 4.5 distinguishes tip coefficient h-bar_L and Biax',()=>{
   const t=lessonText('4.5');
-  assert.ok(t.includes('h_L'));
-  assert.ok(t.includes('Biax=h_L L/k'));
+  assert.ok(t.includes('h̄_L'));
+  assert.ok(t.includes('Biax=h̄_L L/k'));
 });
 
 // ---- Ch.5 wording ----
@@ -209,7 +211,7 @@ test('R4-8-004: lesson 8.2 writes the interface condition as a derivative',()=>{
 test('R4-8-005: the corrected-latent-heat question flags its out-of-range Ja in the prompt',()=>{
   const target=q('supp-condensation-corrected-latent-v1');
   assert.ok(target.prompt.includes('0.02'));
-  assert.equal(target.revision,'v2');
+  assert.equal(target.revision,'v3');
 });
 test('R4-9-001: lesson 9.3 distinguishes lambda_d1 from lambda_d2',()=>{
   const t=lessonText('9.3');

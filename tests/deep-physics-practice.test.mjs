@@ -29,7 +29,8 @@ test('twenty authored deep-physics numericals are published with matched keys, r
    assert.ok(deep.lessons.some(x=>x.sectionId===q.source.focusSectionId));
    assert.equal(q.questionGroup,'original_independent_applied_v1');
    assert.equal(q.questionKind,'numerical');
-   assert.equal(q.revision,'v1');
+   // supp-deep-fin-effectiveness-v1 moved to v2 in the 2026-11-09 overall fix part 2 (distractor rationale rewrite).
+   assert.equal(q.revision,q.id==='supp-deep-fin-effectiveness-v1'?'v2':'v1');
    assert.equal(q.expertReviewed,false);
    assert.match(q.reviewStatus,/外部専門家校閲前/);
    assert.match(q.explanation,/適用条件/);

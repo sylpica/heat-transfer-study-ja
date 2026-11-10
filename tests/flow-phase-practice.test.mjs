@@ -59,8 +59,10 @@ for(const [id,correct,condition] of concepts){
 test('all 27 independent flow/phase additions have four keyed reasons, section coverage and no expert approval',()=>{
  const ids=[...numeric,...concepts].map(([id])=>`supp-${id}-v1`);
  assert.equal(ids.length,27);assert.equal(new Set(ids).size,27);
+ // Four additions moved to v2 in the 2026-11-09 overall fix part 2 (distractor rationale rewrites).
+ const revisedV2=new Set(['supp-tube-boiling-subcooled-budget-v1','supp-forced-condensation-coolant-balance-v1','supp-dropwise-total-resistance-gain-v1','supp-heat-pipe-gravity-assisted-margin-v1']);
  for(const id of ids){
-  const q=all.find(q=>q.id===id);assert.equal(q.revision,'v1');assert.equal(q.expertReviewed,false);
+  const q=all.find(q=>q.id===id);assert.equal(q.revision,revisedV2.has(id)?'v2':'v1');assert.equal(q.expertReviewed,false);
   assert.equal(q.choices.length,4);assert.equal(new Set(q.choices).size,4);
   assert.equal(q.distractors.length,4);assert.equal(q.distractors.filter(r=>r.startsWith('正解。')).length,1);
   assert.ok(q.distractors[q.answer].startsWith('正解。'));

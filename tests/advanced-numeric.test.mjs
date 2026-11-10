@@ -19,7 +19,7 @@ test('11 advanced numerical problems are unique, consistently explained and cove
     assert.equal(q.source.type,'supplement');
     assert.equal(q.questionGroup,'original_independent_numerical_v1');
     assert.equal(q.expertReviewed,false);
-    assert.equal(q.revision,['supp-advanced-ch1-calc','supp-advanced-ch5-calc'].includes(q.id)?'v2':'v1');
+    assert.equal(q.revision,['supp-advanced-ch1-calc','supp-advanced-ch5-calc','supp-advanced-ch9-calc'].includes(q.id)?'v2':'v1');
     assert.ok(q.difficulty.includes('発展'));
     assert.ok(q.hints.length>=2&&q.solutionSteps.length>=3);
     assert.equal(q.distractors.length,4);

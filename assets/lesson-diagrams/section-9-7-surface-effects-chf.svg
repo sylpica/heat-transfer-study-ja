@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="1280" viewBox="0 0 840 1280" role="img" aria-labelledby="surf-title surf-desc" style="max-width:100%" data-origin="original-app-diagram" data-lesson="9.7" data-q-max-z="500000" data-roughness-um="8" data-angle-deg="20" data-factor="0.949065966755" data-q-max="474532.983378" data-q-fc="30" data-q-b="50" data-q-i="10" data-q-combined="50" data-q-naive="80" data-model="ramilison-bergles-rohsenow">
 <title id="surf-title">§9.7 系の条件：表面粗さ・接触角と強制対流の結合</title>
-<desc id="surf-desc">アプリが独自に作図した模式図。大きな平板の限界熱流束は、流体力学理論の予測に対して、表面の rms 粗さと後退接触角で整理した補正係数が掛かる。仮想例（粗さ8マイクロメートル、接触角20度）では係数は約0.949となり、限界熱流束は約4.75かける10の5乗ワット毎平方メートルになる。別条件では、単相強制対流と核沸騰の結合は二乗和の平方根で評価され、30と40の成分から50.0キロワット毎平方メートルとなり、単純加算の80にはならない。</desc>
+<desc id="surf-desc">アプリが独自に作図した模式図。大きな平板の限界熱流束は、流体力学理論の予測に対して、表面の rms 粗さと後退接触角で整理した補正係数が掛かる。仮想例（粗さ8マイクロメートル、接触角20度）では係数は約0.949となり、限界熱流束は約4.75かける10の5乗ワット毎平方メートルになる。別条件では、単相強制対流と核沸騰の結合は二乗和の平方根で評価される。強制対流成分30キロワット毎平方メートルと、核沸騰成分50から沸騰開始寄与10を差し引いた増分40キロワット毎平方メートルを組み合わせると、二乗和の平方根は50.0キロワット毎平方メートルとなり、30と50を単純に加えた80にはならない。</desc>
 <style>
 text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-size:22px}
 .bg{fill:#fff}.panel{fill:#f4f8fb;stroke:#c2d1de;stroke-width:2}.ink{fill:#1b3247}.muted{fill:#455f70}

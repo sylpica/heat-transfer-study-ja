@@ -386,7 +386,7 @@
         "正解。Q̇_latent=0.030×2.0×10⁶=60000 W、q″=60000/0.020=3.0×10⁶ W/m²。",
         "熱移動率Wを面積当たりに換算していません。",
         "面積を0.040 m²と誤認した計算です。",
-        "熱流束と熱移動率の数値を混同しています。"
+        "熱移動率60,000 Wを、面積0.020 m²ではなく2.0 m²で割った値です。"
       ],
       "explanation": "正解。Q̇_latent=0.030×2.0×10⁶=60000 W、q″=60000/0.020=3.0×10⁶ W/m²。 潜熱率Q̇=ṁh_fg=60000 W。 平均熱流束q″=Q̇/A。 60000/0.020=3.0×10⁶ W/m²。この負荷が安全かはCHF等の条件別検証が必要。",
       "hints": [
@@ -416,7 +416,7 @@
       "expertReviewed": false,
       "reportHistory": [],
       "questionGroup": "original_independent_numerical_v1",
-      "revision": "v1"
+      "revision": "v2"
     },
     {
       "id": "supp-advanced-ch10-calc",

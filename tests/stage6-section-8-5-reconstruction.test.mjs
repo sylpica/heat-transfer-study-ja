@@ -80,8 +80,8 @@ test('stage6 film thickness oracle matches the Nusselt delta(x) fourth root',()=
 });
 
 test('stage6 corrected latent heat oracle follows the (8.61) practical form',()=>{
- const hfgp=2.40e6*(1+(0.683-0.228/Math.sqrt(4.0))*.080);
- assert.ok(Math.abs(hfgp-2509248)<1e-6);
+ const hfgp=2.40e6*(1+(0.683-0.228/4.0)*.080);
+ assert.ok(Math.abs(hfgp-2520192)<0.01);
  onlyChoiceNear(byId('supp-condensation-corrected-latent-v1'),hfgp,.005);
 });
 

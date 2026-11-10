@@ -91,9 +91,9 @@
     },
     {
       "type": "formula",
-      "expression": "Q̇ᵣₑᵥ = T (dS/dt) = p (dV/dt) + dU/dt",
+      "expression": "T (dS/dt) = p (dV/dt) + dU/dt　（下波括弧のラベル： T (dS/dt) が Q_rev、p (dV/dt) が Wk_rev）",
       "number": "1.4",
-      "alt": "可逆過程では熱移動率は絶対温度Tとエントロピー変化率dS/dtの積に等しい。これはp dV仕事率と内部エネルギー変化率の和にも等しい。",
+      "alt": "可逆過程の関係式。第1項 T (dS/dt) は Q_rev（可逆の熱移動率）、第2項 p (dV/dt) は Wk_rev（可逆の仕事率）と下波括弧でラベルされ、T (dS/dt) = p (dV/dt) + dU/dt の関係にある。",
       "explanation": "添字 rev は可逆過程を示します。この関係を実際の不可逆な熱移動にそのまま適用することはできません。"
     },
     {

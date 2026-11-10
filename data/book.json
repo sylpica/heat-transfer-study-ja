@@ -3599,14 +3599,14 @@
         },
         {
           "id": "11.6",
-          "title": "低速の対流物質移動",
+          "title": "低率における対流物質移動",
           "sourceTitle": "Convective mass transfer at low rates",
           "pdfStart": 669,
           "bookStart": 655
         },
         {
           "id": "11.7",
-          "title": "低速における熱・物質同時移動",
+          "title": "低率における熱・物質同時移動",
           "sourceTitle": "Simultaneous heat and mass transfer at low rates",
           "pdfStart": 676,
           "bookStart": 662
@@ -3620,7 +3620,7 @@
         },
         {
           "id": "11.9",
-          "title": "高速の物質移動における熱伝達",
+          "title": "高率の物質移動における熱伝達",
           "sourceTitle": "Heat transfer at high mass transfer rates",
           "pdfStart": 690,
           "bookStart": 676

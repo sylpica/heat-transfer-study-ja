@@ -15,7 +15,7 @@
     },
     {
       "type": "paragraph",
-      "text": "熱伝導率が一定で熱源のない領域における、定常伝導中の T(r) に対する一般方程式は、ラプラス方程式（Laplace's equation）と呼ばれる。"
+      "text": "熱伝導率が一定で熱源のない領域における、定常伝導中の T(r⃗) に対する一般方程式は、ラプラス方程式（Laplace's equation）と呼ばれる。"
     },
     {
       "type": "formula",

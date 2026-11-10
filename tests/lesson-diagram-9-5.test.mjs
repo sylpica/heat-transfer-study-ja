@@ -58,7 +58,9 @@ test('vapor interface is a sine wave with the stated pixel wavelength',()=>{
     approximately(wave[i][1],740+14*Math.sin(2*Math.PI*(10*i)/120),0.0012);
   }
   const pt=svg.match(/<circle id="qmin-point"[^>]*cx="([\d.]+)" cy="([\d.]+)"/);
-  assert.ok(pt); approximately(Number(pt[1]),555,0.01); approximately(Number(pt[2]),290.5,0.01);
+  // ALT-R01 fix: the marker sits in the transition-boiling valley (555, 412),
+  // not on the CHF peak where the pre-fix drawing had placed it (cy 290.5).
+  assert.ok(pt); approximately(Number(pt[1]),555,0.01); approximately(Number(pt[2]),412,0.01);
 });
 
 test('boiling-curve plot lies inside panel 1 and is not painted over by later panels (A2-PE-25)',()=>{
@@ -84,4 +86,17 @@ test('boiling-curve plot lies inside panel 1 and is not painted over by later pa
 test('curve is declared schematic and q_min is a practical lower bound, not CHF',()=>{
   for(const word of ['模式図。q_min の点以外は数値を表さない','実用的な下限','CHF と混同しない'])
     assert.ok(svg.includes(word),word);
+});
+
+test('boiling curve has a CHF peak, a transition descent and a q_min valley before the film branch (ALT-R01)',()=>{
+  const curve=coordinates('boiling-curve');
+  const ys=curve.map(p=>p[1]);
+  const peak=ys.indexOf(Math.min(...ys));
+  const pt=svg.match(/<circle id="qmin-point"[^>]*cx="([\d.]+)" cy="([\d.]+)"/);
+  const valley=curve.findIndex(([x,y])=>Math.abs(x-Number(pt[1]))<0.01&&Math.abs(y-Number(pt[2]))<0.01);
+  assert.ok(peak>0&&valley>peak,'peak must precede the valley');
+  for(let i=0;i<peak;i++) assert.ok(ys[i]>ys[i+1],'nucleate branch must rise toward CHF');
+  for(let i=peak;i<valley;i++) assert.ok(ys[i]<ys[i+1],'transition branch must descend toward q_min');
+  for(let i=valley;i<ys.length-1;i++) assert.ok(ys[i]>ys[i+1],'film branch must rise after q_min');
+  assert.ok(ys[valley]>ys[valley-1]&&ys[valley]>ys[valley+1],'q_min must be a local flux minimum');
 });

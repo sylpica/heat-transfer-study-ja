@@ -1183,7 +1183,6 @@
     "unit": "W/m²",
     "formula": "CHF=q″max",
     "related": [
-      "限界熱流束",
       "プール沸騰"
     ],
     "reviewStatus": "needs_review"
@@ -1218,7 +1217,6 @@
     "unit": "なし",
     "formula": "ΣjFij=1（閉空間）",
     "related": [
-      "形態係数",
       "放射率"
     ],
     "reviewStatus": "needs_review"

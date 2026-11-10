@@ -99,3 +99,118 @@ test('Churchill-Chu full-range correlation (8.13b) applies the 8/27 power to the
   close(actual,(0.825+0.387*6.78e7**(1/6)/(1+(0.492/.710)**(9/16))**(8/27))**2);
   close(actual,54.40653390374691);
 });
+test('film-condensation velocity profile (8.51) keeps the factor 2 in the bracket and integrates to (8.53)',async()=>{
+  const b=await equation('8-5','8.51');
+  const rhs=b.expression.split('=')[1];
+  // Water film at 100 °C (ρf = 958, ρg = 0.6 kg/m³, ν = 2.94e-7 m²/s),
+  // δ = 0.1 mm: the printed profile gives u(δ) = 0.1667 m/s; the former
+  // half-size bracket gave exactly half of this. The interpreter cannot
+  // take e-notation literals, so δ and ν are scaled ×10 and ×1000 here
+  // (u ∝ δ²/ν), making the evaluated value exactly 1/10 of 0.16673 m/s.
+  close(value(rhs,{ρf:958,ρg:.6,ν:2.94e-4,g:9.81,δ:1e-3,y:1e-3}),0.01667322440458438);
+  // With a unit prefactor the displayed shape is 2s − s² (s = y/δ):
+  // 3/4 at s = 1/2, and Simpson integration reproduces eqn. (8.53).
+  const unit={ρf:1,ρg:0,ν:.5,g:1,δ:1};
+  close(value(rhs,{...unit,y:.5}),.75);
+  const n=1000;let sum=0;
+  for(let i=0;i<=n;i++){const w=i===0||i===n?1:(i%2?4:2);sum+=w*value(rhs,{...unit,y:i/n});}
+  const massFlow=value((await equation('8-5','8.53')).expression.split('=').at(-1),unit);
+  close(massFlow,2/3);
+  close(sum/(3*n),massFlow);
+});
+test('integral energy equation (6.51) multiplies by u∞(Tw − T∞) instead of dividing by it',async()=>{
+  const b=(await section('6-5')).blocks.find(b=>b.text&&b.text.includes('式(6.51)'));
+  assert.ok(!b.text.includes('(1/(u∞(Tw − T∞)))'));
+  const factor=b.text.split('まず(6.47)を、')[1].split('·d/dx')[0];
+  assert.equal(factor,'(u∞(Tw − T∞))');
+  close(value(factor,{'u∞':2,Tw:310,'T∞':300}),20);
+});
+test('the (6.5) φ relation divides 0.9638 by a square root, solving to φ ≈ 1.0001 at Pr = 1 and ≈ 0.4551 at Pr = 10',async()=>{
+  const b=(await section('6-5')).blocks.find(b=>b.text&&b.text.includes('0.9638'));
+  const rhs=b.text.split('φ = ')[1].split(' の関係')[0];
+  assert.equal(rhs,'0.9638/√(Pr·φ·(1 − φ²/14))');
+  // Solve the displayed implicit relation φ = rhs(φ) by bisection; the
+  // right side decreases monotonically on the bracket for both Pr values.
+  const solve=Pr=>{
+    let lo=.01,hi=1.4;
+    for(let i=0;i<200;i++){const mid=(lo+hi)/2;if(value(rhs,{Pr,φ:mid})>mid)lo=mid;else hi=mid;}
+    return (lo+hi)/2;
+  };
+  assert.ok(Math.abs(solve(1)-1.0001282603667153)<1e-9,`${solve(1)}`);
+  assert.ok(Math.abs(solve(10)-0.45514456154851755)<1e-9,`${solve(10)}`);
+});
+test('Table 9.3 small flat heater row is linear in λd1²Nj/Aheater with no square root',async()=>{
+  const list=(await section('9-3')).blocks.find(b=>b.type==='list'&&b.items[0].startsWith('表9.3'));
+  const rhs=list.items[2].split('：')[1].split('（')[0];
+  assert.equal(rhs,'1.14·(λd1²Nj/Aheater)');
+  // Printed form: ratio 0.25 → 0.285 and ratio 0.04 → 0.0456 (the former
+  // spurious square root gave 0.570 and 0.228, 2× and 5× too large).
+  close(value(rhs,{'λd1':.5,Nj:4,Aheater:4}),1.14*.25);
+  close(value(rhs,{'λd1':.2,Nj:1,Aheater:1}),1.14*.04);
+});
+test('mean-quantity overlines are restored in (4.49) and in the sphere correlations (8.32) and (8.33)',async()=>{
+  const fin=await equation('4-5','4.49');
+  assert.ok(fin.expression.includes('√(kAh̄P)'),fin.expression);
+  const yuge=await equation('8-4','8.32'),churchill=await equation('8-4','8.33');
+  assert.ok(yuge.expression.startsWith('NūD'),yuge.expression);
+  assert.ok(churchill.expression.startsWith('NūD'),churchill.expression);
+});
+test('Churchill-Ozoe correlations (6.63) and (6.73) apply the 1/4 power to the denominator bracket only',async()=>{
+  const a=await equation('6-5','6.63'),b=await equation('6-5','6.73');
+  const rhsA=a.expression.split('、')[0].split('=')[1],rhsB=b.expression.split('、')[0].split('=')[1];
+  // Printed forms (PDF 322/326): at Rex = 1e5, Pr = 0.7 the values are
+  // 91.62 and 127.36; the former whole-quotient power gave 3.01 and 3.30.
+  close(value(rhsA,{Rex:1e5,Pr:.7}),91.62408717594467);
+  close(value(rhsB,{Rex:1e5,Pr:.7}),127.35894296017538);
+});
+test('uniform-heat-flux correlation (8.43b) raises Ra* to the 1/5 power and applies 16/45 to the denominator bracket only',async()=>{
+  const b=await equation('8-4','8.43b');
+  const rhs=b.expression.split('=')[1];
+  close(value(rhs,{'Ra*_L':1e8,Pr:.7}),23.487954894159863);
+  // At fixed Pr the Ra* scaling must be the 1/5 power: a factor 100 in Ra*
+  // multiplies Nu by 100^(1/5) (the former whole-bracket form scaled as
+  // 100^(16/45) and gave 505.09 at Ra* = 1e8).
+  close(value(rhs,{'Ra*_L':1e10,Pr:.7})/value(rhs,{'Ra*_L':1e8,Pr:.7}),100**(1/5));
+  assert.ok(b.expression.startsWith('NūL'),b.expression);
+});
+test('Bergles-Rohsenow superposition (9.37) squares the whole product (qB/qFC)(1 − qi/qB)',async()=>{
+  const b=await equation('9-7','9.37');
+  const rhs=b.expression.split('=')[1];
+  // Printed form (PDF 523): q/qFC = sqrt(1 + [(qB/qFC)(1 − qi/qB)]^2);
+  // qB/qFC = 2 with qi/qB = 1/2 gives sqrt(2) (the former narrowed square
+  // gave sqrt(3) for the same inputs).
+  close(value(rhs,{qFC:1,qB:2,qi:1}),Math.SQRT2);
+  close(value(rhs,{qFC:1,qB:3,qi:1.5}),Math.sqrt(3.25));
+});
+test('Reynolds-Colburn grouping (6.74) and the uniform-flux case (6.78) put plain Rex in the left denominator',async()=>{
+  const a=await equation('6-6','6.74'),b=await equation('6-6','6.78');
+  const derive=expr=>{
+    const [lhs,rest]=expr.split('=');
+    const den=lhs.trim().replace(/^Nux\/\(/,'').replace(/\)$/,'');
+    return value(rest.split('≠')[0],{Rex:1e5,Pr:.7})*value(den,{Rex:1e5,Pr:.7});
+  };
+  // Printed forms (PDF 327): Nux/(Rex·Pr^(1/3)) = 0.332/√Rex, hence
+  // Nux = 0.332·Rex^(1/2)·Pr^(1/3). The former √(Rex) denominator made
+  // Nux independent of Rex (316x too small at Rex = 1e5).
+  close(derive(a.expression),.332*1e5**.5*.7**(1/3));
+  close(derive(b.expression),.4587*1e5**.5*.7**(1/3));
+});
+test('the (6.110d) step of the log-law subtraction carries sqrt(Cf/2) in its first term',async()=>{
+  const b=await equation('6-8','6.109');
+  const seg=b.explanation.split('したがって ')[1].split('（式(6.110d)）')[0];
+  assert.ok(seg.includes('·√(Cf/2) − √(2/Cf)'),seg);
+  const radical=seg.match(/·(√\([^)]*\))/)[1];
+  // Printed form (PDF 339): substituting u*/u∞ = √(Cf/2) from (6.110c)
+  // puts √(Cf/2) in the first term; the former √(2/Cf) is ~619x larger
+  // at the section example's Cf = 0.003232.
+  close(value(radical,{Cf:.003232}),Math.sqrt(.003232/2));
+});
+test('mean-quantity overlines are restored in the Fig. 7.5 prose (7.3) and in Example 11.11 (11.6)',async()=>{
+  const prose=(await section('7-3')).blocks[9];
+  assert.equal((prose.text.match(/Nu\u0304D/g)||[]).length,5);
+  assert.ok(!prose.text.includes('NuD'),prose.text);
+  const ex=(await section('11-6')).blocks[19];
+  assert.ok(ex.text.includes('(\u1E21m,iL)'),ex.text);
+  assert.equal((ex.text.match(/\u1E21m,nap/g)||[]).length,2);
+  assert.ok(ex.text.includes('n\u0304nap,s'),ex.text);
+});

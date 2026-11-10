@@ -14,11 +14,11 @@ const MAC='\u0304';
 
 test('§7.2 mean Nusselt number uses the printed macron form in all three places (PDF 376)',async()=>{
   const s=await section('7-2');
-  assert.ok(s.blocks[48].explanation.includes(`平均ヌセルト数 Nu${MAC}D`));
-  assert.ok(s.blocks[49].expression.startsWith(`Nu${MAC}D ≡ h${MAC}D/k`));
-  assert.ok(s.blocks[53].expression.startsWith(`Nu${MAC}D = 3.657/tanh[`));
+  assert.ok(s.blocks[50].explanation.includes(`平均ヌセルト数 Nu${MAC}D`));
+  assert.ok(s.blocks[51].expression.startsWith(`Nu${MAC}D ≡ h${MAC}D/k`));
+  assert.ok(s.blocks[55].expression.startsWith(`Nu${MAC}D = 3.657/tanh[`));
   const raw=await readFile(new URL('../data/sections/7-2-ja.json',import.meta.url),'utf8');
   assert.ok(!raw.includes('NuD バー'));
   // The (7.29) campaign fix (tanh argument) is untouched by this change.
-  assert.ok(s.blocks[53].expression.includes('1.7·Gz^(−2/3)'));
+  assert.ok(s.blocks[55].expression.includes('1.7·Gz^(−2/3)'));
 });

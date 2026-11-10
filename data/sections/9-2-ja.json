@@ -44,7 +44,7 @@
       "pdfPage": 493,
       "caption": "図9.5　蒸気泡の力学的平衡と熱的平衡の同時成立に必要な条件。この p–v 図のスケールは明瞭さのために誇張されている。",
       "alt": "p–v 図と気泡の力つり合い（Rb = 2σ/(pin − pout)）を示す図",
-      "description": "力のつり合い (pin − pout)πRb² = (2πRb)σ から Rb = 2σ/(pin − pout) が得られる。ラベルは Δp = pin − pout、2σ/Rb、pin = psat（Tsup における）、pout = pamb、気泡内の蒸気、外側の液体、Rb、過熱温度 (Tsup) など。"
+      "description": "力のつり合い (pin − pout)πRb² = (2πRb)σ から Rb = 2σ/(pin − pout) が得られる。ラベルは Δp = pin − pout、2σ/Rb、pin = psat（Tsup における）、pout = pamb、気泡内の蒸気、外側の液体、Rb、過熱温度 (Tsup) など。p–v 図の2本の等温線には、上側に T_superheated、下側に T_sat（周囲圧力 p_ambient における）のラベルがある。"
     },
     {
       "type": "subheading",

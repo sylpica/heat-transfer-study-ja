@@ -28,7 +28,7 @@
       "pdfPage": 669,
       "caption": "図11.15　平板上の濃度境界層。",
       "alt": "濃度境界層の模式図",
-      "description": "mi,s から mi,e への変化。"
+      "description": "平板上の濃度境界層の模式図。左に Ue・mi,e を伴う自由流の矢印が6本入り、原点 s から x 軸（右）と y 軸（上）が引かれる。ハッチ付き平板の原点から破線の境界層が立ち上がって平坦化し（右端 e）、平板直上の破線が mi,s（右端 s）を示し、平板から上向きに質量流束 ni,s の矢印が描かれる。"
     },
     {
       "type": "formula",
@@ -113,7 +113,7 @@
     },
     {
       "type": "formula",
-      "expression": "Num,𝒳 ≡ gm,i·𝒳/(ρ𝒟im) = fn(Rex, Sc)",
+      "expression": "Num,x ≡ gm,i·𝒳/(ρ𝒟im) = fn(Rex, Sc)",
       "number": "11.69",
       "alt": "物質移動のヌセルト数（シャーウッド数）です",
       "explanation": ""
@@ -125,8 +125,8 @@
         "拡散率：熱対流は α、物質移動は 𝒟im",
         "無次元数：Pr = ν/α に対して Sc = ν/𝒟im",
         "移動係数：h/cp に対して gm,i",
-        "ヌセルト数：Nux = hx/k に対して Num,𝒳 = gm,i·𝒳/(ρ𝒟im)",
-        "関数関係：Nux = fn(Rex, Pr) に対して Num,𝒳 = fn(Rex, Sc)"
+        "ヌセルト数：Nux = hx/k に対して Num,x = gm,i·𝒳/(ρ𝒟im)",
+        "関数関係：Nux = fn(Rex, Pr) に対して Num,x = fn(Rex, Sc)"
       ]
     },
     {
@@ -153,14 +153,14 @@
     },
     {
       "type": "formula",
-      "expression": "GrL = gΔρL³/(ρν²)、RaL = gΔρL³/(ραν) = gΔρL³/(µα)",
+      "expression": "GrL = gΔρL³/(ρν²)、RaL = gΔρL³/(ραν) = gΔρL³/(μα)",
       "number": "11.70",
       "alt": "密度差によるグラスホフ数とレイリー数です",
       "explanation": ""
     },
     {
       "type": "formula",
-      "expression": "RaL = GrL·Sc = gΔρL³/(µ𝒟12)",
+      "expression": "RaL = GrL·Sc = gΔρL³/(μ𝒟12)",
       "number": "11.71",
       "alt": "物質移動のレイリー数です",
       "explanation": ""

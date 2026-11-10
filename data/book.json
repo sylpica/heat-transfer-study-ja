@@ -1520,7 +1520,7 @@
         },
         {
           "id": "5.8",
-          "title": "非定常多次元熱伝導",
+          "title": "非定常多次元熱伝導――重ね合わせの手法",
           "sourceTitle": "Transient multidimensional heat conduction",
           "pdfStart": 262,
           "bookStart": 248,
@@ -1604,7 +1604,7 @@
     {
       "id": "ch6",
       "part": "III 対流熱伝達",
-      "title": "層流境界層と乱流境界層",
+      "title": "層流および乱流の境界層",
       "sourceTitle": "Laminar and turbulent boundary layers",
       "pdfStart": 285,
       "bookStart": 271,
@@ -1674,7 +1674,7 @@
         },
         {
           "id": "6.2",
-          "title": "平板上の非圧縮性層流境界層",
+          "title": "平板表面上の層流・非圧縮性境界層",
           "sourceTitle": "Laminar incompressible boundary layer on a flat surface",
           "pdfStart": 292,
           "bookStart": 278,
@@ -1927,7 +1927,7 @@
         },
         {
           "id": "6.4",
-          "title": "プラントル数と境界層厚さ",
+          "title": "プラントル数と境界層の厚さ",
           "sourceTitle": "The Prandtl number and the boundary layer thicknesses",
           "pdfStart": 312,
           "bookStart": 298,
@@ -1991,7 +1991,7 @@
         },
         {
           "id": "6.5",
-          "title": "平板上の層流・非圧縮流の熱伝達係数",
+          "title": "平板表面上の層流・非圧縮流れに対する熱伝達係数",
           "sourceTitle": "Heat transfer coefficient for laminar, incompressible flow over a flat surface",
           "pdfStart": 316,
           "bookStart": 302,
@@ -2285,7 +2285,7 @@
         },
         {
           "id": "6.8",
-          "title": "乱流境界層の熱伝達",
+          "title": "乱流境界層における熱移動",
           "sourceTitle": "Heat transfer in turbulent boundary layers",
           "pdfStart": 336,
           "bookStart": 322,
@@ -2374,7 +2374,7 @@
         },
         {
           "id": "6.9",
-          "title": "乱流への遷移と全体の熱伝達",
+          "title": "乱流遷移と全体の熱移動",
           "sourceTitle": "Turbulent transition and overall heat transfer",
           "pdfStart": 342,
           "bookStart": 328,
@@ -3637,7 +3637,7 @@
     {
       "id": "ch11",
       "part": "V 物質移動",
-      "title": "物質移動への入門",
+      "title": "物質移動の導入",
       "sourceTitle": "An introduction to mass transfer",
       "pdfStart": 635,
       "bookStart": 621,

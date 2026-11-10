@@ -32,14 +32,14 @@
     },
     {
       "type": "formula",
-      "expression": "d/dt∫R ρi dR = −∫S n⃗i·dS⃗ + ∫R ṙi dR = −∫S ρi·v⃗·dS⃗ − ∫S j⃗i·dS⃗ + ∫R ṙi dR",
+      "expression": "d/dt∫R ρi dR = −∫S n⃗i·dS⃗ + ∫R ṙi dR = −∫S ρiv⃗·dS⃗ − ∫S j⃗i·dS⃗ + ∫R ṙi dR",
       "number": "11.38",
       "alt": "種の収支です",
       "explanation": "R における i の増加率＝−対流による流出−拡散による流出＋生成率、のバランスです。"
     },
     {
       "type": "formula",
-      "expression": "∫R [∂ρi/∂t + ∇·(ρi·v⃗) + ∇·j⃗i − ṙi]dR = 0",
+      "expression": "∫R [∂ρi/∂t + ∇·(ρiv⃗) + ∇·j⃗i − ṙi]dR = 0",
       "number": "11.39",
       "alt": "体積積分の形です",
       "explanation": "ガウスの定理を適用しています。"
@@ -159,7 +159,7 @@
       "pdfPage": 658,
       "caption": "図11.10　表面温度の関数としての、液体の水の表面に隣接する空気における水蒸気の質量分率（全圧1 atm）。",
       "alt": "質量分率の曲線図",
-      "description": "54°Cで約0.1。"
+      "description": "横軸は温度 T（°C、0–100）、縦軸は水蒸気の質量分率 m_H2O（0–1.0）。曲線はほぼ0から単調に増加し、約54°Cで約0.1、100°Cで約1.0 に達する。"
     },
     {
       "type": "paragraph",

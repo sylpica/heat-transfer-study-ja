@@ -1,0 +1,132 @@
+{
+  "total": 751,
+  "groups": [
+    {
+      "source": "docs/audit/codex-round-02/evidence/independent-41.json",
+      "total": 41,
+      "valid": 34,
+      "invalid": [
+        "supp-flat-thickness",
+        "supp-advanced-ch9-calc",
+        "supp-applied-1-1-v1",
+        "supp-applied-1-2-v1",
+        "supp-applied-3-3-v1",
+        "supp-applied-4-5-v1",
+        "supp-applied-6-5-v1"
+      ]
+    },
+    {
+      "source": "docs/audit-round3/evidence/independent-289.json",
+      "total": 289,
+      "valid": 260,
+      "invalid": [
+        "supp-applied-11-3-v1",
+        "supp-applied-11-6-v1",
+        "supp-applied-8-3-v1",
+        "supp-batch2-f-area-ratio-v1",
+        "supp-batch3-generated-center-rise-v1",
+        "supp-batch3-left-boundary-outward-flux-v1",
+        "supp-batch3-neumann-grad-v1",
+        "supp-chf-capillary-length-v1",
+        "supp-chf-surface-tension-scale-v1",
+        "supp-condensation-corrected-latent-v1",
+        "supp-deep-fin-effectiveness-v1",
+        "supp-dropwise-total-resistance-gain-v1",
+        "supp-forced-condensation-coolant-balance-v1",
+        "supp-found-boil-chf-v1",
+        "supp-found-boil-regime-v1",
+        "supp-found-ntu-config-v1",
+        "supp-found-pr-fluid-v1",
+        "supp-found-resistor-interface-temperature-v1",
+        "supp-found-three-mode-conduction-v1",
+        "supp-heat-pipe-gravity-assisted-margin-v1",
+        "supp-next-cold-outlet-with-loss-v1",
+        "supp-next-dimensionless-centre-temperature-v1",
+        "supp-next-local-versus-average-v1",
+        "supp-next-ntu-eps-ratio-v1",
+        "supp-next-nusselt-invert-h-v1",
+        "supp-next-parallel-extra-branch-v1",
+        "supp-next-parallel-temperature-condition-v1",
+        "supp-next-pr-layer-thickness-v1",
+        "supp-tube-boiling-subcooled-budget-v1"
+      ]
+    },
+    {
+      "source": "docs/audit-collation/evidence/q01-revised-receipt.json",
+      "total": 1,
+      "valid": 1,
+      "invalid": []
+    },
+    {
+      "source": "docs/audit-collation/evidence/revised-56-receipts.json",
+      "total": 56,
+      "valid": 56,
+      "invalid": []
+    }
+  ],
+  "ID_only_peer_claims": 422,
+  "unique_current_hash_receipts": 351,
+  "ID_only_without_current_hash_receipt": 400,
+  "covered_union": 751,
+  "uncovered": [],
+  "semantic_changes_since_ccc": 56,
+  "changed_without_reissue": [],
+  "samples": [
+    {
+      "id": "supp-applied-11-6-v1",
+      "choice": 0,
+      "working": "Sc=1.2e-6/6e-10=2000; Sh=3e-5*.020/6e-10=1000",
+      "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。",
+      "saved_key": 0,
+      "agrees": true
+    },
+    {
+      "id": "supp-applied-6-5-v1",
+      "choice": 2,
+      "working": "Nu=0.664*sqrt(10000)=66.4; h=66.4*.030/.25=7.968 W/(m²K)",
+      "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。",
+      "saved_key": 2,
+      "agrees": true
+    },
+    {
+      "id": "supp-batch3-left-boundary-outward-flux-v1",
+      "choice": 0,
+      "working": "q dot n=200*(-1)=-200 W/m²",
+      "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。",
+      "saved_key": 0,
+      "agrees": true
+    },
+    {
+      "id": "supp-batch2-f-area-ratio-v1",
+      "choice": 2,
+      "working": "A=Q/(UFΔT); Anew/Aold=1/.80=1.25",
+      "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。",
+      "saved_key": 2,
+      "agrees": true
+    },
+    {
+      "id": "supp-deep-fin-effectiveness-v1",
+      "choice": 1,
+      "working": "bare hAcΔT=25*1e-4*60=.15 W; ε=5.166/.15=34.44",
+      "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。",
+      "saved_key": 1,
+      "agrees": true
+    },
+    {
+      "id": "supp-heat-pipe-gravity-assisted-margin-v1",
+      "choice": 2,
+      "working": "Δz=-.20; loss+gravity=2000-1600=400 Pa; margin=3000-400=2600 Pa",
+      "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。",
+      "saved_key": 2,
+      "agrees": true
+    },
+    {
+      "id": "supp-condensation-corrected-latent-v1",
+      "choice": 2,
+      "working": "2.4e6*(1+(.683-.228/4)*.080)=2520192 J/kg; 3sig=2.52e6; この数値は本会話の前段の開発記録で既知なので新規盲検とは呼ばない",
+      "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。",
+      "saved_key": 2,
+      "agrees": true
+    }
+  ]
+}

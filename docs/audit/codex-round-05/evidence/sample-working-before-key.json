@@ -1,0 +1,44 @@
+[
+  {
+    "id": "supp-applied-11-6-v1",
+    "choice": 0,
+    "working": "Sc=1.2e-6/6e-10=2000; Sh=3e-5*.020/6e-10=1000",
+    "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。"
+  },
+  {
+    "id": "supp-applied-6-5-v1",
+    "choice": 2,
+    "working": "Nu=0.664*sqrt(10000)=66.4; h=66.4*.030/.25=7.968 W/(m²K)",
+    "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。"
+  },
+  {
+    "id": "supp-batch3-left-boundary-outward-flux-v1",
+    "choice": 0,
+    "working": "q dot n=200*(-1)=-200 W/m²",
+    "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。"
+  },
+  {
+    "id": "supp-batch2-f-area-ratio-v1",
+    "choice": 2,
+    "working": "A=Q/(UFΔT); Anew/Aold=1/.80=1.25",
+    "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。"
+  },
+  {
+    "id": "supp-deep-fin-effectiveness-v1",
+    "choice": 1,
+    "working": "bare hAcΔT=25*1e-4*60=.15 W; ε=5.166/.15=34.44",
+    "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。"
+  },
+  {
+    "id": "supp-heat-pipe-gravity-assisted-margin-v1",
+    "choice": 2,
+    "working": "Δz=-.20; loss+gravity=2000-1600=400 Pa; margin=3000-400=2600 Pa",
+    "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。"
+  },
+  {
+    "id": "supp-condensation-corrected-latent-v1",
+    "choice": 2,
+    "working": "2.4e6*(1+(.683-.228/4)*.080)=2520192 J/kg; 3sig=2.52e6; この数値は本会話の前段の開発記録で既知なので新規盲検とは呼ばない",
+    "scope": "本ラウンドで保存キー・今回レシートの作業本文を読む前に解いた。過去会話で既知の数値はworking内に明記。"
+  }
+]

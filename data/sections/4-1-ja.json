@@ -42,7 +42,7 @@
     },
     {
       "type": "paragraph",
-      "text": "2. t = 0 で T = Ti(x, y, z)。これは初期条件（initial condition, i.c.）と呼ばれる。"
+      "text": "2. t = 0 で T = T_i(x, y, z)。これは初期条件（initial condition, i.c.）と呼ばれる。"
     },
     {
       "type": "list",
@@ -68,7 +68,7 @@
       "type": "formula",
       "expression": "−k ∂T/∂x |境界 = h̄(T − T∞)|境界",
       "number": "",
-      "alt": "マイナス k ∂T/∂x（境界で評価）イコール h かける (T マイナス T∞)（境界）",
+      "alt": "マイナス k ∂T/∂x（境界で評価）イコール h̄ かける (T マイナス T∞)（境界）",
       "explanation": "第3種境界条件（対流境界条件）です。h̄は熱伝達係数、T∞は周囲流体の温度です。この境界条件は例題2.5のステップ4ですでに用いており、1.3節でも論じました。"
     },
     {

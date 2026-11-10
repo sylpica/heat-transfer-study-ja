@@ -78,11 +78,13 @@ test('CF-048/CF-052: section 6.2 vector arrows and held-variable subscripts rest
   const text=await raw('6-2');
   assert.equal((text.match(new RegExp(ARROW,'g'))||[]).length,17);
   const d=await section('6-2');
-  assert.equal(d.blocks[10].expression,'v ≡ −(∂ψ/∂x)|_y、u ≡ (∂ψ/∂y)|_x');
-  assert.ok(d.blocks[13].expression.startsWith(`∇·u${ARROW} ≡`));
+  assert.equal(d.blocks[12].expression,'v ≡ −(∂ψ/∂x)|_y、u ≡ (∂ψ/∂y)|_x');
+  assert.ok(d.blocks[15].expression.startsWith(`∇·u${ARROW} ≡`));
   assert.ok(d.blocks[3].text.includes(`u${ARROW} = u·ı${ARROW} + v·ȷ${ARROW} + w·k${ARROW}`));
-  assert.ok(d.blocks[9].text.includes('dψ = (∂ψ/∂x)|_y·dx + (∂ψ/∂y)|_x·dy = 0'));
-  assert.ok(d.blocks[15].text.includes('u∞ = (∂ψ/∂y)|_x、0 = −(∂ψ/∂x)|_y'));
+  // CF2-045/C05-13: the (6.9) differential now stands as its own display block
+  // (print juxtaposition, no inserted dots) following the split paragraph.
+  assert.equal(d.blocks.find(b=>b.number==='6.9').expression,'dψ = (∂ψ/∂x)|_y dx + (∂ψ/∂y)|_x dy = 0');
+  assert.ok(d.blocks[17].text.includes('u∞ = (∂ψ/∂y)|_x、0 = −(∂ψ/∂x)|_y'));
 });
 
 test('CF-049: section 6.3 vector arrows restored in eqs. (6.36)-(6.38) and prose, RHS components stay plain',async()=>{

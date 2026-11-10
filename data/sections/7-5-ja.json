@@ -2,8 +2,8 @@
   "sectionId": "7.5",
   "language": "ja",
   "source": "A Heat Transfer Textbook, Sixth Edition, §7.5",
-  "bookPages": "382–386",
-  "pdfPages": "396–400",
+  "bookPages": "382–387",
+  "pdfPages": "396–401",
   "blocks": [
     {
       "type": "heading",
@@ -30,8 +30,8 @@
       "bookPage": 383,
       "pdfPage": 397,
       "caption": "図7.10　非円形ダクトにおける流れ。",
-      "alt": "非円形ダクトの断面を示す図",
-      "description": "濡れ縁 P と断面積 Ac。"
+      "alt": "非円形ダクトの断面と質量流量 ṁ の矢印を示す図",
+      "description": "濡れ縁 P と断面積 Ac。水力直径は Dh = 4Ac/P と定義される。"
     },
     {
       "type": "paragraph",

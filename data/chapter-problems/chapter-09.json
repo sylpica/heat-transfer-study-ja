@@ -29,7 +29,7 @@
         "text": "図9.3bの2つのヒーターに対する q_max を予測せよ。各ヒーターは q_max の何パーセントで動作しているか。",
         "hint": "両方ともバーンアウトの近くで動作している。",
         "figureRefs": [
-          "Fig. 9.3"
+          "Fig. 9.3b"
         ],
         "bookPage": 528,
         "endBookPage": 528,
@@ -156,7 +156,7 @@
         "id": "problem-9-14",
         "number": "9.14",
         "text": "プール沸騰過程に対する q 対 (T_w − T_sat) の関係をスケッチし、h が最大および最小になる点を特定する図式的な方法を記述せよ。図9.2から、これら2つの h にどのような数値が得られるか。",
-        "answerHint": "h = 48,000 および 680 W/m²·K",
+        "answerHint": "h̄ = 48,000 および 680 W/m²·K",
         "figureRefs": [
           "Fig. 9.2"
         ],
@@ -310,7 +310,7 @@
         "type": "problem",
         "id": "problem-9-27",
         "number": "9.27",
-        "text": "1 atm の蒸気が、90 °Cの外径1 cm の円柱の上に26 m/s で吹き付けられる。h はいくらか。この流れの中でこの温度を維持できる、円柱内部の物理過程を何か提案できるか。",
+        "text": "1 atm の蒸気が、90 °Cの外径1 cm の円柱の上に26 m/s で吹き付けられる。h̄ はいくらか。この流れの中でこの温度を維持できる、円柱内部の物理過程を何か提案できるか。",
         "bookPage": 532,
         "endBookPage": 532,
         "pdfPage": 546,
@@ -342,7 +342,7 @@
         ],
         "hint": "波模様を横切って水平に動いていることが見て取れる攪乱のために、写真から波長の範囲を抽出できることに注意せよ。あなたの計算は、この公式が平板の値よりはるかに良いことを示すはずである。しかし比較は確かに完璧にはならない。",
         "figureRefs": [
-          "Fig. 9.3"
+          "Fig. 9.3d"
         ],
         "bookPage": 532,
         "endBookPage": 532,
@@ -1214,7 +1214,7 @@
         "id": "reference-9-64",
         "number": "9.64",
         "authors": "A. E. Dukler and Y. Taitel",
-        "originalTitle": "Flow pattern transitions in gas–liquid systems measurement and modelling",
+        "originalTitle": "Flow pattern transitions in gas-liquid systems measurement and modelling",
         "titleJa": "気液系における流動様式遷移 ― 測定とモデリング",
         "publication": "In J. M. Delhaye, N. Zuber, and G. F. Hewitt, editors, Advances in Multi-Phase Flow, Vol. II. Hemisphere/McGraw-Hill, New York, 1985",
         "bookPage": 539,

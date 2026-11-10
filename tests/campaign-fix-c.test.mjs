@@ -21,7 +21,7 @@ test('CF-072 deep lesson eq. (7.29) has the book grouping and value', async () =
   const eq = lesson.equations.find((e) => e.label.includes('(7.29)'));
   assert.equal(
     eq.expression,
-    'Nu_D=3.657/tanh[2.264 Gz^(−1/3)+1.7 Gz^(−2/3)]+0.0499 Gz tanh(Gz^(−1))',
+    'Nū_D=3.657/tanh[2.264 Gz^(−1/3)+1.7 Gz^(−2/3)]+0.0499 Gz tanh(Gz^(−1))',
   );
   const Gz = 11.8;
   const den = Math.tanh(2.264 * Gz ** (-1 / 3) + 1.7 * Gz ** (-2 / 3));
@@ -90,7 +90,7 @@ test('CF-060 eq. (6.37) display follows eq. (11.43); CF-070 eq. (11.58) restored
   assert.ok(s115.blocks[i1158 - 1].expression.includes('dm2/(1 − m2)'));
   // CF-065 middle form of eq. (11.51)
   const eq1151 = s115.blocks.find((b) => b.number === '11.51');
-  assert.ok(eq1151.expression.includes('d(ρi·v + ji)/dx'));
+  assert.ok(eq1151.expression.includes('d(ρiv + ji)/dx'));
 });
 
 // CF-056: the spurious dot on n is removed from the §11.8/§11.9 lessons.

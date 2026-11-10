@@ -881,7 +881,7 @@
     {
       "id": "ch4",
       "part": "II 熱伝導の解析",
-      "title": "熱伝導解析、次元解析、フィン設計",
+      "title": "伝導解析、次元解析、フィン設計",
       "sourceTitle": "Conduction analysis, dimensional analysis, and fin design",
       "pdfStart": 155,
       "bookStart": 141,
@@ -2506,6 +2506,22 @@
             }
           ]
         }
+      ],
+      "backMatter": [
+        {
+          "id": "problems",
+          "title": "章末問題",
+          "sourceTitle": "Problems",
+          "bookStart": 337,
+          "pdfStart": 351
+        },
+        {
+          "id": "references",
+          "title": "参考文献",
+          "sourceTitle": "References",
+          "bookStart": 346,
+          "pdfStart": 360
+        }
       ]
     },
     {
@@ -3338,6 +3354,22 @@
             "record": "docs/reviews/2026-10-20-ch7-source-audit.md"
           }
         }
+      ],
+      "backMatter": [
+        {
+          "id": "problems",
+          "title": "章末問題",
+          "sourceTitle": "Problems",
+          "bookStart": 399,
+          "pdfStart": 413
+        },
+        {
+          "id": "references",
+          "title": "参考文献",
+          "sourceTitle": "References",
+          "bookStart": 409,
+          "pdfStart": 423
+        }
       ]
     },
     {
@@ -3412,6 +3444,22 @@
           "sourceTitle": "Film condensation",
           "pdfStart": 455,
           "bookStart": 441
+        }
+      ],
+      "backMatter": [
+        {
+          "id": "problems",
+          "title": "章末問題",
+          "sourceTitle": "Problems",
+          "bookStart": 456,
+          "pdfStart": 470
+        },
+        {
+          "id": "references",
+          "title": "参考文献",
+          "sourceTitle": "References",
+          "bookStart": 466,
+          "pdfStart": 480
         }
       ]
     },
@@ -3500,6 +3548,22 @@
           "pdfStart": 539,
           "bookStart": 525
         }
+      ],
+      "backMatter": [
+        {
+          "id": "problems",
+          "title": "章末問題",
+          "sourceTitle": "Problems",
+          "bookStart": 528,
+          "pdfStart": 542
+        },
+        {
+          "id": "references",
+          "title": "参考文献",
+          "sourceTitle": "References",
+          "bookStart": 534,
+          "pdfStart": 548
+        }
       ]
     },
     {
@@ -3552,12 +3616,28 @@
           "pdfStart": 608,
           "bookStart": 594
         }
+      ],
+      "backMatter": [
+        {
+          "id": "problems",
+          "title": "章末問題",
+          "sourceTitle": "Problems",
+          "bookStart": 604,
+          "pdfStart": 618
+        },
+        {
+          "id": "references",
+          "title": "参考文献",
+          "sourceTitle": "References",
+          "bookStart": 614,
+          "pdfStart": 628
+        }
       ]
     },
     {
       "id": "ch11",
       "part": "V 物質移動",
-      "title": "物質移動の導入",
+      "title": "物質移動への入門",
       "sourceTitle": "An introduction to mass transfer",
       "pdfStart": 635,
       "bookStart": 621,
@@ -3639,6 +3719,22 @@
           "pdfStart": 713,
           "bookStart": 699
         }
+      ],
+      "backMatter": [
+        {
+          "id": "problems",
+          "title": "章末問題",
+          "sourceTitle": "Problems",
+          "bookStart": 707,
+          "pdfStart": 721
+        },
+        {
+          "id": "references",
+          "title": "参考文献",
+          "sourceTitle": "References",
+          "bookStart": 721,
+          "pdfStart": 735
+        }
       ]
     }
   ],
@@ -3646,6 +3742,7 @@
     {
       "id": "A",
       "title": "選定材料の熱物性",
+      "sourceTitle": "Some thermophysical properties of selected materials",
       "pdfStart": 745,
       "bookStart": 731,
       "translationStatus": "not_started"
@@ -3653,6 +3750,7 @@
     {
       "id": "B",
       "title": "単位と換算係数",
+      "sourceTitle": "Units and conversion factors",
       "pdfStart": 775,
       "bookStart": 761,
       "translationStatus": "not_started"
@@ -3660,15 +3758,33 @@
     {
       "id": "C",
       "title": "記号一覧",
+      "sourceTitle": "Nomenclature",
       "pdfStart": 781,
       "bookStart": 767,
       "translationStatus": "not_started"
     },
     {
-      "id": "index",
-      "title": "引用文献索引・事項索引",
+      "id": "indices",
+      "title": "索引",
+      "sourceTitle": "Indices",
+      "pdfStart": 789,
+      "bookStart": 775,
+      "translationStatus": "not_started"
+    },
+    {
+      "id": "citation-index",
+      "title": "引用文献索引",
+      "sourceTitle": "Citation Index",
       "pdfStart": 791,
       "bookStart": 777,
+      "translationStatus": "not_started"
+    },
+    {
+      "id": "subject-index",
+      "title": "事項索引",
+      "sourceTitle": "Subject Index",
+      "pdfStart": 799,
+      "bookStart": 785,
       "translationStatus": "not_started"
     }
   ],

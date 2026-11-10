@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="1280" viewBox="0 0 840 1280" role="img" aria-labelledby="min-title min-desc" style="max-width:100%" data-origin="original-app-diagram" data-lesson="9.5" data-rho-l="800" data-rho-v="4" data-h-fg="1000000" data-sigma="0.02" data-g="10" data-u-sigma="0.125273076029" data-q-min="45098.3073703" data-area="0.012" data-q-rate="541.179688444" data-q-min-16g="90196.6147407" data-capillary-length="0.00158510656237" data-model="berenson-large-flat-plate">
 <title id="min-title">§9.5 最小熱流束 q_min：Berenson の式と沸騰曲線の谷</title>
-<desc id="min-desc">アプリが独自に作図した模式図。膜沸騰域で壁面過熱度を下げていくと、蒸気膜を維持する Taylor 波作用が保てなくなる点が最小熱流束である。仮想の飽和物性（液体密度800、蒸気密度4.00キログラム毎立方メートル、潜熱1.00かける10の6乗ジュール毎キログラム、表面張力0.0200ニュートン毎メートル、重力10.0）では、Berenson の式から速度尺度は約0.1253メートル毎秒、最小熱流束は約45.1キロワット毎平方メートルとなり、重力を16倍にすると2倍になる。沸騰曲線の形は模式的であり、最小熱流束の点以外は数値を表さない。</desc>
+<desc id="min-desc">アプリが独自に作図した模式図。膜沸騰域で壁面過熱度を下げていくと、蒸気膜を維持する Taylor 波作用が保てなくなる点が最小熱流束である。仮想の飽和物性（液体密度800、蒸気密度4.00キログラム毎立方メートル、潜熱1.00かける10の6乗ジュール毎キログラム、表面張力0.0200ニュートン毎メートル、重力10.0）では、Berenson の式から速度尺度は約0.1253メートル毎秒、最小熱流束は約45.1キロワット毎平方メートルとなり、重力を16倍にすると2倍になる。描かれた曲線は、核沸騰域で熱流束が上昇して限界熱流束 CHF のピークに達し、遷移沸騰域で下降して q_min の谷に至り、膜沸騰域で再び上昇する形である。沸騰曲線の形は模式的であり、最小熱流束の点以外は数値を表さない。</desc>
 <style>
 text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-size:22px}
 .bg{fill:#fff}.panel{fill:#f4f8fb;stroke:#c2d1de;stroke-width:2}.ink{fill:#1b3247}.muted{fill:#455f70}
@@ -15,7 +15,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text class="title ink" x="30" y="59">§9.5 最小熱流束：蒸気膜が維持できる下限</text>
 <text class="small muted" x="30" y="101">Berenson の式（原書 9.34）：大きな水平平板の実用的な下限</text>
 <rect class="panel" x="23" y="126" width="794" height="477" rx="18"/>
-<text class="section ink" x="43" y="169">① 沸騰曲線の谷が q_min（ライデンフロスト点）</text>
+<text class="section ink" x="43" y="169">① 沸騰曲線の谷が q_min</text>
 <path class="axis" d="M130 505 V213.5 M130 505 H770 M759 500.6 L770 505 L759 509.4 M122 219.6 L130 210.8 L138 219.6"/>
 <path id="boiling-curve" class="graph" d="M 150.000 470.000 L 205.000 438.000 L 255.000 382.000 L 300.000 328.000 L 340.000 288.000 L 375.000 262.000 L 415.000 292.000 L 460.000 338.000 L 505.000 382.000 L 555.000 412.000 L 605.000 400.000 L 660.000 376.000 L 705.000 352.000 L 745.000 332.000"/>
 <circle id="qmin-point" class="point" cx="555" cy="412" r="9"/>

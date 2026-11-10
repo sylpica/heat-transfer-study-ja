@@ -57,7 +57,7 @@
       "bookPage": 100,
       "pdfPage": 114,
       "caption": "図3.1　熱交換器の基本概念と、いくつかの一般的な応用。",
-      "alt": "2つの流体が壁を隔てて熱を交換する基本概念と、その応用例を示す図。",
+      "alt": "左は一般概念：隔壁（dividing wall）を隔てて Fluid 1 と Fluid 2 が反対向きに流れる。右は応用例で、熱 Q の矢印とともに4組が示される：煙道ガス（Flue gas in a chimney）→炉へ向かう冷空気、自動車ラジエーターの水→外気、凝縮器の蒸気→冷却水、冷蔵庫内の空気→蒸発する冷媒。",
       "description": "熱交換器の原型的な機能です。"
     },
     {
@@ -66,7 +66,7 @@
       "bookPage": 100,
       "pdfPage": 114,
       "caption": "図3.2　直接接触式熱交換器。",
-      "alt": "隔壁なしに流体同士が直接接触して熱交換する装置の図。",
+      "alt": "直接接触式熱交換器の容器の図。下部左から Steam（蒸気）が入り、気泡となって上昇する（バブリング）。下部右から Cold water が入り、上部右へ Warm water として出る。上部左には Noncondensible bleed（非凝縮ガスの抜き出し）がある。",
       "description": "隔壁の抵抗を取り除いた形式です。"
     },
     {
@@ -75,7 +75,7 @@
       "bookPage": 101,
       "pdfPage": 115,
       "caption": "図3.3　熱交換器の3つの基本タイプ。",
-      "alt": "並流・向流、シェルアンドチューブ、直交流の3形式を模式的に示す図。",
+      "alt": "a) 並流・向流熱交換器（Fluid A が並流の場合と向流の場合、Fluid B）。b) 2種のシェルアンドチューブ熱交換器：左は最も単純な形式で管パス2・シェルパス1、右は管パス4・シェルパス2。いずれも Baffles（邪魔板）と Fluid A・Fluid B の流れが描かれる。c) 2種の直交流熱交換器：左は流れ A 非混合・流れ B 混合、右は流れ A・B とも非混合で Baffles がある。",
       "description": "商業用交換器の基本分類です。"
     },
     {
@@ -84,7 +84,7 @@
       "bookPage": 102,
       "pdfPage": 116,
       "caption": "図3.4　Heliflow コンパクト向流熱交換器。（写真提供：Graham Manufacturing Co.、ニューヨーク州バタビア）",
-      "alt": "らせん状に巻かれた向流型コンパクト熱交換器の写真。",
+      "alt": "左はらせん状に巻かれた内部管（Internal tubing）の写真。右は流れのパターンを示す平面図（Plan view showing flow patterns）で、円形の Shell（シェル）の中を内部管が渦巻き状に配置される。",
       "description": "向流配置の実装例です。"
     },
     {
@@ -97,8 +97,8 @@
       "bookPage": 106,
       "pdfPage": 120,
       "caption": "図3.7　4つの典型的な熱交換器構成（次ページに続く）。（図面提供：Tubular Exchanger Manufacturers' Association）",
-      "alt": "TEMA規格に基づく、単一シェルパスの熱交換器4形式の図面。",
-      "description": "§3.1で言及された名称体系の図です（図版は§3.2の冒頭ページに配置され、p.107に続きます）。"
+      "alt": "TEMA 規格の熱交換器断面図4形式。a) シェルパス1・管パス1の交換器。b) シェルパス1・管パス2の交換器。c) 管パス2・シェルパス2の交換器。d) 分割シェルパス1・管パス2のケトル型交換器。各部には番号1〜39が振られている。",
+      "description": "§3.1で言及された名称体系の図です（図版は§3.2の冒頭ページに配置され、p.107に続きます）。番号の名称一覧（TEMA）：1. Stationary head-channel、2. Stationary head-bonnet、3. Stationary head-flange-channel or bonnet、4. Channel cover、5. Stationary head nozzle、6. Stationary tube sheet、7. Tubes、8. Shell、9. Shell cover、10. Shell flange-stationary head end、11. Shell flange-rear head end、12. Shell nozzle、13. Shell cover flange、14. Expansion joint、15. Floating tube sheet、16. Floating head cover、17. Floating head flange、18. Floating head backing device、19. Split shear ring、20. Slip-on backing flange、21. Floating head cover-external、22. Floating tube sheet skirt、23. Packing box、24. Packing、25. Packing gland、26. Lantern ring、27. Tie rods and spacers、28. Transverse baffles or support plates、29. Impingement plate、30. Longitudinal baffle、31. Pass partition、32. Vent connection、33. Drain connection、34. Instrument connection、35. Support saddle、36. Lifting lug、37. Support bracket、38. Weir、39. Liquid level connection。"
     },
     {
       "type": "paragraph",

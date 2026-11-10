@@ -42,7 +42,7 @@ def main():
     rhs1=.7*.8*sigma*250**4+.3*sigma*400**4
     rhs2=.5*.8*sigma*250**4+.5*sigma*300**4
     B1=(rhs1+.14*rhs2)/(1-.14*.1);B2=.1*B1+rhs2
-    result['example_10_9_a']={'B1':B1,'B2':B2,'Q12':.2*(B1-B2)}
+    result['example_10_9_a']={'sigma':sigma,'B1':B1,'B2':B2,'Q12':.2*(B1-B2),'Q12_modern_sigma':.2*(B1-B2)*(5.670374419e-8/sigma)}
     denominator=.7/.3+1/(1/(1/.8+1/.8)+.2)+.5/.5
     result['example_10_9_b']={'denominator':denominator,'Q':sigma*(400**4-300**4)/denominator}
     H=W=1.;S=H*H+W*W

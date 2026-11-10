@@ -1,0 +1,522 @@
+{
+  "browser": "154.0.8037.57",
+  "scope": "Stylesheet-selector harness; no actual reader, OS, WebKit or assistive technology certification",
+  "results": [
+    {
+      "width": 375,
+      "theme": "light",
+      "nodes": [
+        {
+          "id": "body",
+          "family": "\"Noto Sans JP\", \"Yu Gothic UI\", \"Hiragino Kaku Gothic ProN\", Meiryo, \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "∇T · n⃗ ／ j⃗₁ = −ρ𝒟₁₂∇m₁",
+          "width": 351,
+          "scroll": 351,
+          "client": 351,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 18
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "quote",
+          "family": "\"Noto Sans JP\", \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ J⃗ = −c𝒟∇x",
+          "width": 332,
+          "scroll": 332,
+          "client": 332,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 19
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "deep",
+          "family": "ui-monospace, SFMono-Regular, Consolas, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 321.8125,
+          "scroll": 322,
+          "client": 322,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "term",
+          "family": "ui-monospace, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 307,
+          "scroll": 307,
+          "client": 307,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "control",
+          "family": "\"Noto Sans JP\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 351,
+          "scroll": 351,
+          "client": 351,
+          "fonts": [
+            {
+              "familyName": "DejaVu Math TeX Gyre",
+              "postScriptName": "DejaVuMathTeXGyre-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 20
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "nodes": [
+        {
+          "id": "body",
+          "family": "\"Noto Sans JP\", \"Yu Gothic UI\", \"Hiragino Kaku Gothic ProN\", Meiryo, \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "∇T · n⃗ ／ j⃗₁ = −ρ𝒟₁₂∇m₁",
+          "width": 351,
+          "scroll": 351,
+          "client": 351,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 18
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "quote",
+          "family": "\"Noto Sans JP\", \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ J⃗ = −c𝒟∇x",
+          "width": 332,
+          "scroll": 332,
+          "client": 332,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 19
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "deep",
+          "family": "ui-monospace, SFMono-Regular, Consolas, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 321.8125,
+          "scroll": 322,
+          "client": 322,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "term",
+          "family": "ui-monospace, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 307,
+          "scroll": 307,
+          "client": 307,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "control",
+          "family": "\"Noto Sans JP\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 351,
+          "scroll": 351,
+          "client": 351,
+          "fonts": [
+            {
+              "familyName": "DejaVu Math TeX Gyre",
+              "postScriptName": "DejaVuMathTeXGyre-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 20
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "theme": "light",
+      "nodes": [
+        {
+          "id": "body",
+          "family": "\"Noto Sans JP\", \"Yu Gothic UI\", \"Hiragino Kaku Gothic ProN\", Meiryo, \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "∇T · n⃗ ／ j⃗₁ = −ρ𝒟₁₂∇m₁",
+          "width": 760,
+          "scroll": 760,
+          "client": 760,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 18
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "quote",
+          "family": "\"Noto Sans JP\", \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ J⃗ = −c𝒟∇x",
+          "width": 741,
+          "scroll": 741,
+          "client": 741,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 19
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "deep",
+          "family": "ui-monospace, SFMono-Regular, Consolas, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 706.8125,
+          "scroll": 707,
+          "client": 707,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "term",
+          "family": "ui-monospace, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 760,
+          "scroll": 760,
+          "client": 760,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "control",
+          "family": "\"Noto Sans JP\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 760,
+          "scroll": 760,
+          "client": 760,
+          "fonts": [
+            {
+              "familyName": "DejaVu Math TeX Gyre",
+              "postScriptName": "DejaVuMathTeXGyre-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 20
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "nodes": [
+        {
+          "id": "body",
+          "family": "\"Noto Sans JP\", \"Yu Gothic UI\", \"Hiragino Kaku Gothic ProN\", Meiryo, \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "∇T · n⃗ ／ j⃗₁ = −ρ𝒟₁₂∇m₁",
+          "width": 760,
+          "scroll": 760,
+          "client": 760,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 18
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "quote",
+          "family": "\"Noto Sans JP\", \"Noto Sans Math\", \"STIX Two Math\", \"Segoe UI Symbol\", \"DejaVu Sans\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ J⃗ = −c𝒟∇x",
+          "width": 741,
+          "scroll": 741,
+          "client": 741,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 19
+            },
+            {
+              "familyName": "DejaVu Sans",
+              "postScriptName": "DejaVuSans",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            }
+          ]
+        },
+        {
+          "id": "deep",
+          "family": "ui-monospace, SFMono-Regular, Consolas, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 706.8125,
+          "scroll": 707,
+          "client": 707,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "term",
+          "family": "ui-monospace, monospace, \"Noto Sans Math\", \"STIX Two Math\", \"DejaVu Sans\"",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 760,
+          "scroll": 760,
+          "client": 760,
+          "fonts": [
+            {
+              "familyName": "Noto Sans Math",
+              "postScriptName": "NotoSansMath-Regular",
+              "isCustomFont": false,
+              "glyphCount": 7
+            },
+            {
+              "familyName": "Noto Sans Mono CJK JP",
+              "postScriptName": "NotoSansMonoCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ]
+        },
+        {
+          "id": "control",
+          "family": "\"Noto Sans JP\", sans-serif",
+          "text": "n⃗ · dS⃗ ／ j⃗ = −ρ𝒟∇m",
+          "width": 760,
+          "scroll": 760,
+          "client": 760,
+          "fonts": [
+            {
+              "familyName": "DejaVu Math TeX Gyre",
+              "postScriptName": "DejaVuMathTeXGyre-Regular",
+              "isCustomFont": false,
+              "glyphCount": 1
+            },
+            {
+              "familyName": "Noto Sans CJK JP",
+              "postScriptName": "NotoSansCJKjp-Regular",
+              "isCustomFont": false,
+              "glyphCount": 20
+            }
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "C5-S01",
+    "severity": "P2",
+    "file": "data/sections/6-5-ja.json",
+    "block": 32,
+    "pdf_pages": [
+      322,
+      323
+    ],
+    "issue": "局所hへの上線過適用と平均定義の上線欠落",
+    "fix": "前半をh、後半をh̄=q̄/ΔTまたはq/ΔT̄へ",
+    "status": "open; audit only, Muse implementation pending",
+    "source_confirmation": "Original PDF page image generated with pdftoppm and visually reviewed; see REPORT.md",
+    "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a"
+  },
+  {
+    "id": "C5-S02",
+    "severity": "P2",
+    "file": "data/sections/8-4-ja.json",
+    "block": 29,
+    "pdf_pages": [
+      453
+    ],
+    "issue": "例題8.5の置換式左辺6/5乗が脱落",
+    "fix": "(NūD)^(6/5)=[qwD/(ΔT̄k)]^(6/5)を復元",
+    "status": "open; audit only, Muse implementation pending",
+    "source_confirmation": "Original PDF page image generated with pdftoppm and visually reviewed; see REPORT.md",
+    "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a"
+  },
+  {
+    "id": "C5-S03",
+    "severity": "P2",
+    "file": "data/sections/8-5-ja.json",
+    "block": 16,
+    "field": "explanation",
+    "pdf_pages": [
+      459,
+      460,
+      461
+    ],
+    "issue": "8.60の原典印刷不整合と図の正規化の差が無注記",
+    "fix": "印刷形を保持し、Nux/Π4^(1/4)→4^(−1/4)、Nux/(Π4/4)^(1/4)→1を別訳注で区別",
+    "status": "open; audit only, Muse implementation pending",
+    "source_confirmation": "Original PDF page image generated with pdftoppm and visually reviewed; see REPORT.md",
+    "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a"
+  },
+  {
+    "id": "C5-S04",
+    "severity": "P2",
+    "file": "data/sections/9-3-ja.json",
+    "block": 17,
+    "field": "explanation",
+    "pdf_pages": [
+      506,
+      507
+    ],
+    "issue": "CHF代入式の根号範囲崩れ・π/16欠落",
+    "fix": "ρg hfg (π/16) sqrt[2πσ/(ρg λd1)]からλd1を一度だけ代入",
+    "status": "open; audit only, Muse implementation pending",
+    "source_confirmation": "Original PDF page image generated with pdftoppm and visually reviewed; see REPORT.md",
+    "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a"
+  },
+  {
+    "id": "C5-N01",
+    "severity": "P3",
+    "file": "data/sections/9-4-ja.json",
+    "blocks": [
+      2,
+      4,
+      5
+    ],
+    "also": "data/sections/8-3-ja.json block16",
+    "pdf_pages": [
+      435,
+      436,
+      515,
+      516
+    ],
+    "issue": "平均h̄/Nūの補完残件",
+    "fix": "平均対象を確認して当該出現を個別補完",
+    "status": "open; audit only, Muse implementation pending",
+    "source_confirmation": "Original PDF page image generated with pdftoppm and visually reviewed; see REPORT.md",
+    "source_pdf_sha256": "d318176a9cac997d415ec5ee95b30979dcdaed0392705185393735c7d59a447a"
+  }
+]

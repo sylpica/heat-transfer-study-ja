@@ -8,6 +8,11 @@ def integral_polynomial(c):
 
 def main():
     result={}
+    theta=lambda x: F(1)-F(3,2)*x+F(1,2)*x**3
+    result['thermal_profile_BCs']=[str(theta(F(0))),str(theta(F(1))),str(-F(3,2)+F(3,2)),str(F(0))]
+    assert result['thermal_profile_BCs']==['1','0','0','0']
+    result['5.23_initial_value_b3_c2']=2-1
+    result['5.23_initial_derivative_b3_c2']=-2+2
     result['momentum_integral']=str(integral_polynomial([0,0,1,-4,6,-4,1]))
     result['energy_integral']=str(integral_polynomial([0,1,-4,6,-4,1]))
     assert result['momentum_integral']=='1/105'

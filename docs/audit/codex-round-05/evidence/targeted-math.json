@@ -1,4 +1,12 @@
 {
+  "thermal_profile_BCs": [
+    "1",
+    "0",
+    "0",
+    "0"
+  ],
+  "5.23_initial_value_b3_c2": 1,
+  "5.23_initial_derivative_b3_c2": 0,
   "momentum_integral": "1/105",
   "energy_integral": "1/30",
   "squire_C1": [

@@ -51,7 +51,7 @@ test('natural-convection integral balances agree and thickness grows as x to the
 });
 test('film-boiling curvature and jet CHF retain the distinct powers and geometric factor',async()=>{
   const curvature=await equation('9-4','9.32'),jet=await equation('9-7','9.40');
-  close(value(curvature.expression.split('=')[1],{'NuD,Bromley':100,'R′':.25}),100*(.715+.263/.25)*.25**.25);
+  close(value(curvature.expression.split('=')[1],{'NūD,Bromley':100,'R′':.25}),100*(.715+.263/.25)*.25**.25);
   close(value(jet.expression.split('=')[1],{r:100,djet:.01,D:.04,WeD:10,A:.3}),(.21+.17)*.25**(1/3));
 });
 test('crossflow effectiveness stays bounded and multiple shell passes exponentiate the entire ratio',async()=>{

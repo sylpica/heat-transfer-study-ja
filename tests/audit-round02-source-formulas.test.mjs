@@ -209,7 +209,7 @@ test('mean-quantity overlines are restored in the Fig. 7.5 prose (7.3) and in Ex
   const prose=(await section('7-3')).blocks[9];
   assert.equal((prose.text.match(/Nu\u0304D/g)||[]).length,5);
   assert.ok(!prose.text.includes('NuD'),prose.text);
-  const ex=(await section('11-6')).blocks[19];
+  const ex=(await section('11-6')).blocks.find(b=>b.text?.includes('例題11.11'));
   assert.ok(ex.text.includes('(\u1E21m,iL)'),ex.text);
   assert.equal((ex.text.match(/\u1E21m,nap/g)||[]).length,2);
   assert.ok(ex.text.includes('n\u0304nap,s'),ex.text);

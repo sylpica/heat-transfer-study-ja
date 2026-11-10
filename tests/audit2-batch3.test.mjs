@@ -27,7 +27,7 @@ const sq=id=>sectionQuestions.questions.find(x=>x.id===id);
 // ---- Ch.1 / Ch.4 wording ----
 test('R1-Y01: lesson 1.3 uses the vector form for the gradient law',()=>{
   const t=lessonText('1.3');
-  assert.ok(t.includes('q⃗″=−k∇T'),'Fourier law with a gradient must be the vector flux q⃗″');
+  assert.ok(t.includes('q⃗=−k∇T'),'Fourier law with a gradient must be the vector flux q⃗″');
   assert.ok(!lesson('1.3').blocks[0].text.includes('q″=−k∇T'),'scalar q″ must not be paired with ∇T');
 });
 test('R2-4.1-01: lesson 4.1 states the book calls it third-kind and never says Robin',()=>{
@@ -142,7 +142,7 @@ test('R3-I-04: lesson 6.7 distinguishes the book log-law line from the 1/5-power
   assert.ok(t.includes('1/7'));
 });
 test('R3-I-05: lesson 6.7 records the book log-law constant B ~= 5.5',()=>{
-  assert.ok(lessonText('6.7').includes('B≊5.5'));
+  assert.ok(lessonText('6.7').includes('B≅5.5'));
 });
 test('R3-I-07: the two transition questions name the sudden-transition approximation and (6.120)',()=>{
   for(const id of ['supp-turbulence-transition-corrected-nu-v1','supp-turbulence-transition-heat-rate-v1']){

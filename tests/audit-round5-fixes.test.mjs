@@ -28,11 +28,12 @@ test('C5-S01: §6.5 average-coefficient paragraph keeps local h local (PDF 322/3
 test('C5-S02: Example 8.5 carries the 6/5 power on both left-hand terms (PDF 453)',async()=>{
   const s=await section('8-4');
   const t=s.blocks[29].text;
-  assert.ok(t.includes(`(Nu${MAC}D)^(6/5) = (qwD/(∆T${MAC}k))^(6/5) = 0.82(Ra*_D)^(1/5)Pr^0.034`), t.slice(t.indexOf('置き換える'), t.indexOf('置き換える')+110));
+  assert.ok(t.includes(`(Nu${MAC}D)^(6/5) = (qwD/(ΔT${MAC}k))^(6/5) = 0.82(Ra*_D)^(1/5)Pr^0.034`), t.slice(t.indexOf('置き換える'), t.indexOf('置き換える')+110));
   assert.ok(!t.includes('の変換形'));
   // Downstream displays use the same mean temperature difference.
   assert.ok(t.includes(`ΔT${MAC} = [1.18·qwD/k]`));
-  assert.ok(t.includes(`補正された ΔT${MAC} = 131 K`));
+  assert.ok(t.includes(`補正された ΔT${MAC} = ((1.18)(577)(0.17)/0.03136)`));
+  assert.ok(t.includes('= 131 K となる'));
   // Numeric: the book's rounded substitution reproduces ΔT = 144 K.
   const qw=661, D=0.17, k=0.02623, beta=1/300, nu=1.578e-5, alpha=2.213e-5, Pr=0.713, g=9.8;
   const dT=(1.18*qw*D/k)/(((g*beta*qw*D**4/(k*nu*alpha))**(1/6))*Pr**0.028);
@@ -47,7 +48,8 @@ test('C5-S02: Example 8.5 carries the 6/5 power on both left-hand terms (PDF 453
 
 test('C5-S03: eq. (8.60) stays as printed, with a translator note separating the two normalizations (PDF 459-461)',async()=>{
   const s=await section('8-5');
-  const e=s.blocks[16].explanation;
+  const b859=s.blocks.find(b=>b.number==='8.59');
+  const e=b859.explanation;
   // Printed (8.60) claim is kept verbatim in the translation.
   assert.ok(e.includes('Nux/Π4^(1/4) = fn(Ja, Pr) → Ja → 0 のとき 1（式(8.60)）'));
   // The note records the book's own inconsistency and the figure's form.
@@ -57,7 +59,7 @@ test('C5-S03: eq. (8.60) stays as printed, with a translator note separating the
   // The note's arithmetic: 4^(-1/4) = 0.70711 = the (8.59) coefficient.
   close(4**(-1/4),0.7071,0.0001);
   // Eq. (8.59) itself (this block's expression) is the 0.707 form.
-  assert.ok(s.blocks[16].expression.startsWith('Nux = 0.707·'));
+  assert.ok(b859.expression.startsWith('Nux = 0.707·'));
 });
 
 test('C5-S04: §9.3 intermediate substitution keeps the nested radical and the pi/16 area ratio (PDF 506/507)',async()=>{

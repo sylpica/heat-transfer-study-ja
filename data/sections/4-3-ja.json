@@ -74,7 +74,7 @@
     },
     {
       "type": "formula",
-      "expression": "Tcout − Tcin = fn(Cmax, Cmin, Thin − Tcin, U, A)",
+      "expression": "Tcout − Tcin = fn(Cmax, Cmin, (Thin − Tcin), U, A)",
       "number": "4.14",
       "alt": "Tc out マイナス Tc in イコール fn(Cmax, Cmin, Th in マイナス Tc in, U, A)",
       "explanation": "各項の次元は、Tcout − Tcin が K、Cmax と Cmin が W/K、Thin − Tcin が K、U が W/m²·K、A が m² です。"
@@ -104,7 +104,7 @@
     },
     {
       "type": "paragraph",
-      "text": "式(4.14)から、変数が表される次元1つにつき変数を1つ取り除いたことに注意されたい。従属変数を含めて n 個の変数が m 個の次元で表される場合、方程式を (n − m) 個の無次元群、バッキンガムがπ群（pi-groups）と呼んだもので表せることか期待できる。"
+      "text": "式(4.14)から、変数が表される次元1つにつき変数を1つ取り除いたことに注意されたい。従属変数を含めて n 個の変数が m 個の次元で表される場合、方程式を (n − m) 個の無次元群、バッキンガムがπ群（pi-groups）と呼んだもので表せることが期待できる。"
     },
     {
       "type": "paragraph",

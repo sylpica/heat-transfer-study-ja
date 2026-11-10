@@ -26,9 +26,9 @@
     },
     {
       "type": "formula",
-      "expression": "Θ̄ = 1 − Φ ≈ D₁·exp(−λ̂₁²Fo)",
+      "expression": "Θ̄ = 1 − Φ ≈ D₁ exp(−λ̂₁²Fo)",
       "number": "5.43",
-      "alt": "Θ̄ イコール 1 マイナス Φ、ほぼ D1 かける exp(マイナス λ̂1二乗 Fo)",
+      "alt": "Θ̄ イコール 1 マイナス Φ、ほぼ D1 exp(マイナス λ̂1二乗 Fo)",
       "explanation": "平均温度の一項近似です。"
     },
     {

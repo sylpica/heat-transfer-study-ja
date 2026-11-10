@@ -23,7 +23,7 @@
       "bookPage": 121,
       "pdfPage": 135,
       "caption": "図3.15　LMTD を予め（アプリオリに）計算できない設計問題。",
-      "alt": "入口条件だけが与えられ、出口温度が未知である設計問題の図。",
+      "alt": "設計問題の概念図。既知のラベルは U = known、C_h = known、C_c = known、長さまたは面積（Length or area (known)）。入口温度 T_h,in と T_c,in は既知だが、出口温度 T_c,out = ?、T_h,out = ? は未知であり、LMTD を予め計算できない。",
       "description": "有効度法が必要になる状況です。"
     },
     {

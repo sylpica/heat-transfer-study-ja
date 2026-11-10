@@ -1,0 +1,29 @@
+{
+  "thermal_profile_BCs": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "integral_phi_coefficient": "3/20",
+  "integral_phi_cubed_coefficient": "-3/280",
+  "6.63": {
+    "Re": 100000.0,
+    "Pr": 0.7,
+    "Nu": 91.62408717594467,
+    "high_Pr_coefficient": 0.339,
+    "low_Pr_coefficient": 0.5647098842441065
+  },
+  "6.73": {
+    "Re": 100000.0,
+    "Pr": 0.7,
+    "Nu": 127.35894296017538,
+    "high_Pr_coefficient": 0.464,
+    "low_Pr_coefficient": 0.8869361105583223
+  },
+  "constant_flux_mean_to_end_h_ratio": 1.5,
+  "example_6_5": {
+    "Re": 384615.3846153846,
+    "Nu": 366.1563023739426
+  }
+}

@@ -96,6 +96,6 @@ test('CF2-045: campaign-2 restored intermediate displays are present (4.2 annota
   assert.ok(s42.blocks.some(b=>b.type==='formula'&&b.expression.startsWith('(1/r) ∂/∂r (r ∂T/∂r)')));
   assert.ok(s42.blocks.some(b=>b.type==='formula'&&b.expression.startsWith('∇²T + q̇/k')));
   const s52=await section('5-2');
-  assert.ok(s52.blocks.some(b=>b.type==='formula'&&b.expression.startsWith('𝒯₁𝒯₂ d²T₁/dt²')));
+  assert.ok(s52.blocks.some(b=>b.type==='formula'&&b.expression.startsWith('𝑻₁𝑻₂ d²T₁/dt²')));
   assert.ok(s52.blocks.some(b=>b.type==='formula'&&b.expression.startsWith('0 = [−b/2 + √((b/2)² − c)]C₁')));
 });

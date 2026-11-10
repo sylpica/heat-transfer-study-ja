@@ -74,7 +74,7 @@
     },
     {
       "type": "formula",
-      "expression": "g*m,2 ≡ lim(Bm,2→0) gm,2 = [∫₀^δc dy/(ρ(𝒟12 + ε2))]⁻¹·lim(Bm,2→0)[ln(1 + Bm,2)/Bm,2]",
+      "expression": "g*m,2 ≡ lim(Bm,2→0) gm,2 = [∫₀^δc dy/(ρ(𝒟12 + ε2))]⁻¹·lim(Bm,2→0)[ln(1 + Bm,2)/Bm,2] = [∫₀^δc dy/(ρ(𝒟12 + ε2))]⁻¹",
       "number": "11.80",
       "alt": "低率物質移動係数の定義です",
       "explanation": ""

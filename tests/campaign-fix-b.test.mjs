@@ -40,7 +40,7 @@ test('CF-002: eq. (7.29) puts the 1.7*Gz^(-2/3) term inside the tanh and reprodu
 });
 
 test('CF-004: Example 7.1 rearrangement multiplies the bracketed difference by uav*k/(4*qw*alpha)',async()=>{
-  const t=(await section('7-2')).blocks[38].text;
+  const t=(await section('7-2')).blocks[40].text;
   assert.ok(t.includes('L/D = [54 − 11qwD/(48k)]·[uav·k/(4qwα)]'),t.slice(0,60));
   assert.ok(!t.includes('[11qwD/(48k)]/[4qwα/(uav·k)]'));
   const seg=t.split('数値的には L/D = ')[1].split(' = 1788')[0];
@@ -51,9 +51,10 @@ test('CF-004: Example 7.1 rearrangement multiplies the bracketed difference by u
 
 test('CF-014: Example 7.7 overall coefficient carries the printed prefactor 1/A_inside',async()=>{
   const t=(await section('7-5')).blocks[9].text;
-  assert.ok(t.includes('U = (1/Ainside)[1/(hA)inside + Rt,wall + 1/(hA)outside]^{−1}'));
-  // Printed form U = (1/A_i)[1/(hA)_i + R_t,wall + 1/(hA)_o]^-1 with
-  // A_i = A_o = A, R_t,wall neglected, h_i = 4.371, h_o = 5 must give
+  assert.ok(t.includes('U = (1/Ainside)[1/(hA)inside + Rtwall + 1/(hA)outside]^{−1}'));
+  // Printed form U = (1/A_i)[1/(hA)_i + R_twall + 1/(hA)_o]^-1 (PDF 399, 600dpi:
+  // the subscript is "twall" as one word, no comma) with
+  // A_i = A_o = A, R_twall neglected, h_i = 4.371, h_o = 5 must give
   // the value the same paragraph states, 2.332 W/m^2 K, for any A.
   const A=2.3, hi=4.371, ho=5;
   const U=(1/A)*(1/(hi*A)+1/(ho*A))**(-1);

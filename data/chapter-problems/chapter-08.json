@@ -13,11 +13,11 @@
     "type": "problem",
     "id": "problem-8-1",
     "number": "8.1",
-    "text": "膜凝縮問題における Π₄ が、Pr·Re²·Ja と正しく解釈できることを示せ。",
+    "text": "膜凝縮問題における Π₄ が、Pr·Re²/Ja と正しく解釈できることを示せ。",
     "hint": "特性速度が必要である ― 液体が距離 L を自由落下で到達する速度を使え。",
     "formulaBlocks": [
      {
-      "expression": "Π_4 = Pr Re² Ja"
+      "expression": "Π_4 = Pr Re²/Ja"
      }
     ],
     "bookPage": 456,
@@ -73,9 +73,9 @@
     "figure": {
      "figureNumber": "Fig. 8.17",
      "caption": "図8.17 問題8.5の構成",
-     "alt": "ダイヤモンド形（ひし形）断面を持つ水平ダクトの図。",
-     "bookPage": 456,
-     "pdfPage": 470
+     "alt": "ダイヤモンド形（ひし形）断面を持つ水平ダクトの図。ひし形の辺の長さは両面とも20 cm。",
+     "bookPage": 457,
+     "pdfPage": 471
     },
     "bookPage": 456,
     "endBookPage": 457,
@@ -123,8 +123,8 @@
      "figureNumber": "Fig. 8.18",
      "caption": "図8.18 問題8.9の構成",
      "alt": "同期して回転する蒸気の中で回転する板の図。",
-     "bookPage": 457,
-     "pdfPage": 471
+     "bookPage": 458,
+     "pdfPage": 472
     },
     "bookPage": 457,
     "endBookPage": 457,
@@ -138,9 +138,9 @@
     "text": "T_sat の層流の液膜が、同じく T_sat の垂直壁を流れ下る。流れは十分に発達しており、膜厚は δ_o である。ある水平線に沿って、壁温度がより低い値 T_w に下がり、その下のいたるところでその温度に保たれる。壁温度が変わる線を x = 0 と呼ぶ。膜に隣接する領域が、流れる液体の飽和蒸気である場合、δ(x)、Nu_x、Nu_L を計算せよ。ここで x = L は壁の下端である。（x = 0 の近傍の遷移挙動は無視せよ。）",
     "hint": "式（8.55）から始めよ。",
     "bookPage": 457,
-    "endBookPage": 458,
+    "endBookPage": 457,
     "pdfPage": 471,
-    "endPdfPage": 472
+    "endPdfPage": 471
    },
    {
     "type": "problem",
@@ -172,8 +172,8 @@
     "type": "problem",
     "id": "problem-8-13",
     "number": "8.13",
-    "text": "家の側壁は高さ10 m である。室内空気と外面の間の総括熱伝達係数は2.5 W/m²·K である。寒く穏やかな冬の夜、T_outside = −30 °C、T_inside,air = 25 °Cである。ε = 0.9 の場合、家の外壁における h_conv はいくらか。外部対流は層流か乱流か。",
-    "answerHint": "h = 4.59 W/m²·K",
+    "text": "家の側壁は高さ10 m である。室内空気と外面の間の総括熱伝達係数は2.5 W/m²·K である。寒く穏やかな冬の夜、T_outside = −30 °C、T_inside,air = 25 °Cである。ε = 0.9 の場合、家の外壁における h̄_conv はいくらか。外部対流は層流か乱流か。",
+    "answerHint": "h̄ = 4.59 W/m²·K",
     "bookPage": 458,
     "endBookPage": 458,
     "pdfPage": 472,
@@ -186,7 +186,7 @@
     "text": "例8.2を考える。シートは軟鋼で、長さ2 m、厚さ6 mm である。浴は基本的に60 °Cの水であり、シートは18 °Cでその中に入れられる。",
     "items": [
      "（a）時間の関数としてシート温度をプロットせよ。",
-     "（b）ΔT = [(60 + 18)/2 − 18] °Cにおける h で近似して、従来の指数応答を同じグラフにプロットせよ。"
+     "（b）ΔT = [(60 + 18)/2 − 18] °Cにおける h̄ で近似して、従来の指数応答を同じグラフにプロットせよ。"
     ],
     "bookPage": 458,
     "endBookPage": 458,
@@ -288,9 +288,9 @@
     "number": "8.23",
     "text": "高さ14 cm の垂直面が、1 atm の凝縮蒸気によって加熱される。H₂O を別の凝縮流体に置き換えて壁を加熱した場合の熱除去の分数変化の式を与えよ。有機流体を1つ選び、両流体とも壁が30 °Cの場合の h̄ の変化率を評価せよ。",
     "bookPage": 459,
-    "endBookPage": 460,
+    "endBookPage": 459,
     "pdfPage": 473,
-    "endPdfPage": 474
+    "endPdfPage": 473
    },
    {
     "type": "problem",
@@ -372,9 +372,9 @@
     "text": "工業プロセスには、水のプールに浸された非常に大きな水平円柱が含まれる。水は27 °Cである。円柱の直径は5 m で、67 °Cに保たれる。まず h̄ を求めよ。次に、直径を10 m に増やしたとする。新しい h̄ はいくらか。乱流自然対流レジームにおけるこれらの答えの類似性を説明せよ。",
     "answerHint": "h̄ ≃ 1000 W/m²·K",
     "bookPage": 460,
-    "endBookPage": 461,
+    "endBookPage": 460,
     "pdfPage": 474,
-    "endPdfPage": 475
+    "endPdfPage": 474
    },
    {
     "type": "problem",
@@ -436,9 +436,9 @@
     "text": "外径0.03 m、長さ3 m、ε = 0.7 の垂直管が、低湿度の24 °Cの部屋を通して冷媒を運ぶ。管壁が10 °Cの場合、それは部屋からどれだけの熱を吸収するか。",
     "answerHint": "Q = 25.8 W",
     "bookPage": 461,
-    "endBookPage": 462,
+    "endBookPage": 461,
     "pdfPage": 475,
-    "endPdfPage": 476
+    "endPdfPage": 475
    },
    {
     "type": "problem",
@@ -486,7 +486,7 @@
     "type": "problem",
     "id": "problem-8-42",
     "number": "8.42",
-    "text": "長さ20 mm、直径5 mm の垂直な棒が、室温の空気中で電流を分流するために使われると赤熱する。その融点が1000 °Cの場合、どれだけの電力を散逸できるか。すべての仮定と補正を記せ。F_{rod–room} = 0.15 を使って放射を含めよ。",
+    "text": "長さ20 mm、直径5 mm の垂直な棒が、室温の空気中で電流を分流するために使われると赤熱する。その融点が1000 °Cの場合、どれだけの電力を散逸できるか。すべての仮定と補正を記せ。ℱ_{rod–room} = 0.15 を使って放射を含めよ。",
     "hint": "熱伝達の半分以上が放射による。",
     "bookPage": 462,
     "endBookPage": 462,
@@ -577,7 +577,7 @@
      "（a）液体の水のバルク温度が T_b = 80 °Cである点において、管の内壁温度と外壁温度 T_wi と T_wo を、およそ5 °C以内の精度で見積もれ。入口長さと物性変化の影響は無視し、β_lead ≈ 0.000118 K⁻¹ とせよ。",
      "（b）入口からどの距離で、管の内壁が T_sat に達するか。設計にどのような変更が必要かもしれないか。"
     ],
-    "hint": "鉛に対する h を計算する際は、外壁温度を370 °Cより高い値で推測せよ。",
+    "hint": "鉛に対する h̄ を計算する際は、外壁温度を370 °Cより高い値で推測せよ。",
     "bookPage": 463,
     "endBookPage": 463,
     "pdfPage": 477,
@@ -594,9 +594,9 @@
      "（c）板の下端における膜厚と、板の凝縮速度（g/s）"
     ],
     "bookPage": 463,
-    "endBookPage": 464,
+    "endBookPage": 463,
     "pdfPage": 477,
-    "endPdfPage": 478
+    "endPdfPage": 477
    },
    {
     "type": "problem",
@@ -638,10 +638,10 @@
      "（b）圧力が255.3 kPa であるとする。板温度が T_w = 280 K の場合、気体から板への熱伝達率（W）はいくらか。冷媒温度は上昇するか。",
      "（c）圧力が1062 kPa に上昇したとする。板がまだ T_w = 280 K の場合、熱伝達率はいくらか。冷媒温度は上昇するか。"
     ],
-    "continuation": "255.3 kPa、290 K における気体アンモニアについては：β = 0.0040 K⁻¹、ρ = 1.86 kg/m³、c_p = 2314 J/kg·K、µ = 9.75 × 10⁻⁶ kg/m³、k = 0.0247 W/m·K。その他のデータは付録Aから取れ。",
+    "continuation": "255.3 kPa、290 K における気体アンモニアについては：β = 0.0040 K⁻¹、ρ = 1.86 kg/m³、c_p = 2314 J/kg·K、μ = 9.75 × 10⁻⁶ kg/m³、k = 0.0247 W/m·K。その他のデータは付録Aから取れ。",
     "sourceNote": {
-     "ja": "本書では粘度 µ の単位が「kg/m³」と印刷されている（正しくは kg/(m·s) とみられる）。数値と単位は原文どおり保持した。",
-     "en": "The book prints the unit of viscosity µ as \"kg/m3\" (evidently kg/(m·s) is meant). The value and unit are preserved as printed."
+     "ja": "本書では粘度 μ の単位が「kg/m³」と印刷されている（正しくは kg/(m·s) とみられる）。数値と単位は原文どおり保持した。",
+     "en": "The book prints the unit of viscosity μ as \"kg/m3\" (evidently kg/(m·s) is meant). The value and unit are preserved as printed."
     },
     "bookPage": 464,
     "endBookPage": 465,
@@ -701,9 +701,9 @@
      }
     ],
     "bookPage": 465,
-    "endBookPage": 466,
+    "endBookPage": 465,
     "pdfPage": 479,
-    "endPdfPage": 480
+    "endPdfPage": 479
    },
    {
     "type": "problem",

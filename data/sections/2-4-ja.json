@@ -2,8 +2,8 @@
   "sectionId": "2.4",
   "language": "ja",
   "source": "A Heat Transfer Textbook, Sixth Edition, §2.4",
-  "bookPages": "78–84",
-  "pdfPages": "92–98",
+  "bookPages": "78–85",
+  "pdfPages": "92–99",
   "blocks": [
     {
       "text": "2.4 総括熱伝達係数 U",
@@ -23,7 +23,7 @@
       "bookPage": 78,
       "pdfPage": 92,
       "caption": "図2.18　直列に並んだ多数の抵抗を持つ熱回路。等価抵抗は R_{t,equiv} = Σᵢ Rᵢ である。",
-      "alt": "多数の熱抵抗が直列に接続された熱回路の模式図。",
+      "alt": "多数の熱抵抗が直列に接続された熱回路の模式図。矩形回路に R₁・R₂・…・R_n の直列のジグザグが描かれ、下辺には電池記号と ΔT がある。",
       "description": "直列抵抗の等価抵抗は、個々の抵抗の和です。"
     },
     {

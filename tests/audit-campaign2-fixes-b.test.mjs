@@ -28,8 +28,8 @@ test('CF2-003/C07-25: eq. (8.26) is the single-fraction print form and its membe
 test('CF2-002/C07-08: Problem 7.1 carries R² in text and expression, and the identity holds', async () => {
   const blocks = await problems('07');
   const p = blocks.find(b => b.id === 'problem-7-1');
-  assert.ok(p.text.includes('(−dp/dx)R²/(4µ)'), p.text);
-  assert.ok(p.formulaBlocks[0].expression.includes('(−dp/dx)R²/(4µ)'), p.formulaBlocks[0].expression);
+  assert.ok(p.text.includes('(−dp/dx)R²/(4μ)'), p.text);
+  assert.ok(p.formulaBlocks[0].expression.includes('(−dp/dx)R²/(4μ)'), p.formulaBlocks[0].expression);
   // Poiseuille: u_av = R²(−dp/dx)/(8μ), so (−dp/dx)R²/(4μ) = 2·u_av exactly; the R¹ form does not.
   const R = 0.01, mu = 1e-3, dpdx = 100;
   const uav = R ** 2 * dpdx / (8 * mu);

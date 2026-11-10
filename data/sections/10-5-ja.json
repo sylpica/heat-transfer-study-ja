@@ -108,7 +108,7 @@
     },
     {
       "type": "formula",
-      "expression": "iλ(L) = iλ0·e^(−ρκλL) + iλb·(1 − e^(−ρκλL)) = τλ·iλ0 + ελ·iλb",
+      "expression": "iλ(L) = iλ0·e^(−ρκλL) + iλb·(1 − e^(−ρκλL))",
       "number": "10.53",
       "alt": "透過と自己放射の和です",
       "explanation": "第2項の係数が気体層の単色放射率です。"

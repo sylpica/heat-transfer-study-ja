@@ -679,7 +679,7 @@
         "type": "problem",
         "id": "problem-5-55",
         "number": "5.55",
-        "text": "あるタングステンランプのフィラメントは直径100 μm で、不活性ガスで満たされたガラス球の中にある。対流と放射の実効熱伝達率は750 W/m·K（原文の単位表記のまま）で、電流は60 Hzである。ガス温度が200 °Cで、ワイヤーの平均温度が2900 °Cの場合、フィラメントの表面温度はどれだけ変動するか。",
+        "text": "あるタングステンランプのフィラメントは直径100 µm で、不活性ガスで満たされたガラス球の中にある。対流と放射の実効熱伝達率は750 W/m·K（原文の単位表記のまま）で、電流は60 Hzである。ガス温度が200 °Cで、ワイヤーの平均温度が2900 °Cの場合、フィラメントの表面温度はどれだけ変動するか。",
         "sourceNote": {
           "ja": "原文は実効熱伝達率の単位を「W/m·K」と印刷しているが、正しくは W/m²·K とみられる。値は原文どおり保持した。",
           "en": "The book prints the unit of the effective heat transfer coefficient as W/m·K; it should evidently be W/m²·K. The value is preserved as printed."

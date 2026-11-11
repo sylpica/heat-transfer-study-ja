@@ -638,7 +638,7 @@
      "（b）圧力が255.3 kPa であるとする。板温度が T_w = 280 K の場合、気体から板への熱伝達率（W）はいくらか。冷媒温度は上昇するか。",
      "（c）圧力が1062 kPa に上昇したとする。板がまだ T_w = 280 K の場合、熱伝達率はいくらか。冷媒温度は上昇するか。"
     ],
-    "continuation": "255.3 kPa、290 K における気体アンモニアについては：β = 0.0040 K⁻¹、ρ = 1.86 kg/m³、c_p = 2314 J/kg·K、μ = 9.75 × 10⁻⁶ kg/m³、k = 0.0247 W/m·K。その他のデータは付録Aから取れ。",
+    "continuation": "255.3 kPa、290 K における気体アンモニアについては：β = 0.0040 K⁻¹、ρ = 1.86 kg/m³、c_p = 2314 J/kgK、μ = 9.75 × 10⁻⁶ kg/m³、k = 0.0247 W/m·K。その他のデータは付録Aから取れ。",
     "sourceNote": {
      "ja": "本書では粘度 μ の単位が「kg/m³」と印刷されている（正しくは kg/(m·s) とみられる）。数値と単位は原文どおり保持した。",
      "en": "The book prints the unit of viscosity μ as \"kg/m3\" (evidently kg/(m·s) is meant). The value and unit are preserved as printed."

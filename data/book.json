@@ -59,8 +59,8 @@
           "id": "1.3",
           "title": "熱移動の形態",
           "sourceTitle": "Modes of heat transfer",
-          "pdfStart": 25,
-          "bookStart": 11,
+          "pdfStart": 24,
+          "bookStart": 10,
           "pdfEnd": 48,
           "bookEnd": 34,
           "translationStatus": "draft_complete",
@@ -190,8 +190,8 @@
           "sourceTitle": "About the end-of-chapter problems",
           "pdfStart": 49,
           "bookStart": 35,
-          "pdfEnd": 49,
-          "bookEnd": 35,
+          "pdfEnd": 50,
+          "bookEnd": 36,
           "translationStatus": "draft_complete",
           "reviewStatus": "needs_review",
           "translationProgress": {
@@ -611,9 +611,9 @@
           "title": "熱交換器の機能と構成",
           "sourceTitle": "Function and configuration of heat exchangers",
           "pdfStart": 113,
-          "pdfEnd": 117,
+          "pdfEnd": 121,
           "bookStart": 99,
-          "bookEnd": 103,
+          "bookEnd": 107,
           "translationStatus": "draft_complete",
           "reviewStatus": "needs_review",
           "translationProgress": {
@@ -684,8 +684,8 @@
           "sourceTitle": "Evaluation of the mean temperature difference in a heat exchanger",
           "pdfStart": 117,
           "bookStart": 103,
-          "bookEnd": 119,
-          "pdfEnd": 133,
+          "pdfEnd": 134,
+          "bookEnd": 120,
           "translationStatus": "draft_complete",
           "reviewStatus": "needs_review",
           "translationProgress": {
@@ -1272,8 +1272,8 @@
           "sourceTitle": "Temperature-response charts",
           "pdfStart": 221,
           "bookStart": 207,
-          "bookEnd": 216,
-          "pdfEnd": 230,
+          "pdfEnd": 232,
+          "bookEnd": 218,
           "translationStatus": "draft_complete",
           "reviewStatus": "needs_review",
           "translationProgress": {
@@ -1615,8 +1615,8 @@
           "sourceTitle": "Some introductory ideas",
           "pdfStart": 285,
           "bookStart": 271,
-          "bookEnd": 277,
-          "pdfEnd": 291,
+          "pdfEnd": 292,
+          "bookEnd": 278,
           "translationStatus": "draft_complete",
           "reviewStatus": "needs_review",
           "translationProgress": {
@@ -3436,14 +3436,18 @@
           "title": "その他の状況における自然対流",
           "sourceTitle": "Natural convection in other situations",
           "pdfStart": 444,
-          "bookStart": 430
+          "bookStart": 430,
+          "pdfEnd": 454,
+          "bookEnd": 440
         },
         {
           "id": "8.5",
           "title": "膜状凝縮",
           "sourceTitle": "Film condensation",
           "pdfStart": 455,
-          "bookStart": 441
+          "bookStart": 441,
+          "pdfEnd": 469,
+          "bookEnd": 455
         }
       ],
       "backMatter": [
@@ -3476,77 +3480,99 @@
           "title": "ヌキヤマの実験とプール沸騰曲線",
           "sourceTitle": "Nukiyama's experiment and the pool boiling curve",
           "pdfStart": 485,
-          "bookStart": 471
+          "bookStart": 471,
+          "pdfEnd": 491,
+          "bookEnd": 477
         },
         {
           "id": "9.2",
           "title": "核沸騰",
           "sourceTitle": "Nucleate boiling",
           "pdfStart": 492,
-          "bookStart": 478
+          "bookStart": 478,
+          "pdfEnd": 499,
+          "bookEnd": 485
         },
         {
           "id": "9.3",
           "title": "プール沸騰の限界熱流束",
           "sourceTitle": "Peak pool boiling heat flux",
           "pdfStart": 499,
-          "bookStart": 485
+          "bookStart": 485,
+          "pdfEnd": 513,
+          "bookEnd": 499
         },
         {
           "id": "9.4",
           "title": "膜沸騰",
           "sourceTitle": "Film boiling",
           "pdfStart": 514,
-          "bookStart": 500
+          "bookStart": 500,
+          "pdfEnd": 516,
+          "bookEnd": 502
         },
         {
           "id": "9.5",
           "title": "最小熱流束",
           "sourceTitle": "Minimum heat flux",
           "pdfStart": 516,
-          "bookStart": 502
+          "bookStart": 502,
+          "pdfEnd": 517,
+          "bookEnd": 503
         },
         {
           "id": "9.6",
           "title": "遷移沸騰",
           "sourceTitle": "Transition boiling",
           "pdfStart": 517,
-          "bookStart": 503
+          "bookStart": 503,
+          "pdfEnd": 520,
+          "bookEnd": 506
         },
         {
           "id": "9.7",
           "title": "その他の系の影響",
           "sourceTitle": "Other system influences",
           "pdfStart": 520,
-          "bookStart": 506
+          "bookStart": 506,
+          "pdfEnd": 525,
+          "bookEnd": 511
         },
         {
           "id": "9.8",
           "title": "管内強制対流沸騰",
           "sourceTitle": "Forced convection boiling in tubes",
           "pdfStart": 526,
-          "bookStart": 512
+          "bookStart": 512,
+          "pdfEnd": 534,
+          "bookEnd": 520
         },
         {
           "id": "9.9",
           "title": "強制対流凝縮熱伝達",
           "sourceTitle": "Forced convective condensation heat transfer",
           "pdfStart": 535,
-          "bookStart": 521
+          "bookStart": 521,
+          "pdfEnd": 535,
+          "bookEnd": 521
         },
         {
           "id": "9.10",
           "title": "滴状凝縮",
           "sourceTitle": "Dropwise condensation",
           "pdfStart": 536,
-          "bookStart": 522
+          "bookStart": 522,
+          "pdfEnd": 539,
+          "bookEnd": 525
         },
         {
           "id": "9.11",
           "title": "ヒートパイプ",
           "sourceTitle": "The heat pipe",
           "pdfStart": 539,
-          "bookStart": 525
+          "bookStart": 525,
+          "pdfEnd": 543,
+          "bookEnd": 529
         }
       ],
       "backMatter": [
@@ -3579,42 +3605,54 @@
           "title": "放射交換の問題",
           "sourceTitle": "The problem of radiative exchange",
           "pdfStart": 557,
-          "bookStart": 543
+          "bookStart": 543,
+          "pdfEnd": 564,
+          "bookEnd": 550
         },
         {
           "id": "10.2",
           "title": "キルヒホッフの法則",
           "sourceTitle": "Kirchhoff's law",
           "pdfStart": 565,
-          "bookStart": 551
+          "bookStart": 551,
+          "pdfEnd": 568,
+          "bookEnd": 554
         },
         {
           "id": "10.3",
           "title": "有限な二つの黒体間の放射熱交換",
           "sourceTitle": "Radiant heat exchange between two finite black bodies",
           "pdfStart": 569,
-          "bookStart": 555
+          "bookStart": 555,
+          "pdfEnd": 580,
+          "bookEnd": 566
         },
         {
           "id": "10.4",
           "title": "灰色体間の熱移動",
           "sourceTitle": "Heat transfer among gray bodies",
           "pdfStart": 581,
-          "bookStart": 567
+          "bookStart": 567,
+          "pdfEnd": 594,
+          "bookEnd": 580
         },
         {
           "id": "10.5",
           "title": "気体の放射",
           "sourceTitle": "Gaseous radiation",
           "pdfStart": 595,
-          "bookStart": 581
+          "bookStart": 581,
+          "pdfEnd": 607,
+          "bookEnd": 593
         },
         {
           "id": "10.6",
           "title": "太陽エネルギー",
           "sourceTitle": "Solar energy",
           "pdfStart": 608,
-          "bookStart": 594
+          "bookStart": 594,
+          "pdfEnd": 617,
+          "bookEnd": 603
         }
       ],
       "backMatter": [
@@ -3647,77 +3685,99 @@
           "title": "導入",
           "sourceTitle": "Introduction",
           "pdfStart": 635,
-          "bookStart": 621
+          "bookStart": 621,
+          "pdfEnd": 637,
+          "bookEnd": 623
         },
         {
           "id": "11.2",
           "title": "混合物の組成と成分流束",
           "sourceTitle": "Mixture compositions and species fluxes",
           "pdfStart": 638,
-          "bookStart": 624
+          "bookStart": 624,
+          "pdfEnd": 645,
+          "bookEnd": 631
         },
         {
           "id": "11.3",
           "title": "二成分混合物におけるフィックの拡散法則",
           "sourceTitle": "Fick's law of diffusion in binary mixtures",
           "pdfStart": 646,
-          "bookStart": 632
+          "bookStart": 632,
+          "pdfEnd": 651,
+          "bookEnd": 637
         },
         {
           "id": "11.4",
           "title": "成分保存方程式",
           "sourceTitle": "The equation of species conservation",
           "pdfStart": 652,
-          "bookStart": 638
+          "bookStart": 638,
+          "pdfEnd": 660,
+          "bookEnd": 646
         },
         {
           "id": "11.5",
           "title": "静止媒体中の物質移動",
           "sourceTitle": "Mass transfer through a stationary medium",
           "pdfStart": 661,
-          "bookStart": 647
+          "bookStart": 647,
+          "pdfEnd": 669,
+          "bookEnd": 655
         },
         {
           "id": "11.6",
           "title": "低率における対流物質移動",
           "sourceTitle": "Convective mass transfer at low rates",
           "pdfStart": 669,
-          "bookStart": 655
+          "bookStart": 655,
+          "pdfEnd": 675,
+          "bookEnd": 661
         },
         {
           "id": "11.7",
           "title": "低率における熱・物質同時移動",
           "sourceTitle": "Simultaneous heat and mass transfer at low rates",
           "pdfStart": 676,
-          "bookStart": 662
+          "bookStart": 662,
+          "pdfEnd": 684,
+          "bookEnd": 670
         },
         {
           "id": "11.8",
           "title": "クエット流れ、または停滞膜モデル",
           "sourceTitle": "The Couette flow, or stagnant film, model",
           "pdfStart": 684,
-          "bookStart": 670
+          "bookStart": 670,
+          "pdfEnd": 689,
+          "bookEnd": 675
         },
         {
           "id": "11.9",
           "title": "高率の物質移動における熱伝達",
           "sourceTitle": "Heat transfer at high mass transfer rates",
           "pdfStart": 690,
-          "bookStart": 676
+          "bookStart": 676,
+          "pdfEnd": 699,
+          "bookEnd": 685
         },
         {
           "id": "11.10",
           "title": "混合物の輸送物性",
           "sourceTitle": "Transport properties of mixtures",
           "pdfStart": 700,
-          "bookStart": 686
+          "bookStart": 686,
+          "pdfEnd": 712,
+          "bookEnd": 698
         },
         {
           "id": "11.11",
           "title": "多成分・非理想混合物の拡散",
           "sourceTitle": "Diffusion in multicomponent and nonideal mixtures",
           "pdfStart": 713,
-          "bookStart": 699
+          "bookStart": 699,
+          "pdfEnd": 720,
+          "bookEnd": 706
         }
       ],
       "backMatter": [

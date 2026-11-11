@@ -158,7 +158,8 @@ test('C3-C05-16/17: eq. (6.83) =0 note and eq. (6.85b) display form', async () =
   assert.ok(formula(bl, '6.82').explanation.includes('「= 0」の下括弧注'), 'underbrace =0 note');
   const e = formula(bl, '6.85a–6.85c').expression;
   assert.ok(e.includes('乱流混合を反映する何らかの他の因子'), e);
-  assert.ok(e.includes('この第2項 ≡ ρ·εm'), 'underbrace definition of the 6.85b term');
+  assert.ok(e.includes('（乱流混合を反映する何らかの他の因子 ≡ ρ·εm）'), 'underbrace definition scopes to the factor (campaign 6 B-7)');
+  assert.ok(!e.includes('この第2項 ≡ ρ·εm'), 'whole-term attribution removed (campaign 6 B-7)');
   assert.ok(e.includes('ρ(ν + εm)(∂ū/∂y)'), '6.85c member present');
   assert.ok(!e.includes('[μ + ρ·εm]'), 'hybrid form removed');
 });

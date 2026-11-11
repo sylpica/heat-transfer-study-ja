@@ -1,0 +1,18 @@
+
+> build:public
+> node scripts/build-public-site.mjs
+
+file:///home/hatch/workspace/dev/heat-collation3/scripts/build-public-site.mjs:74
+if(issues.length)throw new Error('公開教材の整合性検査に失敗しました:\n'+issues.join('\n'));
+                       ^
+
+Error: 公開教材の整合性検査に失敗しました:
+学習ノート 5.8: 目次の節・ページとの対応が一致しません。
+学習ノート 6.2: 目次の節・ページとの対応が一致しません。
+学習ノート 6.4: 目次の節・ページとの対応が一致しません。
+学習ノート 6.5: 目次の節・ページとの対応が一致しません。
+学習ノート 6.8: 目次の節・ページとの対応が一致しません。
+学習ノート 6.9: 目次の節・ページとの対応が一致しません。
+    at file:///home/hatch/workspace/dev/heat-collation3/scripts/build-public-site.mjs:74:24
+
+Node.js v24.22.1

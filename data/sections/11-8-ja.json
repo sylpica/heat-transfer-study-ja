@@ -120,7 +120,7 @@
       "pdfPage": 688,
       "caption": "図11.19　逆浸透による海水淡水化中の塩と水の濃度プロファイル。塩は静止している：nsalt = ρsalt·v + jsalt = 0。",
       "alt": "濃度分極の模式図",
-      "description": "膜表面で塩濃度が高くなる。 水側のプロファイル（mH2O,e → mH2O,s）、jsalt・v・nH2O,s の矢印、海水の流れ ue、membrane（膜）のラベルが示される。"
+      "description": "膜表面で塩濃度が高くなる。 水側のプロファイル（mH2O,e → mH2O,s）、jsalt・v・nH2O,s の矢印、海水の流れ ue、membrane（膜）のラベルが示される。塩側のプロファイル（m_salt,e → m_salt,s、y = δc から膜面 y = 0 へ）も示される。"
     },
     {
       "type": "paragraph",

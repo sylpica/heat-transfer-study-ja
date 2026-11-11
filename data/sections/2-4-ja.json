@@ -132,7 +132,7 @@
       "bookPage": 81,
       "pdfPage": 95,
       "caption": "図2.20　複合壁を通る伝熱。",
-      "alt": "左の Configuration は、おがくず（Sawdust）と松材（Pine）が交互に並ぶ厚さ L の壁で、左側が (T_∞ℓ)・h̄・面積 A_p、右側が (T_∞r)・h̄・面積 A_s とラベルされる。右の Thermal circuit は両端の R_t = 1/(h̄A) の間に R_t = L/(k_pA_p) と R_t = L/(k_sA_s) の並列対が入り、ΔT = T_∞ℓ − T_∞r が駆動力となる。",
+      "alt": "左の Configuration は、おがくず（Sawdust）と松材（Pine）が交互に並ぶ厚さ L の壁で、左側に (T_∞ℓ)・h̄、右側に (T_∞r)・h̄ がラベルされる。壁の両面はいずれも全面積 A で、A_p は松材帯の面積、A_s はおがくず帯の面積を表す。右の Thermal circuit は両端の R_t = 1/(h̄A) の間に R_t = L/(k_pA_p) と R_t = L/(k_sA_s) の並列対が入り、ΔT = T_∞ℓ − T_∞r が駆動力となる。",
       "description": "例題2.11の設定です。間柱と断熱材が並列の熱路をなします。"
     },
     {

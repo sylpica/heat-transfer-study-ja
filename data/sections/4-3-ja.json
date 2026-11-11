@@ -2,8 +2,8 @@
   "sectionId": "4.3",
   "language": "ja",
   "source": "A Heat Transfer Textbook, Sixth Edition, §4.3",
-  "bookPages": "150–158",
-  "pdfPages": "164–172",
+  "bookPages": "150–159",
+  "pdfPages": "164–173",
   "blocks": [
     {
       "type": "heading",
@@ -194,7 +194,7 @@
       "pdfPage": 171,
       "caption": "図4.4　タンクからの液体の流出。",
       "alt": "タンクからの液体の流出を示す図",
-      "description": "液面から流出口までの水頭（head）Hのもとで、タンクから液体が流出する様子。"
+      "description": "液面から流出口までの水頭（head）Hのもとで、タンクから液体が流出する様子。流出口での流速は v とラベルされる。"
     },
     {
       "type": "paragraph",

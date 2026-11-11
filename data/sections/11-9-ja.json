@@ -246,7 +246,7 @@
       "pdfPage": 699,
       "caption": "図11.24　垂直管内下降流凝縮器。底部のフローティングヘッドは、熱膨張と保守を可能にする（組み立て詳細は示されていない；Mueller [11.41] を見よ）。シェル側から空気を除去するために、第2のベントを管板フランジに含めることができる。",
       "alt": "凝縮器の構造図",
-      "description": ""
+      "description": "垂直管内下降流凝縮器の構造図。Vapor in（蒸気入口、上部右）、Water out（水出口、上部右）、Tubesheet flange（管板フランジ、左）、Water in（水入口、下部左）、Baffle plate separator（バッフル板分離器）、Vent（ベント）、Condensate（凝縮液、底部）、Packed floating head（パックドフローティングヘッド、右）のラベルが示される。"
     }
   ],
   "status": "complete"

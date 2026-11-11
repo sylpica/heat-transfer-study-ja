@@ -13,7 +13,7 @@ import {readFile} from 'node:fs/promises';
 const chapter = async id => JSON.parse(await readFile(new URL(`../data/chapter-problems/chapter-${id}.json`, import.meta.url), 'utf8'));
 const prob = async (cid, pid) => (await chapter(cid)).problems.blocks.find(p => p.id === pid);
 const MAC = '\u0304';   // combining macron
-const OVL = '\u0305';   // combining overline
+const OVL = '\u0304';   // combining macron (corpus standard; campaign-8 F-16 normalized ch.11 from U+0305)
 const TT = '\u{1D47B}';   // bold italic T
 const SCRIPT_D = '\u{1D49F}';
 const SCRIPT_F = 'ℱ';

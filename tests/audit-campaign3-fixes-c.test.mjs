@@ -193,7 +193,9 @@ test('C06-13/14 + C07-03: Rt comma removed, Fig 7.13 caption, 7.6 header range',
 
 test('C07-01/04/05/14/15: ch.8 condition, macron attribution, integral limits, footnote, lesson note', () => {
   const d81 = figDesc('8-2', '8.1');
-  assert.ok(d81.includes('Pr ≪ 1') && !d81.includes('Pr が1のオーダーのとき'), d81);
+  // Campaign 5 (C5-C07-07) superseded the campaign-3 pin below: the print's Fig. 8.1 note
+  // reads "Pr ≲ the order of unity" (600dpi), so the description now says 1のオーダー程度以下.
+  assert.ok(d81.includes('Pr が1のオーダー程度以下') && !d81.includes('Pr ≪ 1'), d81);
   const b89 = section('8-3').blocks.find((b) => b.number === '8.9');
   assert.ok(b89.explanation.includes('NuL = fn(GrL, Pr)（式(8.10)）'), 'eq (8.10) must be bar-less');
   const txt83 = allText(section('8-3').blocks);

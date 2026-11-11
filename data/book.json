@@ -1931,14 +1931,14 @@
           "sourceTitle": "The Prandtl number and the boundary layer thicknesses",
           "pdfStart": 312,
           "bookStart": 298,
-          "bookEnd": 301,
-          "pdfEnd": 315,
+          "bookEnd": 302,
+          "pdfEnd": 316,
           "translationStatus": "draft_complete",
           "reviewStatus": "needs_review",
-          "pageBoundaryNote": "§6.4は書籍p.298／PDF p.312から始まり、p.298には§6.3の例題6.4の終わりも同居する。§6.4は書籍p.301／PDF p.315で終わり、次節§6.5はp.302／PDF p.316から始まる。",
+          "pageBoundaryNote": "§6.4は書籍p.298／PDF p.312から始まり、p.298には§6.3の例題6.4の終わりも同居する。§6.4の結びの段落は書籍p.302／PDF p.316の冒頭（§6.5見出しの前）に印字され、§6.4は同ページで終わる。",
           "translationProgress": {
-            "draftBookPages": "298–301",
-            "draftPdfPages": "312–315",
+            "draftBookPages": "298–302",
+            "draftPdfPages": "312–316",
             "draftComplete": true,
             "draftFiles": [
               "data/drafts/6-4-ja.json",
@@ -1973,6 +1973,12 @@
               {
                 "bookPage": 301,
                 "pdfPage": 315,
+                "translationStatus": "draft_complete",
+                "reviewStatus": "needs_review"
+              },
+              {
+                "bookPage": 302,
+                "pdfPage": 316,
                 "translationStatus": "draft_complete",
                 "reviewStatus": "needs_review"
               }
@@ -2527,7 +2533,7 @@
     {
       "id": "ch7",
       "part": "III 対流熱伝達",
-      "title": "さまざまな形状における強制対流",
+      "title": "さまざまな構成における強制対流",
       "sourceTitle": "Forced convection in a variety of configurations",
       "pdfStart": 365,
       "bookStart": 351,
@@ -3606,8 +3612,8 @@
           "sourceTitle": "The problem of radiative exchange",
           "pdfStart": 557,
           "bookStart": 543,
-          "pdfEnd": 564,
-          "bookEnd": 550
+          "pdfEnd": 565,
+          "bookEnd": 551
         },
         {
           "id": "10.2",
@@ -3624,8 +3630,8 @@
           "sourceTitle": "Radiant heat exchange between two finite black bodies",
           "pdfStart": 569,
           "bookStart": 555,
-          "pdfEnd": 580,
-          "bookEnd": 566
+          "pdfEnd": 581,
+          "bookEnd": 567
         },
         {
           "id": "10.4",
@@ -3633,8 +3639,8 @@
           "sourceTitle": "Heat transfer among gray bodies",
           "pdfStart": 581,
           "bookStart": 567,
-          "pdfEnd": 594,
-          "bookEnd": 580
+          "pdfEnd": 595,
+          "bookEnd": 581
         },
         {
           "id": "10.5",
@@ -3642,8 +3648,8 @@
           "sourceTitle": "Gaseous radiation",
           "pdfStart": 595,
           "bookStart": 581,
-          "pdfEnd": 607,
-          "bookEnd": 593
+          "pdfEnd": 608,
+          "bookEnd": 594
         },
         {
           "id": "10.6",
@@ -3651,8 +3657,8 @@
           "sourceTitle": "Solar energy",
           "pdfStart": 608,
           "bookStart": 594,
-          "pdfEnd": 617,
-          "bookEnd": 603
+          "pdfEnd": 618,
+          "bookEnd": 604
         }
       ],
       "backMatter": [
@@ -3686,8 +3692,8 @@
           "sourceTitle": "Introduction",
           "pdfStart": 635,
           "bookStart": 621,
-          "pdfEnd": 637,
-          "bookEnd": 623
+          "pdfEnd": 638,
+          "bookEnd": 624
         },
         {
           "id": "11.2",
@@ -3695,8 +3701,8 @@
           "sourceTitle": "Mixture compositions and species fluxes",
           "pdfStart": 638,
           "bookStart": 624,
-          "pdfEnd": 645,
-          "bookEnd": 631
+          "pdfEnd": 646,
+          "bookEnd": 632
         },
         {
           "id": "11.3",
@@ -3713,8 +3719,8 @@
           "sourceTitle": "The equation of species conservation",
           "pdfStart": 652,
           "bookStart": 638,
-          "pdfEnd": 660,
-          "bookEnd": 646
+          "pdfEnd": 661,
+          "bookEnd": 647
         },
         {
           "id": "11.5",
@@ -3767,8 +3773,8 @@
           "sourceTitle": "Transport properties of mixtures",
           "pdfStart": 700,
           "bookStart": 686,
-          "pdfEnd": 712,
-          "bookEnd": 698
+          "pdfEnd": 713,
+          "bookEnd": 699
         },
         {
           "id": "11.11",

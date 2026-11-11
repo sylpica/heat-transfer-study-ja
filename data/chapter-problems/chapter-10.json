@@ -947,8 +947,8 @@
         "originalTitle": "Molecular Spectra and Molecular Structure",
         "titleJa": "分子スペクトルと分子構造",
         "publication": "Kreiger Publishing, Malabar, Florida, 1989",
-        "noteJa": "全3巻。",
-        "noteEn": "In three volumes.",
+        "noteJa": "全3巻。出版社名は原文で「Kreiger Publishing」と印刷されているが、「Krieger」の誤植とみられる。原文の表記のまま保持した。",
+        "noteEn": "In three volumes. The publisher name is printed as \"Kreiger Publishing\" in the original, evidently a misprint for \"Krieger\"; the printed wording is preserved.",
         "bookPage": 615,
         "pdfPage": 629
       },
@@ -1048,6 +1048,8 @@
         "titleJa": "選ばれた太陽・惑星量の公称値：IUA 2015 決議 B3",
         "publication": "The Astronomical Journal, 152(2):41, August 2016",
         "doi": "10.3847/0004-6256/152/2/41",
+        "noteJa": "原文では題名が「IUA 2015 Resolution B3」と印刷されているが、「IUA」は「IAU」（国際天文学連合）の誤植とみられる。原文の表記のまま保持した。",
+        "noteEn": "The original prints the title as \"IUA 2015 Resolution B3\"; \"IUA\" is evidently a misprint for \"IAU\" (International Astronomical Union), but the printed wording is preserved.",
         "bookPage": 615,
         "pdfPage": 629
       },

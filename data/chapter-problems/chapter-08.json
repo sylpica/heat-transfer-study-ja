@@ -149,7 +149,7 @@
     "text": "27 °Cの空気中と水中における、通常の重力下での自然対流について、次の形の公式の表を作成せよ。T_∞ = 27 °Cとし、T_w は27 °Cに近いとせよ。表には、垂直板、水平円柱、球、および可能なら追加の形状に対する結果を含めること。計算過程は含めないこと。",
     "formulaBlocks": [
      {
-      "expression": "h̄ (W/m²·K) = C[ΔT/(L K/m)]^(1/4)"
+      "expression": "h̄ (W/m²·K) = C[ΔT/L K/m]^(1/4)"
      }
     ],
     "bookPage": 458,
@@ -161,7 +161,7 @@
     "type": "problem",
     "id": "problem-8-12",
     "number": "8.12",
-    "text": "条件 |∂²u/∂y²|_{y=0} = gβ(T_w − T_∞)/ν が Squire-Eckert の境界層解において正確に満たされるのは、Pr がいくらのときか。",
+    "text": "条件 ∂²u/∂y²|_{y=0} = gβ(T_w − T_∞)/ν が Squire-Eckert の境界層解において正確に満たされるのは、Pr がいくらのときか。",
     "answerHint": "Pr = 2.86",
     "bookPage": 458,
     "endBookPage": 458,

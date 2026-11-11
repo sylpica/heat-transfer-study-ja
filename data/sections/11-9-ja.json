@@ -58,7 +58,7 @@
       "pdfPage": 691,
       "caption": "図11.20　熱境界層におけるエネルギーと質量の輸送。種 i は、壁（s）から自由流れ（e）へ流れる。",
       "alt": "熱境界層の輸送模式図",
-      "description": ""
+      "description": "壁面 s（温度 T_s）と自由流れ e（温度 T_e）の間の熱境界層厚さ δ_t が示され、壁面での熱流束の定義式 q_s = −k dT/dy|_s、エンタルピー流束 (nh)_{i,s}、質量流束 n_i = n_{i,s} のラベルがある。"
     },
     {
       "type": "formula",
@@ -103,7 +103,7 @@
       "pdfPage": 693,
       "caption": "図11.21　蒸散冷却。その冷却材、種 i は、そのリザーバーから、多孔質の壁を通って、その熱い気体の中へ流れる。",
       "alt": "蒸散冷却の模式図",
-      "description": ""
+      "description": "高温ガス流（Hot gas flow、温度 T_e）に接する多孔質壁（Porous wall）をはさんで、ステーション e・s・u・r と温度 T_e・T_s・T_r が示される。エンタルピー流束 (nh)_{i,s}・(nh)_{i,u}・(nh)_{i,r} は冷却材リザーバ（Coolant reservoir）から壁を通ってガス側へ向かい、熱流束は q_s（壁面へ向かう）・q_u（リザーバ側へ向かう）・q_r ≃ 0。"
     },
     {
       "type": "formula",

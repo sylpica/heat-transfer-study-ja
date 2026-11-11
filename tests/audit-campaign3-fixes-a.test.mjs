@@ -99,7 +99,7 @@ test('C3-A macrons: dropped overlines restored in ch.4/7/8 problems (h and Nu)',
 test('C3-A macron over-application removed (C07-10): problem 7.42 boundary u has no bar, defined ū keeps it', async () => {
   const p = await prob('07', 'problem-7-42');
   assert.ok(p.text.includes('ここで u = 0 は正方形の辺上であり'), p.text);
-  assert.ok(p.text.includes('ū = u/[(a²/μ)(dp/dz)]'), p.text);  // ū = U+016B precomposed, as in the data convention
+  assert.ok(p.text.includes('ū = u/[(a²/μ)(dp/dz)]'), p.text);  // ū written as u + U+0304 (campaign-4 C07-05: decomposed encoding, data-wide convention)
   assert.ok(!p.text.includes('ここで ū = 0'));
 });
 
@@ -109,10 +109,14 @@ test('C3-A script F (C07-25): problem 8.42 view factor uses ℱ U+2131', async (
   assert.ok(!p.text.includes('F_{rod–room}'));
 });
 
-test('C3-A (C3C08-16): no U+00B5 remains in any chapter-problems file; mu is U+03BC', async () => {
+test('C3-A (C3C08-16, superseded by campaign-4 ADJ-2): chapter-problems unit µm is U+00B5; no U+03BC remains before m', async () => {
+  // Campaign 3 normalized every mu in chapter-problems to U+03BC. Campaign 4 ADJ-2
+  // replaced that blanket rule with the semantic one used app-wide: the unit µm is
+  // U+00B5, the symbol µ (viscosity etc.) is U+03BC. In chapter-problems every
+  // U+03BC that stood before 'm' was a unit and is now U+00B5.
   for (const cid of ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11']) {
     const raw = await readFile(new URL(`../data/chapter-problems/chapter-${cid}.json`, import.meta.url), 'utf8');
-    assert.ok(!raw.includes('µ'), `chapter-${cid} still contains U+00B5`);
+    assert.ok(!/\u03bc(?=m)/.test(raw), `chapter-${cid} still has U+03BC before m`);
   }
   const p853 = await prob('08', 'problem-8-53');
   const s = JSON.stringify(p853);
@@ -206,5 +210,5 @@ test('C3-A ch.11 glyphs: 𝒟 restorations, Đ (U+0110) not Ð (U+00D0), ℱ in 
   const p1157 = await prob('11', 'problem-11-57');
   for (const sub of ['_12', '_13', '_23']) assert.ok(p1157.text.includes(`${D_STROKE}${sub}`), sub);
   // problem 11.52's D is the number of molecular energy modes, not a diffusion coefficient: untouched
-  assert.ok((await prob('11', 'problem-11-52')).text.includes('γ ≊ (D + 2)/D'));
+  assert.ok((await prob('11', 'problem-11-52')).text.includes('γ ≅ (D + 2)/D'));
 });

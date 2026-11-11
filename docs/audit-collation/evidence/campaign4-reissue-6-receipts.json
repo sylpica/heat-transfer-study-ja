@@ -1,0 +1,80 @@
+[
+  {
+    "id": "book-9-2-bubble-radius",
+    "revision": "current",
+    "content_sha256": "4a816dd2b3a3d42dc462a17461af04edcf3ce7d765054f723ce39ec6a68ee26f",
+    "independent_choice_index": 1,
+    "saved_key": 1,
+    "key_agrees": true,
+    "selected_text": "4.0×10¹ µm",
+    "computed_or_physical_result": "4.0×10¹ µm",
+    "working": "Eq. (9.1) R_b = 2σ/Δp with σ = 0.060 N/m and Δp = 3.0 kPa = 3000 Pa: R_b = 0.120/3000 = 4.0×10⁻⁵ m = 4.0×10¹ µm. Distractors: σ/Δp (no factor 2) = 2.0×10¹ µm; 4σ/Δp = 8.0×10¹ µm; Δp misread as 300 Pa gives 4.0×10² µm.",
+    "alternative_choices_review": "2.0×10¹ µm drops the spherical-interface factor 2; 8.0×10¹ µm applies it twice; 4.0×10² µm mis-converts 3.0 kPa as 300 Pa.",
+    "level": "Campaign-4 reissue: blind worked solution on the CURRENT question text, solved from prompt and choices before the saved key was consulted, recorded 2026-11-11 by the integration side after round 9 (R9-3) found that the campaign-4 ADJ-2 unit-codepoint conversion (U+03BC→U+00B5 in unit contexts only; answers and numerics unchanged) had invalidated the prior receipts of these 6 questions. Supersedes no prior record; earlier records are left untouched as historical record. Not expert review."
+  },
+  {
+    "id": "supp-nucleate-laplace-pressure-v1",
+    "revision": "v1",
+    "content_sha256": "64df68db83b220a57f332e876356da066af592409b307edfbf47d5c6e9dcb88d",
+    "independent_choice_index": 2,
+    "saved_key": 2,
+    "key_agrees": true,
+    "selected_text": "2.0 kPa",
+    "computed_or_physical_result": "2.0 kPa",
+    "working": "Δp = 2σ/R = 2(0.050 N/m)/(50×10⁻⁶ m) = 0.100/5.0×10⁻⁵ = 2000 Pa = 2.0 kPa.",
+    "alternative_choices_review": "1.0 kPa drops the factor 2; 0.50 kPa treats the radius as 4× larger; 4.0 kPa halves the radius.",
+    "level": "Campaign-4 reissue: blind worked solution on the CURRENT question text, solved from prompt and choices before the saved key was consulted, recorded 2026-11-11 by the integration side after round 9 (R9-3) found that the campaign-4 ADJ-2 unit-codepoint conversion (U+03BC→U+00B5 in unit contexts only; answers and numerics unchanged) had invalidated the prior receipts of these 6 questions. Supersedes no prior record; earlier records are left untouched as historical record. Not expert review."
+  },
+  {
+    "id": "supp-dropwise-coating-resistance-v1",
+    "revision": "v1",
+    "content_sha256": "403d502d7f46e9e9f2eb682c4b1fa1ea21f634b7a8e673e86bb52c20475e5902",
+    "independent_choice_index": 3,
+    "saved_key": 3,
+    "key_agrees": true,
+    "selected_text": "1.33×10³ W",
+    "computed_or_physical_result": "1.33×10³ W",
+    "working": "Coating conduction R = L/(kA) = 50×10⁻⁶/(0.20×0.020) = 0.0125 K/W; condensation R = 1/(hA) = 1/(20000×0.020) = 0.0025 K/W; series total 0.0150 K/W; Q = 20/0.0150 = 1.33×10³ W.",
+    "alternative_choices_review": "8.00×10³ W ignores the coating resistance; 1.60×10³ W ignores the condensation resistance; 2.00×10³ W uses a wrong total of 0.0100 K/W.",
+    "level": "Campaign-4 reissue: blind worked solution on the CURRENT question text, solved from prompt and choices before the saved key was consulted, recorded 2026-11-11 by the integration side after round 9 (R9-3) found that the campaign-4 ADJ-2 unit-codepoint conversion (U+03BC→U+00B5 in unit contexts only; answers and numerics unchanged) had invalidated the prior receipts of these 6 questions. Supersedes no prior record; earlier records are left untouched as historical record. Not expert review."
+  },
+  {
+    "id": "supp-heat-pipe-contact-angle-pressure-v1",
+    "revision": "v1",
+    "content_sha256": "1f5f9baa6e82aa9285d48884a828ae9b5b347ae7937928c61d7df5330ba8eddb",
+    "independent_choice_index": 1,
+    "saved_key": 1,
+    "key_agrees": true,
+    "selected_text": "2.0×10³ Pa",
+    "computed_or_physical_result": "2.0×10³ Pa",
+    "working": "Δp_cap = 2σcosθ/r_eff = 2(0.030)(0.50)/(15×10⁻⁶) = 0.030/1.5×10⁻⁵ = 2.0×10³ Pa.",
+    "alternative_choices_review": "2.0×10⁻³ Pa skips the µm→m conversion; 4.0×10³ Pa sets cosθ = 1; 1.0×10³ Pa drops the factor 2.",
+    "level": "Campaign-4 reissue: blind worked solution on the CURRENT question text, solved from prompt and choices before the saved key was consulted, recorded 2026-11-11 by the integration side after round 9 (R9-3) found that the campaign-4 ADJ-2 unit-codepoint conversion (U+03BC→U+00B5 in unit contexts only; answers and numerics unchanged) had invalidated the prior receipts of these 6 questions. Supersedes no prior record; earlier records are left untouched as historical record. Not expert review."
+  },
+  {
+    "id": "supp-system-boiling-surface-factor-v1",
+    "revision": "v1",
+    "content_sha256": "6d7336b5202c012253dfb0fdc82b37b20d7864622c8952e56cbcd64a31706c3c",
+    "independent_choice_index": 0,
+    "saved_key": 0,
+    "key_agrees": true,
+    "selected_text": "4.75×10⁵ W/m²",
+    "computed_or_physical_result": "4.75×10⁵ W/m²",
+    "working": "Factor = 1.042×(1−20/180)³×8^0.125 = 1.042×0.70233×1.29684 = 0.94907; q″_max = 0.94907×5.00×10⁵ = 4.745×10⁵ ≈ 4.75×10⁵ W/m². Inputs inside the stated ranges (r_μ = 8 in 2–12, β = 20° in 0–40°).",
+    "alternative_choices_review": "8.44×10⁴ W/m² inserts the roughness in metres; 6.76×10⁵ W/m² drops the contact-angle factor; 5.00×10⁵ W/m² applies no surface factor.",
+    "level": "Campaign-4 reissue: blind worked solution on the CURRENT question text, solved from prompt and choices before the saved key was consulted, recorded 2026-11-11 by the integration side after round 9 (R9-3) found that the campaign-4 ADJ-2 unit-codepoint conversion (U+03BC→U+00B5 in unit contexts only; answers and numerics unchanged) had invalidated the prior receipts of these 6 questions. Supersedes no prior record; earlier records are left untouched as historical record. Not expert review."
+  },
+  {
+    "id": "supp-system-boiling-surface-data-v1",
+    "revision": "v1",
+    "content_sha256": "a7eadcbb03b2236129b34e102441fa7ef4ac6ed21edfc53637298c5911ca84ce",
+    "independent_choice_index": 1,
+    "saved_key": 1,
+    "key_agrees": true,
+    "selected_text": "二乗平均平方根粗さ8 µmと後退接触角20°を使う",
+    "computed_or_physical_result": "rms 粗さ 8 µm・後退接触角 20°",
+    "working": "The correlation requires rms roughness 2–12 µm and receding contact angle 0–40°. Only the choice with rms 8 µm and receding 20° matches both the measured quantities and their ranges.",
+    "alternative_choices_review": "80 µm rms exceeds the 12 µm upper limit; maximum-height roughness with a static angle uses both wrong quantities; an advancing angle is a different quantity from the receding angle.",
+    "level": "Campaign-4 reissue: blind worked solution on the CURRENT question text, solved from prompt and choices before the saved key was consulted, recorded 2026-11-11 by the integration side after round 9 (R9-3) found that the campaign-4 ADJ-2 unit-codepoint conversion (U+03BC→U+00B5 in unit contexts only; answers and numerics unchanged) had invalidated the prior receipts of these 6 questions. Supersedes no prior record; earlier records are left untouched as historical record. Not expert review."
+  }
+]

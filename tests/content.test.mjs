@@ -97,7 +97,7 @@ test('public questions are self-contained and book references remain in the cite
   assert.equal(bubble.source.section,'9.2');assert.equal(bubble.source.bookPages,'478');assert.equal(bubble.source.pdfPages,'492');assert.equal(bubble.source.equation,'9.1');
   const radiusMicrometres=(2*0.060)/(3.0*1000)*1_000_000;
   assert.ok(Math.abs(radiusMicrometres-40)<1e-12);
-  assert.equal(bubble.choices[bubble.answer],'4.0×10¹ μm');
+  assert.equal(bubble.choices[bubble.answer],'4.0×10¹ µm');
   assert.equal(qs.filter(q=>q.source.type==='book').length,8);
   const ledger=await read('docs/SECTION_PROGRESS.json');
   for(const section of ledger.sections){

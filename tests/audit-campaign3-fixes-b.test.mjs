@@ -14,7 +14,7 @@ const BOLD_T = '\u{1D47B}';
 // ---- Section header ranges (C3-C01-03, C02-F04/F16/F19) ----
 test('C3-B headers: section ranges cover their own final blocks', async () => {
   const cases = {
-    '1-3': ['11–34', '25–48'],
+    '1-3': ['10–34', '24–48'],  // widened in round 9 (R9-2-02) to cover Fig. 1.3 on PDF 24
     '2-4': ['78–85', '92–99'],
     '3-1': ['99–107', '113–121'],
     '3-2': ['103–120', '117–134'],
@@ -93,7 +93,7 @@ test('C04-05/C04-18: §5.6 fine shell wording and ≅ in Example 5.5 solution', 
 });
 
 // ---- Time-constant glyph class (C3-C05-01 class; §5.2/§1.3/§4.5 verified at 600dpi) ----
-test('C3-B glyph: time constant is bold italic T in 5-2/1-3/4-5; genuine script T kept in 2-3/4-2', async () => {
+test('C3-B glyph: time constant is bold italic T in 5-2/1-3/4-5/2-3; genuine script T kept in 4-2', async () => {
   const raw52 = await readRaw('data/sections/5-2-ja.json');
   assert.equal([...raw52].filter(c => c === SCRIPT_T).length, 0, 'no script T in 5-2');
   assert.equal([...raw52].filter(c => c === BOLD_T).length, 58, '58 bold italic T in 5-2');
@@ -104,7 +104,11 @@ test('C3-B glyph: time constant is bold italic T in 5-2/1-3/4-5; genuine script 
   assert.ok(raw45.includes(`t/${BOLD_T}`), '4-5 t/T in bold italic');
   assert.ok(!raw45.includes(SCRIPT_T), 'no script T in 4-5');
   const raw23 = await readRaw('data/sections/2-3-ja.json');
-  assert.equal([...raw23].filter(c => c === SCRIPT_T).length, 2, 'Ex. 2.8 script T is print-genuine (C02-F13)');
+  // C02-F13 once judged Ex. 2.8's time constant print-genuine script; round 9 (R9-2-01)
+  // re-read PDF 89 at 600dpi and the integration side confirmed the print is bold
+  // italic T in both places (T = 53.1 s and t = 3T), so the data follows the print.
+  assert.equal([...raw23].filter(c => c === SCRIPT_T).length, 0, 'no script T in 2-3 (R9-2-01)');
+  assert.ok(raw23.includes(`${BOLD_T} = ρc_pV/(h_eff·A)`), 'Ex. 2.8 time constant in bold italic');
   const raw42 = await readRaw('data/sections/4-2-ja.json');
   assert.equal([...raw42].filter(c => c === SCRIPT_T).length, 15, 'separation functions script T kept in 4-2');
 });

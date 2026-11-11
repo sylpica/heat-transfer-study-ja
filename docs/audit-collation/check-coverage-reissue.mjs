@@ -14,6 +14,7 @@
 //   + Muse round 3 receipts still valid (docs/audit-round3/evidence/independent-289.json)
 //   + Q01 supplement receipt (docs/audit-collation/evidence/q01-revised-receipt.json)
 //   + Part-2 reissue receipts (docs/audit-collation/evidence/revised-56-receipts.json)
+//   + Campaign-4 reissue receipts (docs/audit-collation/evidence/campaign4-reissue-6-receipts.json)
 import {questionEvidenceHash} from '../../scripts/audit-question-coverage.mjs';
 import {readFile, readdir} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
@@ -50,10 +51,12 @@ const codexReceipts = JSON.parse(await readFile(root + 'docs/audit/codex-round-0
 const round3Receipts = JSON.parse(await readFile(root + 'docs/audit-round3/evidence/independent-289.json', 'utf8'));
 const q01Receipts = JSON.parse(await readFile(root + 'docs/audit-collation/evidence/q01-revised-receipt.json', 'utf8'));
 const reissueReceipts = JSON.parse(await readFile(root + 'docs/audit-collation/evidence/revised-56-receipts.json', 'utf8'));
+const c4Receipts = JSON.parse(await readFile(root + 'docs/audit-collation/evidence/campaign4-reissue-6-receipts.json', 'utf8'));
 const codexValid = validateReceipts(codexReceipts, 'codex round 2');
 const round3Valid = validateReceipts(round3Receipts, 'Muse round 3');
 const q01Valid = validateReceipts(q01Receipts, 'q01 supplement');
 const reissueValid = validateReceipts(reissueReceipts, 'part-2 reissue (56)');
+const c4Valid = validateReceipts(c4Receipts, 'campaign-4 reissue (6)');
 
 const changedIds = reissueReceipts.map(r => r.id);
 const changedPrior = changedIds.map(id => ({
@@ -64,7 +67,7 @@ const changedPrior = changedIds.map(id => ({
   old_receipt_still_valid: codexValid.has(id) || round3Valid.has(id),
 }));
 
-const covered = new Set([...claimSet, ...codexValid, ...round3Valid, ...q01Valid, ...reissueValid]);
+const covered = new Set([...claimSet, ...codexValid, ...round3Valid, ...q01Valid, ...reissueValid, ...c4Valid]);
 const uncovered = questions.map(q => q.id).filter(id => !covered.has(id));
 console.log(JSON.stringify({
   total: questions.length,
@@ -73,6 +76,7 @@ console.log(JSON.stringify({
   muse_round3_receipts_valid_now: round3Valid.size,
   q01_supplement_valid: q01Valid.size,
   reissue_receipts_valid: reissueValid.size,
+  campaign4_reissue_valid: c4Valid.size,
   covered_union: covered.size,
   uncovered_count: uncovered.length,
   uncovered,

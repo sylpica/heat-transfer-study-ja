@@ -2,9 +2,17 @@
   "sectionId": "2.1",
   "language": "ja",
   "source": "A Heat Transfer Textbook, Sixth Edition, §2.1",
-  "bookPages": "49–55",
-  "pdfPages": "63–69",
+  "bookPages": "49–57",
+  "pdfPages": "63–71",
   "blocks": [
+    {
+      "type": "subheading",
+      "text": "第2章　熱伝導の概念、熱抵抗、総括熱伝達係数"
+    },
+    {
+      "type": "quote",
+      "text": "冷たいものを温めるのは火であり、熱を和らげるのは冷たさである。……あらゆるものを買い取ることのできる万人の貨幣……――『ドン・キホーテ』、M・デ・セルバンテス、1615年"
+    },
     {
       "type": "heading",
       "text": "2.1 熱伝導方程式"
@@ -111,7 +119,7 @@
       "bookPage": 52,
       "pdfPage": 66,
       "caption": "図2.2　金属固体の熱伝導率の温度変化。",
-      "alt": "鉄を含む金属固体の熱伝導率が温度とともにどう変化するかを示すグラフ群。",
+      "alt": "金属固体の熱伝導率 k（縦軸、0〜450 W/m·°C）が温度 T（横軸、−200〜1000 °C）とともにどう変化するかを示すグラフ群。曲線は Pure silver、Copper、Gold、Aluminum、99% Pure aluminum、Brass、Platinum、Uranium、Iron、Type 304 Stainless steel の10本。",
       "description": "金属の熱伝導率は温度によって大きく変わりうるため、定数とみなせる範囲の評価が重要になります。"
     },
     {
@@ -120,7 +128,7 @@
       "bookPage": 53,
       "pdfPage": 67,
       "caption": "図2.3　飽和状態、あるいは圧力 1 atm における、液体および気体の熱伝導率の温度依存性。",
-      "alt": "液体と気体の熱伝導率の温度依存性を示すグラフ群。",
+      "alt": "液体と気体の熱伝導率 k（縦軸、対数目盛で 0.015〜0.7 W/m·°K）が温度 T（横軸、−100〜550 °C）とともにどう変化するかを示すグラフ群。曲線は Saturated ammonia、Saturated water、Water at 200 atm、Hydrogen、Helium、Saturated SO₂、Ethylene glycol、Air and N₂、CO₂、Ammonia vapor、Saturated steam。",
       "description": "気体では温度とともに熱伝導率が上昇し、液体では物質により振る舞いが異なります。"
     },
     {

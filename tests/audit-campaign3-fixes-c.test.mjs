@@ -93,7 +93,7 @@ test('C09: eq (10.53) has no appended trailing equality', () => {
 
 test('C09 retention: Figs 10.2/10.4/10.7 descriptions completed', () => {
   const d102 = figDesc('10-1', '10.2');
-  assert.ok(d102.includes('O₃') && d102.includes('吸収帯') && d102.includes('0–3 μm'), d102);
+  assert.ok(d102.includes('O₃') && d102.includes('吸収帯') && d102.includes('0–3 µm'), d102);
   const d104 = figDesc('10-1', '10.4');
   assert.ok(d104.includes('dA cos 20°') && d104.includes('dA cos 90°'), d104);
   assert.ok(figDesc('10-3', '10.7').includes('上辺'), figDesc('10-3', '10.7'));
@@ -135,9 +135,9 @@ test('C3C08: ch.9 figure descriptions carry the figure content', () => {
   const d917 = figDesc('9-7', '9.17');
   assert.ok(!d917.includes('板の高さ 4.7 cm') && d917.includes('平板面から流れ領域の上端まで'), d917);
   const d918 = figDesc('9-8', '9.18');
-  assert.ok(d918.includes('T^liquid core') && !d918.includes('横軸は温度と乾き度／距離'), d918);
+  assert.ok(d918.includes('T_liquid core') && !d918.includes('T^liquid core') && !d918.includes('横軸は温度と乾き度／距離'), d918);
   const d919 = figDesc('9-8', '9.19');
-  assert.ok(d919.includes('乾き度 χ') && d919.includes('ドライアウトは中央の結節点から'), d919);
+  assert.ok(d919.includes('乾き度 x') && !d919.includes('χ') && d919.includes('ドライアウトは中央の結節点から'), d919);
   assert.ok(figDesc('9-10', '9.21').includes('A Moment later'), 'Fig 9.21 two instants');
   assert.ok(figDesc('9-11', '9.22').includes('Insulation'), 'Fig 9.22 insulation label');
   assert.ok(figDesc('9-11', '9.23').includes('Cooler Master'), 'Fig 9.23 upper unit');

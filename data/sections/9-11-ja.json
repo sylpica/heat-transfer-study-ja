@@ -2,8 +2,8 @@
   "sectionId": "9.11",
   "language": "ja",
   "source": "A Heat Transfer Textbook, Sixth Edition, §9.11",
-  "bookPages": "525–527",
-  "pdfPages": "539–541",
+  "bookPages": "525–529",
+  "pdfPages": "539–543",
   "blocks": [
     {
       "type": "heading",
@@ -20,7 +20,7 @@
       "pdfPage": 539,
       "caption": "図9.22　典型的なヒートパイプの構成。",
       "alt": "ヒートパイプの構造模式図",
-      "description": "蒸発器（Qin の矢印）で生じた蒸気は凝縮器（Qout の矢印）へ流れ、液体はウィックを通って蒸発器へ戻る。斜行した中間部には Insulation（断熱）のラベルがある。断面の inset は、中央の蒸気とその外周を取り巻くウィック材の環を示す。"
+      "description": "蒸発器（Qin の矢印）で生じた蒸気は \"Vapor flow\" のラベルが付された管内を通って凝縮器（Qout の矢印）へ流れ、液体は \"Liquid return\" のラベルが付された経路でウィックを通って蒸発器へ戻る。斜行した中間部には Insulation（断熱）のラベルがある。断面の inset は、中央の蒸気とその外周を取り巻くウィック材の環を示す。"
     },
     {
       "type": "paragraph",

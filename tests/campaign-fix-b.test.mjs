@@ -40,7 +40,7 @@ test('CF-002: eq. (7.29) puts the 1.7*Gz^(-2/3) term inside the tanh and reprodu
 });
 
 test('CF-004: Example 7.1 rearrangement multiplies the bracketed difference by uav*k/(4*qw*alpha)',async()=>{
-  const t=(await section('7-2')).blocks[40].text;
+  const t=(await section('7-2')).blocks[39].text;
   assert.ok(t.includes('L/D = [54 − 11qwD/(48k)]·[uav·k/(4qwα)]'),t.slice(0,60));
   assert.ok(!t.includes('[11qwD/(48k)]/[4qwα/(uav·k)]'));
   const seg=t.split('数値的には L/D = ')[1].split(' = 1788')[0];

@@ -14,9 +14,9 @@
 <rect x="66" y="216" width="240" height="130" rx="6" class="solid"/>
 <path d="M30 252 H62 M50 241 L64 252 L50 263" class="arrow-ink"/>
 <path d="M310 310 H348 M334 299 L348 310 L334 321" class="arrow-ink"/>
-<text x="186" y="262" text-anchor="middle" class="small ink">蓄積 ∂ρ_i/∂t</text>
-<text x="186" y="300" text-anchor="middle" class="small ink">反応生成 r_i</text>
-<text x="186" y="332" text-anchor="middle" class="small secondary">Σ r_i = 0</text>
+<text x="186" y="262" text-anchor="middle" class="small ink">蓄積 ∂ρ<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>/∂t</text>
+<text x="186" y="300" text-anchor="middle" class="small ink">反応生成 r<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="186" y="332" text-anchor="middle" class="small secondary">Σ r<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 0</text>
 <text x="66" y="382" class="small ink">検査体積への出入りは対流+拡散</text>
 <path d="M420 300 H706" class="axis"/>
 <text x="420" y="282" class="small ink">気相：水蒸気は数 %</text>
@@ -27,9 +27,9 @@
 <text x="66" y="444" class="small secondary">連続の式（式(11.41)）</text>
 <rect x="24" y="484" width="712" height="356" rx="18" class="panel"/>
 <text x="46" y="531" class="heading ink">平衡の簡易則と炭酸飲料（例題11.5）</text>
-<text x="46" y="580" class="small ink">Raoult の法則：p_i = p_sat,i x_i（液に富む成分、式(11.45)）</text>
-<text x="46" y="622" class="small ink">Henry の法則：p_i = H x_i（希薄成分、式(11.46)）</text>
-<text x="46" y="664" class="small ink">CO_2 7 g/L → x_CO2 = 0.00287 → p_CO2 = H x = 467 kPa</text>
+<text x="46" y="580" class="small ink">Raoult の法則：p<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = p<tspan class="sb" dy="0.30em" font-size="0.72em">sat,i</tspan><tspan dy="-0.3em"></tspan> x<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>（液に富む成分、式(11.45)）</text>
+<text x="46" y="622" class="small ink">Henry の法則：p<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = H x<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>（希薄成分、式(11.46)）</text>
+<text x="46" y="664" class="small ink">CO<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> 7 g/L → x<tspan class="sb" dy="0.30em" font-size="0.72em">CO2</tspan><tspan dy="-0.3em"></tspan> = 0.00287 → p<tspan class="sb" dy="0.30em" font-size="0.72em">CO2</tspan><tspan dy="-0.3em"></tspan> = H x = 467 kPa</text>
 <rect id="bar-pco2" x="150" y="692" width="467.248" height="32" class="a"/>
 <text x="46" y="717" class="small ink">缶内</text>
 <text x="629.2" y="717" class="small ink">467 kPa</text>
@@ -47,7 +47,7 @@
 <text x="66" y="1294" class="small ink">0</text>
 <text x="52" y="1127" class="small ink">0.5</text>
 <text x="52" y="957" class="small ink">1.0</text>
-<text x="60" y="990" class="small secondary">m_H2O,s</text>
+<text x="60" y="990" class="small secondary">m<tspan class="sb" dy="0.30em" font-size="0.72em">H2O,s</tspan><tspan dy="-0.3em"></tspan></text>
 <text x="392" y="1326" class="small ink">50</text>
 <text x="664" y="1326" class="small ink">100°C</text>
 <text x="545" y="1326" text-anchor="middle" class="small secondary">表面温度 T →</text>

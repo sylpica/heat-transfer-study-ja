@@ -281,7 +281,7 @@ export function renderTermSheet(term,terms=[]){
     ${term.beginner&&term.beginner!==brief&&term.beginner!==detail?`<h3>はじめての説明</h3><p>${linked(term.beginner)}</p>`:''}
     <h3>詳しい説明</h3><p>${linked(detail)}</p>
     ${term.formula?`<p><strong>関連式：</strong> <span class="term-formula">${mathText(term.formula)}</span></p>`:''}
-    ${term.unit?`<p><strong>単位：</strong> ${escapeText(term.unit)}</p>`:''}
+    ${term.unit?`<p><strong>単位：</strong> ${mathText(term.unit)}</p>`:''}
     ${renderTermExample(term,terms)}
     ${related.length?`<p><strong>関連語：</strong> ${relatedMarkup}</p>`:''}
     ${renderTermLearningLinks(term)}

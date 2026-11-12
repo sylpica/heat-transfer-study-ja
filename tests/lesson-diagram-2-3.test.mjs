@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
-const svg=readFileSync(new URL('../assets/lesson-diagrams/section-2-3-series-parallel-thermal-resistance.svg',import.meta.url),'utf8');
+const svg=readFileSync(new URL('../assets/lesson-diagrams/section-2-3-series-parallel-thermal-resistance.svg',import.meta.url),'utf8').replace(/<tspan class="sbb"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'_{$1}').replace(/<tspan class="sbp"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'_($1)').replace(/<tspan class="sb"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'_$1').replace(/<tspan class="spc"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'^{$1}').replace(/<tspan class="sp"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'^($1)').replace(/<tspan class="spb"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'^$1');
 const n=(k)=>{const match=svg.match(new RegExp('\\b'+k+'="([^"]+)"'));assert.ok(match,'missing '+k);const v=Number(match[1]);assert.ok(Number.isFinite(v),'nonfinite '+k);return v;};
 const near=(a,b,eps=1e-8)=>assert.ok(Math.abs(a-b)<eps,`${a} differs from ${b}`);
 const p={Th:n('data-hot-c'),Tc:n('data-cold-c'),dT:n('data-delta-t-k'),R1:n('data-r1-k-per-w'),R2:n('data-r2-k-per-w'),Rs:n('data-series-r'),Qs:n('data-series-q'),D1:n('data-series-drop-1'),D2:n('data-series-drop-2'),Tmid:n('data-series-mid-c'),Rp:n('data-parallel-r'),Q1:n('data-parallel-q1'),Q2:n('data-parallel-q2'),Qtotal:n('data-parallel-qtotal'),Ws:n('data-series-heat-bar-width'),Wp:n('data-parallel-heat-bar-width')};

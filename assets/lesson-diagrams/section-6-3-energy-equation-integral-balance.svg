@@ -24,10 +24,10 @@
 <text class="small muted" x="33" y="101">壁を横切るのは伝導、層内を運ぶのは流れ</text>
 <rect class="panel" x="23" y="124" width="774" height="330" rx="19"/>
 <text class="section ink" x="44" y="168">① 省略の流れ（薄層・散逸と内部発熱を除く）</text>
-<text class="result ink" x="43" y="216">ρc_p DT/Dt = k_f∇²T + Φ + q‴（一般形）</text>
+<text class="result ink" x="43" y="216">ρc<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan> DT/Dt = k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>∇²T + Φ + q‴（一般形）</text>
 <text class="result accent" x="43" y="262">↓ 境界層近似</text>
-<text class="result ink" x="43" y="308">u∂T/∂x + v∂T/∂y = α_f ∂²T/∂y²（原書 6.40）</text>
-<text class="small ink" x="43" y="356">壁面では q_w″ = −k_f (∂T/∂y)_w（Fourier則。h_x はこの勾配で定義）</text>
+<text class="result ink" x="43" y="308">u∂T/∂x + v∂T/∂y = α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> ∂²T/∂y²（原書 6.40）</text>
+<text class="small ink" x="43" y="356">壁面では q<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>″ = −k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> (∂T/∂y)<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>（Fourier則。h<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> はこの勾配で定義）</text>
 <text class="small muted" x="43" y="394">壁が静止・不透過でも、対流熱伝達でFourier則が消えるわけではない</text>
 <text class="small muted" x="43" y="428">高速度・大粘度では粘性散逸 Φ、低Peでは軸方向伝導を再検討する</text>
 <rect class="panel" x="23" y="472" width="774" height="330" rx="19"/>
@@ -35,14 +35,14 @@
 <text class="small ink" x="43" y="560">壁（80 ℃）から入る熱 Q̇</text>
 <rect id="bar-in" class="barA" x="43" y="576" width="480" height="34"/>
 <text class="result ink" x="540" y="602">9.60 W</text>
-<text class="small ink" x="43" y="652">下流断面の顕熱増加 ρc_p∫u(T−T∞)dy × 幅</text>
+<text class="small ink" x="43" y="652">下流断面の顕熱増加 ρc<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan>∫u(T−T∞)dy × 幅</text>
 <rect id="bar-out" class="barB" x="43" y="668" width="480" height="34"/>
 <text class="result ink" x="540" y="694">9.60 W</text>
-<text class="small muted" x="43" y="742">∫u(T−T∞)dy = 0.040 m²·K/s（与えた測定値）、ρ = 1.2、c_p = 1000</text>
+<text class="small muted" x="43" y="742">∫u(T−T∞)dy = 0.040 m²·K/s（与えた測定値）、ρ = 1.2、c<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan> = 1000</text>
 <text class="small muted" x="43" y="774">単位幅では 48.0 W/m。主流・入口は 20 ℃、面積は片面 0.10 m²</text>
 <rect class="panel" x="23" y="820" width="774" height="170" rx="19"/>
 <text class="section ink" x="44" y="864">③ 平均は出るが、局所は出ない</text>
-<text class="result ink" x="43" y="908">平均 q̄_w″ = 96.0 W/m²、平均 h̄ = 96.0/60 = 1.60 W/(m²·K)</text>
-<text class="small muted" x="43" y="950">局所 h_x は壁面勾配が必要で、この積分値だけからは決まらない</text>
+<text class="result ink" x="43" y="908">平均 q̄<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>″ = 96.0 W/m²、平均 h̄ = 96.0/60 = 1.60 W/(m²·K)</text>
+<text class="small muted" x="43" y="950">局所 h<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> は壁面勾配が必要で、この積分値だけからは決まらない</text>
 <text class="micro muted" x="410" y="1058" text-anchor="middle">アプリ作成の独自模式図｜非実寸・原著図版の転載なし</text>
 </svg>

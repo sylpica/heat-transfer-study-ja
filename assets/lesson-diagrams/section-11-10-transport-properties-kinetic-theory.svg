@@ -23,36 +23,36 @@
 <text x="52" y="247" class="small ink">1.5ε</text>
 <text x="46" y="360" class="small secondary">φ/ε</text>
 <text x="135" y="530" class="small ink">σ</text>
-<text x="186" y="530" class="small ink">2^(1/6) σ</text>
+<text x="186" y="530" class="small ink">2<tspan class="sp" dy="-0.45em" font-size="0.72em">1/6</tspan><tspan dy="0.45em"></tspan> σ</text>
 <text x="664" y="530" class="small ink">3σ</text>
 <text x="400" y="530" text-anchor="middle" class="small secondary">分子間距離 r →</text>
 <text x="291" y="445" class="small ink">井戸の深さ ε</text>
-<text x="46" y="566" class="small secondary">φ = 4ε[(σ/r)^12 − (σ/r)^6]、σ・ε は出典のペアのまま使う</text>
+<text x="46" y="566" class="small secondary">φ = 4ε[(σ/r)<tspan class="spb" dy="-0.45em" font-size="0.72em">12</tspan><tspan dy="0.45em"></tspan> − (σ/r)<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan><tspan dy="0.45em"></tspan>]、σ・ε は出典のペアのまま使う</text>
 <rect x="24" y="600" width="712" height="396" rx="18" class="panel"/>
-<text x="46" y="647" class="heading ink">例題11.16：水素–空気の D_AB（282 K、1 atm）</text>
-<text x="46" y="696" class="small ink">σ_AB = (3.711 + 2.899)/2 = 3.305 Å（式(11.106)）</text>
-<text x="46" y="738" class="small ink">ε_AB/k_B = √(78.6 × 40.0) = 56.1 K（式(11.107)）</text>
-<text x="46" y="780" class="small ink">k_B T/ε_AB = 5.027 → Ω_D = 0.8410（表11.4）</text>
-<text x="46" y="822" class="equation ink">D_AB = 6.98×10^(-5) m²/s（式(11.108)）</text>
+<text x="46" y="647" class="heading ink">例題11.16：水素–空気の D<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan>（282 K、1 atm）</text>
+<text x="46" y="696" class="small ink">σ<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan> = (3.711 + 2.899)/2 = 3.305 Å（式(11.106)）</text>
+<text x="46" y="738" class="small ink">ε<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan>/k<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> = √(78.6 × 40.0) = 56.1 K（式(11.107)）</text>
+<text x="46" y="780" class="small ink">k<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> T/ε<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan> = 5.027 → Ω<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = 0.8410（表11.4）</text>
+<text x="46" y="822" class="equation ink">D<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan> = 6.98×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan> m²/s（式(11.108)）</text>
 <rect id="bar-d-pred" x="150" y="850" width="488.446" height="30" class="a"/>
 <text x="46" y="875" class="small ink">予測</text>
 <text x="650.4" y="875" class="small ink">6.98</text>
 <rect id="bar-d-exp" x="150" y="896" width="460.600" height="30" class="b"/>
 <text x="46" y="921" class="small ink">実測</text>
 <text x="622.6" y="921" class="small ink">6.58</text>
-<text x="46" y="968" class="small secondary">単位は 10^(-5) m²/s。予測は実測より約6%高い。D は圧力に反比例する</text>
+<text x="46" y="968" class="small secondary">単位は 10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan> m²/s。予測は実測より約6%高い。D は圧力に反比例する</text>
 <rect x="24" y="1016" width="712" height="386" rx="18" class="panel"/>
 <text x="46" y="1063" class="heading ink">液体：Sutherland–Einstein 式（式(11.114)）</text>
-<text x="46" y="1112" class="small ink">D μ_B/T は主に溶質の大きさ R_A で決まる</text>
+<text x="46" y="1112" class="small ink">D μ<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan>/T は主に溶質の大きさ R<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> で決まる</text>
 <rect id="bar-se-noslip" x="170" y="1140" width="280.000" height="30" class="b"/>
 <text x="46" y="1165" class="small ink">無滑り</text>
-<text x="462.0" y="1165" class="small ink">k_B/(6πR_A)</text>
+<text x="462.0" y="1165" class="small ink">k<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan>/(6πR<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>)</text>
 <rect id="bar-se-slip" x="170" y="1186" width="420.000" height="30" class="a"/>
 <text x="46" y="1211" class="small ink">完全滑り</text>
-<text x="602.0" y="1211" class="small ink">k_B/(4πR_A)</text>
-<text x="46" y="1258" class="small ink">R_A = 0.20 nm では 3.66×10^(-15) と 5.49×10^(-15) kg·m/(K·s²)</text>
+<text x="602.0" y="1211" class="small ink">k<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan>/(4πR<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>)</text>
+<text x="46" y="1258" class="small ink">R<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = 0.20 nm では 3.66×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-15</tspan><tspan dy="0.45em"></tspan> と 5.49×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-15</tspan><tspan dy="0.45em"></tspan> kg·m/(K·s²)</text>
 <text x="46" y="1302" class="small ink">両極限の比は 1.5。希薄種の有効拡散には Blanc の法則（式(11.109)）</text>
-<text x="46" y="1346" class="small secondary">気体の温度依存は Ω_D の分だけ T^(3/2) より強くなる</text>
+<text x="46" y="1346" class="small secondary">気体の温度依存は Ω<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> の分だけ T<tspan class="sp" dy="-0.45em" font-size="0.72em">3/2</tspan><tspan dy="0.45em"></tspan> より強くなる</text>
 <text x="46" y="1384" class="small secondary">濃厚溶液では D が濃度で強く変わる（§11.11 の熱力学因子へ）</text>
 <text x="380" y="1540" text-anchor="middle" class="small secondary">アプリ作成の独自図・模式図（原書図版ではない）</text>
 </svg>

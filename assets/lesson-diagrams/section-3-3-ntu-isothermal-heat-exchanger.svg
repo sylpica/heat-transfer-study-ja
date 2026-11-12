@@ -41,7 +41,7 @@
   <text class="small secondary" text-anchor="middle" x="429" y="877">累積伝熱面積比 s = A(x)/A</text>
   <rect class="panel" x="24" y="914" rx="18" width="712" height="260"/>
   <text class="section ink" x="48" y="957">③ 数値例：NTU = 1.00</text>
-  <text class="formula ink" x="48" y="997">NTU = UA/C_min = 300/300 = 1.00</text>
+  <text class="formula ink" x="48" y="997">NTU = UA/C<tspan class="sb" dy="0.30em" font-size="0.72em">min</tspan><tspan dy="-0.3em"></tspan> = 300/300 = 1.00</text>
   <text class="formula ink" x="48" y="1036">ε = 1 − exp(−NTU) = 0.6321</text>
   <text class="formula ink" x="48" y="1075">熱移動率 = 12,000 × ε = 7,585.4 W</text>
   <text class="formula ink" x="48" y="1114">冷側出口 = 20 + 7,585.4/300 = 45.28 ℃</text>

@@ -25,7 +25,7 @@
 <path class="velLayer" d="M174.00 379.00 L191.00 360.08 L208.00 352.25 L225.00 346.24 L242.00 341.17 L259.00 336.70 L276.00 332.67 L293.00 328.96 L310.00 325.50 L327.00 322.25 L344.00 319.19 L361.00 316.27 L378.00 313.48 L395.00 310.80 L412.00 308.23 L429.00 305.74 L446.00 303.34 L463.00 301.01 L480.00 298.75 L497.00 296.55 L514.00 294.41 L531.00 292.32 L548.00 290.28 L565.00 288.29 L582.00 286.34 L599.00 284.42 L616.00 282.55 L633.00 280.71 L650.00 278.91 L667.00 277.14 L684.00 275.40 L701.00 273.69 L718.00 272.00 L718 379 L174 379 Z"/>
 <path id="velocity-boundary" class="velBoundary" d="M174.00 379.00 L191.00 360.08 L208.00 352.25 L225.00 346.24 L242.00 341.17 L259.00 336.70 L276.00 332.67 L293.00 328.96 L310.00 325.50 L327.00 322.25 L344.00 319.19 L361.00 316.27 L378.00 313.48 L395.00 310.80 L412.00 308.23 L429.00 305.74 L446.00 303.34 L463.00 301.01 L480.00 298.75 L497.00 296.55 L514.00 294.41 L531.00 292.32 L548.00 290.28 L565.00 288.29 L582.00 286.34 L599.00 284.42 L616.00 282.55 L633.00 280.71 L650.00 278.91 L667.00 277.14 L684.00 275.40 L701.00 273.69 L718.00 272.00"/>
 <path class="wall" d="M174 379 H718"/>
-<text class="small velocity" x="540" y="262">速度境界層 δ_v(x)</text>
+<text class="small velocity" x="540" y="262">速度境界層 δ<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan>(x)</text>
 <text class="small ink" x="44" y="414">固定平板：u = 0</text>
 <path class="axis" d="M174 428 H734 M721 421 L734 428 L721 435"/>
 <text class="micro muted" x="52" y="466">上端線は模式的な目安で、厚さの定量予測ではない</text>
@@ -33,22 +33,22 @@
 
 <rect class="panel" x="23" y="506" width="774" height="338" rx="19"/>
 <text class="section ink" x="44" y="550">② 温度境界層：壁と主流の温度差</text>
-<text class="small muted" x="43" y="590">T_s ≠ T∞ のときに、壁付近の温度が変わる</text>
+<text class="small muted" x="43" y="590">T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> ≠ T∞ のときに、壁付近の温度が変わる</text>
 <path class="thLayer" d="M174.00 730.00 L191.00 713.38 L208.00 706.50 L225.00 701.22 L242.00 696.77 L259.00 692.84 L276.00 689.30 L293.00 686.04 L310.00 683.00 L327.00 680.15 L344.00 677.45 L361.00 674.89 L378.00 672.44 L395.00 670.09 L412.00 667.82 L429.00 665.64 L446.00 663.53 L463.00 661.49 L480.00 659.50 L497.00 657.57 L514.00 655.69 L531.00 653.85 L548.00 652.06 L565.00 650.31 L582.00 648.59 L599.00 646.91 L616.00 645.27 L633.00 643.66 L650.00 642.07 L667.00 640.51 L684.00 638.98 L701.00 637.48 L718.00 636.00 L718 730 L174 730 Z"/>
 <path id="thermal-boundary" class="thBoundary" d="M174.00 730.00 L191.00 713.38 L208.00 706.50 L225.00 701.22 L242.00 696.77 L259.00 692.84 L276.00 689.30 L293.00 686.04 L310.00 683.00 L327.00 680.15 L344.00 677.45 L361.00 674.89 L378.00 672.44 L395.00 670.09 L412.00 667.82 L429.00 665.64 L446.00 663.53 L463.00 661.49 L480.00 659.50 L497.00 657.57 L514.00 655.69 L531.00 653.85 L548.00 652.06 L565.00 650.31 L582.00 648.59 L599.00 646.91 L616.00 645.27 L633.00 643.66 L650.00 642.07 L667.00 640.51 L684.00 638.98 L701.00 637.48 L718.00 636.00"/>
 <path class="wall" d="M174 730 H718"/>
-<text class="small thermal" x="518" y="629">温度境界層 δ_T(x)</text>
-<text class="small ink" x="44" y="775">固体表面：T_s</text>
+<text class="small thermal" x="518" y="629">温度境界層 δ<tspan class="sb" dy="0.30em" font-size="0.72em">T</tspan><tspan dy="-0.3em"></tspan>(x)</text>
+<text class="small ink" x="44" y="775">固体表面：T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan></text>
 <text class="small muted" x="44" y="811">外側：T∞。境界層厚さの比は流況・物性で変わる</text>
 
 <rect class="panel" x="23" y="864" width="774" height="324" rx="19"/>
 <text class="section ink" x="44" y="908">③ 同じ代表長さ L = 0.50 m で比較</text>
-<text class="small muted" x="43" y="946">ν = 1.5×10^(-5)、α_f = 2.0×10^(-5) m²/s</text>
-<text class="small muted" x="43" y="981">k_f = 0.025 W/(m·K)、h_avg = 20 W/(m²·K)</text>
-<text class="result ink" x="43" y="1020">Re_L = U∞ L/ν ≈ 6.67×10^4</text>
-<text class="result ink" x="43" y="1058">Pr = ν/α_f = 0.75</text>
-<text class="result ink" x="43" y="1096">Nu_avg,L = h_avg L/k_f = 400</text>
-<text class="micro muted" x="43" y="1134">Nuには流体のk_fを使用。Nuは無次元。</text>
+<text class="small muted" x="43" y="946">ν = 1.5×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan>、α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan> m²/s</text>
+<text class="small muted" x="43" y="981">k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 0.025 W/(m·K)、h<tspan class="sb" dy="0.30em" font-size="0.72em">avg</tspan><tspan dy="-0.3em"></tspan> = 20 W/(m²·K)</text>
+<text class="result ink" x="43" y="1020">Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> = U∞ L/ν ≈ 6.67×10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan></text>
+<text class="result ink" x="43" y="1058">Pr = ν/α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 0.75</text>
+<text class="result ink" x="43" y="1096">Nu<tspan class="sb" dy="0.30em" font-size="0.72em">avg,L</tspan><tspan dy="-0.3em"></tspan> = h<tspan class="sb" dy="0.30em" font-size="0.72em">avg</tspan><tspan dy="-0.3em"></tspan> L/k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 400</text>
+<text class="micro muted" x="43" y="1134">Nuには流体のk<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>を使用。Nuは無次元。</text>
 <text class="micro muted" x="43" y="1165">このRe値だけで遷移・乱流を断定しない。</text>
 <text class="micro muted" x="410" y="1226" text-anchor="middle">アプリ作成の独自模式図｜非実寸・原著図版の転載なし</text>
 </svg>

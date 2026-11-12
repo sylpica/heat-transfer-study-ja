@@ -40,7 +40,7 @@ test('advanced self-authored lessons are searchable and explicit about approxima
   const keys={
     'learn-dimensionless-transient':['Bi','Fo','0.1','L𝚌'],
     'learn-lumped-cooling':['ρVc','2000 s','Bi','exp'],
-    'learn-convection-dimensionless':['Re','Pr','Nu','kᶠ'],
+    'learn-convection-dimensionless':['Re','Pr','Nu','k<sub>f</sub>'],
     'learn-heat-exchanger':['ṁ','ΔTₗₘ','8000 W','向流']
   };
   for(const [id,tokens] of Object.entries(keys)){

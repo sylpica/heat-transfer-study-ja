@@ -21,25 +21,25 @@
 </style>
 <rect class="bg" width="820" height="1120"/>
 <text class="heading ink" x="32" y="59">§6.5 層流の局所 h と平均 h</text>
-<text class="small muted" x="33" y="101">Nu_x = 0.332 Re_x^(1/2) Pr^(1/3)（原書 6.58、Pr ≳ 0.6）</text>
+<text class="small muted" x="33" y="101">Nu<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> = 0.332 Re<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">1/2</tspan><tspan dy="0.45em"></tspan> Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">1/3</tspan><tspan dy="0.45em"></tspan>（原書 6.58、Pr ≳ 0.6）</text>
 <rect class="panel" x="23" y="124" width="774" height="420" rx="19"/>
-<text class="section ink" x="44" y="168">① h_x(x) ∝ x^(−1/2)：前縁で大きく、下流で下がる</text>
+<text class="section ink" x="44" y="168">① h<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan>(x) ∝ x<tspan class="sp" dy="-0.45em" font-size="0.72em">−1/2</tspan><tspan dy="0.45em"></tspan>：前縁で大きく、下流で下がる</text>
 <path class="dash" d="M120 330.40 H720"/>
 <path id="hx-curve" class="line1" d="M160.00 199.67 L180.00 249.27 L200.00 278.84 L220.00 299.03 L240.00 313.92 L260.00 325.50 L280.00 334.83 L300.00 342.56 L320.00 349.10 L340.00 354.73 L360.00 359.64 L380.00 363.97 L400.00 367.82 L420.00 371.29 L440.00 374.42 L460.00 377.28 L480.00 379.89 L500.00 382.29 L520.00 384.51 L540.00 386.57 L560.00 388.49 L580.00 390.28 L600.00 391.96 L620.00 393.54 L640.00 395.02 L660.00 396.42 L680.00 397.75 L700.00 399.01 L720.00 400.20"/>
 <circle class="accent" cx="720" cy="400.20" r="7"/>
-<text class="small accent" x="330" y="316">平均 h̄_L = 12.52（末端局所値の2倍）</text>
-<text class="small ink" x="470" y="434">末端 h_x(L) = 6.26</text>
-<text class="micro muted" x="44" y="516">縦軸 h_x [W/(m²·K)] 0〜26、横軸 x 0〜0.30 m。x→0 の発散は近似の産物</text>
+<text class="small accent" x="330" y="316">平均 h̄<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> = 12.52（末端局所値の2倍）</text>
+<text class="small ink" x="470" y="434">末端 h<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan>(L) = 6.26</text>
+<text class="micro muted" x="44" y="516">縦軸 h<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> [W/(m²·K)] 0〜26、横軸 x 0〜0.30 m。x→0 の発散は近似の産物</text>
 <rect class="panel" x="23" y="562" width="774" height="290" rx="19"/>
 <text class="section ink" x="44" y="606">② 平均相関と全熱流（原書 6.68）</text>
-<text class="result ink" x="43" y="650">Re_L = 6.0×10^4、Nū_L = 0.664 Re_L^(1/2) Pr^(1/3) ≈ 144.4</text>
-<text class="result ink" x="43" y="688">h̄_L = Nū_L k_f/L ≈ 12.52 W/(m²·K)（k_f は流体の値）</text>
-<text class="result ink" x="43" y="726">片面 Q̇ = h̄_L W L ΔT ≈ 30.04 W（ΔT = 40 K、W = 0.20 m）</text>
+<text class="result ink" x="43" y="650">Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> = 6.0×10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan>、Nū<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> = 0.664 Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">1/2</tspan><tspan dy="0.45em"></tspan> Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">1/3</tspan><tspan dy="0.45em"></tspan> ≈ 144.4</text>
+<text class="result ink" x="43" y="688">h̄<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> = Nū<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>/L ≈ 12.52 W/(m²·K)（k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> は流体の値）</text>
+<text class="result ink" x="43" y="726">片面 Q̇ = h̄<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> W L ΔT ≈ 30.04 W（ΔT = 40 K、W = 0.20 m）</text>
 <text class="small muted" x="43" y="766">平均熱流束 500.6 W/m² に対し、末端の局所熱流束は 250.3 W/m²</text>
 <text class="small muted" x="43" y="798">末端の局所 h を全板に使うと熱流を半分に見積もる</text>
 <rect class="panel" x="23" y="870" width="774" height="150" rx="19"/>
 <text class="section ink" x="44" y="914">③ 条件</text>
-<text class="small ink" x="43" y="954">等温・前縁から加熱・層流（Re_x ≲ 5×10^5）・一定物性が前提</text>
+<text class="small ink" x="43" y="954">等温・前縁から加熱・層流（Re<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> ≲ 5×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan>）・一定物性が前提</text>
 <text class="small muted" x="43" y="988">等熱流束では係数が変わる（原書 6.71）。非加熱区間がある場合も別の式</text>
 <text class="micro muted" x="410" y="1088" text-anchor="middle">アプリ作成の独自模式図｜非実寸・原著図版の転載なし</text>
 </svg>

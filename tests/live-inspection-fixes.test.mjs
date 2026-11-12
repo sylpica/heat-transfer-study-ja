@@ -90,6 +90,48 @@ test('strouhal entry matches the book: Str for Strouhal, St stays Stanton', () =
   assert.ok(s.detail.includes('u∞は主流速'));
 });
 
+test('round 2: guide lessons carry real subscript markup, no modifier f anywhere', () => {
+  const guide = readFileSync(new URL('../guide.mjs', import.meta.url), 'utf8');
+  assert.ok(!guide.includes('\u1da0'));
+  assert.ok(guide.includes('ρ<sub>f</sub>'));
+  assert.ok(!/html:"[^"]*\^\d/.test(guide));
+});
+
+test('round 2: lesson diagram SVGs have no raw math notation left in text', async () => {
+  const {readdirSync} = await import('node:fs');
+  const dir = new URL('../assets/lesson-diagrams/', import.meta.url);
+  const files = readdirSync(dir).filter(f => f.endsWith('.svg'));
+  assert.ok(files.length >= 76);
+  for (const f of files) {
+    const raw = readFileSync(new URL(f, dir), 'utf8');
+    const textOnly = raw.replace(/<[^>]*>/g, '');
+    assert.ok(!/\^\(|\^\{|_\{|\^[0-9]|[A-Za-z]_[A-Za-z0-9]/.test(textOnly), f);
+  }
+});
+
+test('round 2: unit fields are math-converted in card, flashcard and sheet', () => {
+  const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+  assert.ok(app.includes('${renderMathText(term.unit)}'));
+  assert.ok(!app.includes('${escapeHTML(term.unit)}'));
+  const links = readFileSync(new URL('../term-links.mjs', import.meta.url), 'utf8');
+  assert.ok(links.includes('${mathText(term.unit)}'));
+  const sheet = renderTermSheet({id: 'u', ja: '試験', en: 't', meaning: '意味', unit: 'q″_CHF: W/m²'}, []);
+  assert.ok(sheet.includes('q″<sub>CHF</sub>'));
+});
+
+test('round 2: block source labels omit unrecorded pages instead of printing 未記録', () => {
+  const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+  assert.ok(app.includes("if(block.bookPage!=null&&block.bookPage!=='')"));
+  assert.ok(!app.includes("first??'未記録'"));
+});
+
+test('round 2: the Re question no longer merges the velocity into the subscript', () => {
+  const qs = JSON.parse(readFileSync(new URL('../data/questions.json', import.meta.url), 'utf8'));
+  const q = qs.find(x => x.id === 'supp-expanded-re-calc');
+  assert.ok(q.prompt.includes('Re=ρ_f·uL/μ'));
+  assert.ok(!JSON.stringify(q).includes('ρ_fu'));
+});
+
 test('dynamic lab: short material names and separated graph label rows', () => {
   const presets = readFileSync(new URL('../dynamic/presets.mjs', import.meta.url), 'utf8');
   assert.ok(presets.includes("name:'アルミニウム6061-T6'"));

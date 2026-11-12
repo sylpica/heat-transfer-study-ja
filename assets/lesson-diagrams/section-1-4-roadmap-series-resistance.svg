@@ -28,11 +28,11 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="small cool" x="640" y="495">流体 20 ℃</text>
 <text class="small cool" x="640" y="529">h = 10</text>
 <path class="circuit" d="M120 610 H300 L330 585 L390 635 L420 610 H560 L590 585 L650 635 L680 610 H760"/>
-<text class="small ink" x="345" y="668">R_cond</text>
-<text class="small ink" x="605" y="668">R_conv</text>
+<text class="small ink" x="345" y="668">R<tspan class="sb" dy="0.30em" font-size="0.72em">cond</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="small ink" x="605" y="668">R<tspan class="sb" dy="0.30em" font-size="0.72em">conv</tspan><tspan dy="-0.3em"></tspan></text>
 <rect class="panel" x="23" y="707" width="794" height="262" rx="19"/>
 <text class="section ink" x="43" y="749">③ 検算：温度降下の和が全体に戻る</text>
-<text class="small ink" x="43" y="791">R_cond = L/(kA) = 0.080 K/W、R_conv = 1/(hA) = 0.200 K/W</text>
+<text class="small ink" x="43" y="791">R<tspan class="sb" dy="0.30em" font-size="0.72em">cond</tspan><tspan dy="-0.3em"></tspan> = L/(kA) = 0.080 K/W、R<tspan class="sb" dy="0.30em" font-size="0.72em">conv</tspan><tspan dy="-0.3em"></tspan> = 1/(hA) = 0.200 K/W</text>
 <text class="small ink" x="43" y="831">Q = (100 − 20)/(0.080 + 0.200) = 285.7 W</text>
 <text class="small ink" x="43" y="871">伝導の降下 22.86 K</text>
 <rect class="barcond" id="drop-cond" x="330" y="850" width="137.1" height="20"/>

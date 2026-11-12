@@ -22,15 +22,15 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text class="small muted" x="45" y="560">環状流では壁の液膜が界面で気化する。ドライアウト前にバーンアウトも起こりうる。</text>
 <text class="small muted" x="45" y="584">様式の境界は鋭くない。水平管では重力で上下に分かれる。</text>
 <rect class="panel" x="23" y="621" width="794" height="293" rx="18"/>
-<text class="section ink" x="43" y="662">② 二つの枝を計算し、大きい方を取る（h_fb/h_lo）</text>
-<rect class="barN" x="200" y="700" width="170.6" height="34"/><text class="small ink" x="50" y="725">核沸騰枝 R_n</text><text class="small ink" x="382.6" y="725">≈1.90</text><rect class="barC" x="200" y="770" width="464.3" height="34"/><text class="small ink" x="50" y="795">対流枝 R_c</text><text class="small ink" x="676.3" y="795">≈5.16（採用）</text>
+<text class="section ink" x="43" y="662">② 二つの枝を計算し、大きい方を取る（h<tspan class="sb" dy="0.30em" font-size="0.72em">fb</tspan><tspan dy="-0.3em"></tspan>/h<tspan class="sb" dy="0.30em" font-size="0.72em">lo</tspan><tspan dy="-0.3em"></tspan>）</text>
+<rect class="barN" x="200" y="700" width="170.6" height="34"/><text class="small ink" x="50" y="725">核沸騰枝 R<tspan class="sb" dy="0.30em" font-size="0.72em">n</tspan><tspan dy="-0.3em"></tspan></text><text class="small ink" x="382.6" y="725">≈1.90</text><rect class="barC" x="200" y="770" width="464.3" height="34"/><text class="small ink" x="50" y="795">対流枝 R<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan></text><text class="small ink" x="676.3" y="795">≈5.16（採用）</text>
 <text class="micro muted" x="43" y="870">Co≈0.170（高クオリティ側）では対流沸騰枝が支配的になる。</text>
 <text class="micro muted" x="43" y="900">和・平均・最小値ではない。適用は飽和沸騰域、0 ＜ x ≦ 0.8、乾き前。</text>
 <rect class="panel" x="23" y="932" width="794" height="291" rx="18"/>
-<text class="section ink" x="43" y="973">③ 仮想例：G=500 kg/(m²·s)、x=0.250、q″_w=4.00×10^4 W/m²</text>
-<text class="micro muted" x="43" y="1005">Re_lo=50000、Pr_l=4.00、Gnielinski 式で Nu_lo≈258.7、h_lo≈2587 W/(m²·K)</text>
-<text class="micro muted" x="43" y="1034">Co≈0.170、Boi=8.00×10^(-5)、流体係数 F=1.00、垂直管 f_o=1</text>
-<text class="eq ink" x="43" y="1104">h_fb ≈ 1.334×10^4 W/(m²·K)　 壁面過熱度 ≈ 3.00 K</text>
+<text class="section ink" x="43" y="973">③ 仮想例：G=500 kg/(m²·s)、x=0.250、q″<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>=4.00×10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan> W/m²</text>
+<text class="micro muted" x="43" y="1005">Re<tspan class="sb" dy="0.30em" font-size="0.72em">lo</tspan><tspan dy="-0.3em"></tspan>=50000、Pr<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>=4.00、Gnielinski 式で Nu<tspan class="sb" dy="0.30em" font-size="0.72em">lo</tspan><tspan dy="-0.3em"></tspan>≈258.7、h<tspan class="sb" dy="0.30em" font-size="0.72em">lo</tspan><tspan dy="-0.3em"></tspan>≈2587 W/(m²·K)</text>
+<text class="micro muted" x="43" y="1034">Co≈0.170、Boi=8.00×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan>、流体係数 F=1.00、垂直管 f<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan>=1</text>
+<text class="eq ink" x="43" y="1104">h<tspan class="sb" dy="0.30em" font-size="0.72em">fb</tspan><tspan dy="-0.3em"></tspan> ≈ 1.334×10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan> W/(m²·K)　 壁面過熱度 ≈ 3.00 K</text>
 <text class="eq ink" x="43" y="1141">飽和温度 100 ℃ なら壁温 ≈ 103.0 ℃</text>
 <text class="micro muted" x="43" y="1181">これは局所の伝熱評価であり、限界熱流束や安全性の評価ではない。</text>
 

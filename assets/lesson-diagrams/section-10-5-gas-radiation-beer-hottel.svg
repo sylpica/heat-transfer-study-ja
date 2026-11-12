@@ -16,11 +16,11 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="small muted" x="33" y="97">N2・O2 はほぼ透明。CO2 と H2O が特定の波長帯でのみ相互作用する</text>
 <rect class="panel" x="23" y="119" width="794" height="262" rx="19"/>
 <text class="section ink" x="43" y="161">① Beerの法則（単色）</text>
-<text class="equation ink" x="43" y="205">di_λ = −ρ κ_λ i_λ dx　（10.47）</text>
-<text class="equation ink" x="43" y="247">i_λ(L) = i_λ0 · exp(−ρ κ_λ L)　（10.48）</text>
-<text class="equation ink" x="43" y="289">τ_λ = exp(−δ)、α_λ = 1 − τ_λ　（10.49）（10.50）</text>
-<text class="small ink" x="43" y="327">δ = ρκ_λ L が光学的深さ。非散乱気体は反射しない</text>
-<text class="small muted" x="43" y="359">単色では ε_λ = α_λ（10.54）でも、全量では一般に ε_g ≠ α_g</text>
+<text class="equation ink" x="43" y="205">di<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> = −ρ κ<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> i<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> dx　（10.47）</text>
+<text class="equation ink" x="43" y="247">i<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>(L) = i<tspan class="sb" dy="0.30em" font-size="0.72em">λ0</tspan><tspan dy="-0.3em"></tspan> · exp(−ρ κ<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> L)　（10.48）</text>
+<text class="equation ink" x="43" y="289">τ<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> = exp(−δ)、α<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> = 1 − τ<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>　（10.49）（10.50）</text>
+<text class="small ink" x="43" y="327">δ = ρκ<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> L が光学的深さ。非散乱気体は反射しない</text>
+<text class="small muted" x="43" y="359">単色では ε<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan> = α<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>（10.54）でも、全量では一般に ε<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> ≠ α<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan></text>
 <rect class="panel" x="23" y="399" width="794" height="368" rx="19"/>
 <text class="section ink" x="43" y="441">② 減衰曲線：帯内と帯外</text>
 <line class="grid" x1="150" y1="600" x2="710" y2="600"/>
@@ -35,7 +35,7 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="tiny ink" x="150" y="758" text-anchor="middle">0</text>
 <text class="tiny ink" x="430" y="758" text-anchor="middle">x/L = 0.5</text>
 <text class="tiny ink" x="710" y="758" text-anchor="middle">1</text>
-<text class="small ink" x="43" y="476">i_λ/i_λ0</text>
+<text class="small ink" x="43" y="476">i<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>/i<tspan class="sb" dy="0.30em" font-size="0.72em">λ0</tspan><tspan dy="-0.3em"></tspan></text>
 <text class="small warm" x="200" y="716">帯内 δ=2.0： τ = 0.1353、α = 0.8647</text>
 <text class="small cool" x="200" y="500">帯外 δ=0.02： τ = 0.9802、α = 0.0198</text>
 <rect class="panel" x="23" y="785" width="794" height="224" rx="19"/>
@@ -57,7 +57,7 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <rect class="panel" x="23" y="1027" width="794" height="190" rx="19"/>
 <text class="section ink" x="43" y="1069">④ 平均光路長 L0 = 4V/A（10.58）と Hottel の手順</text>
 <text class="small ink" x="43" y="1107">球 D=0.6 m → 0.40 m／無限円筒 D=0.4 m → 0.40 m／平板間隔 0.25 m → 0.50 m</text>
-<text class="small ink" x="43" y="1143">例題10.11： paL = 8.11 bar·cm → ε_g = 0.085、α_g = 0.12（図表）</text>
-<text class="small ink" x="43" y="1179">Q' = πD[ε_g σT_g⁴ − α_g σT_w⁴] = 27.59 kW/m（本書 約27 kW/m）</text>
+<text class="small ink" x="43" y="1143">例題10.11： paL = 8.11 bar·cm → ε<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> = 0.085、α<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> = 0.12（図表）</text>
+<text class="small ink" x="43" y="1179">Q' = πD[ε<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> σT<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan>⁴ − α<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> σT<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>⁴] = 27.59 kW/m（本書 約27 kW/m）</text>
 <text class="tiny muted" x="420" y="1246" text-anchor="middle">アプリ作成の独自模式図｜原著の図版・描画の転載なし</text>
 </svg>

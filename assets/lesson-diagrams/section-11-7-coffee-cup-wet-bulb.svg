@@ -16,11 +16,11 @@
 <path d="M150 232 q6 -14 0 -26 M190 232 q6 -14 0 -26 M230 232 q6 -14 0 -26" class="arrow-b"/>
 <text x="190" y="416" text-anchor="middle" class="small ink">上面 直径 9 cm</text>
 <text x="330" y="222" class="small ink">コーヒー 60°C、室温 25°C・相対湿度 50%</text>
-<text x="330" y="262" class="small ink">m_H2O,s = 0.1323、m_H2O,e = 0.00980</text>
-<text x="330" y="302" class="small ink">B_m = 0.1412 &lt; 0.2（低移動率）</text>
-<text x="330" y="342" class="small ink">h = 6.89 W/(m²·K)（Nu_D = 22.7）</text>
-<text x="330" y="382" class="small ink">g_m = 7.27×10^(-3) kg/(m²·s)</text>
-<text x="330" y="420" class="small secondary">Gr_D = 2.756×10^6（密度差から）</text>
+<text x="330" y="262" class="small ink">m<tspan class="sb" dy="0.30em" font-size="0.72em">H2O,s</tspan><tspan dy="-0.3em"></tspan> = 0.1323、m<tspan class="sb" dy="0.30em" font-size="0.72em">H2O,e</tspan><tspan dy="-0.3em"></tspan> = 0.00980</text>
+<text x="330" y="302" class="small ink">B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan> = 0.1412 &lt; 0.2（低移動率）</text>
+<text x="330" y="342" class="small ink">h = 6.89 W/(m²·K)（Nu<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = 22.7）</text>
+<text x="330" y="382" class="small ink">g<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan> = 7.27×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-3</tspan><tspan dy="0.45em"></tspan> kg/(m²·s)</text>
+<text x="330" y="420" class="small secondary">Gr<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = 2.756×10<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan><tspan dy="0.45em"></tspan>（密度差から）</text>
 <rect x="24" y="460" width="712" height="316" rx="18" class="panel"/>
 <text x="46" y="507" class="heading ink">熱損失の内訳（合計 16.33 W）</text>
 <text x="46" y="582" class="small ink">蒸発</text>
@@ -44,14 +44,14 @@
 <text x="240" y="1012" text-anchor="middle" class="small ink">湿球（濡れ芯）</text>
 <path d="M70 880 H300 M284 869 L300 880 L284 891" class="arrow-ink"/>
 <text x="330" y="900" class="small ink">蒸発と対流加熱の釣り合い（式(11.72b)）</text>
-<text x="330" y="940" class="small ink">n_H2O,s h_fg = h(T_e − T_wet)</text>
-<text x="46" y="1064" class="small ink">Lewis 関係式：h/(g_m c_p) = Le^(2/3) = 0.895（Le = 0.847）</text>
-<text x="46" y="1108" class="small secondary">比は形状・流速に依らず Le と c_p だけで決まる（式(11.73)）</text>
+<text x="330" y="940" class="small ink">n<tspan class="sb" dy="0.30em" font-size="0.72em">H2O,s</tspan><tspan dy="-0.3em"></tspan> h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan> = h(T<tspan class="sb" dy="0.30em" font-size="0.72em">e</tspan><tspan dy="-0.3em"></tspan> − T<tspan class="sb" dy="0.30em" font-size="0.72em">wet</tspan><tspan dy="-0.3em"></tspan>)</text>
+<text x="46" y="1064" class="small ink">Lewis 関係式：h/(g<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan> c<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan>) = Le<tspan class="sp" dy="-0.45em" font-size="0.72em">2/3</tspan><tspan dy="0.45em"></tspan> = 0.895（Le = 0.847）</text>
+<text x="46" y="1108" class="small secondary">比は形状・流速に依らず Le と c<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan> だけで決まる（式(11.73)）</text>
 <text x="46" y="1156" class="heading ink">例題11.13：湿球 15°C のとき</text>
-<text x="46" y="1204" class="small ink">p_sat(15°C) = 1705 Pa → m_H2O,s = 0.01054</text>
-<text x="46" y="1248" class="small ink">相対湿度 0%：T_e − 15 = 28.86 K → 乾球 43.9°C（式(11.74)）</text>
+<text x="46" y="1204" class="small ink">p<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan>(15°C) = 1705 Pa → m<tspan class="sb" dy="0.30em" font-size="0.72em">H2O,s</tspan><tspan dy="-0.3em"></tspan> = 0.01054</text>
+<text x="46" y="1248" class="small ink">相対湿度 0%：T<tspan class="sb" dy="0.30em" font-size="0.72em">e</tspan><tspan dy="-0.3em"></tspan> − 15 = 28.86 K → 乾球 43.9°C（式(11.74)）</text>
 <text x="46" y="1292" class="small ink">相対湿度 100%：蒸発が起こらず 乾球 = 湿球 = 15°C</text>
-<text x="46" y="1336" class="small secondary">h_fg = 2.466 MJ/kg、c_p,air = 1006 J/(kg·K)（15°C の値）</text>
-<text x="46" y="1374" class="small secondary">液滴蒸発の D^2 則（例題11.14）も湿球温度が前提になる</text>
+<text x="46" y="1336" class="small secondary">h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan> = 2.466 MJ/kg、c<tspan class="sb" dy="0.30em" font-size="0.72em">p,air</tspan><tspan dy="-0.3em"></tspan> = 1006 J/(kg·K)（15°C の値）</text>
+<text x="46" y="1374" class="small secondary">液滴蒸発の D<tspan class="spb" dy="-0.45em" font-size="0.72em">2</tspan><tspan dy="0.45em"></tspan> 則（例題11.14）も湿球温度が前提になる</text>
 <text x="380" y="1540" text-anchor="middle" class="small secondary">アプリ作成の独自図・模式図（原書図版ではない）</text>
 </svg>

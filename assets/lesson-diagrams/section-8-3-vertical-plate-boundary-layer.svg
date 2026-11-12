@@ -15,8 +15,8 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text class="title ink" x="30" y="59">§8.3 等温垂直面の層流自然対流</text>
 <text class="small muted" x="30" y="101">Churchill–Chu 層流式（原書 8.13a）と Squire–Eckert 積分解の形</text>
 <rect class="panel" x="23" y="126" width="794" height="477" rx="18"/>
-<text class="section ink" x="43" y="169">① 境界層は上流ほど薄く、δ ∝ x^(1/4)</text>
-<text class="small muted" x="45" y="210">温壁 T_w ＞ 周囲 T_∞ ／ 流体は壁沿いに上昇する</text>
+<text class="section ink" x="43" y="169">① 境界層は上流ほど薄く、δ ∝ x<tspan class="sp" dy="-0.45em" font-size="0.72em">1/4</tspan><tspan dy="0.45em"></tspan></text>
+<text class="small muted" x="45" y="210">温壁 T<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> ＞ 周囲 T<tspan class="sb" dy="0.30em" font-size="0.72em">∞</tspan><tspan dy="-0.3em"></tspan> ／ 流体は壁沿いに上昇する</text>
 <rect class="wall" x="187" y="275" width="26" height="279" rx="3"/>
 <path id="layer-shape" class="layer" d="M 213.000 554.000 L 272.645 547.050 L 283.931 540.100 L 291.498 533.150 L 297.351 526.200 L 302.191 519.250 L 306.350 512.300 L 310.018 505.350 L 313.311 498.400 L 316.309 491.450 L 319.066 484.500 L 321.624 477.550 L 324.012 470.600 L 326.256 463.650 L 328.374 456.700 L 330.381 449.750 L 332.291 442.800 L 334.112 435.850 L 335.855 428.900 L 337.527 421.950 L 339.134 415.000 L 340.682 408.050 L 342.176 401.100 L 343.620 394.150 L 345.017 387.200 L 346.371 380.250 L 347.685 373.300 L 348.962 366.350 L 350.204 359.400 L 351.413 352.450 L 352.591 345.500 L 353.740 338.550 L 354.861 331.600 L 355.957 324.650 L 357.028 317.700 L 358.075 310.750 L 359.101 303.800 L 360.105 296.850 L 361.089 289.900 L 362.054 282.950 L 363.000 276.000 L 213.000 554.000 Z"/>
 <path id="layer-boundary" class="layerEdge" d="M 213.000 554.000 L 272.645 547.050 L 283.931 540.100 L 291.498 533.150 L 297.351 526.200 L 302.191 519.250 L 306.350 512.300 L 310.018 505.350 L 313.311 498.400 L 316.309 491.450 L 319.066 484.500 L 321.624 477.550 L 324.012 470.600 L 326.256 463.650 L 328.374 456.700 L 330.381 449.750 L 332.291 442.800 L 334.112 435.850 L 335.855 428.900 L 337.527 421.950 L 339.134 415.000 L 340.682 408.050 L 342.176 401.100 L 343.620 394.150 L 345.017 387.200 L 346.371 380.250 L 347.685 373.300 L 348.962 366.350 L 350.204 359.400 L 351.413 352.450 L 352.591 345.500 L 353.740 338.550 L 354.861 331.600 L 355.957 324.650 L 357.028 317.700 L 358.075 310.750 L 359.101 303.800 L 360.105 296.850 L 361.089 289.900 L 362.054 282.950 L 363.000 276.000"/>
@@ -24,7 +24,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <path class="rise" d="M390 500 C 375 440, 405 400, 392 340 M381 352 L392 332 L403 352"/>
 <text class="small ink" x="450" y="360">上端の δ は板高の約 3.9%</text>
 <text class="small ink" x="450" y="395">強制対流より厚くなりやすい</text>
-<text class="small ink" x="450" y="460">物性は膜温度 T_f=(T_w+T_∞)/2 で評価</text>
+<text class="small ink" x="450" y="460">物性は膜温度 T<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>=(T<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>+T<tspan class="sb" dy="0.30em" font-size="0.72em">∞</tspan><tspan dy="-0.3em"></tspan>)/2 で評価</text>
 <text class="small muted" x="45" y="584">※境界層の描画幅は模式的。実際の長さ・厚さの比は表さない。</text>
 <rect class="panel" x="23" y="621" width="794" height="293" rx="18"/>
 <text class="section ink" x="43" y="662">② 積分解の近似分布：温度は2次式、速度は内部に極大</text>
@@ -37,11 +37,11 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="676" y="730" class="micro muted">速度は y/δ=1/3 で極大</text>
 <rect class="panel" x="23" y="932" width="794" height="291" rx="18"/>
 <text class="section ink" x="43" y="973">③ 仮想例：L=0.50 m、幅 0.20 m、ΔT=20 K</text>
-<text class="micro muted" x="43" y="1005">T_f=303.15 K、β=1/303.15 K^(-1)、ν=1.6×10^(-5)、α_f=2.2×10^(-5) m²/s</text>
-<text class="micro muted" x="43" y="1034">k_f=0.0267 W/(m·K)、Pr≈0.727、Ra_L≈2.30×10^8（層流域）</text>
-<text class="eq ink" x="43" y="1104">平均 Nu_L ≈ 64.17　 平均 h ≈ 3.427 W/(m²·K)</text>
+<text class="micro muted" x="43" y="1005">T<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>=303.15 K、β=1/303.15 K<tspan class="sp" dy="-0.45em" font-size="0.72em">-1</tspan><tspan dy="0.45em"></tspan>、ν=1.6×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan>、α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>=2.2×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan> m²/s</text>
+<text class="micro muted" x="43" y="1034">k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>=0.0267 W/(m·K)、Pr≈0.727、Ra<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan>≈2.30×10<tspan class="spb" dy="-0.45em" font-size="0.72em">8</tspan><tspan dy="0.45em"></tspan>（層流域）</text>
+<text class="eq ink" x="43" y="1104">平均 Nu<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> ≈ 64.17　 平均 h ≈ 3.427 W/(m²·K)</text>
 <text class="eq ink" x="43" y="1141">片面の対流熱流 Q ≈ +6.85 W（壁から流体へ）</text>
-<text class="micro muted" x="43" y="1181">等温垂直面・10^4 ≲ Ra_L ≲ 10^9 の条件付き。放射は含まない。</text>
+<text class="micro muted" x="43" y="1181">等温垂直面・10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan> ≲ Ra<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> ≲ 10<tspan class="spb" dy="-0.45em" font-size="0.72em">9</tspan><tspan dy="0.45em"></tspan> の条件付き。放射は含まない。</text>
 
 <text class="micro muted" x="420" y="1255" text-anchor="middle">アプリ作成の独自模式図｜原著図版の転載・トレースなし</text>
 </svg>

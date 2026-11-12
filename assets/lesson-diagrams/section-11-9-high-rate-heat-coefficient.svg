@@ -11,7 +11,7 @@
 <text x="36" y="104" class="small secondary">質量移動は物質側だけでなく熱伝達係数 h も増減させる</text>
 <rect x="24" y="128" width="712" height="302" rx="18" class="panel"/>
 <text x="46" y="173" class="heading ink">蒸散冷却：多孔質壁からの吹き出し</text>
-<text x="60" y="216" class="small ink">高温ガス T_e</text>
+<text x="60" y="216" class="small ink">高温ガス T<tspan class="sb" dy="0.30em" font-size="0.72em">e</tspan><tspan dy="-0.3em"></tspan></text>
 <path d="M150 226 V286 M139 272 L150 288 L161 272" class="arrow-a"/>
 <path d="M260 226 V286 M249 272 L260 288 L271 272" class="arrow-a"/>
 <path d="M370 226 V286 M359 272 L370 288 L381 272" class="arrow-a"/>
@@ -30,7 +30,7 @@
 <text x="530" y="278" class="small ink">h が下がる</text>
 <text x="530" y="330" class="small b">冷却ガスが</text>
 <text x="530" y="368" class="small b">吹き出す</text>
-<text x="90" y="404" class="small ink">多孔質壁（冷却材は貯蔵温度 T_r）で q_s = q_u（式(11.93)）</text>
+<text x="90" y="404" class="small ink">多孔質壁（冷却材は貯蔵温度 T<tspan class="sb" dy="0.30em" font-size="0.72em">r</tspan><tspan dy="-0.3em"></tspan>）で q<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = q<tspan class="sb" dy="0.30em" font-size="0.72em">u</tspan><tspan dy="-0.3em"></tspan>（式(11.93)）</text>
 <rect x="24" y="450" width="712" height="504" rx="18" class="panel"/>
 <text x="46" y="497" class="heading ink">補正比 h/h*（式(11.88)、h* は質量移動ゼロの極限）</text>
 <path d="M120 538 V886 H686" class="axis" fill="none"/>
@@ -51,23 +51,23 @@
 <text x="112" y="916" class="small ink">−2</text>
 <text x="340" y="916" class="small ink">0</text>
 <text x="672" y="916" class="small ink">3</text>
-<text x="400" y="946" text-anchor="middle" class="small secondary">X = n_i,s c_p,i / h* →（正が吹き出し）</text>
+<text x="400" y="946" text-anchor="middle" class="small secondary">X = n<tspan class="sb" dy="0.30em" font-size="0.72em">i,s</tspan><tspan dy="-0.3em"></tspan> c<tspan class="sb" dy="0.30em" font-size="0.72em">p,i</tspan><tspan dy="-0.3em"></tspan> / h* →（正が吹き出し）</text>
 <rect x="24" y="962" width="712" height="476" rx="18" class="panel"/>
 <text x="46" y="1009" class="heading ink">壁温は貯蔵温度へ指数的に近づく（式(11.98)）</text>
-<text x="46" y="1054" class="small ink">仮想例：T_e = 1200 K、T_r = 300 K、T_s − T_r の棒</text>
+<text x="46" y="1054" class="small ink">仮想例：T<tspan class="sb" dy="0.30em" font-size="0.72em">e</tspan><tspan dy="-0.3em"></tspan> = 1200 K、T<tspan class="sb" dy="0.30em" font-size="0.72em">r</tspan><tspan dy="-0.3em"></tspan> = 300 K、T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> − T<tspan class="sb" dy="0.30em" font-size="0.72em">r</tspan><tspan dy="-0.3em"></tspan> の棒</text>
 <text x="46" y="1108" class="small ink">X = 0.5</text>
 <rect id="bar-ts-x0p5" x="150" y="1082" width="409.408" height="30" class="b"/>
-<text x="571.4" y="1108" class="small ink">T_s = 845.9 K</text>
+<text x="571.4" y="1108" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 845.9 K</text>
 <text x="46" y="1156" class="small ink">X = 1.0</text>
 <rect id="bar-ts-x1p0" x="150" y="1130" width="248.319" height="30" class="b"/>
-<text x="410.3" y="1156" class="small ink">T_s = 631.1 K</text>
+<text x="410.3" y="1156" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 631.1 K</text>
 <text x="46" y="1204" class="small ink">X = 2.0</text>
 <rect id="bar-ts-x2p0" x="150" y="1178" width="91.351" height="30" class="b"/>
-<text x="253.4" y="1204" class="small ink">T_s = 421.8 K</text>
+<text x="253.4" y="1204" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 421.8 K</text>
 <text x="46" y="1252" class="small ink">X = 3.0</text>
 <rect id="bar-ts-x3p0" x="150" y="1226" width="33.606" height="30" class="b"/>
-<text x="195.6" y="1252" class="small ink">T_s = 344.8 K</text>
-<text x="46" y="1300" class="small ink">発汗冷却：q_s = q_u + h_fg n_i,s（式(11.100) の形）</text>
+<text x="195.6" y="1252" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 344.8 K</text>
+<text x="46" y="1300" class="small ink">発汗冷却：q<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = q<tspan class="sb" dy="0.30em" font-size="0.72em">u</tspan><tspan dy="-0.3em"></tspan> + h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan> n<tspan class="sb" dy="0.30em" font-size="0.72em">i,s</tspan><tspan dy="-0.3em"></tspan>（式(11.100) の形）</text>
 <text x="46" y="1344" class="small ink">潜熱は顕熱よりはるかに大きく単位質量あたりの効率が高い</text>
 <text x="46" y="1388" class="small secondary">応用：再突入体のアブレーション、非凝縮ガス混入の凝縮器</text>
 <text x="46" y="1424" class="small secondary">|X| ≲ 0.2 では h は h* の約10%以内。物性は膜温度・膜組成で評価する</text>

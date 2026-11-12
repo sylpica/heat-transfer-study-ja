@@ -58,11 +58,11 @@
 <rect class="panel" x="23" y="953" width="834" height="351" rx="18"/>
 <text x="44" y="997" class="head ink">③ 保存則＋構成則＋境界条件が必要</text>
 <text x="44" y="1036" class="formula ink">ΔU = m c ΔT = 10,000 J</text>
-<text x="44" y="1076" class="formula ink">m c dT/dt = P − Q_loss = 150 W</text>
-<text x="44" y="1116" class="formula ink">t = ΔU/(P − Q_loss) ≈ 66.67 s</text>
+<text x="44" y="1076" class="formula ink">m c dT/dt = P − Q<tspan class="sb" dy="0.30em" font-size="0.72em">loss</tspan><tspan dy="-0.3em"></tspan> = 150 W</text>
+<text x="44" y="1116" class="formula ink">t = ΔU/(P − Q<tspan class="sb" dy="0.30em" font-size="0.72em">loss</tspan><tspan dy="-0.3em"></tspan>) ≈ 66.67 s</text>
 <rect class="callout" x="43" y="1140" width="792" height="139" rx="12"/>
 <text x="60" y="1173" class="small ink">温度分布を解く別モデル：局所保存則＋Fourier則</text>
-<text x="60" y="1205" class="formula ink">ρc ∂T/∂t = k ∂²T/∂x² + q_gen</text>
-<text x="60" y="1244" class="tiny muted">1次元・均質・一定 k, ρ, c／q_gen は体積発熱率 [W/m³]</text>
+<text x="60" y="1205" class="formula ink">ρc ∂T/∂t = k ∂²T/∂x² + q<tspan class="sb" dy="0.30em" font-size="0.72em">gen</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="60" y="1244" class="tiny muted">1次元・均質・一定 k, ρ, c／q<tspan class="sb" dy="0.30em" font-size="0.72em">gen</tspan><tspan dy="-0.3em"></tspan> は体積発熱率 [W/m³]</text>
 <text x="440" y="1334" text-anchor="middle" class="tiny muted">独自作図｜温度一様の物体モデルと局所PDEを混同しない</text>
 </svg>

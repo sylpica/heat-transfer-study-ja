@@ -41,10 +41,10 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text class="section ink" x="43" y="860">② 垂直等温平板の例題：相関式の範囲内</text>
 <text class="small ink" x="43" y="902">L = 0.20 m、ΔT = 10 K、A = 0.50 m²</text>
 <text class="small muted" x="43" y="937">g = 9.81 m/s²、β = 0.003 K⁻¹、ν = 1.5×10⁻⁵ m²/s</text>
-<text class="small muted" x="43" y="972">α_f = 2.0×10⁻⁵ m²/s、k_f = 0.026 W/(m·K)</text>
-<text class="formula ink" x="43" y="1014">Ra = gβΔTL³/(ν α_f) = 7.848×10⁶</text>
+<text class="small muted" x="43" y="972">α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 2.0×10⁻⁵ m²/s、k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 0.026 W/(m·K)</text>
+<text class="formula ink" x="43" y="1014">Ra = gβΔTL³/(ν α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>) = 7.848×10⁶</text>
 <text class="formula ink" x="43" y="1055">平均Nu = Churchill–Chu (8.13a) ≈ 28.06</text>
-<text class="formula ink" x="43" y="1096">平均h = Nu k_f/L ≈ 3.65 W/(m²·K)</text>
+<text class="formula ink" x="43" y="1096">平均h = Nu k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>/L ≈ 3.65 W/(m²·K)</text>
 <text class="formula ink" x="43" y="1137">Q = h A ΔT ≈ 18.24 W（対流成分のみ）</text>
 <text class="tiny muted" x="43" y="1182">適用：等温垂直面、静穏流体、Ra ≲ 10⁹（層流）、近似相関</text>
 <text class="tiny muted" x="410" y="1243" text-anchor="middle">アプリ作成の独自模式図｜水平板・円柱に上式を流用しない</text>

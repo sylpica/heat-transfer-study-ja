@@ -38,16 +38,16 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans
 <text x="44" y="792" class="micro ink">平均運転</text>
 <rect id="operating-heat-flux-bar" class="opBar" x="161" y="771" width="462.431550" height="46" rx="5"/>
 <text x="176" y="802" class="small ink">0.800 MW/m²</text>
-<text x="44" y="875" class="small ink">形式上の比：q_op / q_CHF ≈ 0.746</text>
-<text x="44" y="909" class="small ink">算術量 M = 1 − q_op / q_CHF ≈ 0.254</text>
+<text x="44" y="875" class="small ink">形式上の比：q<tspan class="sb" dy="0.30em" font-size="0.72em">op</tspan><tspan dy="-0.3em"></tspan> / q<tspan class="sb" dy="0.30em" font-size="0.72em">CHF</tspan><tspan dy="-0.3em"></tspan> ≈ 0.746</text>
+<text x="44" y="909" class="small ink">算術量 M = 1 − q<tspan class="sb" dy="0.30em" font-size="0.72em">op</tspan><tspan dy="-0.3em"></tspan> / q<tspan class="sb" dy="0.30em" font-size="0.72em">CHF</tspan><tspan dy="-0.3em"></tspan> ≈ 0.254</text>
 <text x="44" y="941" class="micro subtle">これは安全率・設計許容値を意味しない。</text>
 
 <rect class="panel" x="23" y="986" width="854" height="258" rx="18"/>
 <text x="44" y="1028" class="section ink">③ 条件と適用限界</text>
-<text x="44" y="1060" class="micro ink">ρ_l=950、ρ_v=0.60 kg/m³、σ=0.059 N/m、g=9.81 m/s²</text>
-<text x="44" y="1088" class="micro ink">h_fg=2.2×10^6 J/kg、C=0.13（仮想条件）</text>
-<text x="44" y="1120" class="micro ink">q_CHF=C h_fg √ρ_v [σg(ρ_l−ρ_v)]^(1/4)</text>
-<text x="44" y="1152" class="micro ink">毛管長 ℓ_c ≈ 2.517 mm（泡径・蒸気柱間隔ではない）</text>
+<text x="44" y="1060" class="micro ink">ρ<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>=950、ρ<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan>=0.60 kg/m³、σ=0.059 N/m、g=9.81 m/s²</text>
+<text x="44" y="1088" class="micro ink">h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan>=2.2×10<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan><tspan dy="0.45em"></tspan> J/kg、C=0.13（仮想条件）</text>
+<text x="44" y="1120" class="micro ink">q<tspan class="sb" dy="0.30em" font-size="0.72em">CHF</tspan><tspan dy="-0.3em"></tspan>=C h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan> √ρ<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan> [σg(ρ<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>−ρ<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan>)]<tspan class="sp" dy="-0.45em" font-size="0.72em">1/4</tspan><tspan dy="0.45em"></tspan></text>
+<text x="44" y="1152" class="micro ink">毛管長 ℓ<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> ≈ 2.517 mm（泡径・蒸気柱間隔ではない）</text>
 <rect class="warning" x="42" y="1167" width="815" height="61" rx="9"/>
 <text x="55" y="1193" class="micro ink">実際の面・圧力・局所乾き・制御条件は未検証。</text>
 <text x="55" y="1218" class="micro ink">平均熱流束がCHF相関値より低くても安全を保証しない。</text>

@@ -25,23 +25,23 @@
   <path class="exchange" d="M240 332 H438 M423 320 L439 332 L423 344"/>
   <text x="340" y="310" text-anchor="middle" class="small cool">正味 1 → 2</text>
   <text x="340" y="367" text-anchor="middle" class="small ink">793.8 W</text>
-  <text x="124" y="429" text-anchor="middle" class="small ink">A_1 = 1.0 m²</text>
-  <text x="550" y="429" text-anchor="middle" class="small ink">A_2 = 4.0 m²</text>
-  <text x="44" y="470" class="small ink">与条件：F_12 = 0.80、F_21 = 0.20（無次元）</text>
+  <text x="124" y="429" text-anchor="middle" class="small ink">A<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan> = 1.0 m²</text>
+  <text x="550" y="429" text-anchor="middle" class="small ink">A<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> = 4.0 m²</text>
+  <text x="44" y="470" class="small ink">与条件：F<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = 0.80、F<tspan class="sb" dy="0.30em" font-size="0.72em">21</tspan><tspan dy="-0.3em"></tspan> = 0.20（無次元）</text>
   <text x="44" y="508" class="small muted">配置は模式図。係数は図形の寸法から算出しない。</text>
 
   <rect class="panel" x="24" y="567" width="632" height="224" rx="18"/>
   <text x="44" y="611" class="heading ink">② 形態係数の相反則</text>
-  <text x="44" y="656" class="equation ink">A_1 F_12 = A_2 F_21</text>
+  <text x="44" y="656" class="equation ink">A<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan> F<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = A<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> F<tspan class="sb" dy="0.30em" font-size="0.72em">21</tspan><tspan dy="-0.3em"></tspan></text>
   <text x="44" y="696" class="ink">1.0 × 0.80 = 0.80 m²</text>
   <text x="44" y="734" class="ink">4.0 × 0.20 = 0.80 m²</text>
-  <text x="44" y="770" class="small muted">F_12 ≠ F_21 でも、面積を掛けた値は一致。</text>
+  <text x="44" y="770" class="small muted">F<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> ≠ F<tspan class="sb" dy="0.30em" font-size="0.72em">21</tspan><tspan dy="-0.3em"></tspan> でも、面積を掛けた値は一致。</text>
 
   <rect class="panel" x="24" y="808" width="632" height="258" rx="18"/>
   <text x="44" y="852" class="heading ink">③ 黒体間の正味放射交換</text>
-  <text x="44" y="897" class="equation ink">Qdot_12 = σ A_1 F_12 (T_1⁴ − T_2⁴)</text>
-  <text x="44" y="935" class="small muted">σ = 5.67 × 10^(-8) W/(m²·K⁴)</text>
-  <text x="44" y="972" class="small ink">= 5.67×10^(-8) × 1.0 × 0.80</text>
+  <text x="44" y="897" class="equation ink">Qdot<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = σ A<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan> F<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> (T<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan>⁴ − T<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan>⁴)</text>
+  <text x="44" y="935" class="small muted">σ = 5.67 × 10<tspan class="sp" dy="-0.45em" font-size="0.72em">-8</tspan><tspan dy="0.45em"></tspan> W/(m²·K⁴)</text>
+  <text x="44" y="972" class="small ink">= 5.67×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-8</tspan><tspan dy="0.45em"></tspan> × 1.0 × 0.80</text>
   <text x="64" y="1008" class="small ink">× (400⁴ − 300⁴) = 793.8 W</text>
   <text x="44" y="1045" class="small cool">高温の面1から低温の面2へ正味移動</text>
   <text x="340" y="1090" text-anchor="middle" class="small muted">アプリ作成の図｜黒体・非参加性媒質の例</text>

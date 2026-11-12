@@ -21,8 +21,8 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <path class="flow" d="M144 264 H84 M97 252 L84 264 L97 276 M336 264 H402 M388 252 L402 264 L388 276"/>
 <text class="small warm" x="424" y="253">対流で外へ放熱</text>
 <text class="small muted" x="425" y="285">周囲温度 20 ℃</text>
-<text class="small ink" x="44" y="357">L_c = V/A_s = 0.0020 m ／ Bi = hL_c/k_s = 0.00080</text>
-<text class="micro muted" x="44" y="390">Bi &lt; 0.1は一般的な近似目安。k_sは固体の熱伝導率。</text>
+<text class="small ink" x="44" y="357">L<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = V/A<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 0.0020 m ／ Bi = hL<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan>/k<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 0.00080</text>
+<text class="micro muted" x="44" y="390">Bi &lt; 0.1は一般的な近似目安。k<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan>は固体の熱伝導率。</text>
 
 <rect class="panel" x="23" y="426" width="794" height="430" rx="19"/>
 <text class="section ink" x="44" y="467">② 時間で減るのは「周囲との温度差」</text>
@@ -41,16 +41,16 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <text x="447" y="749" text-anchor="middle" class="micro ink">500</text>
 <text x="573" y="749" text-anchor="middle" class="micro ink">750</text>
 <text x="699" y="749" text-anchor="middle" class="micro ink">1000</text>
-<text x="46" y="803" class="small ink">t = τ = 250 s なら Θ = e^(−1) ≈ 0.368</text>
+<text x="46" y="803" class="small ink">t = τ = 250 s なら Θ = e<tspan class="sp" dy="-0.45em" font-size="0.72em">−1</tspan><tspan dy="0.45em"></tspan> ≈ 0.368</text>
 <text x="46" y="836" class="micro muted">※摂氏温度そのものが36.8%になるという意味ではない。</text>
 
 <rect class="panel" x="23" y="875" width="794" height="306" rx="19"/>
 <text class="section ink" x="44" y="919">③ 熱収支と例題の検算</text>
 <text class="small ink" x="44" y="963">m = 1.0 kg、c = 500 J/(kg·K)、h = 20 W/(m²·K)</text>
-<text class="small ink" x="44" y="998">A_s = 0.10 m²、T₀ = 100 ℃、T∞ = 20 ℃</text>
-<text class="formula ink" x="44" y="1037">τ = mc/(hA_s) = 500/2 = 250 s</text>
-<text class="formula ink" x="44" y="1076">T(250 s) = 20 + 80e^(−1) ≈ 49.43 ℃</text>
-<text class="formula ink" x="44" y="1115">Q_release = mc(T₀−T) ≈ 25.28 kJ</text>
+<text class="small ink" x="44" y="998">A<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 0.10 m²、T₀ = 100 ℃、T∞ = 20 ℃</text>
+<text class="formula ink" x="44" y="1037">τ = mc/(hA<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan>) = 500/2 = 250 s</text>
+<text class="formula ink" x="44" y="1076">T(250 s) = 20 + 80e<tspan class="sp" dy="-0.45em" font-size="0.72em">−1</tspan><tspan dy="0.45em"></tspan> ≈ 49.43 ℃</text>
+<text class="formula ink" x="44" y="1115">Q<tspan class="sb" dy="0.30em" font-size="0.72em">release</tspan><tspan dy="-0.3em"></tspan> = mc(T₀−T) ≈ 25.28 kJ</text>
 <text class="micro muted" x="44" y="1157">一定物性・初期一様温度。放射、発熱、相変化を無視。</text>
 <text x="420" y="1212" text-anchor="middle" class="micro muted">アプリ独自作図｜原著図版の転載・トレースなし</text>
 </svg>

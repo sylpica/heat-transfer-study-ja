@@ -28,25 +28,25 @@
 <rect id="seg-turb" class="barB" x="410" y="196" width="300" height="44"/>
 <text class="small ink" x="150" y="272">層流 0〜0.50 m</text>
 <text class="small ink" x="450" y="272">乱流 0.50〜1.0 m</text>
-<text class="small muted" x="43" y="306">切替は Re_c = 5×10^5（目安）の位置 x_c = 0.50 m。</text>
+<text class="small muted" x="43" y="306">切替は Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = 5×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan>（目安）の位置 x<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = 0.50 m。</text>
 <text class="small muted" x="43" y="332">実際の遷移は有限の幅を持つ</text>
-<text class="small muted" x="43" y="358">Re_c は主流乱れ・粗さ・圧力勾配で変わり、普遍定数ではない</text>
+<text class="small muted" x="43" y="358">Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> は主流乱れ・粗さ・圧力勾配で変わり、普遍定数ではない</text>
 <rect class="panel" x="23" y="394" width="774" height="290" rx="19"/>
 <text class="section ink" x="44" y="438">② 補正 C′ は Pr 依存（気体の場合）</text>
-<text class="result ink" x="43" y="482">C′ = 0.037 Re_c^0.8 Pr^0.6 − 0.664 Re_c^(1/2) Pr^(1/3)</text>
-<text class="result ink" x="43" y="520">= 1082.52 − 416.89 ≈ 665.63（Re_c = 5×10^5、Pr = 0.7）</text>
-<text class="small ink" x="43" y="562">層流部と乱流部で Pr の指数が違うため、C′ を Pr^(1/3) で括り出せない</text>
-<text class="small muted" x="43" y="588">C′ は Re_c と Pr の両方で変わる。</text>
+<text class="result ink" x="43" y="482">C′ = 0.037 Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan><tspan class="spb" dy="-0.45em" font-size="0.72em">0.8</tspan><tspan dy="0.45em"></tspan> Pr<tspan class="spb" dy="-0.45em" font-size="0.72em">0.6</tspan><tspan dy="0.45em"></tspan> − 0.664 Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">1/2</tspan><tspan dy="0.45em"></tspan> Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">1/3</tspan><tspan dy="0.45em"></tspan></text>
+<text class="result ink" x="43" y="520">= 1082.52 − 416.89 ≈ 665.63（Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = 5×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan>、Pr = 0.7）</text>
+<text class="small ink" x="43" y="562">層流部と乱流部で Pr の指数が違うため、C′ を Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">1/3</tspan><tspan dy="0.45em"></tspan> で括り出せない</text>
+<text class="small muted" x="43" y="588">C′ は Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> と Pr の両方で変わる。</text>
 <text class="small muted" x="43" y="614">条件が違えば 871 のような別の値になり、固定しない</text>
-<text class="small muted" x="43" y="642">Re_L ≤ Re_c なら混合式を使わず、層流の平均相関を使う</text>
-<text class="small muted" x="43" y="670">検算：Re_L = Re_c では補正式は層流平均 416.89 と一致する</text>
+<text class="small muted" x="43" y="642">Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> ≤ Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> なら混合式を使わず、層流の平均相関を使う</text>
+<text class="small muted" x="43" y="670">検算：Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> = Re<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> では補正式は層流平均 416.89 と一致する</text>
 <rect class="panel" x="23" y="702" width="774" height="330" rx="19"/>
-<text class="section ink" x="44" y="746">③ 平均 Nū_L の比較と熱流</text>
+<text class="section ink" x="44" y="746">③ 平均 Nū<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> の比較と熱流</text>
 <text class="small ink" x="43" y="792">遷移あり（区間積分）→ 1219.1</text>
 <rect id="bar-mixed" class="barA" x="43" y="806" width="292.6" height="30"/>
 <text class="small ink" x="43" y="870">前縁から全て乱流 → 1884.8</text>
 <rect id="bar-turb" class="barB" x="43" y="884" width="452.35" height="30"/>
-<text class="result ink" x="43" y="952">h̄_L ≈ 31.70 W/(m²·K)、片面 Q̇ ≈ 253.6 W（ΔT = 40 K）</text>
+<text class="result ink" x="43" y="952">h̄<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> ≈ 31.70 W/(m²·K)、片面 Q̇ ≈ 253.6 W（ΔT = 40 K）</text>
 <text class="small muted" x="43" y="990">原書の3域統合は （6.117）〜（6.120）。本図は急切替近似の教材モデル</text>
 <text class="micro muted" x="410" y="1128" text-anchor="middle">アプリ作成の独自模式図｜非実寸・原著図版の転載なし</text>
 </svg>

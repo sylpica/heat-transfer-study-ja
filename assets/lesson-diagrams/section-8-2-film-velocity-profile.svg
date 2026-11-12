@@ -16,7 +16,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text class="small muted" x="30" y="101">垂直冷壁の層流液膜：重力と粘性の釣合い、表面でせん断なし</text>
 <rect class="panel" x="23" y="126" width="794" height="477" rx="18"/>
 <text class="section ink" x="43" y="169">① 液膜は下流ほど厚くなり、質量が増える</text>
-<text class="small muted" x="45" y="210">壁温 T_w ＜ 飽和温度 T_sat ／ 下向き x、壁から外向き y</text>
+<text class="small muted" x="45" y="210">壁温 T<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> ＜ 飽和温度 T<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan> ／ 下向き x、壁から外向き y</text>
 <rect class="wall" x="187" y="275" width="26" height="279" rx="3"/>
 <path id="film-shape" class="film" d="M 213.000 276.000 L 246.799 282.950 L 253.194 289.900 L 257.482 296.850 L 260.799 303.800 L 263.541 310.750 L 265.898 317.700 L 267.977 324.650 L 269.843 331.600 L 271.542 338.550 L 273.104 345.500 L 274.553 352.450 L 275.907 359.400 L 277.179 366.350 L 278.379 373.300 L 279.516 380.250 L 280.598 387.200 L 281.630 394.150 L 282.618 401.100 L 283.565 408.050 L 284.476 415.000 L 285.353 421.950 L 286.200 428.900 L 287.018 435.850 L 287.809 442.800 L 288.577 449.750 L 289.322 456.700 L 290.045 463.650 L 290.749 470.600 L 291.434 477.550 L 292.101 484.500 L 292.753 491.450 L 293.388 498.400 L 294.009 505.350 L 294.616 512.300 L 295.209 519.250 L 295.790 526.200 L 296.359 533.150 L 296.917 540.100 L 297.464 547.050 L 298.000 554.000 L 213.000 554.000 Z"/>
 <path id="film-boundary" class="filmEdge" d="M 213.000 276.000 L 246.799 282.950 L 253.194 289.900 L 257.482 296.850 L 260.799 303.800 L 263.541 310.750 L 265.898 317.700 L 267.977 324.650 L 269.843 331.600 L 271.542 338.550 L 273.104 345.500 L 274.553 352.450 L 275.907 359.400 L 277.179 366.350 L 278.379 373.300 L 279.516 380.250 L 280.598 387.200 L 281.630 394.150 L 282.618 401.100 L 283.565 408.050 L 284.476 415.000 L 285.353 421.950 L 286.200 428.900 L 287.018 435.850 L 287.809 442.800 L 288.577 449.750 L 289.322 456.700 L 290.045 463.650 L 290.749 470.600 L 291.434 477.550 L 292.101 484.500 L 292.753 491.450 L 293.388 498.400 L 294.009 505.350 L 294.616 512.300 L 295.209 519.250 L 295.790 526.200 L 296.359 533.150 L 296.917 540.100 L 297.464 547.050 L 298.000 554.000"/>
@@ -26,23 +26,23 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text class="small ink" x="371" y="327">潜熱は液膜を横切る伝導で壁へ</text>
 <text class="small ink" x="371" y="362">凝縮で加わる質量が Γ(x) を増やす</text>
 <text class="small ink" x="371" y="425">単相流の「全流量一定」とは違う</text>
-<text class="small ink" x="371" y="460">δ(x) ∝ x^(1/4)、局所 h_x = k_l/δ(x)</text>
+<text class="small ink" x="371" y="460">δ(x) ∝ x<tspan class="sp" dy="-0.45em" font-size="0.72em">1/4</tspan><tspan dy="0.45em"></tspan>、局所 h<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> = k<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>/δ(x)</text>
 <text class="small muted" x="45" y="584">※膜の描画幅は模式的。実際の長さ・厚さの比は表さない。</text>
 <rect class="panel" x="23" y="621" width="794" height="293" rx="18"/>
-<text class="section ink" x="43" y="662">② 速度分布 u/u_s = 2(y/δ) − (y/δ)²（x=L の断面）</text>
+<text class="section ink" x="43" y="662">② 速度分布 u/u<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 2(y/δ) − (y/δ)²（x=L の断面）</text>
 <path class="axis" d="M170 681 V826 H660 M649 818 L660 826 L649 834"/>
 <path id="velocity-profile" class="graph" d="M 170.000 826.000 L 215.825 818.750 L 259.300 811.500 L 300.425 804.250 L 339.200 797.000 L 375.625 789.750 L 409.700 782.500 L 441.425 775.250 L 470.800 768.000 L 497.825 760.750 L 522.500 753.500 L 544.825 746.250 L 564.800 739.000 L 582.425 731.750 L 597.700 724.500 L 610.625 717.250 L 621.200 710.000 L 629.425 702.750 L 635.300 695.500 L 638.825 688.250 L 640.000 681.000"/>
 <text x="60" y="690" class="micro ink">y=δ（表面）</text><text x="60" y="831" class="micro ink">y=0（壁）</text>
-<text x="415" y="852" text-anchor="middle" class="micro ink">u/u_s →</text>
-<text x="690" y="700" class="micro ink">u_s ≈ 0.0767 m/s</text>
-<text x="690" y="730" class="micro muted">平均 ≈ (2/3)u_s</text>
+<text x="415" y="852" text-anchor="middle" class="micro ink">u/u<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> →</text>
+<text x="690" y="700" class="micro ink">u<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> ≈ 0.0767 m/s</text>
+<text x="690" y="730" class="micro muted">平均 ≈ (2/3)u<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan></text>
 <rect class="panel" x="23" y="932" width="794" height="291" rx="18"/>
 <text class="section ink" x="43" y="973">③ 仮想例：L=0.20 m、幅 0.10 m、ΔT=10 K</text>
-<text class="micro muted" x="43" y="1005">ρ_l=1000、ρ_v=1.0 kg/m³、μ_l=1.0×10^(-3) Pa·s、k_l=0.60 W/(m·K)</text>
-<text class="micro muted" x="43" y="1034">h_fg=2.0×10^6 J/kg、g=9.81 m/s²（潜熱は補正潜熱が厳密。Ja 小で差は微小）</text>
-<text class="eq ink" x="43" y="1104">δ(L) ≈ 0.1251 mm　 h_L ≈ 4796　 平均 h ≈ 6395 W/(m²·K)</text>
-<text class="eq ink" x="43" y="1141">Q ≈ 1.279 kW　 Γ(L) ≈ 6.40×10^(-3) kg/(m·s)　 Re_f ≈ 25.6</text>
-<text class="micro muted" x="43" y="1181">平均 h=(4/3)h_L。W·Γ(L)·h_fg = Q で収支が一致する。波・せん断は未評価。</text>
+<text class="micro muted" x="43" y="1005">ρ<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>=1000、ρ<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan>=1.0 kg/m³、μ<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>=1.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-3</tspan><tspan dy="0.45em"></tspan> Pa·s、k<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>=0.60 W/(m·K)</text>
+<text class="micro muted" x="43" y="1034">h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan>=2.0×10<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan><tspan dy="0.45em"></tspan> J/kg、g=9.81 m/s²（潜熱は補正潜熱が厳密。Ja 小で差は微小）</text>
+<text class="eq ink" x="43" y="1104">δ(L) ≈ 0.1251 mm　 h<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> ≈ 4796　 平均 h ≈ 6395 W/(m²·K)</text>
+<text class="eq ink" x="43" y="1141">Q ≈ 1.279 kW　 Γ(L) ≈ 6.40×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-3</tspan><tspan dy="0.45em"></tspan> kg/(m·s)　 Re<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> ≈ 25.6</text>
+<text class="micro muted" x="43" y="1181">平均 h=(4/3)h<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan>。W·Γ(L)·h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan> = Q で収支が一致する。波・せん断は未評価。</text>
 
 <text class="micro muted" x="420" y="1255" text-anchor="middle">アプリ作成の独自模式図｜原著図版の転載・トレースなし</text>
 </svg>

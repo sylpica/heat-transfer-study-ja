@@ -65,7 +65,7 @@
   <text x="48" y="935" class="small secondary">縦軸は拡大（0.2485–0.2550）</text>
   <rect x="24" y="1167" width="792" height="140" rx="19" class="panel"/>
   <text x="48" y="1207" class="small ink">対称性：四辺 θ=1 の解は θ ≡ 1 → 一辺の寄与は中心で 1/4</text>
-  <text x="48" y="1244" class="small ink">T_center = 20 + 80 × (1/4) = 40℃</text>
+  <text x="48" y="1244" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">center</tspan><tspan dy="-0.3em"></tspan> = 20 + 80 × (1/4) = 40℃</text>
   <text x="48" y="1281" class="small secondary">内部温度の収束と角部の熱流の収束は別。角の不連続は理想化。</text>
   <text x="420" y="1375" text-anchor="middle" class="small secondary">アプリ作成の独自図・原書図版の転載ではない</text>
 </svg>

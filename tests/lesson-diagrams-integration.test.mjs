@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { LESSON_DIAGRAMS, LESSON_DIAGRAM_PATHS, lessonDiagramPath, lessonDiagramSize } from '../lesson-diagrams.mjs';
 
 const root = new URL('../', import.meta.url);
-const read = rel => readFileSync(new URL(rel, root), 'utf8');
+const read = rel => readFileSync(new URL(rel, root), 'utf8').replace(/<tspan class="sbb"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'_{$1}').replace(/<tspan class="sbp"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'_($1)').replace(/<tspan class="sb"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'_$1').replace(/<tspan class="spc"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'^{$1}').replace(/<tspan class="sp"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'^($1)').replace(/<tspan class="spb"[^>]*>([^<]*)<\/tspan><tspan dy="[^"]*"><\/tspan>/g,'^$1');
 
 test('lesson diagram registry covers the 76 integrated sections exactly once', () => {
   const ids = Object.keys(LESSON_DIAGRAMS);

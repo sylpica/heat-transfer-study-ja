@@ -21,17 +21,17 @@
 </style>
 <rect class="bg" width="820" height="1160"/>
 <text class="heading ink" x="32" y="59">§6.4 Pr と二つの境界層</text>
-<text class="small muted" x="33" y="101">Pr = ν/α_f：運動量の拡散と熱の拡散の比</text>
+<text class="small muted" x="33" y="101">Pr = ν/α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>：運動量の拡散と熱の拡散の比</text>
 <rect class="panel" x="23" y="124" width="774" height="380" rx="19"/>
-<text class="section ink" x="44" y="168">① 例：Pr = 8、x = 0.40 m（δ_t/δ ∼ Pr^(−1/3) = 0.50）</text>
+<text class="section ink" x="44" y="168">① 例：Pr = 8、x = 0.40 m（δ<tspan class="sb" dy="0.30em" font-size="0.72em">t</tspan><tspan dy="-0.3em"></tspan>/δ ∼ Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">−1/3</tspan><tspan dy="0.45em"></tspan> = 0.50）</text>
 <path id="delta-curve" class="line1" d="M150.00 430.00 L176.00 380.00 L202.00 359.29 L228.00 343.40 L254.00 330.00 L280.00 318.20 L306.00 307.53 L332.00 297.71 L358.00 288.58 L384.00 280.00 L410.00 271.89 L436.00 264.17 L462.00 256.79 L488.00 249.72 L514.00 242.92 L540.00 236.35 L566.00 230.00 L592.00 223.84 L618.00 217.87 L644.00 212.06 L670.00 206.39"/>
 <path id="delta-t-curve" class="line2" d="M150.00 430.00 L176.00 405.00 L202.00 394.64 L228.00 386.70 L254.00 380.00 L280.00 374.10 L306.00 368.76 L332.00 363.86 L358.00 359.29 L384.00 355.00 L410.00 350.94 L436.00 347.08 L462.00 343.40 L488.00 339.86 L514.00 336.46 L540.00 333.18 L566.00 330.00 L592.00 326.92 L618.00 323.93 L644.00 321.03 L670.00 318.20"/>
 <path class="wall" d="M150 430 H700"/>
-<text class="small accent" x="470" y="192">速度層 δ_99 ≈ 8.94 mm</text>
+<text class="small accent" x="470" y="192">速度層 δ<tspan class="sb" dy="0.30em" font-size="0.72em">99</tspan><tspan dy="-0.3em"></tspan> ≈ 8.94 mm</text>
 <text class="small accent2" x="470" y="304">温度層の尺度 ≈ 4.47 mm（概略）</text>
 <text class="micro muted" x="44" y="478">縦軸 0〜10 mm。温度層は比例係数1の概略尺度で、厳密な99%値ではない</text>
 <rect class="panel" x="23" y="522" width="774" height="300" rx="19"/>
-<text class="section ink" x="44" y="566">② 厚さ比 δ_t/δ ∼ Pr^(−1/3)（原書 6.55、Pr ≳ 0.6）</text>
+<text class="section ink" x="44" y="566">② 厚さ比 δ<tspan class="sb" dy="0.30em" font-size="0.72em">t</tspan><tspan dy="-0.3em"></tspan>/δ ∼ Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">−1/3</tspan><tspan dy="0.45em"></tspan>（原書 6.55、Pr ≳ 0.6）</text>
 <text class="small ink" x="43" y="612">Pr = 0.7 → 1.126（温度層が厚い）</text>
 <rect id="bar-pr07" class="barA" x="43" y="626" width="427.99" height="30"/>
 <text class="small ink" x="43" y="690">Pr = 1 → 1.000（同じ尺度）</text>
@@ -40,10 +40,10 @@
 <rect id="bar-pr8" class="barB" x="43" y="782" width="190" height="30"/>
 <rect class="panel" x="23" y="840" width="774" height="220" rx="19"/>
 <text class="section ink" x="44" y="884">③ 尺度の使い分け</text>
-<text class="result ink" x="43" y="924">Re_x = 5.0×10^4、Pr = 8.0</text>
-<text class="result ink" x="43" y="952">（ν = 8.0×10^(−6)、α_f = 1.0×10^(−6) m²/s）</text>
-<text class="small ink" x="43" y="982">静止拡散の同時間比較は Pr^(−1/2) ≈ 0.354 で、平板の三乗根尺度と別物</text>
-<text class="small muted" x="43" y="1014">h は壁面勾配で決まる。h = k_f/δ_t と厳密に置くことはしない</text>
+<text class="result ink" x="43" y="924">Re<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> = 5.0×10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan>、Pr = 8.0</text>
+<text class="result ink" x="43" y="952">（ν = 8.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">−6</tspan><tspan dy="0.45em"></tspan>、α<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 1.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">−6</tspan><tspan dy="0.45em"></tspan> m²/s）</text>
+<text class="small ink" x="43" y="982">静止拡散の同時間比較は Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">−1/2</tspan><tspan dy="0.45em"></tspan> ≈ 0.354 で、平板の三乗根尺度と別物</text>
+<text class="small muted" x="43" y="1014">h は壁面勾配で決まる。h = k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>/δ<tspan class="sb" dy="0.30em" font-size="0.72em">t</tspan><tspan dy="-0.3em"></tspan> と厳密に置くことはしない</text>
 <text class="small muted" x="43" y="1042">極低Pr（液体金属）へ三乗根尺度を外挿しない</text>
 <text class="micro muted" x="410" y="1128" text-anchor="middle">アプリ作成の独自模式図｜非実寸・原著図版の転載なし</text>
 </svg>

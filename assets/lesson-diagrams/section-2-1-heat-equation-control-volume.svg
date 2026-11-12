@@ -33,11 +33,11 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <line class="axis" x1="100" y1="690" x2="100" y2="940"/>
 <line class="axis" x1="100" y1="940" x2="740" y2="940"/>
 <path id="temp-parabola" class="curve" d="M100.0,940.0 L116.0,916.6 L132.0,894.4 L148.0,873.4 L164.0,853.6 L180.0,835.0 L196.0,817.6 L212.0,801.4 L228.0,786.4 L244.0,772.6 L260.0,760.0 L276.0,748.6 L292.0,738.4 L308.0,729.4 L324.0,721.6 L340.0,715.0 L356.0,709.6 L372.0,705.4 L388.0,702.4 L404.0,700.6 L420.0,700.0 L436.0,700.6 L452.0,702.4 L468.0,705.4 L484.0,709.6 L500.0,715.0 L516.0,721.6 L532.0,729.4 L548.0,738.4 L564.0,748.6 L580.0,760.0 L596.0,772.6 L612.0,786.4 L628.0,801.4 L644.0,817.6 L660.0,835.0 L676.0,853.6 L692.0,873.4 L708.0,894.4 L724.0,916.6 L740.0,940.0"/>
-<text class="small ink" x="420" y="795" text-anchor="middle">T_max = 30.8 ℃（中央）</text>
+<text class="small ink" x="420" y="795" text-anchor="middle">T<tspan class="sb" dy="0.30em" font-size="0.72em">max</tspan><tspan dy="-0.3em"></tspan> = 30.8 ℃（中央）</text>
 <text class="small ink" x="100" y="972">x = 0（30 ℃）</text>
 <text class="small ink" x="740" y="972" text-anchor="end">x = L（30 ℃）</text>
 <text class="small ink" x="43" y="1012">T(x) = 30 + 2000x(0.040 − x) ℃（L = 0.040 m、k = 20 W/(m·K)）</text>
-<text class="small ink" x="43" y="1050">符号つき流束 q_x(0) = −1600、q_x(L) = +1600 W/m²（q‴ = 8.0×10⁴ W/m³）</text>
+<text class="small ink" x="43" y="1050">符号つき流束 q<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan>(0) = −1600、q<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan>(L) = +1600 W/m²（q‴ = 8.0×10⁴ W/m³）</text>
 <text class="small ink" x="43" y="1088">検算： 外向き放熱 1600 + 1600 = 全発熱 q‴L = 3200 W/m² ✓</text>
 <text class="small muted" x="43" y="1126">中心で勾配ゼロ（対称）。片側の1600だけを発熱全量と誤認しない</text>
 <text class="small muted" x="43" y="1158">縦軸は 30.0 ℃ 基準・300 px/K の拡大表示（実寸比ではない）</text>

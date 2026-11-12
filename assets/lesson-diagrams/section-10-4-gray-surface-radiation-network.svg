@@ -27,31 +27,31 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="small ink" x="60" y="363">A1=A2=0.50 m²／ε1=0.80、ε2=0.60</text>
 <text class="tiny muted" x="60" y="387">大きい平行面（端部無視）・F12=1・非参加性媒質</text>
 <rect class="panel" x="23" y="415" width="794" height="410" rx="19"/>
-<text class="section ink" x="43" y="458">② 「電位」は温度ではなく E_b と射度 J</text>
-<text class="small muted" x="43" y="495">E_b=σT⁴ [W/m²]。抵抗の単位は m⁻²（K/Wではない）</text>
+<text class="section ink" x="43" y="458">② 「電位」は温度ではなく E<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> と射度 J</text>
+<text class="small muted" x="43" y="495">E<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan>=σT⁴ [W/m²]。抵抗の単位は m⁻²（K/Wではない）</text>
 <path class="wire" d="M95 611 H176 M266 611 H302 M302 611 H370 M472 611 H544 M544 611 H581 M682 611 H742"/>
 <rect class="res" x="176" y="589" width="90" height="45" rx="5"/>
 <rect class="res" x="370" y="589" width="102" height="45" rx="5"/>
 <rect class="res" x="581" y="589" width="101" height="45" rx="5"/>
-<text class="small ink" x="221" y="618" text-anchor="middle">R_s1</text>
-<text class="small ink" x="421" y="618" text-anchor="middle">R_12</text>
-<text class="small ink" x="631" y="618" text-anchor="middle">R_s2</text>
+<text class="small ink" x="221" y="618" text-anchor="middle">R<tspan class="sb" dy="0.30em" font-size="0.72em">s1</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="small ink" x="421" y="618" text-anchor="middle">R<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="small ink" x="631" y="618" text-anchor="middle">R<tspan class="sb" dy="0.30em" font-size="0.72em">s2</tspan><tspan dy="-0.3em"></tspan></text>
 <g class="node"><circle cx="95" cy="611" r="8"/><circle cx="302" cy="611" r="8"/><circle cx="544" cy="611" r="8"/><circle cx="742" cy="611" r="8"/></g>
-<text class="small ink" x="95" y="565" text-anchor="middle">E_b1</text>
+<text class="small ink" x="95" y="565" text-anchor="middle">E<tspan class="sb" dy="0.30em" font-size="0.72em">b1</tspan><tspan dy="-0.3em"></tspan></text>
 <text class="small ink" x="302" y="565" text-anchor="middle">J1</text>
 <text class="small ink" x="544" y="565" text-anchor="middle">J2</text>
-<text class="small ink" x="742" y="565" text-anchor="middle">E_b2</text>
-<text class="tiny ink" x="44" y="687">R_s1 = 0.500 m⁻²</text>
-<text class="tiny ink" x="314" y="687">R_12 = 2.000 m⁻²</text>
-<text class="tiny ink" x="579" y="687">R_s2 = 1.333 m⁻²</text>
-<text class="small warm" x="44" y="744">E_b1 = 1451.62 W/m²</text>
+<text class="small ink" x="742" y="565" text-anchor="middle">E<tspan class="sb" dy="0.30em" font-size="0.72em">b2</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="tiny ink" x="44" y="687">R<tspan class="sb" dy="0.30em" font-size="0.72em">s1</tspan><tspan dy="-0.3em"></tspan> = 0.500 m⁻²</text>
+<text class="tiny ink" x="314" y="687">R<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = 2.000 m⁻²</text>
+<text class="tiny ink" x="579" y="687">R<tspan class="sb" dy="0.30em" font-size="0.72em">s2</tspan><tspan dy="-0.3em"></tspan> = 1.333 m⁻²</text>
+<text class="small warm" x="44" y="744">E<tspan class="sb" dy="0.30em" font-size="0.72em">b1</tspan><tspan dy="-0.3em"></tspan> = 1451.62 W/m²</text>
 <text class="small warm" x="451" y="744">J1 = 1322.18 W/m²</text>
 <text class="small cool" x="44" y="788">J2 = 804.45 W/m²</text>
-<text class="small cool" x="451" y="788">E_b2 = 459.30 W/m²</text>
+<text class="small cool" x="451" y="788">E<tspan class="sb" dy="0.30em" font-size="0.72em">b2</tspan><tspan dy="-0.3em"></tspan> = 459.30 W/m²</text>
 <rect class="panel" x="23" y="844" width="794" height="229" rx="19"/>
 <text class="section ink" x="43" y="885">③ 熱収支と射度の検算</text>
-<text class="equation ink" x="44" y="924">R_total = R_s1 + R_12 + R_s2 = 3.833 m⁻²</text>
-<text class="equation ink" x="44" y="962">Qdot = (E_b1−E_b2)/R_total = 258.86 W</text>
+<text class="equation ink" x="44" y="924">R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = R<tspan class="sb" dy="0.30em" font-size="0.72em">s1</tspan><tspan dy="-0.3em"></tspan> + R<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> + R<tspan class="sb" dy="0.30em" font-size="0.72em">s2</tspan><tspan dy="-0.3em"></tspan> = 3.833 m⁻²</text>
+<text class="equation ink" x="44" y="962">Qdot = (E<tspan class="sb" dy="0.30em" font-size="0.72em">b1</tspan><tspan dy="-0.3em"></tspan>−E<tspan class="sb" dy="0.30em" font-size="0.72em">b2</tspan><tspan dy="-0.3em"></tspan>)/R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = 258.86 W</text>
 <text class="equation ink" x="44" y="1001">q'' = Qdot/A = 517.73 W/m²</text>
 <text class="small ink" x="44" y="1041">J1−J2 = 517.73 W/m²（空間の正味流束）</text>
 <text class="tiny muted" x="420" y="1095" text-anchor="middle">アプリ作成の独自模式図｜原著の図版・描画の転載なし</text>

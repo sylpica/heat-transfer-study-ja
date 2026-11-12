@@ -29,18 +29,18 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="tiny muted" x="43" y="435">図は形式の模式であり、流路の実寸・圧力損失は表さない</text>
 <rect class="panel" x="23" y="467" width="794" height="290" rx="19"/>
 <text class="section ink" x="43" y="509">② 例：まずエネルギー収支で検算する</text>
-<text class="small ink" x="43" y="551">C_h = 0.60×4000 = 2400 W/K、C_c = 0.80×4000 = 3200 W/K</text>
+<text class="small ink" x="43" y="551">C<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> = 0.60×4000 = 2400 W/K、C<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = 0.80×4000 = 3200 W/K</text>
 <text class="small ink" x="43" y="591">温側の失熱 Q = 2400×(70 − 50) = 48.0 kW</text>
-<text class="small ink" x="43" y="631">冷側は同じ Q を受け T_c,out = 20 + 48000/3200 = 35 ℃</text>
+<text class="small ink" x="43" y="631">冷側は同じ Q を受け T<tspan class="sb" dy="0.30em" font-size="0.72em">c,out</tspan><tspan dy="-0.3em"></tspan> = 20 + 48000/3200 = 35 ℃</text>
 <text class="small muted" x="43" y="671">出口同士の大小も並流として矛盾しない（50 ℃ ＞ 35 ℃）</text>
 <text class="small muted" x="43" y="711">収支だけでは必要面積は決まらない（UA と配置が要る → §3.2・§3.3）</text>
 <rect class="panel" x="23" y="775" width="794" height="216" rx="19"/>
 <text class="section ink" x="43" y="817">③ 理論最大との比 ＝ 有効度 ε</text>
 <text class="small ink" x="43" y="859">実際の Q = 48 kW</text>
 <rect class="barq" id="bar-q" x="330" y="838" width="184" height="20"/>
-<text class="small ink" x="43" y="907">Q_max = 120 kW</text>
+<text class="small ink" x="43" y="907">Q<tspan class="sb" dy="0.30em" font-size="0.72em">max</tspan><tspan dy="-0.3em"></tspan> = 120 kW</text>
 <rect class="barqmax" id="bar-qmax" x="330" y="886" width="460" height="20"/>
 <text class="small ink" x="560" y="859">ε = 0.40</text>
-<text class="small muted" x="43" y="955">Q_max = C_min×入口温度差 = 2400×50。ε は必ず 0〜1 の範囲で検算</text>
+<text class="small muted" x="43" y="955">Q<tspan class="sb" dy="0.30em" font-size="0.72em">max</tspan><tspan dy="-0.3em"></tspan> = C<tspan class="sb" dy="0.30em" font-size="0.72em">min</tspan><tspan dy="-0.3em"></tspan>×入口温度差 = 2400×50。ε は必ず 0〜1 の範囲で検算</text>
 <text class="tiny muted" x="420" y="1112" text-anchor="middle">アプリ作成の独自模式図｜原著の図版・描画の転載なし</text>
 </svg>

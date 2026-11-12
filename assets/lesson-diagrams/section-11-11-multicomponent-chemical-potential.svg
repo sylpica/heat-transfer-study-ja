@@ -10,24 +10,24 @@
 <text x="34" y="62" class="title ink">§11.11 多成分・非理想混合物の拡散</text>
 <text x="36" y="104" class="small secondary">拡散の真の駆動力は濃度勾配でなく化学ポテンシャル勾配</text>
 <rect x="24" y="128" width="712" height="352" rx="18" class="panel"/>
-<text x="46" y="173" class="heading ink">Duncan–Toor の実験（1962）：N_2 の3つの振る舞い</text>
+<text x="46" y="173" class="heading ink">Duncan–Toor の実験（1962）：N<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> の3つの振る舞い</text>
 <circle cx="130" cy="290" r="52" class="shape"/>
 <circle cx="300" cy="290" r="52" class="shape"/>
 <path d="M182 290 H248" class="shape"/>
-<text x="130" y="282" text-anchor="middle" class="small ink">CO_2</text>
-<text x="130" y="316" text-anchor="middle" class="small ink">+ N_2</text>
-<text x="300" y="282" text-anchor="middle" class="small ink">H_2</text>
-<text x="300" y="316" text-anchor="middle" class="small ink">+ N_2</text>
+<text x="130" y="282" text-anchor="middle" class="small ink">CO<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="130" y="316" text-anchor="middle" class="small ink">+ N<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="300" y="282" text-anchor="middle" class="small ink">H<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="300" y="316" text-anchor="middle" class="small ink">+ N<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
 <text x="215" y="382" text-anchor="middle" class="small secondary">管でつないだ2つの球</text>
 <text x="400" y="248" class="small ink">① 勾配ゼロでも流束が出る</text>
 <text x="400" y="300" class="small ink">② 勾配に逆らって高濃度側へ動く</text>
 <text x="400" y="352" class="small ink">③ 勾配があっても流束はゼロ</text>
 <text x="400" y="404" class="small secondary">3成分では流束が交差項で結ばれる</text>
 <text x="46" y="440" class="small ink">流束は交差項で結ばれる（式(11.120a)(11.120b)）</text>
-<text x="46" y="470" class="small secondary">D_ij は負にもなり、D_ij ≠ D_ji もありうる</text>
+<text x="46" y="470" class="small secondary">D<tspan class="sb" dy="0.30em" font-size="0.72em">ij</tspan><tspan dy="-0.3em"></tspan> は負にもなり、D<tspan class="sb" dy="0.30em" font-size="0.72em">ij</tspan><tspan dy="-0.3em"></tspan> ≠ D<tspan class="sb" dy="0.30em" font-size="0.72em">ji</tspan><tspan dy="-0.3em"></tspan> もありうる</text>
 <rect x="24" y="500" width="712" height="396" rx="18" class="panel"/>
-<text x="46" y="547" class="heading ink">化学ポテンシャル μ_i − μ_i° = R°T ln(γ_i x_i)</text>
-<text x="46" y="592" class="small ink">T = 300 K、x_i = 0.10 のとき（式(11.131)(11.132)）</text>
+<text x="46" y="547" class="heading ink">化学ポテンシャル μ<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> − μ<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>° = R°T ln(γ<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> x<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>)</text>
+<text x="46" y="592" class="small ink">T = 300 K、x<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 0.10 のとき（式(11.131)(11.132)）</text>
 <text x="46" y="648" class="small ink">γ = 0.7</text>
 <rect id="bar-mu-07" x="190" y="622" width="411.252" height="30" class="b"/>
 <text x="613.3" y="648" class="small ink">-6633 J/mol</text>
@@ -37,23 +37,23 @@
 <text x="46" y="784" class="small ink">γ = 1.5</text>
 <rect id="bar-mu-15" x="190" y="758" width="293.388" height="30" class="b"/>
 <text x="495.4" y="784" class="small ink">-4732 J/mol</text>
-<text x="46" y="836" class="small ink">駆動力は −∇μ_i（式(11.133)）。平衡では μ_i が相をまたいでも一様</text>
+<text x="46" y="836" class="small ink">駆動力は −∇μ<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>（式(11.133)）。平衡では μ<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> が相をまたいでも一様</text>
 <text x="46" y="876" class="small secondary">濃度勾配で置き換えられるのは理想・希薄のときだけ</text>
 <rect x="24" y="916" width="712" height="446" rx="18" class="panel"/>
 <text x="46" y="963" class="heading ink">Maxwell–Stefan 係数と熱力学因子 Γ</text>
 <text x="46" y="1012" class="small ink">分圧勾配と化学種間の抗力の釣り合い（式(11.126)–(11.128)）</text>
-<text x="46" y="1056" class="small ink">Ð_ij = Ð_ji、独立な式は n − 1 本。二成分理想気体では Ð_12 = D_12</text>
-<text x="46" y="1104" class="equation ink">濃厚二成分液体：D_12 = Γ Ð_12（式(11.141)）</text>
-<text x="46" y="1148" class="small ink">Ð_12 = 2.0×10^(-9) m²/s のとき D_12 は</text>
+<text x="46" y="1056" class="small ink">Ð<tspan class="sb" dy="0.30em" font-size="0.72em">ij</tspan><tspan dy="-0.3em"></tspan> = Ð<tspan class="sb" dy="0.30em" font-size="0.72em">ji</tspan><tspan dy="-0.3em"></tspan>、独立な式は n − 1 本。二成分理想気体では Ð<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = D<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="46" y="1104" class="equation ink">濃厚二成分液体：D<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = Γ Ð<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan>（式(11.141)）</text>
+<text x="46" y="1148" class="small ink">Ð<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = 2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-9</tspan><tspan dy="0.45em"></tspan> m²/s のとき D<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> は</text>
 <text x="46" y="1202" class="small ink">Γ = 0.5</text>
 <rect id="bar-d-g0p5" x="170" y="1176" width="90.000" height="30" class="a"/>
-<text x="272.0" y="1202" class="small ink">1.0×10^(-9) m²/s</text>
+<text x="272.0" y="1202" class="small ink">1.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-9</tspan><tspan dy="0.45em"></tspan> m²/s</text>
 <text x="46" y="1250" class="small ink">Γ = 1.0</text>
 <rect id="bar-d-g1p0" x="170" y="1224" width="180.000" height="30" class="a"/>
-<text x="362.0" y="1250" class="small ink">2.0×10^(-9) m²/s</text>
+<text x="362.0" y="1250" class="small ink">2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-9</tspan><tspan dy="0.45em"></tspan> m²/s</text>
 <text x="46" y="1298" class="small ink">Γ = 2.0</text>
 <rect id="bar-d-g2p0" x="170" y="1272" width="360.000" height="30" class="a"/>
-<text x="542.0" y="1298" class="small ink">4.0×10^(-9) m²/s</text>
+<text x="542.0" y="1298" class="small ink">4.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-9</tspan><tspan dy="0.45em"></tspan> m²/s</text>
 <text x="46" y="1348" class="small secondary">Fick の D の濃度依存の大半は Γ が担い、Ð の濃度感度はずっと小さい</text>
 <text x="46" y="1386" class="small secondary">希薄極限では Γ → 1 で両者は一致する</text>
 <text x="380" y="1500" text-anchor="middle" class="small secondary">アプリ作成の独自図・模式図（原書図版ではない）</text>

@@ -20,14 +20,14 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="420" y="194" text-anchor="middle" class="small ink">a = 0.020 m</text>
 <text x="266" y="284" text-anchor="end" class="small ink">b = 0.010 m</text>
 <text x="574" y="284" class="small muted">流れは紙面手前</text>
-<text x="45" y="392" class="small ink">A_c = a × b = 2.0×10⁻⁴ m²、P_w = 2(a+b) = 0.060 m</text>
-<text x="45" y="428" class="small ink">D_h = 4A_c / P_w = 0.01333 m（対角線でも幅でもない）</text>
-<text x="45" y="464" class="micro muted">濡れ周長 P_w と加熱周長 P_h は別定義（本例は全壁が濡れている）</text>
+<text x="45" y="392" class="small ink">A<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = a × b = 2.0×10⁻⁴ m²、P<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> = 2(a+b) = 0.060 m</text>
+<text x="45" y="428" class="small ink">D<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> = 4A<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> / P<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> = 0.01333 m（対角線でも幅でもない）</text>
+<text x="45" y="464" class="micro muted">濡れ周長 P<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> と加熱周長 P<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> は別定義（本例は全壁が濡れている）</text>
 <rect class="panel" x="24" y="500" width="792" height="196" rx="18"/>
 <text x="44" y="544" class="section ink">② 流量・質量流量・Re</text>
-<text x="45" y="588" class="small ink">U_b = 2.0 m/s、ρ = 1.2 kg/m³、μ = 1.8×10⁻⁵ Pa·s</text>
-<text x="45" y="624" class="small ink">q_v = U_b A_c = 4.0×10⁻⁴ m³/s、ṁ = ρ q_v = 4.8×10⁻⁴ kg/s</text>
-<text x="45" y="664" class="formula ink">Re_Dh = ρ U_b D_h / μ = 1778</text>
+<text x="45" y="588" class="small ink">U<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> = 2.0 m/s、ρ = 1.2 kg/m³、μ = 1.8×10⁻⁵ Pa·s</text>
+<text x="45" y="624" class="small ink">q<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan> = U<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> A<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = 4.0×10⁻⁴ m³/s、ṁ = ρ q<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan> = 4.8×10⁻⁴ kg/s</text>
+<text x="45" y="664" class="formula ink">Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan>h = ρ U<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> D<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> / μ = 1778</text>
 <rect class="panel" x="24" y="714" width="792" height="330" rx="18"/>
 <text x="44" y="758" class="section ink">③ 長さ 0.50 m で十分発達と言えるか</text>
 <text x="46" y="836" class="small ink">管の長さ</text>
@@ -41,7 +41,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="373" y="958" text-anchor="middle" class="micro ink">37.5</text>
 <text x="656.67" y="958" text-anchor="middle" class="micro ink">88.9</text>
 <text x="718" y="958" text-anchor="middle" class="micro ink">100</text>
-<text x="45" y="998" class="small ink">横軸は L / D_h。37.5 ＜ 88.9 なので、</text>
+<text x="45" y="998" class="small ink">横軸は L / D<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan>。37.5 ＜ 88.9 なので、</text>
 <text x="45" y="1030" class="small ink">円管の目安でも十分発達とは即断できない</text>
 <text x="420" y="1132" text-anchor="middle" class="micro muted">アプリ作成の独自模式図｜原著図版の転載・翻訳なし</text>
 </svg>

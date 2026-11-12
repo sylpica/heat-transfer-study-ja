@@ -54,7 +54,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <rect class="panel" x="22" y="903" width="816" height="361" rx="19"/>
 <text x="43" y="947" class="section ink">③ 例題の熱収支を二つの式で検算</text>
 <text x="43" y="987" class="small ink">表面温度 400 K、囲い温度 300 K、ε = 0.8、A = 0.50 m²</text>
-<text x="43" y="1021" class="small muted">σ = 5.670374419×10^(-8) W/(m²·K⁴)</text>
+<text x="43" y="1021" class="small muted">σ = 5.670374419×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-8</tspan><tspan dy="0.45em"></tspan> W/(m²·K⁴)</text>
 <text x="43" y="1061" class="formula ink">G = σ×300⁴ = 459.300 W/m²</text>
 <text x="43" y="1100" class="formula ink">J = εσ×400⁴ + (1−ε)G = 1253.153 W/m²</text>
 <text x="43" y="1139" class="formula ink">q″ = J−G = εσ(400⁴−300⁴) = +793.852 W/m²</text>

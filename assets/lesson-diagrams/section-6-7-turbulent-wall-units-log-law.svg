@@ -21,7 +21,7 @@
 </style>
 <rect class="bg" width="820" height="1180"/>
 <text class="heading ink" x="32" y="59">§6.7 壁単位と対数則</text>
-<text class="small muted" x="33" y="101">u_τ = √(τ_w/ρ)、y⁺ = yu_τ/ν、u⁺ = ū/u_τ で壁近傍を整理する</text>
+<text class="small muted" x="33" y="101">u<tspan class="sb" dy="0.30em" font-size="0.72em">τ</tspan><tspan dy="-0.3em"></tspan> = √(τ<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>/ρ)、y⁺ = yu<tspan class="sb" dy="0.30em" font-size="0.72em">τ</tspan><tspan dy="-0.3em"></tspan>/ν、u⁺ = ū/u<tspan class="sb" dy="0.30em" font-size="0.72em">τ</tspan><tspan dy="-0.3em"></tspan> で壁近傍を整理する</text>
 <rect class="panel" x="23" y="124" width="774" height="520" rx="19"/>
 <text class="section ink" x="44" y="168">① u⁺–y⁺ 分布（横軸は対数）</text>
 <rect class="zone" x="398.31" y="196" width="88.48" height="364"/>
@@ -37,14 +37,14 @@
 <text class="micro muted" x="660" y="600">y⁺ = 1000</text>
 <text class="micro muted" x="44" y="628">縦軸 u⁺ 0〜20。κ ≈ 0.41、B ≈ 5 は平滑壁・付着流の目安</text>
 <rect class="panel" x="23" y="662" width="774" height="252" rx="19"/>
-<text class="section ink" x="44" y="706">② 例：τ_w = 0.12 Pa の壁</text>
-<text class="result ink" x="43" y="750">u_τ = √(0.12/1.2) ≈ 0.316 m/s（主流速度ではない）</text>
+<text class="section ink" x="44" y="706">② 例：τ<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> = 0.12 Pa の壁</text>
+<text class="result ink" x="43" y="750">u<tspan class="sb" dy="0.30em" font-size="0.72em">τ</tspan><tspan dy="-0.3em"></tspan> = √(0.12/1.2) ≈ 0.316 m/s（主流速度ではない）</text>
 <text class="result ink" x="43" y="788">y = 0.10 mm → y⁺ ≈ 2.11、粘性近似で ū ≈ 0.667 m/s</text>
 <text class="result ink" x="43" y="826">y = 5.0 mm → y⁺ ≈ 105、対数則で ū ≈ 5.17 m/s</text>
 <text class="small muted" x="43" y="866">二つの式を同じ点へ無条件に使わない。対数域の成立は別に確認する</text>
 <rect class="panel" x="23" y="932" width="774" height="148" rx="19"/>
 <text class="section ink" x="44" y="976">③ 壁では分子粘性が効く</text>
-<text class="small ink" x="43" y="1016">無滑り壁で乱流せん断は 0 へ向かい、τ_w は分子粘性の勾配から決まる</text>
-<text class="small muted" x="43" y="1050">渦粘性 ν_t は流れに依存するモデル量で、物性 ν とは別</text>
+<text class="small ink" x="43" y="1016">無滑り壁で乱流せん断は 0 へ向かい、τ<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> は分子粘性の勾配から決まる</text>
+<text class="small muted" x="43" y="1050">渦粘性 ν<tspan class="sb" dy="0.30em" font-size="0.72em">t</tspan><tspan dy="-0.3em"></tspan> は流れに依存するモデル量で、物性 ν とは別</text>
 <text class="micro muted" x="410" y="1148" text-anchor="middle">アプリ作成の独自模式図｜非実寸・原著図版の転載なし</text>
 </svg>

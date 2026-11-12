@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="1440" viewBox="0 0 760 1440" role="img" aria-labelledby="film-title film-desc" style="max-width:100%" data-origin="original-app-diagram" data-lesson="11.5" data-m2-left="0.40" data-m2-right="0.05">
 <title id="film-title">§11.5 静止媒体中の物質移動：濃厚では分布が曲がる</title>
-<desc id="film-desc">アプリ独自作成の学習図。静止媒体中の定常拡散で、成分2の質量分率が左0.40、右0.05の濃厚な場合。駆動力B_mは0.5833で、質量分率の分布は直線でなく指数型になり、流束は対数形で希薄近似より約31パーセント大きい。局所では全流束は拡散流束を1引く質量分率で割ったもので、質量分率0.5の点では2倍になる。Stefan管はこの関係を使う拡散係数の測定法。図は模式図。</desc>
+<desc id="film-desc">アプリ独自作成の学習図。静止媒体中の定常拡散で、成分2の質量分率が左0.40、右0.05の濃厚な場合。駆動力B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan>は0.5833で、質量分率の分布は直線でなく指数型になり、流束は対数形で希薄近似より約31パーセント大きい。局所では全流束は拡散流束を1引く質量分率で割ったもので、質量分率0.5の点では2倍になる。Stefan管はこの関係を使う拡散係数の測定法。図は模式図。</desc>
 <style>
   .bg{fill:#fff}.panel{fill:#f4f7fb;stroke:#bdcad8;stroke-width:2}.ink{fill:#142b3f}.secondary{fill:#415b6f}.a{fill:#a43f24}.b{fill:#176f77}.solid{fill:#d5eaf4;stroke:#39728c;stroke-width:2}.a-stroke{stroke:#a43f24}.b-stroke{stroke:#176f77}.axis{stroke:#415b6f;stroke-width:2.5}.guide{stroke:#bac8d4;stroke-width:2;stroke-dasharray:6 6}.plot-a{fill:none;stroke:#a43f24;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.plot-b{fill:none;stroke:#176f77;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.arrow-a{fill:none;stroke:#a43f24;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.arrow-b{fill:none;stroke:#176f77;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.arrow-ink{fill:none;stroke:#415b6f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.shape{fill:none;stroke:#39728c;stroke-width:3}.marker-a{fill:#a43f24}.marker-b{fill:#176f77}
   text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-serif;font-size:24px}.title{font-size:33px;font-weight:700}.heading{font-size:28px;font-weight:700}.small{font-size:21px}.equation{font-size:25px;font-weight:600}
@@ -8,18 +8,18 @@
 </style>
 <rect class="bg" width="760" height="1440"/>
 <text x="34" y="62" class="title ink">§11.5 静止媒体中の物質移動</text>
-<text x="36" y="104" class="small secondary">定常・反応なしでは n_2 は位置によらず一定（式(11.51)）</text>
+<text x="36" y="104" class="small secondary">定常・反応なしでは n<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> は位置によらず一定（式(11.51)）</text>
 <rect x="24" y="128" width="712" height="302" rx="18" class="panel"/>
 <text x="46" y="173" class="heading ink">Stefan 管：蒸発で拡散係数を測る（例題11.10）</text>
 <path d="M120 210 V392 M210 210 V392" class="shape"/>
 <rect x="120" y="336" width="90" height="56" class="solid"/>
 <path d="M96 226 H250 M234 215 L250 226 L234 237" class="arrow-ink"/>
-<text x="258" y="234" class="small ink">頂部は掃気：m_2,L = 0.05 側の境界</text>
+<text x="258" y="234" class="small ink">頂部は掃気：m<tspan class="sb" dy="0.30em" font-size="0.72em">2,L</tspan><tspan dy="-0.3em"></tspan> = 0.05 側の境界</text>
 <text x="258" y="272" class="small ink">気柱の中を成分2が上へ拡散</text>
-<text x="258" y="310" class="small ink">液面では飽和組成 m_2,0 = 0.40</text>
-<text x="258" y="348" class="small ink">液面の低下速度から D_12 を求める（式(11.64)）</text>
+<text x="258" y="310" class="small ink">液面では飽和組成 m<tspan class="sb" dy="0.30em" font-size="0.72em">2,0</tspan><tspan dy="-0.3em"></tspan> = 0.40</text>
+<text x="258" y="348" class="small ink">液面の低下速度から D<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> を求める（式(11.64)）</text>
 <text x="258" y="386" class="small secondary">下の模式条件（0.40 → 0.05）で分布を比べる</text>
-<text x="66" y="420" class="small secondary">静止した固体でも拡散流束 j_1 はゼロでない（全流束 n_1 = 0）</text>
+<text x="66" y="420" class="small secondary">静止した固体でも拡散流束 j<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan> はゼロでない（全流束 n<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan> = 0）</text>
 <rect x="24" y="450" width="712" height="482" rx="18" class="panel"/>
 <text x="46" y="497" class="heading ink">質量分率の分布：濃厚（指数型）と希薄（直線）</text>
 <path d="M120 574 V856 H686" class="axis" fill="none"/>
@@ -29,21 +29,21 @@
 <text x="66" y="856" class="small ink">0</text>
 <text x="52" y="737" class="small ink">0.20</text>
 <text x="52" y="617" class="small ink">0.40</text>
-<text x="60" y="556" class="small secondary">m_2</text>
+<text x="60" y="556" class="small secondary">m<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
 <text x="118" y="886" class="small ink">0</text><text x="664" y="886" class="small ink">L</text>
 <text x="400" y="886" text-anchor="middle" class="small secondary">位置 x →</text>
 <text x="430" y="640" class="small a">濃厚：式(11.61) の指数型</text>
 <text x="430" y="676" class="small b">希薄：直線（式(11.52)）</text>
-<text x="140" y="600" class="small ink">m_2,0 = 0.40</text>
+<text x="140" y="600" class="small ink">m<tspan class="sb" dy="0.30em" font-size="0.72em">2,0</tspan><tspan dy="-0.3em"></tspan> = 0.40</text>
 <rect x="24" y="952" width="712" height="406" rx="18" class="panel"/>
 <text x="46" y="999" class="heading ink">同じ両端値での流束の違い</text>
-<text x="46" y="1048" class="small ink">駆動力 B_m,2 = (0.40 − 0.05)/(1 − 0.40) = 0.5833</text>
-<text x="46" y="1090" class="equation ink">n_2 = (ρD_12/L) ln(1 + B_m,2) = 0.4595 × (ρD_12/L)</text>
-<text x="46" y="1132" class="small ink">希薄近似（式(11.52)）では 0.350 × (ρD_12/L)</text>
+<text x="46" y="1048" class="small ink">駆動力 B<tspan class="sb" dy="0.30em" font-size="0.72em">m,2</tspan><tspan dy="-0.3em"></tspan> = (0.40 − 0.05)/(1 − 0.40) = 0.5833</text>
+<text x="46" y="1090" class="equation ink">n<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> = (ρD<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan>/L) ln(1 + B<tspan class="sb" dy="0.30em" font-size="0.72em">m,2</tspan><tspan dy="-0.3em"></tspan>) = 0.4595 × (ρD<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan>/L)</text>
+<text x="46" y="1132" class="small ink">希薄近似（式(11.52)）では 0.350 × (ρD<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan>/L)</text>
 <text x="46" y="1174" class="small a">対数形は約31%大きい（式(11.59)）</text>
-<text x="46" y="1216" class="small ink">対流拡散速度 v = (D_12/L) ln(1 + B_m,2)（式(11.60)）</text>
-<text x="46" y="1258" class="small ink">局所では n_2 = j_2/(1 − m_2)、m_2 = 0.5 で 2 j_2（式(11.54)）</text>
-<text x="46" y="1300" class="small secondary">理想気体では cD_12 が組成に依らないため</text>
+<text x="46" y="1216" class="small ink">対流拡散速度 v = (D<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan>/L) ln(1 + B<tspan class="sb" dy="0.30em" font-size="0.72em">m,2</tspan><tspan dy="-0.3em"></tspan>)（式(11.60)）</text>
+<text x="46" y="1258" class="small ink">局所では n<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> = j<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan>/(1 − m<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan>)、m<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan> = 0.5 で 2 j<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan>（式(11.54)）</text>
+<text x="46" y="1300" class="small secondary">理想気体では cD<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> が組成に依らないため</text>
 <text x="46" y="1338" class="small secondary">モル形（式(11.62)）がより広く正確</text>
 <text x="380" y="1420" text-anchor="middle" class="small secondary">アプリ作成の独自図・模式図（原書図版ではない）</text>
 </svg>

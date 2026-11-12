@@ -87,14 +87,18 @@ test('panel examples and study links are escaped and expose the same learning ta
  assert.doesNotMatch(renderTermLearningLinks(hostile),/sim-.*script/);
 });
 
-test('search highlighting can cross terminology boundaries without removing vocabulary access or changing raw math',()=>{
+test('search highlighting can cross terminology boundaries without removing vocabulary access; math notation is converted',()=>{
+ // Until 2026-11-12 this test pinned "raw math stays raw" on the reader
+ // path. The live-site inspection overruled that design: raw "_"/"^" in
+ // prose was the defect, so Nu_x now renders with a real subscript while
+ // highlighting, term access and escaping behave as before.
  const text='熱伝導率一定の式 Nu_x=1 <入力>';
  const html=renderTermLinks(text,terms,{highlights:[[0,6],[5,7]]});
  assert.match(html,/data-term-id="thermal-conductivity"[^>]*><mark>熱伝導率<\/mark>/);
  assert.match(html,/<mark>一定の<\/mark>/);
- assert.match(html,/Nu_x=1/);assert.match(html,/&lt;入力&gt;/);
+ assert.match(html,/Nu<sub>x<\/sub>=1/);assert.match(html,/&lt;入力&gt;/);
  const plain=html.replace(/<[^>]+>/g,'').replaceAll('&lt;','<').replaceAll('&gt;','>');
- assert.equal(plain,text);
+ assert.equal(plain,'熱伝導率一定の式 Nux=1 <入力>');
  const invalid=renderTermLinks(text,terms,{highlights:[null,[0,999],[-1,2],[2,1],['0',2]]});
  assert.doesNotMatch(invalid,/<mark>/);
 });

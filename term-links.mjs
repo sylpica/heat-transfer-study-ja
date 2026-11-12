@@ -1,5 +1,29 @@
 // Static, local, original terminology. No network service and no HTML in dataset text.
 const escapeText=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+// Math notation conversion for ALREADY-ESCAPED text. The corpus authors
+// sub/superscripts in plain notation (_x, _{...}, _(…), ^x, ^{...}, ^(…))
+// alongside Unicode sub/superscripts; before 2026-11-12 only the quiz path
+// converted a narrow subset, so the reader and glossary showed raw "_"/"^"
+// characters. URLs are left untouched so a "_" inside a link stays literal.
+// Overlines arrive as combining U+0304/U+0305 after a letter and become a
+// styled span so the mark cannot clip against the line box.
+const mathUrlPattern=/(https?:\/\/[^\s<]+)/g;
+function convertMathSegment(t){
+  return t
+    .replace(/((?:\p{L}[\u0304\u0305])+)/gu,s=>`<span class="math-overline">${s.replace(/[\u0304\u0305]/g,'')}</span>`)
+    .replace(/_\{([^}]+)\}/g,'<sub>$1</sub>')
+    .replace(/\^\{([^}]+)\}/g,'<sup>$1</sup>')
+    .replace(/_\(([\p{L}\p{N}∞+−\-.\/=, ]+)\)/gu,'<sub>$1</sub>')
+    .replace(/\^\(([\p{L}\p{N}∞+−\-.\/=, ]+)\)/gu,'<sup>$1</sup>')
+    .replace(/_([A-ZΑ-Ω][A-ZΑ-Ω0-9]*(?:,[A-Za-zΑ-Ωα-ω0-9∞]+)*|[a-zα-ω0-9∞]+(?:,[A-Za-zΑ-Ωα-ω0-9∞]+)*)/gu,'<sub>$1</sub>')
+    .replace(/\^([−\-]?[0-9]+(?:\.[0-9]+)?|\p{L})/gu,'<sup>$1</sup>');
+}
+export function formatMathText(escaped){
+  const text=String(escaped??'');
+  if(!/[_^\u0304\u0305]/.test(text))return text;
+  return text.split(mathUrlPattern).map((part,i)=>i%2===1?part:convertMathSegment(part)).join('');
+}
+const mathText=value=>formatMathText(escapeText(value));
 const ambiguous=new Set(['熱','W','J','K','℃','m','s','比','流れ','密度','傾き']);
 const latin=/[A-Za-z0-9_]/;
 
@@ -163,16 +187,18 @@ function renderMatchedText(text,hits,highlights=[]){
     else ranges.push([start,end]);
   }
   // Split highlights at term boundaries without losing matches that span a term
-  // and adjacent prose. All text remains escaped; equations retain raw subscripts.
+  // and adjacent prose. All text remains escaped; math notation in the prose
+  // is converted by formatMathText (term labels themselves are plain words
+  // and contain no math notation).
   const slice=(start,end)=>{
     let out='',at=start;
     for(const [a,b] of ranges){
       if(b<=at||a>=end)continue;
       const left=Math.max(at,a),right=Math.min(end,b);
-      out+=escapeText(text.slice(at,left))+'<mark>'+escapeText(text.slice(left,right))+'</mark>';
+      out+=mathText(text.slice(at,left))+'<mark>'+mathText(text.slice(left,right))+'</mark>';
       at=right;
     }
-    return out+escapeText(text.slice(at,end));
+    return out+mathText(text.slice(at,end));
   };
   let output='',cursor=0;
   for(const hit of hits){
@@ -254,7 +280,7 @@ export function renderTermSheet(term,terms=[]){
     <p id="term-sheet-brief" class="term-sheet-brief">${linked(brief)}</p>
     ${term.beginner&&term.beginner!==brief&&term.beginner!==detail?`<h3>はじめての説明</h3><p>${linked(term.beginner)}</p>`:''}
     <h3>詳しい説明</h3><p>${linked(detail)}</p>
-    ${term.formula?`<p><strong>関連式：</strong> <span class="term-formula">${escapeText(term.formula)}</span></p>`:''}
+    ${term.formula?`<p><strong>関連式：</strong> <span class="term-formula">${mathText(term.formula)}</span></p>`:''}
     ${term.unit?`<p><strong>単位：</strong> ${escapeText(term.unit)}</p>`:''}
     ${renderTermExample(term,terms)}
     ${related.length?`<p><strong>関連語：</strong> ${relatedMarkup}</p>`:''}

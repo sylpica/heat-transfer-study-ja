@@ -111,16 +111,16 @@
     },
     {
       "type": "footnote",
-      "text": "脚注18　海水と、ほとんどの地下水は、塩の混合物を含む。典型的な海水は、Cl⁻、Na⁺、SO₄²⁻、Mg²⁺、Ca²⁺、K⁺、HCO₃⁻、Br⁻、およびより少量の他のイオンを含む。これらのイオンは、CaCO3（方解石）や CaSO4·2H2O（石膏）のような、さまざまな形で沈殿する。"
+      "text": "脚注18　海水と、ほとんどの地下水は、塩の混合物を含む。典型的な海水は、Cl⁻、Na⁺、SO₄²⁻、Mg²⁺、Ca²⁺、K⁺、HCO₃⁻、Br⁻、およびより少量の他のイオンを含む。これらのイオンは、CaCO₃（方解石）や CaSO₄·2H₂O（石膏）のような、さまざまな形で沈殿する。"
     },
     {
       "type": "figure",
       "figureNumber": "11.19",
       "bookPage": 674,
       "pdfPage": 688,
-      "caption": "図11.19　逆浸透による海水淡水化中の塩と水の濃度プロファイル。塩は静止している：nsalt = ρsalt·v + jsalt = 0。",
+      "caption": "図11.19　逆浸透による海水淡水化中の塩と水の濃度プロファイル。塩は静止している：n_salt = ρ_salt·v + j_salt = 0。",
       "alt": "濃度分極の模式図",
-      "description": "膜表面で塩濃度が高くなる。 水側のプロファイル（mH2O,e → mH2O,s）、jsalt・v・nH2O,s の矢印、海水の流れ ue、membrane（膜）のラベルが示される。塩側のプロファイル（m_salt,e → m_salt,s、y = δc から膜面 y = 0 へ）も示される。"
+      "description": "膜表面で塩濃度が高くなる。 水側のプロファイル（m_H2O,e → m_H2O,s）、j_salt・v・n_H2O,s の矢印、海水の流れ u_e、membrane（膜）のラベルが示される。塩側のプロファイル（m_salt,e → m_salt,s、y = δ_c から膜面 y = 0 へ）も示される。"
     },
     {
       "type": "paragraph",

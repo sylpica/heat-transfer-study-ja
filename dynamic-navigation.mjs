@@ -17,7 +17,7 @@ const questionCases=Object.freeze({
  'supp-deep-rad-netflux-v1':{revision:'v1',fingerprint:'f6d7b1c1',caseId:'rad-netflux-v1',label:'この条件の放射冷却を動的実験で観察する',sectionId:'10.1'},
  'supp-transient-gap-sphere-lumped-length-v1':{revision:'v1',fingerprint:'b1f1b9d6',caseId:'sphere-lumped-v1',page:'radial.html',label:'この条件の球の冷却を動的実験で観察する',sectionId:'5.1'},
  'supp-gray-parallel-flux-v1':{revision:'v1',fingerprint:'ec478eed',caseId:'gray-parallel-v1',page:'radiation.html',label:'この条件の放射交換を動的実験で観察する',sectionId:'10.4'},
- 'supp-batch2-blackbody-two-surfaces-v1':{revision:'v1',fingerprint:'69c6af9f',caseId:'blackbody-two-v1',page:'radiation.html',label:'この条件の放射交換を動的実験で観察する',sectionId:'10.3'}});
+ 'supp-batch2-blackbody-two-surfaces-v1':{revision:'v1',fingerprint:'fc1015cd',caseId:'blackbody-two-v1',page:'radiation.html',label:'この条件の放射交換を動的実験で観察する',sectionId:'10.3'}});
 export function dynamicLinkForQuestion(question,fingerprint){const entry=question&&Object.hasOwn(questionCases,question.id)?questionCases[question.id]:null;if(!entry||question.revision!==entry.revision||typeof fingerprint!=='string'||fingerprintCheck(fingerprint)!==entry.fingerprint)return null;return {href:`./dynamic/${entry.page||'index.html'}?case=${entry.caseId}`,label:entry.label,sectionId:entry.sectionId};}
 const launchCases=Object.freeze({
  'fin-base-v1':{preset:'fin',sectionId:'4.5',fields:{width:.1,height:.01,depth:.01,k:200,rho:2700,cp:896,initial:20,'boundary-temperature':80,h:25},description:'断熱先端フィンの問題条件：L=0.10 m、断面0.01×0.01 m（Ac=1.0×10⁻⁴ m²、周長P=0.040 m）、k=200 W/(m·K)、h=25 W/(m²·K)、温度差60 K。設問は定常です。動的な観察では周囲20℃・基部80℃・初期20℃とし、設問にないρ=2700 kg/m³・cp=896 J/(kg·K)を仮定しています。時間軸はこの補足条件によるもので、設問の答えではありません。'},

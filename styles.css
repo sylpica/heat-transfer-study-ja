@@ -584,9 +584,16 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 
 
 /* Small, accessible offline dictionary and responsive, nondecorative physics diagrams. */
-.inline-term {display:inline; padding:0 2px; margin:0 1px; border:0; border-bottom:2px dotted var(--accent); background:color-mix(in srgb,var(--accent-soft) 55%,transparent); color:var(--ink); border-radius:3px; cursor:help; font:inherit; line-height:inherit; text-underline-offset:3px; box-decoration-break:clone;}
+.inline-term {display:inline; white-space:nowrap; padding:0 2px; margin:0 1px; border:0; border-bottom:2px dotted var(--accent); background:color-mix(in srgb,var(--accent-soft) 55%,transparent); color:var(--ink); border-radius:3px; cursor:help; font:inherit; line-height:inherit; text-underline-offset:3px; box-decoration-break:clone;}
 .inline-term:hover,.inline-term:focus-visible {color:var(--accent-strong);background:var(--accent-soft);}
 .inline-term:focus-visible {outline:3px solid var(--accent);outline-offset:3px;}
+/* Live-inspection fixes 2026-11-12: keep TOC chapter titles from stranding a
+   single trailing character, keep a linked term inside a grid sim-field label
+   from stretching to the full column width, and let long unbroken latin runs
+   (URLs) in term prose wrap instead of overflowing. */
+.reader-toc summary>span { text-wrap: balance; }
+.sim-field>.inline-term { justify-self: start; }
+.term-body p,.term-sheet p { overflow-wrap: break-word; }
 .term-sheet {font-size:14px;line-height:1.8;overscroll-behavior:contain;}
 .term-sheet h2 {font-size:23px;line-height:1.5;padding-right:36px;margin:5px 0;}
 .term-sheet h3 {font-size:14px;margin:14px 0 4px;}

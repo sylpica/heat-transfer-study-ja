@@ -146,6 +146,16 @@ test('round 3: no spelled-out Qdot remains in lesson diagrams; Q with dot above 
   }
 });
 
+test('campaign-3 C03 w05 gap closure: section 4.1 carries the t-max/region clause and the Example 2.5 cross-reference', () => {
+  const sec = JSON.parse(readFileSync(new URL('../data/sections/4-1-ja.json', import.meta.url), 'utf8'));
+  const texts = sec.blocks.map((b) => b.text || '').join('\n');
+  assert.match(texts, /0 < t ⩽ t_max（t_max は ∞ になりうる）/);
+  assert.match(texts, /例題2\.5のステップ4ですでに用いており、1\.3節でも論じている/);
+  // the third-kind formula keeps the printed macron on h (PDF 156, 600 dpi)
+  const formula = sec.blocks.find((b) => b.type === 'formula' && b.expression.includes('∂T/∂x'));
+  assert.ok(formula.expression.includes('h̄'));
+});
+
 test('dynamic lab: short material names and separated graph label rows', () => {
   const presets = readFileSync(new URL('../dynamic/presets.mjs', import.meta.url), 'utf8');
   assert.ok(presets.includes("name:'アルミニウム6061-T6'"));

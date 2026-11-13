@@ -165,6 +165,25 @@ test('round 5: hydraulic-diameter glossary formula uses subscript markup matchin
   assert.equal(term.formula, 'D_h=4A_c/P_w');
 });
 
+test('round 6: question reviewStatus pills never render raw authoring notes', () => {
+  const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+  assert.ok(app.includes("return status ? '内部検証済み・専門家校閲前' : '確認中';"));
+  const css = readFileSync(new URL('../styles.css', import.meta.url), 'utf8');
+  assert.ok(css.includes('.question-meta .status-pill { white-space: normal; max-width: 100%; }'));
+  // The generic label is truthful only while every free-text status shares
+  // its claim; enforce that invariant over all question data files.
+  const enums = new Set(['source_checked', 'needs_review', 'reviewed', 'draft']);
+  for (const f of ['questions.json', 'original-section-questions.json', 'original-advanced-questions.json', 'applied-exercises-part1.json', 'applied-exercises-part2.json', 'deep-physics-practice.json']) {
+    const data = JSON.parse(readFileSync(new URL(`../data/${f}`, import.meta.url), 'utf8'));
+    const items = Array.isArray(data) ? data : (data.questions ?? []);
+    for (const q of items) {
+      const s = q.reviewStatus;
+      if (!s || enums.has(s)) continue;
+      assert.ok(s.includes('校閲前') || s.includes('校閲なし') || s.includes('校閲は未完了'), `${f}: ${q.id}`);
+    }
+  }
+});
+
 test('campaign-3 C03 w05 gap closure: section 4.1 carries the t-max/region clause and the Example 2.5 cross-reference', () => {
   const sec = JSON.parse(readFileSync(new URL('../data/sections/4-1-ja.json', import.meta.url), 'utf8'));
   const texts = sec.blocks.map((b) => b.text || '').join('\n');

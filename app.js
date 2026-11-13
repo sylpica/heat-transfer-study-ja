@@ -2366,7 +2366,12 @@ function forceSave(){
 }
 
 function reviewStatusLabel(status) {
-  return ({source_checked:'原本照合済み（作業者）',needs_review:'確認中',reviewed:'確認済み',draft:'下書き'})[status] || String(status || '確認中');
+  const mapped = ({source_checked:'原本照合済み（作業者）',needs_review:'確認中',reviewed:'確認済み',draft:'下書き'})[status];
+  if (mapped) return mapped;
+  // Free-text reviewStatus values are authoring notes; every one of them
+  // shares the same learner-relevant claim (internally verified, external
+  // expert review pending), so render that instead of the raw note.
+  return status ? '内部検証済み・専門家校閲前' : '確認中';
 }
 function downloadJSON(text, filename) {
   let url,link;

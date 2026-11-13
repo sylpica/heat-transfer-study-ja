@@ -61,7 +61,7 @@ export function calculateNucleateBoiling(raw){
 }
 
 export function renderNucleateFields(v=NUCLEATE_DEFAULTS){
- return nucleateFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${escapeNucleate(v[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
+ return nucleateFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${escapeNucleate(v[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
 }
 
 export function renderNucleateSteps(r){

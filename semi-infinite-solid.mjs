@@ -137,7 +137,7 @@ export function semiInfiniteInwardFluxAt(result,depth,time=result?.values?.time)
 }
 export function renderSemiInfiniteFields(values=SEMI_INFINITE_DEFAULTS){
   return semiInfiniteFields.map(([key,label,unit,min,max,help])=>
-    `<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${key==='initial'||key==='surface'?-273.1499999:min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
+    `<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${key==='initial'||key==='surface'?-273.1499999:min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
 }
 export function renderSemiInfiniteSteps(r){
   if(!r||r.error)return '';

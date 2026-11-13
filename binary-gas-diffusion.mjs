@@ -76,9 +76,9 @@ export function binaryDiffusionFluxComponentsAt(r,u){
 }
 
 export function renderBinaryDiffusionFields(v=BINARY_DIFFUSION_DEFAULTS){
- const select=`<label class="sim-field">拡散形式<span class="input-unit"><select name="regime"><option value="equimolar"${v.regime==="equimolar"?" selected":""}>等モル相互拡散（NA=−NB）</option><option value="stagnant"${v.regime==="stagnant"?" selected":""}>B静止の拡散（NB=0）</option></select></span><small>相互拡散と、成分Bに正味移動がない場合を比較</small></label>`;
+ const select=`<label class="sim-field"><span class="sim-field-caption">拡散形式</span><span class="input-unit"><select name="regime"><option value="equimolar"${v.regime==="equimolar"?" selected":""}>等モル相互拡散（NA=−NB）</option><option value="stagnant"${v.regime==="stagnant"?" selected":""}>B静止の拡散（NB=0）</option></select></span><small>相互拡散と、成分Bに正味移動がない場合を比較</small></label>`;
  return select+binaryDiffusionFields.map(([key,label,unit,min,max,help])=>
- `<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${binaryEsc(v[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
+ `<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${binaryEsc(v[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
 }
 
 export function renderBinaryDiffusionSteps(r){

@@ -83,7 +83,7 @@ export function pipeBulkTemperatureAt(result,x) {
  return result.values.wall-result.inletDifference*Math.exp(-result.ntu*x/result.values.length);
 }
 export function renderPipeFields(values=PIPE_DEFAULTS) {
- return pipeFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
+ return pipeFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
 }
 export function renderPipeSteps(r) {
  if (!r||r.error) return '';

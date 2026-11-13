@@ -64,7 +64,7 @@ export function finTemperatureAt(result, x) {
 
 export function renderFinFields(values = FIN_DEFAULTS) {
   return finFields.map(([key,label,unit,min,max,help]) =>
-    `<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${esc(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
+    `<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${esc(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
 }
 
 export function renderFinSteps(result) {

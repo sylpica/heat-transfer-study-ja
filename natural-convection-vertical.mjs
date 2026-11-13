@@ -70,7 +70,7 @@ export function calculateNaturalConvection(input){
     regime:!hasGradient?'温度差ゼロ（浮力駆動の相関は未適用）':ra<1e9?'主として層流側の目安':'遷移〜乱流の可能性を含む範囲'};
 }
 export function renderNaturalFields(values=NATURAL_DEFAULTS){
-  return naturalFields.map(([key,label,unit,min,max,note])=>`<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${escape(values[key])}" min="${key==='surface'||key==='ambient'?-273.149999:min}" max="${max}" step="${key==='faces'?1:'any'}" inputmode="decimal" required/><i>${unit}</i></span><small>${note}</small></label>`).join('');
+  return naturalFields.map(([key,label,unit,min,max,note])=>`<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${escape(values[key])}" min="${key==='surface'||key==='ambient'?-273.149999:min}" max="${max}" step="${key==='faces'?1:'any'}" inputmode="decimal" required/><i>${unit}</i></span><small>${note}</small></label>`).join('');
 }
 export function renderNaturalSteps(result){
   if(!result||result.error)return '';

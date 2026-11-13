@@ -239,6 +239,19 @@ test('round 8: simulator formula cards pass through the math transform and model
   assert.ok(termLinks.includes('A text node with no glossary-term hit still carries math notation'));
 });
 
+test('round 9: prompt previews are math-converted and sim-field captions stay one grid item', () => {
+  const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+  assert.ok(!app.includes('escapeHTML(q.prompt)') && !app.includes('escapeHTML(question.prompt)'));
+  assert.ok(app.split('renderMathText(q.prompt)').length - 1 >= 4);
+  assert.ok(app.includes('renderMathText(question.prompt)'));
+  // The sim-field label is display:grid: a bare caption's converted <sub>
+  // becomes its own grid row, so every renderFields wraps the caption.
+  for (const f of ['laminar-film-condensation.mjs', 'pool-boiling-nucleate.mjs', 'pool-boiling-chf.mjs', 'cylinder-crossflow.mjs', 'fin-efficiency.mjs']) {
+    const src = readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
+    assert.ok(src.includes('<span class="sim-field-caption">${label}</span>'), `${f} caption not wrapped`);
+  }
+});
+
 test('campaign-3 C03 w05 gap closure: section 4.1 carries the t-max/region clause and the Example 2.5 cross-reference', () => {
   const sec = JSON.parse(readFileSync(new URL('../data/sections/4-1-ja.json', import.meta.url), 'utf8'));
   const texts = sec.blocks.map((b) => b.text || '').join('\n');

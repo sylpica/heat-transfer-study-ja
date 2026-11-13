@@ -85,7 +85,7 @@ export function laminarPipeTemperatureAt(result,position) {
  return v.inlet+(v.wall-v.inlet)*(-Math.expm1(-n));
 }
 export function renderLaminarPipeFields(values=LAMINAR_PIPE_DEFAULTS){
- return laminarPipeFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
+ return laminarPipeFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
 }
 export function renderLaminarPipeSteps(r){
  if(!r||r.error)return '';

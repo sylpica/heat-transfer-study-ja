@@ -79,7 +79,7 @@ export function filmCumulativeMassFlow(result,x){
 
 export function renderCondensationFields(values=CONDENSATION_DEFAULTS){
  return condensationFields.map(([key,label,unit,min,max,help])=>
- `<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${escapeCondensation(values[key])}" min="${key==="wall"||key==="saturation"?-273.149999:min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
+ `<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${escapeCondensation(values[key])}" min="${key==="wall"||key==="saturation"?-273.149999:min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
 }
 
 export function renderCondensationSteps(r){

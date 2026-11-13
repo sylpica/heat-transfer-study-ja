@@ -85,7 +85,7 @@ export function calculateCylinderCrossflow(raw) {
 }
 
 export function renderCrossflowFields(values=CROSSFLOW_DEFAULTS) {
-  return crossflowFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
+  return crossflowFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${escapeHtml(values[key])}" min="${min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
 }
 
 export function renderCrossflowSteps(result) {

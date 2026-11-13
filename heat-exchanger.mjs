@@ -72,8 +72,8 @@ const exchangerEsc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt
 const exchangerFmt=n=>Number(n).toLocaleString("ja-JP",{maximumSignificantDigits:7});
 
 export function renderExchangerFields(values=EXCHANGER_DEFAULTS){
- return `<label class="sim-field">流動形式<span class="input-unit"><select name="flow" required><option value="counter" ${values.flow==="counter"?"selected":""}>向流（対向方向）</option><option value="parallel" ${values.flow==="parallel"?"selected":""}>並流（同一方向）</option></select></span><small>2流路とも単相、流路内混合が一定の理想モデル</small></label>`+
- exchangerFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${exchangerEsc(values[key])}" min="${key==="hotIn"||key==="coldIn"?-273.1499999:min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
+ return `<label class="sim-field"><span class="sim-field-caption">流動形式</span><span class="input-unit"><select name="flow" required><option value="counter" ${values.flow==="counter"?"selected":""}>向流（対向方向）</option><option value="parallel" ${values.flow==="parallel"?"selected":""}>並流（同一方向）</option></select></span><small>2流路とも単相、流路内混合が一定の理想モデル</small></label>`+
+ exchangerFields.map(([key,label,unit,min,max,help])=>`<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${exchangerEsc(values[key])}" min="${key==="hotIn"||key==="coldIn"?-273.1499999:min}" max="${max}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join("");
 }
 
 export function renderExchangerSteps(result){

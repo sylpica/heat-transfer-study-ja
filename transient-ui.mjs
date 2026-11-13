@@ -16,7 +16,7 @@ export const transientFields=[
 ];
 export const transientFieldNames=transientFields.map(x=>x[0]);
 export function renderTransientFields(values){
-  return transientFields.map(([key,label,unit,min,help])=>`<label class="sim-field">${label}<span class="input-unit"><input type="number" name="${key}" value="${esc(values[key])}" min="${min??''}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
+  return transientFields.map(([key,label,unit,min,help])=>`<label class="sim-field"><span class="sim-field-caption">${label}</span><span class="input-unit"><input type="number" name="${key}" value="${esc(values[key])}" min="${min??''}" step="any" inputmode="decimal" required/><i>${unit}</i></span><small>${help}</small></label>`).join('');
 }
 export function renderTransientSteps(x){
   const v=x.values;

@@ -4,7 +4,7 @@ export const FILM_GRAVITY=9.80665; // m/s^2
 export const FILM_RE_MAX=30; // conservative smooth and wave-free film Reynolds number
 export const FILM_JA_MAX=0.1; // educational small-film-sensible-heat condition
 export const CONDENSATION_DEFAULTS=Object.freeze({"rhoLiquid":958,"rhoVapor":0.6,"viscosity":0.000282,"conductivity":0.68,"latent":2260000,"cpLiquid":4200,"height":0.1,"width":0.4,"saturation":100,"wall":98});
-export const condensationFields=Object.freeze([["rhoLiquid","凝縮液密度 ρl","kg/m³",10,20000,"液膜の密度。蒸気密度より大きい値"],["rhoVapor","蒸気密度 ρv","kg/m³",0,10000,"静止した飽和蒸気の密度"],["viscosity","凝縮液の粘度 μl","Pa·s",0.000001,10,"動粘度でなく粘度（一定値）"],["conductivity","凝縮液の熱伝導率 kl","W/(m·K)",0.001,200,"凝縮液の一定物性"],["latent","凝縮潜熱 hfg","J/kg",10000,10000000,"潜熱。顕熱は無視する近似"],["cpLiquid","凝縮液の比熱 cpl","J/(kg·K)",100,20000,"液膜顕熱の影響をJaで確認する"],["height","鉛直平板の高さ L","m",0.005,10,"凝縮液が上端から重力で流下"],["width","凝縮面の幅 W","m",0.005,20,"片面の放熱面積A=L×W"],["saturation","蒸気の飽和温度 Tsat","℃",-273.149999,1000,"蒸気は純物質・飽和・静止"],["wall","一定の壁面温度 Tw","℃",-273.149999,1000,"必ずTsatより低く指定"]]);
+export const condensationFields=Object.freeze([["rhoLiquid","凝縮液密度 ρ_l","kg/m³",10,20000,"液膜の密度。蒸気密度より大きい値"],["rhoVapor","蒸気密度 ρ_v","kg/m³",0,10000,"静止した飽和蒸気の密度"],["viscosity","凝縮液の粘度 μ_l","Pa·s",0.000001,10,"動粘度でなく粘度（一定値）"],["conductivity","凝縮液の熱伝導率 k_l","W/(m·K)",0.001,200,"凝縮液の一定物性"],["latent","凝縮潜熱 h_fg","J/kg",10000,10000000,"潜熱。顕熱は無視する近似"],["cpLiquid","凝縮液の比熱 c_{p,l}","J/(kg·K)",100,20000,"液膜顕熱の影響をJaで確認する"],["height","鉛直平板の高さ L","m",0.005,10,"凝縮液が上端から重力で流下"],["width","凝縮面の幅 W","m",0.005,20,"片面の放熱面積A=L×W"],["saturation","蒸気の飽和温度 T_sat","℃",-273.149999,1000,"蒸気は純物質・飽和・静止"],["wall","一定の壁面温度 T_w","℃",-273.149999,1000,"必ずT_satより低く指定"]]);
 export const condensationFieldNames=Object.freeze(condensationFields.map(f=>f[0]));
 const escapeCondensation=s=>String(s??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 const fmtCondensation=n=>Number(n).toLocaleString("ja-JP",{maximumSignificantDigits:7});
@@ -16,11 +16,11 @@ function parseCondensationNumber(raw){
  const x=Number(s);return Number.isFinite(x)?x:NaN;
 }
 
-export function nusseltFilmCoefficient(rhoLiquid,rhoVapor,mu,k,hfg,L,deltaT){
- if([rhoLiquid,rhoVapor,mu,k,hfg,L,deltaT].some(x=>!Number.isFinite(x))||
-   rhoLiquid<=rhoVapor||rhoVapor<0||mu<=0||k<=0||hfg<=0||L<=0||deltaT<=0)
+export function nusseltFilmCoefficient(rhoLiquid,rhoVapor,mu,k,h_fg,L,deltaT){
+ if([rhoLiquid,rhoVapor,mu,k,h_fg,L,deltaT].some(x=>!Number.isFinite(x))||
+   rhoLiquid<=rhoVapor||rhoVapor<0||mu<=0||k<=0||h_fg<=0||L<=0||deltaT<=0)
   throw new RangeError("Nusselt凝縮式の物性と温度差が不正です。");
- const h= (2*Math.SQRT2/3)*Math.pow(9.80665*rhoLiquid*(rhoLiquid-rhoVapor)*hfg*k**3/(mu*L*deltaT),.25);
+ const h= (2*Math.SQRT2/3)*Math.pow(9.80665*rhoLiquid*(rhoLiquid-rhoVapor)*h_fg*k**3/(mu*L*deltaT),.25);
  if(!Number.isFinite(h)||h<=0)throw new RangeError("熱伝達係数が数値上の範囲を超えました。");
  return h;
 }
@@ -86,10 +86,10 @@ export function renderCondensationSteps(r){
  if(!r||r.error)return "";
  const v=r.values,F=fmtCondensation;
  return `<div class="simulation-steps"><p><strong>膜状凝縮：鉛直等温平板、平滑な層流液膜</strong></p>
- <details><summary>1. 現象と温度差</summary><p>静止・純粋な飽和蒸気Tsat=${F(v.saturation)}℃が、より冷たい等温壁Tw=${F(v.wall)}℃で凝縮します。ΔT=Tsat−Tw=${F(r.deltaT)} K。膜は上端から重力で流下し、下流で厚くなります。</p></details>
- <details><summary>2. Nusselt理論の熱伝達率</summary><p>平均h=(2√2/3)[gρl(ρl−ρv)hfg kl³/(μl L ΔT)]^(1/4)=${F(r.h)} W/(m²·K)。平均Nu=hL/kl=${F(r.meanNu)}。局所液膜厚さ δ(x)=[4 μl kl ΔT x/{gρl(ρl−ρv)hfg}]^(1/4)。局所h(x)=kl/δ(x)、上端x=0は数学的特異点なので有限値は表示しません。</p></details>
- <details><summary>3. 凝縮量と液膜の流動を確認</summary><p>面積A=LW=${F(r.area)} m²、熱流束q″=hΔT=${F(r.heatFlux)} W/m²、熱移動率Q̇=hAΔT=${F(r.watts)} W。凝縮質量流量ṁ≈Q̇/hfg=${F(r.massFlow)} kg/s（${F(r.massFlowPerHour)} kg/h）。膜出口のRe_f=4ṁ/(Wμl)=${F(r.filmRe)}。膜出口厚さδ(L)=${F(r.filmThickness*1000)} mm。</p>
- <p>液膜のJakob数Ja=cplΔT/hfg=${F(r.jakob)}。液膜に貯留される顕熱の影響は近似的に無視しています。Re_f≤30、Ja≤0.1のみ計算を許可します。</p></details>
+ <details><summary>1. 現象と温度差</summary><p>静止・純粋な飽和蒸気T_sat=${F(v.saturation)}℃が、より冷たい等温壁T_w=${F(v.wall)}℃で凝縮します。ΔT=T_sat−T_w=${F(r.deltaT)} K。膜は上端から重力で流下し、下流で厚くなります。</p></details>
+ <details><summary>2. Nusselt理論の熱伝達率</summary><p>平均h=(2√2/3)[gρ_l(ρ_l−ρ_v)h_fg k_l³/(μ_l L ΔT)]^(1/4)=${F(r.h)} W/(m²·K)。平均Nu=hL/k_l=${F(r.meanNu)}。局所液膜厚さ δ(x)=[4 μ_l k_l ΔT x/{gρ_l(ρ_l−ρ_v)h_fg}]^(1/4)。局所h(x)=k_l/δ(x)、上端x=0は数学的特異点なので有限値は表示しません。</p></details>
+ <details><summary>3. 凝縮量と液膜の流動を確認</summary><p>面積A=LW=${F(r.area)} m²、熱流束q″=hΔT=${F(r.heatFlux)} W/m²、熱移動率Q̇=hAΔT=${F(r.watts)} W。凝縮質量流量ṁ≈Q̇/h_fg=${F(r.massFlow)} kg/s（${F(r.massFlowPerHour)} kg/h）。膜出口のRe_f=4ṁ/(Wμ_l)=${F(r.filmRe)}。膜出口厚さδ(L)=${F(r.filmThickness*1000)} mm。</p>
+ <p>液膜のJakob数Ja=c_{p,l}ΔT/h_fg=${F(r.jakob)}。液膜に貯留される顕熱の影響は近似的に無視しています。Re_f≤30、Ja≤0.1のみ計算を許可します。</p></details>
  <small>適用条件：平滑な重力流下の波立たない薄い液膜、静止・純粋な飽和蒸気、等温の垂直平板、一定物性、熱は液膜内をほぼ伝導する。蒸気流によるせん断、非凝縮性ガス、波立ち、滴状凝縮、サブクール顕熱の精密計算、端部効果、液膜崩壊、自然対流との連成は含めません。物性は代表膜温度で別途評価してください。研究・機器設計への適用精度を保証しません。</small></div>`;
 }
 
@@ -101,11 +101,11 @@ export function renderCondensationDiagram(r){
  <path d="M182 70 L182 187 M174 178 L182 188 L190 178" class="diagram-arrow"/>
  <path d="M251 90 L155 90 M165 84 L155 90 L165 96" class="diagram-arrow"/>
  <text x="40" y="24" class="chart-label">等温壁</text><text x="196" y="24" class="chart-label">静止した飽和蒸気</text>
- <text x="20" y="249" class="chart-label">Tw=${escapeCondensation(F(v.wall))} ℃</text>
- <text x="254" y="248" class="chart-label">Tsat=${escapeCondensation(F(v.saturation))} ℃</text>
+ <text x="20" y="249" class="chart-label">T<tspan dy="0.25em" font-size="0.72em">w</tspan><tspan dy="-0.18em">=${escapeCondensation(F(v.wall))} ℃</tspan></text>
+ <text x="254" y="248" class="chart-label">T<tspan dy="0.25em" font-size="0.72em">sat</tspan><tspan dy="-0.18em">=${escapeCondensation(F(v.saturation))} ℃</tspan></text>
  <text x="200" y="132" class="chart-label">凝縮液膜</text><text x="203" y="166" class="chart-label">流下方向</text>
  <text x="325" y="205" class="chart-label">膜出口Re=${escapeCondensation(F(r.filmRe))}</text>
- </svg><figcaption>オリジナル模式図。横方向の厚さは実寸ではありません。実際は上端から下端へδ(x)∝x^(1/4)で増大します。</figcaption></figure>`;
+ </svg><figcaption>オリジナル模式図。横方向の厚さは実寸ではありません。実際は上端から下端へδ(x)∝x<sup>1/4</sup>で増大します。</figcaption></figure>`;
 }
 
 function condensationGraph(r,kind="thickness",compare=null){

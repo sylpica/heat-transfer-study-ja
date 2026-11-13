@@ -15,14 +15,14 @@
     },
     {
       "type": "formula",
-      "expression": "qmin = C·ρg·hfg·[σg(ρf − ρg)/(ρf + ρg)²]^(1/4)",
+      "expression": "qmin = C·ρ_g·h_fg·[σg(ρ_f − ρ_g)/(ρ_f + ρ_g)²]^(1/4)",
       "number": "9.33",
       "alt": "ズーバーの qmin 予測です",
       "explanation": "ズーバーは C の値を推測し、ベレンソン（Berenson）[9.35] がその後、実験データに基づいてそれを修正しました。ベレンソンは、大きな平らなヒーターにおける qmin の測定値を使って、次のものを得ました。"
     },
     {
       "type": "formula",
-      "expression": "qmin,Berenson = 0.09·ρg·hfg·[σg(ρf − ρg)/(ρf + ρg)²]^(1/4)",
+      "expression": "qmin,Berenson = 0.09·ρ_g·h_fg·[σg(ρ_f − ρ_g)/(ρ_f + ρ_g)²]^(1/4)",
       "number": "9.34",
       "alt": "ベレンソンの qmin です",
       "explanation": "リエンハードとウォン（Lienhard and Wong）[9.36] は、水平ワイヤ（線材）に対する並行した予測を行い、次のものを得ました。"

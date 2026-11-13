@@ -205,6 +205,40 @@ test('round 7: section 9.11 merit number uses book notation with subscript marku
   assert.ok(!lessons.includes('M=h_fgσ/ν_l') && !questions.includes('M=h_fgσ/ν_l'));
 });
 
+test('round 8: in-app section navigation keeps the section in the URL hash', () => {
+  const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+  assert.ok(app.includes("setRoute('reader', `#reader/${section}`);"));
+});
+
+test('round 8: phase-change formulas carry subscript markup, adjudicated against the book at 600dpi', () => {
+  const sec85 = readFileSync(new URL('../data/sections/8-5-ja.json', import.meta.url), 'utf8');
+  assert.ok(sec85.includes('Π_3 = Ja ≡ c_p(T_sat − T_w)/h_fg、Π_4 ≡ g(ρ_f − ρ_g)h_fgL³/[νk(T_sat − T_w)]'));
+  assert.ok(sec85.includes('𝒢_eff') && !sec85.includes('geff'));
+  assert.ok(sec85.includes('Re_c = ρu_{av}δ/μ = Γ_c/μ'));
+  assert.ok(!/ρf|ρg|Tsat|hfg/.test(sec85));
+  const sec94 = readFileSync(new URL('../data/sections/9-4-ja.json', import.meta.url), 'utf8');
+  assert.ok(sec94.includes('Jag = c_{p,g}(T_w − T_sat)/h_fg'));
+  const sec95 = readFileSync(new URL('../data/sections/9-5-ja.json', import.meta.url), 'utf8');
+  // σg here is the product σ·g (surface tension times gravity), not a subscript.
+  assert.ok(sec95.includes('[σg(ρ_f − ρ_g)/(ρ_f + ρ_g)²]^(1/4)'));
+  const sec98 = readFileSync(new URL('../data/sections/9-8-ja.json', import.meta.url), 'utf8');
+  assert.ok(sec98.includes('h_{fb} = fn(h_{lo}, G, x, h_fg, qw, ρ_f, ρ_g)'));
+  const lessons = readFileSync(new URL('../data/original-deep-lessons.json', import.meta.url), 'utf8');
+  assert.ok(lessons.includes('Π_4 ≡ g (ρ_f − ρ_g) h_fg L^3 / [ν k (T_sat − T_w)]'));
+  assert.ok(lessons.includes('[𝒢_e (ρ_f − ρ_g)'));
+});
+
+test('round 8: simulator formula cards pass through the math transform and model strings use markup', () => {
+  const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+  assert.equal(app.split('renderMathText(meta.formula)').length - 1, 3);
+  assert.ok(app.includes("formula:'h̄ = 0.943 [g ρ_l (ρ_l − ρ_v) h_fg k_l³ / (μ_l L ΔT)]^(1/4)'"));
+  const film = readFileSync(new URL('../laminar-film-condensation.mjs', import.meta.url), 'utf8');
+  assert.ok(!film.includes('ρl') && film.includes('ρ_l'));
+  assert.ok(film.includes('δ(x)∝x<sup>1/4</sup>'));
+  const termLinks = readFileSync(new URL('../term-links.mjs', import.meta.url), 'utf8');
+  assert.ok(termLinks.includes('A text node with no glossary-term hit still carries math notation'));
+});
+
 test('campaign-3 C03 w05 gap closure: section 4.1 carries the t-max/region clause and the Example 2.5 cross-reference', () => {
   const sec = JSON.parse(readFileSync(new URL('../data/sections/4-1-ja.json', import.meta.url), 'utf8'));
   const texts = sec.blocks.map((b) => b.text || '').join('\n');

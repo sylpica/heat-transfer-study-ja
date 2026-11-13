@@ -8,7 +8,7 @@ export const CHF_COEFFICIENT=0.131;
 
 export const CHF_DEFAULTS=Object.freeze({"rhoLiquid":958.4,"rhoVapor":0.597,"latent":2257000,"surfaceTension":0.0589,"area":0.01,"appliedFlux":500000});
 
-export const chfFields=Object.freeze([["rhoLiquid","飽和液体密度 ρl","kg/m³",1,20000,"対象圧力での飽和液体物性"],["rhoVapor","飽和蒸気密度 ρv","kg/m³",0.000001,20000,"正の蒸気密度が必要"],["latent","蒸発潜熱 hfg","J/kg",10000,10000000,"飽和温度での液体→蒸気の比エンタルピー差"],["surfaceTension","気液表面張力 σ","N/m",0.000001,1,"飽和状態での界面張力"],["area","加熱面積 A","m²",0.000001,1000,"代表的に十分大きな水平上向き加熱面"],["appliedFlux","比較する熱流束 q″","W/m²",0,100000000,"CHFとの大小比較。入力熱流束からCHFを計算するわけではない"]]);
+export const chfFields=Object.freeze([["rhoLiquid","飽和液体密度 ρ_l","kg/m³",1,20000,"対象圧力での飽和液体物性"],["rhoVapor","飽和蒸気密度 ρ_v","kg/m³",0.000001,20000,"正の蒸気密度が必要"],["latent","蒸発潜熱 h_fg","J/kg",10000,10000000,"飽和温度での液体→蒸気の比エンタルピー差"],["surfaceTension","気液表面張力 σ","N/m",0.000001,1,"飽和状態での界面張力"],["area","加熱面積 A","m²",0.000001,1000,"代表的に十分大きな水平上向き加熱面"],["appliedFlux","比較する熱流束 q″","W/m²",0,100000000,"CHFとの大小比較。入力熱流束からCHFを計算するわけではない"]]);
 
 export const chfFieldNames=Object.freeze(chfFields.map(f=>f[0]));
 
@@ -59,9 +59,9 @@ export function renderCriticalHeatFluxSteps(r){
  if(!r||r.error)return "";
  const v=r.values,F=fmtCHF;
  return `<div class="simulation-steps"><p><strong>§9.3 プール沸騰の限界熱流束（CHF）</strong></p>
- <details><summary>1. 飽和物性と仮定</summary><p>飽和液体密度ρl=${F(v.rhoLiquid)} kg/m³、飽和蒸気密度ρv=${F(v.rhoVapor)} kg/m³、潜熱hfg=${F(v.latent)} J/kg、界面張力σ=${F(v.surfaceTension)} N/m。g=9.80665 m/s²。液体が飽和した静止プール、十分大きな上向き水平加熱面を理想化します。</p></details>
- <details><summary>2. Zuberの流体力学的限界</summary><p>q″CHF=0.131 hfg ρv^(1/2)[σg(ρl−ρv)]^(1/4)=${F(r.criticalFlux)} W/m²。この式は気泡・蒸気噴流の不安定化に基づくCHFの推定値であり、核沸騰・膜沸騰の全曲線や遷移温度は求めません。</p>
- <p>毛管長さLc=[σ/{g(ρl−ρv)}]^(1/2)=${F(r.capillaryLength)} m。面積A=${F(v.area)}m²に対するQCHF=${F(r.criticalWatts)} W。</p></details>
+ <details><summary>1. 飽和物性と仮定</summary><p>飽和液体密度ρ_l=${F(v.rhoLiquid)} kg/m³、飽和蒸気密度ρ_v=${F(v.rhoVapor)} kg/m³、潜熱h_fg=${F(v.latent)} J/kg、界面張力σ=${F(v.surfaceTension)} N/m。g=9.80665 m/s²。液体が飽和した静止プール、十分大きな上向き水平加熱面を理想化します。</p></details>
+ <details><summary>2. Zuberの流体力学的限界</summary><p>q″CHF=0.131 h_fg ρ_v^(1/2)[σg(ρ_l−ρ_v)]^(1/4)=${F(r.criticalFlux)} W/m²。この式は気泡・蒸気噴流の不安定化に基づくCHFの推定値であり、核沸騰・膜沸騰の全曲線や遷移温度は求めません。</p>
+ <p>毛管長さLc=[σ/{g(ρ_l−ρ_v)}]^(1/2)=${F(r.capillaryLength)} m。面積A=${F(v.area)}m²に対するQCHF=${F(r.criticalWatts)} W。</p></details>
  <details><summary>3. 指定熱流束との比較</summary><p>指定q″=${F(v.appliedFlux)} W/m²（Q=${F(r.requestedWatts)} W）、CHFに対する比q″/q″CHF=${F(r.ratio)}、差q″CHF−q″=${F(r.remainingFlux)} W/m²。${escapeCHF(r.warning)}</p></details>
  <small>この0.131係数を含む形はZuber/Kutateladze型の特定モデルに対する推定です。加熱面の向き・寸法・表面状態、濡れ性、液体の過冷度、外部流動、容器の拘束、低重力、非凝縮気体、混合物等で実際のCHFは異なります。機器運転の安全値として使わないでください。蒸気密度などの圧力依存物性は自動推算しません。</small></div>`;
 }

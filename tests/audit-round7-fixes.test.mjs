@@ -17,10 +17,17 @@ test('round7: no script-G remains in chapter 11 data', () => {
     'data/sections/11-8-ja.json',
     'data/sections/11-9-ja.json',
     'data/sections/11-10-ja.json',
-    'data/original-deep-lessons.json',
     'data/chapter-problems/chapter-11.json',
   ]) {
     assert.ok(!read(p).includes(SCRIPT_G), `${p} still contains script-G`);
+  }
+  // The lessons file also holds ch. 8, whose effective gravity 𝒢_eff /
+  // 𝒢_e IS genuinely script in print (eqs. (8.63)/(8.69), 600dpi,
+  // PDF 463/466 — round 8), so the scan is scoped to the ch. 11 lessons.
+  const lessons = JSON.parse(read('data/original-deep-lessons.json'));
+  const list = Array.isArray(lessons) ? lessons : lessons.lessons;
+  for (const lesson of list.filter((l) => String(l.sectionId).startsWith('11'))) {
+    assert.ok(!JSON.stringify(lesson).includes(SCRIPT_G), `lesson ${lesson.sectionId} still contains script-G`);
   }
 });
 

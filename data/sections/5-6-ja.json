@@ -299,7 +299,7 @@
     },
     {
       "type": "formula",
-      "expression": "Tw(t) = Ti + (2qw/k)·√(αt/π)",
+      "expression": "T_w(t) = Ti + (2qw/k)·√(αt/π)",
       "number": "5.56",
       "alt": "Tw(t) イコール Ti たす (2 qw/k) かける √(αt/π)",
       "explanation": "一定熱流束のもとでの壁面温度の上昇です。"
@@ -327,7 +327,7 @@
     },
     {
       "type": "formula",
-      "expression": "k(Tsup − Tsat)/√(απt) = ρg·hfg·dR/dt",
+      "expression": "k(T_sup − T_sat)/√(απt) = ρ_g·h_fg·dR/dt",
       "number": "5.57",
       "alt": "k(Tsup マイナス Tsat) わる √(απt) イコール ρg hfg dR/dt",
       "explanation": "気泡界面のエネルギー収支です。"
@@ -338,7 +338,7 @@
     },
     {
       "type": "formula",
-      "expression": "R = (2/√π)·[k∆T/(ρg·hfg)]·√(t/α)",
+      "expression": "R = (2/√π)·[k∆T/(ρ_g·h_fg)]·√(t/α)",
       "number": "5.58",
       "alt": "R イコール (2/√π) かける [kΔT わる (ρg hfg)] かける √(t/α)",
       "explanation": "Jakob の気泡成長予測です。∆T = Tsup − Tsat です。"
@@ -349,7 +349,7 @@
     },
     {
       "type": "formula",
-      "expression": "R = (2√3/√π)·[k∆T/(ρg·hfg)]·√(t/α) = √3·RJakob",
+      "expression": "R = (2√3/√π)·[k∆T/(ρ_g·h_fg)]·√(t/α) = √3·R_{Jakob}",
       "number": "5.59",
       "alt": "R イコール (2√3/√π) かける [kΔT/(ρg かける hfg)] かける √(t/α) イコール √3 かける R_Jakob",
       "explanation": "球面効果を考慮した厳密な成長速度です。"

@@ -151,7 +151,7 @@ test('C3C08-14: Table 9.3 row 9 keeps the group modifier (vertical orientation)'
 test('C3C08-17: eq (9.46) is a standalone formula block in section 9.8', () => {
   const b = section('9-8').blocks.find((x) => x.number === '9.46');
   assert.ok(b && b.type === 'formula', '9.46 block missing');
-  assert.equal(b.expression, 'hfb/hlo = fn(x, qw/(Ghfg), ρg/ρf)');
+  assert.equal(b.expression, 'h_{fb}/h_{lo} = fn(x, qw/(Gh_fg), ρ_g/ρ_f)');
 });
 
 test('C3C08-13: lesson 9.4 restores macrons in eqs (9.28)/(9.31)', () => {
@@ -203,7 +203,7 @@ test('C07-01/04/05/14/15: ch.8 condition, macron attribution, integral limits, f
   const fn11 = section('8-5').blocks.map((b) => b.text ?? '').find((x) => x.startsWith('脚注11'));
   assert.ok(fn11.endsWith('（問題8.54を見よ）。'), fn11);
   assert.ok(!fn11.includes('照合済み事項'), fn11);
-  assert.ok(JSON.stringify(lessons[47]).includes('Nu_x/(Π4/4)^(1/4)'), 'lesson 8.5 normalization note');
+  assert.ok(JSON.stringify(lessons[47]).includes('Nu_x/(Π_4/4)^(1/4)'), 'lesson 8.5 normalization note');
 });
 
 // ---------- C10 / C11 items ----------

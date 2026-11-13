@@ -234,7 +234,17 @@ export function linkTermTextNodes(container,terms,{limit=3,labels=false}={}){
     const block=parent.closest('p,li,td,dd')||parent,left=limit-(budget.get(block)||0);
     if(left<=0)continue;
     const hits=compiledMatches(node.textContent,candidates,left);
-    if(!hits.length)continue;
+    if(!hits.length){
+      // A text node with no glossary-term hit still carries math notation
+      // in this corpus (e.g. simulator field labels such as 凝縮液密度 ρ_l);
+      // convert it so a raw "_" or "^" never reaches the reader.
+      if(/[_^\u0304\u0305]/.test(node.textContent)){
+        const template=doc.createElement('template');
+        template.innerHTML=formatMathText(escapeText(node.textContent));
+        node.replaceWith(template.content);
+      }
+      continue;
+    }
     const template=doc.createElement('template');
     template.innerHTML=renderMatchedText(node.textContent,hits);
     node.replaceWith(template.content);budget.set(block,(budget.get(block)||0)+hits.length);

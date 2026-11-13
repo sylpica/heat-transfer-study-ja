@@ -4,7 +4,7 @@
 
 export const NUCLEATE_DEFAULTS=Object.freeze({"rhoLiquid":958.4,"rhoVapor":0.597,"viscosity":0.000282,"conductivity":0.679,"cp":4216,"latent":2257000,"surfaceTension":0.0589,"csf":0.013,"n":1,"superheat":10,"area":0.01});
 
-export const nucleateFields=Object.freeze([["rhoLiquid","飽和液体密度 ρl","kg/m³",1,20000,"対象の飽和圧力に対応する液体物性"],["rhoVapor","飽和蒸気密度 ρv","kg/m³",0.000001,20000,"ρl > ρv > 0 が必要"],["viscosity","液体粘度 μl","Pa·s",1e-7,10,"飽和液体の粘性係数"],["conductivity","液体熱伝導率 kl","W/(m·K)",0.001,100,"液体側の熱伝導率"],["cp","液体定圧比熱 cpl","J/(kg·K)",100,20000,"飽和液体の代表物性"],["latent","蒸発潜熱 hfg","J/kg",10000,10000000,"飽和状態での相変化潜熱"],["surfaceTension","界面張力 σ","N/m",0.000001,1,"液体と蒸気の界面張力"],["csf","流体・表面経験係数 Csf","無次元",0.001,0.1,"既知の流体×表面×仕上げの実測情報で指定。例の0.013を万能値とみなさない"],["n","Rohsenow指数 n","無次元",0.5,2,"水で1、その他の流体で1.7を使う例もあるが実験系で照合"],["superheat","壁面過熱度 ΔTe","K",0.1,100,"Tw−Tsat。十分発達した核沸騰領域のみ"],["area","伝熱面積 A","m²",0.000001,1000,"外部流れのない大きな上向きの加熱面"]]);
+export const nucleateFields=Object.freeze([["rhoLiquid","飽和液体密度 ρ_l","kg/m³",1,20000,"対象の飽和圧力に対応する液体物性"],["rhoVapor","飽和蒸気密度 ρ_v","kg/m³",0.000001,20000,"ρ_l > ρ_v > 0 が必要"],["viscosity","液体粘度 μ_l","Pa·s",1e-7,10,"飽和液体の粘性係数"],["conductivity","液体熱伝導率 k_l","W/(m·K)",0.001,100,"液体側の熱伝導率"],["cp","液体定圧比熱 c_{p,l}","J/(kg·K)",100,20000,"飽和液体の代表物性"],["latent","蒸発潜熱 h_fg","J/kg",10000,10000000,"飽和状態での相変化潜熱"],["surfaceTension","界面張力 σ","N/m",0.000001,1,"液体と蒸気の界面張力"],["csf","流体・表面経験係数 Csf","無次元",0.001,0.1,"既知の流体×表面×仕上げの実測情報で指定。例の0.013を万能値とみなさない"],["n","Rohsenow指数 n","無次元",0.5,2,"水で1、その他の流体で1.7を使う例もあるが実験系で照合"],["superheat","壁面過熱度 ΔTe","K",0.1,100,"T_w−T_sat。十分発達した核沸騰領域のみ"],["area","伝熱面積 A","m²",0.000001,1000,"外部流れのない大きな上向きの加熱面"]]);
 
 export const nucleateFieldNames=Object.freeze(nucleateFields.map(f=>f[0]));
 
@@ -68,9 +68,9 @@ export function renderNucleateSteps(r){
  if(!r||r.error)return "";
  const v=r.values,F=fmtNucleate;
  return `<div class="simulation-steps"><p><strong>§9.2 核沸騰（プール沸騰）</strong></p>
- <details><summary>1. 壁面過熱と飽和物性</summary><p>過熱度ΔTe=Tw−Tsat=${F(v.superheat)} K。液体粘度μl=${F(v.viscosity)} Pa·s、液体比熱cpl=${F(v.cp)} J/(kg·K)、液体熱伝導率kl=${F(v.conductivity)} W/(m·K)。Prl=μl cpl/kl=${F(r.pr)}。流体/表面/仕上げを表す経験係数Csf=${F(v.csf)}、指数n=${F(v.n)}。</p></details>
- <details><summary>2. Rohsenowの核沸騰相関式</summary><p>q″=μl hfg [g(ρl−ρv)/σ]^(1/2) [cpl ΔTe/(Csf hfg Prl^n)]³=${F(r.flux)} W/m²。平均の見かけ熱伝達率 h=q″/ΔTe=${F(r.h)} W/(m²·K)。面積A=${F(v.area)}m²でQ=${F(r.watts)}W。</p>
- <p>仮に全熱量が潜熱に使われれば蒸気発生量ṁ≈Q/hfg=${F(r.idealVaporMassRate)}kg/s。ただしこれは理想化した熱収支であり、実際の蒸発量を保証しません。</p></details>
+ <details><summary>1. 壁面過熱と飽和物性</summary><p>過熱度ΔTe=T_w−T_sat=${F(v.superheat)} K。液体粘度μ_l=${F(v.viscosity)} Pa·s、液体比熱c_{p,l}=${F(v.cp)} J/(kg·K)、液体熱伝導率k_l=${F(v.conductivity)} W/(m·K)。Pr_l=μ_l c_{p,l}/k_l=${F(r.pr)}。流体/表面/仕上げを表す経験係数Csf=${F(v.csf)}、指数n=${F(v.n)}。</p></details>
+ <details><summary>2. Rohsenowの核沸騰相関式</summary><p>q″=μ_l h_fg [g(ρ_l−ρ_v)/σ]^(1/2) [c_{p,l} ΔTe/(Csf h_fg Pr_l^n)]³=${F(r.flux)} W/m²。平均の見かけ熱伝達率 h=q″/ΔTe=${F(r.h)} W/(m²·K)。面積A=${F(v.area)}m²でQ=${F(r.watts)}W。</p>
+ <p>仮に全熱量が潜熱に使われれば蒸気発生量ṁ≈Q/h_fg=${F(r.idealVaporMassRate)}kg/s。ただしこれは理想化した熱収支であり、実際の蒸発量を保証しません。</p></details>
  <details><summary>3. §9.3のCHFとの比較（適用域のチェック）</summary><p>Zuber式によるCHF推算q″CHF=${F(r.criticalFlux)} W/m²、q″/q″CHF=${F(r.chfRatio)}。両相関の形式上の交差点過熱度ΔTe*=${F(r.formalCrossing)} K。この交差点は観測された核沸騰終点でも実機の安全上限でもありません。</p><p>${escapeNucleate(r.warning)}</p></details>
  <small>一定圧力における静止した飽和液体の大面積プール沸騰・十分に発達した核沸騰の教育用経験相関。Csfやnは流体・加熱面・仕上げと測定条件に依存します。沸騰開始条件、過冷却流体、流動沸騰、管内の二相流、表面汚れ、非凝縮性気体、膜沸騰・遷移沸騰を推定しません。CHFの予測値との一致で実験的な信頼性を証明できません。</small></div>`;
 }
@@ -111,7 +111,7 @@ export function nucleateHeatFluxGraph(r,previous=null){
  const path=arr=>arr.map(([x,y],i)=>`${i?"L":"M"}${X(x).toFixed(2)},${Y(y).toFixed(2)}`).join(" ");
  const segments=curves.map((set,i)=>set.map(points=>`<path d="${path(points)}" class="${i===0?"chart-current":"chart-baseline"}"/>`).join("")).join("");
  return `<svg xmlns="http://www.w3.org/2000/svg" role="img" class="sim-chart" viewBox="0 0 ${W} ${H}" aria-label="過熱度に対するRohsenow核沸騰熱流束。CHF推定値を超える曲線は描かない。"><title>過熱度と核沸騰熱流束</title>
- <desc>横軸はTw−Tsat（K）、縦軸はW/m²。線はRohsenowの経験的な核沸騰曲線。横線はZuber CHF推算値。式は実際の沸騰開始点やCHF温度を保証しない。</desc>
+ <desc>横軸はT_w−T_sat（K）、縦軸はW/m²。線はRohsenowの経験的な核沸騰曲線。横線はZuber CHF推算値。式は実際の沸騰開始点やCHF温度を保証しない。</desc>
  <line x1="${l}" y1="${Y(r.criticalFlux)}" x2="${W-rr}" y2="${Y(r.criticalFlux)}" class="chart-grid"/>${segments}
  <circle class="chart-current-point" cx="${X(r.values.superheat)}" cy="${Y(r.flux)}" r="4"/>
  <text x="${l}" y="${H-36}" class="chart-label">0</text><text x="${W-rr}" y="${H-36}" class="chart-label" text-anchor="end">${fmtNucleate(maxX)}</text>

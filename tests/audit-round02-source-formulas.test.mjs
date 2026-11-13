@@ -102,15 +102,15 @@ test('Churchill-Chu full-range correlation (8.13b) applies the 8/27 power to the
 test('film-condensation velocity profile (8.51) keeps the factor 2 in the bracket and integrates to (8.53)',async()=>{
   const b=await equation('8-5','8.51');
   const rhs=b.expression.split('=')[1];
-  // Water film at 100 °C (ρf = 958, ρg = 0.6 kg/m³, ν = 2.94e-7 m²/s),
+  // Water film at 100 °C (ρ_f = 958, ρ_g = 0.6 kg/m³, ν = 2.94e-7 m²/s),
   // δ = 0.1 mm: the printed profile gives u(δ) = 0.1667 m/s; the former
   // half-size bracket gave exactly half of this. The interpreter cannot
   // take e-notation literals, so δ and ν are scaled ×10 and ×1000 here
   // (u ∝ δ²/ν), making the evaluated value exactly 1/10 of 0.16673 m/s.
-  close(value(rhs,{ρf:958,ρg:.6,ν:2.94e-4,g:9.81,δ:1e-3,y:1e-3}),0.01667322440458438);
+  close(value(rhs,{ρ_f:958,ρ_g:.6,ν:2.94e-4,g:9.81,δ:1e-3,y:1e-3}),0.01667322440458438);
   // With a unit prefactor the displayed shape is 2s − s² (s = y/δ):
   // 3/4 at s = 1/2, and Simpson integration reproduces eqn. (8.53).
-  const unit={ρf:1,ρg:0,ν:.5,g:1,δ:1};
+  const unit={ρ_f:1,ρ_g:0,ν:.5,g:1,δ:1};
   close(value(rhs,{...unit,y:.5}),.75);
   const n=1000;let sum=0;
   for(let i=0;i<=n;i++){const w=i===0||i===n?1:(i%2?4:2);sum+=w*value(rhs,{...unit,y:i/n});}

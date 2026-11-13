@@ -1077,7 +1077,7 @@ function openReader(section, options={}) {
   clearTimeout(saveReaderPosition.timer);
   ui.readerSection=section;state.lastSection=section;ui.readerQuery=options.query||'';
   if(['ja','en'].includes(options.language))state.settings.contentLanguage=options.language;
-  saveState();ui.quiz=null;ui.quizResult=null;setRoute('reader');
+  saveState();ui.quiz=null;ui.quizResult=null;setRoute('reader', `#reader/${section}`);
   const position=options.blockId?{blockId:options.blockId,offset:options.offset??-100}:options.position!==undefined?options.position:state.readerPositions[section];
   setTimeout(()=>{
     // Search navigation should reveal the first matching phrase in the actual lesson,
@@ -1452,10 +1452,10 @@ const SIM_META = {
   crossflow:{title:'円柱まわりの横流れ',description:'Churchill–Bernstein相関で、単独円柱を横切る流れの熱伝達を計算します。',formula:'NuD = Churchill–Bernstein相関（ReD と Pr の関数）',note:'単独で滑らかな円柱、物性は膜温度。管群・フィン付き円柱・相変化は含みません。関連：§7.6。'},
   natural:{title:'鉛直平板の自然対流',description:'Churchill–Chu相関で、鉛直平板の平均ヌセルト数を計算します。',formula:'NuL = [0.825 + 0.387 RaL^(1/6) / (1 + (0.492/Pr)^(9/16))^(8/27)]²',note:'等温の鉛直平板、物性は膜温度。壁温と流体温が等しいときは相関を適用しません。関連：§8.3。'},
   laminarpipe:{title:'円管内の層流強制対流',description:'Hausen相関で、入口の速度分布が発達した円管内層流の平均ヌセルト数を計算します。',formula:'Nū = 3.66 + 0.0668 Gz / (1 + 0.04 Gz^(2/3))、Gz = Re Pr D/L',note:'等温壁で、加熱区間の入口では速度分布が発達済みであることが前提。径方向の温度分布ではなく混合平均温度を扱います。関連：§7.2。'},
-  condensation:{title:'鉛直平板の膜状凝縮',description:'Nusseltの平滑層流液膜解で、平均熱伝達率と液膜の厚さを計算します。',formula:'h̄ = 0.943 [g ρl (ρl − ρv) hfg kl³ / (μl L ΔT)]^(1/4)',note:'静止した純粋な飽和蒸気と、波立たない層流液膜を仮定。液膜Re≦30とJa≦0.1を適用の目安とし、範囲外は計算を拒否します。潜熱は入力値をそのまま使い、補正潜熱への換算は含みません。関連：§8.5。'},
+  condensation:{title:'鉛直平板の膜状凝縮',description:'Nusseltの平滑層流液膜解で、平均熱伝達率と液膜の厚さを計算します。',formula:'h̄ = 0.943 [g ρ_l (ρ_l − ρ_v) h_fg k_l³ / (μ_l L ΔT)]^(1/4)',note:'静止した純粋な飽和蒸気と、波立たない層流液膜を仮定。液膜Re≦30とJa≦0.1を適用の目安とし、範囲外は計算を拒否します。潜熱は入力値をそのまま使い、補正潜熱への換算は含みません。関連：§8.5。'},
   diffusion:{title:'二成分気体の拡散',description:'静止した気体膜の中の等モル相互拡散と、Bが静止する条件の拡散を計算します。',formula:'NA = C DAB/L × (yA,1 − yA,2)（等モル相互拡散）',note:'理想二成分気体、等温・等圧・定常の一次元拡散。気液平衡・化学反応・多成分のStefan–Maxwell拡散は含みません。関連：§11.3・§11.5。'},
-  nucleate:{title:'プール核沸騰（Rohsenow）',description:'Rohsenow相関で核沸騰の熱流束を推算し、限界熱流束との比も確認します。',formula:'q″ = μl hfg √[g(ρl − ρv)/σ] × [cpl ΔTe / (Csf hfg Prl^n)]³',note:'係数Csfと指数nは流体と加熱面の組合せに依存します。予測がZuberの限界熱流束の推定以上になる条件は、外挿として計算を拒否します。関連：§9.2。'},
-  chf:{title:'限界熱流束（Zuber）',description:'大きな上向き水平面のプール沸騰について、限界熱流束をZuberの式で推算します。',formula:'q″CHF = 0.131 hfg √ρv [σg(ρl − ρv)]^(1/4)',note:'係数0.131はZuber–Kutateladzeの値です。レッスン側で推奨する0.149（Lienhard–Dhir）とは別系統であり、安全設計の許容値ではありません。関連：§9.3。'}
+  nucleate:{title:'プール核沸騰（Rohsenow）',description:'Rohsenow相関で核沸騰の熱流束を推算し、限界熱流束との比も確認します。',formula:'q″ = μ_l h_fg √[g(ρ_l − ρ_v)/σ] × [c_{p,l} ΔTe / (Csf h_fg Pr_l^n)]³',note:'係数Csfと指数nは流体と加熱面の組合せに依存します。予測がZuberの限界熱流束の推定以上になる条件は、外挿として計算を拒否します。関連：§9.2。'},
+  chf:{title:'限界熱流束（Zuber）',description:'大きな上向き水平面のプール沸騰について、限界熱流束をZuberの式で推算します。',formula:'q″CHF = 0.131 h_fg √ρ_v [σg(ρ_l − ρ_v)]^(1/4)',note:'係数0.131はZuber–Kutateladzeの値です。レッスン側で推奨する0.149（Lienhard–Dhir）とは別系統であり、安全設計の許容値ではありません。関連：§9.3。'}
 };
 const SIM_ICONS = {transient:'◷',conduction:'▥',convection:'↝',radiation:'☼',resistance:'▤',fin:'⊥',exchanger:'⇄',slab:'▭',enclosure:'◎',cylinder:'○',halfspace:'◒',flatplate:'⇉',pipe:'⇒',crossflow:'⊕',natural:'↑',laminarpipe:'→',condensation:'≋',diffusion:'⇌',nucleate:'∴',chf:'△'};
 // The 20 mode buttons used to sit permanently expanded above the simulator
@@ -1574,7 +1574,7 @@ function renderExtendedSimulator(mode) {
   const savedView = compare ? ext.headline(compare) : null;
   return `${pageHeading('簡易シミュレーター', '簡易シミュレーター', '')}
     ${renderSimTabs(mode)}
-    <div class="sim-layout" role="tabpanel" id="sim-panel" aria-labelledby="sim-tab-${mode}"><section class="surface-card sim-input-card"><div class="sim-intro"><p class="eyebrow">${meta.title}</p><h2>${linkedQuizText(meta.description,4)}</h2>${ext.renderDiagram(result)}<a class="text-link" href="#guide/sim-${mode}">このモデルの理論・単位・手計算例 →</a></div><form id="sim-form" class="sim-form"><div class="sim-fields">${ext.renderFields(values)}</div></form><details class="sim-reference"><summary>式と前提を確認する</summary><div class="formula-card"><span>使用する式</span><strong>${meta.formula}</strong><p>${linkedQuizText('正の値は、各モデルで定義した基準方向への移動を表します。負の値なら向きが逆です。', 3)}</p></div><div class="assumption-card"><strong>前提と適用範囲</strong><p>${linkedQuizText(meta.note,5)}</p></div></details></section>
+    <div class="sim-layout" role="tabpanel" id="sim-panel" aria-labelledby="sim-tab-${mode}"><section class="surface-card sim-input-card"><div class="sim-intro"><p class="eyebrow">${meta.title}</p><h2>${linkedQuizText(meta.description,4)}</h2>${ext.renderDiagram(result)}<a class="text-link" href="#guide/sim-${mode}">このモデルの理論・単位・手計算例 →</a></div><form id="sim-form" class="sim-form"><div class="sim-fields">${ext.renderFields(values)}</div></form><details class="sim-reference"><summary>式と前提を確認する</summary><div class="formula-card"><span>使用する式</span><strong>${renderMathText(meta.formula)}</strong><p>${linkedQuizText('正の値は、各モデルで定義した基準方向への移動を表します。負の値なら向きが逆です。', 3)}</p></div><div class="assumption-card"><strong>前提と適用範囲</strong><p>${linkedQuizText(meta.note,5)}</p></div></details></section>
       <section class="surface-card sim-output-card"><div class="card-heading"><div><p class="eyebrow">現在の条件</p><h2>計算結果</h2></div>${statusPill('追加モデル', 'blue')}</div>${resultView}${!result.error ? ext.renderSteps(result) : ''}
         ${!result.error ? ext.graphs.map(graph => { const svg = graph.render(result, compare); return svg ? `<div class="chart-heading"><h3>${linkedQuizText(graph.title, 2)}</h3><span>${linkedQuizText(graph.note, 3)}</span></div>${svg}${compare ? '<div class="chart-legend"><span><i class="legend-current"></i>現在の条件</span><span><i class="legend-baseline"></i>保存した比較条件</span></div>' : ''}` : ''; }).join('') : ''}
         <div class="comparison-controls"><button type="button" class="button secondary" data-action="save-comparison">この条件を比較用に保存</button>${baseline ? '<button type="button" class="text-button" data-action="clear-comparison">比較条件を削除</button>' : ''}${savedView ? `<small>保存条件の結果：${savedView.label} ${savedView.value} ${savedView.unit}</small>` : ''}</div>
@@ -1663,7 +1663,7 @@ function renderTransientSimulator(){
       <a class="text-link" href="#guide/sim-transient">物理的背景・単位・手計算例 →</a></div>
       <form id="sim-form" class="sim-form"><div class="sim-fields">${renderTransientFields(v)}</div></form>
       <details class="sim-reference"><summary>式と前提を確認する</summary>
-      <div class="formula-card"><span>使用する式</span><strong>${meta.formula}</strong>
+      <div class="formula-card"><span>使用する式</span><strong>${renderMathText(meta.formula)}</strong>
         <p>${linkedQuizText('物体温度の正負と熱移動方向は別です。放熱を正とします。', 3)}</p></div>
       <div class="assumption-card"><strong>モデルの前提と限界</strong><p>${linkedQuizText(meta.note,5)}</p></div>
       </details>
@@ -1694,7 +1694,7 @@ function renderSimulator() {
   const related=getSection(['conduction','resistance'].includes(mode)?'2.2':mode==='convection'?'6.1':'10.1');
   return `${pageHeading('簡易シミュレーター', '簡易シミュレーター', '')}
     ${renderSimTabs(mode)}
-    <div class="sim-layout" role="tabpanel" id="sim-panel" aria-labelledby="sim-tab-${mode}"><section class="surface-card sim-input-card"><div class="sim-intro"><p class="eyebrow">${meta.title}</p><h2>${linkedQuizText(meta.description,4)}</h2>${renderSimulationDiagram(mode,values,result)}<a class="text-link" href="#guide/sim-${mode}">このモデルの理論・単位・手計算例 →</a></div><form id="sim-form" class="sim-form"><div class="sim-fields">${renderSimInputs(mode, values)}</div></form><details class="sim-reference"><summary>式と前提を確認する</summary><div class="formula-card"><span>使用する式</span><strong>${meta.formula}</strong><p>${linkedQuizText('正の値は、入力欄の「高温側」または「表面」から反対側へ移る向きを表します。負の値なら向きが逆です。', 3)}</p></div><div class="assumption-card"><strong>前提と適用範囲</strong><p>${linkedQuizText(meta.note,5)}</p></div></details></section>
+    <div class="sim-layout" role="tabpanel" id="sim-panel" aria-labelledby="sim-tab-${mode}"><section class="surface-card sim-input-card"><div class="sim-intro"><p class="eyebrow">${meta.title}</p><h2>${linkedQuizText(meta.description,4)}</h2>${renderSimulationDiagram(mode,values,result)}<a class="text-link" href="#guide/sim-${mode}">このモデルの理論・単位・手計算例 →</a></div><form id="sim-form" class="sim-form"><div class="sim-fields">${renderSimInputs(mode, values)}</div></form><details class="sim-reference"><summary>式と前提を確認する</summary><div class="formula-card"><span>使用する式</span><strong>${renderMathText(meta.formula)}</strong><p>${linkedQuizText('正の値は、入力欄の「高温側」または「表面」から反対側へ移る向きを表します。負の値なら向きが逆です。', 3)}</p></div><div class="assumption-card"><strong>前提と適用範囲</strong><p>${linkedQuizText(meta.note,5)}</p></div></details></section>
       <section class="surface-card sim-output-card"><div class="card-heading"><div><p class="eyebrow">現在の条件</p><h2>熱移動率</h2></div>${statusPill(mode === 'radiation' ? '℃からKへ換算' : '定常モデル', 'blue')}</div>${resultView}${!result.error?renderSimulationSteps(mode,result):''}
         ${!result.error ? `<div class="chart-heading"><h3>${linkedQuizText('温度差を変えたとき', 2)}</h3><span>${linkedQuizText(`現在・保存条件の温度差を含む範囲${mode==='radiation'?'。各曲線は表面温度が0 Kより高い範囲のみ表示':''}`, 3)}</span></div>${simGraph(mode, result, baseline)}<div class="chart-legend"><span><i class="legend-current"></i>現在の条件</span>${baseline ? '<span><i class="legend-baseline"></i>保存した比較条件</span>' : ''}</div>` : ''}
         <div class="comparison-controls"><button type="button" class="button secondary" data-action="save-comparison">この条件を比較用に保存</button>${baseline ? '<button type="button" class="text-button" data-action="clear-comparison">比較条件を削除</button>' : ''}${comparison && !comparison.error ? `<small>保存条件の結果：${comparison.watts.toLocaleString('ja-JP', { maximumFractionDigits: 3 })} W</small>` : ''}</div>

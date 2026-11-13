@@ -51,10 +51,10 @@ test('C5-S03: eq. (8.60) stays as printed, with a translator note separating the
   const b859=s.blocks.find(b=>b.number==='8.59');
   const e=b859.explanation;
   // Printed (8.60) claim is kept verbatim in the translation.
-  assert.ok(e.includes('Nux/Π4^(1/4) = fn(Ja, Pr) → Ja → 0 のとき 1（式(8.60)）'));
+  assert.ok(e.includes('Nux/Π_4^(1/4) = fn(Ja, Pr) → Ja → 0 のとき 1（式(8.60)）'));
   // The note records the book's own inconsistency and the figure's form.
-  assert.ok(e.includes('訳注：式(8.60)の「Ja → 0 のとき 1」は式(8.59)（Nux = 0.707·Π4^(1/4)）と整合しない'));
-  assert.ok(e.includes('Nux/(Π4/4)^(1/4)'));
+  assert.ok(e.includes('訳注：式(8.60)の「Ja → 0 のとき 1」は式(8.59)（Nux = 0.707·Π_4^(1/4)）と整合しない'));
+  assert.ok(e.includes('Nux/(Π_4/4)^(1/4)'));
   assert.ok(e.includes('原典の印刷上の不整合であり、式(8.60)自体は原典どおりに掲げている'));
   // The note's arithmetic: 4^(-1/4) = 0.70711 = the (8.59) coefficient.
   close(4**(-1/4),0.7071,0.0001);

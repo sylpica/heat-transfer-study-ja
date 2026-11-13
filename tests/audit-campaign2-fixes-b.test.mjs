@@ -133,7 +133,7 @@ test('C07-50: footnote 8 restored with marker at the Dhir citation; CF2-086: eq.
   const e848 = formula(blocks, '8.48');
   assert.ok(e848.explanation.includes('ディア（Dhir）(脚注8)[8.30]'), 'marker at Dhir citation');
   const e872 = formula(blocks, '8.72');
-  assert.ok(e872.expression.startsWith('Rec = ρuavδ/μ'), e872.expression);
+  assert.ok(e872.expression.startsWith('Re_c = ρu_{av}δ/μ'), e872.expression);
 });
 
 test('CF2-012/C07-35-class + CF2-014/C07-46: §8.4 proportionality and §8.5 annotation attribution', async () => {
@@ -142,5 +142,5 @@ test('CF2-012/C07-35-class + CF2-014/C07-46: §8.4 proportionality and §8.5 ann
   assert.ok(rich.text.includes('NuL と RaL^(1/3) はどちらも L に比例'), rich.text.slice(-200));
   const b85 = await section('8-5');
   const e859 = formula(b85, '8.59');
-  assert.ok(e859.explanation.includes('Π4 が明らかに支配的な変数であり、Ja の影響は h′fg に陰に運ばれ、Pr はエネルギー方程式の対流項を無視した限りにおいて消去されます'), 'attribution fixed');
+  assert.ok(e859.explanation.includes('Π_4 が明らかに支配的な変数であり、Ja の影響は h′_fg に陰に運ばれ、Pr はエネルギー方程式の対流項を無視した限りにおいて消去されます'), 'attribution fixed');
 });

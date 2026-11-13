@@ -1115,7 +1115,7 @@
     "aliases": [],
     "category": "既存の原本関連・補足用語",
     "unit": "m",
-    "formula": "Dh=4Ac/Pwet",
+    "formula": "D_h=4A_c/P_w",
     "related": [
       "レイノルズ数",
       "乱流"

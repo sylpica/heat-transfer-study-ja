@@ -159,6 +159,12 @@ test('round 4: question source note does not double the sentence-ending period',
   assert.ok(app.includes("const sourceLabelText = sourceLabel(question.source).replace(/。+$/, '');"));
 });
 
+test('round 5: hydraulic-diameter glossary formula uses subscript markup matching its brief', () => {
+  const terms = JSON.parse(readFileSync(new URL('../data/glossary.json', import.meta.url), 'utf8'));
+  const term = terms.find((t) => t.id === 'hydraulic-diameter');
+  assert.equal(term.formula, 'D_h=4A_c/P_w');
+});
+
 test('campaign-3 C03 w05 gap closure: section 4.1 carries the t-max/region clause and the Example 2.5 cross-reference', () => {
   const sec = JSON.parse(readFileSync(new URL('../data/sections/4-1-ja.json', import.meta.url), 'utf8'));
   const texts = sec.blocks.map((b) => b.text || '').join('\n');

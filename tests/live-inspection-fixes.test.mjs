@@ -184,6 +184,27 @@ test('round 6: question reviewStatus pills never render raw authoring notes', ()
   }
 });
 
+test('round 7: lesson status notes and reference titles carry no production-process wording', () => {
+  const lessons = JSON.parse(readFileSync(new URL('../data/original-deep-lessons.json', import.meta.url), 'utf8'));
+  const items = Array.isArray(lessons) ? lessons : lessons.lessons;
+  for (const lesson of items) {
+    assert.ok(!/新タスク|後工程|2026-\d\d-\d\d/.test(lesson.reviewStatus ?? ''), lesson.sectionId);
+    for (const ref of lesson.references ?? []) {
+      assert.ok(!/新タスク|後工程/.test(ref.title ?? ''), `${lesson.sectionId}: ${ref.title}`);
+    }
+  }
+});
+
+test('round 7: section 9.11 merit number uses book notation with subscript markup', () => {
+  const section = readFileSync(new URL('../data/sections/9-11-ja.json', import.meta.url), 'utf8');
+  assert.ok(section.includes('M = h_fgσ/ν_f'));
+  assert.ok(!section.includes('hfgσ/νf'));
+  assert.ok(section.includes('Q_in の矢印') && section.includes('Q_out の矢印'));
+  const lessons = readFileSync(new URL('../data/original-deep-lessons.json', import.meta.url), 'utf8');
+  const questions = readFileSync(new URL('../data/questions.json', import.meta.url), 'utf8');
+  assert.ok(!lessons.includes('M=h_fgσ/ν_l') && !questions.includes('M=h_fgσ/ν_l'));
+});
+
 test('campaign-3 C03 w05 gap closure: section 4.1 carries the t-max/region clause and the Example 2.5 cross-reference', () => {
   const sec = JSON.parse(readFileSync(new URL('../data/sections/4-1-ja.json', import.meta.url), 'utf8'));
   const texts = sec.blocks.map((b) => b.text || '').join('\n');

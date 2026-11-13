@@ -11,8 +11,8 @@
     .arrow{stroke:#1c7194;stroke-width:4.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
     .bar-cold{fill:#1c7194}.bar-later{fill:#8b4eae}.bar-warn{fill:#c98a8a}.bar-hot{fill:#b3402f}
     .edge-hot{stroke:#b3402f;stroke-width:7}.edge-cold{stroke:#528096;stroke-width:5}
-    text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-serif;font-size:25px}.title{font-size:35px;font-weight:700}.section{font-size:27px;font-weight:700}.small{font-size:22px}.formula{font-size:25px;font-weight:600}
-    @media(prefers-color-scheme:dark){.background{fill:#111a24}.panel{fill:#1c2c3b;stroke:#60798a}.ink{fill:#eef6ff}.secondary{fill:#cad9e4}.cold{fill:#89d8f4}.later{fill:#dbb4ff}.hot{fill:#ff9d8f}.warn{fill:#ff9d8f}.slab{fill:#22485f;stroke:#91c2dc}.axis{stroke:#d3e4ef}.guide{stroke:#647e90}.initial{stroke:#bed0da}.quarter,.arrow{stroke:#89d8f4}.one{stroke:#dbb4ff}.hotline{stroke:#ff9d8f}.dashline{stroke:#bed0da}.bar-warn{fill:#8a5a5a}}
+    text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-serif;font-size:25px}.title{font-size:35px;font-weight:700}.section{font-size:27px;font-weight:700}.small{font-size:22px}.halo{paint-order:stroke;stroke:#f4f7fb;stroke-width:7px;stroke-linejoin:round}.formula{font-size:25px;font-weight:600}
+    @media(prefers-color-scheme:dark){.background{fill:#111a24}.panel{fill:#1c2c3b;stroke:#60798a}.ink{fill:#eef6ff}.secondary{fill:#cad9e4}.cold{fill:#89d8f4}.later{fill:#dbb4ff}.hot{fill:#ff9d8f}.warn{fill:#ff9d8f}.slab{fill:#22485f;stroke:#91c2dc}.axis{stroke:#d3e4ef}.guide{stroke:#647e90}.initial{stroke:#bed0da}.quarter,.arrow{stroke:#89d8f4}.one{stroke:#dbb4ff}.hotline{stroke:#ff9d8f}.dashline{stroke:#bed0da}.halo{stroke:#1c2c3b}.bar-warn{fill:#8a5a5a}}
   </style>
   <rect class="background" width="840" height="1270"/>
   <text x="36" y="58" class="title ink">§5.4 線図は条件をそろえて読む</text>
@@ -29,7 +29,7 @@
   <path id="theta0-bi-inf" class="one" d="M150.00,167.15 L166.00,184.67 L182.00,201.14 L198.00,216.63 L214.00,231.19 L230.00,244.88 L246.00,257.74 L262.00,269.84 L278.00,281.22 L294.00,291.91 L310.00,301.97 L326.00,311.42 L342.00,320.31 L358.00,328.67 L374.00,336.52 L390.00,343.91 L406.00,350.85 L422.00,357.38 L438.00,363.52 L454.00,369.29 L470.00,374.72 L486.00,379.82 L502.00,384.62 L518.00,389.13 L534.00,393.37 L550.00,397.35 L566.00,401.10 L582.00,404.62 L598.00,407.94 L614.00,411.05 L630.00,413.98 L646.00,416.73 L662.00,419.32 L678.00,421.75 L694.00,424.04 L710.00,426.19 L726.00,428.22 L742.00,430.12 L758.00,431.90 L774.00,433.59 L790.00,435.17"/>
   <circle cx="470.00" cy="282.22" r="8" class="bar-cold"/>
   <text x="486" y="262" class="small cold">Fo = 0.5 で Θ₀ = 0.773</text>
-  <text x="286" y="252" class="small secondary">目安 Fo ≳ 0.2</text>
+  <text x="286" y="252" class="small secondary halo">目安 Fo ≳ 0.2</text>
   <text x="128" y="237" class="small secondary">1.0</text>
   <text x="128" y="352" class="small secondary">0.5</text>
   <text x="128" y="467" class="small secondary">0</text>
@@ -46,7 +46,7 @@
   <circle cx="470" cy="675.44" r="8" class="bar-later"/>
   <text x="486" y="661.44" class="small later">ξ = 0.5 で Θ = 0.703</text>
   <text x="160" y="645.95" class="small ink">中心 Θ₀ = 0.773</text>
-  <text x="640" y="708.16" class="small ink">平均 Θ̄ = 0.681</text>
+  <text x="640" y="748" class="small ink halo">平均 Θ̄ = 0.681</text>
   <text x="150" y="862" text-anchor="middle" class="small ink">中心 ξ = 0</text>
   <text x="470" y="862" text-anchor="middle" class="small ink">0.5</text>
   <text x="790" y="862" text-anchor="middle" class="small ink">表面 ξ = 1</text>

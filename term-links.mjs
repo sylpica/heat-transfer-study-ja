@@ -16,7 +16,7 @@ function convertMathSegment(t){
     .replace(/_\(([\p{L}\p{N}∞+−\-.\/=, ]+)\)/gu,'<sub>$1</sub>')
     .replace(/\^\(([\p{L}\p{N}∞+−\-.\/=, ]+)\)/gu,'<sup>$1</sup>')
     .replace(/_([A-ZΑ-Ω][A-ZΑ-Ω0-9]*(?:,[A-Za-zΑ-Ωα-ω0-9∞]+)*|[a-zα-ω0-9∞]+(?:,[A-Za-zΑ-Ωα-ω0-9∞]+)*)/gu,'<sub>$1</sub>')
-    .replace(/\^([−\-]?[0-9]+(?:\.[0-9]+)?|\p{L})/gu,'<sup>$1</sup>');
+    .replace(/\^([−\-]?[0-9]+(?:\.[0-9]+)?|[\p{L}\p{No}∞])/gu,'<sup>$1</sup>');
 }
 export function formatMathText(escaped){
   const text=String(escaped??'');

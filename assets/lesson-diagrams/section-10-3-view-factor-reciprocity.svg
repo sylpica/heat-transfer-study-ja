@@ -39,7 +39,7 @@
 
   <rect class="panel" x="24" y="808" width="632" height="258" rx="18"/>
   <text x="44" y="852" class="heading ink">③ 黒体間の正味放射交換</text>
-  <text x="44" y="897" class="equation ink">Qdot<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = σ A<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan> F<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> (T<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan>⁴ − T<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan>⁴)</text>
+  <text x="44" y="897" class="equation ink">Q̇<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> = σ A<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan> F<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> (T<tspan class="sb" dy="0.30em" font-size="0.72em">1</tspan><tspan dy="-0.3em"></tspan>⁴ − T<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan>⁴)</text>
   <text x="44" y="935" class="small muted">σ = 5.67 × 10<tspan class="sp" dy="-0.45em" font-size="0.72em">-8</tspan><tspan dy="0.45em"></tspan> W/(m²·K⁴)</text>
   <text x="44" y="972" class="small ink">= 5.67×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-8</tspan><tspan dy="0.45em"></tspan> × 1.0 × 0.80</text>
   <text x="64" y="1008" class="small ink">× (400⁴ − 300⁴) = 793.8 W</text>

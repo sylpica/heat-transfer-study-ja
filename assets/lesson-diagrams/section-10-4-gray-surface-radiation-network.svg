@@ -51,8 +51,8 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <rect class="panel" x="23" y="844" width="794" height="229" rx="19"/>
 <text class="section ink" x="43" y="885">③ 熱収支と射度の検算</text>
 <text class="equation ink" x="44" y="924">R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = R<tspan class="sb" dy="0.30em" font-size="0.72em">s1</tspan><tspan dy="-0.3em"></tspan> + R<tspan class="sb" dy="0.30em" font-size="0.72em">12</tspan><tspan dy="-0.3em"></tspan> + R<tspan class="sb" dy="0.30em" font-size="0.72em">s2</tspan><tspan dy="-0.3em"></tspan> = 3.833 m⁻²</text>
-<text class="equation ink" x="44" y="962">Qdot = (E<tspan class="sb" dy="0.30em" font-size="0.72em">b1</tspan><tspan dy="-0.3em"></tspan>−E<tspan class="sb" dy="0.30em" font-size="0.72em">b2</tspan><tspan dy="-0.3em"></tspan>)/R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = 258.86 W</text>
-<text class="equation ink" x="44" y="1001">q'' = Qdot/A = 517.73 W/m²</text>
+<text class="equation ink" x="44" y="962">Q̇ = (E<tspan class="sb" dy="0.30em" font-size="0.72em">b1</tspan><tspan dy="-0.3em"></tspan>−E<tspan class="sb" dy="0.30em" font-size="0.72em">b2</tspan><tspan dy="-0.3em"></tspan>)/R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = 258.86 W</text>
+<text class="equation ink" x="44" y="1001">q'' = Q̇/A = 517.73 W/m²</text>
 <text class="small ink" x="44" y="1041">J1−J2 = 517.73 W/m²（空間の正味流束）</text>
 <text class="tiny muted" x="420" y="1095" text-anchor="middle">アプリ作成の独自模式図｜原著の図版・描画の転載なし</text>
 </svg>

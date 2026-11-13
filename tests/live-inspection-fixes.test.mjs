@@ -132,6 +132,20 @@ test('round 2: the Re question no longer merges the velocity into the subscript'
   assert.ok(!JSON.stringify(q).includes('ρ_fu'));
 });
 
+test('round 3: fraction and infinity superscripts convert (t^½, ∫₀^∞)', () => {
+  assert.equal(formatMathText('t^½'), 't<sup>½</sup>');
+  assert.equal(formatMathText('∫₀^∞ε_λ dλ'), '∫₀<sup>∞</sup>ε<sub>λ</sub> dλ');
+  assert.equal(formatMathText('x^2 + y^n'), 'x<sup>2</sup> + y<sup>n</sup>');
+});
+
+test('round 3: no spelled-out Qdot remains in lesson diagrams; Q with dot above is used', () => {
+  for (const f of ['section-10-3-view-factor-reciprocity.svg', 'section-10-4-gray-surface-radiation-network.svg']) {
+    const svg = readFileSync(new URL('../assets/lesson-diagrams/' + f, import.meta.url), 'utf8');
+    assert.ok(!svg.includes('Qdot'), f);
+    assert.ok(svg.includes('Q̇'), f);
+  }
+});
+
 test('dynamic lab: short material names and separated graph label rows', () => {
   const presets = readFileSync(new URL('../dynamic/presets.mjs', import.meta.url), 'utf8');
   assert.ok(presets.includes("name:'アルミニウム6061-T6'"));

@@ -57,7 +57,7 @@
 
   <rect class="panel" x="23" y="817" width="754" height="366" rx="18"/>
   <text x="45" y="861" class="section ink">③ 無次元数は同じ値になる</text>
-  <text x="45" y="903" class="small muted">両モデルとも k = 8 W/(m·K)、α = 2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-6</tspan><tspan dy="0.45em"></tspan> m²/s</text>
+  <text x="45" y="903" class="small muted">両モデルとも k = 8 W/(m·K)、α = 2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-6</tspan><tspan dy="0.32em"> m²/s</tspan></text>
   <text x="45" y="948" class="equation ink">Bi = hL/k</text>
   <text x="279" y="948" class="small ink">(40×0.020)/8 = (20×0.040)/8</text>
   <text x="745" y="948" class="result blue" text-anchor="end">0.10</text>
@@ -67,7 +67,7 @@
   <path class="dim" d="M46 1019 H752"/>
   <text x="45" y="1057" class="small ink">重要：幾何形状・無次元初期条件・境界条件も一致が必要。</text>
   <text x="45" y="1092" class="small muted">BiとFoだけで実温度や熱流束まで同じとは断定しない。</text>
-  <text x="45" y="1134" class="small muted">Lは平板の半厚さ。集中熱容量の V/A<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> とは区別。</text>
-  <text x="45" y="1167" class="small muted">冷却の前提：初期温度 T<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> &gt; 周囲温度 T∞。</text>
+  <text x="45" y="1134" class="small muted">Lは平板の半厚さ。集中熱容量の V/A<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> とは区別。</tspan></text>
+  <text x="45" y="1167" class="small muted">冷却の前提：初期温度 T<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> &gt; 周囲温度 T∞。</tspan></text>
   <text x="400" y="1214" text-anchor="middle" class="small muted">アプリ作成の独自模式図｜原書の図版・転載ではない</text>
 </svg>

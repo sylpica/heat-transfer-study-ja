@@ -13,7 +13,7 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 </style>
 <rect class="bg" width="840" height="1154"/>
 <text class="title ink" x="31" y="58">§10.6 太陽エネルギーと選択性表面</text>
-<text class="small muted" x="33" y="97">α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> と ε<tspan class="sb" dy="0.30em" font-size="0.72em">IR</tspan><tspan dy="-0.3em"></tspan> は波長帯が違うので独立に設計できる</text>
+<text class="small muted" x="33" y="97">α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> と ε</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">IR</tspan><tspan dy="-0.22em"> は波長帯が違うので独立に設計できる</tspan></text>
 <rect class="panel" x="23" y="119" width="794" height="330" rx="19"/>
 <text class="section ink" x="43" y="161">① 屋根表面の収支（例題10.12の条件）</text>
 <path class="sunarrow" d="M170 210 L268 292 M252 274 L268 292 L250 296"/>
@@ -21,10 +21,10 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <path class="convarrow" d="M640 292 L700 222 M684 224 L700 222 L696 240"/>
 <rect class="roof" x="120" y="296" width="600" height="26" rx="4"/>
 <text class="small warm" x="92" y="200">日射 600 W/m²</text>
-<text class="small ink" x="420" y="200" text-anchor="middle">天空放射（T<tspan class="sb" dy="0.30em" font-size="0.72em">sky</tspan><tspan dy="-0.3em"></tspan> = 18 ℃）</text>
+<text class="small ink" x="420" y="200" text-anchor="middle">天空放射（T<tspan class="sb" dy="0.3em" font-size="0.72em">sky</tspan><tspan dy="-0.22em"> = 18 ℃）</tspan></text>
 <text class="small cool" x="706" y="200" text-anchor="end">対流 h = 8</text>
-<text class="equation ink" x="43" y="368">α<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan>·q<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> + ε σT<tspan class="sb" dy="0.30em" font-size="0.72em">sky</tspan><tspan dy="-0.3em"></tspan>⁴ = h(T − T<tspan class="sb" dy="0.30em" font-size="0.72em">air</tspan><tspan dy="-0.3em"></tspan>) + ε σT⁴</text>
-<text class="small ink" x="43" y="404">T<tspan class="sb" dy="0.30em" font-size="0.72em">air</tspan><tspan dy="-0.3em"></tspan> = 35 ℃、σT<tspan class="sb" dy="0.30em" font-size="0.72em">sky</tspan><tspan dy="-0.3em"></tspan>⁴ = 407.45 W/m²（ε の掛かる分は別）</text>
+<text class="equation ink" x="43" y="368">α<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em">·q</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> + ε σT</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">sky</tspan><tspan dy="-0.22em">⁴ = h(T − T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">air</tspan><tspan dy="-0.22em">) + ε σT⁴</tspan></text>
+<text class="small ink" x="43" y="404">T<tspan class="sb" dy="0.3em" font-size="0.72em">air</tspan><tspan dy="-0.22em"> = 35 ℃、σT</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">sky</tspan><tspan dy="-0.22em">⁴ = 407.45 W/m²（ε の掛かる分は別）</tspan></text>
 <text class="small muted" x="43" y="434">内部への損失は無視した上限評価。T はこの式の反復解</text>
 <rect class="panel" x="23" y="467" width="794" height="252" rx="19"/>
 <text class="section ink" x="43" y="509">② 解：塗料で 26 K 違う</text>
@@ -32,9 +32,9 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="small ink" x="43" y="583">= 対流 239.7 + 放射 667.0 → T = 338.12 K（65.0 ℃）</text>
 <text class="small ink" x="43" y="627">白色アクリル α = 0.26、ε = 0.90： 吸収 156.0 + 天空 366.7</text>
 <text class="small ink" x="43" y="661">= 対流 35.5 + 放射 487.2 → T = 312.59 K（39.4 ℃）</text>
-<text class="small muted" x="43" y="701">本書の結果は黒 65 ℃・白 39 ℃（丸め）。違いは α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> だけから生じる</text>
+<text class="small muted" x="43" y="701">本書の結果は黒 65 ℃・白 39 ℃（丸め）。違いは α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> だけから生じる</tspan></text>
 <rect class="panel" x="23" y="737" width="794" height="252" rx="19"/>
-<text class="section ink" x="43" y="779">③ 選択性表面（α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> ／ ε<tspan class="sb" dy="0.30em" font-size="0.72em">IR</tspan><tspan dy="-0.3em"></tspan>）</text>
+<text class="section ink" x="43" y="779">③ 選択性表面（α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> ／ ε</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">IR</tspan><tspan dy="-0.22em">）</tspan></text>
 <text class="small ink" x="43" y="821">黒色クロム（吸収面）</text>
 <rect class="baralpha" x="330" y="800" width="361" height="17"/><rect class="bareps" x="330" y="821" width="34" height="17"/>
 <text class="tiny ink" x="706" y="821">0.95 / 0.09</text>
@@ -44,7 +44,7 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="small ink" x="43" y="937">白色アクリル（反射面）</text>
 <rect class="baralpha" x="330" y="916" width="99" height="17"/><rect class="bareps" x="330" y="937" width="342" height="17"/>
 <text class="tiny ink" x="706" y="937">0.26 / 0.90</text>
-<text class="tiny muted" x="43" y="982">橙 = α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan>、青 = ε<tspan class="sb" dy="0.30em" font-size="0.72em">IR</tspan><tspan dy="-0.3em"></tspan>（バーは 0–1 の線形目盛）</text>
+<text class="tiny muted" x="43" y="982">橙 = α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em">、青 = ε</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">IR</tspan><tspan dy="-0.22em">（バーは 0–1 の線形目盛）</tspan></text>
 <rect class="panel" x="23" y="1007" width="794" height="100" rx="19"/>
 <text class="section ink" x="43" y="1049">④ 地球の規模感</text>
 <text class="small ink" x="43" y="1085">大気上端 1361 W/m² → 地表到達は約45% → 平均 約235 W/m²</text>

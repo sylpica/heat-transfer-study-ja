@@ -22,9 +22,9 @@
   <rect x="320" y="185" width="200" height="200" rx="3" class="slab"/>
   <path class="arrow" d="M420 178 V140 M413 152 L420 140 L427 152 M420 392 V430 M413 418 L420 430 L427 418 M313 285 H275 M287 272 L275 285 L287 298 M527 285 H565 M553 272 L565 285 L553 298"/>
   <text x="48" y="240" class="small ink">初期 100℃・一様</text>
-  <text x="48" y="280" class="small ink">Fo<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> = Fo<tspan class="sb" dy="0.30em" font-size="0.72em">y</tspan><tspan dy="-0.3em"></tspan> = 0.50</text>
+  <text x="48" y="280" class="small ink">Fo<tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em"> = Fo</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">y</tspan><tspan dy="-0.22em"> = 0.50</tspan></text>
   <text x="48" y="320" class="small ink">長い柱・軸方向なし</text>
-  <text x="545" y="290" class="small ink">Bi<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> = Bi<tspan class="sb" dy="0.30em" font-size="0.72em">y</tspan><tspan dy="-0.3em"></tspan> = 1</text>
+  <text x="545" y="290" class="small ink">Bi<tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em"> = Bi</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">y</tspan><tspan dy="-0.22em"> = 1</tspan></text>
   <circle cx="420" cy="285" r="8" class="bar-hot"/>
   <text x="420" y="262" text-anchor="middle" class="small ink">中心</text>
   <text x="420" y="412" text-anchor="middle" class="small secondary">全周囲 20℃・各面 h = 100</text>

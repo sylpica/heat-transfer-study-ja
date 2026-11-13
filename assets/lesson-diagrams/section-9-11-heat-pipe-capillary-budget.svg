@@ -31,14 +31,14 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text class="section ink" x="43" y="692">利用可能 4000 = 必要 2800 ＋ 余裕 1200</text>
 <rect class="barAvail" x="150" y="706" width="440.0" height="34"/>
 <g id="pressure-stack"><rect class="segL" x="150.0" y="760" width="165.0" height="34"/><text class="micro ink" x="232" y="752" text-anchor="middle">液体損失 1500</text><rect class="segV" x="315.0" y="760" width="55.0" height="34"/><text class="micro ink" x="342" y="752" text-anchor="middle">蒸気損失 500</text><rect class="segG" x="370.0" y="760" width="88.0" height="34"/><text class="micro ink" x="440" y="752" text-anchor="middle">重力 800</text><rect class="segM" x="458.0" y="760" width="132.0" height="34"/><text class="micro ink" x="524" y="752" text-anchor="middle">余裕 1200</text></g>
-<text class="micro muted" x="43" y="830">Δp<tspan class="sb" dy="0.30em" font-size="0.72em">cap</tspan><tspan dy="-0.3em"></tspan> ≈ 2σcosθ/r<tspan class="sb" dy="0.30em" font-size="0.72em">eff</tspan><tspan dy="-0.3em"></tspan>（σ=0.040 N/m、r<tspan class="sb" dy="0.30em" font-size="0.72em">eff</tspan><tspan dy="-0.3em"></tspan>=20 μm、θ=0）。</text>
-<text class="micro muted" x="43" y="860">Q=200 W の潜熱循環は ṁ ≈ 2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-4</tspan><tspan dy="0.45em"></tspan> kg/s（0.20 g/s）。</text>
+<text class="micro muted" x="43" y="830">Δp<tspan class="sb" dy="0.3em" font-size="0.72em">cap</tspan><tspan dy="-0.22em"> ≈ 2σcosθ/r</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">eff</tspan><tspan dy="-0.22em">（σ=0.040 N/m、r</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">eff</tspan><tspan dy="-0.22em">=20 μm、θ=0）。</tspan></text>
+<text class="micro muted" x="43" y="860">Q=200 W の潜熱循環は ṁ ≈ 2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-4</tspan><tspan dy="0.32em"> kg/s（0.20 g/s）。</tspan></text>
 <text class="micro muted" x="43" y="900">蒸発部が凝縮部より 0.10 m 高い配置の重力項を含む。</text>
 <rect class="panel" x="23" y="932" width="794" height="291" rx="18"/>
 <text class="section ink" x="43" y="973">③ 輸送限界の候補は別々に評価する（別の輸送区間モデル）</text>
 <rect class="barCap" x="200" y="990" width="33.3" height="26"/><text class="small ink" x="50" y="1010">毛管候補</text><text class="small ink" x="243.3" y="1010">≈25.6 W</text><rect class="barEv" x="200" y="1035" width="65.0" height="26"/><text class="small ink" x="50" y="1055">蒸発面候補</text><text class="small ink" x="275.0" y="1055">50.0 W</text><rect class="barEn" x="200" y="1080" width="413.3" height="26"/><text class="small ink" x="50" y="1100">同伴候補</text><text class="small ink" x="623.3" y="1100">≈318 W</text>
 <text class="micro muted" x="43" y="1175">最小の候補が毛管限界とは限らない。</text>
-<text class="micro muted" x="43" y="1201">性能指数 M=h<tspan class="sb" dy="0.30em" font-size="0.72em">fg</tspan><tspan dy="-0.3em"></tspan> σ/ν<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan> ≈ 3.20×10<tspan class="spb" dy="-0.45em" font-size="0.72em">10</tspan><tspan dy="0.45em"></tspan> kg/s³ だけでは選定できない。</text>
+<text class="micro muted" x="43" y="1201">性能指数 M=h<tspan class="sb" dy="0.3em" font-size="0.72em">fg</tspan><tspan dy="-0.22em"> σ/ν</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">l</tspan><tspan dy="-0.22em"> ≈ 3.20×10</tspan><tspan class="spb" dy="-0.45em" font-size="0.72em">10</tspan><tspan dy="0.32em"> kg/s³ だけでは選定できない。</tspan></text>
 
 <text class="micro muted" x="420" y="1255" text-anchor="middle">アプリ作成の独自模式図｜原著図版の転載・トレースなし</text>
 </svg>

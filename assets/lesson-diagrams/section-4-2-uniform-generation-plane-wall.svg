@@ -25,8 +25,8 @@
   <text x="566" y="278" text-anchor="middle" class="minor ink">右面</text>
   <text x="566" y="308" text-anchor="middle" class="minor ink">20 ℃</text>
   <text x="340" y="399" text-anchor="middle" class="minor ink">中心 x = 0</text>
-  <text x="171" y="464" text-anchor="middle" class="minor flux">q<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> = −1,000</text>
-  <text x="509" y="464" text-anchor="middle" class="minor flux">q<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> = +1,000</text>
+  <text x="171" y="464" text-anchor="middle" class="minor flux">q<tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em"> = −1,000</tspan></text>
+  <text x="509" y="464" text-anchor="middle" class="minor flux">q<tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em"> = +1,000</tspan></text>
   <text x="340" y="497" text-anchor="middle" class="minor muted">W/m²（x 正方向 →）</text>
   <rect x="24" y="550" width="632" height="313" rx="20" class="panel"/>
   <text x="44" y="594" class="section ink">② 中心が最高温度の放物線</text>
@@ -42,10 +42,10 @@
   <text x="46" y="786" class="minor muted">20 ℃</text>
   <text x="603" y="790" class="minor ink">x</text>
   <text x="90" y="612" class="minor ink">T</text>
-  <text x="340" y="848" text-anchor="middle" class="minor muted">左・右表面とも 20 ℃（T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan>）</text>
+  <text x="340" y="848" text-anchor="middle" class="minor muted">左・右表面とも 20 ℃（T<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em">）</tspan></text>
   <rect x="24" y="879" width="632" height="195" rx="20" class="panel"/>
   <text x="44" y="912" class="minor ink">q''' = 20,000 W/m³　 k = 10 W/(m·K)</text>
-  <text x="44" y="947" class="formula ink">T(x) = T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> + q'''(L² − x²)/(2k)</text>
+  <text x="44" y="947" class="formula ink">T(x) = T<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> + q'''(L² − x²)/(2k)</tspan></text>
   <text x="44" y="982" class="minor ink">各面の外向き流束 = q'''L = 1,000 W/m²</text>
   <text x="44" y="1008" class="minor muted">A = 1 m²：発熱 2,000 W = 両面流出の合計</text>
   <text x="340" y="1053" text-anchor="middle" class="minor muted">アプリ作成の図・模式図（寸法比は非実寸）</text>

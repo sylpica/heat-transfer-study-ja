@@ -28,12 +28,12 @@
 
 <rect class="panel" x="23" y="123" width="834" height="704" rx="18"/>
 <text class="section ink" x="43" y="165">① 熱流束と表面過熱度の概念的な関係</text>
-<text class="micro muted" x="44" y="203">縦：熱流束 q″（目盛なし） ／ 横：表面過熱度 ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan>（目盛なし）</text>
+<text class="micro muted" x="44" y="203">縦：熱流束 q″（目盛なし） ／ 横：表面過熱度 ΔT<tspan class="sb" dy="0.3em" font-size="0.72em">sat</tspan><tspan dy="-0.22em">（目盛なし）</tspan></text>
 <text class="micro muted" x="44" y="231">曲線形状・領域境界は模式的。実験・相関式の数値ではない。</text>
 
 <path id="boiling-axes" class="axis" d="M125 255 V609 H806 M115 269 L125 255 L135 269 M793 599 L806 609 L793 619"/>
 <text class="micro ink" x="141" y="269">q″ 増加</text>
-<text class="micro ink" x="573" y="640">表面過熱度 ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan> 増加 →</text>
+<text class="micro ink" x="573" y="640">表面過熱度 ΔT<tspan class="sb" dy="0.3em" font-size="0.72em">sat</tspan><tspan dy="-0.22em"> 増加 →</tspan></text>
 <path id="boiling-natural" class="natural" d="M130 590 C174 584 194 564 225 528"/>
 <path id="boiling-nucleate" class="nucleate" d="M225 528 C271 486 281 350 333 288 C355 257 376 244 412 244"/>
 <path id="boiling-transition" class="transition" d="M412 244 C470 244 489 522 552 522"/>
@@ -57,11 +57,11 @@
 <rect class="panel" x="23" y="845" width="834" height="389" rx="18"/>
 <text class="section ink" x="43" y="887">② 例題：熱流束を求める。CHFの判定は別</text>
 <text class="small ink" x="44" y="934">加熱面積 A = 0.010 m²、熱移動率 Q = 200 W</text>
-<text class="small ink" x="44" y="977">壁温 T<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> = 120 ℃、飽和温度 T<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan> = 100 ℃</text>
-<text class="formula ink" x="44" y="1027">ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan> = T<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> − T<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan> = 20 K</text>
+<text class="small ink" x="44" y="977">壁温 T<tspan class="sb" dy="0.3em" font-size="0.72em">w</tspan><tspan dy="-0.22em"> = 120 ℃、飽和温度 T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">sat</tspan><tspan dy="-0.22em"> = 100 ℃</tspan></text>
+<text class="formula ink" x="44" y="1027">ΔT<tspan class="sb" dy="0.3em" font-size="0.72em">sat</tspan><tspan dy="-0.22em"> = T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">w</tspan><tspan dy="-0.22em"> − T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">sat</tspan><tspan dy="-0.22em"> = 20 K</tspan></text>
 <text class="formula ink" x="44" y="1070">q″ = Q/A = 20,000 W/m² = 20 kW/m²</text>
-<text class="formula ink" x="44" y="1113">h<tspan class="sb" dy="0.30em" font-size="0.72em">eff</tspan><tspan dy="-0.3em"></tspan> = q″/ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan> = 1,000 W/(m²·K)</text>
+<text class="formula ink" x="44" y="1113">h<tspan class="sb" dy="0.3em" font-size="0.72em">eff</tspan><tspan dy="-0.22em"> = q″/ΔT</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">sat</tspan><tspan dy="-0.22em"> = 1,000 W/(m²·K)</tspan></text>
 <text class="small ink" x="44" y="1161">CHF値が不明：沸騰領域・安全性は判定できない。</text>
-<text class="micro muted" x="44" y="1198">h<tspan class="sb" dy="0.30em" font-size="0.72em">eff</tspan><tspan dy="-0.3em"></tspan>はこの一点での比。全領域で一定の伝熱係数ではない。</text>
+<text class="micro muted" x="44" y="1198">h<tspan class="sb" dy="0.3em" font-size="0.72em">eff</tspan><tspan dy="-0.22em">はこの一点での比。全領域で一定の伝熱係数ではない。</tspan></text>
 <text class="micro muted" x="440" y="1261" text-anchor="middle">アプリ独自模式図｜原著図版の転載・トレース・逐文翻訳なし</text>
 </svg>

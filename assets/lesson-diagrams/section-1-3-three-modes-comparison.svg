@@ -20,16 +20,16 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="small muted" x="43" y="323">k は材料の物性値。熱は温度が下がる向きに流れる（負号）</text>
 <rect class="panel" x="23" y="373" width="794" height="236" rx="19"/>
 <text class="section ink" x="43" y="415">② 対流 Newton の冷却法則（式1.17）</text>
-<text class="equation ink" x="43" y="457">q″ = h(T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> − T∞) ／ Q = hAΔT</text>
+<text class="equation ink" x="43" y="457">q″ = h(T<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> − T∞) ／ Q = hAΔT</tspan></text>
 <text class="small ink" x="43" y="497">例： h = 10 W/(m²·K)、A = 0.50 m²、ΔT = 20 K</text>
 <text class="small ink" x="43" y="537">→ q″ = 200 W/m²、Q = 100 W</text>
 <text class="small muted" x="43" y="577">h は物性値ではなく流れの状況で決まる（本書 Part III の主題）</text>
 <rect class="panel" x="23" y="627" width="794" height="236" rx="19"/>
 <text class="section ink" x="43" y="669">③ 放射 Stefan–Boltzmann の法則（式1.28・1.33）</text>
-<text class="equation ink" x="43" y="711">Q = εσA(T⁴ − T<tspan class="sb" dy="0.30em" font-size="0.72em">surr</tspan><tspan dy="-0.3em"></tspan>⁴) （T は必ず絶対温度 K）</text>
+<text class="equation ink" x="43" y="711">Q = εσA(T⁴ − T<tspan class="sb" dy="0.3em" font-size="0.72em">surr</tspan><tspan dy="-0.22em">⁴) （T は必ず絶対温度 K）</tspan></text>
 <text class="small ink" x="43" y="751">例： ε = 0.8、面 320 K、黒体周囲 300 K、A = 0.50 m²</text>
 <text class="small ink" x="43" y="791">→ q″ = 108.2 W/m²、Q = 54.11 W</text>
-<text class="small muted" x="43" y="831">σ = 5.670374419×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-8</tspan><tspan dy="0.45em"></tspan> W/(m²·K⁴)。媒体がなくても伝わる</text>
+<text class="small muted" x="43" y="831">σ = 5.670374419×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-8</tspan><tspan dy="0.32em"> W/(m²·K⁴)。媒体がなくても伝わる</tspan></text>
 <rect class="panel" x="23" y="881" width="794" height="234" rx="19"/>
 <text class="section ink" x="43" y="923">④ 大きさの比較（A = 0.50 m² 共通）</text>
 <text class="small ink" x="43" y="965">伝導 200 W</text>

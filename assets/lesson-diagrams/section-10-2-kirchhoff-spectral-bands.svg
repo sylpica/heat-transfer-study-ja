@@ -14,9 +14,9 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="small muted" x="33" y="97">ε は面とその温度で決まるが、α は放射源のスペクトルにも依存する</text>
 <rect class="panel" x="23" y="119" width="794" height="252" rx="19"/>
 <text class="section ink" x="43" y="161">① 法則の3つの形（下ほど仮定が強い）</text>
-<text class="equation ink" x="43" y="205">ε<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>(T, θ, φ) = α<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>(T, θ, φ)　（10.8a）</text>
+<text class="equation ink" x="43" y="205">ε<tspan class="sb" dy="0.3em" font-size="0.72em">λ</tspan><tspan dy="-0.22em">(T, θ, φ) = α</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">λ</tspan><tspan dy="-0.22em">(T, θ, φ)　（10.8a）</tspan></text>
 <text class="small muted" x="43" y="233">単色・方向ごと。周囲と熱平衡にある面で厳密</text>
-<text class="equation ink" x="43" y="277">ε<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>(T) = α<tspan class="sb" dy="0.30em" font-size="0.72em">λ</tspan><tspan dy="-0.3em"></tspan>(T)　（10.8b）</text>
+<text class="equation ink" x="43" y="277">ε<tspan class="sb" dy="0.3em" font-size="0.72em">λ</tspan><tspan dy="-0.22em">(T) = α</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">λ</tspan><tspan dy="-0.22em">(T)　（10.8b）</tspan></text>
 <text class="small muted" x="43" y="305">拡散面では角度依存が消える</text>
 <text class="equation warm" x="43" y="349">ε(T) = α(T)　（10.8c）：灰色面でのみ正確</text>
 <rect class="panel" x="23" y="389" width="794" height="316" rx="19"/>
@@ -34,16 +34,16 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <text class="tiny muted" x="540" y="700" text-anchor="middle">10 μm</text>
 <text class="tiny muted" x="780" y="700" text-anchor="end">100 μm</text>
 <rect class="panel" x="23" y="723" width="794" height="356" rx="19"/>
-<text class="section ink" x="43" y="765">③ 同じ ε でも α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> は全く違う</text>
+<text class="section ink" x="43" y="765">③ 同じ ε でも α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> は全く違う</tspan></text>
 <rect class="blacksw" x="43" y="788" width="52" height="52" rx="6"/>
-<text class="small ink" x="112" y="809">黒ペイント： ε ≃ 0.94、α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> ≃ 0.94</text>
+<text class="small ink" x="112" y="809">黒ペイント： ε ≃ 0.94、α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> ≃ 0.94</tspan></text>
 <text class="small muted" x="112" y="837">帯が重なるため（10.8c）がほぼ成り立つ</text>
 <rect class="whitesw" x="43" y="861" width="52" height="52" rx="6"/>
-<text class="small ink" x="112" y="882">白ペイント： ε<tspan class="sb" dy="0.30em" font-size="0.72em">IR</tspan><tspan dy="-0.3em"></tspan> ≃ 0.90、α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> ≃ 0.15</text>
+<text class="small ink" x="112" y="882">白ペイント： ε<tspan class="sb" dy="0.3em" font-size="0.72em">IR</tspan><tspan dy="-0.22em"> ≃ 0.90、α</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> ≃ 0.15</tspan></text>
 <text class="small muted" x="112" y="910">可視を80–90%反射するので（10.8c）は使えない</text>
-<text class="equation ink" x="43" y="956">放射のみの釣合い α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan>·q<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> = ε<tspan class="sb" dy="0.30em" font-size="0.72em">IR</tspan><tspan dy="-0.3em"></tspan> σT⁴</text>
-<text class="small ink" x="43" y="992">q<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> = 1000 W/m² のとき黒 364.42 K（91.3 ℃）</text>
+<text class="equation ink" x="43" y="956">放射のみの釣合い α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em">·q</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> = ε</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">IR</tspan><tspan dy="-0.22em"> σT⁴</tspan></text>
+<text class="small ink" x="43" y="992">q<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> = 1000 W/m² のとき黒 364.42 K（91.3 ℃）</tspan></text>
 <text class="small cool" x="43" y="1026">白 232.84 K（−40.3 ℃）まで下がる（理想化）</text>
-<text class="tiny muted" x="43" y="1068">α<tspan class="sb" dy="0.30em" font-size="0.72em">solar</tspan><tspan dy="-0.3em"></tspan> 0.15 は本書の範囲 0.1–0.2 の代表値。対流のある実際の屋根は §10.6 例題10.12</text>
+<text class="tiny muted" x="43" y="1068">α<tspan class="sb" dy="0.3em" font-size="0.72em">solar</tspan><tspan dy="-0.22em"> 0.15 は本書の範囲 0.1–0.2 の代表値。対流のある実際の屋根は §10.6 例題10.12</tspan></text>
 <text class="tiny muted" x="420" y="1138" text-anchor="middle">アプリ作成の独自模式図｜原著の図版・描画の転載なし</text>
 </svg>

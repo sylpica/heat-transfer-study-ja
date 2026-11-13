@@ -11,21 +11,21 @@
 <text x="36" y="104" class="small secondary">質量分率・モル分率・分圧・濃度・部分密度は相互に換算できる</text>
 <rect x="24" y="128" width="712" height="436" rx="18" class="panel"/>
 <text x="46" y="173" class="heading ink">乾燥空気の組成（例題11.1）</text>
-<text x="46" y="212" class="small secondary">質量分率 m<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>（残りは微量ガス 0.001 未満）</text>
-<text x="60" y="258" class="small ink">N<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="46" y="212" class="small secondary">質量分率 m<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em">（残りは微量ガス 0.001 未満）</tspan></text>
+<text x="60" y="258" class="small ink">N<tspan class="sb" dy="0.3em" font-size="0.72em">2</tspan></text>
 <rect id="bar-m-n2" x="170" y="232" width="422.912" height="30" class="a"/>
 <text x="604.9" y="258" class="small ink">0.7552</text>
-<text x="60" y="308" class="small ink">O<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="60" y="308" class="small ink">O<tspan class="sb" dy="0.3em" font-size="0.72em">2</tspan></text>
 <rect id="bar-m-o2" x="170" y="282" width="129.584" height="30" class="a"/>
 <text x="311.6" y="308" class="small ink">0.2314</text>
 <text x="60" y="358" class="small ink">Ar</text>
 <rect id="bar-m-ar" x="170" y="332" width="7.168" height="30" class="a"/>
 <text x="189.2" y="358" class="small ink">0.0128</text>
-<text x="46" y="404" class="small secondary">モル分率 x<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>（質量分率とモル質量から換算）</text>
-<text x="60" y="450" class="small ink">N<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="46" y="404" class="small secondary">モル分率 x<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em">（質量分率とモル質量から換算）</tspan></text>
+<text x="60" y="450" class="small ink">N<tspan class="sb" dy="0.3em" font-size="0.72em">2</tspan></text>
 <rect id="bar-x-n2" x="170" y="424" width="437.470" height="30" class="b"/>
 <text x="619.5" y="450" class="small ink">0.7812</text>
-<text x="60" y="500" class="small ink">O<tspan class="sb" dy="0.30em" font-size="0.72em">2</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="60" y="500" class="small ink">O<tspan class="sb" dy="0.3em" font-size="0.72em">2</tspan></text>
 <rect id="bar-x-o2" x="170" y="474" width="117.331" height="30" class="b"/>
 <text x="299.3" y="500" class="small ink">0.2095</text>
 <text x="60" y="550" class="small ink">Ar</text>
@@ -33,26 +33,26 @@
 <text x="187.2" y="550" class="small ink">0.0093</text>
 <rect x="24" y="584" width="712" height="336" rx="18" class="panel"/>
 <text x="46" y="631" class="heading ink">酸素だけを追う：x → p → c → ρ</text>
-<text x="46" y="680" class="small ink">M = 28.97 kg/kmol（式(11.8)：1/M = Σ m<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>/M<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>）</text>
-<text x="46" y="724" class="small ink">x<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> = m<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> M/M<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> = 0.2095（式(11.9)）</text>
-<text x="46" y="768" class="small ink">p<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> = x<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> p = 2.123×10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan> Pa（式(11.15)、p = 101325 Pa）</text>
-<text x="46" y="812" class="small ink">c<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> = p<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan>/(R°T) = 8.510 mol/m³（式(11.12)、T = 300 K）</text>
-<text x="46" y="856" class="small ink">ρ<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> = c<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> M<tspan class="sb" dy="0.30em" font-size="0.72em">O2</tspan><tspan dy="-0.3em"></tspan> = 0.2723 kg/m³（式(11.4)）</text>
-<text x="46" y="896" class="small secondary">R° = 8314.5 J/(kmol·K)。Dalton の法則 p = Σ p<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>（式(11.14)）</text>
+<text x="46" y="680" class="small ink">M = 28.97 kg/kmol（式(11.8)：1/M = Σ m<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em">/M</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em">）</tspan></text>
+<text x="46" y="724" class="small ink">x<tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> = m</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> M/M</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> = 0.2095（式(11.9)）</tspan></text>
+<text x="46" y="768" class="small ink">p<tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> = x</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> p = 2.123×10</tspan><tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.32em"> Pa（式(11.15)、p = 101325 Pa）</tspan></text>
+<text x="46" y="812" class="small ink">c<tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> = p</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em">/(R°T) = 8.510 mol/m³（式(11.12)、T = 300 K）</tspan></text>
+<text x="46" y="856" class="small ink">ρ<tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> = c</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> M</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">O2</tspan><tspan dy="-0.22em"> = 0.2723 kg/m³（式(11.4)）</tspan></text>
+<text x="46" y="896" class="small secondary">R° = 8314.5 J/(kmol·K)。Dalton の法則 p = Σ p<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em">（式(11.14)）</tspan></text>
 <rect x="24" y="940" width="712" height="452" rx="18" class="panel"/>
 <text x="46" y="987" class="heading ink">全流束 = 全体流の輸送 + 拡散</text>
 <rect x="70" y="1030" width="300" height="150" rx="6" class="solid"/>
 <path d="M92 1072 H330 M314 1059 L330 1072 L314 1085" class="arrow-ink"/>
 <text x="92" y="1052" class="small ink">全体流 n = ρv</text>
 <path d="M92 1118 H250 M234 1105 L250 1118 L234 1131" class="arrow-a"/>
-<text x="258" y="1126" class="small a">A の拡散 j<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="258" y="1126" class="small a">A の拡散 j<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan></text>
 <path d="M330 1158 H172 M188 1145 L172 1158 L188 1171" class="arrow-b"/>
-<text x="92" y="1150" class="small b">B の拡散 j<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="92" y="1150" class="small b">B の拡散 j<tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan></text>
 <text x="400" y="1052" class="small ink">質量基準（式(11.20)）</text>
-<text x="400" y="1096" class="equation ink">n<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = m<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> n + j<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan></text>
-<text x="400" y="1140" class="small ink">Σ j<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 0（式(11.21)）</text>
-<text x="400" y="1184" class="small ink">Σ n<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = n（式(11.18)）</text>
-<text x="46" y="1240" class="small ink">モル基準も同形：N<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = x<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> N + J<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan>、Σ J<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 0（式(11.24)(11.25)）</text>
+<text x="400" y="1096" class="equation ink">n<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = m</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> n + j</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan></text>
+<text x="400" y="1140" class="small ink">Σ j<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = 0（式(11.21)）</tspan></text>
+<text x="400" y="1184" class="small ink">Σ n<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = n（式(11.18)）</tspan></text>
+<text x="46" y="1240" class="small ink">モル基準も同形：N<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = x</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> N + J</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em">、Σ J</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = 0（式(11.24)(11.25)）</tspan></text>
 <text x="46" y="1284" class="small ink">質量平均速度 v は、前章までの流体速度 u と同じもの</text>
 <text x="46" y="1328" class="small secondary">拡散流束は平均速度に対する相対量。全流束と混同しない</text>
 <text x="46" y="1372" class="small secondary">反応がある表面では各成分の流束が量論で結ばれる（例題11.2）</text>

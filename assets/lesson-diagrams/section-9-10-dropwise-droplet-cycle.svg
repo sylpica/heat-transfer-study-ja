@@ -27,16 +27,16 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <path class="axis" d="M170 690 V826 H660 M649 818 L660 826 L649 834"/>
 <path id="rose-curve" class="graph" d="M 170.000 826.000 L 199.375 820.209 L 228.750 814.082 L 258.125 807.617 L 287.500 800.814 L 316.875 793.674 L 346.250 786.197 L 375.625 778.383 L 405.000 770.231 L 434.375 761.742 L 463.750 752.916 L 493.125 743.752 L 522.500 734.251 L 551.875 724.413 L 581.250 714.237 L 610.625 703.725 L 640.000 692.874"/>
 <circle id="rose-point" class="point" cx="405.000" cy="770.231" r="9"/>
-<text class="small ink" x="421" y="762">θ=4 K で q″ ≈ 6.56×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan> W/m²</text>
-<text x="52" y="700" class="micro ink">1.6×10<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan><tspan dy="0.45em"></tspan></text><text x="120" y="765" class="micro ink">0.8×10<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan><tspan dy="0.45em"></tspan></text><text x="140" y="831" class="micro ink">0</text>
+<text class="small ink" x="421" y="762">θ=4 K で q″ ≈ 6.56×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.32em"> W/m²</tspan></text>
+<text x="52" y="700" class="micro ink">1.6×10<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan></text><text x="120" y="765" class="micro ink">0.8×10<tspan class="spb" dy="-0.45em" font-size="0.72em">6</tspan></text><text x="140" y="831" class="micro ink">0</text>
 <text x="180" y="852" class="micro ink">θ=0</text><text x="610" y="852" class="micro ink">8 K</text>
-<text class="micro muted" x="43" y="900">q″[kW/m²] = T<tspan class="spb" dy="-0.45em" font-size="0.72em">0.8</tspan><tspan dy="0.45em"></tspan> (5θ + 0.3θ²)。純水蒸気・短い垂直面・接触角約90°、データは主に θ＜8 K。</text>
+<text class="micro muted" x="43" y="900">q″[kW/m²] = T<tspan class="spb" dy="-0.45em" font-size="0.72em">0.8</tspan><tspan dy="0.32em"> (5θ + 0.3θ²)。純水蒸気・短い垂直面・接触角約90°、データは主に θ＜8 K。</tspan></text>
 <rect class="panel" x="23" y="932" width="794" height="291" rx="18"/>
 <text class="section ink" x="43" y="973">③ 実効係数と被覆の連成（仮想例）</text>
-<text class="eq ink" x="43" y="1032">θ=4 K：実効 h ≈ 1.64×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan> W/(m²·K)</text>
-<text class="eq ink" x="43" y="1062">（微分勾配 ≈ 1.96×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan> とは別）</text>
-<text class="eq ink" x="43" y="1110">被覆 R″=2.00×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-6</tspan><tspan dy="0.45em"></tspan> m²·K/W では</text>
-<text class="eq ink" x="43" y="1140">表面 θ≈3.05 K、q″≈4.77×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan></text>
+<text class="eq ink" x="43" y="1032">θ=4 K：実効 h ≈ 1.64×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.32em"> W/(m²·K)</tspan></text>
+<text class="eq ink" x="43" y="1062">（微分勾配 ≈ 1.96×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.32em"> とは別）</tspan></text>
+<text class="eq ink" x="43" y="1110">被覆 R″=2.00×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-6</tspan><tspan dy="0.32em"> m²·K/W では</tspan></text>
+<text class="eq ink" x="43" y="1140">表面 θ≈3.05 K、q″≈4.77×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan></text>
 <text class="micro muted" x="43" y="1175">被覆の温度降下 ≈ 0.953 K と表面の θ の合計が全体の 4.00 K に閉じる。</text>
 <text class="micro muted" x="43" y="1201">促進処理の持続性は別問題。</text>
 

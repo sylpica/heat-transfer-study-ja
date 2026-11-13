@@ -23,19 +23,19 @@
 <text x="103" y="199" class="micro ink">高温の壁</text>
 <text x="231" y="199" class="micro ink">蒸気膜</text>
 <text x="461" y="199" class="micro ink">液体側</text>
-<text x="100" y="384" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> = 180 ℃</text>
-<text x="405" y="384" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">sat</tspan><tspan dy="-0.3em"></tspan> = 100 ℃</text>
+<text x="100" y="384" class="small ink">T<tspan class="sb" dy="0.3em" font-size="0.72em">w</tspan><tspan dy="-0.22em"> = 180 ℃</tspan></text>
+<text x="405" y="384" class="small ink">T<tspan class="sb" dy="0.3em" font-size="0.72em">sat</tspan><tspan dy="-0.22em"> = 100 ℃</tspan></text>
 <text x="44" y="421" class="micro muted">模式図：層幅・矢印は縮尺ではない。壁→液体側が熱の正方向。</text>
 <rect class="panel" x="22" y="463" width="816" height="299" rx="17"/>
 <text x="42" y="508" class="subhead ink">② 固定膜厚モデルの数値比較</text>
-<text x="43" y="549" class="small ink">k<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> = 0.030 W/(m·K)、A = 0.10 m²、ΔT = 80 K</text>
+<text x="43" y="549" class="small ink">k<tspan class="sb" dy="0.3em" font-size="0.72em">g</tspan><tspan dy="-0.22em"> = 0.030 W/(m·K)、A = 0.10 m²、ΔT = 80 K</tspan></text>
 <text x="43" y="595" class="small ink">蒸気膜厚 0.25 mm</text>
 <text x="42" y="629" class="value ink">q″ = 9,600 W/m²　｜　Q = 960 W</text>
 <text x="43" y="676" class="small ink">蒸気膜厚 0.50 mm（2倍）</text>
 <text x="42" y="711" class="value ink">q″ = 4,800 W/m²　｜　Q = 480 W</text>
-<text x="43" y="746" class="micro muted">面積当たり抵抗 R″<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> = δ<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan>/k<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan>。膜厚2倍で抵抗2倍。</text>
+<text x="43" y="746" class="micro muted">面積当たり抵抗 R″<tspan class="sb" dy="0.3em" font-size="0.72em">g</tspan><tspan dy="-0.22em"> = δ</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">g</tspan><tspan dy="-0.22em">/k</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">g</tspan><tspan dy="-0.22em">。膜厚2倍で抵抗2倍。</tspan></text>
 <rect class="panel" x="22" y="778" width="816" height="610" rx="17"/>
-<text x="42" y="821" class="subhead ink">③ モデル内の逆比例：q″ = k<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> ΔT / δ<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="42" y="821" class="subhead ink">③ モデル内の逆比例：q″ = k<tspan class="sb" dy="0.3em" font-size="0.72em">g</tspan><tspan dy="-0.22em"> ΔT / δ</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">g</tspan></text>
 <path class="axis" d="M170 900 V1118 H753 M158 915 L170 900 L182 915 M743 1107 L753 1118 L743 1129"/>
 <path class="gridline" d="M170 910 H745 M170 1014 H745 M170 1118 H745"/>
 <path id="film-flux-curve" class="curve" d="M170.000 910.000 L184.375 915.073 L198.750 919.905 L213.125 924.512 L227.500 928.909 L241.875 933.111 L256.250 937.130 L270.625 940.979 L285.000 944.667 L299.375 948.204 L313.750 951.600 L328.125 954.863 L342.500 958.000 L356.875 961.019 L371.250 963.926 L385.625 966.727 L400.000 969.429 L414.375 972.035 L428.750 974.552 L443.125 976.983 L457.500 979.333 L471.875 981.607 L486.250 983.806 L500.625 985.937 L515.000 988.000 L529.375 990.000 L543.750 991.939 L558.125 993.821 L572.500 995.647 L586.875 997.420 L601.250 999.143 L615.625 1000.817 L630.000 1002.444 L644.375 1004.027 L658.750 1005.568 L673.125 1007.067 L687.500 1008.526 L701.875 1009.948 L716.250 1011.333 L730.625 1012.684 L745.000 1014.000"/>
@@ -47,7 +47,7 @@
 <text x="170" y="1151" text-anchor="middle" class="micro ink">0.25</text>
 <text x="457" y="1151" text-anchor="middle" class="micro ink">0.375</text>
 <text x="745" y="1151" text-anchor="middle" class="micro ink">0.50</text>
-<text x="458" y="1181" text-anchor="middle" class="micro muted">蒸気膜の仮定厚さ δ<tspan class="sb" dy="0.30em" font-size="0.72em">g</tspan><tspan dy="-0.3em"></tspan> [mm]</text>
+<text x="458" y="1181" text-anchor="middle" class="micro muted">蒸気膜の仮定厚さ δ<tspan class="sb" dy="0.3em" font-size="0.72em">g</tspan><tspan dy="-0.22em"> [mm]</tspan></text>
 <text x="42" y="1225" class="micro muted">縦軸：伝導熱流束 q″ [W/m²]。測定値ではない。</text>
 <text x="42" y="1262" class="small ink">限界：この線は実際の膜沸騰の相関曲線ではない。</text>
 <text x="42" y="1298" class="micro muted">蒸気流、蒸発、放射、膜の形状変化、界面連成は除外。</text>

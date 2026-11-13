@@ -28,7 +28,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 
 <rect class="panel" x="23" y="401" width="794" height="514" rx="18"/>
 <text class="section ink" x="43" y="443">② 深さごとの温度分布：3時刻で比較</text>
-<text class="micro muted" x="43" y="477">T = Ti + (Ts−Ti) erfc[x/(2√(αt))] ／ α=1×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-6</tspan><tspan dy="0.45em"></tspan> m²/s</text>
+<text class="micro muted" x="43" y="477">T = Ti + (Ts−Ti) erfc[x/(2√(αt))] ／ α=1×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-6</tspan><tspan dy="0.32em"> m²/s</tspan></text>
 <path class="early profile" d="M66 506 H102"/><text class="micro ink" x="110" y="514">25秒</text>
 <path class="reference profile" d="M219 506 H255"/><text class="micro ink" x="263" y="514">100秒</text>
 <path class="late profile" d="M395 506 H431"/><text class="micro ink" x="439" y="514">400秒</text>
@@ -55,9 +55,9 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <rect class="panel" x="23" y="932" width="794" height="290" rx="18"/>
 <text class="section ink" x="43" y="974">③ 熱流束と累積熱量は違う</text>
 <text class="micro ink" x="43" y="1011">η = x/(2√αt) = 0.5 ／ √(αt) = 0.010 m</text>
-<text class="eq ink" x="43" y="1051">q<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan>″(0,100 s) = k(Ts−Ti)/√(παt)</text>
+<text class="eq ink" x="43" y="1051">q<tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em">″(0,100 s) = k(Ts−Ti)/√(παt)</tspan></text>
 <text class="eq ink" x="43" y="1085">= +6,770 W/m²（内部への +x が正）</text>
-<text class="eq ink" x="43" y="1126">E/A = ∫q<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan>″ dt = 2q<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan>″(100 s)×100 s</text>
+<text class="eq ink" x="43" y="1126">E/A = ∫q<tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em">″ dt = 2q</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em">″(100 s)×100 s</tspan></text>
 <text class="eq ink" x="43" y="1160">= +1.354 MJ/m²（積分値）</text>
 <text class="micro muted" x="43" y="1196">t→0+の流束発散は理想化による。実測の無限大ではない。</text>
 <text class="micro muted" x="420" y="1259" text-anchor="middle">独自作図｜有限板・有限h・放射・相変化への流用不可</text>

@@ -21,13 +21,13 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <path class="flow" d="M240 249 V217 M229 229 L240 217 L251 229 M365 249 V217 M354 229 L365 217 L376 229 M490 249 V217 M479 229 L490 217 L501 229"/>
 <path class="flow" d="M240 310 V342 M229 330 L240 342 L251 330 M365 310 V342 M354 330 L365 342 L376 330 M490 310 V342 M479 330 L490 342 L501 330"/>
 <path class="axis" d="M661 250 V311 M668 250 V311 M675 250 V311"/>
-<text x="105" y="389" class="small ink">基部 T<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> = 80 ℃</text>
+<text x="105" y="389" class="small ink">基部 T<tspan class="sb" dy="0.3em" font-size="0.72em">b</tspan><tspan dy="-0.22em"> = 80 ℃</tspan></text>
 <text x="478" y="389" class="small ink">先端：断熱（dT/dx = 0）</text>
 <text x="181" y="422" class="micro muted">横方向 x：0 → L = 0.100 m ／ 周囲 T∞ = 20 ℃</text>
 
 <rect class="panel" x="23" y="464" width="794" height="451" rx="18"/>
 <text x="44" y="508" class="section ink">② 温度差の比は先端へ向かって低下</text>
-<text x="44" y="533" class="micro muted">θ(x)/θ<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> = cosh[m(L−x)]/cosh(mL)</text>
+<text x="44" y="533" class="micro muted">θ(x)/θ<tspan class="sb" dy="0.3em" font-size="0.72em">b</tspan><tspan dy="-0.22em"> = cosh[m(L−x)]/cosh(mL)</tspan></text>
 <path class="axis" d="M145 540 V800 H718 M708 792 L718 800 L708 808"/>
 <path class="gridline" d="M145 542 H695 M145 645.2 H695 M145 748.4 H695 M145 800 H695"/>
 <path id="fin-temperature-profile" class="curve" d="M145.000 542.000 L158.700 552.947 L172.400 563.575 L186.100 573.887 L199.800 583.887 L213.500 593.577 L227.200 602.960 L240.900 612.041 L254.600 620.820 L268.300 629.302 L282.000 637.489 L295.700 645.383 L309.400 652.986 L323.100 660.302 L336.800 667.333 L350.500 674.080 L364.200 680.545 L377.900 686.732 L391.600 692.641 L405.300 698.275 L419.000 703.635 L432.700 708.723 L446.400 713.541 L460.100 718.090 L473.800 722.371 L487.500 726.387 L501.200 730.137 L514.900 733.624 L528.600 736.848 L542.300 739.810 L556.000 742.512 L569.700 744.954 L583.400 747.137 L597.100 749.061 L610.800 750.728 L624.500 752.137 L638.200 753.289 L651.900 754.185 L665.600 754.825 L679.300 755.209 L693.000 755.337"/>
@@ -45,13 +45,13 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 
 <rect class="panel" x="23" y="933" width="794" height="361" rx="18"/>
 <text x="44" y="974" class="section ink">③ 何を基準に比べるかが違う</text>
-<text x="44" y="1009" class="small ink">基部放熱 q<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> ≈ 5.166 W</text>
+<text x="44" y="1009" class="small ink">基部放熱 q<tspan class="sb" dy="0.3em" font-size="0.72em">b</tspan><tspan dy="-0.22em"> ≈ 5.166 W</tspan></text>
 <text x="44" y="1042" class="small muted">側面が全て基部温度なら 6.000 W（理想上限）</text>
 <rect id="ideal-side-bar" class="barIdeal" x="45" y="1060" width="610" height="18" rx="3"/>
 <rect id="real-side-bar" class="barActual" x="45" y="1082" width="525.244875" height="18" rx="3"/>
-<text x="44" y="1133" class="equation ink">効率 η<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 5.166/6.000 ≈ 86.1%</text>
-<text x="44" y="1168" class="small muted">フィンなし：基部断面 A<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> からの対流は 0.150 W</text>
-<text x="44" y="1201" class="equation ink">有効度 ε<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 5.166/0.150 ≈ 34.44</text>
+<text x="44" y="1133" class="equation ink">効率 η<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> = 5.166/6.000 ≈ 86.1%</tspan></text>
+<text x="44" y="1168" class="small muted">フィンなし：基部断面 A<tspan class="sb" dy="0.3em" font-size="0.72em">c</tspan><tspan dy="-0.22em"> からの対流は 0.150 W</tspan></text>
+<text x="44" y="1201" class="equation ink">有効度 ε<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> = 5.166/0.150 ≈ 34.44</tspan></text>
 <text x="44" y="1265" class="micro muted">一定 h・k、定常、放射・接触抵抗・先端対流なし。</text>
 <text x="420" y="1335" text-anchor="middle" class="micro muted">アプリ独自作図｜原著図版の転載・トレース・逐文訳なし</text>
 </svg>

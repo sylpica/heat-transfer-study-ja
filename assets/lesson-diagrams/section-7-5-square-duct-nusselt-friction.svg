@@ -11,14 +11,14 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 </style>
 <rect class="bg" width="840" height="1210"/>
 <text x="30" y="59" class="title ink">§7.5 正方形ダクトの Nu と摩擦</text>
-<text x="31" y="100" class="small muted">D<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> が同じでも、層流の Nu と f<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> Re は断面と境界条件で決まる</text>
+<text x="31" y="100" class="small muted">D<tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em"> が同じでも、層流の Nu と f</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> Re は断面と境界条件で決まる</tspan></text>
 <rect class="panel" x="24" y="122" width="792" height="330" rx="18"/>
 <text x="44" y="164" class="section ink">① 断面と幾何</text>
 <rect class="duct" x="330" y="196" width="180" height="180"/>
 <text x="420" y="186" text-anchor="middle" class="small ink">a = 0.010 m</text>
 <text x="316" y="294" text-anchor="end" class="small ink">a</text>
-<text x="45" y="404" class="small ink">A<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> = a² = 1.0×10⁻⁴ m²、P<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> = 4a = 0.040 m</text>
-<text x="45" y="436" class="small ink">D<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> = 4A<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan> / P<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan> = 0.010 m、Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan>h = 1000（層流）</text>
+<text x="45" y="404" class="small ink">A<tspan class="sb" dy="0.3em" font-size="0.72em">c</tspan><tspan dy="-0.22em"> = a² = 1.0×10⁻⁴ m²、P</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">w</tspan><tspan dy="-0.22em"> = 4a = 0.040 m</tspan></text>
+<text x="45" y="436" class="small ink">D<tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em"> = 4A</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">c</tspan><tspan dy="-0.22em"> / P</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">w</tspan><tspan dy="-0.22em"> = 0.010 m、Re</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em">h = 1000（層流）</tspan></text>
 <rect class="panel" x="24" y="470" width="792" height="330" rx="18"/>
 <text x="44" y="514" class="section ink">② 十分発達層流の Nu（原書 Table 7.4）</text>
 <text x="45" y="570" class="small ink">正方形・壁温一定</text>
@@ -30,19 +30,19 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="45" y="710" class="small ink">円管・壁温一定</text>
 <rect id="nu-ci-tw" class="ci" x="330" y="688" width="274.5" height="28" rx="3"/>
 <text x="616.5" y="710" class="small ink">3.66</text>
-<text x="45" y="756" class="small ink">h = Nu k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> / D<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan>：正方形・壁温一定では 178.8 W/(m²·K)</text>
+<text x="45" y="756" class="small ink">h = Nu k<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> / D</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em">：正方形・壁温一定では 178.8 W/(m²·K)</tspan></text>
 <text x="45" y="786" class="micro muted">熱流束条件の 3.61 は「単位長さ入熱一定・周方向壁温一様」の値。円管なら h = 219.6。</text>
 <rect class="panel" x="24" y="818" width="792" height="310" rx="18"/>
 <text x="44" y="862" class="section ink">③ 評価断面の熱流と摩擦</text>
-<text x="45" y="904" class="small ink">評価断面（T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> − T<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan> = 20 K）：q̄″ = h ΔT = 3576 W/m²、q′ = 143.04 W/m</text>
+<text x="45" y="904" class="small ink">評価断面（T<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> − T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">b</tspan><tspan dy="-0.22em"> = 20 K）：q̄″ = h ΔT = 3576 W/m²、q′ = 143.04 W/m</tspan></text>
 <text x="45" y="936" class="micro muted">q′ は評価断面の局所値。全長へそのまま掛けない。</text>
-<text x="45" y="978" class="small ink">摩擦の定数 f<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> Re（Darcy、十分発達層流）</text>
+<text x="45" y="978" class="small ink">摩擦の定数 f<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> Re（Darcy、十分発達層流）</tspan></text>
 <text x="45" y="1012" class="small ink">正方形</text>
 <rect id="fre-sq" class="fr" x="330" y="990" width="227.64" height="26" rx="3"/>
 <text x="569.64" y="1012" class="small ink">56.91</text>
 <text x="45" y="1060" class="small ink">円管</text>
 <rect id="fre-ci" class="fr" x="330" y="1038" width="256" height="26" rx="3"/>
 <text x="598" y="1060" class="small ink">64</text>
-<text x="45" y="1100" class="small ink">Δp<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>（発達区間 L = 5.0 m）= 142.3 Pa（円管の定数では 160.0 Pa）</text>
+<text x="45" y="1100" class="small ink">Δp<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em">（発達区間 L = 5.0 m）= 142.3 Pa（円管の定数では 160.0 Pa）</tspan></text>
 <text x="420" y="1168" text-anchor="middle" class="micro muted">アプリ作成の独自模式図｜原著図版の転載・翻訳なし</text>
 </svg>

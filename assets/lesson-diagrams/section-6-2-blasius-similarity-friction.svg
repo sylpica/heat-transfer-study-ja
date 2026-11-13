@@ -28,20 +28,20 @@
 <path class="dash" d="M664.80 200 V470"/>
 <path id="blasius-profile" class="line1" d="M150.00 470.00 L193.16 458.30 L236.26 446.60 L279.13 434.90 L321.49 423.20 L362.97 411.50 L403.13 399.80 L441.47 388.10 L477.48 376.40 L510.67 364.70 L540.65 353.00 L567.13 341.30 L589.94 329.60 L609.11 317.90 L624.78 306.21 L637.24 294.51 L646.87 282.81 L654.09 271.11 L659.35 259.41 L663.06 247.71 L665.60 236.01 L667.29 224.31 L668.38 212.61 L669.06 200.91 L669.47 189.21"/>
 <path class="wall" d="M150 470 H700"/>
-<text class="small accent" x="812" y="224" text-anchor="end">δ<tspan class="sb" dy="0.30em" font-size="0.72em">99</tspan><tspan dy="-0.3em"></tspan> ≈ 9.68 mm（u = 0.99U の位置）</text>
+<text class="small accent" x="812" y="224" text-anchor="end">δ<tspan class="sb" dy="0.3em" font-size="0.72em">99</tspan><tspan dy="-0.22em"> ≈ 9.68 mm（u = 0.99U の位置）</tspan></text>
 <text class="small ink" x="44" y="500">壁：u = 0（無滑り）</text>
 <text class="small muted" x="560" y="500">横軸 u/U →</text>
 <rect class="panel" x="23" y="562" width="774" height="248" rx="19"/>
-<text class="section ink" x="44" y="606">② 層厚 δ<tspan class="sb" dy="0.30em" font-size="0.72em">99</tspan><tspan dy="-0.3em"></tspan>(x) = 5x/√Re<tspan class="sb" dy="0.30em" font-size="0.72em">x</tspan><tspan dy="-0.3em"></tspan> ∝ √x（原書 6.2）</text>
+<text class="section ink" x="44" y="606">② 層厚 δ<tspan class="sb" dy="0.3em" font-size="0.72em">99</tspan><tspan dy="-0.22em">(x) = 5x/√Re</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">x</tspan><tspan dy="-0.22em"> ∝ √x（原書 6.2）</tspan></text>
 <path id="delta-growth" class="line2" d="M150.00 740.00 L176.00 712.94 L202.00 701.73 L228.00 693.12 L254.00 685.87 L280.00 679.48 L306.00 673.71 L332.00 668.40 L358.00 663.45 L384.00 658.81 L410.00 654.42 L436.00 650.24 L462.00 646.25 L488.00 642.42 L514.00 638.74 L540.00 635.18 L566.00 631.75 L592.00 628.42 L618.00 625.18 L644.00 622.03 L670.00 618.97"/>
 <circle class="accent2" cx="670" cy="618.97" r="7"/>
 <text class="small ink" x="505" y="668">x = 0.50 m で 9.68 mm</text>
 <text class="micro muted" x="44" y="782">縦軸は δ を 0〜12 mm に拡大表示。前縁 x→0 の発散は近似の産物</text>
 <rect class="panel" x="23" y="828" width="774" height="252" rx="19"/>
 <text class="section ink" x="44" y="872">③ 摩擦（原書 6.32〜6.34）</text>
-<text class="result ink" x="43" y="916">Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> = 6.67×10<tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.45em"></tspan>、C<tspan class="sb" dy="0.30em" font-size="0.72em">f,L</tspan><tspan dy="-0.3em"></tspan> = 0.664/√Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> ≈ 0.002572</text>
-<text class="result ink" x="43" y="954">τ<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>(L) ≈ 0.00617 Pa、平均 C̄<tspan class="sb" dy="0.30em" font-size="0.72em">f,L</tspan><tspan dy="-0.3em"></tspan> = 1.328/√Re<tspan class="sb" dy="0.30em" font-size="0.72em">L</tspan><tspan dy="-0.3em"></tspan> ≈ 0.005143</text>
-<text class="result ink" x="43" y="992">片面の摩擦抗力 D<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> ≈ 1.23×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-3</tspan><tspan dy="0.45em"></tspan> N（平均は末端局所値の2倍）</text>
-<text class="micro muted" x="43" y="1036">圧力抵抗・両面・前縁形状の抵抗は含まない。遷移 Re≈5×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.45em"></tspan> は目安</text>
+<text class="result ink" x="43" y="916">Re<tspan class="sb" dy="0.3em" font-size="0.72em">L</tspan><tspan dy="-0.22em"> = 6.67×10</tspan><tspan class="spb" dy="-0.45em" font-size="0.72em">4</tspan><tspan dy="0.32em">、C</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">f,L</tspan><tspan dy="-0.22em"> = 0.664/√Re</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">L</tspan><tspan dy="-0.22em"> ≈ 0.002572</tspan></text>
+<text class="result ink" x="43" y="954">τ<tspan class="sb" dy="0.3em" font-size="0.72em">w</tspan><tspan dy="-0.22em">(L) ≈ 0.00617 Pa、平均 C̄</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">f,L</tspan><tspan dy="-0.22em"> = 1.328/√Re</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">L</tspan><tspan dy="-0.22em"> ≈ 0.005143</tspan></text>
+<text class="result ink" x="43" y="992">片面の摩擦抗力 D<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> ≈ 1.23×10</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">-3</tspan><tspan dy="0.32em"> N（平均は末端局所値の2倍）</tspan></text>
+<text class="micro muted" x="43" y="1036">圧力抵抗・両面・前縁形状の抵抗は含まない。遷移 Re≈5×10<tspan class="spb" dy="-0.45em" font-size="0.72em">5</tspan><tspan dy="0.32em"> は目安</tspan></text>
 <text class="micro muted" x="410" y="1148" text-anchor="middle">アプリ作成の独自模式図｜非実寸・原著図版の転載なし</text>
 </svg>

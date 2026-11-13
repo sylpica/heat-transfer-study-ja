@@ -28,16 +28,16 @@
 
 <rect class="panel" x="23" y="530" width="754" height="310" rx="18"/>
 <text x="44" y="573" class="section ink">② 面積計算は同じ式で行う</text>
-<text x="44" y="613" class="eq ink">Q = U × A × F × ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">lm</tspan><tspan dy="-0.3em"></tspan></text>
-<text x="44" y="653" class="eq ink">A = Q / (U × F × ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">lm</tspan><tspan dy="-0.3em"></tspan>)</text>
-<text x="44" y="700" class="small ink">固定値：Q = 12,000 W、F = 0.80、ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">lm</tspan><tspan dy="-0.3em"></tspan> = 25 K</text>
+<text x="44" y="613" class="eq ink">Q = U × A × F × ΔT<tspan class="sb" dy="0.3em" font-size="0.72em">lm</tspan></text>
+<text x="44" y="653" class="eq ink">A = Q / (U × F × ΔT<tspan class="sb" dy="0.3em" font-size="0.72em">lm</tspan><tspan dy="-0.22em">)</tspan></text>
+<text x="44" y="700" class="small ink">固定値：Q = 12,000 W、F = 0.80、ΔT<tspan class="sb" dy="0.3em" font-size="0.72em">lm</tspan><tspan dy="-0.22em"> = 25 K</tspan></text>
 <text x="44" y="741" class="small clean">基準：12,000 / (300 × 0.80 × 25) = 2.00 m²</text>
 <text x="44" y="780" class="small reduced">U半減：12,000 / (150 × 0.80 × 25) = 4.00 m²</text>
-<text x="44" y="820" class="small muted">※ FとΔT<tspan class="sb" dy="0.30em" font-size="0.72em">lm</tspan><tspan dy="-0.3em"></tspan>が同一という仮想比較。実機では再評価する。</text>
+<text x="44" y="820" class="small muted">※ FとΔT<tspan class="sb" dy="0.3em" font-size="0.72em">lm</tspan><tspan dy="-0.22em">が同一という仮想比較。実機では再評価する。</tspan></text>
 
 <rect class="panel" x="23" y="858" width="754" height="272" rx="18"/>
 <text x="44" y="900" class="section ink">③ 理論最大熱交換量とも比較</text>
-<text x="44" y="944" class="small ink">Q<tspan class="sb" dy="0.30em" font-size="0.72em">max</tspan><tspan dy="-0.3em"></tspan> = C<tspan class="sb" dy="0.30em" font-size="0.72em">min</tspan><tspan dy="-0.3em"></tspan> × ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">in</tspan><tspan dy="-0.3em"></tspan> = 1,000 × 30 = 30 kW</text>
+<text x="44" y="944" class="small ink">Q<tspan class="sb" dy="0.3em" font-size="0.72em">max</tspan><tspan dy="-0.22em"> = C</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">min</tspan><tspan dy="-0.22em"> × ΔT</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">in</tspan><tspan dy="-0.22em"> = 1,000 × 30 = 30 kW</tspan></text>
 <rect class="outline" x="44" y="976" width="680" height="45" rx="7"/>
 <rect id="required-fraction" class="quota" x="44" y="976" width="272" height="45" rx="7"/>
 <text x="180" y="1006" text-anchor="middle" class="small ink">要求 12 kW</text>

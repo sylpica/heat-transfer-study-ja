@@ -37,10 +37,10 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 
 <rect class="panel" x="22" y="616" width="856" height="261" rx="18"/>
 <text class="section ink" x="43" y="659">② 面積で積分すると「1秒当たりのエネルギー」</text>
-<text class="small ink" x="44" y="702">Q̇<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> = ∫ q″(x) b dx = 0.50 × 200 = 100 W</text>
-<text class="small muted" x="44" y="738">q″<tspan class="sb" dy="0.30em" font-size="0.72em">avg</tspan><tspan dy="-0.3em"></tspan> = Q̇<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> / A = 200 W/m²（最大300とは違う）</text>
+<text class="small ink" x="44" y="702">Q̇<tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> = ∫ q″(x) b dx = 0.50 × 200 = 100 W</tspan></text>
+<text class="small muted" x="44" y="738">q″<tspan class="sb" dy="0.3em" font-size="0.72em">avg</tspan><tspan dy="-0.22em"> = Q̇</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> / A = 200 W/m²（最大300とは違う）</tspan></text>
 <path class="underline" d="M43 769 H827"/>
-<text class="value ink" x="44" y="813">熱移動率　Q̇<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> = 100 W</text>
+<text class="value ink" x="44" y="813">熱移動率　Q̇<tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> = 100 W</tspan></text>
 <text class="tiny muted" x="44" y="849">同じ向きの局所流束を面積積分。一般には q″·n を積分。</text>
 
 <rect class="panel" x="22" y="895" width="856" height="234" rx="18"/>
@@ -50,8 +50,8 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <text class="small white" x="307" y="1003" text-anchor="middle">一定100 W × 20 s</text>
 <text class="small white" x="307" y="1033" text-anchor="middle">時間積分 = 2,000 J</text>
 <text class="tiny muted" x="575" y="1003">時間 0–20 s</text>
-<text class="tiny muted" x="575" y="1033">Q<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> = ∫Q̇ dt</text>
-<text class="value ink" x="44" y="1096">移動熱量　Q<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> = 2,000 J</text>
+<text class="tiny muted" x="575" y="1033">Q<tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> = ∫Q̇ dt</tspan></text>
+<text class="value ink" x="44" y="1096">移動熱量　Q<tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> = 2,000 J</tspan></text>
 <rect class="panel" x="22" y="1144" width="856" height="73" rx="12"/>
 <text class="small ink" x="40" y="1175">閉じた系・仕事なし・他の流出入なし：</text>
 <text class="small note" x="40" y="1204">ΔU = −2,000 J（内部エネルギーUは状態量）</text>

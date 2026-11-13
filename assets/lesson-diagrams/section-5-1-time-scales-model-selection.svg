@@ -29,11 +29,11 @@
   <text x="420" y="224" text-anchor="middle" class="small ink">初期 100℃</text>
   <text x="420" y="252" text-anchor="middle" class="small ink">一様</text>
   <text x="420" y="296" text-anchor="middle" class="small secondary">平板（両面対流）・半厚さ a = 0.010 m</text>
-  <text x="90" y="332" class="small ink">内部拡散 a²/α = 100 s</text><rect id="bar-diffusion" x="90" y="338" width="330.00" height="15" class="bar-cold"/><text x="90" y="368" class="small ink">評価時刻 t = 200 s</text><rect id="bar-eval" x="90" y="374" width="379.67" height="15" class="bar-later"/><text x="90" y="404" class="small ink">外部交換 τ<tspan class="sb" dy="0.30em" font-size="0.72em">ext</tspan><tspan dy="-0.3em"></tspan> = 2000 s</text><rect id="bar-external" x="90" y="410" width="544.67" height="15" class="bar-hot"/>
+  <text x="90" y="332" class="small ink">内部拡散 a²/α = 100 s</text><rect id="bar-diffusion" x="90" y="338" width="330.00" height="15" class="bar-cold"/><text x="90" y="368" class="small ink">評価時刻 t = 200 s</text><rect id="bar-eval" x="90" y="374" width="379.67" height="15" class="bar-later"/><text x="90" y="404" class="small ink">外部交換 τ<tspan class="sb" dy="0.3em" font-size="0.72em">ext</tspan><tspan dy="-0.22em"> = 2000 s</tspan></text><rect id="bar-external" x="90" y="410" width="544.67" height="15" class="bar-hot"/>
   <path class="axis" d="M90 440 H756"/>
   <path class="axis" d="M90.00 440 V452"/><text x="90.00" y="474" class="small secondary" text-anchor="middle">1</text><path class="axis" d="M255.00 440 V452"/><text x="255.00" y="474" class="small secondary" text-anchor="middle">10</text><path class="axis" d="M420.00 440 V452"/><text x="420.00" y="474" class="small secondary" text-anchor="middle">100</text><path class="axis" d="M585.00 440 V452"/><text x="585.00" y="474" class="small secondary" text-anchor="middle">1000</text><path class="axis" d="M750.00 440 V452"/><text x="750.00" y="474" class="small secondary" text-anchor="middle">10000</text><text x="790" y="474" class="small secondary">s</text>
   <rect x="24" y="500" width="792" height="430" rx="19" class="panel"/>
-  <text x="48" y="543" class="section ink">② 集中モデルの応答 Θ = exp(−t/τ<tspan class="sb" dy="0.30em" font-size="0.72em">ext</tspan><tspan dy="-0.3em"></tspan>)</text>
+  <text x="48" y="543" class="section ink">② 集中モデルの応答 Θ = exp(−t/τ<tspan class="sb" dy="0.3em" font-size="0.72em">ext</tspan><tspan dy="-0.22em">)</tspan></text>
   <path class="quarter" d="M150 575 H190"/><text x="199" y="582" class="small ink">Θ = (T − 20)/80</text>
   <path class="guide" d="M150 720 H790 M150 590 H790"/>
   <path class="axis" d="M137 570 V852 H796 M783 844 L796 852 L783 860"/>
@@ -49,7 +49,7 @@
   <text x="470" y="885" text-anchor="middle" class="small ink">1000</text>
   <text x="630" y="885" text-anchor="middle" class="small ink">1500</text>
   <text x="790" y="885" text-anchor="middle" class="small ink">2000</text>
-  <text x="470" y="916" text-anchor="middle" class="small secondary">時間 t [s]（τ<tspan class="sb" dy="0.30em" font-size="0.72em">ext</tspan><tspan dy="-0.3em"></tspan> = 2000 s まで）</text>
+  <text x="470" y="916" text-anchor="middle" class="small secondary">時間 t [s]（τ<tspan class="sb" dy="0.3em" font-size="0.72em">ext</tspan><tspan dy="-0.22em"> = 2000 s まで）</tspan></text>
   <rect x="24" y="948" width="792" height="210" rx="19" class="panel"/>
   <text x="48" y="991" class="section ink">③ モデル選択の目安</text>
   <text x="48" y="1032" class="small ink">Bi ≲ 0.1 が目安 → 集中モデル（§5.2）。本例は Bi = 0.050</text>
@@ -57,8 +57,8 @@
   <text x="48" y="1108" class="small ink">短時間で片側だけ変化 → 半無限固体（§5.6）</text>
   <text x="48" y="1146" class="small ink">二方向以上から変化 → 積解（§5.8）</text>
   <rect x="24" y="1176" width="792" height="120" rx="19" class="panel"/>
-  <text x="48" y="1216" class="small ink">α = k/(ρc<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan>) = 1.0×10⁻⁶ m²/s</text>
-  <text x="48" y="1253" class="small ink">t<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = a²/α = 100 s ｜ τ<tspan class="sb" dy="0.30em" font-size="0.72em">ext</tspan><tspan dy="-0.3em"></tspan> = ρc<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan> a/h = 2000 s</text>
-  <text x="48" y="1290" class="small ink">Bi = ha/k = 0.050 ｜ Fo(200 s) = 2.0 ｜ t/τ<tspan class="sb" dy="0.30em" font-size="0.72em">ext</tspan><tspan dy="-0.3em"></tspan> = 0.10</text>
+  <text x="48" y="1216" class="small ink">α = k/(ρc<tspan class="sb" dy="0.3em" font-size="0.72em">p</tspan><tspan dy="-0.22em">) = 1.0×10⁻⁶ m²/s</tspan></text>
+  <text x="48" y="1253" class="small ink">t<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> = a²/α = 100 s ｜ τ</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">ext</tspan><tspan dy="-0.22em"> = ρc</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">p</tspan><tspan dy="-0.22em"> a/h = 2000 s</tspan></text>
+  <text x="48" y="1290" class="small ink">Bi = ha/k = 0.050 ｜ Fo(200 s) = 2.0 ｜ t/τ<tspan class="sb" dy="0.3em" font-size="0.72em">ext</tspan><tspan dy="-0.22em"> = 0.10</tspan></text>
   <text x="420" y="1330" text-anchor="middle" class="small secondary">アプリ作成の独自図・原書図版の転載ではない</text>
 </svg>

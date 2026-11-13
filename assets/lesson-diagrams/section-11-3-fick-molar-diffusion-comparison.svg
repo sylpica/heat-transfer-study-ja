@@ -15,14 +15,14 @@
 <path d="M189 245 H572 M555 234 L572 245 L555 256" class="arrow-a"/>
 <text x="117" y="229" text-anchor="middle" class="small ink">x=0</text>
 <text x="644" y="229" text-anchor="middle" class="small ink">x=L</text>
-<text x="117" y="258" text-anchor="middle" class="small ink">y<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>=0.20</text>
-<text x="644" y="258" text-anchor="middle" class="small ink">y<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>=0.05</text>
+<text x="117" y="258" text-anchor="middle" class="small ink">y<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em">=0.20</tspan></text>
+<text x="644" y="258" text-anchor="middle" class="small ink">y<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em">=0.05</tspan></text>
 <text x="380" y="316" text-anchor="middle" class="small ink">厚さ L=0.010 m、Aの高濃度側 → 低濃度側</text>
-<text x="380" y="345" text-anchor="middle" class="small secondary">T=300 K、P=101325 Pa、D<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan>=2.0×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.45em"></tspan> m²/s</text>
+<text x="380" y="345" text-anchor="middle" class="small secondary">T=300 K、P=101325 Pa、D<tspan class="sb" dy="0.3em" font-size="0.72em">AB</tspan><tspan dy="-0.22em">=2.0×10</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">-5</tspan><tspan dy="0.32em"> m²/s</tspan></text>
 
 <rect x="24" y="384" width="712" height="347" rx="18" class="panel"/>
-<text x="45" y="431" class="heading ink">① 等モル相互拡散：N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> + N<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> = 0</text>
-<text x="60" y="465" class="small secondary">y<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="45" y="431" class="heading ink">① 等モル相互拡散：N<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> + N</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan><tspan dy="-0.22em"> = 0</tspan></text>
+<text x="60" y="465" class="small secondary">y<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan></text>
 <path d="M120 468 V605 H365" class="axis" fill="none"/>
 <path d="M120 472 H352 M120 587 H352" class="guide"/>
 <polyline id="equimolar-profile" points="120.000,472.000 131.600,477.750 143.200,483.500 154.800,489.250 166.400,495.000 178.000,500.750 189.600,506.500 201.200,512.250 212.800,518.000 224.400,523.750 236.000,529.500 247.600,535.250 259.200,541.000 270.800,546.750 282.400,552.500 294.000,558.250 305.600,564.000 317.200,569.750 328.800,575.500 340.400,581.250 352.000,587.000" class="plot-a"/>
@@ -34,12 +34,12 @@
 <path d="M425 513 H680 M664 500 L680 513 L664 526" class="arrow-a"/>
 <text x="418" y="565" class="small b">Bの全流束：左向き</text>
 <path d="M679 587 H424 M440 574 L424 587 L440 600" class="arrow-b"/>
-<text x="418" y="645" class="small ink">N<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> = −N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan></text>
-<text x="44" y="702" class="equation ink">N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = −N<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> = +0.01219 mol/(m²·s)</text>
+<text x="418" y="645" class="small ink">N<tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan><tspan dy="-0.22em"> = −N</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan></text>
+<text x="44" y="702" class="equation ink">N<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> = −N</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan><tspan dy="-0.22em"> = +0.01219 mol/(m²·s)</tspan></text>
 
 <rect x="24" y="750" width="712" height="349" rx="18" class="panel"/>
-<text x="45" y="797" class="heading ink">② 成分Bが停滞：N<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> = 0</text>
-<text x="60" y="823" class="small secondary">y<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="45" y="797" class="heading ink">② 成分Bが停滞：N<tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan><tspan dy="-0.22em"> = 0</tspan></text>
+<text x="60" y="823" class="small secondary">y<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan></text>
 <path d="M120 824 V961 H365" class="axis" fill="none"/>
 <path d="M120 828 H352 M120 943 H352" class="guide"/>
 <polyline id="stagnant-b-profile" points="120.000,828.000 131.600,833.293 143.200,838.631 154.800,844.016 166.400,849.447 178.000,854.925 189.600,860.450 201.200,866.023 212.800,871.643 224.400,877.313 236.000,883.031 247.600,888.799 259.200,894.616 270.800,900.484 282.400,906.402 294.000,912.372 305.600,918.392 317.200,924.465 328.800,930.591 340.400,936.769 352.000,943.000" class="plot-a"/>
@@ -50,18 +50,18 @@
 <text x="418" y="851" class="small a">Aの全流束：右向き</text>
 <path d="M425 872 H680 M664 859 L680 872 L664 885" class="arrow-a"/>
 <text x="418" y="924" class="small b">Bの全流束：ゼロ</text>
-<text x="418" y="963" class="small ink">N<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> = 0</text>
-<text x="418" y="1006" class="small secondary">J<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> は位置で変化</text>
-<text x="44" y="1071" class="equation ink">N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = +0.01396 mol/(m²·s)</text>
+<text x="418" y="963" class="small ink">N<tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan><tspan dy="-0.22em"> = 0</tspan></text>
+<text x="418" y="1006" class="small secondary">J<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> は位置で変化</tspan></text>
+<text x="44" y="1071" class="equation ink">N<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> = +0.01396 mol/(m²·s)</tspan></text>
 
 <rect x="24" y="1118" width="712" height="326" rx="18" class="panel"/>
 <text x="44" y="1163" class="heading ink">③ 同じ境界条件で計算すると</text>
 <text x="44" y="1207" class="small ink">c = P/(RT) = 40.62 mol/m³</text>
-<text x="44" y="1244" class="small ink">cD<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan>/L = 0.08124 mol/(m²·s)</text>
-<text x="44" y="1281" class="small ink">等モル：N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = (cD<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan>/L)(0.20 − 0.05)</text>
-<text x="44" y="1318" class="small ink">B停滞：N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = (cD<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan>/L)ln(0.95/0.80)</text>
+<text x="44" y="1244" class="small ink">cD<tspan class="sb" dy="0.3em" font-size="0.72em">AB</tspan><tspan dy="-0.22em">/L = 0.08124 mol/(m²·s)</tspan></text>
+<text x="44" y="1281" class="small ink">等モル：N<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> = (cD</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">AB</tspan><tspan dy="-0.22em">/L)(0.20 − 0.05)</tspan></text>
+<text x="44" y="1318" class="small ink">B停滞：N<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> = (cD</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">AB</tspan><tspan dy="-0.22em">/L)ln(0.95/0.80)</tspan></text>
 <text x="44" y="1355" class="small a">停滞BのA全流束は約14.6%大きい</text>
-<text x="44" y="1390" class="small secondary">注意：J<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = −cD<tspan class="sb" dy="0.30em" font-size="0.72em">AB</tspan><tspan dy="-0.3em"></tspan> dy<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>/dx、</text>
-<text x="125" y="1416" class="small secondary">N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = J<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> + y<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>(N<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>+N<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan>)</text>
+<text x="44" y="1390" class="small secondary">注意：J<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> = −cD</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">AB</tspan><tspan dy="-0.22em"> dy</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em">/dx、</tspan></text>
+<text x="125" y="1416" class="small secondary">N<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> = J</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> + y</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em">(N</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em">+N</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan><tspan dy="-0.22em">)</tspan></text>
 <text x="380" y="1480" text-anchor="middle" class="small secondary">アプリ作成の独自図・模式図（原書図版ではない）</text>
 </svg>

@@ -24,13 +24,13 @@
 <text class="small muted" x="33" y="101">摩擦の測定から熱伝達を推定する、条件付きの橋渡し</text>
 <rect class="panel" x="23" y="124" width="774" height="360" rx="19"/>
 <text class="section ink" x="44" y="168">① 手順（原書 6.74〜6.77）</text>
-<text class="result ink" x="43" y="216">C<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 0.0040（同じ位置の局所摩擦）</text>
-<text class="result accent" x="43" y="258">↓ j<tspan class="sb" dy="0.30em" font-size="0.72em">H</tspan><tspan dy="-0.3em"></tspan> = St Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">2/3</tspan><tspan dy="0.45em"></tspan> = C<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>/2</text>
-<text class="result ink" x="43" y="300">j<tspan class="sb" dy="0.30em" font-size="0.72em">H</tspan><tspan dy="-0.3em"></tspan> = 0.0020 → St = j<tspan class="sb" dy="0.30em" font-size="0.72em">H</tspan><tspan dy="-0.3em"></tspan> Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">−2/3</tspan><tspan dy="0.45em"></tspan> ≈ 0.0025369</text>
-<text class="result accent" x="43" y="342">↓ h = ρc<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan>U・St（ρc<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan>U = 6000 W/(m²·K)）</text>
-<text class="result ink" x="43" y="384">h ≈ 15.22 W/(m²·K)、q<tspan class="sb" dy="0.30em" font-size="0.72em">w</tspan><tspan dy="-0.3em"></tspan>″ = h ΔT ≈ 761 W/m²（ΔT = 50 K）</text>
-<text class="small muted" x="43" y="428">St = Nu/(Re Pr) = h/(ρc<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan>U)。h = C<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> という次元の違う等置ではない</text>
-<text class="small muted" x="43" y="458">St ≈ C<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan>/2 そのものは Pr = 1・等温壁などの対応条件でのみ成立</text>
+<text class="result ink" x="43" y="216">C<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> = 0.0040（同じ位置の局所摩擦）</tspan></text>
+<text class="result accent" x="43" y="258">↓ j<tspan class="sb" dy="0.3em" font-size="0.72em">H</tspan><tspan dy="-0.22em"> = St Pr</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">2/3</tspan><tspan dy="0.32em"> = C</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em">/2</tspan></text>
+<text class="result ink" x="43" y="300">j<tspan class="sb" dy="0.3em" font-size="0.72em">H</tspan><tspan dy="-0.22em"> = 0.0020 → St = j</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">H</tspan><tspan dy="-0.22em"> Pr</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">−2/3</tspan><tspan dy="0.32em"> ≈ 0.0025369</tspan></text>
+<text class="result accent" x="43" y="342">↓ h = ρc<tspan class="sb" dy="0.3em" font-size="0.72em">p</tspan><tspan dy="-0.22em">U・St（ρc</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">p</tspan><tspan dy="-0.22em">U = 6000 W/(m²·K)）</tspan></text>
+<text class="result ink" x="43" y="384">h ≈ 15.22 W/(m²·K)、q<tspan class="sb" dy="0.3em" font-size="0.72em">w</tspan><tspan dy="-0.22em">″ = h ΔT ≈ 761 W/m²（ΔT = 50 K）</tspan></text>
+<text class="small muted" x="43" y="428">St = Nu/(Re Pr) = h/(ρc<tspan class="sb" dy="0.3em" font-size="0.72em">p</tspan><tspan dy="-0.22em">U)。h = C</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> という次元の違う等置ではない</tspan></text>
+<text class="small muted" x="43" y="458">St ≈ C<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em">/2 そのものは Pr = 1・等温壁などの対応条件でのみ成立</tspan></text>
 <rect class="panel" x="23" y="502" width="774" height="252" rx="19"/>
 <text class="section ink" x="44" y="546">② Pr補正の有無で変わる</text>
 <text class="small ink" x="43" y="592">Colburn補正あり（Pr = 0.7）</text>

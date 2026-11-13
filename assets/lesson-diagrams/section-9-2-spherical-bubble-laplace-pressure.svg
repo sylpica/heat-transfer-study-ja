@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="880" height="1470" viewBox="0 0 880 1470" style="max-width:100%" role="img" aria-labelledby="bubble-title bubble-description" data-origin="original-app-diagram" data-lesson="9.2" data-surface-tension-nm="0.05" data-pressure-a-pa="2500" data-pressure-b-pa="5000" data-radius-a-m="0.000040000000" data-radius-b-m="0.000020000000" data-drawing-radius-a="100" data-drawing-radius-b="50" data-graph-points="21" data-equilibrium-model="static-spherical-laplace">
 <title id="bubble-title">§9.2 理想球形蒸気泡の表面張力とラプラス圧力差</title>
-<desc id="bubble-description">アプリ独自の模式図。球形で静止した蒸気泡が液体中にあり、内外圧力差は正で、表面張力は一定とする。ラプラス圧力差は蒸気側p<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan>から液体側p<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan>を引いたΔp=2σ/Rであり、σ=0.050ニュートン毎メートル、圧力差2.5キロパスカルでは平衡半径40マイクロメートル、5キロパスカルでは20マイクロメートル。泡の描画半径は2対1で比例するが実寸大ではない。下段は横軸Rを20から100マイクロメートル、縦軸Δpをキロパスカルとして21点で計算した反比例曲線。これは力学的な静止球形界面モデルに限られ、実際の壁付着泡の核生成開始、離脱直径、限界熱流束、安全運転条件を予測しない。</desc>
+<desc id="bubble-description">アプリ独自の模式図。球形で静止した蒸気泡が液体中にあり、内外圧力差は正で、表面張力は一定とする。ラプラス圧力差は蒸気側p<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan>から液体側p<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan>を引いたΔp=2σ/Rであり、σ=0.050ニュートン毎メートル、圧力差2.5キロパスカルでは平衡半径40マイクロメートル、5キロパスカルでは20マイクロメートル。泡の描画半径は2対1で比例するが実寸大ではない。下段は横軸Rを20から100マイクロメートル、縦軸Δpをキロパスカルとして21点で計算した反比例曲線。これは力学的な静止球形界面モデルに限られ、実際の壁付着泡の核生成開始、離脱直径、限界熱流束、安全運転条件を予測しない。</desc>
 <style>
 text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-serif;font-size:23px}
 .bg{fill:#fff}.panel{fill:#f3f7fa;stroke:#c2d0dc;stroke-width:2}.ink{fill:#192f44}.muted{fill:#496175}
@@ -19,19 +19,19 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <text class="micro muted" x="44" y="205">液体中の球形蒸気泡の断面：半径の比だけを正しく描画</text>
 <rect class="liquid" x="47" y="227" width="381" height="276" rx="15"/>
 <rect class="liquid" x="450" y="227" width="381" height="276" rx="15"/>
-<text class="micro ink" x="64" y="257">外側：液体 p<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan></text>
-<text class="micro ink" x="466" y="257">外側：液体 p<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="micro ink" x="64" y="257">外側：液体 p<tspan class="sb" dy="0.3em" font-size="0.72em">l</tspan></text>
+<text class="micro ink" x="466" y="257">外側：液体 p<tspan class="sb" dy="0.3em" font-size="0.72em">l</tspan></text>
 <circle id="bubble-a" class="vapor" cx="235" cy="361" r="100"/>
 <circle id="bubble-b" class="vapor" cx="637" cy="361" r="50"/>
 <text class="small ink" x="235" y="355" text-anchor="middle">蒸気</text>
-<text class="micro ink" x="235" y="382" text-anchor="middle">p<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="micro ink" x="235" y="382" text-anchor="middle">p<tspan class="sb" dy="0.3em" font-size="0.72em">v</tspan></text>
 <text class="micro ink" x="637" y="354" text-anchor="middle">蒸気</text>
-<text class="micro ink" x="637" y="380" text-anchor="middle">p<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="micro ink" x="637" y="380" text-anchor="middle">p<tspan class="sb" dy="0.3em" font-size="0.72em">v</tspan></text>
 <path id="radius-arrow-a" class="radius" d="M235 402 H335 M323 393 L335 402 L323 411"/>
 <path id="radius-arrow-b" class="radius" d="M637 390 H687 M675 381 L687 390 L675 399"/>
 <text class="small ink" x="235" y="529" text-anchor="middle">A. Δp = 2.5 kPa → R = 40 μm</text>
 <text class="small ink" x="637" y="529" text-anchor="middle">B. Δp = 5.0 kPa → R = 20 μm</text>
-<text class="small ink" x="44" y="577">σ = 0.050 N/m ／ Δp = p<tspan class="sb" dy="0.30em" font-size="0.72em">v</tspan><tspan dy="-0.3em"></tspan> − p<tspan class="sb" dy="0.30em" font-size="0.72em">l</tspan><tspan dy="-0.3em"></tspan> = 2σ/R</text>
+<text class="small ink" x="44" y="577">σ = 0.050 N/m ／ Δp = p<tspan class="sb" dy="0.3em" font-size="0.72em">v</tspan><tspan dy="-0.22em"> − p</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">l</tspan><tspan dy="-0.22em"> = 2σ/R</tspan></text>
 <text class="micro muted" x="44" y="607">※円の大きさは相対半径2:1のみを表示。実寸・壁付着泡ではない。</text>
 <rect class="panel" x="23" y="650" width="834" height="458" rx="18"/>
 <text class="section ink" x="44" y="692">② 半径が小さいほど、必要な内外圧力差は大きい</text>
@@ -53,8 +53,8 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <rect class="panel" x="23" y="1126" width="834" height="287" rx="18"/>
 <text class="section ink" x="44" y="1168">③ 単位をそろえて検算</text>
 <text class="formula ink" x="44" y="1212">R = 2σ/Δp ／ 2.5 kPa = 2500 Pa</text>
-<text class="formula ink" x="44" y="1255">R<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan> = 0.100/2500 m = 40 μm</text>
-<text class="formula ink" x="44" y="1298">R<tspan class="sb" dy="0.30em" font-size="0.72em">B</tspan><tspan dy="-0.3em"></tspan> = 0.100/5000 m = 20 μm</text>
+<text class="formula ink" x="44" y="1255">R<tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em"> = 0.100/2500 m = 40 μm</tspan></text>
+<text class="formula ink" x="44" y="1298">R<tspan class="sb" dy="0.3em" font-size="0.72em">B</tspan><tspan dy="-0.22em"> = 0.100/5000 m = 20 μm</tspan></text>
 <text class="micro muted" x="44" y="1342">球形・静止・表面張力一定の力学モデルのみ。</text>
 <text class="micro muted" x="44" y="1375">実際の核生成開始・離脱径・CHF・安全条件は予測しない。</text>
 <text class="micro muted" x="440" y="1448" text-anchor="middle">アプリ独自作図｜原著図版の転載・トレースなし</text>

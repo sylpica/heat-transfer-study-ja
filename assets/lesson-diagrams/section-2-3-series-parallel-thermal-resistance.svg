@@ -24,7 +24,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <text x="759" y="258" text-anchor="middle" class="small cold">20℃</text>
 <text x="270" y="356" text-anchor="middle" class="tiny ink">ΔT1 = 20 K</text>
 <text x="580" y="356" text-anchor="middle" class="tiny ink">ΔT2 = 40 K</text>
-<text x="44" y="415" class="formula ink">R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = 0.10 + 0.20 = 0.30 K/W</text>
+<text x="44" y="415" class="formula ink">R<tspan class="sb" dy="0.3em" font-size="0.72em">total</tspan><tspan dy="-0.22em"> = 0.10 + 0.20 = 0.30 K/W</tspan></text>
 <text x="44" y="458" class="small series">Q = 60/0.30 = 200 W（各抵抗に同じQが流れる）</text>
 <rect class="panel" x="23" y="527" width="814" height="407" rx="19"/>
 <text class="section ink" x="43" y="570">② 並列：どの枝も温度差が60 K</text>
@@ -36,8 +36,8 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <text x="112" y="693" text-anchor="middle" class="small hot">80℃</text><text x="754" y="693" text-anchor="middle" class="small cold">20℃</text>
 <text x="485" y="618" class="small parallel">Q1 = 600 W</text>
 <text x="485" y="802" class="small parallel">Q2 = 300 W</text>
-<text x="44" y="886" class="small ink">R<tspan class="sb" dy="0.30em" font-size="0.72em">eq</tspan><tspan dy="-0.3em"></tspan> = 1/(1/R1 + 1/R2) ≈ 0.06667 K/W</text>
-<text x="44" y="916" class="small parallel">Q<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = 600 + 300 = 900 W（各枝のΔTが共通）</text>
+<text x="44" y="886" class="small ink">R<tspan class="sb" dy="0.3em" font-size="0.72em">eq</tspan><tspan dy="-0.22em"> = 1/(1/R1 + 1/R2) ≈ 0.06667 K/W</tspan></text>
+<text x="44" y="916" class="small parallel">Q<tspan class="sb" dy="0.3em" font-size="0.72em">total</tspan><tspan dy="-0.22em"> = 600 + 300 = 900 W（各枝のΔTが共通）</tspan></text>
 <rect class="panel" x="23" y="951" width="814" height="273" rx="19"/>
 <text class="section ink" x="43" y="994">③ 同じ温度差なら、並列ほど熱は流れる</text>
 <text x="45" y="1033" class="small ink">直列 200 W</text><rect id="series-heat-bar" class="barseries" x="211" y="1011" width="120" height="28" rx="3"/>

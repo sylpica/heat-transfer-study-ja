@@ -24,13 +24,13 @@ text{font-family:system-ui,'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-s
 <rect class="contact" x="450" y="440" width="10" height="100"/>
 <rect class="wall2" x="460" y="440" width="70" height="100"/>
 <text class="small warm" x="90" y="482">内流体 40 ℃</text>
-<text class="small warm" x="90" y="516">h<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 10</text>
+<text class="small warm" x="90" y="516">h<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = 10</tspan></text>
 <text class="small ink" x="448" y="575" text-anchor="end">層1 k₁ = 0.20</text>
 <text class="small ink" x="448" y="605" text-anchor="end">L₁ = 0.020 m</text>
 <text class="small ink" x="462" y="575">層2 k₂ = 0.50</text>
 <text class="small ink" x="462" y="605">L₂ = 0.010 m</text>
-<text class="small cool" x="560" y="516">外流体 0 ℃、h<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> = 20</text>
-<text class="small muted" x="43" y="640">層の間の帯は接触部（r<tspan class="sb" dy="0.30em" font-size="0.72em">c</tspan><tspan dy="-0.3em"></tspan>″ = 0.010 m²·K/W）。幅は模式的で実寸比ではない</text>
+<text class="small cool" x="560" y="516">外流体 0 ℃、h<tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> = 20</tspan></text>
+<text class="small muted" x="43" y="640">層の間の帯は接触部（r<tspan class="sb" dy="0.3em" font-size="0.72em">c</tspan><tspan dy="-0.22em">″ = 0.010 m²·K/W）。幅は模式的で実寸比ではない</tspan></text>
 <rect class="panel" x="23" y="671" width="794" height="330" rx="19"/>
 <text class="section ink" x="43" y="713">③ 温度降下の内訳（合計40 K、Q = 142.86 W）</text>
 <g id="drop-bar">

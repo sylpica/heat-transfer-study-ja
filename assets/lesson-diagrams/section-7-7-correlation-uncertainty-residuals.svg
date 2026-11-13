@@ -27,11 +27,11 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="440" y="338" text-anchor="middle" class="micro ink">20</text>
 <text x="653.33" y="338" text-anchor="middle" class="micro ink">24</text>
 <text x="760" y="338" text-anchor="middle" class="micro ink">26</text>
-<text x="45" y="384" class="small ink">帯は測定の標準不確かさ u<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> = 0.748。残差は A −10%／B +20%</text>
+<text x="45" y="384" class="small ink">帯は測定の標準不確かさ u<tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em"> = 0.748。残差は A −10%／B +20%</tspan></text>
 <text x="45" y="418" class="micro muted">帯への出入りと、相関自体のモデル誤差・偏りは別の評価。</text>
 <rect class="panel" x="24" y="470" width="792" height="356" rx="18"/>
 <text x="44" y="514" class="section ink">② 不確かさの伝播（独立入力の一次近似）</text>
-<text x="45" y="556" class="small ink">(u<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan>/h)² ≈ (u<tspan class="sb" dy="0.30em" font-size="0.72em">Q</tspan><tspan dy="-0.3em"></tspan>/Q̇)² + (u<tspan class="sb" dy="0.30em" font-size="0.72em">A</tspan><tspan dy="-0.3em"></tspan>/A)² + (u<tspan class="sb" dy="0.30em" font-size="0.72em">ΔT</tspan><tspan dy="-0.3em"></tspan>/ΔT)²</text>
+<text x="45" y="556" class="small ink">(u<tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em">/h)² ≈ (u</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">Q</tspan><tspan dy="-0.22em">/Q̇)² + (u</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">A</tspan><tspan dy="-0.22em">/A)² + (u</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">ΔT</tspan><tspan dy="-0.22em">/ΔT)²</tspan></text>
 <text x="45" y="604" class="small ink">熱流 Q̇</text>
 <rect id="u-q" class="uq" x="330" y="584" width="180" height="26" rx="3"/>
 <text x="522" y="604" class="small ink">2%</text>

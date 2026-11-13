@@ -5,7 +5,7 @@
 // docs/audit-final/LIVE_INSPECTION_20261112.md.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync, readdirSync} from 'node:fs';
 import {formatMathText, renderTermLinks, renderTermSheet} from '../term-links.mjs';
 
 test('formatMathText converts the full corpus notation set', () => {
@@ -144,6 +144,19 @@ test('round 3: no spelled-out Qdot remains in lesson diagrams; Q with dot above 
     assert.ok(!svg.includes('Qdot'), f);
     assert.ok(svg.includes('Q̇'), f);
   }
+});
+
+test('round 4: no empty tspans in lesson diagrams (Chromium ignores dy on empty tspans, which drifted baselines)', () => {
+  const dir = new URL('../assets/lesson-diagrams/', import.meta.url);
+  for (const f of readdirSync(dir).filter((x) => x.endsWith('.svg'))) {
+    const svg = readFileSync(new URL(f, dir), 'utf8');
+    assert.ok(!/<tspan[^>]*><\/tspan>/.test(svg), f);
+  }
+});
+
+test('round 4: question source note does not double the sentence-ending period', () => {
+  const app = readFileSync(new URL('../app.js', import.meta.url), 'utf8');
+  assert.ok(app.includes("const sourceLabelText = sourceLabel(question.source).replace(/。+$/, '');"));
 });
 
 test('campaign-3 C03 w05 gap closure: section 4.1 carries the t-max/region clause and the Example 2.5 cross-reference', () => {

@@ -14,7 +14,7 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="31" y="100" class="small muted">速度場が先に発達しても、温度場は発達途中のことがある</text>
 <rect class="panel" x="24" y="122" width="792" height="506" rx="18"/>
 <text x="44" y="164" class="section ink">① 同じ距離軸で、二つの助走長を比べる</text>
-<text x="45" y="204" class="small muted">内径 D = 0.020 m ／ Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = 200 ／ Pr = 5.0</text>
+<text x="45" y="204" class="small muted">内径 D = 0.020 m ／ Re<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> = 200 ／ Pr = 5.0</tspan></text>
 <rect class="pipe" x="166" y="227" width="552" height="86" rx="3"/>
 <path class="wall" d="M166 227 H718 M166 313 H718"/>
 <path class="flow" d="M196 292 H681 M666 279 L681 292 L666 305"/>
@@ -33,19 +33,19 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="396" y="533" text-anchor="middle" class="micro focus-text">0.50 m</text>
 <text x="626" y="533" text-anchor="middle" class="micro ink">1.00 m</text>
 <text x="718" y="533" text-anchor="middle" class="micro ink">1.20 m</text>
-<text x="45" y="573" class="micro muted">水力学的助走長の目安 L<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> ≈ 0.20 m</text>
-<text x="45" y="604" class="micro muted">熱的助走長の目安 L<tspan class="sb" dy="0.30em" font-size="0.72em">t</tspan><tspan dy="-0.3em"></tspan> ≈ 1.00 m（急な境界ではない）</text>
+<text x="45" y="573" class="micro muted">水力学的助走長の目安 L<tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em"> ≈ 0.20 m</tspan></text>
+<text x="45" y="604" class="micro muted">熱的助走長の目安 L<tspan class="sb" dy="0.3em" font-size="0.72em">t</tspan><tspan dy="-0.22em"> ≈ 1.00 m（急な境界ではない）</tspan></text>
 <rect class="panel" x="24" y="647" width="792" height="210" rx="18"/>
 <text x="44" y="691" class="section ink">② x = 0.50 m の場所はどうなる？</text>
-<text x="45" y="744" class="small ink">速度場：0.50 m ＞ L<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> ≈ 0.20 m</text>
-<text x="45" y="784" class="small ink">温度場：0.50 m ＜ L<tspan class="sb" dy="0.30em" font-size="0.72em">t</tspan><tspan dy="-0.3em"></tspan> ≈ 1.00 m</text>
+<text x="45" y="744" class="small ink">速度場：0.50 m ＞ L<tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em"> ≈ 0.20 m</tspan></text>
+<text x="45" y="784" class="small ink">温度場：0.50 m ＜ L<tspan class="sb" dy="0.3em" font-size="0.72em">t</tspan><tspan dy="-0.22em"> ≈ 1.00 m</tspan></text>
 <text x="45" y="830" class="small muted">速度は概ね発達済み。温度場はまだ助走域。</text>
 <rect class="panel" x="24" y="875" width="792" height="263" rx="18"/>
 <text x="44" y="919" class="section ink">③ 計算とNuの適用条件</text>
-<text x="45" y="960" class="small ink">L<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> ≈ 0.05 Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> D = 0.20 m</text>
-<text x="45" y="1000" class="small ink">L<tspan class="sb" dy="0.30em" font-size="0.72em">t</tspan><tspan dy="-0.3em"></tspan> ≈ 0.05 Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> Pr D = 1.00 m</text>
-<text x="45" y="1040" class="small ink">壁温一定・流動と熱が十分発達：Nu<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> ≈ 3.66</text>
-<text x="45" y="1080" class="formula ink">h = Nu<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> / D = 109.8 W/(m²·K)</text>
-<text x="45" y="1121" class="micro muted">熱的助走中の全区間へNu<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = 3.66を適用しない。</text>
+<text x="45" y="960" class="small ink">L<tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em"> ≈ 0.05 Re</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> D = 0.20 m</tspan></text>
+<text x="45" y="1000" class="small ink">L<tspan class="sb" dy="0.3em" font-size="0.72em">t</tspan><tspan dy="-0.22em"> ≈ 0.05 Re</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> Pr D = 1.00 m</tspan></text>
+<text x="45" y="1040" class="small ink">壁温一定・流動と熱が十分発達：Nu<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> ≈ 3.66</tspan></text>
+<text x="45" y="1080" class="formula ink">h = Nu<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> k</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> / D = 109.8 W/(m²·K)</tspan></text>
+<text x="45" y="1121" class="micro muted">熱的助走中の全区間へNu<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> = 3.66を適用しない。</tspan></text>
 <text x="420" y="1182" text-anchor="middle" class="micro muted">アプリ作成の独自模式図｜原著図版の転載・翻訳なし</text>
 </svg>

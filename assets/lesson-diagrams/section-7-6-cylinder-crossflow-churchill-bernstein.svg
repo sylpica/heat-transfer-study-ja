@@ -20,30 +20,30 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <path class="flow" d="M60 330 H205 M192 318 L205 330 L192 342"/>
 <path class="flow" d="M60 398 H205 M192 386 L205 398 L192 410"/>
 <circle class="cyl" cx="330" cy="330" r="85"/>
-<text x="330" y="322" text-anchor="middle" class="small ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 60 ℃</text>
+<text x="330" y="322" text-anchor="middle" class="small ink">T<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> = 60 ℃</tspan></text>
 <text x="330" y="352" text-anchor="middle" class="micro ink">D = 0.020 m</text>
 <circle class="pt" cx="245" cy="330" r="6"/>
 <text x="238" y="306" text-anchor="end" class="micro ink">よどみ点</text>
 <path class="wake" d="M408 272 Q570 296 716 276 M408 388 Q570 364 716 384"/>
 <text x="580" y="428" text-anchor="middle" class="small ink">後流（剥離の下流）</text>
-<text x="45" y="472" class="small ink">主流 T<tspan class="sb" dy="0.30em" font-size="0.72em">∞</tspan><tspan dy="-0.3em"></tspan> = 20 ℃。物性は膜温度（(60 + 20)/2 = 40 ℃）で評価</text>
-<text x="45" y="502" class="micro muted">ν = 1.5×10⁻⁵ m²/s、Pr = 0.70、k<tspan class="sb" dy="0.30em" font-size="0.72em">f</tspan><tspan dy="-0.3em"></tspan> = 0.026 W/(m·K)（仮想の代表状態）</text>
+<text x="45" y="472" class="small ink">主流 T<tspan class="sb" dy="0.3em" font-size="0.72em">∞</tspan><tspan dy="-0.22em"> = 20 ℃。物性は膜温度（(60 + 20)/2 = 40 ℃）で評価</tspan></text>
+<text x="45" y="502" class="micro muted">ν = 1.5×10⁻⁵ m²/s、Pr = 0.70、k<tspan class="sb" dy="0.3em" font-size="0.72em">f</tspan><tspan dy="-0.22em"> = 0.026 W/(m·K)（仮想の代表状態）</tspan></text>
 <rect class="panel" x="24" y="544" width="792" height="270" rx="18"/>
 <text x="44" y="588" class="section ink">② Churchill–Bernstein 式（式7.65）</text>
-<text x="45" y="632" class="small ink">Nū<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = 0.3 + 0.62 Re<tspan class="sp" dy="-0.45em" font-size="0.72em">1/2</tspan><tspan dy="0.45em"></tspan> Pr<tspan class="sp" dy="-0.45em" font-size="0.72em">1/3</tspan><tspan dy="0.45em"></tspan> / (1 + (0.4/Pr)<tspan class="sp" dy="-0.45em" font-size="0.72em">2/3</tspan><tspan dy="0.45em"></tspan>)<tspan class="sp" dy="-0.45em" font-size="0.72em">1/4</tspan><tspan dy="0.45em"></tspan></text>
-<text x="45" y="666" class="small ink">　　　 × [1 + (Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> / 282000)<tspan class="sp" dy="-0.45em" font-size="0.72em">5/8</tspan><tspan dy="0.45em"></tspan>]<tspan class="sp" dy="-0.45em" font-size="0.72em">4/5</tspan><tspan dy="0.45em"></tspan></text>
-<text x="45" y="710" class="small ink">Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = U D / ν = 6667、Re<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> Pr = 4667 ＞ 0.2（適用目安を満たす）</text>
-<text x="45" y="748" class="formula ink">Nū<tspan class="sb" dy="0.30em" font-size="0.72em">D</tspan><tspan dy="-0.3em"></tspan> = 42.74、h̄ = 55.56 W/(m²·K)</text>
+<text x="45" y="632" class="small ink">Nū<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> = 0.3 + 0.62 Re</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">1/2</tspan><tspan dy="0.32em"> Pr</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">1/3</tspan><tspan dy="0.32em"> / (1 + (0.4/Pr)</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">2/3</tspan><tspan dy="0.32em">)</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">1/4</tspan></text>
+<text x="45" y="666" class="small ink">　　　 × [1 + (Re<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> / 282000)</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">5/8</tspan><tspan dy="0.32em">]</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">4/5</tspan></text>
+<text x="45" y="710" class="small ink">Re<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> = U D / ν = 6667、Re</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> Pr = 4667 ＞ 0.2（適用目安を満たす）</tspan></text>
+<text x="45" y="748" class="formula ink">Nū<tspan class="sb" dy="0.3em" font-size="0.72em">D</tspan><tspan dy="-0.22em"> = 42.74、h̄ = 55.56 W/(m²·K)</tspan></text>
 <text x="45" y="782" class="micro muted">周平均の値。よどみ点や後流部の局所 h と同じではない。</text>
 <rect class="panel" x="24" y="832" width="792" height="250" rx="18"/>
 <text x="44" y="876" class="section ink">③ 伝熱面積を取り違えない</text>
-<text x="45" y="928" class="small ink">側面積 π D L<tspan class="sb" dy="0.30em" font-size="0.72em">z</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="45" y="928" class="small ink">側面積 π D L<tspan class="sb" dy="0.3em" font-size="0.72em">z</tspan></text>
 <rect id="area-side" class="side" x="300" y="906" width="376.99" height="28" rx="3"/>
 <text x="686.99" y="928" class="small ink">0.03142 m²</text>
-<text x="45" y="988" class="small ink">投影面積 D L<tspan class="sb" dy="0.30em" font-size="0.72em">z</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="45" y="988" class="small ink">投影面積 D L<tspan class="sb" dy="0.3em" font-size="0.72em">z</tspan></text>
 <rect id="area-proj" class="proj" x="300" y="966" width="120" height="28" rx="3"/>
 <text x="430" y="988" class="small ink">0.010 m²</text>
-<text x="45" y="1032" class="small ink">Q̇<tspan class="sb" dy="0.30em" font-size="0.72em">conv</tspan><tspan dy="-0.3em"></tspan> = h̄ × 側面積 × (T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> − T<tspan class="sb" dy="0.30em" font-size="0.72em">∞</tspan><tspan dy="-0.3em"></tspan>) = 69.82 W</text>
+<text x="45" y="1032" class="small ink">Q̇<tspan class="sb" dy="0.3em" font-size="0.72em">conv</tspan><tspan dy="-0.22em"> = h̄ × 側面積 × (T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> − T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">∞</tspan><tspan dy="-0.22em">) = 69.82 W</tspan></text>
 <text x="45" y="1064" class="micro muted">端面・放射・支持部伝導は含まない。管群や閉塞へ単独円柱の式を使わない。</text>
 <text x="420" y="1128" text-anchor="middle" class="micro muted">アプリ作成の独自模式図｜原著図版の転載・翻訳なし</text>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="1180" viewBox="0 0 840 1180" style="max-width:100%" role="img" aria-labelledby="title74 desc74" data-origin="original-app-diagram" data-lesson="7.4" data-ts="80" data-tin="20" data-mdot="0.10" data-cp="1000" data-c="100" data-h="50" data-ph="0.20" data-length="10" data-as="2.0" data-ntu="1.0" data-tout="57.9272335297135" data-q="3792.7233529713461" data-eps="0.6321205588285577" data-lmtd="37.9272335297135" data-dtin="60" data-dtout="22.0727664702865">
 <title id="title74">§7.4 一定壁温の管：流体温度の指数応答とNTU・LMTD</title>
-<desc id="desc74">アプリ独自作図。一定壁温80度で加熱される流体について、入口20度、熱容量流量100ワット毎ケルビン、熱伝達率50ワット毎平方メートルケルビン、加熱面積2.0平方メートルでNTUは1.0となり、流体の混合平均温度は壁温へ指数関数的に近づく。出口温度57.93度、伝熱量3792.72ワット、有効度0.6321。入口差60ケルビンと出口差22.07ケルビンから対数平均温度差37.93ケルビンを計算すると、hA<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan>とLMTDの積も3792.72ワットで一致する。入口差だけを使うと6000ワットと過大になる。</desc>
+<desc id="desc74">アプリ独自作図。一定壁温80度で加熱される流体について、入口20度、熱容量流量100ワット毎ケルビン、熱伝達率50ワット毎平方メートルケルビン、加熱面積2.0平方メートルでNTUは1.0となり、流体の混合平均温度は壁温へ指数関数的に近づく。出口温度57.93度、伝熱量3792.72ワット、有効度0.6321。入口差60ケルビンと出口差22.07ケルビンから対数平均温度差37.93ケルビンを計算すると、hA<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan>とLMTDの積も3792.72ワットで一致する。入口差だけを使うと6000ワットと過大になる。</desc>
 <style>
 text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-size:23px}
 .bg{fill:#fff}.panel{fill:#f4f7fb;stroke:#bfd0df;stroke-width:2}.ink{fill:#193148}.muted{fill:#476074}
@@ -13,10 +13,10 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="30" y="59" class="title ink">§7.4 一定壁温：指数応答と NTU</text>
 <text x="31" y="100" class="small muted">流体は下流ほど温まり、壁との温度差は縮んでいく</text>
 <rect class="panel" x="24" y="122" width="792" height="430" rx="18"/>
-<text x="44" y="164" class="section ink">① 混合平均温度 T<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan>(x) の応答</text>
+<text x="44" y="164" class="section ink">① 混合平均温度 T<tspan class="sb" dy="0.3em" font-size="0.72em">b</tspan><tspan dy="-0.22em">(x) の応答</tspan></text>
 <path class="axis" d="M90 150 V470 H790"/>
 <path class="tsline" d="M90 190 H790"/>
-<text x="782" y="180" text-anchor="end" class="micro ink">壁温 T<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = 80 ℃</text>
+<text x="782" y="180" text-anchor="end" class="micro ink">壁温 T<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> = 80 ℃</tspan></text>
 <polyline id="tb-curve" class="curve" points="90,430.00 125,418.30 160,407.16 195,396.57 230,386.50 265,376.91 300,367.80 335,359.13 370,350.88 405,343.03 440,335.57 475,328.47 510,321.71 545,315.29 580,309.18 615,303.37 650,297.84 685,292.58 720,287.58 755,282.82 790,278.29"/>
 <circle class="pt" cx="90" cy="430" r="6"/>
 <circle class="pt" cx="790" cy="278.29" r="6"/>
@@ -27,19 +27,19 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',sans-serif;font-
 <text x="90" y="498" text-anchor="middle" class="micro ink">0</text>
 <text x="440" y="498" text-anchor="middle" class="micro ink">5</text>
 <text x="790" y="498" text-anchor="middle" class="micro ink">10 m</text>
-<text x="45" y="532" class="small muted">曲線は T<tspan class="sb" dy="0.30em" font-size="0.72em">b</tspan><tspan dy="-0.3em"></tspan>(x) = 80 − 60 exp(−x/10)（NTU = 1、x は入口からの距離）</text>
+<text x="45" y="532" class="small muted">曲線は T<tspan class="sb" dy="0.3em" font-size="0.72em">b</tspan><tspan dy="-0.22em">(x) = 80 − 60 exp(−x/10)（NTU = 1、x は入口からの距離）</tspan></text>
 <rect class="panel" x="24" y="570" width="792" height="250" rx="18"/>
 <text x="44" y="614" class="section ink">② NTU・出口温度・有効度</text>
-<text x="45" y="658" class="small ink">C = ṁ c<tspan class="sb" dy="0.30em" font-size="0.72em">p</tspan><tspan dy="-0.3em"></tspan> = 100 W/K、A<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> = P<tspan class="sb" dy="0.30em" font-size="0.72em">h</tspan><tspan dy="-0.3em"></tspan> L = 2.0 m²、h = 50 W/(m²·K)</text>
-<text x="45" y="694" class="small ink">NTU = h A<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> / C = 1.0（式7.58 の指数）</text>
-<text x="45" y="732" class="formula ink">T<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> = 80 − 60 exp(−1) = 57.93 ℃</text>
-<text x="45" y="768" class="small ink">Q̇ = C (T<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> − T<tspan class="sb" dy="0.30em" font-size="0.72em">in</tspan><tspan dy="-0.3em"></tspan>) = 3792.72 W（約 3.793 kW）</text>
+<text x="45" y="658" class="small ink">C = ṁ c<tspan class="sb" dy="0.3em" font-size="0.72em">p</tspan><tspan dy="-0.22em"> = 100 W/K、A</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> = P</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">h</tspan><tspan dy="-0.22em"> L = 2.0 m²、h = 50 W/(m²·K)</tspan></text>
+<text x="45" y="694" class="small ink">NTU = h A<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> / C = 1.0（式7.58 の指数）</tspan></text>
+<text x="45" y="732" class="formula ink">T<tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> = 80 − 60 exp(−1) = 57.93 ℃</tspan></text>
+<text x="45" y="768" class="small ink">Q̇ = C (T<tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> − T</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">in</tspan><tspan dy="-0.22em">) = 3792.72 W（約 3.793 kW）</tspan></text>
 <text x="45" y="798" class="micro muted">有効度 ε = 1 − exp(−NTU) = 0.6321（一流体・一定壁温のモデル、式7.57・7.58）</text>
 <rect class="panel" x="24" y="838" width="792" height="230" rx="18"/>
 <text x="44" y="882" class="section ink">③ LMTD で同じ収支を確認</text>
-<text x="45" y="926" class="small ink">入口差 ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">in</tspan><tspan dy="-0.3em"></tspan> = 60 K、出口差 ΔT<tspan class="sb" dy="0.30em" font-size="0.72em">out</tspan><tspan dy="-0.3em"></tspan> = 22.07 K</text>
+<text x="45" y="926" class="small ink">入口差 ΔT<tspan class="sb" dy="0.3em" font-size="0.72em">in</tspan><tspan dy="-0.22em"> = 60 K、出口差 ΔT</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">out</tspan><tspan dy="-0.22em"> = 22.07 K</tspan></text>
 <text x="45" y="962" class="small ink">LMTD = (60 − 22.07) / ln(60 / 22.07) = 37.93 K</text>
-<text x="45" y="998" class="small ink">h A<tspan class="sb" dy="0.30em" font-size="0.72em">s</tspan><tspan dy="-0.3em"></tspan> × LMTD = 3792.72 W で ② と一致</text>
+<text x="45" y="998" class="small ink">h A<tspan class="sb" dy="0.3em" font-size="0.72em">s</tspan><tspan dy="-0.22em"> × LMTD = 3792.72 W で ② と一致</tspan></text>
 <text x="45" y="1034" class="micro muted">入口差 60 K だけを全長に使うと 6000 W と過大になる。</text>
 <text x="420" y="1128" text-anchor="middle" class="micro muted">アプリ作成の独自模式図｜原著図版の転載・翻訳なし</text>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="1520" viewBox="0 0 760 1520" role="img" aria-labelledby="film-title film-desc" style="max-width:100%" data-origin="original-app-diagram" data-lesson="11.8" data-gm-star="0.04" data-density-kg-m3="998" data-flux-1-l-m2h="15" data-flux-2-l-m2h="35" data-salt-bulk="0.035" data-bm-ro="-0.217">
 <title id="film-title">§11.8 クエット・停滞膜モデル：吹き出し因子と濃度分極</title>
-<desc id="film-desc">アプリ独自作成の学習図。静止膜モデルでは低移動率係数に吹き出し因子 ln(1+B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan>)/B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan> を掛けて高移動率へ補正する。吹き出しでは因子は1未満、吸い込みでは1より大きい。逆浸透の例題11.15では低移動率係数0.04、水流束15と35リットル毎平方メートル時で濃度分極は約10.9パーセントと約27.5パーセントになり、膜面の塩質量分率は3.5パーセントから3.88、4.46パーセントへ上がる。図は模式図。</desc>
+<desc id="film-desc">アプリ独自作成の学習図。静止膜モデルでは低移動率係数に吹き出し因子 ln(1+B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan>)/B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan> を掛けて高移動率へ補正する。吹き出しでは因子は1未満、吸い込みでは1より大きい。逆浸透の例題11.15では低移動率係数0.04、水流束15と35リットル毎平方メートル時で濃度分極は約10.9パーセントと約27.5パーセントになり、膜面の塩質量分率は3.5パーセントから3.88、4.46パーセントへ上がる。図は模式図。</desc>
 <style>
   .bg{fill:#fff}.panel{fill:#f4f7fb;stroke:#bdcad8;stroke-width:2}.ink{fill:#142b3f}.secondary{fill:#415b6f}.a{fill:#a43f24}.b{fill:#176f77}.solid{fill:#d5eaf4;stroke:#39728c;stroke-width:2}.a-stroke{stroke:#a43f24}.b-stroke{stroke:#176f77}.axis{stroke:#415b6f;stroke-width:2.5}.guide{stroke:#bac8d4;stroke-width:2;stroke-dasharray:6 6}.plot-a{fill:none;stroke:#a43f24;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.plot-b{fill:none;stroke:#176f77;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.arrow-a{fill:none;stroke:#a43f24;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.arrow-b{fill:none;stroke:#176f77;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.arrow-ink{fill:none;stroke:#415b6f;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.shape{fill:none;stroke:#39728c;stroke-width:3}.marker-a{fill:#a43f24}.marker-b{fill:#176f77}
   text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-serif;font-size:24px}.title{font-size:33px;font-weight:700}.heading{font-size:28px;font-weight:700}.small{font-size:21px}.equation{font-size:25px;font-weight:600}
@@ -24,12 +24,12 @@
 <path d="M330 262 H262 M278 251 L262 262 L278 273" class="arrow-a"/>
 <path d="M330 340 H262 M278 329 L262 340 L278 351" class="arrow-a"/>
 <text x="70" y="240" class="small ink">塩水が膜に沿って流れる</text>
-<text x="70" y="300" class="small a">塩は通れない（n<tspan class="sb" dy="0.30em" font-size="0.72em">salt</tspan><tspan dy="-0.3em"></tspan> = 0）</text>
+<text x="70" y="300" class="small a">塩は通れない（n<tspan class="sb" dy="0.3em" font-size="0.72em">salt</tspan><tspan dy="-0.22em"> = 0）</tspan></text>
 <text x="70" y="340" class="small a">対流で来た塩が膜面にたまり</text>
 <text x="70" y="380" class="small a">拡散で戻る分と釣り合う</text>
 <text x="470" y="420" class="small secondary">浸透圧が上がり水流束が減る</text>
 <rect x="24" y="460" width="712" height="492" rx="18" class="panel"/>
-<text x="46" y="507" class="heading ink">吹き出し因子 ln(1 + B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan>)/B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan></text>
+<text x="46" y="507" class="heading ink">吹き出し因子 ln(1 + B<tspan class="sb" dy="0.3em" font-size="0.72em">m</tspan><tspan dy="-0.22em">)/B</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">m</tspan></text>
 <path d="M120 586 V886 H686" class="axis" fill="none"/>
 <path d="M120 770.0 H680" class="guide"/>
 <path d="M249.2 592 V880" class="guide"/>
@@ -49,10 +49,10 @@
 <text x="114" y="916" class="small ink">−0.9</text>
 <text x="245" y="916" class="small ink">0</text>
 <text x="666" y="916" class="small ink">3</text>
-<text x="460" y="916" text-anchor="middle" class="small secondary">駆動力 B<tspan class="sb" dy="0.30em" font-size="0.72em">m,2</tspan><tspan dy="-0.3em"></tspan> →（正が吹き出し）</text>
+<text x="460" y="916" text-anchor="middle" class="small secondary">駆動力 B<tspan class="sb" dy="0.3em" font-size="0.72em">m,2</tspan><tspan dy="-0.22em"> →（正が吹き出し）</tspan></text>
 <rect x="24" y="972" width="712" height="466" rx="18" class="panel"/>
-<text x="46" y="1019" class="heading ink">濃度分極 CP = exp(|n|/g<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan>*) − 1</text>
-<text x="46" y="1064" class="small ink">g<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan>* = 4×10<tspan class="sp" dy="-0.45em" font-size="0.72em">-2</tspan><tspan dy="0.45em"></tspan> kg/(m²·s)、海水の塩質量分率 3.5%</text>
+<text x="46" y="1019" class="heading ink">濃度分極 CP = exp(|n|/g<tspan class="sb" dy="0.3em" font-size="0.72em">m</tspan><tspan dy="-0.22em">*) − 1</tspan></text>
+<text x="46" y="1064" class="small ink">g<tspan class="sb" dy="0.3em" font-size="0.72em">m</tspan><tspan dy="-0.22em">* = 4×10</tspan><tspan class="sp" dy="-0.45em" font-size="0.72em">-2</tspan><tspan dy="0.32em"> kg/(m²·s)、海水の塩質量分率 3.5%</tspan></text>
 <rect id="bar-cp-15" x="150" y="1092" width="175.287" height="32" class="b"/>
 <text x="46" y="1117" class="small ink">15 L/m²h</text>
 <text x="337.3" y="1117" class="small ink">CP 約10.9%</text>
@@ -60,10 +60,10 @@
 <text x="46" y="1165" class="small ink">35</text>
 <text x="601.2" y="1165" class="small ink">CP 約27.5%</text>
 <text x="46" y="1212" class="small ink">膜面の塩質量分率は 3.5% から 3.88% / 4.46% へ上がる</text>
-<text x="46" y="1256" class="small ink">高流束では B<tspan class="sb" dy="0.30em" font-size="0.72em">m,H2O</tspan><tspan dy="-0.3em"></tspan> = −0.217 と低移動率条件をわずかに超える</text>
-<text x="46" y="1300" class="small ink">低溶解度塩（CaCO<tspan class="sb" dy="0.30em" font-size="0.72em">3</tspan><tspan dy="-0.3em"></tspan> など）の析出を避けるため設計者は避ける条件</text>
-<text x="46" y="1344" class="small secondary">n<tspan class="sb" dy="0.30em" font-size="0.72em">2,s</tspan><tspan dy="-0.3em"></tspan> = g<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan>* ln(1 + B<tspan class="sb" dy="0.30em" font-size="0.72em">m,2</tspan><tspan dy="-0.3em"></tspan>)（式(11.82)）が膜モデルの一般形</text>
+<text x="46" y="1256" class="small ink">高流束では B<tspan class="sb" dy="0.3em" font-size="0.72em">m,H2O</tspan><tspan dy="-0.22em"> = −0.217 と低移動率条件をわずかに超える</tspan></text>
+<text x="46" y="1300" class="small ink">低溶解度塩（CaCO<tspan class="sb" dy="0.3em" font-size="0.72em">3</tspan><tspan dy="-0.22em"> など）の析出を避けるため設計者は避ける条件</tspan></text>
+<text x="46" y="1344" class="small secondary">n<tspan class="sb" dy="0.3em" font-size="0.72em">2,s</tspan><tspan dy="-0.22em"> = g</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">m</tspan><tspan dy="-0.22em">* ln(1 + B</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">m,2</tspan><tspan dy="-0.22em">)（式(11.82)）が膜モデルの一般形</tspan></text>
 <text x="46" y="1382" class="small secondary">乱流では渦拡散率を加える（式(11.79)）。精度は層流より乱流でよい</text>
-<text x="46" y="1420" class="small secondary">|B<tspan class="sb" dy="0.30em" font-size="0.72em">m</tspan><tspan dy="-0.3em"></tspan>| ≲ 0.2 では因子は 1 の約10%以内で、低移動率条件と整合する</text>
+<text x="46" y="1420" class="small secondary">|B<tspan class="sb" dy="0.3em" font-size="0.72em">m</tspan><tspan dy="-0.22em">| ≲ 0.2 では因子は 1 の約10%以内で、低移動率条件と整合する</tspan></text>
 <text x="380" y="1500" text-anchor="middle" class="small secondary">アプリ作成の独自図・模式図（原書図版ではない）</text>
 </svg>

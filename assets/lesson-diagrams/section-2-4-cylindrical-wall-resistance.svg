@@ -23,10 +23,10 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <circle cx="214" cy="320" r="3" fill="#426b85"/>
 <text class="small ink" x="164" y="277">内側流体</text>
 <text class="micro muted" x="355" y="224">内側が高温の場合の熱流方向 →</text>
-<text class="small ink" x="354" y="268">r<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 10 mm、r<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> = 12 mm</text>
+<text class="small ink" x="354" y="268">r<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = 10 mm、r</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> = 12 mm</tspan></text>
 <text class="small ink" x="354" y="308">長さ L = 2.0 m、k = 15 W/(m·K)</text>
-<text class="small ink" x="354" y="348">A<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 0.125664 m²</text>
-<text class="small ink" x="354" y="388">A<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> = 0.150796 m²</text>
+<text class="small ink" x="354" y="348">A<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = 0.125664 m²</tspan></text>
+<text class="small ink" x="354" y="388">A<tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> = 0.150796 m²</tspan></text>
 <text class="micro muted" x="42" y="440">円筒断面は概念図。内外半径比は1.2だが絶対寸法は非実寸。</text>
 
 <rect class="panel" x="22" y="484" width="796" height="447" rx="18"/>
@@ -38,15 +38,15 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 <rect class="resistor" x="550" y="630" width="93" height="44" rx="5"/>
 <circle class="node" cx="79" cy="652" r="7"/>
 <circle class="node" cx="759" cy="652" r="7"/>
-<text class="small ink" x="220" y="659" text-anchor="middle">R<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan></text>
-<text class="small ink" x="414" y="659" text-anchor="middle">R<tspan class="sb" dy="0.30em" font-size="0.72em">wall</tspan><tspan dy="-0.3em"></tspan></text>
-<text class="small ink" x="597" y="659" text-anchor="middle">R<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan></text>
+<text class="small ink" x="220" y="659" text-anchor="middle">R<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan></text>
+<text class="small ink" x="414" y="659" text-anchor="middle">R<tspan class="sb" dy="0.3em" font-size="0.72em">wall</tspan></text>
+<text class="small ink" x="597" y="659" text-anchor="middle">R<tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan></text>
 <text class="micro muted" x="40" y="605">内側流体</text>
 <text class="micro muted" x="687" y="605">外側流体</text>
-<text class="micro ink" x="43" y="713">R<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 0.007958 K/W</text>
-<text class="micro ink" x="285" y="713">R<tspan class="sb" dy="0.30em" font-size="0.72em">wall</tspan><tspan dy="-0.3em"></tspan> = 0.000967 K/W</text>
-<text class="micro ink" x="554" y="713">R<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> = 0.066315 K/W</text>
-<text class="small ink" x="43" y="759">R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = R<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> + R<tspan class="sb" dy="0.30em" font-size="0.72em">wall</tspan><tspan dy="-0.3em"></tspan> + R<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> = 0.075240 K/W</text>
+<text class="micro ink" x="43" y="713">R<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = 0.007958 K/W</tspan></text>
+<text class="micro ink" x="285" y="713">R<tspan class="sb" dy="0.3em" font-size="0.72em">wall</tspan><tspan dy="-0.22em"> = 0.000967 K/W</tspan></text>
+<text class="micro ink" x="554" y="713">R<tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> = 0.066315 K/W</tspan></text>
+<text class="small ink" x="43" y="759">R<tspan class="sb" dy="0.3em" font-size="0.72em">total</tspan><tspan dy="-0.22em"> = R</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> + R</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">wall</tspan><tspan dy="-0.22em"> + R</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> = 0.075240 K/W</tspan></text>
 <text class="micro muted" x="43" y="796">全抵抗に対する割合（幅を正確な比率で表示）</text>
 <rect id="resistance-ri" class="rin" x="92" y="831" width="68.11297" height="34"/>
 <rect id="resistance-wall" class="rwall" x="160.11297" y="831" width="8.27897" height="34"/>
@@ -57,10 +57,10 @@ text{font-family:'Noto Sans CJK JP','Hiragino Kaku Gothic ProN',system-ui,sans-s
 
 <rect class="panel" x="22" y="949" width="796" height="284" rx="18"/>
 <text class="section ink" x="43" y="993">③ 基準面積でUは変わる。UAは不変</text>
-<text class="small ink" x="43" y="1036">内面基準 U<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = 105.77 W/(m²·K)</text>
-<text class="small ink" x="43" y="1072">外面基準 U<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> = 88.14 W/(m²·K)</text>
-<text class="formula ink" x="43" y="1113">U<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> A<tspan class="sb" dy="0.30em" font-size="0.72em">i</tspan><tspan dy="-0.3em"></tspan> = U<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> A<tspan class="sb" dy="0.30em" font-size="0.72em">o</tspan><tspan dy="-0.3em"></tspan> = 1/R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = 13.29 W/K</text>
-<text class="formula ink" x="43" y="1152">Q = ΔT/R<tspan class="sb" dy="0.30em" font-size="0.72em">total</tspan><tspan dy="-0.3em"></tspan> = 40/0.075240 = 531.64 W</text>
+<text class="small ink" x="43" y="1036">内面基準 U<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = 105.77 W/(m²·K)</tspan></text>
+<text class="small ink" x="43" y="1072">外面基準 U<tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> = 88.14 W/(m²·K)</tspan></text>
+<text class="formula ink" x="43" y="1113">U<tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> A</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">i</tspan><tspan dy="-0.22em"> = U</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> A</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">o</tspan><tspan dy="-0.22em"> = 1/R</tspan><tspan class="sb" dy="0.3em" font-size="0.72em">total</tspan><tspan dy="-0.22em"> = 13.29 W/K</tspan></text>
+<text class="formula ink" x="43" y="1152">Q = ΔT/R<tspan class="sb" dy="0.3em" font-size="0.72em">total</tspan><tspan dy="-0.22em"> = 40/0.075240 = 531.64 W</tspan></text>
 <text class="micro muted" x="43" y="1201">定常・一定物性・代表温度差40 K・汚れと軸方向温度変化なし</text>
 <text class="micro muted" x="420" y="1282" text-anchor="middle">アプリ独自の模式図｜原著図版のトレース・転載・翻訳なし</text>
 </svg>
